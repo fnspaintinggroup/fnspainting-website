@@ -23,8 +23,8 @@ export default async function Home() {
     <>
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
-          src="/images/fs-painting-hero.png"
-          alt="Professional painter refreshing a clean Sydney home interior"
+          src="/images/fs-painting-hero-real.jpeg"
+          alt="F&S Painting team repainting an interior hallway in Sydney"
           fill
           priority
           className="object-cover opacity-45"

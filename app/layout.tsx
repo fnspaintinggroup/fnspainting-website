@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: absoluteUrl(defaultOgImage),
-        alt: "F&S Painting professional painter in a Sydney home interior",
+        alt: "F&S Painting team repainting an interior hallway in Sydney",
       },
     ],
   },

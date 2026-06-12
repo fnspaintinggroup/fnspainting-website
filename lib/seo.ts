@@ -4,7 +4,7 @@ import type { CmsService } from "@/lib/cms";
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 export const siteName = "F&S Painting";
 export const targetLocation = "Sydney, NSW";
-export const defaultOgImage = "/images/fs-painting-hero.png";
+export const defaultOgImage = "/images/fs-painting-hero-real.jpeg";
 
 export const targetKeywords = [
   "painter Sydney",
