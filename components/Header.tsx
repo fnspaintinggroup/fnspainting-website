@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { businessDetails, quoteEmailHref } from "@/lib/business";
+import { businessDetails } from "@/lib/business";
 import { navItems } from "@/lib/site-data";
 
 export function Header() {
@@ -32,7 +32,7 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href={quoteEmailHref}
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-md bg-clay px-4 py-2 font-semibold text-white shadow-sm transition hover:bg-clay/90"
           >
             Get a Free Quote

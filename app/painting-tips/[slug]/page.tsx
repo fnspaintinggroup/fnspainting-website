@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, Tag } from "lucide-react";
 import { PortableBody } from "@/components/PortableBody";
-import { quoteEmailHref } from "@/lib/business";
 import { getBlogPost, getBlogPosts, toAbsoluteUrl } from "@/lib/cms";
 import type { BlogSection } from "@/lib/blog-posts";
 import { siteUrl, targetKeywords } from "@/lib/seo";
@@ -177,7 +176,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </Link>
                 </div>
                 <Link
-                  href={quoteEmailHref}
+                  href="/contact"
                   className="mt-5 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
                 >
                   Get a Free Quote

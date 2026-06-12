@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
-import { businessDetails, quoteEmailHref } from "@/lib/business";
+import { businessDetails } from "@/lib/business";
 import { services } from "@/lib/site-data";
 import { getSelectedReviews, getServices } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
@@ -50,7 +50,7 @@ export default async function Home() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href={quoteEmailHref}
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
               >
                 Get a Free Quote
@@ -75,11 +75,31 @@ export default async function Home() {
         </div>
       </section>
 
-      <Section
-        eyebrow="Services"
-        title="Painting services built around clean preparation and lasting finishes"
-        intro="From a single ceiling refresh to a full property repaint, F&S Painting offers practical guidance, tidy work, and a professional finish."
-      >
+      <section className="py-14 sm:py-20">
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
+          <div className="mb-8 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+            <div className="max-w-3xl">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
+                Services
+              </p>
+              <h2 className="text-3xl font-semibold leading-tight text-ink sm:text-4xl">
+                Painting services built around clean preparation and lasting finishes
+              </h2>
+              <p className="mt-4 text-base leading-7 text-ink/70">
+                From a single ceiling refresh to a full property repaint, F&amp;S Painting offers
+                practical guidance, tidy work, and a professional finish.
+              </p>
+            </div>
+            <div className="relative min-h-44 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm sm:min-h-56">
+              <Image
+                src="/images/fs-painting-van.jpg"
+                alt="F&S Painting service van in Sydney"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 420px, 100vw"
+              />
+            </div>
+          </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cmsServices.slice(0, 6).map((service) => {
             const localService = services.find((item) => item.title === service.title) ?? services[0];
@@ -97,7 +117,8 @@ export default async function Home() {
             );
           })}
         </div>
-      </Section>
+        </div>
+      </section>
 
       <Section
         className="bg-mist"
@@ -144,7 +165,7 @@ export default async function Home() {
             </p>
           </div>
           <Link
-            href={quoteEmailHref}
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
           >
             Get a Free Quote

@@ -57,9 +57,9 @@ export function Footer() {
         </div>
         <div>
           <p className="mb-4 font-semibold">Service Areas</p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {serviceAreas.map((area) => (
-              <span key={area} className="rounded-md border border-white/15 px-3 py-1 text-sm text-white/75">
+              <span key={area} className="rounded border border-white/15 px-2 py-0.5 text-[11px] leading-5 text-white/70">
                 {area}
               </span>
             ))}

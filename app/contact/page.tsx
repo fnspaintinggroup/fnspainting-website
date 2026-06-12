@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, MessageSquareText, Phone } from "lucide-react";
-import { businessDetails, formatAddress, quoteEmailHref } from "@/lib/business";
+import { QuoteRequestForm } from "@/components/QuoteRequestForm";
+import { businessDetails, formatAddress } from "@/lib/business";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -67,44 +68,7 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-          <form className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="grid gap-2 text-sm font-semibold text-ink">
-                Name
-                <input className="rounded-md border border-ink/15 px-4 py-3 font-normal outline-none focus:border-eucalyptus" placeholder="Your name" />
-              </label>
-              <label className="grid gap-2 text-sm font-semibold text-ink">
-                Email
-                <input type="email" className="rounded-md border border-ink/15 px-4 py-3 font-normal outline-none focus:border-eucalyptus" placeholder="you@example.com" />
-              </label>
-              <label className="grid gap-2 text-sm font-semibold text-ink sm:col-span-2">
-                Service
-                <select className="rounded-md border border-ink/15 px-4 py-3 font-normal outline-none focus:border-eucalyptus" defaultValue="">
-                  <option value="" disabled>Select a service</option>
-                  <option>Residential painting</option>
-                  <option>Interior painting</option>
-                  <option>Exterior painting</option>
-                  <option>Strata painting</option>
-                  <option>Commercial painting</option>
-                  <option>Ceiling repainting</option>
-                  <option>Mould-damaged ceiling restoration</option>
-                </select>
-              </label>
-              <label className="grid gap-2 text-sm font-semibold text-ink sm:col-span-2">
-                Project details
-                <textarea className="min-h-36 rounded-md border border-ink/15 px-4 py-3 font-normal outline-none focus:border-eucalyptus" placeholder="Tell us about the property and painting work needed." />
-              </label>
-            </div>
-            <a
-              className="mt-6 inline-flex rounded-md bg-clay px-6 py-3 font-semibold text-white transition hover:bg-clay/90"
-              href={quoteEmailHref}
-            >
-              Get a Free Quote
-            </a>
-            <p className="mt-4 text-sm text-ink/55">
-              Clicking the quote button opens an email to {businessDetails.email}.
-            </p>
-          </form>
+          <QuoteRequestForm />
         </div>
       </section>
     </>

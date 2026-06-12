@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
-import { quoteEmailHref } from "@/lib/business";
 import { getSelectedReviews } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
 
@@ -36,7 +35,7 @@ export default async function ReviewsPage() {
       <Section title="What clients can expect">
         <Reviews reviews={reviews} />
         <Link
-          href={quoteEmailHref}
+          href="/contact"
           className="mt-8 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
         >
           Get a Free Quote
