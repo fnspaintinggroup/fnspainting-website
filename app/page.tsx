@@ -150,7 +150,7 @@ export default async function Home() {
       <Section
         eyebrow="Google Reviews"
         title="Trusted by Sydney homeowners, strata managers, and local businesses"
-        intro="Selected customer reviews from the CMS, ready for a future Google Business Profile API connection."
+        intro="View Google review links for F&S Painting Services and selected customer reviews managed from the website CMS or Google Business Profile API."
       >
         <Reviews reviews={cmsReviews} />
       </Section>

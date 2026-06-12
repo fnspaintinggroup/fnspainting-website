@@ -2,6 +2,7 @@ import "server-only";
 
 import { unstable_cache } from "next/cache";
 import type { CmsReview } from "@/lib/cms";
+import { businessDetails } from "@/lib/business";
 
 type GoogleAccessTokenResponse = {
   access_token?: string;
@@ -143,8 +144,8 @@ const getCachedGoogleBusinessProfileReviews = unstable_cache(
 
 export function getGoogleReviewLinks(): ReviewProviderLinks {
   return {
-    readMoreUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL,
-    leaveReviewUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL,
+    readMoreUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || businessDetails.googleReviewsUrl,
+    leaveReviewUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || businessDetails.googleReviewsUrl,
   };
 }
 

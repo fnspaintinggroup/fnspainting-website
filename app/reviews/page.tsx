@@ -27,8 +27,8 @@ export default async function ReviewsPage() {
             Customer reviews from Sydney painting projects
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
-            Selected reviews are managed in the CMS, with a clean path for Google Business Profile
-            API integration later.
+            View F&amp;S Painting Services on Google, read more Google reviews, and see selected
+            customer reviews from the website CMS or Google Business Profile API.
           </p>
         </div>
       </section>
