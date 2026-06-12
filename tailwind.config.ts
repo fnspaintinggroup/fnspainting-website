@@ -20,7 +20,7 @@ const config: Config = {
         soft: "0 18px 45px rgba(23, 33, 29, 0.12)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Arial", "sans-serif"],
+        sans: ["Arial", "Helvetica", "sans-serif"],
       },
     },
   },

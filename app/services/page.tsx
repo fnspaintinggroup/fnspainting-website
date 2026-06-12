@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/Section";
+import { quoteEmailHref } from "@/lib/business";
 import { services } from "@/lib/site-data";
 import { getServices } from "@/lib/cms";
 import { pageMetadata, serviceSchema } from "@/lib/seo";
@@ -65,7 +66,7 @@ export default async function ServicesPage() {
           })}
         </div>
         <Link
-          href="/contact"
+          href={quoteEmailHref}
           className="mt-8 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
         >
           Get a Free Quote

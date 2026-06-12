@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
+import { businessDetails, quoteEmailHref } from "@/lib/business";
 import { services } from "@/lib/site-data";
 import { getSelectedReviews, getServices } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
@@ -45,11 +46,11 @@ export default async function Home() {
               Guaranteed property Value up!
             </p>
             <p className="mt-10 max-w-4xl text-2xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
-              Call 0452 209 113 for a free quote today.
+              Call {businessDetails.phones.join(" or ")} for a free quote today.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/contact"
+                href={quoteEmailHref}
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
               >
                 Get a Free Quote
@@ -143,7 +144,7 @@ export default async function Home() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href={quoteEmailHref}
             className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
           >
             Get a Free Quote

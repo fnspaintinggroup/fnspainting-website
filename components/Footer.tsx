@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, PaintBucket } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { businessDetails, formatAddress } from "@/lib/business";
 import { navItems, serviceAreas } from "@/lib/site-data";
 
 export function Footer() {
@@ -8,11 +10,17 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-6 md:grid-cols-[1.2fr_0.8fr_1fr] lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-md bg-gumleaf text-ink">
-              <PaintBucket aria-hidden="true" size={22} />
+            <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-md bg-white">
+              <Image
+                src="/images/fs-painting-logo.png"
+                alt=""
+                width={40}
+                height={40}
+                className="h-full w-full object-cover"
+              />
             </span>
             <div>
-              <p className="text-lg font-bold">F&amp;S Painting</p>
+              <p className="text-lg font-bold">{businessDetails.name}</p>
               <p className="text-sm text-white/60">Professional painters in Sydney, NSW</p>
             </div>
           </div>
@@ -21,12 +29,20 @@ export function Footer() {
             across Sydney.
           </p>
           <div className="mt-5 space-y-2 text-sm text-white/70">
+            <a className="flex items-center gap-2 hover:text-white" href={`mailto:${businessDetails.email}`}>
+              <Mail aria-hidden="true" size={16} /> {businessDetails.email}
+            </a>
             <p className="flex items-center gap-2">
-              <Mail aria-hidden="true" size={16} /> Email: placeholder@example.com
+              <Phone aria-hidden="true" size={16} /> {businessDetails.phones.join(" / ")}
             </p>
-            <p className="flex items-center gap-2">
-              <MapPin aria-hidden="true" size={16} /> Address: Sydney, NSW placeholder
-            </p>
+            {businessDetails.addresses.map((address) => (
+              <p key={address.label} className="flex items-start gap-2">
+                <MapPin aria-hidden="true" className="mt-0.5 shrink-0" size={16} />
+                <span>
+                  {address.label}: {formatAddress(address)}
+                </span>
+              </p>
+            ))}
           </div>
         </div>
         <div>
@@ -51,7 +67,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} F&amp;S Painting. Contact details are placeholders.
+        &copy; {new Date().getFullYear()} {businessDetails.name}. Professional painting services in Sydney, NSW.
       </div>
     </footer>
   );

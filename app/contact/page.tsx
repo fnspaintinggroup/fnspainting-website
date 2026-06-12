@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageSquareText } from "lucide-react";
+import { Mail, MapPin, MessageSquareText, Phone } from "lucide-react";
+import { businessDetails, formatAddress, quoteEmailHref } from "@/lib/business";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -32,12 +33,31 @@ export default function ContactPage() {
             <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm">
               <Mail className="text-eucalyptus" aria-hidden="true" />
               <h2 className="mt-4 text-xl font-semibold">Email</h2>
-              <p className="mt-2 text-ink/65">placeholder@example.com</p>
+              <a className="mt-2 block text-ink/65 hover:text-eucalyptus" href={`mailto:${businessDetails.email}`}>
+                {businessDetails.email}
+              </a>
+            </div>
+            <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm">
+              <Phone className="text-eucalyptus" aria-hidden="true" />
+              <h2 className="mt-4 text-xl font-semibold">Contact</h2>
+              <div className="mt-2 grid gap-1 text-ink/65">
+                {businessDetails.phones.map((phone) => (
+                  <a key={phone} className="hover:text-eucalyptus" href={`tel:${phone.replaceAll(" ", "")}`}>
+                    {phone}
+                  </a>
+                ))}
+              </div>
             </div>
             <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm">
               <MapPin className="text-eucalyptus" aria-hidden="true" />
-              <h2 className="mt-4 text-xl font-semibold">Location</h2>
-              <p className="mt-2 text-ink/65">Sydney, NSW placeholder</p>
+              <h2 className="mt-4 text-xl font-semibold">Locations</h2>
+              <div className="mt-2 grid gap-2 text-ink/65">
+                {businessDetails.addresses.map((address) => (
+                  <p key={address.label}>
+                    <span className="font-semibold text-ink">{address.label}:</span> {formatAddress(address)}
+                  </p>
+                ))}
+              </div>
             </div>
             <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm">
               <MessageSquareText className="text-eucalyptus" aria-hidden="true" />
@@ -75,11 +95,14 @@ export default function ContactPage() {
                 <textarea className="min-h-36 rounded-md border border-ink/15 px-4 py-3 font-normal outline-none focus:border-eucalyptus" placeholder="Tell us about the property and painting work needed." />
               </label>
             </div>
-            <button className="mt-6 rounded-md bg-clay px-6 py-3 font-semibold text-white transition hover:bg-clay/90" type="button">
+            <a
+              className="mt-6 inline-flex rounded-md bg-clay px-6 py-3 font-semibold text-white transition hover:bg-clay/90"
+              href={quoteEmailHref}
+            >
               Get a Free Quote
-            </button>
+            </a>
             <p className="mt-4 text-sm text-ink/55">
-              Form submission is a placeholder and can be connected to email, CRM, or a quote system.
+              Clicking the quote button opens an email to {businessDetails.email}.
             </p>
           </form>
         </div>

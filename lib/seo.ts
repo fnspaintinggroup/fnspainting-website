@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { CmsService } from "@/lib/cms";
+import { businessDetails } from "@/lib/business";
 
 const defaultSiteUrl = "https://www.fnspainting.com.au";
 
@@ -92,6 +93,8 @@ export function localBusinessSchema() {
     name: siteName,
     url: siteUrl,
     image: absoluteUrl(defaultOgImage),
+    email: businessDetails.email,
+    telephone: businessDetails.phones,
     description:
       "F&S Painting provides residential, interior, exterior, strata, commercial, ceiling painting, and mould-damaged ceiling restoration services in Sydney, NSW.",
     areaServed: {
@@ -100,12 +103,14 @@ export function localBusinessSchema() {
       addressRegion: "NSW",
       addressCountry: "AU",
     },
-    address: {
+    address: businessDetails.addresses.map((address) => ({
       "@type": "PostalAddress",
-      addressLocality: "Sydney",
-      addressRegion: "NSW",
+      streetAddress: address.street,
+      addressLocality: address.suburb,
+      addressRegion: address.region,
+      postalCode: address.postcode,
       addressCountry: "AU",
-    },
+    })),
     makesOffer: targetKeywords.map((keyword) => ({
       "@type": "Offer",
       itemOffered: {
