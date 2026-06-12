@@ -7,7 +7,7 @@ import { navItems, serviceAreas } from "@/lib/site-data";
 export function Footer() {
   return (
     <footer className="bg-ink text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1fr_0.55fr_1.6fr] lg:px-8">
+      <div className="mx-auto grid max-w-[92rem] gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[0.9fr_0.45fr_2fr] lg:px-8">
         <div>
           <div className="flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-md bg-white">
@@ -56,7 +56,7 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="mb-4 font-semibold">Service Areas</p>
+          <p className="mb-4 font-semibold">Service Areas - All of Sydney wide</p>
           <div className="flex flex-wrap gap-2">
             {serviceAreas.map((area) => (
               <span key={area} className="rounded border border-white/15 px-2.5 py-1 text-[11px] leading-5 text-white/70">
