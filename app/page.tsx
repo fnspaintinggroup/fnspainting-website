@@ -27,20 +27,25 @@ export default async function Home() {
           alt="F&S Painting team repainting an interior hallway in Sydney"
           fill
           priority
-          className="object-cover opacity-45"
+          className="object-cover object-center"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/62 to-ink/18" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/72 via-transparent to-ink/25" />
         <div className="relative mx-auto grid min-h-[78vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-              Sydney painting company
-            </p>
-            <h1 className="text-4xl font-bold leading-tight sm:text-6xl">
-              F&amp;S Painting
+          <div className="max-w-5xl">
+            <h1 className="max-w-5xl text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-7xl">
+              Professional house painting &amp; commercial painting in Sydney
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-white/85">
-              Clean, reliable painting for homes, strata properties, and commercial spaces across
-              Sydney, NSW.
+            <p className="mt-7 max-w-3xl text-base font-medium leading-7 text-white/90 sm:text-xl">
+              Reliable, clean, high-quality painting service for homes, apartments, offices and
+              shops across Sydney.
+            </p>
+            <p className="mt-2 text-base font-semibold text-white/90 sm:text-xl">
+              Guaranteed property Value up!
+            </p>
+            <p className="mt-10 max-w-4xl text-2xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
+              Call 0452 209 113 for a free quote today.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link

@@ -53,7 +53,7 @@ git push -u origin main
 7. Set:
 
 ```text
-NEXT_PUBLIC_SITE_URL=https://fnspainting.com.au
+NEXT_PUBLIC_SITE_URL=https://www.fnspainting.com.au
 ```
 
 8. Deploy.
@@ -73,7 +73,7 @@ fnspainting.com.au
 www.fnspainting.com.au
 ```
 
-Set `fnspainting.com.au` as the preferred production domain unless you specifically want `www`.
+Set `www.fnspainting.com.au` as the preferred production domain if you are using the Google Search Console property for `https://www.fnspainting.com.au/`.
 
 At your DNS provider, add the records Vercel gives you. Usually this means:
 
@@ -98,11 +98,11 @@ fnspainting.com.au
 5. Submit sitemap:
 
 ```text
-https://fnspainting.com.au/sitemap.xml
+https://www.fnspainting.com.au/sitemap.xml
 ```
 
 6. Inspect the homepage URL after deployment:
 
 ```text
-https://fnspainting.com.au
+https://www.fnspainting.com.au
 ```

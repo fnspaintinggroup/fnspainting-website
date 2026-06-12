@@ -51,7 +51,7 @@ The committed template is [`.env.example`](./.env.example).
 Required for production SEO:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://fnspainting.com.au
+NEXT_PUBLIC_SITE_URL=https://www.fnspainting.com.au
 ```
 
 Required for Sanity CMS content:
@@ -193,7 +193,7 @@ www.fnspainting.com.au
 8. Update `NEXT_PUBLIC_SITE_URL` in Vercel to the final production URL, for example:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://fnspainting.com.au
+NEXT_PUBLIC_SITE_URL=https://www.fnspainting.com.au
 ```
 
 9. Redeploy after changing `NEXT_PUBLIC_SITE_URL` so sitemap, robots, canonical URLs, and Open Graph URLs use the live domain.
@@ -209,7 +209,7 @@ NEXT_PUBLIC_SITE_URL=https://fnspainting.com.au
 7. After the Vercel site is live, submit:
 
 ```text
-https://fnspainting.com.au/sitemap.xml
+https://www.fnspainting.com.au/sitemap.xml
 ```
 
 8. Check **Pages**, **Sitemaps**, and **Core Web Vitals** after Google has crawled the site.

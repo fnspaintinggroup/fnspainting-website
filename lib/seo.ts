@@ -1,7 +1,23 @@
 import type { Metadata } from "next";
 import type { CmsService } from "@/lib/cms";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+const defaultSiteUrl = "https://www.fnspainting.com.au";
+
+function getSiteUrl() {
+  const value = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
+  if (!value) {
+    return defaultSiteUrl;
+  }
+
+  try {
+    return new URL(value).origin;
+  } catch {
+    return defaultSiteUrl;
+  }
+}
+
+export const siteUrl = getSiteUrl();
 export const siteName = "F&S Painting";
 export const targetLocation = "Sydney, NSW";
 export const defaultOgImage = "/images/fs-painting-hero-real.jpeg";
