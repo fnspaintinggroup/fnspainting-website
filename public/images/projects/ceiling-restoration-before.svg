@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Mould damaged ceiling before restoration</title>
+  <desc id="desc">Illustration of a stained ceiling before painting restoration.</desc>
+  <rect width="1200" height="800" fill="#e6dfd4"/>
+  <path d="M0 0h1200v310H0z" fill="#d9d0c3"/>
+  <path d="M0 310h1200v490H0z" fill="#efe9df"/>
+  <path d="M145 120c95-55 215-40 288 18 78 61 168 37 252 2 105-44 214-18 285 54 41 41 93 56 168 40v76H145z" fill="#b7aa96" opacity=".45"/>
+  <circle cx="315" cy="170" r="56" fill="#7b735f" opacity=".26"/>
+  <circle cx="414" cy="210" r="34" fill="#5c6651" opacity=".22"/>
+  <circle cx="752" cy="150" r="44" fill="#6d735b" opacity=".24"/>
+  <circle cx="845" cy="205" r="29" fill="#7a6758" opacity=".2"/>
+  <rect x="95" y="395" width="1010" height="260" rx="8" fill="#fbfaf6"/>
+  <rect x="95" y="395" width="1010" height="32" fill="#d8cfc1"/>
+  <rect x="180" y="470" width="290" height="185" fill="#d8e5dd"/>
+  <rect x="555" y="470" width="290" height="185" fill="#efe6da"/>
+  <path d="M0 665h1200v135H0z" fill="#c9bda9"/>
+</svg>

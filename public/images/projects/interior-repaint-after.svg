@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Interior wall after repainting</title>
+  <desc id="desc">Illustration of a freshly repainted interior wall.</desc>
+  <rect width="1200" height="800" fill="#f7f3ec"/>
+  <path d="M0 0h1200v610H0z" fill="#f4efe7"/>
+  <path d="M0 610h1200v190H0z" fill="#d7cdbb"/>
+  <rect x="155" y="190" width="270" height="315" fill="#ffffff"/>
+  <rect x="181" y="217" width="218" height="262" fill="#d8e5dd"/>
+  <rect x="680" y="180" width="270" height="340" fill="#e5ede7"/>
+  <rect x="710" y="214" width="210" height="272" fill="#eff5f1"/>
+  <circle cx="1015" cy="520" r="36" fill="#386f5b" opacity=".2"/>
+  <path d="M0 594h1200v18H0z" fill="#cabda9"/>
+</svg>

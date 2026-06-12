@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Interior wall before repainting</title>
+  <desc id="desc">Illustration of a scuffed interior wall before repainting.</desc>
+  <rect width="1200" height="800" fill="#e9dfd0"/>
+  <path d="M0 0h1200v610H0z" fill="#d8cbb9"/>
+  <path d="M0 610h1200v190H0z" fill="#c9bda9"/>
+  <rect x="155" y="190" width="270" height="315" fill="#f1eee7"/>
+  <rect x="181" y="217" width="218" height="262" fill="#d6e2db"/>
+  <path d="M680 180h270v340H680z" fill="#c4b5a4"/>
+  <path d="M710 230c65 12 118-9 178 18M725 315c55 18 130 3 180 30M710 420c70-16 128 8 205-10" stroke="#8a7a68" stroke-width="13" stroke-linecap="round" opacity=".42"/>
+  <circle cx="1015" cy="520" r="36" fill="#8a7a68" opacity=".3"/>
+  <path d="M0 594h1200v18H0z" fill="#b9aa95"/>
+</svg>

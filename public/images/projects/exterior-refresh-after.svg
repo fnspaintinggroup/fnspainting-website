@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Exterior house after painting refresh</title>
+  <desc id="desc">Illustration of a freshly painted house exterior.</desc>
+  <rect width="1200" height="800" fill="#d8e5dd"/>
+  <path d="M0 520h1200v280H0z" fill="#95aa84"/>
+  <path d="M175 345 600 105l425 240v300H175z" fill="#f4efe7"/>
+  <path d="M140 350 600 82l460 268-45 65-415-238-415 238z" fill="#386f5b"/>
+  <rect x="275" y="430" width="180" height="215" fill="#ffffff"/>
+  <rect x="560" y="430" width="275" height="155" fill="#ffffff"/>
+  <rect x="610" y="465" width="70" height="80" fill="#b8cfcb"/>
+  <rect x="705" y="465" width="70" height="80" fill="#b8cfcb"/>
+  <path d="M175 645h850v30H175z" fill="#d7cdbb"/>
+</svg>

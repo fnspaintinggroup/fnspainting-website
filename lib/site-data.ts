@@ -1,0 +1,137 @@
+import {
+  Building2,
+  Brush,
+  Home,
+  Layers,
+  Paintbrush,
+  Sparkles,
+  Star,
+  Waves,
+} from "lucide-react";
+
+export const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
+  { href: "/painting-tips", label: "Painting Tips" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/contact", label: "Contact" },
+];
+
+export const services = [
+  {
+    title: "Residential Painting",
+    href: "/services#residential-painting",
+    icon: Home,
+    summary: "Neat, durable finishes for Sydney homes, apartments, units, and renovations.",
+  },
+  {
+    title: "Interior Painting",
+    href: "/services#interior-painting",
+    icon: Paintbrush,
+    summary: "Walls, trims, doors, ceilings, feature walls, and full interior refreshes.",
+  },
+  {
+    title: "Exterior Painting",
+    href: "/services#exterior-painting",
+    icon: Brush,
+    summary: "Weather-conscious preparation and coating for facades, fences, eaves, and decks.",
+  },
+  {
+    title: "Strata Painting",
+    href: "/services#strata-painting",
+    icon: Layers,
+    summary: "Common areas, lobbies, stairwells, corridors, and planned maintenance painting.",
+  },
+  {
+    title: "Commercial Painting",
+    href: "/services#commercial-painting",
+    icon: Building2,
+    summary: "Professional painting for offices, retail spaces, hospitality venues, and fit-outs.",
+  },
+  {
+    title: "Ceiling Repainting",
+    href: "/services#ceiling-repainting",
+    icon: Sparkles,
+    summary: "Clean ceiling repaints, stain blocking, patching, and smooth finish restoration.",
+  },
+  {
+    title: "Mould-Damaged Ceiling Restoration",
+    href: "/services#mould-damaged-ceiling-restoration",
+    icon: Waves,
+    summary: "Careful preparation and repainting for ceilings affected by moisture and mould damage.",
+  },
+];
+
+export const projects = [
+  {
+    title: "Interior Repaint",
+    location: "Sydney apartment",
+    before: "Tired walls, scuffed trims, uneven ceiling colour.",
+    after: "Soft neutral walls, crisp trims, brighter rooms.",
+  },
+  {
+    title: "Exterior Refresh",
+    location: "Suburban home",
+    before: "Weathered facade and faded timber details.",
+    after: "Fresh exterior palette with clean, durable finish.",
+  },
+  {
+    title: "Ceiling Restoration",
+    location: "Moisture-affected room",
+    before: "Stained ceiling with patchy surface damage.",
+    after: "Prepared, sealed, and repainted ceiling finish.",
+  },
+];
+
+export const reviews = [
+  {
+    name: "Sydney homeowner",
+    rating: 5,
+    quote: "Professional from quote to cleanup. The finish was tidy and the team treated our home with care.",
+  },
+  {
+    name: "Strata committee member",
+    rating: 5,
+    quote: "Clear communication, neat work, and good planning around residents and common areas.",
+  },
+  {
+    name: "Local business owner",
+    rating: 5,
+    quote: "Our office repaint was completed with minimal disruption and a very clean result.",
+  },
+];
+
+export const tips = [
+  {
+    slug: "house-painting-cost-sydney",
+    title: "How Much Does House Painting Cost in Sydney?",
+    excerpt: "What affects house painting costs in Sydney and how to prepare for a clearer quote.",
+    readTime: "4 min read",
+  },
+  {
+    slug: "best-paint-finish-interior-walls-sydney",
+    title: "Best Paint Finish for Interior Walls in Sydney Homes",
+    excerpt: "A practical guide to choosing matte, low sheen, or washable finishes for interior walls.",
+    readTime: "3 min read",
+  },
+  {
+    slug: "fix-mould-damaged-ceilings-before-painting",
+    title: "How to Fix Mould-Damaged Ceilings Before Painting",
+    excerpt: "What should happen before repainting a mould-affected ceiling and why moisture must be resolved first.",
+    readTime: "5 min read",
+  },
+];
+
+export const serviceAreas = [
+  "Sydney CBD",
+  "Inner West",
+  "Eastern Suburbs",
+  "North Shore",
+  "Northern Beaches",
+  "Sutherland Shire",
+  "Western Sydney",
+  "Hills District",
+];
+
+export const starIcon = Star;
