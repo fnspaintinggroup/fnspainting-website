@@ -15,6 +15,7 @@ out/
 # Local tooling/cache
 .codex-tools/
 .npm-cache/
+tsconfig.tsbuildinfo
 
 # Logs
 npm-debug.log*
