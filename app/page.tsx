@@ -105,9 +105,9 @@ export default async function Home() {
                 loop
                 playsInline
                 preload="metadata"
-                aria-label="F&S Painting interior painting work video in Sydney"
+                aria-label="F&S Painting exterior service van video in Sydney"
               >
-                <source src="/images/fs-painting-service-video.mov" type="video/quicktime" />
+                <source src="/images/fs-painting-service-video.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
