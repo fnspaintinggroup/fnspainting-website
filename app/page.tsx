@@ -84,7 +84,7 @@ export default async function Home() {
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
-          <div className="mb-8 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+          <div className="mb-8 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
                 Services
@@ -97,14 +97,18 @@ export default async function Home() {
                 practical guidance, tidy work, and a professional finish.
               </p>
             </div>
-            <div className="relative min-h-44 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm sm:min-h-56">
-              <Image
-                src="/images/fs-painting-van.jpg"
-                alt="F&S Painting service van in Sydney"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 420px, 100vw"
-              />
+            <div className="relative min-h-52 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm sm:min-h-64 lg:min-h-72">
+              <video
+                className="h-full min-h-52 w-full object-cover sm:min-h-64 lg:min-h-72"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="F&S Painting interior painting work video in Sydney"
+              >
+                <source src="/images/fs-painting-service-video.mov" type="video/quicktime" />
+              </video>
             </div>
           </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
