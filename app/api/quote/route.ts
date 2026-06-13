@@ -16,6 +16,13 @@ function clean(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+function cleanApiKey(value: unknown) {
+  return clean(value)
+    .replace(/^Bearer\s+/i, "")
+    .replace(/^["']|["']$/g, "")
+    .replace(/\s/g, "");
+}
+
 export async function POST(request: Request) {
   const payload = (await request.json()) as QuoteRequestPayload;
   const name = clean(payload.name);
@@ -32,7 +39,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const apiKey = clean(process.env.RESEND_API_KEY).replace(/^Bearer\s+/i, "");
+  const apiKey = cleanApiKey(process.env.RESEND_API_KEY);
   const fromEmail = clean(process.env.QUOTE_FROM_EMAIL) || "F&S Painting Website <onboarding@resend.dev>";
   const toEmail = clean(process.env.QUOTE_TO_EMAIL) || businessDetails.email;
 
@@ -85,7 +92,7 @@ export async function POST(request: Request) {
         message:
           "The automatic email sender is not available right now. Please use the email link below or contact us directly.",
         setupHint:
-          "The Resend request failed before receiving a response. Check that RESEND_API_KEY has no quotes, no line breaks, and does not include the word Bearer.",
+          "The Resend request failed before receiving a response. Check Vercel networking and confirm RESEND_API_KEY starts with re_ and is active in Resend.",
       },
       { status: 502 },
     );

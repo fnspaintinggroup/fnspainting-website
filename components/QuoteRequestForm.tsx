@@ -78,6 +78,9 @@ export function QuoteRequestForm() {
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Unable to send the quote request.");
+      window.setTimeout(() => {
+        window.location.href = fallbackEmailHref;
+      }, 600);
     }
   }
 
@@ -169,7 +172,7 @@ export function QuoteRequestForm() {
           className="mt-3 inline-flex rounded-md border border-eucalyptus px-4 py-2 text-sm font-semibold text-eucalyptus transition hover:bg-gumleaf"
           href={fallbackEmailHref}
         >
-          Send by Email Instead
+          Open Email App Now
         </a>
       ) : null}
     </form>
