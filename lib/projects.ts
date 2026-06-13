@@ -219,6 +219,142 @@ export const projects: Project[] = [
     seoDescription:
       "Before and after exterior balcony deck and lattice repaint project in Sydney by F&S Painting, showing preparation and fresh exterior coating.",
   },
+  {
+    title: "Fire Exit Door Repaint in Sydney",
+    slug: "fire-exit-door-repaint-sydney",
+    location: "Sydney, NSW",
+    serviceType: "Commercial Painting",
+    beforeImage: "/images/projects/interior-fire-door-before.jpg",
+    afterImage: "/images/projects/interior-fire-door-after.jpg",
+    beforeImageAlt: "Commercial fire exit door before repainting in Sydney",
+    afterImageAlt: "Commercial fire exit door after repainting in a black finish",
+    description:
+      "A marked commercial fire exit door and surrounding trim were prepared and repainted for a cleaner, more durable finish.",
+    materials: "Commercial enamel paint, metal primer, sanding materials, masking protection, and detailed door preparation.",
+    completionDate: "2026-01-16",
+    seoTitle: "Fire Exit Door Repaint Sydney | F&S Painting",
+    seoDescription:
+      "Before and after commercial fire exit door repaint in Sydney by F&S Painting, showing preparation and a clean durable finish.",
+  },
+  {
+    title: "Commercial Salon Interior Repaint",
+    slug: "commercial-salon-interior-repaint",
+    location: "Sydney, NSW",
+    serviceType: "Commercial Painting",
+    beforeImage: "/images/projects/commercial-salon-interior-before.jpg",
+    afterImage: "/images/projects/commercial-salon-interior-after.jpg",
+    beforeImageAlt: "Commercial salon interior during preparation before repainting",
+    afterImageAlt: "Commercial salon interior after repainting with a clean modern finish",
+    description:
+      "A commercial salon interior was patched, prepared, and repainted to create a cleaner and more polished customer-facing space.",
+    materials: "Commercial interior acrylic paint, primer, patching compound, sanding materials, masking, and drop sheet protection.",
+    completionDate: "2026-01-16",
+    seoTitle: "Commercial Salon Interior Repaint Sydney | F&S Painting",
+    seoDescription:
+      "Before and after commercial salon interior repaint in Sydney by F&S Painting, including wall preparation and professional repainting.",
+  },
+  {
+    title: "Interior Feature Wall and Ceiling Repaint",
+    slug: "interior-feature-wall-ceiling-repaint",
+    location: "Sydney, NSW",
+    serviceType: "Interior Painting",
+    beforeImage: "/images/projects/interior-feature-wall-before.jpg",
+    afterImage: "/images/projects/interior-feature-wall-after.jpg",
+    beforeImageAlt: "Interior feature wall and ceiling before repainting in Sydney",
+    afterImageAlt: "Interior feature wall and ceiling after repainting with a darker ceiling finish",
+    description:
+      "An interior feature wall and ceiling area was prepared and repainted to refresh the room and create a cleaner contrast finish.",
+    materials: "Interior wall paint, ceiling paint, primer, patching compound, sanding materials, and masking protection.",
+    completionDate: "2026-01-16",
+    seoTitle: "Interior Feature Wall and Ceiling Repaint Sydney | F&S Painting",
+    seoDescription:
+      "Before and after interior feature wall and ceiling repaint project in Sydney by F&S Painting, showing preparation and a refreshed finish.",
+  },
+  {
+    title: "Mosman Exterior Entry Repaint",
+    slug: "mosman-exterior-entry-repaint",
+    location: "Mosman, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/mosman-exterior-entry-before.jpg",
+    afterImage: "/images/projects/mosman-exterior-entry-after.jpg",
+    beforeImageAlt: "Mosman exterior entry trim before repainting",
+    afterImageAlt: "Mosman exterior entry trim after repainting",
+    description:
+      "Exterior entry trim, window surrounds, and decorative mouldings were prepared and repainted to refresh the front presentation.",
+    materials: "Exterior acrylic paint, trim enamel, primer, fillers, sanding materials, and weather-exposed preparation products.",
+    completionDate: "2026-01-16",
+    seoTitle: "Mosman Exterior Entry Repaint | F&S Painting Sydney",
+    seoDescription:
+      "Before and after Mosman exterior entry repaint by F&S Painting, including trim preparation, window surrounds, and exterior repainting.",
+  },
+  {
+    title: "North Strathfield Exterior Window Restoration",
+    slug: "north-strathfield-exterior-window-restoration",
+    location: "North Strathfield, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/north-strathfield-window-before.jpg",
+    afterImage: "/images/projects/north-strathfield-window-after.jpg",
+    beforeImageAlt: "Weathered exterior timber window before restoration in North Strathfield",
+    afterImageAlt: "Exterior timber window after restoration and repainting in North Strathfield",
+    description:
+      "Weathered timber window frames were scraped, sanded, filled, primed, and repainted to protect the surface and improve appearance.",
+    materials: "Exterior timber primer, exterior enamel, wood filler, sanding materials, scraper preparation, and sealant.",
+    completionDate: "2026-01-16",
+    seoTitle: "North Strathfield Exterior Window Restoration | F&S Painting",
+    seoDescription:
+      "Before and after exterior timber window restoration in North Strathfield by F&S Painting, including scraping, priming, and repainting.",
+  },
+  {
+    title: "North Strathfield Exterior Wall and Window Repaint",
+    slug: "north-strathfield-exterior-wall-window-repaint",
+    location: "North Strathfield, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/north-strathfield-exterior-before.jpg",
+    afterImage: "/images/projects/north-strathfield-exterior-after.jpg",
+    beforeImageAlt: "North Strathfield exterior wall and windows before repainting",
+    afterImageAlt: "North Strathfield exterior wall and windows after repainting",
+    description:
+      "An older exterior wall and timber window area was repaired, prepared, and repainted for a cleaner and more weather-resistant finish.",
+    materials: "Exterior acrylic paint, exterior timber coating, primer, fillers, sanding materials, and surface preparation products.",
+    completionDate: "2026-01-16",
+    seoTitle: "North Strathfield Exterior Wall and Window Repaint | F&S Painting",
+    seoDescription:
+      "Before and after exterior wall and window repaint in North Strathfield by F&S Painting, showing repair, preparation, and repainting.",
+  },
+  {
+    title: "Concord West Eaves and Fascia Repaint",
+    slug: "concord-west-eaves-fascia-repaint",
+    location: "Concord West, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/concord-west-eaves-before.jpg",
+    afterImage: "/images/projects/concord-west-eaves-after.jpg",
+    beforeImageAlt: "Concord West eaves and fascia before exterior repainting",
+    afterImageAlt: "Concord West eaves and fascia after exterior repainting",
+    description:
+      "Weathered eaves and fascia areas were repaired, prepared, sealed, and repainted to improve durability and presentation.",
+    materials: "Exterior acrylic paint, primer, gap filler, patching compound, sanding materials, and eaves preparation products.",
+    completionDate: "2026-01-16",
+    seoTitle: "Concord West Eaves and Fascia Repaint | F&S Painting",
+    seoDescription:
+      "Before and after Concord West eaves and fascia repaint by F&S Painting, including surface preparation, sealing, and exterior repainting.",
+  },
+  {
+    title: "Concord West Exterior Soffit and Trim Repaint",
+    slug: "concord-west-exterior-soffit-trim-repaint",
+    location: "Concord West, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/concord-west-fascia-before.jpg",
+    afterImage: "/images/projects/concord-west-fascia-after.jpg",
+    beforeImageAlt: "Concord West exterior soffit and trim before repainting",
+    afterImageAlt: "Concord West exterior soffit and trim after repainting",
+    description:
+      "Exterior soffit, fascia, and trim areas were prepared and repainted to refresh the property and protect exposed surfaces.",
+    materials: "Exterior trim paint, exterior primer, sanding materials, gap filler, patching compound, and masking protection.",
+    completionDate: "2026-01-16",
+    seoTitle: "Concord West Exterior Soffit and Trim Repaint | F&S Painting",
+    seoDescription:
+      "Before and after exterior soffit and trim repaint in Concord West by F&S Painting, showing preparation and fresh exterior finish.",
+  },
 ];
 
 export function getProject(slug: string) {
