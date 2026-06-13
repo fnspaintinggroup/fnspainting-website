@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 import { businessDetails } from "@/lib/business";
 
 const services = [
@@ -23,6 +23,27 @@ export function QuoteRequestForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
 
+  const fallbackEmailHref = useMemo(() => {
+    const body = [
+      "Hi F&S Painting,",
+      "",
+      "I would like a free painting quote.",
+      "",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Suburb: ${suburb}`,
+      `Service needed: ${service}`,
+      "Project details:",
+      details,
+      "",
+    ].join("\n");
+
+    return `mailto:${businessDetails.email}?subject=${encodeURIComponent(
+      "Free painting quote request",
+    )}&body=${encodeURIComponent(body)}`;
+  }, [details, email, name, phone, service, suburb]);
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("sending");
@@ -36,10 +57,14 @@ export function QuoteRequestForm() {
         },
         body: JSON.stringify({ name, email, phone, suburb, service, details }),
       });
-      const data = (await response.json()) as { message?: string };
+      const data = (await response.json()) as { message?: string; setupHint?: string };
 
       if (!response.ok) {
-        throw new Error(data.message || "Unable to send the quote request.");
+        throw new Error(
+          [data.message || "Unable to send the quote request.", data.setupHint]
+            .filter(Boolean)
+            .join(" "),
+        );
       }
 
       setStatus("sent");
@@ -139,6 +164,14 @@ export function QuoteRequestForm() {
       >
         {message || `Your quote request will be sent to ${businessDetails.email}.`}
       </p>
+      {status === "error" ? (
+        <a
+          className="mt-3 inline-flex rounded-md border border-eucalyptus px-4 py-2 text-sm font-semibold text-eucalyptus transition hover:bg-gumleaf"
+          href={fallbackEmailHref}
+        >
+          Send by Email Instead
+        </a>
+      ) : null}
     </form>
   );
 }

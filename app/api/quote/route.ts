@@ -38,7 +38,8 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "Email sending is not configured yet. Please call or email F&S Painting directly.",
+          "Email sending is not configured yet. Please use the email link below or contact F&S Painting directly.",
+        setupHint: "Missing RESEND_API_KEY in Vercel Environment Variables.",
       },
       { status: 503 },
     );
@@ -57,24 +58,49 @@ export async function POST(request: Request) {
     details,
   ].join("\n");
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: fromEmail,
-      to: [toEmail],
-      reply_to: email,
-      subject: `Free painting quote request from ${name}`,
-      text,
-    }),
-  });
+  let response: Response;
+
+  try {
+    response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [toEmail],
+        reply_to: email,
+        subject: `Free painting quote request from ${name}`,
+        text,
+      }),
+    });
+  } catch (error) {
+    console.error("Quote email network error", error);
+
+    return NextResponse.json(
+      {
+        message:
+          "The email service could not be reached. Please use the email link below or contact us directly.",
+      },
+      { status: 502 },
+    );
+  }
 
   if (!response.ok) {
+    const providerError = await response.text();
+    console.error("Quote email provider error", {
+      status: response.status,
+      providerError,
+    });
+
     return NextResponse.json(
-      { message: "The quote request could not be sent. Please try again or contact us directly." },
+      {
+        message:
+          "The quote request could not be sent automatically. Please use the email link below while email sending is being configured.",
+        setupHint:
+          "Resend rejected the request. Check RESEND_API_KEY and make sure QUOTE_FROM_EMAIL uses a verified sender/domain in Resend.",
+      },
       { status: 502 },
     );
   }

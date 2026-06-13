@@ -72,11 +72,11 @@ Quote form email sending:
 
 ```bash
 RESEND_API_KEY=your_resend_api_key
-QUOTE_FROM_EMAIL=F&S Painting Website <your_verified_sender@yourdomain.com>
+QUOTE_FROM_EMAIL=F&S Painting Website <quotes@fnspainting.com.au>
 QUOTE_TO_EMAIL=fnspaintinggroup@gmail.com
 ```
 
-The quote form submits to a secure server route at `/api/quote`. The API key is never exposed to the browser. Add these variables in Vercel for the form to send directly to Gmail.
+The quote form submits to a secure server route at `/api/quote`. The API key is never exposed to the browser. Add these variables in Vercel for the form to send directly to Gmail. In Resend, verify the sender domain first, then set `QUOTE_FROM_EMAIL` to an address on that verified domain. If the sender is not verified, Resend will reject the message.
 
 ## Sanity CMS Setup
 
