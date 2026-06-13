@@ -4,6 +4,33 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { businessDetails, formatAddress } from "@/lib/business";
 import { navItems, serviceAreas } from "@/lib/site-data";
 
+const footerLogos = [
+  {
+    src: "/images/footer/dulux.jpg",
+    alt: "Dulux",
+    width: 132,
+    height: 42,
+  },
+  {
+    src: "/images/footer/lj-hooker.avif",
+    alt: "LJ Hooker",
+    width: 118,
+    height: 42,
+  },
+  {
+    src: "/images/footer/ebix-trades-monitor.avif",
+    alt: "Ebix Trades Monitor",
+    width: 150,
+    height: 42,
+  },
+  {
+    src: "/images/footer/first-national.avif",
+    alt: "First National",
+    width: 132,
+    height: 42,
+  },
+];
+
 export function Footer() {
   return (
     <footer className="bg-ink text-white">
@@ -43,6 +70,27 @@ export function Footer() {
                 </span>
               </p>
             ))}
+          </div>
+          <div className="mt-6">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+              Quality products and property networks
+            </p>
+            <div className="flex max-w-md flex-wrap gap-2.5">
+              {footerLogos.map((logo) => (
+                <span
+                  key={logo.src}
+                  className="flex h-11 items-center rounded bg-white px-3 shadow-sm"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width}
+                    height={logo.height}
+                    className="max-h-7 w-auto object-contain"
+                  />
+                </span>
+              ))}
+            </div>
           </div>
         </div>
         <div>
