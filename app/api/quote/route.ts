@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { businessDetails } from "@/lib/business";
 
+export const runtime = "nodejs";
+
 type QuoteRequestPayload = {
   name?: string;
   email?: string;
@@ -30,9 +32,9 @@ export async function POST(request: Request) {
     );
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.QUOTE_FROM_EMAIL || "F&S Painting Website <onboarding@resend.dev>";
-  const toEmail = process.env.QUOTE_TO_EMAIL || businessDetails.email;
+  const apiKey = clean(process.env.RESEND_API_KEY).replace(/^Bearer\s+/i, "");
+  const fromEmail = clean(process.env.QUOTE_FROM_EMAIL) || "F&S Painting Website <onboarding@resend.dev>";
+  const toEmail = clean(process.env.QUOTE_TO_EMAIL) || businessDetails.email;
 
   if (!apiKey) {
     return NextResponse.json(
@@ -81,7 +83,9 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "The email service could not be reached. Please use the email link below or contact us directly.",
+          "The automatic email sender is not available right now. Please use the email link below or contact us directly.",
+        setupHint:
+          "The Resend request failed before receiving a response. Check that RESEND_API_KEY has no quotes, no line breaks, and does not include the word Bearer.",
       },
       { status: 502 },
     );
