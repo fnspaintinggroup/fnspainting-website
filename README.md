@@ -68,6 +68,16 @@ SANITY_API_TOKEN=your_read_token
 SANITY_REVALIDATE_SECRET=your_webhook_secret
 ```
 
+Quote form email sending:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+QUOTE_FROM_EMAIL=F&S Painting Website <your_verified_sender@yourdomain.com>
+QUOTE_TO_EMAIL=fnspaintinggroup@gmail.com
+```
+
+The quote form submits to a secure server route at `/api/quote`. The API key is never exposed to the browser. Add these variables in Vercel for the form to send directly to Gmail.
+
 ## Sanity CMS Setup
 
 Create a Sanity project, then add these environment variables:

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { businessDetails } from "@/lib/business";
 import { navItems } from "@/lib/site-data";
 
@@ -38,6 +38,13 @@ export function Header() {
             Get a Free Quote
             <ArrowRight aria-hidden="true" size={16} />
           </Link>
+          <a
+            href={`tel:${businessDetails.phones[0].replaceAll(" ", "")}`}
+            className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/30 px-4 py-2 font-semibold text-eucalyptus transition hover:bg-gumleaf"
+          >
+            <Phone aria-hidden="true" size={16} />
+            Call {businessDetails.phones[0]}
+          </a>
         </nav>
       </div>
     </header>

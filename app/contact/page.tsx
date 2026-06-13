@@ -71,6 +71,31 @@ export default function ContactPage() {
           <QuoteRequestForm />
         </div>
       </section>
+      <section className="bg-mist py-14 sm:py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+          <div className="mb-6 max-w-3xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
+              Google Map
+            </p>
+            <h2 className="text-3xl font-semibold leading-tight text-ink sm:text-4xl">
+              Find F&amp;S Painting Services in Chatswood
+            </h2>
+            <p className="mt-4 text-base leading-7 text-ink/70">
+              Use the map for directions to the Chatswood location or contact us for painting work
+              across Sydney.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
+            <iframe
+              className="h-[22rem] w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src={businessDetails.googleMapEmbedUrl}
+              title="F&S Painting Services Google Map"
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

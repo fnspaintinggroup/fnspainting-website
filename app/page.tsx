@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from "lucide-react";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
@@ -56,6 +56,13 @@ export default async function Home() {
                 Get a Free Quote
                 <ArrowRight aria-hidden="true" size={18} />
               </Link>
+              <a
+                href={`tel:${businessDetails.phones[0].replaceAll(" ", "")}`}
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
+              >
+                <Phone aria-hidden="true" size={18} />
+                Call {businessDetails.phones[0]}
+              </a>
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center rounded-md border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
