@@ -30,7 +30,7 @@ export function Reviews({ reviews }: ReviewsProps) {
     },
     {
       label: "Call",
-      href: `tel:${businessDetails.phones[0].replaceAll(" ", "")}`,
+      href: "/contact",
       icon: Phone,
     },
   ];
