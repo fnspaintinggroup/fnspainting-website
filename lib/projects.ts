@@ -16,22 +16,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Dee Why Strata Interior Ceiling and Wall Repaint",
-    slug: "dee-why-strata-interior-ceiling-wall-repaint",
+    title: "Dee Why Strata Hallway Repaint",
+    slug: "dee-why-strata-hallway-repaint",
     location: "Dee Why, NSW",
     serviceType: "Strata Painting",
-    beforeImage: "/images/projects/dee-why-strata-before.jpg",
-    afterImage: "/images/projects/dee-why-strata-after.jpg",
-    beforeImageAlt: "Dee Why strata interior ceiling and wall area before repainting",
-    afterImageAlt: "Dee Why strata interior ceiling and wall area after fresh repainting",
+    beforeImage: "/images/projects/dee-why-strata-hallway-before.jpg",
+    afterImage: "/images/projects/dee-why-strata-hallway-after.jpg",
+    beforeImageAlt: "Dee Why strata hallway before repainting",
+    afterImageAlt: "Dee Why strata hallway after fresh wall, ceiling, and trim repainting",
     description:
-      "A Dee Why strata common area with high interior walls and ceiling sections was prepared, patched, and repainted for a cleaner, brighter shared-space finish.",
+      "A Dee Why strata hallway was prepared, patched, and repainted across walls, ceilings, trims, and common area details for a cleaner, brighter shared-space finish.",
     materials:
-      "Interior acrylic wall paint, ceiling paint, patching compound, sanding materials, masking protection, and access equipment for high interior areas.",
+      "Interior acrylic wall paint, ceiling paint, trim enamel, patching compound, sanding materials, masking protection, and access equipment for common area hallway work.",
     completionDate: "2025-01-15",
-    seoTitle: "Dee Why Strata Interior Ceiling and Wall Repaint | F&S Painting",
+    seoTitle: "Dee Why Strata Hallway Repaint | F&S Painting",
     seoDescription:
-      "Before and after Dee Why strata interior ceiling and wall repaint by F&S Painting, showing preparation, patching, and a clean common area finish.",
+      "Before and after Dee Why strata hallway repaint by F&S Painting, showing wall, ceiling, trim, and common area preparation with a clean finish.",
   },
   {
     title: "Mould-Damaged Ceiling Restoration in Sydney",

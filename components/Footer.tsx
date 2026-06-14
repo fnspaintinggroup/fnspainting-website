@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone, Search } from "lucide-react";
 import { businessDetails, formatAddress } from "@/lib/business";
 import { navItems, serviceAreas } from "@/lib/site-data";
 
@@ -28,6 +28,24 @@ const footerLogos = [
     alt: "First National",
     width: 132,
     height: 42,
+  },
+];
+
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/fns_painting/",
+    icon: Instagram,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/fnspainting",
+    icon: Facebook,
+  },
+  {
+    label: "Google",
+    href: businessDetails.googleReviewsUrl,
+    icon: Search,
   },
 ];
 
@@ -101,6 +119,28 @@ export function Footer() {
                 {item.label}
               </Link>
             ))}
+          </div>
+          <div className="mt-7">
+            <p className="mb-3 font-semibold">Social</p>
+            <div className="flex flex-wrap gap-2">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${businessDetails.name} on ${item.label}`}
+                    title={item.label}
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white/75 transition hover:border-gumleaf hover:bg-gumleaf hover:text-ink"
+                  >
+                    <Icon aria-hidden="true" size={20} />
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
         <div>
