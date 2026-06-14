@@ -32,7 +32,7 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/contact#quote-name"
             className="inline-flex items-center gap-2 rounded-md bg-clay px-4 py-2 font-semibold text-white shadow-sm transition hover:bg-clay/90"
           >
             Get a Free Quote

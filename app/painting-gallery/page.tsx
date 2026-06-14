@@ -181,7 +181,7 @@ export default function PaintingGalleryPage() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href="/contact#quote-name"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
           >
             Get a Free Quote

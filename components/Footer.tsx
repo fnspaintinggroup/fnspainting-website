@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Instagram, Mail, MapPin, Phone, Search } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
 import { businessDetails, formatAddress } from "@/lib/business";
 import { navItems, serviceAreas } from "@/lib/site-data";
 
@@ -31,7 +31,21 @@ const footerLogos = [
   },
 ];
 
-const socialLinks = [
+type SocialLink =
+  | {
+      label: string;
+      href: string;
+      icon: LucideIcon;
+      image?: never;
+    }
+  | {
+      label: string;
+      href: string;
+      image: string;
+      icon?: never;
+    };
+
+const socialLinks: SocialLink[] = [
   {
     label: "Instagram",
     href: "https://www.instagram.com/fns_painting/",
@@ -45,7 +59,7 @@ const socialLinks = [
   {
     label: "Google",
     href: businessDetails.googleReviewsUrl,
-    icon: Search,
+    image: "/images/footer/google-icon.jpg",
   },
 ];
 
@@ -97,16 +111,16 @@ export function Footer() {
               {footerLogos.map((logo) => (
                 <span
                   key={logo.src}
-                  className="flex h-11 items-center rounded bg-white px-3 shadow-sm"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={logo.width}
-                    height={logo.height}
-                    className="max-h-7 w-auto object-contain"
-                  />
-                </span>
+                className="flex h-12 w-36 items-center justify-center rounded bg-white px-3 shadow-sm"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className="max-h-8 max-w-full object-contain"
+                />
+              </span>
               ))}
             </div>
           </div>
@@ -124,8 +138,6 @@ export function Footer() {
             <p className="mb-3 font-semibold">Social</p>
             <div className="flex flex-wrap gap-2">
               {socialLinks.map((item) => {
-                const Icon = item.icon;
-
                 return (
                   <a
                     key={item.label}
@@ -136,7 +148,17 @@ export function Footer() {
                     title={item.label}
                     className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white/75 transition hover:border-gumleaf hover:bg-gumleaf hover:text-ink"
                   >
-                    <Icon aria-hidden="true" size={20} />
+                    {item.icon ? (
+                      <item.icon aria-hidden="true" size={20} />
+                    ) : (
+                      <Image
+                        src={item.image}
+                        alt=""
+                        width={22}
+                        height={22}
+                        className="h-5 w-5 rounded-full object-cover"
+                      />
+                    )}
                   </a>
                 );
               })}

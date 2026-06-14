@@ -205,7 +205,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </Link>
                 </div>
                 <Link
-                  href="/contact"
+                  href="/contact#quote-name"
                   className="mt-5 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
                 >
                   Get a Free Quote

@@ -29,9 +29,11 @@ export default async function Home() {
           alt="F&S Painting team repainting an interior hallway in Sydney"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover"
           sizes="100vw"
+          style={{ objectPosition: "calc(50% + 6cm) center" }}
         />
+        <div className="absolute inset-y-0 left-0 w-[36%] bg-ink/18 backdrop-blur-md" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/62 to-ink/18" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/72 via-transparent to-ink/25" />
         <div className="relative mx-auto grid min-h-[78vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
@@ -51,7 +53,7 @@ export default async function Home() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/contact"
+                href="/contact#quote-name"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
               >
                 Get a Free Quote
@@ -252,7 +254,7 @@ export default async function Home() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href="/contact#quote-name"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
           >
             Get a Free Quote

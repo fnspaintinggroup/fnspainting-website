@@ -69,7 +69,7 @@ export default async function ServicesPage() {
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/contact#quote-name"
               className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
             >
               Contact us today
@@ -120,7 +120,7 @@ export default async function ServicesPage() {
           })}
         </div>
         <Link
-          href="/contact"
+          href="/contact#quote-name"
           className="mt-8 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
         >
           Get a Free Quote

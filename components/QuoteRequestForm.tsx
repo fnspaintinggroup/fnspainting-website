@@ -85,12 +85,17 @@ export function QuoteRequestForm() {
   }
 
   return (
-    <form className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8" onSubmit={handleSubmit}>
+    <form
+      id="quote-form"
+      className="scroll-mt-28 rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8"
+      onSubmit={handleSubmit}
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-semibold text-ink">
           Name
           <input
-            className="rounded-md border border-ink/15 px-4 py-3 font-normal outline-none focus:border-eucalyptus"
+            id="quote-name"
+            className="scroll-mt-32 rounded-md border border-ink/15 px-4 py-3 font-normal outline-none focus:border-eucalyptus"
             onChange={(event) => setName(event.target.value)}
             placeholder="Your name"
             required

@@ -16,6 +16,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Dee Why Strata High Ceiling and Wall Repaint",
+    slug: "dee-why-strata-high-ceiling-wall-repaint",
+    location: "Dee Why, NSW",
+    serviceType: "Strata Painting",
+    beforeImage: "/images/projects/dee-why-strata-ceiling-before.jpg",
+    afterImage: "/images/projects/dee-why-strata-ceiling-after.jpg",
+    beforeImageAlt: "Dee Why strata high ceiling and wall area before repainting",
+    afterImageAlt: "Dee Why strata high ceiling and wall area after repainting",
+    description:
+      "A high Dee Why strata interior wall and ceiling area was accessed, prepared, patched, and repainted for a brighter common area finish.",
+    materials:
+      "Interior acrylic wall paint, ceiling paint, patching compound, sanding materials, masking protection, and access equipment for high common area surfaces.",
+    completionDate: "2025-01-15",
+    seoTitle: "Dee Why Strata High Ceiling and Wall Repaint | F&S Painting",
+    seoDescription:
+      "Before and after Dee Why strata high ceiling and wall repaint by F&S Painting, showing preparation, patching, and a clean common area finish.",
+  },
+  {
     title: "Dee Why Strata Hallway Repaint",
     slug: "dee-why-strata-hallway-repaint",
     location: "Dee Why, NSW",
