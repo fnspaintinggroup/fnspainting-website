@@ -13,6 +13,7 @@ export const navItems = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
+  { href: "/painting-gallery", label: "Gallery" },
   { href: "/painting-tips", label: "Painting Tips" },
   { href: "/reviews", label: "Reviews" },
   { href: "/contact", label: "Contact" },

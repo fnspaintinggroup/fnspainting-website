@@ -3,14 +3,20 @@ import { getBlogPosts, getProjectList } from "@/lib/cms";
 import { siteUrl } from "@/lib/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes: MetadataRoute.Sitemap = ["", "/services", "/projects", "/painting-tips", "/reviews", "/contact"].map(
-    (route) => ({
-      url: `${siteUrl}${route}`,
-      lastModified: new Date(),
-      changeFrequency: route === "" ? "weekly" : "monthly",
-      priority: route === "" ? 1 : 0.8,
-    }),
-  );
+  const staticRoutes: MetadataRoute.Sitemap = [
+    "",
+    "/services",
+    "/projects",
+    "/painting-gallery",
+    "/painting-tips",
+    "/reviews",
+    "/contact",
+  ].map((route) => ({
+    url: `${siteUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === "" ? "weekly" : "monthly",
+    priority: route === "" ? 1 : 0.8,
+  }));
 
   const [blogPosts, projects] = await Promise.all([getBlogPosts(), getProjectList()]);
 

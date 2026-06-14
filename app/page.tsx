@@ -6,6 +6,7 @@ import { ProjectPreview } from "@/components/ProjectPreview";
 import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
 import { businessDetails } from "@/lib/business";
+import { featuredGalleryImages } from "@/lib/gallery";
 import { services } from "@/lib/site-data";
 import { getSelectedReviews, getServices } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
@@ -138,6 +139,48 @@ export default async function Home() {
         intro="A simple view of the kinds of transformations F&S Painting can help with, from interior walls to ceiling restoration."
       >
         <ProjectPreview />
+      </Section>
+
+      <Section
+        eyebrow="Finest Finish Painting Gallery"
+        title="Explore recent painting finishes completed across Sydney"
+        intro="See finished interior, exterior, ceiling, commercial, strata, door, trim, and detail painting work by F&S Painting."
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {featuredGalleryImages.map((item) => (
+            <Link
+              key={item.title}
+              href="/painting-gallery"
+              className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 90vw"
+                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+                  {item.category}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold leading-tight text-ink">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-ink/65">{item.caption}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <Link
+          href="/painting-gallery"
+          className="mt-6 inline-flex items-center gap-2 font-semibold text-eucalyptus"
+        >
+          View Gallery
+          <ArrowRight aria-hidden="true" size={18} />
+        </Link>
       </Section>
 
       <Section
