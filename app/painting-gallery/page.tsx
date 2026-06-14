@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Images, MapPin, Paintbrush } from "lucide-react";
-import { galleryCategories, galleryImages } from "@/lib/gallery";
+import { galleryCategories, galleryCollections, galleryImages } from "@/lib/gallery";
 import { pageMetadata, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -14,6 +14,27 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function PaintingGalleryPage() {
+  const gallerySchemaImages = [
+    ...galleryImages.map((item) => ({
+      title: item.title,
+      caption: item.caption,
+      image: item.image,
+      alt: item.alt,
+      category: item.category,
+      suburb: item.suburb,
+    })),
+    ...galleryCollections.flatMap((collection) =>
+      collection.images.map((item) => ({
+        title: item.title,
+        caption: item.caption,
+        image: item.image,
+        alt: item.alt,
+        category: collection.category,
+        suburb: collection.suburb,
+      })),
+    ),
+  ];
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
@@ -21,8 +42,8 @@ export default function PaintingGalleryPage() {
     description:
       "Finished painting examples from F&S Painting across Sydney, including interior, exterior, commercial, ceiling, strata, doors, trims, and detail work.",
     url: `${siteUrl}/painting-gallery`,
-    image: galleryImages.map((item) => `${siteUrl}${item.image}`),
-    mainEntity: galleryImages.map((item) => ({
+    image: gallerySchemaImages.map((item) => `${siteUrl}${item.image}`),
+    mainEntity: gallerySchemaImages.map((item) => ({
       "@type": "ImageObject",
       name: item.title,
       caption: item.caption,
@@ -131,33 +152,53 @@ export default function PaintingGalleryPage() {
                 {categoryImages.map((item) => (
                   <article
                     key={item.title}
-                    className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
+                    className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                      <Image
-                        src={item.image}
-                        alt={item.alt}
-                        fill
-                        sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-                        className="object-cover transition duration-500 hover:scale-[1.03]"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-clay">
-                        <Paintbrush aria-hidden="true" size={15} />
-                        {item.category}
-                      </p>
-                      <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
-                        {item.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-6 text-ink/65">{item.caption}</p>
-                      {item.suburb ? (
-                        <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-ink/55">
-                          <MapPin aria-hidden="true" size={16} />
-                          {item.suburb}
+                    <Link
+                      href={
+                        item.collectionSlug
+                          ? `/painting-gallery/${item.collectionSlug}`
+                          : "/painting-gallery"
+                      }
+                      className="block h-full"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                        <Image
+                          src={item.image}
+                          alt={item.alt}
+                          fill
+                          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                          className="object-cover transition duration-500 hover:scale-[1.03]"
+                        />
+                        {item.photoCount ? (
+                          <span className="absolute right-3 top-3 rounded bg-ink/80 px-2.5 py-1 text-xs font-semibold text-white">
+                            {item.photoCount} photos
+                          </span>
+                        ) : null}
+                      </div>
+                      <div className="p-5">
+                        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+                          <Paintbrush aria-hidden="true" size={15} />
+                          {item.category}
                         </p>
-                      ) : null}
-                    </div>
+                        <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
+                          {item.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-6 text-ink/65">{item.caption}</p>
+                        {item.suburb ? (
+                          <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-ink/55">
+                            <MapPin aria-hidden="true" size={16} />
+                            {item.suburb}
+                          </p>
+                        ) : null}
+                        {item.collectionSlug ? (
+                          <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
+                            View location gallery
+                            <ArrowRight aria-hidden="true" size={16} />
+                          </p>
+                        ) : null}
+                      </div>
+                    </Link>
                   </article>
                 ))}
               </div>

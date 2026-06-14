@@ -13,6 +13,26 @@ export type GalleryImage = {
   alt: string;
   caption: string;
   suburb?: string;
+  collectionSlug?: string;
+  photoCount?: number;
+};
+
+export type GalleryCollectionImage = {
+  title: string;
+  image: string;
+  alt: string;
+  caption: string;
+};
+
+export type GalleryCollection = {
+  slug: string;
+  title: string;
+  category: GalleryCategory;
+  suburb: string;
+  summary: string;
+  coverImage: string;
+  coverAlt: string;
+  images: GalleryCollectionImage[];
 };
 
 export const galleryCategories: GalleryCategory[] = [
@@ -25,6 +45,17 @@ export const galleryCategories: GalleryCategory[] = [
 ];
 
 export const galleryImages: GalleryImage[] = [
+  {
+    title: "Parramatta Medical Centre Interior Finish",
+    category: "Commercial Painting",
+    image: "/images/projects/parramatta-medical-centre-reception.jpg",
+    alt: "Parramatta Medical Centre reception area after commercial interior painting by F&S Painting",
+    caption:
+      "A location gallery showing clean commercial finishes across reception, waiting, treatment, and office areas.",
+    suburb: "Parramatta, NSW",
+    collectionSlug: "parramatta-medical-centre",
+    photoCount: 5,
+  },
   {
     title: "Fresh Interior Stairwell Finish",
     category: "Interior Painting",
@@ -172,3 +203,53 @@ export const galleryImages: GalleryImage[] = [
 ];
 
 export const featuredGalleryImages = galleryImages.slice(0, 4);
+
+export const galleryCollections: GalleryCollection[] = [
+  {
+    slug: "parramatta-medical-centre",
+    title: "Parramatta Medical Centre Interior Painting",
+    category: "Commercial Painting",
+    suburb: "Parramatta, NSW",
+    summary:
+      "Finished commercial interior painting across the reception, waiting area, treatment rooms, consultation rooms, and office spaces at Parramatta Medical Centre.",
+    coverImage: "/images/projects/parramatta-medical-centre-reception.jpg",
+    coverAlt:
+      "Parramatta Medical Centre reception area with freshly finished commercial interior walls",
+    images: [
+      {
+        title: "Reception Area Finish",
+        image: "/images/projects/parramatta-medical-centre-reception.jpg",
+        alt: "Parramatta Medical Centre reception area after professional commercial interior painting",
+        caption: "Reception walls and customer-facing areas finished for a clean first impression.",
+      },
+      {
+        title: "Treatment Room Finish",
+        image: "/images/projects/parramatta-medical-centre-treatment-room.jpg",
+        alt: "Medical centre treatment room with freshly painted neutral walls in Parramatta",
+        caption: "Treatment room walls repainted with a practical, clean commercial finish.",
+      },
+      {
+        title: "Office Wall Finish",
+        image: "/images/projects/parramatta-medical-centre-office.jpg",
+        alt: "Parramatta medical office room after interior wall repainting",
+        caption: "Office wall finish refreshed while keeping the workspace professional and tidy.",
+      },
+      {
+        title: "Consultation Room Finish",
+        image: "/images/projects/parramatta-medical-centre-consult-room.jpg",
+        alt: "Medical consultation room after commercial repainting in Parramatta",
+        caption: "Consultation room repaint with a smooth neutral wall finish.",
+      },
+      {
+        title: "Waiting Area Finish",
+        image: "/images/projects/parramatta-medical-centre-waiting-area.jpg",
+        alt: "Parramatta Medical Centre waiting area after commercial interior painting",
+        caption: "Waiting area and shared patient space finished with a clean commercial look.",
+      },
+    ],
+  },
+];
+
+export function getGalleryCollection(slug: string) {
+  return galleryCollections.find((collection) => collection.slug === slug);
+}
