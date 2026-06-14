@@ -37,6 +37,61 @@ export default async function ServicesPage() {
           </p>
         </div>
       </section>
+      <Section
+        eyebrow="About us"
+        title="Experienced Sydney painters who treat your property with care"
+        intro="F&S Painting is a trusted painting contractor in Sydney, providing high-quality painting services for residential, strata, and commercial properties."
+        className="bg-paper"
+      >
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
+            <div className="space-y-5 text-base leading-8 text-ink/72">
+              <p>
+                With more than 20 years of industry experience, our skilled painters are committed
+                to delivering clean, detailed, and long-lasting results that improve the look and
+                value of your property.
+              </p>
+              <p>
+                We take pride in careful preparation, professional workmanship, and clear
+                communication from start to finish. We treat our customers like friends, and we
+                respect every property as if it were our own.
+              </p>
+              <p>
+                Our experienced team can recommend the right painting solution for your home,
+                apartment, office, shop, or building. From interior and exterior painting to surface
+                repairs, ceilings, trims, and full repainting projects, we can help with all your
+                painting needs.
+              </p>
+              <p>
+                Most quality finishes begin with proper surface preparation. That is why we make
+                sure every job is prepared carefully before painting, so the final result looks
+                better and lasts longer.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
+            >
+              Contact us today
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            {[
+              "Over 20 years of painting experience",
+              "Residential, strata, and commercial work",
+              "Full preparation for a quality finish",
+            ].map((item) => (
+              <div key={item} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
+                  F&amp;S Painting
+                </p>
+                <p className="mt-3 text-lg font-semibold leading-7 text-ink">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
       <Section title="What we paint">
         <div className="grid gap-5 md:grid-cols-2">
           {cmsServices.map((service) => {
