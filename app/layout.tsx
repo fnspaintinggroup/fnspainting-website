@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { BackToTopButton } from "@/components/BackToTopButton";
 import { absoluteUrl, defaultOgImage, localBusinessSchema, siteName, siteUrl, targetKeywords } from "@/lib/seo";
 import "./globals.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main>{children}</main>
         <Footer />
+        <BackToTopButton />
       </body>
     </html>
   );

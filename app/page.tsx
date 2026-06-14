@@ -134,6 +134,39 @@ export default async function Home() {
 
       <Section
         className="bg-mist"
+        eyebrow="Company Information"
+        title="Licensed and insured Sydney painters"
+        intro="F&S Painting carries the required business, workers compensation, and public liability details for professional painting work across Sydney."
+      >
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
+              Workers compensation
+            </p>
+            <p className="mt-3 text-lg font-semibold text-ink">Policy No. 236870501</p>
+          </div>
+          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
+              Public liability insurance
+            </p>
+            <p className="mt-3 text-lg font-semibold text-ink">
+              Fully insured with AAMI
+            </p>
+            <p className="mt-1 text-sm font-semibold text-ink/65">Policy No. SPD012776314</p>
+          </div>
+          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">ACN</p>
+            <p className="mt-3 text-lg font-semibold text-ink">659406265</p>
+          </div>
+          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">License</p>
+            <p className="mt-3 text-lg font-semibold text-ink">478497C</p>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        className="bg-mist"
         eyebrow="Before & After"
         title="Project previews"
         intro="A simple view of the kinds of transformations F&S Painting can help with, from interior walls to ceiling restoration."

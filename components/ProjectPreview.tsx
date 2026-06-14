@@ -5,10 +5,11 @@ import { getProjectList } from "@/lib/cms";
 
 export async function ProjectPreview() {
   const projects = await getProjectList();
+  const previewProjects = projects.slice(0, 15);
 
   return (
     <div className="grid gap-5 md:grid-cols-3">
-      {projects.map((project) => (
+      {previewProjects.map((project) => (
         <article
           key={project.title}
           className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"

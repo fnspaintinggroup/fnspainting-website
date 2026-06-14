@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, CalendarDays, MapPin, Paintbrush } from "lucide-react";
+import { ArrowLeft, ArrowRight, MapPin, Paintbrush } from "lucide-react";
 import { PortableBody } from "@/components/PortableBody";
 import { getProjectBySlug, getProjectList, toAbsoluteUrl } from "@/lib/cms";
 import { siteUrl, targetKeywords } from "@/lib/seo";
@@ -61,11 +61,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const projects = await getProjectList();
   const relatedProjects = projects.filter((item) => item.slug !== project.slug).slice(0, 2);
-  const completedDate = new Intl.DateTimeFormat("en-AU", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(project.completionDate));
 
   const schema = {
     "@context": "https://schema.org",
@@ -115,10 +110,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <Paintbrush aria-hidden="true" size={15} />
                 {project.serviceType}
               </span>
-              <span className="flex items-center gap-1.5">
-                <CalendarDays aria-hidden="true" size={15} />
-                {completedDate}
-              </span>
             </div>
             <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-tight sm:text-5xl">
               {project.title}
@@ -146,7 +137,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     </span>
                   </div>
                   <figcaption className="border-t border-ink/10 p-4 text-sm text-ink/65">
-                    {project.beforeImageAlt}
+                    {project.beforeImageAlt} - {project.location}
                   </figcaption>
                 </figure>
                 <figure>
@@ -164,7 +155,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     </span>
                   </div>
                   <figcaption className="border-t border-ink/10 p-4 text-sm text-ink/65">
-                    {project.afterImageAlt}
+                    {project.afterImageAlt} - {project.location}
                   </figcaption>
                 </figure>
               </div>
@@ -191,10 +182,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <div>
                   <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">Service type</dt>
                   <dd className="mt-2 text-ink/72">{project.serviceType}</dd>
-                </div>
-                <div>
-                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">Completion date</dt>
-                  <dd className="mt-2 text-ink/72">{completedDate}</dd>
                 </div>
                 <div className="sm:col-span-2">
                   <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">

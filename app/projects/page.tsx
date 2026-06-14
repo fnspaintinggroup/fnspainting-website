@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CalendarDays, MapPin, Paintbrush } from "lucide-react";
+import { ArrowRight, MapPin, Paintbrush } from "lucide-react";
 import { getProjectList, toAbsoluteUrl } from "@/lib/cms";
 import { pageMetadata, siteUrl } from "@/lib/seo";
 
@@ -105,14 +105,6 @@ export default async function ProjectsPage() {
                   </Link>
                 </h2>
                 <p className="mt-4 leading-7 text-ink/70">{project.description}</p>
-                <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-ink/65">
-                  <CalendarDays aria-hidden="true" size={17} />
-                  Completed{" "}
-                  {new Intl.DateTimeFormat("en-AU", {
-                    month: "long",
-                    year: "numeric",
-                  }).format(new Date(project.completionDate))}
-                </p>
                 <Link
                   href={`/projects/${project.slug}`}
                   className="mt-6 inline-flex items-center gap-2 font-semibold text-eucalyptus"
