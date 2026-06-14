@@ -107,20 +107,20 @@ export function Footer() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
               Quality products and property networks
             </p>
-            <div className="flex max-w-md flex-wrap gap-2.5">
+            <div className="grid max-w-sm grid-cols-2 gap-2.5">
               {footerLogos.map((logo) => (
                 <span
                   key={logo.src}
-                className="flex h-12 w-36 items-center justify-center rounded bg-white px-3 shadow-sm"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={logo.width}
-                  height={logo.height}
-                  className="max-h-8 max-w-full object-contain"
-                />
-              </span>
+                  className="flex h-14 w-full items-center justify-center rounded bg-white p-3 shadow-sm"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width}
+                    height={logo.height}
+                    className="h-8 w-full object-contain"
+                  />
+                </span>
               ))}
             </div>
           </div>
