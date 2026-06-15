@@ -87,19 +87,40 @@ export const projects = [
 
 export const reviews = [
   {
-    name: "Sydney homeowner",
+    name: "lendy Lin",
     rating: 5,
-    quote: "Professional from quote to cleanup. The finish was tidy and the team treated our home with care.",
+    quote:
+      "Caleb and his team did a great job for painting my whole house. His team is efficient, professional and reliable. Caleb is easy to communicate. I am very happy with his service and all the work he has done. I highly recommend F&S Painting, thank you Caleb and team.",
   },
   {
-    name: "Strata committee member",
+    name: "anne nicholson",
     rating: 5,
-    quote: "Clear communication, neat work, and good planning around residents and common areas.",
+    quote:
+      "This is the second time we have used F&S Painting Services in the past 2 years. First time was for the unit in which we live and second time, just recently, was for a little investment unit. We couldn't be happier with the results. Caleb was a pleasure to deal with. the painting was exceptional with absolutely no mess. He was prompt and efficient and we have absolutely no hesitation in recommending him. Thanks Caleb for the great job!",
   },
   {
-    name: "Local business owner",
+    name: "Joanna Santos",
     rating: 5,
-    quote: "Our office repaint was completed with minimal disruption and a very clean result.",
+    quote:
+      "Caleb was an absolute professional. He's work is of very high quality and I highly recommend his service. Will definitely use services again.",
+  },
+  {
+    name: "Kenneth Tse",
+    rating: 5,
+    quote:
+      "I had Caleb and his team come paint my 2 story brick home over several weeks. They painted both inside and outside and did a fantastic job. They were very thorough and detailed in the job and we were very happy with the results. Would highly recommend them for any painting job. We are even getting them to come back again and paint our kitchen cabinets. Thank you Caleb and his team.",
+  },
+  {
+    name: "Won College",
+    rating: 5,
+    quote:
+      "We would like to extend a huge thank you to Caleb and his team for their exceptional service and professionalism during the entire process of painting the interior and exterior of our property. Amazing team filled with genuine people! Throughout the job, the team was always on time, providing constant updates on the process of the job and giving expert advice derived from their extensive experience in the field! Will definitely be calling them up again for any of our future painting jobs!",
+  },
+  {
+    name: "jan churcher",
+    rating: 5,
+    quote:
+      "Efficient, professional thorough service. They arrived promptly, did a great job and cleaned up very well. Excellent job",
   },
 ];
 

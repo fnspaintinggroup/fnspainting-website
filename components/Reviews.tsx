@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink, MapPinned, Phone, Star as StarBadge } from "lucide-react";
 import { businessDetails } from "@/lib/business";
 import type { CmsReview } from "@/lib/cms";
@@ -90,8 +91,14 @@ export function Reviews({ reviews }: ReviewsProps) {
                     {review.date ? new Date(review.date).toLocaleDateString("en-AU") : getReviewSourceLabel()}
                   </span>
                 </figcaption>
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-lg font-bold text-blue-600">
-                  G
+                <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white">
+                  <Image
+                    src="/images/footer/google-icon.jpg"
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="h-6 w-6 object-cover"
+                  />
                 </span>
               </div>
               <div className="mt-4 flex gap-1 text-[#fbbc04]" aria-label={`${review.rating} star review`}>
