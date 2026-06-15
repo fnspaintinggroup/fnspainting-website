@@ -140,6 +140,17 @@ export const galleryImages: GalleryImage[] = [
     suburb: "Sydney, NSW",
   },
   {
+    title: "Silverwater Commercial Painting",
+    category: "Commercial Painting",
+    image: "/images/projects/silverwater-commercial-entry-finish.jpg",
+    alt: "Silverwater commercial exterior painting finish with F&S Painting service van",
+    caption:
+      "A location gallery showing commercial exterior painting finishes across warehouse cladding, brickwork, entry, roller door, and awning areas.",
+    suburb: "Silverwater, NSW",
+    collectionSlug: "silverwater-commercial-painting",
+    photoCount: 6,
+  },
+  {
     title: "Commercial Salon Interior",
     category: "Commercial Painting",
     image: "/images/projects/commercial-salon-interior-after.jpg",
@@ -216,6 +227,55 @@ export const galleryImages: GalleryImage[] = [
 export const featuredGalleryImages = galleryImages.slice(0, 4);
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    slug: "silverwater-commercial-painting",
+    title: "Commercial Painting Silverwater",
+    category: "Commercial Painting",
+    suburb: "Silverwater, NSW",
+    summary:
+      "Finished commercial exterior painting across warehouse metal cladding, brickwork, roller doors, awning areas, entry details, and street-facing elevations in Silverwater.",
+    coverImage: "/images/projects/silverwater-commercial-entry-finish.jpg",
+    coverAlt:
+      "Silverwater commercial exterior painting finish with updated entry, awning, and facade colours",
+    images: [
+      {
+        title: "Commercial Entry Finish",
+        image: "/images/projects/silverwater-commercial-entry-finish.jpg",
+        alt: "Silverwater commercial entry after exterior painting with F&S Painting van",
+        caption: "Entry, planter edges, awning, and adjacent exterior surfaces finished cleanly.",
+      },
+      {
+        title: "Street Facade Finish",
+        image: "/images/projects/silverwater-commercial-street-facade.jpg",
+        alt: "Silverwater commercial warehouse street facade after exterior repainting",
+        caption: "Street-facing cladding and masonry refreshed with a strong commercial colour scheme.",
+      },
+      {
+        title: "Roller Door Finish",
+        image: "/images/projects/silverwater-commercial-roller-door-finish.jpg",
+        alt: "Silverwater commercial roller door and facade after painting",
+        caption: "Roller door, surrounding cladding, and masonry finished in a consistent exterior coating.",
+      },
+      {
+        title: "Under Awning Finish",
+        image: "/images/projects/silverwater-commercial-under-awning.jpg",
+        alt: "Silverwater commercial under awning and brick wall after repainting",
+        caption: "Under-awning areas and brickwork repainted for a cleaner visitor-facing finish.",
+      },
+      {
+        title: "Side Wall Detail",
+        image: "/images/projects/silverwater-commercial-side-detail.jpg",
+        alt: "Silverwater commercial side wall detail after exterior painting",
+        caption: "Side wall detail showing the transition between painted cladding and brickwork.",
+      },
+      {
+        title: "Rear Facade Finish",
+        image: "/images/projects/silverwater-commercial-rear-facade.jpg",
+        alt: "Silverwater commercial rear facade after yellow exterior painting",
+        caption: "Rear facade and roller door surrounds repainted with a clean, durable exterior finish.",
+      },
+    ],
+  },
   {
     slug: "balgowlah-heights-interior",
     title: "Balgowlah Heights Interior Painting",

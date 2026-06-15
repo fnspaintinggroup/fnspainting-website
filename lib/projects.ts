@@ -16,6 +16,42 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Silverwater Commercial Exterior Facade Repaint",
+    slug: "silverwater-commercial-exterior-facade-repaint",
+    location: "Silverwater, NSW",
+    serviceType: "Commercial Painting",
+    beforeImage: "/images/projects/silverwater-commercial-facade-before.jpg",
+    afterImage: "/images/projects/silverwater-commercial-facade-after.jpg",
+    beforeImageAlt: "Silverwater commercial warehouse facade before exterior repainting",
+    afterImageAlt: "Silverwater commercial warehouse facade after yellow exterior repainting",
+    description:
+      "A Silverwater commercial warehouse exterior was prepared and repainted to refresh the facade, roller door, metal cladding, and brickwork presentation.",
+    materials:
+      "Commercial exterior acrylic coating system, metal cladding preparation materials, masonry coating, masking protection, access equipment, and exterior surface preparation products.",
+    completionDate: "2022-04-14",
+    seoTitle: "Commercial Painting Silverwater | Exterior Facade Repaint",
+    seoDescription:
+      "Before and after commercial painting in Silverwater by F&S Painting, showing a warehouse exterior facade and roller door repaint.",
+  },
+  {
+    title: "Silverwater Commercial Side Wall Repaint",
+    slug: "silverwater-commercial-side-wall-repaint",
+    location: "Silverwater, NSW",
+    serviceType: "Commercial Painting",
+    beforeImage: "/images/projects/silverwater-commercial-side-before.jpg",
+    afterImage: "/images/projects/silverwater-commercial-side-after.jpg",
+    beforeImageAlt: "Silverwater commercial side wall before exterior repainting",
+    afterImageAlt: "Silverwater commercial side wall after bright exterior repainting",
+    description:
+      "The side elevation of a Silverwater commercial building was prepared and repainted for a brighter, cleaner, and more visible exterior finish.",
+    materials:
+      "Commercial exterior paint, metal cladding preparation, masonry preparation, primers where required, masking protection, and access equipment.",
+    completionDate: "2022-04-14",
+    seoTitle: "Silverwater Commercial Side Wall Repaint | F&S Painting",
+    seoDescription:
+      "Before and after Silverwater commercial side wall repaint by F&S Painting, showing exterior cladding and masonry preparation with a fresh finish.",
+  },
+  {
     title: "Dee Why Strata High Ceiling and Wall Repaint",
     slug: "dee-why-strata-high-ceiling-wall-repaint",
     location: "Dee Why, NSW",
