@@ -84,6 +84,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 6,
   },
   {
+    title: "Carlingford Exterior House Painting",
+    category: "Exterior Painting",
+    image: "/images/projects/carlingford-front-driveway-finish.jpg",
+    alt: "Carlingford house exterior after professional repainting by F&S Painting",
+    caption:
+      "A location gallery showing exterior painting finishes across the facade, trims, entry, side walls, patio, and driveway areas.",
+    suburb: "Carlingford, NSW",
+    collectionSlug: "carlingford-exterior-house-painting",
+    photoCount: 11,
+  },
+  {
     title: "Exterior House Front Refresh",
     category: "Exterior Painting",
     image: "/images/projects/exterior-house-main-after.jpg",
@@ -288,6 +299,85 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/silverwater-commercial-rear-facade.jpg",
         alt: "Silverwater commercial rear facade after yellow exterior painting",
         caption: "Rear facade and roller door surrounds repainted with a clean, durable exterior finish.",
+      },
+    ],
+  },
+  {
+    slug: "carlingford-exterior-house-painting",
+    title: "Carlingford Exterior House Painting",
+    category: "Exterior Painting",
+    suburb: "Carlingford, NSW",
+    summary:
+      "Finished exterior house painting across the Carlingford facade, Tudor-style trim, garage area, entry corners, patio walls, side walls, gutters, and exterior details.",
+    coverImage: "/images/projects/carlingford-front-driveway-finish.jpg",
+    coverAlt:
+      "Carlingford house exterior with freshly painted white walls, black trim, and garage facade",
+    images: [
+      {
+        title: "Front Facade Finish",
+        image: "/images/projects/carlingford-front-driveway-finish.jpg",
+        alt: "Carlingford front house facade after exterior repainting",
+        caption: "Front facade, garage area, and Tudor-style trim finished in a clean exterior colour scheme.",
+      },
+      {
+        title: "Driveway and Trim Finish",
+        image: "/images/projects/carlingford-front-van-finish.jpg",
+        alt: "Carlingford driveway and front facade after exterior painting with F&S Painting van",
+        caption: "Driveway-facing walls and trims refreshed with crisp black and white detailing.",
+      },
+      {
+        title: "Entry Corner Finish",
+        image: "/images/projects/carlingford-entry-corner-finish.jpg",
+        alt: "Carlingford entry corner after repainting with black doors and white exterior walls",
+        caption: "Entry doors, gutters, trims, and surrounding masonry finished for a tidy exterior detail.",
+      },
+      {
+        title: "Rear Patio Finish",
+        image: "/images/projects/carlingford-rear-patio-finish.jpg",
+        alt: "Carlingford rear patio exterior wall after repainting",
+        caption: "Rear patio walls, eaves, and black trim repainted for a consistent outdoor finish.",
+      },
+      {
+        title: "Brick Patio Finish",
+        image: "/images/projects/carlingford-brick-patio-finish.jpg",
+        alt: "Carlingford enclosed patio brick wall after grey exterior painting",
+        caption: "Brick patio walls coated in a durable grey finish with clean trim lines.",
+      },
+      {
+        title: "Side Wall Finish",
+        image: "/images/projects/carlingford-side-wall-finish.jpg",
+        alt: "Carlingford side wall after exterior repainting beside utility area",
+        caption: "Side wall and eaves repainted for a clean, even finish around service areas.",
+      },
+      {
+        title: "Side Gate Finish",
+        image: "/images/projects/carlingford-side-gate-finish.jpg",
+        alt: "Carlingford side passage after exterior repainting with black gate and white downpipes",
+        caption: "Side passage details finished with sharp black trim and clean white downpipes.",
+      },
+      {
+        title: "Wide Front Finish",
+        image: "/images/projects/carlingford-front-wide-finish.jpg",
+        alt: "Carlingford wide front facade after exterior house repainting",
+        caption: "Wide front view showing the refreshed masonry, roofline trim, and facade presentation.",
+      },
+      {
+        title: "Side Lawn Finish",
+        image: "/images/projects/carlingford-side-lawn-finish.jpg",
+        alt: "Carlingford side lawn elevation after exterior repainting",
+        caption: "Side elevation finished with a fresh exterior coating and tidy trim contrast.",
+      },
+      {
+        title: "Driveway Van Finish",
+        image: "/images/projects/carlingford-driveway-van-finish.jpg",
+        alt: "Carlingford driveway facade after repainting with F&S Painting van",
+        caption: "Finished driveway facade with bright walls, black trim, and clean entry presentation.",
+      },
+      {
+        title: "Front Work Progress",
+        image: "/images/projects/carlingford-work-progress-front.jpg",
+        alt: "Carlingford exterior repainting in progress with painters preparing front facade",
+        caption: "Front facade work in progress during preparation and exterior repainting.",
       },
     ],
   },

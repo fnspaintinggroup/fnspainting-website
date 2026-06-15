@@ -16,6 +16,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Carlingford Exterior House Repaint",
+    slug: "carlingford-exterior-house-repaint",
+    location: "Carlingford, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/carlingford-exterior-before.jpg",
+    afterImage: "/images/projects/carlingford-exterior-after.jpg",
+    beforeImageAlt: "Carlingford house exterior before repainting with brick facade and dark trim",
+    afterImageAlt: "Carlingford house exterior after repainting with fresh white walls and black trim",
+    description:
+      "A Carlingford home exterior was prepared and repainted to refresh the brickwork, render, trims, eaves, gutters, and Tudor-style facade details.",
+    materials:
+      "Exterior acrylic paint system, masonry preparation materials, exterior trim coating, primers where required, sealant, sanding materials, masking protection, and detailed exterior surface preparation.",
+    completionDate: "2024-04-15",
+    seoTitle: "Exterior House Painting Carlingford | F&S Painting",
+    seoDescription:
+      "Before and after exterior house painting in Carlingford by F&S Painting, showing a brick home refreshed with white walls and black trim.",
+  },
+  {
     title: "Silverwater Commercial Exterior Facade Repaint",
     slug: "silverwater-commercial-exterior-facade-repaint",
     location: "Silverwater, NSW",
