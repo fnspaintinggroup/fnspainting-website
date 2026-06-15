@@ -81,6 +81,17 @@ export const galleryImages: GalleryImage[] = [
     suburb: "Sydney, NSW",
   },
   {
+    title: "Balgowlah Heights Interior Finish",
+    category: "Interior Painting",
+    image: "/images/projects/balgowlah-heights-hallway-stairs.jpg",
+    alt: "Balgowlah Heights home hallway and stair area after interior painting by F&S Painting",
+    caption:
+      "A location gallery showing bright interior wall, stairwell, living room, and upper-level finishes.",
+    suburb: "Balgowlah Heights, NSW",
+    collectionSlug: "balgowlah-heights-interior",
+    photoCount: 6,
+  },
+  {
     title: "Exterior House Front Refresh",
     category: "Exterior Painting",
     image: "/images/projects/exterior-house-main-after.jpg",
@@ -205,6 +216,55 @@ export const galleryImages: GalleryImage[] = [
 export const featuredGalleryImages = galleryImages.slice(0, 4);
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    slug: "balgowlah-heights-interior",
+    title: "Balgowlah Heights Interior Painting",
+    category: "Interior Painting",
+    suburb: "Balgowlah Heights, NSW",
+    summary:
+      "Finished residential interior painting across the hallway, living area, stairwell, upper landing, and feature rooms in a Balgowlah Heights home.",
+    coverImage: "/images/projects/balgowlah-heights-hallway-stairs.jpg",
+    coverAlt:
+      "Balgowlah Heights hallway and stairs with freshly finished white interior walls",
+    images: [
+      {
+        title: "Hallway and Stair Finish",
+        image: "/images/projects/balgowlah-heights-hallway-stairs.jpg",
+        alt: "Balgowlah Heights hallway and stair area after fresh interior painting",
+        caption: "Hallway and stair walls finished cleanly around timber floors and stair details.",
+      },
+      {
+        title: "Living Room Finish",
+        image: "/images/projects/balgowlah-heights-living-room.jpg",
+        alt: "Balgowlah Heights living room after interior repainting with balcony doors",
+        caption: "Living area repainted for a bright, open finish with clean wall and ceiling lines.",
+      },
+      {
+        title: "Upper Stairwell Finish",
+        image: "/images/projects/balgowlah-heights-upper-stairwell.jpg",
+        alt: "Upper stairwell and landing after interior painting in Balgowlah Heights",
+        caption: "Tall stairwell and upper landing areas finished with a consistent white coating.",
+      },
+      {
+        title: "Stair Void Wall Finish",
+        image: "/images/projects/balgowlah-heights-stair-void.jpg",
+        alt: "Balgowlah Heights stair void wall and railing area after interior repainting",
+        caption: "Stair void walls repainted carefully around timber stairs and stainless railing.",
+      },
+      {
+        title: "Upper Room Finish",
+        image: "/images/projects/balgowlah-heights-view-room.jpg",
+        alt: "Upper room in Balgowlah Heights home after interior painting with harbour view",
+        caption: "Upper-level room finished with clean walls beside large windows and built-in storage.",
+      },
+      {
+        title: "Stair Detail Finish",
+        image: "/images/projects/balgowlah-heights-stair-detail.jpg",
+        alt: "Balgowlah Heights stair detail after repainting beside timber stairs",
+        caption: "Detailed stair wall finish with crisp lines beside timber steps and metal balustrade.",
+      },
+    ],
+  },
   {
     slug: "parramatta-medical-centre",
     title: "Parramatta Medical Centre Interior Painting",

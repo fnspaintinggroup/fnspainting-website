@@ -61,7 +61,7 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
       caption: item.caption,
       contentUrl: `${siteUrl}${item.image}`,
       description: item.alt,
-      keywords: [collection.category, collection.suburb, "commercial painting Sydney"],
+      keywords: [collection.category, collection.suburb, "painting gallery Sydney"],
     })),
   };
 
@@ -124,7 +124,7 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
                 Finished photos
               </p>
               <h2 className="text-3xl font-semibold leading-tight text-ink">
-                {collection.suburb} commercial painting finishes
+                {collection.suburb} painting finishes
               </h2>
             </div>
             <p className="text-sm font-semibold text-ink/55">
@@ -165,14 +165,14 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 md:grid-cols-[1fr_auto] md:items-center lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-              Need a commercial repaint?
+              Like this finish?
             </p>
             <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
               Request a free Sydney painting quote
             </h2>
             <p className="mt-4 max-w-2xl text-white/80">
-              Share your medical centre, office, retail, strata, or commercial painting details and
-              we will help plan the right finish.
+              Share your home, strata, office, retail, or commercial painting details and we will
+              help plan the right finish.
             </p>
           </div>
           <Link
