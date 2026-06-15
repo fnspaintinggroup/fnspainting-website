@@ -167,36 +167,15 @@ export const galleryImages: GalleryImage[] = [
     suburb: "Sydney, NSW",
   },
   {
-    title: "Common Area Style Finish",
-    category: "Strata / Common Areas",
-    image: "/images/projects/interior-stair-after.jpg",
-    alt: "Repainted stairwell style common area finish suitable for Sydney strata painting",
-    caption: "A clean stairwell-style finish suited to strata and shared spaces.",
-    suburb: "Sydney, NSW",
-  },
-  {
-    title: "Dee Why Lift Lobby Repaint",
+    title: "Dee Why Strata Common Area Repaint",
     category: "Strata / Common Areas",
     image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
-    alt: "Dee Why strata lift lobby during repainting with protected floors and fresh wall finish",
-    caption: "Lift lobby walls and common area surfaces protected, prepared, and repainted.",
+    alt: "Dee Why strata common area and lift lobby during repainting by F&S Painting",
+    caption:
+      "A location gallery showing Dee Why strata lift lobby, corridor, common area, wall, ceiling, and trim finishes.",
     suburb: "Dee Why, NSW",
-  },
-  {
-    title: "Dee Why Common Area Finish",
-    category: "Strata / Common Areas",
-    image: "/images/projects/dee-why-strata-lift-lobby-work-2.jpg",
-    alt: "Dee Why strata common area repaint near lift doors",
-    caption: "Shared corridor and lift area repainted with a clean, consistent finish.",
-    suburb: "Dee Why, NSW",
-  },
-  {
-    title: "Dee Why Strata Corridor Detail",
-    category: "Strata / Common Areas",
-    image: "/images/projects/dee-why-strata-corridor-finish.jpg",
-    alt: "Dee Why strata corridor after repainting with clean walls, trims, and ceiling",
-    caption: "Finished corridor detail showing fresh walls, trims, ceiling, and shared-space presentation.",
-    suburb: "Dee Why, NSW",
+    collectionSlug: "dee-why-strata-common-areas",
+    photoCount: 5,
   },
   {
     title: "Fire Exit Door Detail",
@@ -227,6 +206,50 @@ export const galleryImages: GalleryImage[] = [
 export const featuredGalleryImages = galleryImages.slice(0, 4);
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    slug: "dee-why-strata-common-areas",
+    title: "Dee Why Strata Common Area Painting",
+    category: "Strata / Common Areas",
+    suburb: "Dee Why, NSW",
+    summary:
+      "Finished strata common area painting across Dee Why lift lobbies, corridors, high wall and ceiling areas, trims, and shared-space details.",
+    coverImage: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
+    coverAlt:
+      "Dee Why strata lift lobby and common area during repainting with protected floors",
+    images: [
+      {
+        title: "Lift Lobby Repaint",
+        image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
+        alt: "Dee Why strata lift lobby during repainting with protected floors and fresh wall finish",
+        caption: "Lift lobby walls and common area surfaces protected, prepared, and repainted.",
+      },
+      {
+        title: "Common Area Finish",
+        image: "/images/projects/dee-why-strata-lift-lobby-work-2.jpg",
+        alt: "Dee Why strata common area repaint near lift doors",
+        caption: "Shared corridor and lift area repainted with a clean, consistent finish.",
+      },
+      {
+        title: "Corridor Detail Finish",
+        image: "/images/projects/dee-why-strata-corridor-finish.jpg",
+        alt: "Dee Why strata corridor after repainting with clean walls, trims, and ceiling",
+        caption:
+          "Finished corridor detail showing fresh walls, trims, ceiling, and shared-space presentation.",
+      },
+      {
+        title: "High Ceiling and Wall Finish",
+        image: "/images/projects/dee-why-strata-ceiling-after.jpg",
+        alt: "Dee Why strata high ceiling and wall area after repainting",
+        caption: "High wall and ceiling surfaces finished for a brighter shared-space result.",
+      },
+      {
+        title: "Hallway Finish",
+        image: "/images/projects/dee-why-strata-hallway-after.jpg",
+        alt: "Dee Why strata hallway after fresh wall, ceiling, and trim repainting",
+        caption: "Hallway walls, ceilings, and trims repainted for a clean common area finish.",
+      },
+    ],
+  },
   {
     slug: "silverwater-commercial-painting",
     title: "Commercial Painting Silverwater",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Instagram, Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { businessDetails, formatAddress } from "@/lib/business";
 import { navItems, serviceAreas } from "@/lib/site-data";
 
@@ -32,29 +32,22 @@ const footerLogos = [
 ];
 
 type SocialLink =
-  | {
-      label: string;
-      href: string;
-      icon: LucideIcon;
-      image?: never;
-    }
-  | {
-      label: string;
-      href: string;
-      image: string;
-      icon?: never;
-    };
+  {
+    label: string;
+    href: string;
+    image: string;
+  };
 
 const socialLinks: SocialLink[] = [
   {
     label: "Instagram",
     href: "https://www.instagram.com/fns_painting/",
-    icon: Instagram,
+    image: "/images/footer/instagram-icon.png",
   },
   {
     label: "Facebook",
     href: "https://www.facebook.com/fnspainting",
-    icon: Facebook,
+    image: "/images/footer/facebook-icon.png",
   },
   {
     label: "Google",
@@ -148,17 +141,13 @@ export function Footer() {
                     title={item.label}
                     className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white/75 transition hover:border-gumleaf hover:bg-gumleaf hover:text-ink"
                   >
-                    {item.icon ? (
-                      <item.icon aria-hidden="true" size={20} />
-                    ) : (
-                      <Image
-                        src={item.image}
-                        alt=""
-                        width={22}
-                        height={22}
-                        className="h-5 w-5 rounded-full object-cover"
-                      />
-                    )}
+                    <Image
+                      src={item.image}
+                      alt=""
+                      width={24}
+                      height={24}
+                      className="h-6 w-6 rounded-full object-cover"
+                    />
                   </a>
                 );
               })}
