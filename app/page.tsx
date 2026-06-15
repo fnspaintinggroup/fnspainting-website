@@ -19,7 +19,18 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function Home() {
-  const [cmsReviews, cmsServices] = await Promise.all([getSelectedReviews(), getServices()]);
+  const [selectedReviews, cmsServices] = await Promise.all([getSelectedReviews(6), getServices()]);
+  const janChurcherReview = selectedReviews.find((review) =>
+    review.customerName.toLowerCase().includes("jan churcher"),
+  );
+  const cmsReviews = janChurcherReview
+    ? [
+        ...selectedReviews
+          .filter((review) => review.customerName !== janChurcherReview.customerName)
+          .slice(0, 3),
+        janChurcherReview,
+      ]
+    : selectedReviews.slice(0, 4);
 
   return (
     <>

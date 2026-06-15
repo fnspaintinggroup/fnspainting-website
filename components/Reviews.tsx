@@ -78,11 +78,11 @@ export function Reviews({ reviews }: ReviewsProps) {
           </div>
         </aside>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           {reviews.map((review) => (
             <figure
               key={`${review.customerName}-${review.date ?? review.source ?? "review"}`}
-              className="rounded-md bg-[#f3f3f3] p-6 shadow-sm"
+              className="flex h-full flex-col rounded-md bg-[#f3f3f3] p-5 shadow-sm"
             >
               <div className="flex items-start justify-between gap-4">
                 <figcaption className="text-base font-semibold text-ink">
@@ -93,11 +93,11 @@ export function Reviews({ reviews }: ReviewsProps) {
                 </figcaption>
                 <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white">
                   <Image
-                    src="/images/footer/google-icon.jpg"
+                    src="/images/footer/google-icon.svg"
                     alt=""
                     width={24}
                     height={24}
-                    className="h-6 w-6 object-cover"
+                    className="h-6 w-6 object-contain"
                   />
                 </span>
               </div>
@@ -112,7 +112,7 @@ export function Reviews({ reviews }: ReviewsProps) {
                   />
                 ))}
               </div>
-              <blockquote className="mt-4 text-base leading-7 text-ink/80">
+              <blockquote className="mt-4 flex-1 text-sm leading-6 text-ink/80">
                 &ldquo;{review.reviewText}&rdquo;
               </blockquote>
               <Link
