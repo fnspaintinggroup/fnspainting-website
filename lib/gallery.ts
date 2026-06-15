@@ -57,14 +57,6 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 5,
   },
   {
-    title: "Fresh Interior Stairwell Finish",
-    category: "Interior Painting",
-    image: "/images/projects/interior-stair-after.jpg",
-    alt: "Freshly repainted interior stairwell walls in a Sydney home by F&S Painting",
-    caption: "Clean neutral stairwell repaint with sharp wall and trim presentation.",
-    suburb: "Sydney, NSW",
-  },
-  {
     title: "Interior Feature Wall and Ceiling",
     category: "Interior Painting",
     image: "/images/projects/interior-feature-wall-after.jpg",
@@ -345,6 +337,12 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/balgowlah-heights-stair-detail.jpg",
         alt: "Balgowlah Heights stair detail after repainting beside timber stairs",
         caption: "Detailed stair wall finish with crisp lines beside timber steps and metal balustrade.",
+      },
+      {
+        title: "Interior Stairwell Finish",
+        image: "/images/projects/interior-stair-after.jpg",
+        alt: "Freshly repainted interior stairwell walls by F&S Painting",
+        caption: "Clean neutral stairwell repaint with sharp wall and trim presentation.",
       },
     ],
   },

@@ -5,7 +5,7 @@ import { getProjectList } from "@/lib/cms";
 
 export async function ProjectPreview() {
   const projects = await getProjectList();
-  const previewProjects = projects.slice(0, 15);
+  const previewProjects = projects.filter((_, index) => index !== 1).slice(0, 15);
 
   return (
     <div className="grid gap-5 md:grid-cols-3">

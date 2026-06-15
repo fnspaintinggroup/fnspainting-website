@@ -42,17 +42,17 @@ const socialLinks: SocialLink[] = [
   {
     label: "Instagram",
     href: "https://www.instagram.com/fns_painting/",
-    image: "/images/footer/instagram-icon.png",
+    image: "/images/footer/instagram-icon.svg",
   },
   {
     label: "Facebook",
     href: "https://www.facebook.com/fnspainting",
-    image: "/images/footer/facebook-icon.png",
+    image: "/images/footer/facebook-icon.svg",
   },
   {
     label: "Google",
     href: businessDetails.googleReviewsUrl,
-    image: "/images/footer/google-icon.jpg",
+    image: "/images/footer/google-icon.svg",
   },
 ];
 
@@ -146,7 +146,7 @@ export function Footer() {
                       alt=""
                       width={24}
                       height={24}
-                      className="h-6 w-6 rounded-full object-cover"
+                      className="h-6 w-6 object-contain"
                     />
                   </a>
                 );
