@@ -156,6 +156,22 @@ Recommended setup:
 6. Add the environment variables from `.env.example` in **Project Settings > Environment Variables**.
 7. Deploy.
 
+Minimum Vercel variables for a normal production launch:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://www.fnspainting.com.au
+```
+
+If you want the quote form to send emails directly from the website, also add:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+QUOTE_FROM_EMAIL=F&S Painting Website <quotes@fnspainting.com.au>
+QUOTE_TO_EMAIL=fnspaintinggroup@gmail.com
+```
+
+`QUOTE_FROM_EMAIL` must be a verified sender in Resend. If it is missing, the site still deploys, but the quote form will show a setup message instead of pretending to send.
+
 Vercel build settings:
 
 ```text
@@ -184,6 +200,8 @@ vercel deploy --prod
 ```
 
 Do not add server-side secrets with `NEXT_PUBLIC_`. Only variables that are safe for the browser should use that prefix.
+
+This repo also includes a [`.vercelignore`](./.vercelignore) file so local cache folders and local env files are not uploaded in direct CLI deployments.
 
 ## Custom Domain on Vercel
 

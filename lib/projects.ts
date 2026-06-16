@@ -226,6 +226,23 @@ export const projects: Project[] = [
       "Before and after office room interior painting refresh in Chatswood by F&S Painting, including preparation and commercial repainting.",
   },
   {
+    title: "Blakehurst Interior House Painting",
+    slug: "blakehurst-interior-house-painting",
+    location: "Blakehurst, NSW",
+    serviceType: "Interior Painting",
+    beforeImage: "/images/projects/blakehurst-kitchen-before.jpg",
+    afterImage: "/images/projects/blakehurst-kitchen-after.jpg",
+    beforeImageAlt: "Blakehurst kitchen and dining area during preparation before interior repainting",
+    afterImageAlt: "Blakehurst kitchen and dining area after fresh interior repainting",
+    description:
+      "This Blakehurst interior repaint refreshed the kitchen and adjoining living spaces with clean wall and ceiling finishes, while protecting cabinetry, lighting, and surrounding surfaces during preparation.",
+    materials: "Interior low-sheen wall paint, ceiling paint, primer where needed, patching compound, sanding materials, masking, and drop-sheet protection.",
+    completionDate: "2024-05-12",
+    seoTitle: "Blakehurst Interior House Painting | F&S Painting",
+    seoDescription:
+      "Before and after interior house painting project in Blakehurst by F&S Painting, including kitchen, dining, stairwell, and living area finishes.",
+  },
+  {
     title: "Exterior House Painting Refresh",
     slug: "exterior-house-painting-refresh",
     location: "Earlwood, NSW",

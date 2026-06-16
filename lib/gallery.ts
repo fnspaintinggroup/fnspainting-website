@@ -57,20 +57,15 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 5,
   },
   {
-    title: "Interior Feature Wall and Ceiling",
-    category: "Interior Painting",
-    image: "/images/projects/interior-feature-wall-after.jpg",
-    alt: "Interior feature wall and ceiling after professional repainting in Sydney",
-    caption: "Detailed interior repaint with a darker ceiling finish and tidy edges.",
-    suburb: "Sydney, NSW",
-  },
-  {
-    title: "Garage Wall Repaint",
-    category: "Interior Painting",
-    image: "/images/projects/interior-garage-after.jpg",
-    alt: "Freshly repainted garage interior walls after preparation in Sydney",
-    caption: "Prepared and repainted garage walls for a brighter, cleaner finish.",
-    suburb: "Sydney, NSW",
+    title: "Marrickville Salon Interior Painting",
+    category: "Commercial Painting",
+    image: "/images/projects/marrickville-salon-feature-wall-finish.jpg",
+    alt: "Marrickville salon feature wall and ceiling after commercial interior painting",
+    caption:
+      "A location gallery showing feature wall, ceiling, wash station, reception, counter, and shopfront painting for a Marrickville salon.",
+    suburb: "Marrickville, NSW",
+    collectionSlug: "marrickville-salon-interior-painting",
+    photoCount: 5,
   },
   {
     title: "Balgowlah Heights Interior Finish",
@@ -78,10 +73,10 @@ export const galleryImages: GalleryImage[] = [
     image: "/images/projects/balgowlah-heights-hallway-stairs.jpg",
     alt: "Balgowlah Heights home hallway and stair area after interior painting by F&S Painting",
     caption:
-      "A location gallery showing bright interior wall, stairwell, living room, and upper-level finishes.",
+      "A location gallery showing bright interior wall, stairwell, living room, upper-level, and garage wall finishes.",
     suburb: "Balgowlah Heights, NSW",
     collectionSlug: "balgowlah-heights-interior",
-    photoCount: 6,
+    photoCount: 8,
   },
   {
     title: "North Bridge Interior Painting",
@@ -117,9 +112,12 @@ export const galleryImages: GalleryImage[] = [
     title: "Exterior Facade and Trim",
     category: "Exterior Painting",
     image: "/images/projects/exterior-facade-after.jpg",
-    alt: "House facade and trim after exterior repainting in Sydney",
-    caption: "Fresh facade and trim repaint with a crisp, well-prepared finish.",
-    suburb: "Sydney, NSW",
+    alt: "North Willoughby house facade and trim after exterior repainting by F&S Painting",
+    caption:
+      "North Willoughby exterior facade, trim, porch, windows, verandah, and side wall finishes.",
+    suburb: "North Willoughby, NSW",
+    collectionSlug: "north-willoughby-exterior-facade-trim",
+    photoCount: 8,
   },
   {
     title: "Balcony Deck and Lattice",
@@ -146,12 +144,25 @@ export const galleryImages: GalleryImage[] = [
     suburb: "Sydney, NSW",
   },
   {
-    title: "Commercial Reception Finish",
+    title: "Chatswood Commercial Reception Finish",
     category: "Commercial Painting",
     image: "/images/projects/commercial-reception-after.jpg",
-    alt: "Commercial office reception area after fresh interior repainting",
-    caption: "Professional reception repaint for a cleaner first impression.",
-    suburb: "Sydney, NSW",
+    alt: "Chatswood commercial office reception area after fresh interior repainting",
+    caption: "Professional reception repaint for a cleaner first impression in a Chatswood office.",
+    suburb: "Chatswood, NSW",
+    collectionSlug: "chatswood-commercial-reception-finish",
+    photoCount: 6,
+  },
+  {
+    title: "Blakehurst Interior House Painting",
+    category: "Interior Painting",
+    image: "/images/projects/blakehurst-stairwell-chandelier.jpg",
+    alt: "Blakehurst stairwell and chandelier after interior painting",
+    caption:
+      "A location gallery showing dining, stairwell, entry, and living-area interior finishes in a Blakehurst home.",
+    suburb: "Blakehurst, NSW",
+    collectionSlug: "blakehurst-interior-house-painting",
+    photoCount: 4,
   },
   {
     title: "Silverwater Commercial Painting",
@@ -217,7 +228,16 @@ export const galleryImages: GalleryImage[] = [
   },
 ];
 
-export const featuredGalleryImages = galleryImages.slice(0, 4);
+const featuredGalleryTitles = [
+  "Carlingford Exterior House Painting",
+  "North Bridge Interior Painting",
+  "Silverwater Commercial Painting",
+  "Dee Why Strata Common Area Repaint",
+];
+
+export const featuredGalleryImages = featuredGalleryTitles
+  .map((title) => galleryImages.find((item) => item.title === title))
+  .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
   {
@@ -310,6 +330,74 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/silverwater-commercial-rear-facade.jpg",
         alt: "Silverwater commercial rear facade after yellow exterior painting",
         caption: "Rear facade and roller door surrounds repainted with a clean, durable exterior finish.",
+      },
+    ],
+  },
+  {
+    slug: "north-willoughby-exterior-facade-trim",
+    title: "North Willoughby Exterior Facade and Trim",
+    category: "Exterior Painting",
+    suburb: "North Willoughby, NSW",
+    summary:
+      "Finished exterior painting across the North Willoughby facade, upper gable, entry porch, window trims, verandah, side walls, and exterior details.",
+    coverImage: "/images/projects/exterior-facade-after.jpg",
+    coverAlt:
+      "North Willoughby house facade and trim after professional exterior repainting by F&S Painting",
+    images: [
+      {
+        title: "Facade and Trim Finish",
+        image: "/images/projects/exterior-facade-after.jpg",
+        alt: "North Willoughby exterior facade and trim after repainting",
+        caption: "Finished facade and trim with a clean, consistent exterior presentation.",
+      },
+      {
+        title: "Front Entry Finish",
+        image: "/images/projects/north-willoughby-exterior-front-entry-finish.jpg",
+        alt: "North Willoughby front entry facade after exterior painting",
+        caption:
+          "Front entry facade, gable trim, and surrounding surfaces finished with crisp exterior lines.",
+      },
+      {
+        title: "Upper Gable Finish",
+        image: "/images/projects/north-willoughby-exterior-upper-gable-finish.jpg",
+        alt: "North Willoughby upper gable wall and trim after exterior painting",
+        caption:
+          "Upper gable wall, trim lines, and eaves finished cleanly with a bright exterior coating.",
+      },
+      {
+        title: "Side Wall Preparation",
+        image: "/images/projects/north-willoughby-exterior-side-wall-prep.jpg",
+        alt: "North Willoughby side wall protected and prepared during exterior painting",
+        caption:
+          "Side wall and covered outdoor area protected and prepared before the final exterior finish.",
+      },
+      {
+        title: "Street View Finish",
+        image: "/images/projects/north-willoughby-exterior-street-view-finish.jpg",
+        alt: "North Willoughby street view after exterior house painting",
+        caption:
+          "Street-facing view showing the refreshed facade, trim, and front garden presentation.",
+      },
+      {
+        title: "Window and Trim Finish",
+        image: "/images/projects/north-willoughby-exterior-window-trim-finish.jpg",
+        alt: "North Willoughby exterior windows and trim after repainting",
+        caption:
+          "Window surrounds, exterior wall surfaces, and trim finished with a tidy, even coating.",
+      },
+      {
+        title: "Front Porch Finish",
+        image: "/images/projects/north-willoughby-exterior-front-porch-finish.jpg",
+        alt: "North Willoughby front porch and entry doors after exterior painting",
+        caption:
+          "Front porch, entry doors, masonry, and trim refreshed for a polished entry detail.",
+      },
+      {
+        title: "Verandah Detail Finish",
+        image: "/images/projects/north-willoughby-exterior-verandah-finish.jpg",
+        alt: "North Willoughby verandah and side entry after exterior painting",
+        caption:
+          "Verandah walls, ceiling lines, and surrounding trim finished with clean detail work.",
       },
     ],
   },
@@ -445,6 +533,12 @@ export const galleryCollections: GalleryCollection[] = [
         alt: "Freshly repainted interior stairwell walls by F&S Painting",
         caption: "Clean neutral stairwell repaint with sharp wall and trim presentation.",
       },
+      {
+        title: "Garage Wall Repaint",
+        image: "/images/projects/interior-garage-after.jpg",
+        alt: "Freshly repainted garage interior walls after preparation in Sydney",
+        caption: "Prepared and repainted garage walls for a brighter, cleaner finish.",
+      },
     ],
   },
   {
@@ -560,6 +654,140 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/parramatta-medical-centre-waiting-area.jpg",
         alt: "Parramatta Medical Centre waiting area after commercial interior painting",
         caption: "Waiting area and shared patient space finished with a clean commercial look.",
+      },
+    ],
+  },
+  {
+    slug: "chatswood-commercial-reception-finish",
+    title: "Chatswood Commercial Reception Finish",
+    category: "Commercial Painting",
+    suburb: "Chatswood, NSW",
+    summary:
+      "Commercial interior painting across the reception counter, office corridor, hallway, storage room, and client-facing entry areas in a Chatswood office.",
+    coverImage: "/images/projects/commercial-reception-after.jpg",
+    coverAlt:
+      "Chatswood commercial office reception area after fresh interior repainting by F&S Painting",
+    images: [
+      {
+        title: "Reception Finish",
+        image: "/images/projects/commercial-reception-after.jpg",
+        alt: "Chatswood commercial office reception area after fresh interior repainting",
+        caption: "Reception area repainted for a cleaner and more professional first impression.",
+      },
+      {
+        title: "Reception Counter Detail",
+        image: "/images/projects/chatswood-commercial-reception-counter.jpg",
+        alt: "Chatswood office reception counter and work surface after interior painting",
+        caption: "Reception counter, work surface, and surrounding walls finished with a clean commercial look.",
+      },
+      {
+        title: "Office Corridor Finish",
+        image: "/images/projects/chatswood-commercial-office-corridor.jpg",
+        alt: "Chatswood office corridor and room entries after commercial interior painting",
+        caption: "Corridor walls, door frames, and room entries repainted for a brighter office finish.",
+      },
+      {
+        title: "Hallway Door Finish",
+        image: "/images/projects/chatswood-commercial-hallway-doors.jpg",
+        alt: "Chatswood office hallway with white doors and painted walls after repainting",
+        caption: "Hallway, column, doors, and wall surfaces refreshed with a neat neutral finish.",
+      },
+      {
+        title: "Storage Room Detail",
+        image: "/images/projects/chatswood-commercial-storage-room.jpg",
+        alt: "Chatswood office storage room and shelving area after painting",
+        caption: "Storage room walls, shelves, and trims repainted to keep the back-of-house area tidy.",
+      },
+      {
+        title: "Wide Reception View",
+        image: "/images/projects/chatswood-commercial-reception-wide.jpg",
+        alt: "Wide view of Chatswood office reception and glass entry after commercial painting",
+        caption: "Wide reception view showing the refreshed counter, entry glazing, and office presentation.",
+      },
+    ],
+  },
+  {
+    slug: "blakehurst-interior-house-painting",
+    title: "Blakehurst Interior House Painting",
+    category: "Interior Painting",
+    suburb: "Blakehurst, NSW",
+    summary:
+      "Interior painting finishes across the dining area, stairwell, entry, and living spaces of a Blakehurst home.",
+    coverImage: "/images/projects/blakehurst-stairwell-chandelier.jpg",
+    coverAlt:
+      "Blakehurst stairwell and chandelier after interior painting by F&S Painting",
+    images: [
+      {
+        title: "Stairwell Chandelier View",
+        image: "/images/projects/blakehurst-stairwell-chandelier.jpg",
+        alt: "Blakehurst stairwell and chandelier after interior painting",
+        caption: "Tall stairwell walls and upper landing finished cleanly around chandelier and trim details.",
+      },
+      {
+        title: "Entry Staircase Finish",
+        image: "/images/projects/blakehurst-entry-staircase.jpg",
+        alt: "Blakehurst entry staircase and skylight area after interior painting",
+        caption: "Entry staircase, skylight surround, and upper-level walls refreshed with a neat neutral finish.",
+      },
+      {
+        title: "Dining Room Finish",
+        image: "/images/projects/blakehurst-dining-room-finish.jpg",
+        alt: "Blakehurst dining room after interior repainting",
+        caption: "Dining room walls and trim repainted to brighten the main living area.",
+      },
+      {
+        title: "Living Room Finish",
+        image: "/images/projects/blakehurst-living-room-finish.jpg",
+        alt: "Blakehurst living room and high wall area after interior painting",
+        caption: "Living room walls and high feature surfaces repainted for a cleaner open-plan presentation.",
+      },
+    ],
+  },
+  {
+    slug: "marrickville-salon-interior-painting",
+    title: "Marrickville Salon Interior Painting",
+    category: "Commercial Painting",
+    suburb: "Marrickville, NSW",
+    summary:
+      "Commercial interior painting across the feature wall, ceiling, wash station, reception, counter, and shopfront areas of a Marrickville salon.",
+    coverImage: "/images/projects/marrickville-salon-feature-wall-finish.jpg",
+    coverAlt:
+      "Marrickville salon feature wall and ceiling after commercial interior painting",
+    images: [
+      {
+        title: "Feature Wall and Ceiling Finish",
+        image: "/images/projects/marrickville-salon-feature-wall-finish.jpg",
+        alt: "Marrickville salon feature wall, mirrors, and dark ceiling after repainting",
+        caption:
+          "Feature wall, ceiling, and styling station surfaces finished with a clean commercial repaint.",
+      },
+      {
+        title: "Wash Station Finish",
+        image: "/images/projects/marrickville-salon-wash-station-finish.jpg",
+        alt: "Marrickville salon wash station area after interior painting",
+        caption:
+          "Wash station wall, shelving area, and ceiling detail refreshed for a neat salon finish.",
+      },
+      {
+        title: "Reception Wall Finish",
+        image: "/images/projects/marrickville-salon-reception-finish.jpg",
+        alt: "Marrickville salon reception wall and ceiling after interior painting",
+        caption:
+          "Reception wall and ceiling repainted to brighten the front customer area.",
+      },
+      {
+        title: "Counter Detail",
+        image: "/images/projects/marrickville-salon-counter-detail.jpg",
+        alt: "Marrickville salon counter and feature wall detail after painting",
+        caption:
+          "Counter area and wall colour detail showing the finished salon palette.",
+      },
+      {
+        title: "Shopfront View",
+        image: "/images/projects/marrickville-salon-shopfront.jpg",
+        alt: "Marrickville salon shopfront and window display after painting work",
+        caption:
+          "Street-facing salon view showing the refreshed interior and customer-facing presentation.",
       },
     ],
   },

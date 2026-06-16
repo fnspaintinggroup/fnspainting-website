@@ -22,8 +22,8 @@ export const blogPosts: BlogPost[] = [
     slug: "house-painting-cost-sydney",
     date: "2026-02-18",
     category: "Painting Costs",
-    featuredImage: "/images/fs-painting-hero.png",
-    imageAlt: "Professional painter applying fresh interior paint in a Sydney home",
+    featuredImage: "/images/projects/carlingford-front-driveway-finish.jpg",
+    imageAlt: "Carlingford house exterior after professional repainting by F&S Painting",
     excerpt:
       "House painting costs in Sydney depend on property size, surface condition, access, preparation, paint type, and whether the work is interior, exterior, or both.",
     seoTitle: "How Much Does House Painting Cost in Sydney? | F&S Painting",
@@ -58,8 +58,8 @@ export const blogPosts: BlogPost[] = [
     slug: "best-paint-finish-interior-walls-sydney",
     date: "2026-03-07",
     category: "Interior Painting",
-    featuredImage: "/images/fs-painting-hero.png",
-    imageAlt: "Freshly painted interior wall with a clean low sheen finish",
+    featuredImage: "/images/projects/north-bridge-dining-feature-wall-finish.jpg",
+    imageAlt: "North Bridge dining area after professional interior painting by F&S Painting",
     excerpt:
       "The best interior paint finish depends on light, room use, cleaning needs, and how much surface texture you want to hide.",
     seoTitle: "Best Paint Finish for Interior Walls in Sydney Homes | F&S Painting",
@@ -94,8 +94,8 @@ export const blogPosts: BlogPost[] = [
     slug: "fix-mould-damaged-ceilings-before-painting",
     date: "2026-04-12",
     category: "Ceiling Restoration",
-    featuredImage: "/images/fs-painting-hero.png",
-    imageAlt: "Painter preparing a ceiling and wall area before repainting",
+    featuredImage: "/images/projects/mould-ceiling-case-2-after.jpg",
+    imageAlt: "Bathroom ceiling restored with a smooth clean repaint after moisture damage",
     excerpt:
       "Mould-damaged ceilings should not simply be painted over. Moisture, staining, surface damage, and ventilation issues need to be addressed first.",
     seoTitle: "How to Fix Mould-Damaged Ceilings Before Painting | F&S Painting",

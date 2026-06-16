@@ -40,7 +40,7 @@ export async function POST(request: Request) {
   }
 
   const apiKey = cleanApiKey(process.env.RESEND_API_KEY);
-  const fromEmail = clean(process.env.QUOTE_FROM_EMAIL) || "F&S Painting Website <onboarding@resend.dev>";
+  const fromEmail = clean(process.env.QUOTE_FROM_EMAIL);
   const toEmail = clean(process.env.QUOTE_TO_EMAIL) || businessDetails.email;
 
   if (!apiKey) {
@@ -49,6 +49,18 @@ export async function POST(request: Request) {
         message:
           "Email sending is not configured yet. Please use the email link below or contact F&S Painting directly.",
         setupHint: "Missing RESEND_API_KEY in Vercel Environment Variables.",
+      },
+      { status: 503 },
+    );
+  }
+
+  if (!fromEmail) {
+    return NextResponse.json(
+      {
+        message:
+          "Email sending is not configured yet. Please use the email link below or contact F&S Painting directly.",
+        setupHint:
+          "Missing QUOTE_FROM_EMAIL in Vercel Environment Variables. Use a verified sender address in Resend, such as F&S Painting Website <quotes@fnspainting.com.au>.",
       },
       { status: 503 },
     );
