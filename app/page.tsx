@@ -47,9 +47,8 @@ export default async function Home() {
           alt="F&S Painting team repainting an interior hallway in Sydney"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center lg:object-[calc(50%+8cm)_center]"
           sizes="100vw"
-          style={{ objectPosition: "calc(50% + 8cm) center" }}
         />
         <div className="absolute inset-y-0 left-0 w-[36%] bg-ink/18 backdrop-blur-md" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/62 to-ink/18" />
