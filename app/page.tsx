@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from "lucide-react";
 import { ProjectPreview } from "@/components/ProjectPreview";
+import { FaqSection } from "@/components/FaqSection";
 import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
 import { businessDetails } from "@/lib/business";
+import { faqSchema, homeFaqs } from "@/lib/faqs";
 import { featuredGalleryImages } from "@/lib/gallery";
 import { services } from "@/lib/site-data";
 import { getSelectedReviews, getServices } from "@/lib/cms";
@@ -34,6 +36,11 @@ export default async function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homeFaqs, "/")) }}
+      />
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
           src="/images/fs-painting-hero-real.jpeg"
@@ -254,6 +261,14 @@ export default async function Home() {
       >
         <Reviews reviews={cmsReviews} />
       </Section>
+
+      <FaqSection
+        className="bg-mist"
+        eyebrow="FAQ"
+        title="Frequently asked painting questions"
+        intro="Helpful answers for Sydney customers planning house painting, commercial painting, strata painting, or ceiling restoration work."
+        faqs={homeFaqs}
+      />
 
       <section className="bg-eucalyptus py-14 text-white sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 md:grid-cols-[1fr_auto] md:items-center lg:px-8">

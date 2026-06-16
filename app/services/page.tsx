@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { FaqSection } from "@/components/FaqSection";
 import { Section } from "@/components/Section";
+import { faqSchema, serviceFaqs } from "@/lib/faqs";
 import { services } from "@/lib/site-data";
 import { getServices } from "@/lib/cms";
 import { pageMetadata, serviceSchema } from "@/lib/seo";
@@ -22,6 +24,11 @@ export default async function ServicesPage() {
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(cmsServices)) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(serviceFaqs, "/services")) }}
       />
       <section className="bg-ink px-5 py-16 text-white sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-6xl">
@@ -127,6 +134,13 @@ export default async function ServicesPage() {
           <ArrowRight aria-hidden="true" size={18} />
         </Link>
       </Section>
+      <FaqSection
+        className="bg-mist"
+        eyebrow="FAQ"
+        title="Painting service questions"
+        intro="Helpful answers for comparing interior painting, exterior painting, strata painting, commercial painting, and ceiling repainting services."
+        faqs={serviceFaqs}
+      />
     </>
   );
 }
