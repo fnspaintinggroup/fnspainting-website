@@ -16,6 +16,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "North Bridge Interior Repaint",
+    slug: "north-bridge-interior-repaint",
+    location: "North Bridge, NSW",
+    serviceType: "Interior Painting",
+    beforeImage: "/images/projects/north-bridge-interior-before.jpg",
+    afterImage: "/images/projects/north-bridge-interior-after.jpg",
+    beforeImageAlt: "North Bridge interior living and kitchen area before repainting with surfaces protected",
+    afterImageAlt: "North Bridge interior living and kitchen area after fresh wall and feature wall repainting",
+    description:
+      "A North Bridge home interior was protected, prepared, and repainted across living, kitchen, bedroom, bathroom, stairwell, and detailed trim areas for a cleaner, brighter finish.",
+    materials:
+      "Interior acrylic wall paint, ceiling paint, trim enamel, patching compound, sanding materials, masking protection, and detailed surface preparation.",
+    completionDate: "2017-12-14",
+    seoTitle: "Interior Painting North Bridge | F&S Painting",
+    seoDescription:
+      "Before and after North Bridge interior painting by F&S Painting, showing a residential interior repaint with clean walls, feature areas, and detailed finishes.",
+  },
+  {
     title: "Carlingford Exterior House Repaint",
     slug: "carlingford-exterior-house-repaint",
     location: "Carlingford, NSW",

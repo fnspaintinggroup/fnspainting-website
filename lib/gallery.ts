@@ -84,6 +84,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 6,
   },
   {
+    title: "North Bridge Interior Painting",
+    category: "Interior Painting",
+    image: "/images/projects/north-bridge-dining-feature-wall-finish.jpg",
+    alt: "North Bridge home dining and living area after professional interior painting by F&S Painting",
+    caption:
+      "A location gallery showing interior painting finishes across living, kitchen, bedroom, bathroom, stairwell, door, and detail areas.",
+    suburb: "North Bridge, NSW",
+    collectionSlug: "north-bridge-interior",
+    photoCount: 10,
+  },
+  {
     title: "Carlingford Exterior House Painting",
     category: "Exterior Painting",
     image: "/images/projects/carlingford-front-driveway-finish.jpg",
@@ -433,6 +444,79 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/interior-stair-after.jpg",
         alt: "Freshly repainted interior stairwell walls by F&S Painting",
         caption: "Clean neutral stairwell repaint with sharp wall and trim presentation.",
+      },
+    ],
+  },
+  {
+    slug: "north-bridge-interior",
+    title: "North Bridge Interior Painting",
+    category: "Interior Painting",
+    suburb: "North Bridge, NSW",
+    summary:
+      "Finished residential interior painting across living, kitchen, bedroom, bathroom, stairwell, door, wardrobe, laundry, and detailed interior surfaces in a North Bridge home.",
+    coverImage: "/images/projects/north-bridge-dining-feature-wall-finish.jpg",
+    coverAlt:
+      "North Bridge dining and living interior after fresh wall and feature wall painting",
+    images: [
+      {
+        title: "Dining Feature Wall Finish",
+        image: "/images/projects/north-bridge-dining-feature-wall-finish.jpg",
+        alt: "North Bridge dining area after interior painting with dark feature wall and timber floors",
+        caption: "Dining and feature wall surfaces repainted for a clean, polished interior finish.",
+      },
+      {
+        title: "Kitchen Finish",
+        image: "/images/projects/north-bridge-kitchen-finish.jpg",
+        alt: "North Bridge kitchen area after interior painting with fresh ceiling and wall finishes",
+        caption: "Kitchen walls and high ceiling areas finished around cabinetry and natural light.",
+      },
+      {
+        title: "High Ceiling Kitchen Finish",
+        image: "/images/projects/north-bridge-high-ceiling-kitchen-finish.jpg",
+        alt: "North Bridge high ceiling kitchen area after repainting",
+        caption: "High ceiling and upper wall surfaces repainted for a brighter kitchen and dining space.",
+      },
+      {
+        title: "Laundry Finish",
+        image: "/images/projects/north-bridge-laundry-finish.jpg",
+        alt: "North Bridge laundry after interior repainting with clean white walls and trim",
+        caption: "Laundry walls and trims refreshed around cabinets, appliances, and wet area details.",
+      },
+      {
+        title: "Bedroom Wardrobe Finish",
+        image: "/images/projects/north-bridge-bedroom-wardrobe-finish.jpg",
+        alt: "North Bridge bedroom wardrobe wall after fresh interior repainting",
+        caption: "Bedroom walls and wardrobe surrounds finished with a clean neutral coating.",
+      },
+      {
+        title: "Bedroom Window Finish",
+        image: "/images/projects/north-bridge-bedroom-window-finish.jpg",
+        alt: "North Bridge bedroom window and wall after interior painting",
+        caption: "Bedroom wall, trim, and window surrounds repainted for a tidy finish.",
+      },
+      {
+        title: "Bedroom Fireplace Detail",
+        image: "/images/projects/north-bridge-bedroom-fireplace-before.jpg",
+        alt: "North Bridge bedroom fireplace and ceiling detail before interior repainting",
+        caption: "Bedroom fireplace, ceiling edge, and surrounding wall detail documented as part of the interior work.",
+      },
+      {
+        title: "Bathroom Finish",
+        image: "/images/projects/north-bridge-bathroom-finish.jpg",
+        alt: "North Bridge bathroom after interior painting with clean ceiling and trim",
+        caption: "Bathroom ceiling, door trim, and surrounding surfaces refreshed with a clean finish.",
+      },
+      {
+        title: "Stairwell Finish",
+        image: "/images/projects/north-bridge-stairwell-finish.jpg",
+        alt: "North Bridge stairwell after repainting with clean walls and timber stair details",
+        caption: "Stairwell walls and surrounding details repainted around timber rail and stairs.",
+      },
+      {
+        title: "Entry Door Finish",
+        image: "/images/projects/north-bridge-entry-door-finish.jpg",
+        alt: "North Bridge entry door and trim after painting",
+        caption: "Entry door, trim, and surrounding detail finished with a clean interior coating.",
       },
     ],
   },
