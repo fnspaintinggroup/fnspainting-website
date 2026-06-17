@@ -5,6 +5,11 @@
   "engines": {
     "node": "20.x"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

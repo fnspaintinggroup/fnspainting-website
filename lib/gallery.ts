@@ -3,7 +3,7 @@ export type GalleryCategory =
   | "Exterior Painting"
   | "Ceiling Restoration"
   | "Commercial Painting"
-  | "Strata / Common Areas"
+  | "Strata Painting"
   | "Doors, Trims & Details";
 
 export type GalleryImage = {
@@ -40,7 +40,7 @@ export const galleryCategories: GalleryCategory[] = [
   "Exterior Painting",
   "Ceiling Restoration",
   "Commercial Painting",
-  "Strata / Common Areas",
+  "Strata Painting",
   "Doors, Trims & Details",
 ];
 
@@ -207,7 +207,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     title: "Dee Why Strata Common Area Repaint",
-    category: "Strata / Common Areas",
+    category: "Strata Painting",
     image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
     alt: "Dee Why strata common area and lift lobby during repainting by F&S Painting",
     caption:
@@ -217,15 +217,26 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 5,
   },
   {
+    title: "Dee Why Monash Parade Strata Painting",
+    category: "Strata Painting",
+    image: "/images/projects/dee-why-monash-strata-rear-balcony.jpg",
+    alt: "Dee Why Monash Parade strata balcony exterior after painting work by F&S Painting",
+    caption:
+      "A location gallery showing Dee Why strata exterior balcony, fascia, access, and facade painting details.",
+    suburb: "Dee Why, NSW",
+    collectionSlug: "dee-why-monash-parade-strata-painting",
+    photoCount: 5,
+  },
+  {
     title: "Narwee Strata Common Area Painting",
-    category: "Strata / Common Areas",
+    category: "Strata Painting",
     image: "/images/projects/narwee-strata-main-front-view.jpg",
     alt: "Narwee strata building exterior after common area painting refresh",
     caption:
       "A location gallery showing Narwee strata exterior walls, balconies, soffits, garage areas, paths, and shared entry finishes.",
     suburb: "Narwee, NSW",
     collectionSlug: "narwee-strata-common-areas",
-    photoCount: 23,
+    photoCount: 22,
   },
   {
     title: "Fire Exit Door Detail",
@@ -258,6 +269,7 @@ const featuredGalleryTitles = [
   "North Bridge Interior Painting",
   "Silverwater Commercial Painting",
   "Dee Why Strata Common Area Repaint",
+  "Dee Why Monash Parade Strata Painting",
   "Narwee Strata Common Area Painting",
 ];
 
@@ -269,7 +281,7 @@ export const galleryCollections: GalleryCollection[] = [
   {
     slug: "dee-why-strata-common-areas",
     title: "Dee Why Strata Common Area Painting",
-    category: "Strata / Common Areas",
+    category: "Strata Painting",
     suburb: "Dee Why, NSW",
     summary:
       "Finished strata common area painting across Dee Why lift lobbies, corridors, high wall and ceiling areas, trims, and shared-space details.",
@@ -311,21 +323,57 @@ export const galleryCollections: GalleryCollection[] = [
     ],
   },
   {
+    slug: "dee-why-monash-parade-strata-painting",
+    title: "Dee Why Monash Parade Strata Painting",
+    category: "Strata Painting",
+    suburb: "Dee Why, NSW",
+    summary:
+      "Strata painting in Dee Why across exterior balcony faces, fascia areas, access points, and shared building elevations.",
+    coverImage: "/images/projects/dee-why-monash-strata-rear-balcony.jpg",
+    coverAlt: "Dee Why strata rear balcony and exterior facade after painting work",
+    images: [
+      {
+        title: "Rear Balcony Exterior",
+        image: "/images/projects/dee-why-monash-strata-rear-balcony.jpg",
+        alt: "Dee Why strata rear balcony exterior after painting work",
+        caption: "Rear balcony face and shared exterior areas refreshed for a cleaner strata presentation.",
+      },
+      {
+        title: "Fascia Preparation",
+        image: "/images/projects/dee-why-monash-strata-fascia-prep.jpg",
+        alt: "Dee Why strata fascia preparation with ladder access",
+        caption: "Upper fascia area prepared and coated as part of the strata exterior painting work.",
+      },
+      {
+        title: "Upper Fascia Access",
+        image: "/images/projects/dee-why-monash-strata-upper-fascia-prep.jpg",
+        alt: "Dee Why strata upper fascia painting access from balcony",
+        caption: "Balcony-level access used for careful preparation and painting of higher exterior details.",
+      },
+      {
+        title: "Front Access View",
+        image: "/images/projects/dee-why-monash-strata-front-access.jpg",
+        alt: "Dee Why strata front access with F&S Painting van during exterior work",
+        caption: "Front access area showing strata exterior work across the shared building frontage.",
+      },
+      {
+        title: "Balcony Finish",
+        image: "/images/projects/dee-why-monash-strata-balcony-finish.jpg",
+        alt: "Dee Why strata balcony and soffit after exterior painting finish",
+        caption: "Balcony face, soffit, and surrounding exterior areas finished for a neater shared-space look.",
+      },
+    ],
+  },
+  {
     slug: "narwee-strata-common-areas",
     title: "Narwee Strata Common Area Painting",
-    category: "Strata / Common Areas",
+    category: "Strata Painting",
     suburb: "Narwee, NSW",
     summary:
       "Finished strata painting across Narwee common exterior walls, balconies, soffits, garage surrounds, entry stairs, side paths, and shared outdoor areas.",
     coverImage: "/images/projects/narwee-strata-main-front-view.jpg",
     coverAlt: "Narwee strata building exterior after common area painting refresh",
     images: [
-      {
-        title: "Rear Elevation",
-        image: "/images/projects/narwee-strata-rear-elevation.jpg",
-        alt: "Rear elevation of the Narwee strata building after exterior painting refresh",
-        caption: "Rear elevation cleaned up with a neater and more even shared exterior finish.",
-      },
       {
         title: "Entry Stair Finish",
         image: "/images/projects/narwee-strata-entry-stair-finish.jpg",
