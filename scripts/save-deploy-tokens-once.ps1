@@ -68,6 +68,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 [Environment]::SetEnvironmentVariable("VERCEL_TOKEN", $VercelToken, "User")
+[Environment]::SetEnvironmentVariable("GITHUB_TOKEN", $GitHubToken, "User")
 [Environment]::SetEnvironmentVariable("VERCEL_PROJECT_NAME", $VercelProjectName, "User")
 [Environment]::SetEnvironmentVariable("VERCEL_ORG_ID", $VercelOrgId, "User")
 [Environment]::SetEnvironmentVariable("VERCEL_PROJECT_ID", $VercelProjectId, "User")

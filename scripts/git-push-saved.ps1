@@ -11,6 +11,31 @@ function Run-Git {
   }
 }
 
+function Get-SavedGitHubToken {
+  $token = [Environment]::GetEnvironmentVariable("GITHUB_TOKEN", "User")
+  if ([string]::IsNullOrWhiteSpace($token)) {
+    $token = [Environment]::GetEnvironmentVariable("GITHUB_TOKEN", "Process")
+  }
+  if ([string]::IsNullOrWhiteSpace($token)) {
+    throw "Missing saved GitHub token. Run scripts\save-deploy-tokens-once.ps1 first, then open a new PowerShell window."
+  }
+  return $token
+}
+
+function Run-GitHubPush {
+  param(
+    [string]$Branch,
+    [string]$GitHubToken
+  )
+
+  $pair = "x-access-token:$GitHubToken"
+  $basic = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($pair))
+  & git -c "http.extraheader=AUTHORIZATION: basic $basic" push origin $Branch
+  if ($LASTEXITCODE -ne 0) {
+    throw "GitHub push failed."
+  }
+}
+
 $repoRoot = Split-Path -Parent $PSScriptRoot
 Push-Location $repoRoot
 try {
@@ -64,7 +89,8 @@ try {
   }
 
   Write-Host "Pushing branch '$branch' to GitHub..."
-  Run-Git push origin $branch
+  $githubToken = Get-SavedGitHubToken
+  Run-GitHubPush -Branch $branch -GitHubToken $githubToken
   Write-Host "GitHub push complete."
 }
 finally {
