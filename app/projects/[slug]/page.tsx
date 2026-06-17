@@ -62,26 +62,100 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const projects = await getProjectList();
   const relatedProjects = projects.filter((item) => item.slug !== project.slug).slice(0, 2);
 
+  const projectUrl = `${siteUrl}/projects/${project.slug}`;
+  const projectImageObjects = [
+    {
+      "@type": "ImageObject",
+      "@id": `${projectUrl}#before-image`,
+      name: `${project.title} before painting`,
+      caption: project.beforeImageAlt,
+      description: `${project.beforeImageAlt} in ${project.location}.`,
+      contentUrl: toAbsoluteUrl(project.beforeImage),
+      thumbnailUrl: toAbsoluteUrl(project.beforeImage),
+      contentLocation: project.location,
+      representativeOfPage: false,
+    },
+    {
+      "@type": "ImageObject",
+      "@id": `${projectUrl}#after-image`,
+      name: `${project.title} after painting`,
+      caption: project.afterImageAlt,
+      description: `${project.afterImageAlt} in ${project.location}.`,
+      contentUrl: toAbsoluteUrl(project.afterImage),
+      thumbnailUrl: toAbsoluteUrl(project.afterImage),
+      contentLocation: project.location,
+      representativeOfPage: true,
+    },
+  ];
+
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Project",
-    name: project.title,
-    description: project.description,
-    url: `${siteUrl}/projects/${project.slug}`,
-    dateCreated: project.completionDate,
-    image: [toAbsoluteUrl(project.beforeImage), toAbsoluteUrl(project.afterImage)],
-    provider: {
-      "@id": `${siteUrl}/#localbusiness`,
-    },
-    about: {
-      "@type": "Service",
-      name: project.serviceType,
-      areaServed: "Sydney, NSW",
-      provider: {
-        "@id": `${siteUrl}/#localbusiness`,
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${projectUrl}#webpage`,
+        url: projectUrl,
+        name: project.seoTitle,
+        description: project.seoDescription,
+        primaryImageOfPage: {
+          "@id": `${projectUrl}#after-image`,
+        },
+        mainEntity: {
+          "@id": `${projectUrl}#project`,
+        },
+        isPartOf: {
+          "@id": `${siteUrl}/#website`,
+        },
       },
-    },
-    locationCreated: project.location,
+      {
+        "@type": "Project",
+        "@id": `${projectUrl}#project`,
+        name: project.title,
+        description: project.description,
+        url: projectUrl,
+        dateCreated: project.completionDate,
+        datePublished: project.completionDate,
+        material: project.materials,
+        image: projectImageObjects.map((image) => ({ "@id": image["@id"] })),
+        provider: {
+          "@id": `${siteUrl}/#localbusiness`,
+        },
+        about: {
+          "@id": `${projectUrl}#service`,
+        },
+        locationCreated: {
+          "@type": "Place",
+          name: project.location,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: project.location.replace(", NSW", ""),
+            addressRegion: "NSW",
+            addressCountry: "AU",
+          },
+        },
+        keywords: [
+          project.serviceType,
+          project.location,
+          "F&S Painting",
+          "Sydney painters",
+          "before and after painting",
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id": `${projectUrl}#service`,
+        name: project.serviceType,
+        serviceType: project.serviceType,
+        areaServed: {
+          "@type": "AdministrativeArea",
+          name: project.location,
+        },
+        provider: {
+          "@id": `${siteUrl}/#localbusiness`,
+        },
+      },
+      ...projectImageObjects,
+    ],
   };
 
   return (
@@ -182,6 +256,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <div>
                   <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">Service type</dt>
                   <dd className="mt-2 text-ink/72">{project.serviceType}</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">Completed</dt>
+                  <dd className="mt-2 text-ink/72">
+                    {new Intl.DateTimeFormat("en-AU", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    }).format(new Date(project.completionDate))}
+                  </dd>
                 </div>
                 <div className="sm:col-span-2">
                   <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">

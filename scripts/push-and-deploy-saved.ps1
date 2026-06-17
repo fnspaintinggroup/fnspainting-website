@@ -105,6 +105,10 @@ try {
 
   $nodePath = Get-BundledNode
   $pnpmPath = Get-BundledPnpm
+  $nodeDir = Split-Path -Parent $nodePath
+  if ($env:PATH -notlike "*$nodeDir*") {
+    $env:PATH = "$nodeDir;$env:PATH"
+  }
 
   Ensure-VercelLink -NodePath $nodePath -PnpmPath $pnpmPath -VercelToken $vercelToken
 
