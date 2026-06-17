@@ -22,6 +22,34 @@ function Get-SavedGitHubToken {
   return $token
 }
 
+function Test-GitHubToken {
+  param(
+    [string]$Token
+  )
+
+  $headers = @{
+    Authorization = "Bearer $Token"
+    Accept = "application/vnd.github+json"
+    "X-GitHub-Api-Version" = "2022-11-28"
+  }
+
+  try {
+    $repoInfo = Invoke-RestMethod -Uri "https://api.github.com/repos/fnspaintinggroup/fnspainting-website" -Headers $headers -Method Get
+  }
+  catch {
+    throw "Saved GitHub token is invalid or cannot access fnspaintinggroup/fnspainting-website. Run scripts\save-deploy-tokens-once.ps1 with a new GitHub token."
+  }
+
+  $canPush = $false
+  if ($repoInfo.permissions) {
+    $canPush = [bool]($repoInfo.permissions.push -or $repoInfo.permissions.admin -or $repoInfo.permissions.maintain)
+  }
+
+  if (-not $canPush) {
+    throw "Saved GitHub token cannot push to fnspaintinggroup/fnspainting-website. Re-save a token with Contents: Read and write access."
+  }
+}
+
 function Run-GitHubPush {
   param(
     [string]$Branch,
@@ -90,6 +118,7 @@ try {
 
   Write-Host "Pushing branch '$branch' to GitHub..."
   $githubToken = Get-SavedGitHubToken
+  Test-GitHubToken -Token $githubToken
   Run-GitHubPush -Branch $branch -GitHubToken $githubToken
   Write-Host "GitHub push complete."
 }

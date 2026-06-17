@@ -3,7 +3,9 @@ param(
   [string]$VercelToken,
   [string]$VercelProjectName,
   [string]$VercelOrgId,
-  [string]$VercelProjectId
+  [string]$VercelProjectId,
+  [string]$GitHubOwner = "fnspaintinggroup",
+  [string]$GitHubRepo = "fnspainting-website"
 )
 
 $ErrorActionPreference = "Stop"
@@ -46,6 +48,36 @@ function Read-PlainValue {
   return Read-Host $Label
 }
 
+function Test-GitHubToken {
+  param(
+    [string]$Token,
+    [string]$Owner,
+    [string]$Repo
+  )
+
+  $headers = @{
+    Authorization = "Bearer $Token"
+    Accept = "application/vnd.github+json"
+    "X-GitHub-Api-Version" = "2022-11-28"
+  }
+
+  try {
+    $repoInfo = Invoke-RestMethod -Uri "https://api.github.com/repos/$Owner/$Repo" -Headers $headers -Method Get
+  }
+  catch {
+    throw "GitHub token check failed. Make a new GitHub token with access to $Owner/$Repo."
+  }
+
+  $canPush = $false
+  if ($repoInfo.permissions) {
+    $canPush = [bool]($repoInfo.permissions.push -or $repoInfo.permissions.admin -or $repoInfo.permissions.maintain)
+  }
+
+  if (-not $canPush) {
+    throw "This GitHub token can read the repo, but cannot push to $Owner/$Repo. Give it Contents: Read and write access."
+  }
+}
+
 $GitHubToken = Read-SecretValue -Label "GitHub token" -CurrentValue $GitHubToken
 $VercelToken = Read-SecretValue -Label "Vercel token" -CurrentValue $VercelToken
 $VercelProjectName = Read-PlainValue -Label "Vercel project name, for example fnspainting-website (optional if you use Org ID and Project ID)" -CurrentValue $VercelProjectName
@@ -54,6 +86,9 @@ if ([string]::IsNullOrWhiteSpace($VercelProjectName)) {
   $VercelOrgId = Read-SecretValue -Label "Vercel Org ID" -CurrentValue $VercelOrgId
   $VercelProjectId = Read-SecretValue -Label "Vercel Project ID" -CurrentValue $VercelProjectId
 }
+
+Write-Host "Checking GitHub token access..."
+Test-GitHubToken -Token $GitHubToken -Owner $GitHubOwner -Repo $GitHubRepo
 
 @"
 protocol=https
