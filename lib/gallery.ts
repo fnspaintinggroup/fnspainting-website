@@ -128,7 +128,7 @@ export const galleryImages: GalleryImage[] = [
     image: "/images/projects/mould-ceiling-case-1-after.jpg",
     alt: "Clean restored ceiling after mould-damaged ceiling repainting in a Sydney property",
     caption: "Ceiling sealed, prepared, and repainted for a smooth clean result.",
-    suburb: "Sydney, NSW",
+    suburb: "Chatswood, NSW",
   },
   {
     title: "Bathroom Ceiling Restoration",
@@ -136,7 +136,7 @@ export const galleryImages: GalleryImage[] = [
     image: "/images/projects/mould-ceiling-case-2-after.jpg",
     alt: "Bathroom ceiling restored with a smooth clean repaint after mould damage",
     caption: "Moisture-affected bathroom ceiling restored with a fresh coating system.",
-    suburb: "Chatswood, NSW",
+    suburb: "Willoughby, NSW",
   },
   {
     title: "Chatswood Commercial Reception Finish",
@@ -180,14 +180,6 @@ export const galleryImages: GalleryImage[] = [
     suburb: "Silverwater, NSW",
     collectionSlug: "silverwater-commercial-painting",
     photoCount: 6,
-  },
-  {
-    title: "Commercial Salon Interior",
-    category: "Commercial Painting",
-    image: "/images/projects/commercial-salon-interior-after.jpg",
-    alt: "Commercial salon interior after repainting with a clean modern finish",
-    caption: "Salon interior prepared and repainted for a polished customer-facing space.",
-    suburb: "Sydney, NSW",
   },
   {
     title: "Office Room Refresh",

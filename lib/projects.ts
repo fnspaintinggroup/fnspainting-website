@@ -399,7 +399,7 @@ export const projects: Project[] = [
   {
     title: "Interior Feature Wall and Ceiling Repaint",
     slug: "interior-feature-wall-ceiling-repaint",
-    location: "Sydney, NSW",
+    location: "Marrickville, NSW",
     serviceType: "Interior Painting",
     beforeImage: "/images/projects/interior-feature-wall-before.jpg",
     afterImage: "/images/projects/interior-feature-wall-after.jpg",
