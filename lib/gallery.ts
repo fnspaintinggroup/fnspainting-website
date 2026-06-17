@@ -154,6 +154,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 6,
   },
   {
+    title: "Chatswood Exterior House Painting",
+    category: "Exterior Painting",
+    image: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
+    alt: "Chatswood brick house exterior with refreshed trims and facade details after painting",
+    caption:
+      "A location gallery showing exterior painting finishes across the entry door, verandah posts, gables, rear facade, garage side, roofline details, and surrounding outdoor areas.",
+    suburb: "Chatswood, NSW",
+    collectionSlug: "chatswood-exterior-house-painting",
+    photoCount: 13,
+  },
+  {
     title: "Blakehurst Interior House Painting",
     category: "Interior Painting",
     image: "/images/projects/blakehurst-stairwell-chandelier.jpg",
@@ -188,8 +199,11 @@ export const galleryImages: GalleryImage[] = [
     category: "Commercial Painting",
     image: "/images/projects/interior-office-room-after.jpg",
     alt: "Office room after clean interior painting refresh",
-    caption: "Neutral commercial repaint suitable for daily office use.",
-    suburb: "Sydney, NSW",
+    caption:
+      "A location gallery showing meeting room, waiting area, reception, corridor, and office finishes in a Chatswood commercial space.",
+    suburb: "Chatswood, NSW",
+    collectionSlug: "chatswood-office-room-refresh",
+    photoCount: 7,
   },
   {
     title: "Dee Why Strata Common Area Repaint",
@@ -201,6 +215,17 @@ export const galleryImages: GalleryImage[] = [
     suburb: "Dee Why, NSW",
     collectionSlug: "dee-why-strata-common-areas",
     photoCount: 5,
+  },
+  {
+    title: "Narwee Strata Common Area Painting",
+    category: "Strata / Common Areas",
+    image: "/images/projects/narwee-strata-main-front-view.jpg",
+    alt: "Narwee strata building exterior after common area painting refresh",
+    caption:
+      "A location gallery showing Narwee strata exterior walls, balconies, soffits, garage areas, paths, and shared entry finishes.",
+    suburb: "Narwee, NSW",
+    collectionSlug: "narwee-strata-common-areas",
+    photoCount: 23,
   },
   {
     title: "Fire Exit Door Detail",
@@ -233,6 +258,7 @@ const featuredGalleryTitles = [
   "North Bridge Interior Painting",
   "Silverwater Commercial Painting",
   "Dee Why Strata Common Area Repaint",
+  "Narwee Strata Common Area Painting",
 ];
 
 export const featuredGalleryImages = featuredGalleryTitles
@@ -281,6 +307,156 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/dee-why-strata-hallway-after.jpg",
         alt: "Dee Why strata hallway after fresh wall, ceiling, and trim repainting",
         caption: "Hallway walls, ceilings, and trims repainted for a clean common area finish.",
+      },
+    ],
+  },
+  {
+    slug: "narwee-strata-common-areas",
+    title: "Narwee Strata Common Area Painting",
+    category: "Strata / Common Areas",
+    suburb: "Narwee, NSW",
+    summary:
+      "Finished strata painting across Narwee common exterior walls, balconies, soffits, garage surrounds, entry stairs, side paths, and shared outdoor areas.",
+    coverImage: "/images/projects/narwee-strata-main-front-view.jpg",
+    coverAlt: "Narwee strata building exterior after common area painting refresh",
+    images: [
+      {
+        title: "Rear Elevation",
+        image: "/images/projects/narwee-strata-rear-elevation.jpg",
+        alt: "Rear elevation of the Narwee strata building after exterior painting refresh",
+        caption: "Rear elevation cleaned up with a neater and more even shared exterior finish.",
+      },
+      {
+        title: "Entry Stair Finish",
+        image: "/images/projects/narwee-strata-entry-stair-finish.jpg",
+        alt: "Narwee strata entry stair and balcony area after painting refresh",
+        caption: "Entry stair and balcony-facing common area finished for a tidier shared approach.",
+      },
+      {
+        title: "Courtyard View",
+        image: "/images/projects/narwee-strata-courtyard-view.jpg",
+        alt: "Narwee strata courtyard and parking-side building view after painting refresh",
+        caption: "Shared courtyard and parking-side walls refreshed for a cleaner strata presentation.",
+      },
+      {
+        title: "Soffit Detail",
+        image: "/images/projects/narwee-strata-soffit-detail.jpg",
+        alt: "Narwee strata soffit and wall detail after repainting",
+        caption: "Common soffit and adjoining wall detail finished with a neat, durable coating.",
+      },
+      {
+        title: "Balcony Corner",
+        image: "/images/projects/narwee-strata-balcony-corner.jpg",
+        alt: "Narwee strata balcony corner and wall finish after painting refresh",
+        caption: "Balcony corner and surrounding brickwork presented with a cleaner common area look.",
+      },
+      {
+        title: "Rear Lawn View",
+        image: "/images/projects/narwee-strata-rear-lawn-view.jpg",
+        alt: "Narwee strata rear lawn side building view after painting refresh",
+        caption: "Rear lawn side and shared exterior walls refreshed to lift the overall building appearance.",
+      },
+      {
+        title: "Front Elevation",
+        image: "/images/projects/narwee-strata-front-elevation.jpg",
+        alt: "Narwee strata front elevation after common area painting refresh",
+        caption: "Front elevation finished for a brighter and better-kept strata street presence.",
+      },
+      {
+        title: "Garage Doors Detail",
+        image: "/images/projects/narwee-strata-garage-doors-detail.jpg",
+        alt: "Narwee strata garage doors and surrounding common area after painting refresh",
+        caption: "Garage surrounds and common access zone tidied up for a more consistent finish.",
+      },
+      {
+        title: "Undercover Garage",
+        image: "/images/projects/narwee-strata-undercover-garage.jpg",
+        alt: "Narwee strata undercover garage area after painting refresh",
+        caption: "Undercover garage common area presented with a cleaner, more maintained appearance.",
+      },
+      {
+        title: "Upper Balconies",
+        image: "/images/projects/narwee-strata-upper-balconies.jpg",
+        alt: "Narwee strata upper balconies after exterior painting refresh",
+        caption: "Upper balconies and surrounding walls refreshed for a tidy shared exterior finish.",
+      },
+      {
+        title: "Wall Upward Detail",
+        image: "/images/projects/narwee-strata-wall-upward-detail.jpg",
+        alt: "Narwee strata exterior wall and upper facade detail after painting refresh",
+        caption: "Vertical wall detail shows the cleaner finish across higher common exterior surfaces.",
+      },
+      {
+        title: "Street Front View",
+        image: "/images/projects/narwee-strata-street-front-view.jpg",
+        alt: "Narwee strata building viewed from the street after painting refresh",
+        caption: "Street-front presentation improved with a neater overall strata exterior appearance.",
+      },
+      {
+        title: "Entry Door Detail",
+        image: "/images/projects/narwee-strata-entry-door-detail.jpg",
+        alt: "Narwee strata lower entry door and stair area after painting refresh",
+        caption: "Shared lower entry area finished for a cleaner and more welcoming arrival point.",
+      },
+      {
+        title: "Main Front View",
+        image: "/images/projects/narwee-strata-main-front-view.jpg",
+        alt: "Narwee strata main front exterior after common area painting refresh",
+        caption: "Main front view showing the overall refreshed look across the strata facade.",
+      },
+      {
+        title: "Balcony Upward View",
+        image: "/images/projects/narwee-strata-balcony-upward-view.jpg",
+        alt: "Narwee strata balcony and soffit viewed upward after painting refresh",
+        caption: "Balcony underside and upper details finished for a more complete common area result.",
+      },
+      {
+        title: "Side Path View",
+        image: "/images/projects/narwee-strata-side-path-view.jpg",
+        alt: "Narwee strata side path and exterior wall after painting refresh",
+        caption: "Side path walls and building edge refreshed to keep shared access areas looking neat.",
+      },
+      {
+        title: "Courtyard Wide View",
+        image: "/images/projects/narwee-strata-courtyard-wide-view.jpg",
+        alt: "Narwee strata courtyard wide view after painting refresh",
+        caption: "Wide courtyard view showing cleaner presentation across shared outdoor building faces.",
+      },
+      {
+        title: "Tree Side Elevation",
+        image: "/images/projects/narwee-strata-tree-side-elevation.jpg",
+        alt: "Narwee strata elevation beside tree line after painting refresh",
+        caption: "Tree-side elevation finished to keep the exterior looking even from every angle.",
+      },
+      {
+        title: "Rear Building View",
+        image: "/images/projects/narwee-strata-rear-building-view.jpg",
+        alt: "Narwee strata rear building and courtyard side after painting refresh",
+        caption: "Rear building face and shared yard side refreshed for a cleaner strata finish.",
+      },
+      {
+        title: "Side Entry Door",
+        image: "/images/projects/narwee-strata-side-entry-door.jpg",
+        alt: "Narwee strata side entry door area after painting refresh",
+        caption: "Side entry nook cleaned up to keep smaller shared access points looking maintained.",
+      },
+      {
+        title: "Balustrade Upward Detail",
+        image: "/images/projects/narwee-strata-balustrade-upward-detail.jpg",
+        alt: "Narwee strata balustrade and upper wall detail after painting refresh",
+        caption: "Balustrade and upper wall detail presented with a sharper, more cared-for finish.",
+      },
+      {
+        title: "Mailbox Front View",
+        image: "/images/projects/narwee-strata-mailbox-front-view.jpg",
+        alt: "Narwee strata front garden and mailbox area after painting refresh",
+        caption: "Front garden edge and mailbox-side view show the improved overall building presentation.",
+      },
+      {
+        title: "Front Building Angle",
+        image: "/images/projects/narwee-strata-building-after.jpg",
+        alt: "Narwee strata building front angle after exterior painting refresh",
+        caption: "Front angle view highlights the freshened finish across shared exterior areas.",
       },
     ],
   },
@@ -703,6 +879,159 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/chatswood-commercial-reception-wide.jpg",
         alt: "Wide view of Chatswood office reception and glass entry after commercial painting",
         caption: "Wide reception view showing the refreshed counter, entry glazing, and office presentation.",
+      },
+    ],
+  },
+  {
+    slug: "chatswood-office-room-refresh",
+    title: "Office Room Refresh",
+    category: "Commercial Painting",
+    suburb: "Chatswood, NSW",
+    summary:
+      "Commercial interior painting across a private office, boardroom, waiting area, reception zone, corridor, and meeting room spaces in a Chatswood office.",
+    coverImage: "/images/projects/interior-office-room-after.jpg",
+    coverAlt:
+      "Chatswood office room with fresh neutral commercial interior painting",
+    images: [
+      {
+        title: "Private Office Finish",
+        image: "/images/projects/interior-office-room-after.jpg",
+        alt: "Chatswood private office room after neutral commercial interior painting",
+        caption:
+          "Private office walls and work area refreshed with a clean neutral finish for everyday use.",
+      },
+      {
+        title: "Waiting Area Finish",
+        image: "/images/projects/chatswood-office-waiting-area-finish.jpg",
+        alt: "Chatswood office waiting area and corridor after commercial repainting",
+        caption:
+          "Waiting area, hallway, and glass-partition entry finished for a brighter client-facing presentation.",
+      },
+      {
+        title: "Boardroom Finish",
+        image: "/images/projects/chatswood-office-boardroom-finish.jpg",
+        alt: "Chatswood office boardroom after commercial interior painting",
+        caption:
+          "Boardroom walls and window-side meeting space repainted for a clean professional look.",
+      },
+      {
+        title: "Reception Hallway Finish",
+        image: "/images/projects/chatswood-office-reception-hallway-finish.jpg",
+        alt: "Chatswood office reception hallway after commercial repainting",
+        caption:
+          "Reception-side hallway and shared entry path refreshed with a neat commercial finish.",
+      },
+      {
+        title: "Meeting Room Finish",
+        image: "/images/projects/chatswood-office-meeting-room-finish.jpg",
+        alt: "Chatswood office meeting room after commercial interior painting",
+        caption:
+          "Meeting room walls, cabinetry surrounds, and work surfaces presented with a tidy neutral repaint.",
+      },
+      {
+        title: "Glass Corridor Finish",
+        image: "/images/projects/chatswood-office-glass-corridor-finish.jpg",
+        alt: "Chatswood office glass corridor and boardroom entry after repainting",
+        caption:
+          "Glass-partition corridor and room entries repainted to keep the office feeling bright and consistent.",
+      },
+      {
+        title: "Lobby Finish",
+        image: "/images/projects/chatswood-office-lobby-finish.jpg",
+        alt: "Chatswood office lobby and lift-side seating area after commercial painting",
+        caption:
+          "Lobby seating area and lift-side walls finished for a cleaner first impression.",
+      },
+    ],
+  },
+  {
+    slug: "chatswood-exterior-house-painting",
+    title: "Chatswood Exterior House Painting",
+    category: "Exterior Painting",
+    suburb: "Chatswood, NSW",
+    summary:
+      "Finished exterior painting across the front entry, verandah posts, decorative trim, gables, garage-facing elevation, rear facade, and detached outdoor structure of a Chatswood home.",
+    coverImage: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
+    coverAlt:
+      "Chatswood brick house exterior with refreshed trims, gables, and garage frontage after painting",
+    images: [
+      {
+        title: "Front Facade Wide View",
+        image: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
+        alt: "Chatswood front facade and garage elevation after exterior painting",
+        caption: "Wide front view showing the refreshed brick facade, trims, gables, and garage frontage.",
+      },
+      {
+        title: "Entry Door Finish",
+        image: "/images/projects/chatswood-exterior-entry-door-finish.jpg",
+        alt: "Chatswood front entry door and stained glass surround after exterior painting",
+        caption: "Front entry door, sidelight trims, and surrounding details finished with a clean exterior presentation.",
+      },
+      {
+        title: "Front Verandah Detail",
+        image: "/images/projects/chatswood-exterior-front-verandah-finish.jpg",
+        alt: "Chatswood verandah posts, soffit, and brick entry porch after exterior painting",
+        caption: "Verandah posts, soffit lines, and entry porch details repainted neatly along the front elevation.",
+      },
+      {
+        title: "Site Preparation View",
+        image: "/images/projects/chatswood-exterior-site-preparation.jpg",
+        alt: "Chatswood house exterior during preparation with F&S Painting van on site",
+        caption: "On-site preparation view showing access setup and protection before final exterior finishing.",
+      },
+      {
+        title: "Front Yard Finish",
+        image: "/images/projects/chatswood-exterior-front-yard-view.jpg",
+        alt: "Chatswood front yard and brick house exterior after painting work",
+        caption: "Front yard perspective showing the completed exterior trim work across the facade and gables.",
+      },
+      {
+        title: "Side Elevation Finish",
+        image: "/images/projects/chatswood-exterior-side-elevation.jpg",
+        alt: "Chatswood side elevation with refreshed trims and brick exterior after painting",
+        caption: "Side elevation and upper trim lines finished cleanly for a consistent exterior result.",
+      },
+      {
+        title: "Street Garage View",
+        image: "/images/projects/chatswood-exterior-street-garage-view.jpg",
+        alt: "Chatswood street view with garage frontage and painted exterior details",
+        caption: "Street-facing view showing the garage frontage, gable detail, and completed trim presentation.",
+      },
+      {
+        title: "Side Gate and Porch View",
+        image: "/images/projects/chatswood-exterior-side-gate-finish.jpg",
+        alt: "Chatswood side gate, side wall, and porch entry after exterior painting",
+        caption: "Side gate, wall surfaces, and porch connection finished with sharp trim contrast and tidy lines.",
+      },
+      {
+        title: "Rear Yard View",
+        image: "/images/projects/chatswood-exterior-rear-yard-view.jpg",
+        alt: "Chatswood rear yard and back exterior walls after painting",
+        caption: "Rear yard view showing the painted exterior surfaces around the back of the home.",
+      },
+      {
+        title: "Outbuilding Finish",
+        image: "/images/projects/chatswood-exterior-outbuilding-finish.jpg",
+        alt: "Chatswood detached outdoor structure with repainted walls and trims",
+        caption: "Detached outdoor structure refreshed with clean wall, trim, and eave finishes.",
+      },
+      {
+        title: "Rear Facade Wide View",
+        image: "/images/projects/chatswood-exterior-rear-facade-wide.jpg",
+        alt: "Chatswood rear facade and garden side exterior after painting",
+        caption: "Wide rear facade view showing the completed trim work across upper and lower exterior sections.",
+      },
+      {
+        title: "Rear Entry Finish",
+        image: "/images/projects/chatswood-exterior-rear-entry-finish.jpg",
+        alt: "Chatswood rear entry and window surrounds after exterior painting",
+        caption: "Rear entry, window surrounds, and adjacent trim finished for a neat and durable outdoor result.",
+      },
+      {
+        title: "Upper Roofline Detail",
+        image: "/images/projects/chatswood-exterior-upper-roofline-detail.jpg",
+        alt: "Chatswood upper roofline and window trim detail after exterior painting",
+        caption: "Upper roofline, window trims, and eave details finished cleanly along the second-storey elevation.",
       },
     ],
   },

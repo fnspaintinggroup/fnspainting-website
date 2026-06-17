@@ -124,6 +124,24 @@ export const projects: Project[] = [
       "Before and after Dee Why strata hallway repaint by F&S Painting, showing wall, ceiling, trim, and common area preparation with a clean finish.",
   },
   {
+    title: "Narwee Strata Exterior Refresh",
+    slug: "narwee-strata-exterior-refresh",
+    location: "Narwee, NSW",
+    serviceType: "Strata Painting",
+    beforeImage: "/images/projects/narwee-strata-building-before.jpg",
+    afterImage: "/images/projects/narwee-strata-building-after.jpg",
+    beforeImageAlt: "Narwee strata building before exterior painting refresh",
+    afterImageAlt: "Narwee strata building after exterior painting refresh",
+    description:
+      "A Narwee strata building exterior was prepared and refreshed across common walls, balcony details, soffits, entry areas, and garage surrounds for a cleaner overall presentation.",
+    materials:
+      "Exterior masonry paint, soffit and trim coatings, primers where required, patching materials, sanding preparation, masking protection, and access equipment for strata common areas.",
+    completionDate: "2025-09-01",
+    seoTitle: "Narwee Strata Exterior Refresh | F&S Painting",
+    seoDescription:
+      "Before and after Narwee strata exterior refresh by F&S Painting, showing cleaner common area presentation across walls, balconies, soffits, and entry areas.",
+  },
+  {
     title: "Mould-Damaged Ceiling Restoration in Chatswood",
     slug: "mould-damaged-ceiling-restoration-sydney",
     location: "Chatswood, NSW",
@@ -281,10 +299,10 @@ export const projects: Project[] = [
     slug: "exterior-gable-roofline-painting",
     location: "North Willoughby, NSW",
     serviceType: "Exterior Painting",
-    beforeImage: "/images/projects/exterior-gable-work-before.jpg",
-    afterImage: "/images/projects/exterior-gable-work-after.jpg",
-    beforeImageAlt: "Exterior gable and roofline preparation before repainting",
-    afterImageAlt: "Exterior gable and roofline after repainting with fresh trim colours",
+    beforeImage: "/images/projects/north-willoughby-gable-roofline-before.jpg",
+    afterImage: "/images/projects/north-willoughby-gable-roofline-after.jpg",
+    beforeImageAlt: "North Willoughby gable timber detail and roofline before exterior repainting",
+    afterImageAlt: "North Willoughby gable timber detail and roofline after exterior repainting",
     description:
       "High exterior gable and roofline areas were accessed carefully, prepared, primed where needed, and repainted with a durable exterior finish.",
     materials: "Exterior trim paint, primer, sanding materials, fillers, sealant, and ladder-access preparation materials.",
