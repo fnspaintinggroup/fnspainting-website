@@ -136,7 +136,7 @@ export const projects: Project[] = [
       "A Narwee strata building exterior was prepared and refreshed across common walls, balcony details, soffits, entry areas, and garage surrounds for a cleaner overall presentation.",
     materials:
       "Exterior masonry paint, soffit and trim coatings, primers where required, patching materials, sanding preparation, masking protection, and access equipment for strata common areas.",
-    completionDate: "2025-09-01",
+    completionDate: "2023-10-01",
     seoTitle: "Narwee Strata Exterior Refresh | F&S Painting",
     seoDescription:
       "Before and after Narwee strata exterior refresh by F&S Painting, showing cleaner common area presentation across walls, balconies, soffits, and entry areas.",
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     description:
       "A heavily moisture-affected ceiling with visible mould staining and damaged coating was prepared, sealed, patched, and repainted to restore a clean finish.",
     materials: "Stain-blocking primer, mould-resistant ceiling paint, patching compound, sanding and surface preparation materials.",
-    completionDate: "2026-01-24",
+    completionDate: "2016-05-01",
     seoTitle: "Mould-Damaged Ceiling Restoration in Chatswood | F&S Painting",
     seoDescription:
       "Before and after mould-damaged ceiling restoration project in Chatswood by F&S Painting, including preparation, sealing, and repainting.",
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     description:
       "A bathroom ceiling with peeling paint, moisture damage, and mould-affected areas was scraped back, prepared, sealed, and repainted for a smooth, clean result.",
     materials: "Moisture-resistant ceiling paint, stain-blocking primer, patching compound, sanding materials, and detailed surface preparation.",
-    completionDate: "2026-02-08",
+    completionDate: "2022-09-01",
     seoTitle: "Bathroom Ceiling Mould and Peeling Paint Restoration | F&S Painting Willoughby",
     seoDescription:
       "Before and after bathroom ceiling mould and peeling paint restoration by F&S Painting in Willoughby, including surface preparation, sealing, and repainting.",
@@ -272,7 +272,7 @@ export const projects: Project[] = [
     description:
       "A full exterior house repaint refreshed the front facade, trim, gables, and painted surfaces for a sharper street presentation.",
     materials: "Exterior acrylic paint system, exterior primer, sealant, sanding materials, masking protection, and weather-exposed surface preparation products.",
-    completionDate: "2026-01-16",
+    completionDate: "2024-12-01",
     seoTitle: "Exterior House Painting Refresh Earlwood | F&S Painting",
     seoDescription:
       "Before and after exterior house painting refresh in Earlwood by F&S Painting, including surface preparation and exterior repainting.",
@@ -289,7 +289,7 @@ export const projects: Project[] = [
     description:
       "Exterior facade panels, trim, posts, and entry details were prepared and repainted for a cleaner, brighter finish.",
     materials: "Exterior acrylic paint, exterior primer, gap sealant, sanding materials, and detailed trim preparation.",
-    completionDate: "2026-01-16",
+    completionDate: "2024-06-01",
     seoTitle: "Exterior Facade and Trim Repaint North Willoughby | F&S Painting",
     seoDescription:
       "Before and after exterior facade and trim repaint by F&S Painting in North Willoughby, showing a refreshed front entry and exterior finish.",
@@ -306,7 +306,7 @@ export const projects: Project[] = [
     description:
       "High exterior gable and roofline areas were accessed carefully, prepared, primed where needed, and repainted with a durable exterior finish.",
     materials: "Exterior trim paint, primer, sanding materials, fillers, sealant, and ladder-access preparation materials.",
-    completionDate: "2026-01-16",
+    completionDate: "2024-08-01",
     seoTitle: "Exterior Gable and Roofline Painting North Willoughby | F&S Painting",
     seoDescription:
       "Before and after exterior gable and roofline painting in North Willoughby by F&S Painting, including preparation and trim repainting.",
@@ -323,7 +323,7 @@ export const projects: Project[] = [
     description:
       "A boundary wall was patched, prepared, and coated with a weather-resistant exterior finish for a cleaner look and better protection.",
     materials: "Dulux Weathershield exterior paint, masonry preparation materials, patching compound, primer, and rollers.",
-    completionDate: "2026-01-16",
+    completionDate: "2024-12-01",
     seoTitle: "Exterior Boundary Wall Repaint Earlwood | F&S Painting",
     seoDescription:
       "Before and after exterior boundary wall repaint by F&S Painting in Earlwood, showing masonry preparation and weather-resistant coating.",
@@ -340,7 +340,7 @@ export const projects: Project[] = [
     description:
       "Weathered shed doors and trim were prepared and repainted in a charcoal grey finish to improve durability and appearance.",
     materials: "Exterior timber paint, primer, sanding materials, patching products, and weather-exposed trim preparation materials.",
-    completionDate: "2026-01-16",
+    completionDate: "2024-12-01",
     seoTitle: "Exterior Shed Door and Trim Repaint Earlwood | F&S Painting",
     seoDescription:
       "Before and after exterior shed door and trim repaint in Earlwood by F&S Painting, showing preparation and charcoal grey finish.",
@@ -357,7 +357,7 @@ export const projects: Project[] = [
     description:
       "Balcony decking and lattice areas were prepared and repainted for a cleaner finish with better weather resistance.",
     materials: "Exterior timber coating, exterior acrylic paint, sanding materials, surface cleaner, primer, and weather-exposed preparation products.",
-    completionDate: "2024-06-19",
+    completionDate: "2023-03-01",
     seoTitle: "Exterior Balcony Deck and Lattice Repaint Frenchs Forest | F&S Painting",
     seoDescription:
       "Before and after exterior balcony deck and lattice repaint project in Frenchs Forest by F&S Painting, showing preparation and fresh exterior coating.",
@@ -374,7 +374,7 @@ export const projects: Project[] = [
     description:
       "A marked commercial fire exit door and surrounding trim were prepared and repainted for a cleaner, more durable finish.",
     materials: "Commercial enamel paint, metal primer, sanding materials, masking protection, and detailed door preparation.",
-    completionDate: "2026-01-16",
+    completionDate: "2024-08-01",
     seoTitle: "Fire Exit Door Repaint Sydney | F&S Painting",
     seoDescription:
       "Before and after commercial fire exit door repaint in Sydney by F&S Painting, showing preparation and a clean durable finish.",
@@ -391,7 +391,7 @@ export const projects: Project[] = [
     description:
       "A commercial salon interior was patched, prepared, and repainted to create a cleaner and more polished customer-facing space.",
     materials: "Commercial interior acrylic paint, primer, patching compound, sanding materials, masking, and drop sheet protection.",
-    completionDate: "2026-01-16",
+    completionDate: "2012-05-01",
     seoTitle: "Commercial Salon Interior Repaint Sydney | F&S Painting",
     seoDescription:
       "Before and after commercial salon interior repaint in Sydney by F&S Painting, including wall preparation and professional repainting.",
@@ -408,7 +408,7 @@ export const projects: Project[] = [
     description:
       "An interior feature wall and ceiling area was prepared and repainted to refresh the room and create a cleaner contrast finish.",
     materials: "Interior wall paint, ceiling paint, primer, patching compound, sanding materials, and masking protection.",
-    completionDate: "2026-01-16",
+    completionDate: "2012-04-01",
     seoTitle: "Interior Feature Wall and Ceiling Repaint Sydney | F&S Painting",
     seoDescription:
       "Before and after interior feature wall and ceiling repaint project in Sydney by F&S Painting, showing preparation and a refreshed finish.",
@@ -425,7 +425,7 @@ export const projects: Project[] = [
     description:
       "Exterior entry trim, window surrounds, and decorative mouldings were prepared and repainted to refresh the front presentation.",
     materials: "Exterior acrylic paint, trim enamel, primer, fillers, sanding materials, and weather-exposed preparation products.",
-    completionDate: "2026-01-16",
+    completionDate: "2012-07-01",
     seoTitle: "Mosman Exterior Entry Repaint | F&S Painting Sydney",
     seoDescription:
       "Before and after Mosman exterior entry repaint by F&S Painting, including trim preparation, window surrounds, and exterior repainting.",
@@ -442,7 +442,7 @@ export const projects: Project[] = [
     description:
       "Weathered timber window frames were scraped, sanded, filled, primed, and repainted to protect the surface and improve appearance.",
     materials: "Exterior timber primer, exterior enamel, wood filler, sanding materials, scraper preparation, and sealant.",
-    completionDate: "2026-01-16",
+    completionDate: "2012-03-01",
     seoTitle: "North Strathfield Exterior Window Restoration | F&S Painting",
     seoDescription:
       "Before and after exterior timber window restoration in North Strathfield by F&S Painting, including scraping, priming, and repainting.",
@@ -459,7 +459,7 @@ export const projects: Project[] = [
     description:
       "An older exterior wall and timber window area was repaired, prepared, and repainted for a cleaner and more weather-resistant finish.",
     materials: "Exterior acrylic paint, exterior timber coating, primer, fillers, sanding materials, and surface preparation products.",
-    completionDate: "2026-01-16",
+    completionDate: "2012-03-01",
     seoTitle: "North Strathfield Exterior Wall and Window Repaint | F&S Painting",
     seoDescription:
       "Before and after exterior wall and window repaint in North Strathfield by F&S Painting, showing repair, preparation, and repainting.",
@@ -476,7 +476,7 @@ export const projects: Project[] = [
     description:
       "Weathered eaves and fascia areas were repaired, prepared, sealed, and repainted to improve durability and presentation.",
     materials: "Exterior acrylic paint, primer, gap filler, patching compound, sanding materials, and eaves preparation products.",
-    completionDate: "2026-01-16",
+    completionDate: "2012-04-01",
     seoTitle: "Concord West Eaves and Fascia Repaint | F&S Painting",
     seoDescription:
       "Before and after Concord West eaves and fascia repaint by F&S Painting, including surface preparation, sealing, and exterior repainting.",
@@ -493,7 +493,7 @@ export const projects: Project[] = [
     description:
       "Exterior soffit, fascia, and trim areas were prepared and repainted to refresh the property and protect exposed surfaces.",
     materials: "Exterior trim paint, exterior primer, sanding materials, gap filler, patching compound, and masking protection.",
-    completionDate: "2026-01-16",
+    completionDate: "2012-04-01",
     seoTitle: "Concord West Exterior Soffit and Trim Repaint | F&S Painting",
     seoDescription:
       "Before and after exterior soffit and trim repaint in Concord West by F&S Painting, showing preparation and fresh exterior finish.",

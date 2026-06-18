@@ -50,7 +50,7 @@ export default async function Home() {
           className="object-cover object-center lg:object-[calc(50%+8cm)_center]"
           sizes="100vw"
         />
-        <div className="absolute inset-y-0 left-0 w-[36%] bg-ink/18 backdrop-blur-md" />
+        <div className="absolute inset-y-0 left-0 hidden w-[36%] bg-ink/18 backdrop-blur-md lg:block" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/62 to-ink/18" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/72 via-transparent to-ink/25" />
         <div className="relative mx-auto grid min-h-[78vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">

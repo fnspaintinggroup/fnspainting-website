@@ -116,6 +116,10 @@ export function Footer() {
                 </span>
               ))}
             </div>
+            <p className="mt-3 max-w-sm text-xs leading-5 text-white/50">
+              F&amp;S Painting is operated by F&amp;S Painting Group, a licensed and insured
+              painting company serving Chatswood, the North Shore, and Sydney.
+            </p>
           </div>
         </div>
         <div>
