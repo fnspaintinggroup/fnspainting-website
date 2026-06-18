@@ -79,6 +79,33 @@ async function fetchSanity<T>(query: string, params: Record<string, string> = {}
   }
 }
 
+function applyLocalProjectCorrections<T extends CmsProject>(project: T): T {
+  const localProject = fallbackProjects.find((item) => item.slug === project.slug);
+
+  if (!localProject) {
+    return project;
+  }
+
+  return {
+    ...project,
+    completionDate: localProject.completionDate,
+  };
+}
+
+function sortProjectsByCompletionDate(projects: CmsProject[]) {
+  return [...projects].sort(
+    (a, b) => new Date(b.completionDate).getTime() - new Date(a.completionDate).getTime(),
+  );
+}
+
+function mergeProjectsWithLocalCorrections(projects: SanityProject[]) {
+  const correctedProjects = projects.map((project) => applyLocalProjectCorrections(project));
+  const sanitySlugs = new Set(correctedProjects.map((project) => project.slug));
+  const localOnlyProjects = fallbackProjects.filter((project) => !sanitySlugs.has(project.slug));
+
+  return sortProjectsByCompletionDate([...correctedProjects, ...localOnlyProjects]);
+}
+
 export async function getBlogPosts(): Promise<CmsBlogPost[]> {
   const posts = await fetchSanity<SanityBlogPost[]>(
     `*[_type == "blogPost" && defined(slug.current)] | order(publishedDate desc) ${blogPostFields}`,
@@ -101,7 +128,7 @@ export async function getProjectList(): Promise<CmsProject[]> {
     `*[_type == "project" && defined(slug.current)] | order(completionDate desc) ${projectFields}`,
   );
 
-  return projects?.length ? projects : fallbackProjects;
+  return projects?.length ? mergeProjectsWithLocalCorrections(projects) : fallbackProjects;
 }
 
 export async function getProjectBySlug(slug: string): Promise<CmsProject | undefined> {
@@ -110,7 +137,9 @@ export async function getProjectBySlug(slug: string): Promise<CmsProject | undef
     { slug },
   );
 
-  return project || fallbackProjects.find((item) => item.slug === slug);
+  return project
+    ? applyLocalProjectCorrections(project)
+    : fallbackProjects.find((item) => item.slug === slug);
 }
 
 export async function getReviews(): Promise<CmsReview[]> {

@@ -244,6 +244,24 @@ export const projects: Project[] = [
       "Before and after office room interior painting refresh in Chatswood by F&S Painting, including preparation and commercial repainting.",
   },
   {
+    title: "Chatswood Apartment Interior Repaint",
+    slug: "chatswood-apartment-interior-repaint",
+    location: "Chatswood, NSW",
+    serviceType: "Interior Painting",
+    beforeImage: "/images/projects/chatswood-apartment-interior-before.jpg",
+    afterImage: "/images/projects/chatswood-apartment-interior-after.jpg",
+    beforeImageAlt: "Chatswood apartment living room before interior repainting preparation",
+    afterImageAlt: "Chatswood apartment living room after fresh interior repainting",
+    description:
+      "A Chatswood apartment interior was protected, prepared, patched, and repainted across living areas, bedroom, entry, kitchen-side walls, and bathroom ceiling areas for a cleaner finish.",
+    materials:
+      "Interior low-sheen wall paint, ceiling paint, primer where required, patching compound, sanding materials, masking tape, and drop-sheet protection.",
+    completionDate: "2025-10-14",
+    seoTitle: "Chatswood Apartment Interior Repaint | F&S Painting",
+    seoDescription:
+      "Before and after Chatswood apartment interior repaint by F&S Painting, including living room, bedroom, entry, and bathroom ceiling painting finishes.",
+  },
+  {
     title: "Blakehurst Interior House Painting",
     slug: "blakehurst-interior-house-painting",
     location: "Blakehurst, NSW",

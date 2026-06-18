@@ -193,6 +193,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 7,
   },
   {
+    title: "Chatswood Apartment Interior Repaint",
+    category: "Interior Painting",
+    image: "/images/projects/chatswood-apartment-living-room-finish.jpg",
+    alt: "Chatswood apartment living room after interior repainting by F&S Painting",
+    caption:
+      "A location gallery showing Chatswood apartment living room, bedroom, entry, kitchen-side, and bathroom ceiling repainting finishes.",
+    suburb: "Chatswood, NSW",
+    collectionSlug: "chatswood-apartment-interior-repaint",
+    photoCount: 4,
+  },
+  {
     title: "Dee Why Strata Common Area Repaint",
     category: "Strata Painting",
     image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
@@ -1074,6 +1085,42 @@ export const galleryCollections: GalleryCollection[] = [
         alt: "Chatswood office lobby and lift-side seating area after commercial painting",
         caption:
           "Lobby seating area and lift-side walls finished for a cleaner first impression.",
+      },
+    ],
+  },
+  {
+    slug: "chatswood-apartment-interior-repaint",
+    title: "Chatswood Apartment Interior Repaint",
+    category: "Interior Painting",
+    suburb: "Chatswood, NSW",
+    summary:
+      "Finished apartment interior repaint across Chatswood living areas, bedroom, entry, kitchen-side walls, and bathroom ceiling details.",
+    coverImage: "/images/projects/chatswood-apartment-living-room-finish.jpg",
+    coverAlt: "Chatswood apartment living room after fresh interior repainting",
+    images: [
+      {
+        title: "Living Room Finish",
+        image: "/images/projects/chatswood-apartment-living-room-finish.jpg",
+        alt: "Chatswood apartment living room after interior wall and ceiling repainting",
+        caption: "Living room walls and ceiling refreshed after preparation and repainting.",
+      },
+      {
+        title: "Entry and Kitchen-Side Finish",
+        image: "/images/projects/chatswood-apartment-entry-kitchen-finish.jpg",
+        alt: "Chatswood apartment entry and kitchen-side walls after repainting",
+        caption: "Entry and kitchen-side walls repainted for a cleaner apartment presentation.",
+      },
+      {
+        title: "Bathroom Ceiling Finish",
+        image: "/images/projects/chatswood-apartment-bathroom-ceiling-finish.jpg",
+        alt: "Chatswood apartment bathroom ceiling after repainting",
+        caption: "Bathroom ceiling and surrounding wall areas repainted with a neat finish.",
+      },
+      {
+        title: "Bedroom Finish",
+        image: "/images/projects/chatswood-apartment-bedroom-finish.jpg",
+        alt: "Chatswood apartment bedroom after interior repainting",
+        caption: "Bedroom walls and trims refreshed as part of the apartment repaint.",
       },
     ],
   },
