@@ -33,9 +33,9 @@ export const homeFaqs: FaqItem[] = [
       "Preparation depends on the surface, but can include cleaning, sanding, patching, sealing, caulking, stain blocking, masking, and primer where needed. Good preparation helps the finish look better and last longer.",
   },
   {
-    question: "What license and insurance details can I check before booking?",
+    question: "Are you able to handle repaint work or take over from a previous painting company?",
     answer:
-      "Before booking, you can check F&S Painting's key business details on the website, including license 478497C, workers compensation policy 236870501, public liability insurance with AAMI under policy SPD012776314, and ACN 659406265.",
+      "Yes. We specialise in repaint projects and can take over work that has been started or left unfinished by a previous painting company. We also repair and correct issues caused by DIY painting or low-skill workmanship. These situations are more common than many people realise. With our experience, attention to detail, and professional painting skills, we can restore the area properly and deliver a clean, smooth, and presentable finish.",
   },
   {
     question: "What paint do you use, and what steps are included in your painting process?",
