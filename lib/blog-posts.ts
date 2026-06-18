@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Free Quote With On-Site Consultation",
     slug: "free-quote-with-on-site-consultation",
-    date: "2026-06-18",
+    date: "2025-04-11",
     category: "Painting Quote",
     featuredImage: "/images/projects/carlingford-front-driveway-finish.jpg",
     imageAlt: "F&S Painting van at a Sydney home during an exterior painting project",

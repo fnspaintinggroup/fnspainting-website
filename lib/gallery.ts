@@ -3,8 +3,7 @@ export type GalleryCategory =
   | "Exterior Painting"
   | "Ceiling Restoration"
   | "Commercial Painting"
-  | "Strata Painting"
-  | "Doors, Trims & Details";
+  | "Strata Painting";
 
 export type GalleryImage = {
   title: string;
@@ -41,7 +40,6 @@ export const galleryCategories: GalleryCategory[] = [
   "Ceiling Restoration",
   "Commercial Painting",
   "Strata Painting",
-  "Doors, Trims & Details",
 ];
 
 export const galleryImages: GalleryImage[] = [
@@ -246,30 +244,6 @@ export const galleryImages: GalleryImage[] = [
     suburb: "Narwee, NSW",
     collectionSlug: "narwee-strata-common-areas",
     photoCount: 22,
-  },
-  {
-    title: "Fire Exit Door Detail",
-    category: "Doors, Trims & Details",
-    image: "/images/projects/interior-fire-door-after.jpg",
-    alt: "Commercial fire exit door after repainting in a black finish",
-    caption: "Door and surrounding trim repainted for a durable, tidy finish.",
-    suburb: "Sydney, NSW",
-  },
-  {
-    title: "Exterior Timber Window Detail",
-    category: "Doors, Trims & Details",
-    image: "/images/projects/north-strathfield-window-after.jpg",
-    alt: "Exterior timber window after restoration and repainting in North Strathfield",
-    caption: "Timber window scraped, filled, primed, and repainted.",
-    suburb: "North Strathfield, NSW",
-  },
-  {
-    title: "Concord West Eaves and Fascia",
-    category: "Doors, Trims & Details",
-    image: "/images/projects/concord-west-eaves-after.jpg",
-    alt: "Concord West eaves and fascia after exterior repainting",
-    caption: "Eaves and fascia repainted after careful exterior preparation.",
-    suburb: "Concord West, NSW",
   },
 ];
 
