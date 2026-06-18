@@ -36,6 +36,11 @@ export const homeFaqs: FaqItem[] = [
 
 export const serviceFaqs: FaqItem[] = [
   {
+    question: "Do you provide free on-site painting quotes?",
+    answer:
+      "Yes. F&S Painting can provide a free on-site quote so we can check the real condition, access, preparation needs, and project scope before giving a clear estimate.",
+  },
+  {
     question: "What is included in an interior painting service?",
     answer:
       "Interior painting can include walls, ceilings, trims, doors, feature walls, stairwells, patching, sanding, masking, and a suitable paint finish for the room and daily use.",

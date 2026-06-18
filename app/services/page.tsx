@@ -115,6 +115,13 @@ export default async function ServicesPage() {
                     "Every quote can include preparation advice, paint system recommendations, and expected timing based on the condition of the space."}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
+                  <Link
+                    href="/contact#quote-name"
+                    className="inline-flex items-center gap-1 rounded-md bg-clay px-4 py-2 text-white hover:bg-clay/90"
+                  >
+                    Get a quote for this service
+                    <ArrowRight aria-hidden="true" size={15} />
+                  </Link>
                   <Link href="/projects" className="text-eucalyptus hover:text-clay">
                     Related projects
                   </Link>

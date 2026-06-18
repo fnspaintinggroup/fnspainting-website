@@ -1,6 +1,10 @@
 export type BlogSection = {
   heading: string;
   paragraphs: string[];
+  link?: {
+    href: string;
+    label: string;
+  };
 };
 
 export type BlogPost = {
@@ -17,6 +21,74 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    title: "Free Quote With On-Site Consultation",
+    slug: "free-quote-with-on-site-consultation",
+    date: "2026-06-18",
+    category: "Painting Quote",
+    featuredImage: "/images/projects/carlingford-front-driveway-finish.jpg",
+    imageAlt: "F&S Painting van at a Sydney home during an exterior painting project",
+    excerpt:
+      "A clear and reliable first step for your project, with an on-site visit that helps confirm scope, access, preparation needs, and a realistic quote.",
+    seoTitle: "Free Quote With On-Site Consultation | F&S Painting",
+    seoDescription:
+      "Learn why a free on-site painting quote helps provide clearer pricing, better planning, and a more reliable start for your Sydney painting project.",
+    body: [
+      {
+        heading: "A clear and reliable first step for your project",
+        paragraphs: [
+          "We offer a complimentary on-site quote designed to give you a transparent and trustworthy starting point. Instead of a remote estimate based on photos or brief descriptions, a responsible team member visits your property in person to review the actual condition, understand the scope of work, and provide an accurate estimate based on real needs.",
+          "This hands-on approach helps you avoid unexpected costs and ensures a smoother process from the very beginning.",
+        ],
+      },
+      {
+        heading: "Why an on-site visit makes a difference",
+        paragraphs: [
+          "When the person responsible for the service visits on-site, the assessment becomes far more precise. They can directly check measurements, access conditions, and any special requirements that might affect the project.",
+          "This level of detail significantly reduces the risk of misunderstandings or unexpected changes later in the process. For services where accuracy matters, on-site consultation is the most reliable way to ensure your quote reflects the true scope of work.",
+        ],
+        link: {
+          href: "/services",
+          label: "See our painting services",
+        },
+      },
+      {
+        heading: "Meet your service manager in person",
+        paragraphs: [
+          "Another advantage of our on-site quote is the opportunity to meet the person who will be managing your project. During the visit, you can ask questions, discuss details, express concerns, and get clarity on what to expect.",
+          "This personal interaction builds trust faster than email or phone communication. You can see professionalism, communication style, and attention to detail first hand, which helps you feel confident before making any decision.",
+        ],
+      },
+      {
+        heading: "Accuracy you can trust",
+        paragraphs: [
+          "A free on-site quote helps prevent unnecessary extra costs by identifying details that are often missed in remote estimates. This includes work size, access conditions, special requirements, and any hidden challenges that could affect the final price.",
+          "As a result, you receive a realistic quote and a clear understanding of the project before work begins.",
+        ],
+      },
+      {
+        heading: "Start your project with confidence",
+        paragraphs: [
+          "We believe that a great service starts with a clear and honest conversation. Our free on-site quote service is designed to give you the confidence to move forward with full understanding of the scope, cost, and timeline.",
+          "Contact us today to schedule your complimentary consultation, and let us help you start your project with clarity and peace of mind.",
+        ],
+        link: {
+          href: "/contact#quote-name",
+          label: "Request a free on-site quote",
+        },
+      },
+      {
+        heading: "View completed painting work",
+        paragraphs: [
+          "If you would like to see how careful preparation and clear planning translate into finished results, explore recent before and after painting projects completed across Sydney.",
+        ],
+        link: {
+          href: "/projects",
+          label: "View before and after projects",
+        },
+      },
+    ],
+  },
   {
     title: "Does Painting Affect Home Value?",
     slug: "does-painting-affect-home-value",

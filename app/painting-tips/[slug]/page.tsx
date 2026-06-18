@@ -154,6 +154,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         <p key={paragraph}>{paragraph}</p>
                       ))}
                     </div>
+                    {section.link ? (
+                      <Link
+                        href={section.link.href}
+                        className="mt-5 inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+                      >
+                        {section.link.label}
+                        <ArrowRight aria-hidden="true" size={17} />
+                      </Link>
+                    ) : null}
                   </section>
                 ))
               )}

@@ -92,7 +92,7 @@ export function pageMetadata({
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HousePainter", "HomeAndConstructionBusiness"],
     "@id": `${siteUrl}/#localbusiness`,
     name: siteName,
     url: siteUrl,
