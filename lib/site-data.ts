@@ -28,13 +28,13 @@ export const services = [
   },
   {
     title: "Interior Painting",
-    href: "/services#interior-painting",
+    href: "/services/interior-painting",
     icon: Paintbrush,
     summary: "Walls, trims, doors, ceilings, feature walls, and full interior refreshes.",
   },
   {
     title: "Exterior Painting",
-    href: "/services#exterior-painting",
+    href: "/services/exterior-painting",
     icon: Brush,
     summary: "Weather-conscious preparation and coating for facades, fences, eaves, and decks.",
   },

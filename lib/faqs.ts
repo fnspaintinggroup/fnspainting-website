@@ -32,6 +32,16 @@ export const homeFaqs: FaqItem[] = [
     answer:
       "Preparation depends on the surface, but can include cleaning, sanding, patching, sealing, caulking, stain blocking, masking, and primer where needed. Good preparation helps the finish look better and last longer.",
   },
+  {
+    question: "What license and insurance details can I check before booking?",
+    answer:
+      "Before booking, you can check F&S Painting's key business details on the website, including license 478497C, workers compensation policy 236870501, public liability insurance with AAMI under policy SPD012776314, and ACN 659406265.",
+  },
+  {
+    question: "What paint do you use, and what steps are included in your painting process?",
+    answer:
+      "We mainly use quality Dulux paint and follow a careful process for each job. This can include protecting nearby areas, repairing minor surface damage, sealing cracks, filling gaps, sanding, applying primer where needed, and finishing with the right paint system for the surface.",
+  },
 ];
 
 export const serviceFaqs: FaqItem[] = [

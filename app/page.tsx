@@ -140,7 +140,11 @@ export default async function Home() {
             return (
               <Link
                 key={service.title}
-                href={`/services#${service.slug}`}
+                href={
+                  service.slug === "interior-painting" || service.slug === "exterior-painting"
+                    ? `/services/${service.slug}`
+                    : `/services#${service.slug}`
+                }
                 className="group rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
               >
                 <Icon className="text-eucalyptus" aria-hidden="true" size={28} />
@@ -282,7 +286,7 @@ export default async function Home() {
           <Link className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay" href="/painting-tips/house-painting-cost-sydney">
             House painting Sydney cost guide
           </Link>
-          <Link className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay" href="/services#interior-painting">
+          <Link className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay" href="/services/interior-painting">
             Interior painter Sydney services
           </Link>
           <Link className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay" href="/projects/mould-damaged-ceiling-restoration-sydney">
