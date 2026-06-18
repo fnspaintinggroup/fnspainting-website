@@ -24,7 +24,8 @@ const homepageProjectSlugs = [
 export function ProjectPreview() {
   const previewProjects = homepageProjectSlugs
     .map((slug) => projects.find((project) => project.slug === slug))
-    .filter((project) => project !== undefined);
+    .filter((project) => project !== undefined)
+    .slice(0, 12);
 
   return (
     <div className="grid gap-5 md:grid-cols-3">

@@ -258,6 +258,8 @@ const featuredGalleryTitles = [
   "Dee Why Strata Common Area Repaint",
   "Dee Why Monash Parade Strata Painting",
   "Narwee Strata Common Area Painting",
+  "Chatswood Exterior House Painting",
+  "Exterior House Front Refresh",
 ];
 
 export const featuredGalleryImages = featuredGalleryTitles

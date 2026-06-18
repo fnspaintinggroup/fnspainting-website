@@ -60,8 +60,8 @@ export default async function ServicesPage() {
               </p>
               <p>
                 We take pride in careful preparation, professional workmanship, and clear
-                communication from start to finish. We treat our customers like friends, and we
-                respect every property as if it were our own.
+                communication from start to finish. We respect every property as if it were our
+                own.
               </p>
               <p>
                 Our experienced team can recommend the right painting solution for your home,

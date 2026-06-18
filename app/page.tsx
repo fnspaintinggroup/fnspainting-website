@@ -43,11 +43,11 @@ export default async function Home() {
       />
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
-          src="/images/fs-painting-hero-real.jpeg"
+          src="/images/fs-painting-hero.png"
           alt="F&S Painting team repainting an interior hallway in Sydney"
           fill
           priority
-          className="object-cover object-center lg:object-[calc(50%+8cm)_center]"
+          className="object-cover object-center"
           sizes="100vw"
         />
         <div className="absolute inset-y-0 left-0 w-[36%] bg-ink/18 backdrop-blur-md" />
@@ -56,7 +56,8 @@ export default async function Home() {
         <div className="relative mx-auto grid min-h-[78vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <h1 className="max-w-5xl text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-7xl">
-              Professional house painting &amp; commercial painting in Sydney
+              <span className="block">Professional house painting</span>
+              <span className="block">&amp; commercial painting</span>
             </h1>
             <p className="mt-7 max-w-3xl text-base font-medium leading-7 text-white/90 sm:text-xl">
               Reliable, clean, high-quality painting service for homes, apartments, offices and
@@ -66,7 +67,8 @@ export default async function Home() {
               Guaranteed property Value up!
             </p>
             <p className="mt-10 max-w-4xl text-2xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
-              Call {businessDetails.phones.join(" or ")} for a free quote today.
+              <span className="block">Call {businessDetails.phones.join(" or ")}</span>
+              <span className="block">for a free quote today.</span>
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -235,7 +237,7 @@ export default async function Home() {
         intro="See finished interior, exterior, ceiling, commercial, strata, door, trim, and detail painting work by F&S Painting."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredGalleryImages.map((item) => (
+          {featuredGalleryImages.slice(0, 8).map((item) => (
             <Link
               key={item.title}
               href="/painting-gallery"
