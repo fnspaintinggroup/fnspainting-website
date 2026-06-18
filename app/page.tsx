@@ -43,11 +43,11 @@ export default async function Home() {
       />
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
-          src="/images/fs-painting-hero.png"
+          src="/images/fs-painting-hero-real.jpeg"
           alt="F&S Painting team repainting an interior hallway in Sydney"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center lg:object-[calc(50%+8cm)_center]"
           sizes="100vw"
         />
         <div className="absolute inset-y-0 left-0 w-[36%] bg-ink/18 backdrop-blur-md" />
@@ -55,7 +55,7 @@ export default async function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink/72 via-transparent to-ink/25" />
         <div className="relative mx-auto grid min-h-[78vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <h1 className="max-w-5xl text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-7xl">
+            <h1 className="max-w-4xl text-3xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-6xl">
               <span className="block">Professional house painting</span>
               <span className="block">&amp; commercial painting</span>
             </h1>
@@ -66,7 +66,7 @@ export default async function Home() {
             <p className="mt-2 text-base font-semibold text-white/90 sm:text-xl">
               Guaranteed property Value up!
             </p>
-            <p className="mt-10 max-w-4xl text-2xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
+            <p className="mt-10 max-w-3xl text-xl font-black uppercase leading-tight text-white sm:text-3xl lg:text-4xl">
               <span className="block">Call {businessDetails.phones.join(" or ")}</span>
               <span className="block">for a free quote today.</span>
             </p>
