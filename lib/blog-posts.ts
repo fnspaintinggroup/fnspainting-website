@@ -18,9 +18,52 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Does Painting Affect Home Value?",
+    slug: "does-painting-affect-home-value",
+    date: "2026-06-18",
+    category: "Home Painting",
+    featuredImage: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
+    imageAlt: "Freshly painted house exterior showing improved street appeal by F&S Painting",
+    excerpt:
+      "A fresh, well-chosen paint job can improve first impressions, help a home feel better maintained, and support stronger buyer interest.",
+    seoTitle: "Does Painting Affect Home Value? | F&S Painting",
+    seoDescription:
+      "Find out how painting can affect home value, buyer appeal, first impressions, and sale presentation before listing a property.",
+    body: [
+      {
+        heading: "Painting can influence market value",
+        paragraphs: [
+          "Yes, painting can affect a home's market value. A fresh and well-chosen paint job improves first impressions, helps a property feel better maintained, and can make it more attractive to buyers.",
+          "According to our connected real estate agent John, the change in sale price is clearly noticeable in real transactions.",
+        ],
+      },
+      {
+        heading: "Why paint matters before selling",
+        paragraphs: [
+          "Painting is one of the simplest ways to refresh a home before it goes on the market. Light, neutral colors often make rooms feel brighter, cleaner, and more spacious, which can strengthen buyer interest.",
+          "In many cases, this small update can create a stronger overall impression than expected.",
+        ],
+      },
+      {
+        heading: "Real examples of price impact",
+        paragraphs: [
+          "Real estate reports have shown that certain paint colors can influence selling prices by several thousand dollars.",
+          "For example, some light or modern tones have been associated with higher buyer appeal, while overly bold or outdated colors may reduce interest. This means paint choices can affect not only how a home looks, but also how it performs in the market.",
+        ],
+      },
+      {
+        heading: "A smart and cost-effective upgrade",
+        paragraphs: [
+          "Compared with major renovations, painting is relatively affordable and often delivers visible results quickly.",
+          "For homeowners preparing to sell, it is a practical way to improve presentation and potentially support a stronger sale price. As John points out, the difference in final price can be clear when a home is properly painted and well presented.",
+        ],
+      },
+    ],
+  },
+  {
     title: "Why Painting Your Home Is Worth It",
     slug: "why-painting-your-home-is-worth-it",
-    date: "2026-06-18",
+    date: "2026-01-15",
     category: "Home Painting",
     featuredImage: "/images/projects/carlingford-exterior-after.jpg",
     imageAlt: "Freshly painted home exterior after professional repainting by F&S Painting",
