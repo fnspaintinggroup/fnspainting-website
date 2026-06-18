@@ -262,6 +262,24 @@ export const projects: Project[] = [
       "Before and after Chatswood apartment interior repaint by F&S Painting, including living room, bedroom, entry, and bathroom ceiling painting finishes.",
   },
   {
+    title: "Lindfield Exterior Window and Trim Repaint",
+    slug: "lindfield-exterior-window-trim-repaint",
+    location: "Lindfield, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/lindfield-window-trim-before.jpg",
+    afterImage: "/images/projects/lindfield-window-trim-after.png",
+    beforeImageAlt: "Lindfield exterior timber window and trim before repainting",
+    afterImageAlt: "Lindfield exterior timber window and trim after fresh repainting",
+    description:
+      "A Lindfield exterior window, door, trim, verandah, and rear wall area was prepared and repainted to refresh the timber details and improve the overall exterior presentation.",
+    materials:
+      "Exterior trim paint, timber preparation materials, primer where required, sanding materials, gap filler, masking protection, and detailed surface preparation.",
+    completionDate: "2025-12-10",
+    seoTitle: "Lindfield Exterior Window and Trim Repaint | F&S Painting",
+    seoDescription:
+      "Before and after Lindfield exterior window, door, and trim repaint by F&S Painting, showing refreshed timber details and exterior finishes.",
+  },
+  {
     title: "Blakehurst Interior House Painting",
     slug: "blakehurst-interior-house-painting",
     location: "Blakehurst, NSW",

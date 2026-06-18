@@ -204,6 +204,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 4,
   },
   {
+    title: "Lindfield Exterior Window and Trim Repaint",
+    category: "Exterior Painting",
+    image: "/images/projects/lindfield-door-trim-finish.jpg",
+    alt: "Lindfield exterior door and trim after repainting by F&S Painting",
+    caption:
+      "A location gallery showing Lindfield exterior window, door, trim, verandah, and rear wall painting finishes.",
+    suburb: "Lindfield, NSW",
+    collectionSlug: "lindfield-exterior-window-trim-repaint",
+    photoCount: 4,
+  },
+  {
     title: "Dee Why Strata Common Area Repaint",
     category: "Strata Painting",
     image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
@@ -1121,6 +1132,42 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/chatswood-apartment-bedroom-finish.jpg",
         alt: "Chatswood apartment bedroom after interior repainting",
         caption: "Bedroom walls and trims refreshed as part of the apartment repaint.",
+      },
+    ],
+  },
+  {
+    slug: "lindfield-exterior-window-trim-repaint",
+    title: "Lindfield Exterior Window and Trim Repaint",
+    category: "Exterior Painting",
+    suburb: "Lindfield, NSW",
+    summary:
+      "Finished Lindfield exterior repainting across timber windows, door trim, verandah details, and rear exterior wall areas.",
+    coverImage: "/images/projects/lindfield-door-trim-finish.jpg",
+    coverAlt: "Lindfield exterior door and trim after fresh repainting",
+    images: [
+      {
+        title: "Door Trim Finish",
+        image: "/images/projects/lindfield-door-trim-finish.jpg",
+        alt: "Lindfield exterior door and surrounding trim after repainting",
+        caption: "Exterior door and surrounding trim refreshed with a clean painted finish.",
+      },
+      {
+        title: "Verandah Window Finish",
+        image: "/images/projects/lindfield-verandah-window-finish.jpg",
+        alt: "Lindfield verandah window and frame after exterior repainting",
+        caption: "Verandah window frames and trim repainted for a brighter exterior presentation.",
+      },
+      {
+        title: "French Door and Window Finish",
+        image: "/images/projects/lindfield-french-door-window-finish.jpg",
+        alt: "Lindfield French door and side windows after exterior trim repainting",
+        caption: "French door, side windows, and surrounding trim finished neatly after preparation.",
+      },
+      {
+        title: "Rear Exterior Wall Finish",
+        image: "/images/projects/lindfield-rear-exterior-wall-finish.jpg",
+        alt: "Lindfield rear exterior wall and window trim after repainting",
+        caption: "Rear exterior wall, window frames, and trim repainted as part of the Lindfield refresh.",
       },
     ],
   },
