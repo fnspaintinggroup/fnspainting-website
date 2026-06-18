@@ -18,6 +18,42 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Why Painting Your Home Is Worth It",
+    slug: "why-painting-your-home-is-worth-it",
+    date: "2026-06-18",
+    category: "Home Painting",
+    featuredImage: "/images/projects/carlingford-exterior-after.jpg",
+    imageAlt: "Freshly painted home exterior after professional repainting by F&S Painting",
+    excerpt:
+      "A well-painted home can brighten everyday living, protect surfaces, and create a polished finish without a major renovation.",
+    seoTitle: "Why Painting Your Home Is Worth It | F&S Painting",
+    seoDescription:
+      "Learn why repainting your home is a smart update for appearance, surface protection, comfort, colour, and lasting value.",
+    body: [
+      {
+        heading: "A fresh coat changes how a home feels",
+        paragraphs: [
+          "A well-painted home does more than look appealing. It sets the tone for the entire space, creating an atmosphere that feels polished, comfortable, and thoughtfully maintained.",
+          "Fresh paint can instantly brighten a room, refresh tired surfaces, and bring new energy into everyday living. It is one of the simplest ways to make a home feel more refined without undertaking a major renovation.",
+        ],
+      },
+      {
+        heading: "Paint also protects your surfaces",
+        paragraphs: [
+          "Beyond appearance, paint plays an important role in protecting your walls and surfaces. Over time, homes naturally show signs of wear, but a quality finish can help preserve them while maintaining a clean and cared-for look.",
+          "The right colour choice can also influence how a room feels, making it appear more spacious, warm, or inviting depending on your style and needs.",
+        ],
+      },
+      {
+        heading: "A practical update with lasting impact",
+        paragraphs: [
+          "For homeowners who want a meaningful update with lasting impact, painting remains a smart and stylish solution. It combines practicality with design, offering a finish that feels both timeless and personal.",
+          "Whether you are preparing to refresh a single room or reimagine your entire home, a fresh coat of paint can make all the difference.",
+        ],
+      },
+    ],
+  },
+  {
     title: "How Much Does House Painting Cost in Sydney?",
     slug: "house-painting-cost-sydney",
     date: "2026-02-18",
