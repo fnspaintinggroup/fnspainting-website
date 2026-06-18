@@ -8,16 +8,16 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "F&S Painting | Painters Chatswood, North Shore & Sydney",
+    default: "F&S Painting | Painter Chatswood & Sydney - Interior, Exterior, Strata & Commercial",
     template: `%s | ${siteName}`,
   },
   description:
-    "F&S Painting provides house painting, interior painting, exterior painting, strata painting, commercial painting, ceiling painting, and mould-damaged ceiling restoration across Chatswood, the North Shore, and Sydney, NSW.",
+    "Licensed and insured painters in Chatswood, North Shore and Sydney. Residential, interior, exterior, strata and commercial painting with free on-site quotes, 20 years of experience, and quality Dulux products.",
   keywords: ["F&S Painting", ...targetKeywords],
   openGraph: {
-    title: "F&S Painting | Painters Chatswood, North Shore & Sydney",
+    title: "F&S Painting | Painter Chatswood & Sydney - Interior, Exterior, Strata & Commercial",
     description:
-      "Clean, professional painting services for homes, strata, and commercial spaces across Chatswood, the North Shore, and Sydney, NSW.",
+      "Licensed and insured painters for residential, interior, exterior, strata, and commercial painting across Chatswood, the North Shore, and Sydney.",
     url: siteUrl,
     siteName,
     locale: "en_AU",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "F&S Painting | Painters Chatswood, North Shore & Sydney",
+    title: "F&S Painting | Painter Chatswood & Sydney - Interior, Exterior, Strata & Commercial",
     description:
-      "Professional house, interior, exterior, strata, commercial, and ceiling painting across Chatswood, the North Shore, and Sydney, NSW.",
+      "Free on-site quotes, 20 years of experience, and quality Dulux products for painting across Chatswood, the North Shore, and Sydney.",
     images: [absoluteUrl(defaultOgImage)],
   },
 };

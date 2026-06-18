@@ -14,9 +14,9 @@ import { getSelectedReviews, getServices } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Chatswood, North Shore & Sydney",
+  title: "F&S Painting | Painter Chatswood & Sydney - Interior, Exterior, Strata & Commercial",
   description:
-    "F&S Painting is a professional painting company for Chatswood, the North Shore, and Sydney, covering house painting, interior painting, exterior painting, strata painting, commercial painting, and ceiling restoration.",
+    "Licensed and insured painters in Chatswood, North Shore and Sydney. Residential, interior, exterior, strata and commercial painting with free on-site quotes, 20 years of experience, and quality Dulux products.",
   path: "/",
 });
 
