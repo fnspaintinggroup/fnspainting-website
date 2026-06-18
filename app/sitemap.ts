@@ -12,11 +12,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/painting-tips",
     "/reviews",
     "/contact",
+    "/painters-chatswood",
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency: route === "" || route === "/painters-chatswood" ? "weekly" : "monthly",
+    priority: route === "" ? 1 : route === "/painters-chatswood" ? 0.9 : 0.8,
   }));
 
   const [blogPosts, projects] = await Promise.all([getBlogPosts(), getProjectList()]);

@@ -8,16 +8,16 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "F&S Painting | Painter Sydney",
+    default: "F&S Painting | Painters Chatswood, North Shore & Sydney",
     template: `%s | ${siteName}`,
   },
   description:
-    "F&S Painting provides house painting, interior painting, exterior painting, strata painting, commercial painting, ceiling painting, and mould-damaged ceiling restoration in Sydney, NSW.",
+    "F&S Painting provides house painting, interior painting, exterior painting, strata painting, commercial painting, ceiling painting, and mould-damaged ceiling restoration across Chatswood, the North Shore, and Sydney, NSW.",
   keywords: ["F&S Painting", ...targetKeywords],
   openGraph: {
-    title: "F&S Painting | Painter Sydney",
+    title: "F&S Painting | Painters Chatswood, North Shore & Sydney",
     description:
-      "Clean, professional painting services for homes, strata, and commercial spaces in Sydney, NSW.",
+      "Clean, professional painting services for homes, strata, and commercial spaces across Chatswood, the North Shore, and Sydney, NSW.",
     url: siteUrl,
     siteName,
     locale: "en_AU",
@@ -31,8 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "F&S Painting | Painter Sydney",
-    description: "Professional house, interior, exterior, strata, commercial, and ceiling painting in Sydney, NSW.",
+    title: "F&S Painting | Painters Chatswood, North Shore & Sydney",
+    description:
+      "Professional house, interior, exterior, strata, commercial, and ceiling painting across Chatswood, the North Shore, and Sydney, NSW.",
     images: [absoluteUrl(defaultOgImage)],
   },
 };

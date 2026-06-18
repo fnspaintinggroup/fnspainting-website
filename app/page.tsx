@@ -14,9 +14,9 @@ import { getSelectedReviews, getServices } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Painter Sydney",
+  title: "Painters Chatswood, North Shore & Sydney",
   description:
-    "F&S Painting is a professional painter in Sydney for house painting, interior painting, exterior painting, strata painting, commercial painting, ceiling painting, and mould-damaged ceiling painting.",
+    "F&S Painting is a professional painting company for Chatswood, the North Shore, and Sydney, covering house painting, interior painting, exterior painting, strata painting, commercial painting, and ceiling restoration.",
   path: "/",
 });
 

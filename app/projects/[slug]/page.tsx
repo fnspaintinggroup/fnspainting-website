@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, MapPin, Paintbrush } from "lucide-react";
 import { PortableBody } from "@/components/PortableBody";
 import { getProjectBySlug, getProjectList, toAbsoluteUrl } from "@/lib/cms";
-import { siteUrl, targetKeywords } from "@/lib/seo";
+import { breadcrumbSchema, siteUrl, targetKeywords } from "@/lib/seo";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -91,12 +91,20 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Projects", path: "/projects" },
+        { name: project.title, path: `/projects/${project.slug}` },
+      ], `${projectUrl}#breadcrumb`),
       {
         "@type": "WebPage",
         "@id": `${projectUrl}#webpage`,
         url: projectUrl,
         name: project.seoTitle,
         description: project.seoDescription,
+        breadcrumb: {
+          "@id": `${projectUrl}#breadcrumb`,
+        },
         primaryImageOfPage: {
           "@id": `${projectUrl}#after-image`,
         },

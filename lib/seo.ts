@@ -25,6 +25,10 @@ export const defaultOgImage = "/images/fs-painting-hero-real.jpeg";
 
 export const targetKeywords = [
   "painter Sydney",
+  "painters Chatswood",
+  "painter Chatswood",
+  "painters North Shore",
+  "North Shore painters",
   "house painting Sydney",
   "interior painter Sydney",
   "exterior painter Sydney",
@@ -140,6 +144,20 @@ export function serviceSchema(services: CmsService[]) {
         },
         url: `${siteUrl}/services#${service.slug}`,
       },
+    })),
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[], id?: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    ...(id ? { "@id": id } : {}),
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
     })),
   };
 }
