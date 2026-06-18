@@ -151,6 +151,42 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="bg-gumleaf py-14 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
+              Chatswood &amp; North Shore
+            </p>
+            <h2 className="text-3xl font-semibold leading-tight text-ink sm:text-4xl">
+              Need painters in Chatswood or the North Shore?
+            </h2>
+            <p className="mt-5 text-base leading-7 text-ink/72">
+              With 20 years of know-how and quality Dulux products, F&amp;S Painting provides clean,
+              reliable painting services for homes, apartments, strata buildings, offices, and shops
+              across Chatswood and nearby North Shore suburbs. From interior walls and ceilings to
+              exterior facades, trims, common areas, and commercial spaces, we focus on careful
+              preparation, tidy work, and a professional finish.
+            </p>
+            <Link
+              href="/painters-chatswood"
+              className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
+            >
+              View Chatswood Painting Services
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
+          </div>
+          <div className="relative min-h-72 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
+            <Image
+              src="/images/projects/chatswood-exterior-front-facade-wide.jpg"
+              alt="Chatswood exterior painting finish by F&S Painting"
+              fill
+              sizes="(min-width: 1024px) 45vw, 90vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       <Section
         className="bg-mist"
         eyebrow="Company Information"
