@@ -3,6 +3,8 @@ import { getBlogPosts, getProjectList } from "@/lib/cms";
 import { galleryCollections } from "@/lib/gallery";
 import { siteUrl } from "@/lib/seo";
 
+const contentLastModified = new Date("2026-06-19");
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
@@ -17,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/painters-chatswood",
   ].map((route) => ({
     url: `${siteUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: contentLastModified,
     changeFrequency: route === "" || route === "/painters-chatswood" ? "weekly" : "monthly",
     priority: route === "" ? 1 : route === "/painters-chatswood" ? 0.9 : 0.8,
   }));
@@ -33,14 +35,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const projectRoutes = projects.map((project) => ({
     url: `${siteUrl}/projects/${project.slug}`,
-    lastModified: new Date(project.completionDate),
+    lastModified: new Date(
+      Math.max(new Date(project.completionDate).getTime(), contentLastModified.getTime()),
+    ),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const galleryCollectionRoutes = galleryCollections.map((collection) => ({
     url: `${siteUrl}/painting-gallery/${collection.slug}`,
-    lastModified: new Date(),
+    lastModified: contentLastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

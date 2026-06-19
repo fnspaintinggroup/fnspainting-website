@@ -26,6 +26,31 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/blog",
+        destination: "/painting-tips",
+        permanent: true,
+      },
+      {
+        source: "/blog/:path*",
+        destination: "/painting-tips/:path*",
+        permanent: true,
+      },
+      {
+        source: "/gallery",
+        destination: "/painting-gallery",
+        permanent: true,
+      },
+      {
+        source: "/gallery/:path*",
+        destination: "/painting-gallery/:path*",
+        permanent: true,
+      },
+      {
+        source: "/project/:path*",
+        destination: "/projects/:path*",
+        permanent: true,
+      },
+      {
         source: "/work",
         destination: "/projects",
         permanent: true,
