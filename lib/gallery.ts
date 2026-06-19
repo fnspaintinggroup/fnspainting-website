@@ -246,6 +246,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 9,
   },
   {
+    title: "Newington Interior Repaint",
+    category: "Interior Painting",
+    image: "/images/projects/newington-interior-living-after.jpg",
+    alt: "Newington living area after professional interior repainting by F&S Painting",
+    caption:
+      "A location gallery showing Newington interior painting finishes across living, dining, kitchen, window, and bedroom areas completed on 5 November 2018.",
+    suburb: "Newington, NSW",
+    collectionSlug: "newington-interior-repaint",
+    photoCount: 4,
+  },
+  {
     title: "Dee Why Strata Common Area Repaint",
     category: "Strata Painting",
     image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
@@ -1357,6 +1368,47 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/newington-side-elevation-finish.jpg",
         alt: "Newington side elevation after exterior house repainting",
         caption: "Side elevation, upper wall, lower masonry, and trim lines repainted for a tidy exterior result.",
+      },
+    ],
+  },
+  {
+    slug: "newington-interior-repaint",
+    title: "Newington Interior Repaint",
+    category: "Interior Painting",
+    suburb: "Newington, NSW",
+    summary:
+      "Interior painting across Newington living, dining, kitchen, window, and bedroom areas, completed on 5 November 2018.",
+    coverImage: "/images/projects/newington-interior-living-after.jpg",
+    coverAlt:
+      "Newington living area after fresh interior repainting by F&S Painting",
+    images: [
+      {
+        title: "Window Trim Finish",
+        image: "/images/projects/newington-interior-window-finish.jpg",
+        alt: "Newington interior window wall and trim after repainting",
+        caption:
+          "Window wall, trim, and surrounding interior surfaces finished with a clean neutral coating.",
+      },
+      {
+        title: "Dining Area Finish",
+        image: "/images/projects/newington-interior-dining-finish.jpg",
+        alt: "Newington dining area after interior wall and ceiling repainting",
+        caption:
+          "Dining wall, ceiling line, and surrounding open-plan surfaces refreshed for a brighter finish.",
+      },
+      {
+        title: "Kitchen Area Finish",
+        image: "/images/projects/newington-interior-kitchen-finish.jpg",
+        alt: "Newington kitchen and dining area after interior repainting",
+        caption:
+          "Kitchen-side walls and open-plan dining surfaces completed with a clean, even finish.",
+      },
+      {
+        title: "Bedroom Wall Finish",
+        image: "/images/projects/newington-interior-bedroom-finish.jpg",
+        alt: "Newington bedroom wall and window area after interior repainting",
+        caption:
+          "Bedroom wall and window-side surfaces repainted for a tidy, refreshed interior result.",
       },
     ],
   },

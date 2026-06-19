@@ -70,6 +70,24 @@ export const projects: Project[] = [
       "Before and after exterior house painting in Carlingford by F&S Painting, showing a brick home refreshed with white walls and black trim.",
   },
   {
+    title: "Newington Interior Repaint",
+    slug: "newington-interior-repaint",
+    location: "Newington, NSW",
+    serviceType: "Interior Painting",
+    beforeImage: "/images/projects/newington-interior-living-before.jpg",
+    afterImage: "/images/projects/newington-interior-living-after.jpg",
+    beforeImageAlt: "Newington living area before interior repainting with furniture and floors protected",
+    afterImageAlt: "Newington living area after interior repainting with clean walls and ceiling finish",
+    description:
+      "A Newington home interior was protected, prepared, and repainted across living, dining, kitchen, window, and bedroom areas for a cleaner, brighter finish.",
+    materials:
+      "Interior acrylic wall paint, ceiling paint, trim coating, patching compound, sanding materials, masking protection, and careful furniture covering.",
+    completionDate: "2018-11-05",
+    seoTitle: "Interior Painting Newington | F&S Painting",
+    seoDescription:
+      "Before and after Newington interior painting by F&S Painting, showing protected preparation and a clean finished living area repaint.",
+  },
+  {
     title: "Silverwater Commercial Exterior Facade Repaint",
     slug: "silverwater-commercial-exterior-facade-repaint",
     location: "Silverwater, NSW",
