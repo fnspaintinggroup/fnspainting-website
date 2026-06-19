@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Images, MapPin, Paintbrush } from "lucide-react";
-import { galleryCollections, getGalleryCollection } from "@/lib/gallery";
-import { pageMetadata, siteUrl } from "@/lib/seo";
+import { getGalleryCollectionBySlug, getGalleryCollections } from "@/lib/cms";
+import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
 
 type GalleryCollectionPageProps = {
   params: Promise<{
@@ -12,7 +12,9 @@ type GalleryCollectionPageProps = {
   }>;
 };
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const galleryCollections = await getGalleryCollections();
+
   return galleryCollections.map((collection) => ({
     slug: collection.slug,
   }));
@@ -22,7 +24,7 @@ export async function generateMetadata({
   params,
 }: GalleryCollectionPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const collection = getGalleryCollection(slug);
+  const collection = await getGalleryCollectionBySlug(slug);
 
   if (!collection) {
     return pageMetadata({
@@ -42,7 +44,7 @@ export async function generateMetadata({
 
 export default async function GalleryCollectionPage({ params }: GalleryCollectionPageProps) {
   const { slug } = await params;
-  const collection = getGalleryCollection(slug);
+  const collection = await getGalleryCollectionBySlug(slug);
 
   if (!collection) {
     notFound();
@@ -54,12 +56,12 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
     name: collection.title,
     description: collection.summary,
     url: `${siteUrl}/painting-gallery/${collection.slug}`,
-    image: collection.images.map((item) => `${siteUrl}${item.image}`),
+    image: collection.images.map((item) => absoluteUrl(item.image)),
     mainEntity: collection.images.map((item) => ({
       "@type": "ImageObject",
       name: item.title,
       caption: item.caption,
-      contentUrl: `${siteUrl}${item.image}`,
+      contentUrl: absoluteUrl(item.image),
       description: item.alt,
       keywords: [collection.category, collection.suburb, "painting gallery Sydney"],
     })),

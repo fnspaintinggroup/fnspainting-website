@@ -142,7 +142,7 @@ The embedded Sanity Studio is available at:
 /studio
 ```
 
-If Sanity variables are not configured, the frontend uses the local sample content in `lib/blog-posts.ts`, `lib/projects.ts`, and `lib/site-data.ts`.
+If Sanity variables are not configured, the frontend uses the local sample content in `lib/blog-posts.ts`, `lib/projects.ts`, `lib/gallery.ts`, and `lib/site-data.ts`.
 
 ## Deploying to Vercel
 
@@ -249,6 +249,7 @@ Schemas live in `sanity/schemas`.
 
 - `blogPost`: title, slug, published date, category, featured image, excerpt, body, SEO title, SEO description.
 - `project`: title, slug, suburb, service type, before image, after image, short description, full project description, paint used, completion date, SEO title, SEO description.
+- `galleryCollection`: title, slug, category, suburb, summary, completion date, cover image, gallery photos, image alt text, captions.
 - `review`: customer name, rating, review text, source, selected review toggle, date.
 - `service`: title, slug, summary, description, display order.
 
@@ -267,6 +268,8 @@ The following pages fetch content from Sanity:
 - `/services`
 - `/projects`
 - `/projects/[slug]`
+- `/painting-gallery`
+- `/painting-gallery/[slug]`
 - `/painting-tips`
 - `/painting-tips/[slug]`
 - `/reviews`
@@ -280,7 +283,8 @@ Sanity images are supported through `cdn.sanity.io` in `next.config.mjs`.
 2. Create services first if you want services to appear in a custom order.
 3. Add blog posts with SEO title and SEO description.
 4. Add projects with before and after images, image alt text, materials, and completion date.
-5. Add reviews with source and date.
+5. Add gallery collections with a cover image, photo titles, image alt text, and captions.
+6. Add reviews with source and date.
 
 New Sanity documents will automatically replace the local sample content once they exist in the configured dataset.
 

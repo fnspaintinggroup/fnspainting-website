@@ -31,6 +31,7 @@ export type GalleryCollection = {
   summary: string;
   coverImage: string;
   coverAlt: string;
+  completionDate?: string;
   images: GalleryCollectionImage[];
 };
 

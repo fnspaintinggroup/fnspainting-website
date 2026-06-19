@@ -1,4 +1,13 @@
 import { blogPosts as fallbackBlogPosts, type BlogPost } from "@/lib/blog-posts";
+import {
+  galleryCategories,
+  galleryCollections as fallbackGalleryCollections,
+  galleryImages as fallbackGalleryImages,
+  type GalleryCategory,
+  type GalleryCollection,
+  type GalleryCollectionImage,
+  type GalleryImage,
+} from "@/lib/gallery";
 import { projects as fallbackProjects, type Project } from "@/lib/projects";
 import { reviews as fallbackReviews, services as fallbackServices } from "@/lib/site-data";
 import { isSanityConfigured, sanityClient } from "@/lib/sanity";
@@ -36,6 +45,11 @@ type SanityProject = Project & {
 
 export type CmsProject = Project | SanityProject;
 
+type SanityGalleryCollection = Omit<GalleryCollection, "images" | "category"> & {
+  category: string;
+  images?: GalleryCollectionImage[];
+};
+
 const blogPostFields = `{
   title,
   "slug": slug.current,
@@ -65,6 +79,23 @@ const projectFields = `{
   "seoTitle": coalesce(seoTitle, title),
   "seoDescription": coalesce(seoDescription, shortDescription),
   "bodySource": "sanity"
+}`;
+
+const galleryCollectionFields = `{
+  title,
+  "slug": slug.current,
+  category,
+  suburb,
+  summary,
+  completionDate,
+  "coverImage": coverImage.asset->url,
+  "coverAlt": coalesce(coverImage.alt, title + " painting gallery"),
+  "images": images[]{
+    title,
+    "image": image.asset->url,
+    "alt": coalesce(image.alt, title),
+    caption
+  }
 }`;
 
 async function fetchSanity<T>(query: string, params: Record<string, string> = {}) {
@@ -106,6 +137,62 @@ function mergeProjectsWithLocalCorrections(projects: SanityProject[]) {
   return sortProjectsByCompletionDate([...correctedProjects, ...localOnlyProjects]);
 }
 
+function toGalleryCategory(category: string): GalleryCategory {
+  return galleryCategories.includes(category as GalleryCategory)
+    ? (category as GalleryCategory)
+    : "Interior Painting";
+}
+
+function normalizeSanityGalleryCollection(
+  collection: SanityGalleryCollection,
+): GalleryCollection | null {
+  const images = (collection.images ?? []).filter((item) => item.image);
+
+  if (!collection.slug || !collection.coverImage || images.length === 0) {
+    return null;
+  }
+
+  return {
+    ...collection,
+    category: toGalleryCategory(collection.category),
+    images,
+  };
+}
+
+function mergeGalleryCollections(collections: GalleryCollection[]) {
+  const sanitySlugs = new Set(collections.map((collection) => collection.slug));
+  const localOnlyCollections = fallbackGalleryCollections.filter(
+    (collection) => !sanitySlugs.has(collection.slug),
+  );
+
+  return [...collections, ...localOnlyCollections];
+}
+
+function galleryCardFromCollection(collection: GalleryCollection): GalleryImage {
+  return {
+    title: collection.title,
+    category: collection.category,
+    image: collection.coverImage,
+    alt: collection.coverAlt,
+    caption: collection.summary,
+    suburb: collection.suburb,
+    collectionSlug: collection.slug,
+    photoCount: collection.images.length,
+  };
+}
+
+async function getSanityGalleryCollections() {
+  const collections = await fetchSanity<SanityGalleryCollection[]>(
+    `*[_type == "galleryCollection" && defined(slug.current)] | order(completionDate desc, title asc) ${galleryCollectionFields}`,
+  );
+
+  return (
+    collections
+      ?.map((collection) => normalizeSanityGalleryCollection(collection))
+      .filter((collection): collection is GalleryCollection => Boolean(collection)) ?? []
+  );
+}
+
 export async function getBlogPosts(): Promise<CmsBlogPost[]> {
   const posts = await fetchSanity<SanityBlogPost[]>(
     `*[_type == "blogPost" && defined(slug.current)] | order(publishedDate desc) ${blogPostFields}`,
@@ -140,6 +227,56 @@ export async function getProjectBySlug(slug: string): Promise<CmsProject | undef
   return project
     ? applyLocalProjectCorrections(project)
     : fallbackProjects.find((item) => item.slug === slug);
+}
+
+export async function getGalleryCollections(): Promise<GalleryCollection[]> {
+  const collections = await getSanityGalleryCollections();
+
+  if (!collections.length) {
+    return fallbackGalleryCollections;
+  }
+
+  return mergeGalleryCollections(collections);
+}
+
+export async function getGalleryCollectionBySlug(
+  slug: string,
+): Promise<GalleryCollection | undefined> {
+  const collection = await fetchSanity<SanityGalleryCollection | null>(
+    `*[_type == "galleryCollection" && slug.current == $slug][0] ${galleryCollectionFields}`,
+    { slug },
+  );
+  const normalizedCollection = collection ? normalizeSanityGalleryCollection(collection) : null;
+
+  return (
+    normalizedCollection ?? fallbackGalleryCollections.find((item) => item.slug === slug)
+  );
+}
+
+export async function getGalleryImages(): Promise<GalleryImage[]> {
+  const sanityCollections = await getSanityGalleryCollections();
+
+  if (!sanityCollections.length) {
+    return fallbackGalleryImages;
+  }
+
+  const mergedCollections = mergeGalleryCollections(sanityCollections);
+  const cardsBySlug = new Map(
+    mergedCollections.map((collection) => [collection.slug, galleryCardFromCollection(collection)]),
+  );
+  const localCollectionSlugs = new Set(
+    fallbackGalleryImages
+      .map((image) => image.collectionSlug)
+      .filter((slug): slug is string => Boolean(slug)),
+  );
+  const newSanityCards = sanityCollections
+    .filter((collection) => !localCollectionSlugs.has(collection.slug))
+    .map((collection) => galleryCardFromCollection(collection));
+  const existingCards = fallbackGalleryImages.map((image) =>
+    image.collectionSlug ? (cardsBySlug.get(image.collectionSlug) ?? image) : image,
+  );
+
+  return [...newSanityCards, ...existingCards];
 }
 
 export async function getReviews(): Promise<CmsReview[]> {

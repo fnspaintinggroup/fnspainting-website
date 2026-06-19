@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getBlogPosts, getProjectList } from "@/lib/cms";
-import { galleryCollections } from "@/lib/gallery";
+import { getBlogPosts, getGalleryCollections, getProjectList } from "@/lib/cms";
 import { siteUrl } from "@/lib/seo";
 
 const contentLastModified = new Date("2026-06-19");
@@ -24,7 +23,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === "" ? 1 : route === "/painters-chatswood" ? 0.9 : 0.8,
   }));
 
-  const [blogPosts, projects] = await Promise.all([getBlogPosts(), getProjectList()]);
+  const [blogPosts, projects, galleryCollections] = await Promise.all([
+    getBlogPosts(),
+    getProjectList(),
+    getGalleryCollections(),
+  ]);
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${siteUrl}/painting-tips/${post.slug}`,
@@ -44,7 +47,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const galleryCollectionRoutes = galleryCollections.map((collection) => ({
     url: `${siteUrl}/painting-gallery/${collection.slug}`,
-    lastModified: contentLastModified,
+    lastModified: collection.completionDate
+      ? new Date(Math.max(new Date(collection.completionDate).getTime(), contentLastModified.getTime()))
+      : contentLastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

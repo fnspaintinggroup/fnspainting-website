@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Images, MapPin, Paintbrush } from "lucide-react";
-import { galleryCategories, galleryCollections, galleryImages } from "@/lib/gallery";
-import { pageMetadata, siteUrl } from "@/lib/seo";
+import { getGalleryCollections, getGalleryImages } from "@/lib/cms";
+import { galleryCategories } from "@/lib/gallery";
+import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Finest Finish Painting Gallery Sydney",
@@ -13,7 +14,11 @@ export const metadata: Metadata = pageMetadata({
   image: "/images/projects/exterior-house-main-after.jpg",
 });
 
-export default function PaintingGalleryPage() {
+export default async function PaintingGalleryPage() {
+  const [galleryImages, galleryCollections] = await Promise.all([
+    getGalleryImages(),
+    getGalleryCollections(),
+  ]);
   const gallerySchemaImages = [
     ...galleryImages.map((item) => ({
       title: item.title,
@@ -42,12 +47,12 @@ export default function PaintingGalleryPage() {
     description:
       "Finished painting examples from F&S Painting across Sydney, including interior, exterior, commercial, ceiling, strata, doors, trims, and detail work.",
     url: `${siteUrl}/painting-gallery`,
-    image: gallerySchemaImages.map((item) => `${siteUrl}${item.image}`),
+    image: gallerySchemaImages.map((item) => absoluteUrl(item.image)),
     mainEntity: gallerySchemaImages.map((item) => ({
       "@type": "ImageObject",
       name: item.title,
       caption: item.caption,
-      contentUrl: `${siteUrl}${item.image}`,
+      contentUrl: absoluteUrl(item.image),
       description: item.alt,
       keywords: [item.category, item.suburb, "painting gallery Sydney"].filter(Boolean),
     })),
