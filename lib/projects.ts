@@ -34,6 +34,24 @@ export const projects: Project[] = [
       "Before and after North Bridge interior painting by F&S Painting, showing a residential interior repaint with clean walls, feature areas, and detailed finishes.",
   },
   {
+    title: "North Ryde Interior House Repaint",
+    slug: "north-ryde-interior-house-repaint",
+    location: "North Ryde, NSW",
+    serviceType: "Interior Painting",
+    beforeImage: "/images/projects/north-ryde-interior-before.jpg",
+    afterImage: "/images/projects/north-ryde-interior-after.jpg",
+    beforeImageAlt: "North Ryde interior walls before repainting with floors and timber railing protected",
+    afterImageAlt: "North Ryde interior walls after repainting with a clean neutral finish",
+    description:
+      "A North Ryde home interior was protected, prepared, and repainted across stairwell, hallway, bedroom, landing, ceiling, and wall areas for a cleaner and more consistent finish.",
+    materials:
+      "Interior acrylic wall paint, ceiling paint, patching compound, sanding materials, masking protection, drop sheets, and detailed surface preparation.",
+    completionDate: "2018-10-13",
+    seoTitle: "Interior House Painting North Ryde | F&S Painting",
+    seoDescription:
+      "Before and after interior house painting in North Ryde by F&S Painting, showing stairwell, hallway, bedroom, ceiling, and wall repainting finishes.",
+  },
+  {
     title: "Carlingford Exterior House Repaint",
     slug: "carlingford-exterior-house-repaint",
     location: "Carlingford, NSW",
@@ -147,9 +165,9 @@ export const projects: Project[] = [
     location: "Newington, NSW",
     serviceType: "Exterior Painting",
     beforeImage: "/images/projects/newington-exterior-house-before.jpg",
-    afterImage: "/images/projects/newington-exterior-house-after.jpg",
+    afterImage: "/images/projects/newington-front-facade-after-final.jpg",
     beforeImageAlt: "Newington house exterior before repainting with preparation patches on the front facade",
-    afterImageAlt: "Newington house exterior after repainting with refreshed facade and trim finishes",
+    afterImageAlt: "Newington house front facade after exterior repainting with refreshed wall and trim finishes",
     description:
       "A Newington home exterior was prepared and repainted across the front facade, side elevations, rear wall areas, patio surrounds, boundary walls, and trim details for a cleaner, more consistent finish.",
     materials:

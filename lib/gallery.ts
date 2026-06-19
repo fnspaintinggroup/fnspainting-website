@@ -88,6 +88,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 10,
   },
   {
+    title: "North Ryde Interior House Repaint",
+    category: "Interior Painting",
+    image: "/images/projects/north-ryde-interior-after.jpg",
+    alt: "North Ryde home interior after professional repainting by F&S Painting",
+    caption:
+      "A location gallery showing North Ryde interior painting finishes across walls, ceiling lines, stairwell, hallway, bedrooms, and landing areas.",
+    suburb: "North Ryde, NSW",
+    collectionSlug: "north-ryde-interior-house-repaint",
+    photoCount: 10,
+  },
+  {
     title: "Carlingford Exterior House Painting",
     category: "Exterior Painting",
     image: "/images/projects/carlingford-front-driveway-finish.jpg",
@@ -215,13 +226,13 @@ export const galleryImages: GalleryImage[] = [
   {
     title: "Newington Exterior House Repaint",
     category: "Exterior Painting",
-    image: "/images/projects/newington-rear-facade-finish.jpg",
-    alt: "Newington rear facade and patio exterior after repainting by F&S Painting",
+    image: "/images/projects/newington-front-facade-after-final.jpg",
+    alt: "Newington front facade after exterior repainting by F&S Painting",
     caption:
       "A location gallery showing Newington exterior house painting finishes across rear walls, patio areas, side elevations, boundary walls, and trim details.",
     suburb: "Newington, NSW",
     collectionSlug: "newington-exterior-house-repaint",
-    photoCount: 5,
+    photoCount: 9,
   },
   {
     title: "Dee Why Strata Common Area Repaint",
@@ -858,6 +869,79 @@ export const galleryCollections: GalleryCollection[] = [
     ],
   },
   {
+    slug: "north-ryde-interior-house-repaint",
+    title: "North Ryde Interior House Repaint",
+    category: "Interior Painting",
+    suburb: "North Ryde, NSW",
+    summary:
+      "Finished residential interior painting across stairwell, hallway, bedroom, landing, ceiling, and wall areas in a North Ryde home.",
+    coverImage: "/images/projects/north-ryde-interior-after.jpg",
+    coverAlt:
+      "North Ryde home interior after repainting with a clean neutral finish",
+    images: [
+      {
+        title: "Corner Wall Finish",
+        image: "/images/projects/north-ryde-corner-wall-finish.jpg",
+        alt: "North Ryde corner wall and ceiling line after interior repainting",
+        caption: "Corner wall, ceiling line, and neutral interior finish completed with clean edges.",
+      },
+      {
+        title: "Stairwell Before Preparation",
+        image: "/images/projects/north-ryde-stairwell-before.jpg",
+        alt: "North Ryde stairwell before repainting with timber wall lining",
+        caption: "Stairwell area before the final repaint, showing existing timber lining and wall surfaces.",
+      },
+      {
+        title: "Room Wall Finish",
+        image: "/images/projects/north-ryde-room-wall-finish.jpg",
+        alt: "North Ryde room wall after interior repainting",
+        caption: "Room wall refreshed with a clean, even neutral paint finish around timber trim.",
+      },
+      {
+        title: "Feature Wall Finish",
+        image: "/images/projects/north-ryde-feature-wall-finish.jpg",
+        alt: "North Ryde feature wall after interior repainting",
+        caption: "Feature wall and adjacent ceiling line finished neatly beside timber door trim.",
+      },
+      {
+        title: "Hallway Wall Finish",
+        image: "/images/projects/north-ryde-hallway-finish.jpg",
+        alt: "North Ryde hallway wall after interior repainting",
+        caption: "Hallway wall and doorway surrounds repainted for a cleaner, brighter passage finish.",
+      },
+      {
+        title: "Stairwell Finish",
+        image: "/images/projects/north-ryde-stairwell-finish.jpg",
+        alt: "North Ryde stairwell wall after interior painting",
+        caption: "Stairwell wall and landing area finished carefully around timber balustrade details.",
+      },
+      {
+        title: "Bedroom Wall Finish",
+        image: "/images/projects/north-ryde-bedroom-wall-finish.jpg",
+        alt: "North Ryde bedroom wall after repainting",
+        caption: "Bedroom wall repainted with a soft neutral tone and clean ceiling line.",
+      },
+      {
+        title: "Bedroom Window Finish",
+        image: "/images/projects/north-ryde-bedroom-window-finish.jpg",
+        alt: "North Ryde bedroom interior after wall repainting beside window",
+        caption: "Bedroom wall and window-side area refreshed with a consistent interior finish.",
+      },
+      {
+        title: "Ceiling Corner Finish",
+        image: "/images/projects/north-ryde-ceiling-corner-finish.jpg",
+        alt: "North Ryde ceiling corner and wall after repainting",
+        caption: "Ceiling corner and surrounding wall areas finished with smooth, tidy paintwork.",
+      },
+      {
+        title: "Landing Wall Finish",
+        image: "/images/projects/north-ryde-landing-wall-finish.jpg",
+        alt: "North Ryde landing wall after interior repainting",
+        caption: "Landing wall and stair opening refreshed with a clean neutral interior coating.",
+      },
+    ],
+  },
+  {
     slug: "north-bridge-interior",
     title: "North Bridge Interior Painting",
     category: "Interior Painting",
@@ -1163,10 +1247,34 @@ export const galleryCollections: GalleryCollection[] = [
     suburb: "Newington, NSW",
     summary:
       "Finished exterior house painting across rear facade walls, patio surrounds, side elevations, boundary walls, and detailed exterior surfaces in Newington.",
-    coverImage: "/images/projects/newington-rear-facade-finish.jpg",
+    coverImage: "/images/projects/newington-front-facade-after-final.jpg",
     coverAlt:
-      "Newington rear facade and patio exterior after repainting by F&S Painting",
+      "Newington front facade after exterior repainting by F&S Painting",
     images: [
+      {
+        title: "Front Facade Final Finish",
+        image: "/images/projects/newington-front-facade-after-final.jpg",
+        alt: "Newington front facade after exterior house repainting",
+        caption: "Front facade, balcony surrounds, garage-facing wall, and trim areas finished with a clean exterior repaint.",
+      },
+      {
+        title: "Side Facade Contrast Finish",
+        image: "/images/projects/newington-front-side-facade-finish.jpg",
+        alt: "Newington side facade after exterior repainting",
+        caption: "Side facade and upper exterior wall areas repainted with a consistent contrast finish.",
+      },
+      {
+        title: "Grey Side Wall Finish",
+        image: "/images/projects/newington-side-wall-grey-finish.jpg",
+        alt: "Newington grey side wall after exterior repainting",
+        caption: "Side wall and gutter line refreshed with a durable grey exterior coating.",
+      },
+      {
+        title: "Upper Pergola Detail",
+        image: "/images/projects/newington-upper-pergola-finish.jpg",
+        alt: "Newington upper pergola and exterior wall after repainting",
+        caption: "Upper pergola beams, nearby wall areas, and high exterior details finished neatly after preparation.",
+      },
       {
         title: "Patio Wall Finish",
         image: "/images/projects/newington-patio-wall-finish.jpg",
