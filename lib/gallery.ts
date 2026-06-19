@@ -213,6 +213,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 4,
   },
   {
+    title: "Newington Exterior House Repaint",
+    category: "Exterior Painting",
+    image: "/images/projects/newington-rear-facade-finish.jpg",
+    alt: "Newington rear facade and patio exterior after repainting by F&S Painting",
+    caption:
+      "A location gallery showing Newington exterior house painting finishes across rear walls, patio areas, side elevations, boundary walls, and trim details.",
+    suburb: "Newington, NSW",
+    collectionSlug: "newington-exterior-house-repaint",
+    photoCount: 5,
+  },
+  {
     title: "Dee Why Strata Common Area Repaint",
     category: "Strata Painting",
     image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
@@ -1142,6 +1153,49 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/lindfield-rear-exterior-wall-finish.jpg",
         alt: "Lindfield rear exterior wall and window trim after repainting",
         caption: "Rear exterior wall, window frames, and trim repainted as part of the Lindfield refresh.",
+      },
+    ],
+  },
+  {
+    slug: "newington-exterior-house-repaint",
+    title: "Newington Exterior House Repaint",
+    category: "Exterior Painting",
+    suburb: "Newington, NSW",
+    summary:
+      "Finished exterior house painting across rear facade walls, patio surrounds, side elevations, boundary walls, and detailed exterior surfaces in Newington.",
+    coverImage: "/images/projects/newington-rear-facade-finish.jpg",
+    coverAlt:
+      "Newington rear facade and patio exterior after repainting by F&S Painting",
+    images: [
+      {
+        title: "Patio Wall Finish",
+        image: "/images/projects/newington-patio-wall-finish.jpg",
+        alt: "Newington patio wall and rear door area after exterior repainting",
+        caption: "Patio wall, rear door surrounds, and covered outdoor details refreshed with a clean exterior finish.",
+      },
+      {
+        title: "Rear Facade Finish",
+        image: "/images/projects/newington-rear-facade-finish.jpg",
+        alt: "Newington rear facade and upper wall after exterior repainting",
+        caption: "Rear facade walls, upper cladding, gutters, and patio roofline finished with a consistent exterior coating.",
+      },
+      {
+        title: "Courtyard Wall Finish",
+        image: "/images/projects/newington-courtyard-wall-finish.jpg",
+        alt: "Newington courtyard boundary walls after exterior repainting",
+        caption: "Courtyard and boundary wall areas repainted for a cleaner garden-side presentation.",
+      },
+      {
+        title: "Side Wall Finish",
+        image: "/images/projects/newington-side-wall-finish.jpg",
+        alt: "Newington side wall and service area after exterior repainting",
+        caption: "Side wall, service area, garden edge, and exterior details finished neatly after preparation.",
+      },
+      {
+        title: "Side Elevation Finish",
+        image: "/images/projects/newington-side-elevation-finish.jpg",
+        alt: "Newington side elevation after exterior house repainting",
+        caption: "Side elevation, upper wall, lower masonry, and trim lines repainted for a tidy exterior result.",
       },
     ],
   },

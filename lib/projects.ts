@@ -142,6 +142,24 @@ export const projects: Project[] = [
       "Before and after Narwee strata exterior refresh by F&S Painting, showing cleaner common area presentation across walls, balconies, soffits, and entry areas.",
   },
   {
+    title: "Newington Exterior House Repaint",
+    slug: "newington-exterior-house-repaint",
+    location: "Newington, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/newington-exterior-house-before.jpg",
+    afterImage: "/images/projects/newington-exterior-house-after.jpg",
+    beforeImageAlt: "Newington house exterior before repainting with preparation patches on the front facade",
+    afterImageAlt: "Newington house exterior after repainting with refreshed facade and trim finishes",
+    description:
+      "A Newington home exterior was prepared and repainted across the front facade, side elevations, rear wall areas, patio surrounds, boundary walls, and trim details for a cleaner, more consistent finish.",
+    materials:
+      "Exterior acrylic paint system, masonry preparation materials, exterior trim coating, primers where required, patching compound, sanding materials, masking protection, and detailed surface preparation.",
+    completionDate: "2016-10-10",
+    seoTitle: "Exterior House Painting Newington | F&S Painting",
+    seoDescription:
+      "Before and after exterior house painting in Newington by F&S Painting, showing facade preparation, wall repainting, and refreshed exterior finishes.",
+  },
+  {
     title: "Mould-Damaged Ceiling Restoration in Chatswood",
     slug: "mould-damaged-ceiling-restoration-sydney",
     location: "Chatswood, NSW",
