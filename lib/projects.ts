@@ -124,6 +124,42 @@ export const projects: Project[] = [
       "Before and after Silverwater commercial side wall repaint by F&S Painting, showing exterior cladding and masonry preparation with a fresh finish.",
   },
   {
+    title: "Wetherill Park Commercial Facade Repaint",
+    slug: "wetherill-park-commercial-facade-repaint",
+    location: "Wetherill Park, NSW",
+    serviceType: "Commercial Painting",
+    beforeImage: "/images/projects/wetherill-park-commercial-facade-before.jpg",
+    afterImage: "/images/projects/wetherill-park-commercial-facade-after.jpg",
+    beforeImageAlt: "Wetherill Park commercial building facade before repainting with preparation underway",
+    afterImageAlt: "Wetherill Park commercial building facade after exterior repainting",
+    description:
+      "A Wetherill Park commercial building exterior was prepared and repainted across the main facade, wall panels, trims, and entry-facing areas for a cleaner business presentation.",
+    materials:
+      "Commercial exterior acrylic coating system, masonry preparation materials, exterior trim coating, primers where required, masking protection, ladders, and detailed surface preparation.",
+    completionDate: "2018-11-30",
+    seoTitle: "Commercial Painting Wetherill Park | F&S Painting",
+    seoDescription:
+      "Before and after commercial facade painting in Wetherill Park by F&S Painting, showing exterior preparation and a cleaner finished warehouse presentation.",
+  },
+  {
+    title: "Wetherill Park Commercial Roller Door Repaint",
+    slug: "wetherill-park-commercial-roller-door-repaint",
+    location: "Wetherill Park, NSW",
+    serviceType: "Commercial Painting",
+    beforeImage: "/images/projects/wetherill-park-commercial-roller-doors-before.jpg",
+    afterImage: "/images/projects/wetherill-park-commercial-roller-doors-after.jpg",
+    beforeImageAlt: "Wetherill Park commercial roller doors before repainting",
+    afterImageAlt: "Wetherill Park commercial roller doors after dark exterior repainting",
+    description:
+      "Commercial roller doors and surrounding exterior wall areas were prepared and repainted to match the updated facade and improve the overall warehouse finish.",
+    materials:
+      "Commercial exterior coating, roller door surface preparation, metal primer where required, sanding materials, masking protection, drop sheets, and access equipment.",
+    completionDate: "2018-11-30",
+    seoTitle: "Commercial Roller Door Painting Wetherill Park | F&S Painting",
+    seoDescription:
+      "Before and after commercial roller door repaint in Wetherill Park by F&S Painting, showing preparation and a dark finished exterior coating.",
+  },
+  {
     title: "Dee Why Strata High Ceiling and Wall Repaint",
     slug: "dee-why-strata-high-ceiling-wall-repaint",
     location: "Dee Why, NSW",

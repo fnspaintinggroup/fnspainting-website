@@ -202,6 +202,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 6,
   },
   {
+    title: "Wetherill Park Commercial Painting",
+    category: "Commercial Painting",
+    image: "/images/projects/wetherill-park-commercial-front-entry-finish.jpg",
+    alt: "Wetherill Park commercial building exterior after professional painting by F&S Painting",
+    caption:
+      "A location gallery showing Wetherill Park commercial exterior painting finishes across facade, entry, roller door, side wall, and driveway areas completed on 30 November 2018.",
+    suburb: "Wetherill Park, NSW",
+    collectionSlug: "wetherill-park-commercial-painting",
+    photoCount: 5,
+  },
+  {
     title: "Office Room Refresh",
     category: "Commercial Painting",
     image: "/images/projects/interior-office-room-after.jpg",
@@ -583,6 +594,54 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/silverwater-commercial-rear-facade.jpg",
         alt: "Silverwater commercial rear facade after yellow exterior painting",
         caption: "Rear facade and roller door surrounds repainted with a clean, durable exterior finish.",
+      },
+    ],
+  },
+  {
+    slug: "wetherill-park-commercial-painting",
+    title: "Wetherill Park Commercial Painting",
+    category: "Commercial Painting",
+    suburb: "Wetherill Park, NSW",
+    summary:
+      "Commercial exterior painting across Wetherill Park facade, entry, roller door, side wall, driveway, and street-facing areas, completed on 30 November 2018.",
+    coverImage: "/images/projects/wetherill-park-commercial-front-entry-finish.jpg",
+    coverAlt:
+      "Wetherill Park commercial building exterior after fresh commercial repainting",
+    images: [
+      {
+        title: "Front Entry Finish",
+        image: "/images/projects/wetherill-park-commercial-front-entry-finish.jpg",
+        alt: "Wetherill Park commercial front entry and facade after exterior repainting",
+        caption:
+          "Front entry, glazing surrounds, and facade areas refreshed for a cleaner commercial presentation.",
+      },
+      {
+        title: "Front Awning Finish",
+        image: "/images/projects/wetherill-park-commercial-front-awning-finish.jpg",
+        alt: "Wetherill Park commercial front awning and facade after repainting",
+        caption:
+          "Awning, posts, upper cladding, and entry-side exterior areas completed with a consistent finish.",
+      },
+      {
+        title: "Side Driveway Finish",
+        image: "/images/projects/wetherill-park-commercial-side-driveway-finish.jpg",
+        alt: "Wetherill Park commercial side driveway wall and roller doors after painting",
+        caption:
+          "Side driveway walls, roller doors, and access areas repainted for a neat warehouse finish.",
+      },
+      {
+        title: "Side Wall Finish",
+        image: "/images/projects/wetherill-park-commercial-side-wall-finish.jpg",
+        alt: "Wetherill Park commercial side wall and service door after repainting",
+        caption:
+          "Side wall, service door, and nearby roller door surrounds finished in a durable exterior coating.",
+      },
+      {
+        title: "Street Facade Finish",
+        image: "/images/projects/wetherill-park-commercial-street-facade-finish.jpg",
+        alt: "Wetherill Park commercial street-facing facade after exterior repainting",
+        caption:
+          "Street-facing facade and wall panels refreshed for a cleaner view from the road.",
       },
     ],
   },
