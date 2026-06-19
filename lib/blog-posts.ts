@@ -26,8 +26,8 @@ export const blogPosts: BlogPost[] = [
     slug: "free-quote-with-on-site-consultation",
     date: "2025-04-11",
     category: "Painting Quote",
-    featuredImage: "/images/projects/carlingford-front-driveway-finish.jpg",
-    imageAlt: "F&S Painting van at a Sydney home during an exterior painting project",
+    featuredImage: "/images/projects/painting-quote-onsite-consultation.jpg",
+    imageAlt: "Bright living room after interior painting and presentation work by F&S Painting",
     excerpt:
       "A clear and reliable first step for your project, with an on-site visit that helps confirm scope, access, preparation needs, and a realistic quote.",
     seoTitle: "Free Quote With On-Site Consultation | F&S Painting",

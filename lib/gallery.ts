@@ -99,6 +99,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 10,
   },
   {
+    title: "Willoughby Interior Wall Repaint",
+    category: "Interior Painting",
+    image: "/images/projects/willoughby-hallway-wall-finish.jpg",
+    alt: "Willoughby hallway and interior walls after repainting by F&S Painting",
+    caption:
+      "A Willoughby interior wall repaint gallery showing preparation and clean painting finishes completed on 15 May 2024.",
+    suburb: "Willoughby, NSW",
+    collectionSlug: "willoughby-interior-wall-repaint",
+    photoCount: 5,
+  },
+  {
     title: "Carlingford Exterior House Painting",
     category: "Exterior Painting",
     image: "/images/projects/carlingford-front-driveway-finish.jpg",
@@ -129,7 +140,7 @@ export const galleryImages: GalleryImage[] = [
       "North Willoughby exterior facade, trim, porch, windows, verandah, and side wall finishes.",
     suburb: "North Willoughby, NSW",
     collectionSlug: "north-willoughby-exterior-facade-trim",
-    photoCount: 8,
+    photoCount: 7,
   },
   {
     title: "Mould-Damaged Ceiling Restored",
@@ -576,12 +587,6 @@ export const galleryCollections: GalleryCollection[] = [
       "North Willoughby house facade and trim after professional exterior repainting by F&S Painting",
     images: [
       {
-        title: "Facade and Trim Finish",
-        image: "/images/projects/exterior-facade-after.jpg",
-        alt: "North Willoughby exterior facade and trim after repainting",
-        caption: "Finished facade and trim with a clean, consistent exterior presentation.",
-      },
-      {
         title: "Front Entry Finish",
         image: "/images/projects/north-willoughby-exterior-front-entry-finish.jpg",
         alt: "North Willoughby front entry facade after exterior painting",
@@ -938,6 +943,54 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/north-ryde-landing-wall-finish.jpg",
         alt: "North Ryde landing wall after interior repainting",
         caption: "Landing wall and stair opening refreshed with a clean neutral interior coating.",
+      },
+    ],
+  },
+  {
+    slug: "willoughby-interior-wall-repaint",
+    title: "Willoughby Interior Wall Repaint",
+    category: "Interior Painting",
+    suburb: "Willoughby, NSW",
+    summary:
+      "Interior wall preparation and repainting across hallway and bedroom areas in a Willoughby home, completed on 15 May 2024.",
+    coverImage: "/images/projects/willoughby-hallway-wall-finish.jpg",
+    coverAlt:
+      "Willoughby hallway and interior walls after repainting by F&S Painting",
+    images: [
+      {
+        title: "Wall Preparation",
+        image: "/images/projects/willoughby-interior-wall-preparation.jpg",
+        alt: "Willoughby interior wall during patching and surface preparation",
+        caption:
+          "Wall surfaces patched, sanded, and protected before the final repaint.",
+      },
+      {
+        title: "Hallway Wall Finish",
+        image: "/images/projects/willoughby-hallway-wall-finish.jpg",
+        alt: "Willoughby hallway walls after interior repainting",
+        caption:
+          "Hallway walls refreshed with a clean neutral finish around the upper void and trim.",
+      },
+      {
+        title: "Bedroom Wall Finish",
+        image: "/images/projects/willoughby-bedroom-wall-finish.jpg",
+        alt: "Willoughby bedroom walls after interior repainting",
+        caption:
+          "Bedroom wall and ceiling lines completed neatly around window and trim details.",
+      },
+      {
+        title: "Bedroom Wide Finish",
+        image: "/images/projects/willoughby-bedroom-finish-wide.jpg",
+        alt: "Willoughby bedroom after fresh interior wall painting",
+        caption:
+          "Bedroom walls refreshed with a clean, consistent finish around furniture and window areas.",
+      },
+      {
+        title: "Bedroom Side Wall Finish",
+        image: "/images/projects/willoughby-bedroom-finish-bed.jpg",
+        alt: "Willoughby bedroom side wall after repainting",
+        caption:
+          "Bedroom side wall and skirting areas finished with a soft, even interior coating.",
       },
     ],
   },
