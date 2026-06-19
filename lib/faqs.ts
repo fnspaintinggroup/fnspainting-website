@@ -8,6 +8,16 @@ export const homeFaqs: FaqItem[] = [
       "Yes. F&S Painting provides free painting quotes across Sydney for residential, strata, and commercial projects. Share the property type, areas to be painted, and any photos so we can give practical advice before the job starts.",
   },
   {
+    question: "How quickly can I get a painting quote?",
+    answer:
+      "We aim to arrange a site visit or provide an online estimate by the next day after your enquiry. Wherever possible, we also aim to provide a confirmed quote within 3 days, depending on the size and details of the project.",
+  },
+  {
+    question: "How soon can you start painting?",
+    answer:
+      "We always try our best to work around our customers' schedules. Once we understand your requirements and the scope of work, we will offer the earliest available start date that suits your timeline.",
+  },
+  {
     question: "Are F&S Painting licensed and insured?",
     answer:
       "Yes. F&S Painting is licensed and fully insured, including workers compensation and public liability cover. These details are shown on the website so customers can feel confident before booking painting work.",
@@ -33,14 +43,14 @@ export const homeFaqs: FaqItem[] = [
       "Preparation depends on the surface, but can include cleaning, sanding, patching, sealing, caulking, stain blocking, masking, and primer where needed. Good preparation helps the finish look better and last longer.",
   },
   {
-    question: "Are you able to handle repaint work or take over from a previous painting company?",
+    question: "Can you paint while we are living in the house?",
     answer:
-      "Yes. We specialise in repaint projects and can take over work that has been started or left unfinished by a previous painting company. We also repair and correct issues caused by DIY painting or low-skill workmanship. These situations are more common than many people realise. With our experience, attention to detail, and professional painting skills, we can restore the area properly and deliver a clean, smooth, and presentable finish.",
+      "Yes. We regularly paint while customers are still living in their homes. We protect floors, furniture and fixtures, keep the work area as clean as possible, and plan the job in stages to minimise disruption to your daily routine.",
   },
   {
-    question: "What paint do you use, and what steps are included in your painting process?",
+    question: "Can you finish painting before we move in?",
     answer:
-      "We mainly use quality Dulux paint and follow a careful process for each job. This can include protecting nearby areas, repairing minor surface damage, sealing cracks, filling gaps, sanding, applying primer where needed, and finishing with the right paint system for the surface.",
+      "Yes. If you let us know your move-in date and schedule in advance, we will do our best to plan the work around your timeline and complete the painting before you move in.",
   },
 ];
 
@@ -71,14 +81,34 @@ export const serviceFaqs: FaqItem[] = [
       "Yes. For commercial and strata painting, we can discuss access, staging, protection, timing, and clean-up so the work is practical for residents, tenants, staff, and visitors.",
   },
   {
+    question: "Can you finish painting before we move in?",
+    answer:
+      "Yes. If you let us know your move-in date and schedule in advance, we will do our best to plan the work around your timeline and complete the painting before you move in.",
+  },
+  {
+    question: "Can you paint while we are living in the house?",
+    answer:
+      "Yes. We regularly carry out painting work while customers are still living in their homes. We take care to protect floors, furniture and fixtures, keep the work area as clean as possible, and plan the job in stages to minimise disruption to your daily routine.",
+  },
+  {
+    question: "Are you able to handle repaint work or take over from a previous painting company?",
+    answer:
+      "Yes. We specialise in repaint projects and can take over work that has been started or left unfinished by a previous painting company. We can also repair and correct issues caused by DIY painting or low-skill workmanship, then restore the area properly with a clean, smooth, and presentable finish.",
+  },
+  {
+    question: "What paint do you use, and what steps are included in your painting process?",
+    answer:
+      "We mainly use quality Dulux paint and follow a careful process for each job. This can include protecting nearby areas, repairing minor surface damage, sealing cracks, filling gaps, sanding, applying primer where needed, and finishing with the right paint system for the surface.",
+  },
+  {
     question: "Which paint finish should I choose?",
     answer:
       "The right finish depends on the surface and use. Low sheen is common for interior walls, semi-gloss or gloss can suit trims and doors, and exterior systems are chosen for durability and weather exposure.",
   },
   {
-    question: "How soon can I book a quote?",
+    question: "How soon can I book a quote, and how quickly will I receive it?",
     answer:
-      "You can request a free quote through the contact page or call F&S Painting directly. Photos and basic project details help us understand the scope before arranging the next step.",
+      "You can request a free quote through the contact page or call F&S Painting directly. We aim to arrange a site visit or provide an online estimate by the next day after your enquiry, and wherever possible provide a confirmed quote within 3 days.",
   },
 ];
 
