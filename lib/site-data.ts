@@ -146,6 +146,7 @@ export const tips = [
 ];
 
 export const serviceAreas = [
+  "Chatswood",
   "Eastern Suburbs",
   "Greater Western Sydney",
   "Hills District",

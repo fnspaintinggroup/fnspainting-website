@@ -38,6 +38,34 @@ const featuredProjects = projects
   )
   .slice(0, 4);
 
+const chatswoodPhotoHighlights = [
+  {
+    src: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
+    alt: "Chatswood exterior house repaint with refreshed facade and trim painting",
+    title: "Exterior House Painting",
+  },
+  {
+    src: "/images/projects/chatswood-commercial-reception-wide.jpg",
+    alt: "Chatswood commercial reception after interior repainting",
+    title: "Commercial Reception Painting",
+  },
+  {
+    src: "/images/projects/chatswood-office-boardroom-finish.jpg",
+    alt: "Chatswood office boardroom after clean interior painting",
+    title: "Office Interior Painting",
+  },
+  {
+    src: "/images/projects/chatswood-apartment-living-room-finish.jpg",
+    alt: "Chatswood apartment living room after interior repainting",
+    title: "Apartment Interior Painting",
+  },
+  {
+    src: "/images/projects/chatswood-exterior-entry-door-finish.jpg",
+    alt: "Chatswood exterior entry door and trim after painting",
+    title: "Entry and Trim Painting",
+  },
+];
+
 export const metadata: Metadata = pageMetadata({
   title: "Painters Chatswood & North Shore",
   description:
@@ -93,7 +121,10 @@ export default function PaintersChatswoodPage() {
           "@id": `${siteUrl}/#localbusiness`,
         },
         url: pageUrl,
-        image: featuredProjects.map((project) => absoluteUrl(project.afterImage)),
+        image: [
+          ...featuredProjects.map((project) => absoluteUrl(project.afterImage)),
+          ...chatswoodPhotoHighlights.map((photo) => absoluteUrl(photo.src)),
+        ],
       },
     ],
   };
@@ -217,6 +248,44 @@ export default function PaintersChatswoodPage() {
             </Link>
           ))}
         </div>
+      </Section>
+
+      <Section
+        eyebrow="Chatswood Photos"
+        title="Painting work completed in Chatswood"
+        intro="A closer look at Chatswood exterior, commercial, office, and apartment painting work completed by F&S Painting."
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {chatswoodPhotoHighlights.map((photo) => (
+            <article
+              key={photo.src}
+              className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
+            >
+              <div className="relative aspect-[4/3] bg-mist">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 1024px) 18vw, (min-width: 640px) 45vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <p className="text-sm font-semibold leading-5 text-ink">{photo.title}</p>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-ink/50">
+                  Chatswood, NSW
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <Link
+          href="/painting-gallery"
+          className="mt-8 inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+        >
+          View more painting gallery photos
+          <ArrowRight aria-hidden="true" size={18} />
+        </Link>
       </Section>
 
       <Section

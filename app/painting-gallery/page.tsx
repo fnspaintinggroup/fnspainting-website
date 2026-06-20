@@ -80,6 +80,13 @@ export default async function PaintingGalleryPage() {
               including interiors, exteriors, ceilings, doors, trims, strata areas, and commercial
               spaces.
             </p>
+            <Link
+              href="/painters-chatswood"
+              className="mt-7 inline-flex items-center gap-2 font-semibold text-gumleaf hover:text-white"
+            >
+              View Chatswood painting services
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
             {galleryImages.slice(0, 3).map((item) => (

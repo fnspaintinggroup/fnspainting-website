@@ -70,6 +70,13 @@ export default async function ServicesPage() {
                 painting needs.
               </p>
               <p>
+                For local North Shore work, you can also view our{" "}
+                <Link href="/painters-chatswood" className="font-semibold text-eucalyptus hover:text-clay">
+                  painters in Chatswood
+                </Link>{" "}
+                service page.
+              </p>
+              <p>
                 Most quality finishes begin with proper surface preparation. That is why we make
                 sure every job is prepared carefully before painting, so the final result looks
                 better and lasts longer.

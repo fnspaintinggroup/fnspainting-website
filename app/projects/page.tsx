@@ -52,6 +52,13 @@ export default async function ProjectsPage() {
             Sample project pages for ceiling restoration, interior painting, and exterior repainting
             work across Sydney.
           </p>
+          <Link
+            href="/painters-chatswood"
+            className="mt-7 inline-flex items-center gap-2 font-semibold text-gumleaf hover:text-white"
+          >
+            View painters in Chatswood
+            <ArrowRight aria-hidden="true" size={18} />
+          </Link>
         </div>
       </section>
 
