@@ -137,6 +137,62 @@ function mergeProjectsWithLocalCorrections(projects: SanityProject[]) {
   return sortProjectsByCompletionDate([...correctedProjects, ...localOnlyProjects]);
 }
 
+function sortBlogPostsByDate(posts: CmsBlogPost[]) {
+  return [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+function mergeBlogPosts(posts: SanityBlogPost[]) {
+  const cmsPosts = posts.map((post) => ({ ...post, bodySource: "sanity" as const }));
+  const sanitySlugs = new Set(cmsPosts.map((post) => post.slug));
+  const localOnlyPosts = fallbackBlogPosts.filter((post) => !sanitySlugs.has(post.slug));
+
+  return sortBlogPostsByDate([...cmsPosts, ...localOnlyPosts]);
+}
+
+function fallbackCmsReviews(): CmsReview[] {
+  return fallbackReviews.map((review) => ({
+    customerName: review.name,
+    rating: review.rating,
+    reviewText: review.quote,
+    source: "Google",
+    featured: true,
+  }));
+}
+
+function reviewKey(review: CmsReview) {
+  return `${review.customerName.toLowerCase()}::${review.reviewText.toLowerCase()}`;
+}
+
+function mergeReviews(reviews: CmsReview[]) {
+  const sanityReviewKeys = new Set(reviews.map((review) => reviewKey(review)));
+  const localOnlyReviews = fallbackCmsReviews().filter(
+    (review) => !sanityReviewKeys.has(reviewKey(review)),
+  );
+
+  return [...reviews, ...localOnlyReviews];
+}
+
+function fallbackCmsServices(): CmsService[] {
+  return fallbackServices.map((service) => ({
+    title: service.title,
+    slug: service.title
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, ""),
+    summary: service.summary,
+  }));
+}
+
+function mergeServices(services: CmsService[]) {
+  const sanitySlugs = new Set(services.map((service) => service.slug));
+  const localOnlyServices = fallbackCmsServices().filter(
+    (service) => !sanitySlugs.has(service.slug),
+  );
+
+  return [...services, ...localOnlyServices];
+}
+
 function toGalleryCategory(category: string): GalleryCategory {
   return galleryCategories.includes(category as GalleryCategory)
     ? (category as GalleryCategory)
@@ -198,7 +254,7 @@ export async function getBlogPosts(): Promise<CmsBlogPost[]> {
     `*[_type == "blogPost" && defined(slug.current)] | order(publishedDate desc) ${blogPostFields}`,
   );
 
-  return posts?.length ? posts.map((post) => ({ ...post, bodySource: "sanity" })) : fallbackBlogPosts;
+  return posts?.length ? mergeBlogPosts(posts) : fallbackBlogPosts;
 }
 
 export async function getBlogPost(slug: string): Promise<CmsBlogPost | undefined> {
@@ -291,15 +347,7 @@ export async function getReviews(): Promise<CmsReview[]> {
     }`,
   );
 
-  return reviews?.length
-    ? reviews
-    : fallbackReviews.map((review) => ({
-        customerName: review.name,
-        rating: review.rating,
-        reviewText: review.quote,
-        source: "Google",
-        featured: true,
-      }));
+  return reviews?.length ? mergeReviews(reviews) : fallbackCmsReviews();
 }
 
 export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
@@ -325,17 +373,7 @@ export async function getServices(): Promise<CmsService[]> {
     }`,
   );
 
-  return services?.length
-    ? services
-    : fallbackServices.map((service) => ({
-        title: service.title,
-        slug: service.title
-          .toLowerCase()
-          .replace(/&/g, "and")
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-|-$/g, ""),
-        summary: service.summary,
-      }));
+  return services?.length ? mergeServices(services) : fallbackCmsServices();
 }
 
 export function toAbsoluteUrl(pathOrUrl: string) {
