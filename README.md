@@ -139,8 +139,12 @@ Google API setup checklist:
 The embedded Sanity Studio is available at:
 
 ```text
+/admin
 /studio
 ```
+
+`/admin` redirects to `/studio`. If the Sanity environment variables are not configured,
+the admin page shows the missing setup values instead of opening a broken Studio screen.
 
 If Sanity variables are not configured, the frontend uses the local sample content in `lib/blog-posts.ts`, `lib/projects.ts`, `lib/gallery.ts`, and `lib/site-data.ts`.
 
