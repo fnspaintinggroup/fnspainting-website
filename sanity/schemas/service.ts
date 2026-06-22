@@ -16,9 +16,10 @@ export const service = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
+      hidden: true,
       description: "Click Generate. Keep this as a short URL, for example commercial-painting.",
       options: { source: "title", maxLength: 96, slugify: slugifyTitle },
-      validation: (rule) => rule.required().custom(validateUrlSlug),
+      validation: (rule) => rule.custom(validateUrlSlug),
     }),
     defineField({
       name: "summary",

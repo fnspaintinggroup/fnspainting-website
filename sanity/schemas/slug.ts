@@ -11,7 +11,7 @@ export function slugifyTitle(input: string) {
 
 export function validateUrlSlug(value: { current?: string } | undefined) {
   if (!value?.current) {
-    return "Click Generate to create a URL slug.";
+    return true;
   }
 
   if (!slugPattern.test(value.current)) {

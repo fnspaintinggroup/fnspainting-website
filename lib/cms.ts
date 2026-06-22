@@ -14,6 +14,7 @@ import { isSanityConfigured, sanityClient } from "@/lib/sanity";
 import type { PortableTextBlock } from "@portabletext/types";
 import { getGoogleBusinessProfileReviews } from "@/lib/review-providers";
 import { absoluteUrl } from "@/lib/seo";
+import { createUrlSlug } from "@/lib/url-slug";
 
 export type CmsReview = {
   customerName: string;
@@ -48,6 +49,10 @@ export type CmsProject = Project | SanityProject;
 type SanityGalleryCollection = Omit<GalleryCollection, "images" | "category"> & {
   category: string;
   images?: GalleryCollectionImage[];
+};
+
+type WithOptionalSlug<T extends { title: string; slug: string }> = Omit<T, "slug"> & {
+  slug?: string;
 };
 
 const blogPostFields = `{
@@ -110,6 +115,13 @@ async function fetchSanity<T>(query: string, params: Record<string, string> = {}
   }
 }
 
+function ensureSlug<T extends { title: string; slug?: string }>(item: T): T & { slug: string } {
+  return {
+    ...item,
+    slug: item.slug || createUrlSlug(item.title),
+  };
+}
+
 function applyLocalProjectCorrections<T extends CmsProject>(project: T): T {
   const localProject = fallbackProjects.find((item) => item.slug === project.slug);
 
@@ -129,8 +141,10 @@ function sortProjectsByCompletionDate(projects: CmsProject[]) {
   );
 }
 
-function mergeProjectsWithLocalCorrections(projects: SanityProject[]) {
-  const correctedProjects = projects.map((project) => applyLocalProjectCorrections(project));
+function mergeProjectsWithLocalCorrections(projects: Array<WithOptionalSlug<SanityProject>>) {
+  const correctedProjects = projects
+    .map((project) => ensureSlug(project))
+    .map((project) => applyLocalProjectCorrections(project));
   const sanitySlugs = new Set(correctedProjects.map((project) => project.slug));
   const localOnlyProjects = fallbackProjects.filter((project) => !sanitySlugs.has(project.slug));
 
@@ -141,8 +155,11 @@ function sortBlogPostsByDate(posts: CmsBlogPost[]) {
   return [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-function mergeBlogPosts(posts: SanityBlogPost[]) {
-  const cmsPosts = posts.map((post) => ({ ...post, bodySource: "sanity" as const }));
+function mergeBlogPosts(posts: Array<WithOptionalSlug<SanityBlogPost>>) {
+  const cmsPosts = posts.map((post) => ({
+    ...ensureSlug(post),
+    bodySource: "sanity" as const,
+  }));
   const sanitySlugs = new Set(cmsPosts.map((post) => post.slug));
   const localOnlyPosts = fallbackBlogPosts.filter((post) => !sanitySlugs.has(post.slug));
 
@@ -184,13 +201,14 @@ function fallbackCmsServices(): CmsService[] {
   }));
 }
 
-function mergeServices(services: CmsService[]) {
-  const sanitySlugs = new Set(services.map((service) => service.slug));
+function mergeServices(services: Array<WithOptionalSlug<CmsService>>) {
+  const cmsServices = services.map((service) => ensureSlug(service));
+  const sanitySlugs = new Set(cmsServices.map((service) => service.slug));
   const localOnlyServices = fallbackCmsServices().filter(
     (service) => !sanitySlugs.has(service.slug),
   );
 
-  return [...services, ...localOnlyServices];
+  return [...cmsServices, ...localOnlyServices];
 }
 
 function toGalleryCategory(category: string): GalleryCategory {
@@ -200,16 +218,16 @@ function toGalleryCategory(category: string): GalleryCategory {
 }
 
 function normalizeSanityGalleryCollection(
-  collection: SanityGalleryCollection,
+  collection: WithOptionalSlug<SanityGalleryCollection>,
 ): GalleryCollection | null {
   const images = (collection.images ?? []).filter((item) => item.image);
 
-  if (!collection.slug || !collection.coverImage || images.length === 0) {
+  if (!collection.coverImage || images.length === 0) {
     return null;
   }
 
   return {
-    ...collection,
+    ...ensureSlug(collection),
     category: toGalleryCategory(collection.category),
     images,
   };
@@ -238,8 +256,8 @@ function galleryCardFromCollection(collection: GalleryCollection): GalleryImage 
 }
 
 async function getSanityGalleryCollections() {
-  const collections = await fetchSanity<SanityGalleryCollection[]>(
-    `*[_type == "galleryCollection" && defined(slug.current)] | order(completionDate desc, title asc) ${galleryCollectionFields}`,
+  const collections = await fetchSanity<Array<WithOptionalSlug<SanityGalleryCollection>>>(
+    `*[_type == "galleryCollection"] | order(completionDate desc, title asc) ${galleryCollectionFields}`,
   );
 
   return (
@@ -250,39 +268,49 @@ async function getSanityGalleryCollections() {
 }
 
 export async function getBlogPosts(): Promise<CmsBlogPost[]> {
-  const posts = await fetchSanity<SanityBlogPost[]>(
-    `*[_type == "blogPost" && defined(slug.current)] | order(publishedDate desc) ${blogPostFields}`,
+  const posts = await fetchSanity<Array<WithOptionalSlug<SanityBlogPost>>>(
+    `*[_type == "blogPost"] | order(publishedDate desc) ${blogPostFields}`,
   );
 
   return posts?.length ? mergeBlogPosts(posts) : fallbackBlogPosts;
 }
 
 export async function getBlogPost(slug: string): Promise<CmsBlogPost | undefined> {
-  const post = await fetchSanity<SanityBlogPost | null>(
+  const post = await fetchSanity<WithOptionalSlug<SanityBlogPost> | null>(
     `*[_type == "blogPost" && slug.current == $slug][0] ${blogPostFields}`,
     { slug },
   );
 
-  return post ? { ...post, bodySource: "sanity" } : fallbackBlogPosts.find((item) => item.slug === slug);
+  if (post) {
+    return { ...ensureSlug(post), bodySource: "sanity" };
+  }
+
+  const posts = await getBlogPosts();
+
+  return posts.find((item) => item.slug === slug) ?? fallbackBlogPosts.find((item) => item.slug === slug);
 }
 
 export async function getProjectList(): Promise<CmsProject[]> {
-  const projects = await fetchSanity<SanityProject[]>(
-    `*[_type == "project" && defined(slug.current)] | order(completionDate desc) ${projectFields}`,
+  const projects = await fetchSanity<Array<WithOptionalSlug<SanityProject>>>(
+    `*[_type == "project"] | order(completionDate desc) ${projectFields}`,
   );
 
   return projects?.length ? mergeProjectsWithLocalCorrections(projects) : fallbackProjects;
 }
 
 export async function getProjectBySlug(slug: string): Promise<CmsProject | undefined> {
-  const project = await fetchSanity<SanityProject | null>(
+  const project = await fetchSanity<WithOptionalSlug<SanityProject> | null>(
     `*[_type == "project" && slug.current == $slug][0] ${projectFields}`,
     { slug },
   );
 
-  return project
-    ? applyLocalProjectCorrections(project)
-    : fallbackProjects.find((item) => item.slug === slug);
+  if (project) {
+    return applyLocalProjectCorrections(ensureSlug(project));
+  }
+
+  const projects = await getProjectList();
+
+  return projects.find((item) => item.slug === slug) ?? fallbackProjects.find((item) => item.slug === slug);
 }
 
 export async function getGalleryCollections(): Promise<GalleryCollection[]> {
@@ -298,11 +326,20 @@ export async function getGalleryCollections(): Promise<GalleryCollection[]> {
 export async function getGalleryCollectionBySlug(
   slug: string,
 ): Promise<GalleryCollection | undefined> {
-  const collection = await fetchSanity<SanityGalleryCollection | null>(
+  const collection = await fetchSanity<WithOptionalSlug<SanityGalleryCollection> | null>(
     `*[_type == "galleryCollection" && slug.current == $slug][0] ${galleryCollectionFields}`,
     { slug },
   );
   const normalizedCollection = collection ? normalizeSanityGalleryCollection(collection) : null;
+
+  if (!normalizedCollection) {
+    const collections = await getGalleryCollections();
+
+    return (
+      collections.find((item) => item.slug === slug) ??
+      fallbackGalleryCollections.find((item) => item.slug === slug)
+    );
+  }
 
   return (
     normalizedCollection ?? fallbackGalleryCollections.find((item) => item.slug === slug)
@@ -364,7 +401,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
 }
 
 export async function getServices(): Promise<CmsService[]> {
-  const services = await fetchSanity<CmsService[]>(
+  const services = await fetchSanity<Array<WithOptionalSlug<CmsService>>>(
     `*[_type == "service"] | order(displayOrder asc, title asc) {
       title,
       "slug": slug.current,
