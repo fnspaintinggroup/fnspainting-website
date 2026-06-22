@@ -54,9 +54,9 @@ export default async function ProjectsPage() {
           </p>
           <Link
             href="/painters-chatswood"
-            className="mt-7 inline-flex items-center gap-2 font-semibold text-gumleaf hover:text-white"
+            className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
           >
-            View painters in Chatswood
+            View licensed painters in Chatswood
             <ArrowRight aria-hidden="true" size={18} />
           </Link>
         </div>

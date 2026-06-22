@@ -82,9 +82,9 @@ export default async function PaintingGalleryPage() {
             </p>
             <Link
               href="/painters-chatswood"
-              className="mt-7 inline-flex items-center gap-2 font-semibold text-gumleaf hover:text-white"
+              className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
             >
-              View Chatswood painting services
+              View Chatswood painting services and quotes
               <ArrowRight aria-hidden="true" size={18} />
             </Link>
           </div>

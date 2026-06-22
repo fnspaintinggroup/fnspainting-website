@@ -42,6 +42,13 @@ export default async function ServicesPage() {
             F&amp;S Painting handles careful preparation, neat application, and practical guidance
             for residential, strata, and commercial properties.
           </p>
+          <Link
+            href="/painters-chatswood"
+            className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
+          >
+            Painters Chatswood - local quotes and project photos
+            <ArrowRight aria-hidden="true" size={18} />
+          </Link>
         </div>
       </section>
       <Section

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MapPin, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
 import { FaqSection } from "@/components/FaqSection";
 import { Section } from "@/components/Section";
 import { businessDetails } from "@/lib/business";
@@ -66,10 +66,19 @@ const chatswoodPhotoHighlights = [
   },
 ];
 
+const trustHighlights = [
+  "License 478497C",
+  "Workers Compensation 236870501",
+  "Public Liability AAMI SPD012776314",
+  "ACN 659406265",
+  "20 years painting experience",
+  "Quality Dulux paint systems",
+];
+
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Chatswood & North Shore",
+  title: "Painters Chatswood | Licensed House & Commercial Painters",
   description:
-    "F&S Painting provides professional house painting, apartment painting, strata painting, commercial painting, and ceiling restoration in Chatswood and the North Shore.",
+    "Licensed and insured painters in Chatswood for house, interior, exterior, strata and commercial painting. Dulux paint, local projects, Google reviews and free quotes.",
   path: "/painters-chatswood",
   image: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
 });
@@ -90,9 +99,9 @@ export default function PaintersChatswoodPage() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Painters Chatswood and North Shore",
+        name: "Painters Chatswood | Licensed House and Commercial Painters",
         description:
-          "Professional painting services for homes, strata buildings, offices, and commercial properties in Chatswood and the North Shore.",
+          "Licensed and insured painters for house, strata, commercial, interior, exterior, and ceiling painting in Chatswood and the North Shore.",
         breadcrumb: {
           "@id": `${pageUrl}#breadcrumb`,
         },
@@ -110,7 +119,7 @@ export default function PaintersChatswoodPage() {
         name: "Painters Chatswood",
         serviceType: "House painting, strata painting, commercial painting, and ceiling restoration",
         description:
-          "F&S Painting provides careful surface preparation and clean painting finishes across Chatswood, Artarmon, Willoughby, North Bridge, and nearby North Shore suburbs.",
+          "F&S Painting provides licensed and insured painting services with Dulux paint, careful preparation, local project photos, Google reviews, and free quotes across Chatswood, Artarmon, Willoughby, North Bridge, and nearby North Shore suburbs.",
         areaServed: [
           { "@type": "City", name: "Chatswood" },
           { "@type": "City", name: "Artarmon" },
@@ -159,13 +168,29 @@ export default function PaintersChatswoodPage() {
               Chatswood, North Shore & Sydney
             </p>
             <h1 className="text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-7xl">
-              Painters Chatswood & North Shore
+              Painters Chatswood
             </h1>
             <p className="mt-7 max-w-3xl text-base font-medium leading-7 text-white/88 sm:text-xl">
-              Professional house painting, strata painting, commercial painting, exterior painting,
-              interior painting, and ceiling restoration for Chatswood and nearby North Shore
-              suburbs.
+              Licensed and insured house, strata, commercial, interior, exterior, and ceiling
+              painters for Chatswood and nearby North Shore suburbs.
             </p>
+            <div className="mt-6 flex flex-wrap gap-2 text-sm font-semibold text-white">
+              <a
+                href={businessDetails.googleReviewsUrl}
+                className="inline-flex items-center gap-2 rounded-md bg-white/14 px-3 py-2 ring-1 ring-white/20 transition hover:bg-white/22"
+              >
+                <Star aria-hidden="true" size={16} />
+                Google {businessDetails.googleRating} rating, {businessDetails.googleReviewCount} reviews
+              </a>
+              <span className="inline-flex items-center gap-2 rounded-md bg-white/14 px-3 py-2 ring-1 ring-white/20">
+                <ShieldCheck aria-hidden="true" size={16} />
+                License 478497C
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-md bg-white/14 px-3 py-2 ring-1 ring-white/20">
+                <CheckCircle2 aria-hidden="true" size={16} />
+                Dulux paint
+              </span>
+            </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact#quote-name"
@@ -184,7 +209,7 @@ export default function PaintersChatswoodPage() {
             </div>
             <div className="mt-8 grid gap-3 text-sm text-white/85 sm:grid-cols-2">
               <p className="flex items-center gap-2">
-                <CheckCircle2 aria-hidden="true" size={18} /> Licensed and insured painting company
+                <CheckCircle2 aria-hidden="true" size={18} /> Free Chatswood painting quotes
               </p>
               <p className="flex items-center gap-2">
                 <CheckCircle2 aria-hidden="true" size={18} /> Residential, strata, and commercial work
@@ -193,6 +218,38 @@ export default function PaintersChatswoodPage() {
           </div>
         </div>
       </section>
+
+      <Section
+        className="bg-gumleaf"
+        eyebrow="Trusted Local Painters"
+        title="Licensed, insured, and ready to quote in Chatswood"
+        intro="Directory sites show ratings and badges first. F&S Painting can show the real business details, local proof, and quote path directly."
+      >
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {trustHighlights.map((item) => (
+            <div key={item} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
+              <ShieldCheck className="text-eucalyptus" aria-hidden="true" size={24} />
+              <p className="mt-3 text-lg font-semibold leading-7 text-ink">{item}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href="/contact#quote-name"
+            className="inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
+          >
+            Request a Free Chatswood Quote
+            <ArrowRight aria-hidden="true" size={18} />
+          </Link>
+          <a
+            href={businessDetails.googleReviewsUrl}
+            className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/25 bg-white px-5 py-3 font-semibold text-eucalyptus hover:bg-mist"
+          >
+            Read Google Reviews
+            <Star aria-hidden="true" size={18} />
+          </a>
+        </div>
+      </Section>
 
       <Section
         eyebrow="Chatswood Painting Services"

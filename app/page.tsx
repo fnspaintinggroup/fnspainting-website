@@ -177,7 +177,7 @@ export default async function Home() {
               href="/painters-chatswood"
               className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
             >
-              View Chatswood Painting Services
+              Painters Chatswood - Free Quote
               <ArrowRight aria-hidden="true" size={18} />
             </Link>
           </div>
