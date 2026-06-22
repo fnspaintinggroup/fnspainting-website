@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { slugifyTitle, validateUrlSlug } from "./slug";
 
 export const blogPost = defineType({
   name: "blogPost",
@@ -15,8 +16,9 @@ export const blogPost = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: { source: "title", maxLength: 96 },
-      validation: (rule) => rule.required(),
+      description: "Click Generate. Keep this as a short URL, for example free-onsite-painting-quote.",
+      options: { source: "title", maxLength: 96, slugify: slugifyTitle },
+      validation: (rule) => rule.required().custom(validateUrlSlug),
     }),
     defineField({
       name: "publishedDate",

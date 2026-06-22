@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { slugifyTitle, validateUrlSlug } from "./slug";
 
 export const service = defineType({
   name: "service",
@@ -15,8 +16,9 @@ export const service = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: { source: "title", maxLength: 96 },
-      validation: (rule) => rule.required(),
+      description: "Click Generate. Keep this as a short URL, for example commercial-painting.",
+      options: { source: "title", maxLength: 96, slugify: slugifyTitle },
+      validation: (rule) => rule.required().custom(validateUrlSlug),
     }),
     defineField({
       name: "summary",
