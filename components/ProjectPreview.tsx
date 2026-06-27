@@ -4,28 +4,19 @@ import Link from "next/link";
 import { projects } from "@/lib/projects";
 
 const homepageProjectSlugs = [
+  "chatswood-apartment-interior-repaint",
+  "office-room-interior-painting-refresh",
+  "mould-damaged-ceiling-restoration-sydney",
   "silverwater-commercial-exterior-facade-repaint",
   "dee-why-strata-high-ceiling-wall-repaint",
-  "dee-why-strata-hallway-repaint",
-  "mould-damaged-ceiling-restoration-sydney",
-  "bathroom-ceiling-mould-peeling-paint-restoration",
-  "interior-garage-wall-repaint-sydney",
-  "interior-stairwell-repaint-sydney-home",
-  "commercial-office-interior-repaint",
-  "office-room-interior-painting-refresh",
   "exterior-house-painting-refresh",
-  "exterior-facade-trim-repaint",
-  "exterior-gable-roofline-painting",
-  "exterior-boundary-wall-repaint",
-  "exterior-shed-door-trim-repaint",
-  "exterior-balcony-deck-lattice-repaint",
 ];
 
 export function ProjectPreview() {
   const previewProjects = homepageProjectSlugs
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter((project) => project !== undefined)
-    .slice(0, 12);
+    .slice(0, 6);
 
   return (
     <div className="grid gap-5 md:grid-cols-3">

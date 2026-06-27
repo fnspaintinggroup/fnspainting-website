@@ -33,13 +33,14 @@ export default async function Home() {
         janChurcherReview,
       ]
     : selectedReviews.slice(0, 4);
+  const homepageFaqs = [homeFaqs[1], homeFaqs[8], homeFaqs[3], homeFaqs[4], homeFaqs[9], homeFaqs[6]];
 
   return (
     <>
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homeFaqs, "/")) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homepageFaqs, "/")) }}
       />
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
@@ -55,7 +56,10 @@ export default async function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink/72 via-transparent to-ink/25" />
         <div className="relative mx-auto grid min-h-[78vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <h1 className="max-w-4xl text-3xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-6xl">
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.22em] text-gumleaf">
+              Licensed &amp; insured Sydney painters
+            </p>
+            <h1 className="max-w-4xl text-3xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
               <span className="block">Professional house painting</span>
               <span className="block">&amp; commercial painting</span>
             </h1>
@@ -64,9 +68,20 @@ export default async function Home() {
               shops across Sydney.
             </p>
             <p className="mt-2 text-base font-semibold text-white/90 sm:text-xl">
-              Guaranteed property Value up!
+              Careful preparation, tidy work, and quality Dulux paint systems.
             </p>
-            <p className="mt-10 max-w-3xl text-xl font-black uppercase leading-tight text-white sm:text-3xl lg:text-4xl">
+            <div className="mt-7 grid max-w-3xl gap-3 text-sm font-semibold text-white sm:grid-cols-3">
+              <p className="rounded-md border border-white/20 bg-white/10 px-4 py-3 backdrop-blur">
+                License 478497C
+              </p>
+              <p className="rounded-md border border-white/20 bg-white/10 px-4 py-3 backdrop-blur">
+                20 years experience
+              </p>
+              <p className="rounded-md border border-white/20 bg-white/10 px-4 py-3 backdrop-blur">
+                Public liability insured
+              </p>
+            </div>
+            <p className="mt-9 max-w-3xl text-xl font-black uppercase leading-tight text-white sm:text-2xl lg:text-3xl">
               <span className="block">Call {businessDetails.phones.join(" or ")}</span>
               <span className="block">for a free quote today.</span>
             </p>
@@ -164,7 +179,7 @@ export default async function Home() {
               Chatswood &amp; North Shore
             </p>
             <h2 className="text-3xl font-semibold leading-tight text-ink sm:text-4xl">
-              Need painters in Chatswood or the North Shore?
+              Painters Chatswood - licensed local painting team
             </h2>
             <p className="mt-5 text-base leading-7 text-ink/72">
               With 20 years of know-how and quality Dulux products, F&amp;S Painting provides clean,
@@ -173,6 +188,13 @@ export default async function Home() {
               exterior facades, trims, common areas, and commercial spaces, we focus on careful
               preparation, tidy work, and a professional finish.
             </p>
+            <div className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-eucalyptus">
+              {["House painting", "Apartments", "Strata", "Commercial"].map((item) => (
+                <span key={item} className="rounded-md border border-eucalyptus/20 bg-white px-3 py-2">
+                  {item}
+                </span>
+              ))}
+            </div>
             <Link
               href="/painters-chatswood"
               className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
@@ -227,6 +249,14 @@ export default async function Home() {
       </Section>
 
       <Section
+        eyebrow="Google Reviews"
+        title="Trusted by Sydney homeowners, strata managers, and local businesses"
+        intro="Real customer reviews help new customers feel confident before booking a painting quote."
+      >
+        <Reviews reviews={cmsReviews} />
+      </Section>
+
+      <Section
         className="bg-mist"
         eyebrow="Before & After"
         title="Project previews"
@@ -237,7 +267,7 @@ export default async function Home() {
 
       <Section
         eyebrow="Finest Finish Painting Gallery"
-        title="Explore recent painting finishes completed across Sydney"
+        title="Recent painting finishes across Sydney"
         intro="See finished interior, exterior, ceiling, commercial, strata, door, trim, and detail painting work by F&S Painting."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -295,20 +325,13 @@ export default async function Home() {
         </div>
       </Section>
 
-      <Section
-        eyebrow="Google Reviews"
-        title="Trusted by Sydney homeowners, strata managers, and local businesses"
-        intro="View Google review links for F&S Painting Services and selected customer reviews managed from the website CMS or Google Business Profile API."
-      >
-        <Reviews reviews={cmsReviews} />
-      </Section>
 
       <FaqSection
         className="bg-mist"
         eyebrow="FAQ"
         title="Frequently asked painting questions"
         intro="Helpful answers for Sydney customers planning house painting, commercial painting, strata painting, or ceiling restoration work."
-        faqs={homeFaqs}
+        faqs={homepageFaqs}
       />
 
       <section className="bg-eucalyptus py-14 text-white sm:py-20">

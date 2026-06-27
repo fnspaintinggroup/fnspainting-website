@@ -161,17 +161,17 @@ export function Footer() {
         <div>
           <p className="mb-4 font-semibold">Service Areas - All of Sydney wide</p>
           <div className="flex flex-wrap gap-2">
-            {serviceAreas.map((area) => {
+            {serviceAreas.map((area, index) => {
               const isChatswoodArea = area === "Chatswood" || area === "North Shore";
               const className =
                 "rounded border border-white/15 px-2.5 py-1 text-[11px] leading-5 text-white/70";
 
               return isChatswoodArea ? (
-                <Link key={area} href="/painters-chatswood" className={`${className} hover:text-white`}>
+                <Link key={`${area}-${index}`} href="/painters-chatswood" className={`${className} hover:text-white`}>
                   {area}
                 </Link>
               ) : (
-                <span key={area} className={className}>
+                <span key={`${area}-${index}`} className={className}>
                   {area}
                 </span>
               );
