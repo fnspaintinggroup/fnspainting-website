@@ -95,7 +95,7 @@ async function fetchGoogleBusinessProfileReviews() {
 
   const accountId = process.env.GOOGLE_BUSINESS_PROFILE_ACCOUNT_ID;
   const locationId = process.env.GOOGLE_BUSINESS_PROFILE_LOCATION_ID;
-  const pageSize = process.env.GOOGLE_BUSINESS_PROFILE_REVIEW_LIMIT || "6";
+  const pageSize = process.env.GOOGLE_BUSINESS_PROFILE_REVIEW_LIMIT || "10";
   const parent = `accounts/${accountId}/locations/${locationId}`;
   const url = new URL(`https://mybusiness.googleapis.com/v4/${parent}/reviews`);
   url.searchParams.set("pageSize", pageSize);

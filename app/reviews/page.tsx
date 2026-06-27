@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function ReviewsPage() {
-  const reviews = await getSelectedReviews(6);
+  const reviews = await getSelectedReviews(10);
 
   return (
     <>
