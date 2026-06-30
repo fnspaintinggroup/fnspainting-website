@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackToTopButton } from "@/components/BackToTopButton";
+import { AnalyticsEvents } from "@/components/AnalyticsEvents";
 import { absoluteUrl, defaultOgImage, localBusinessSchema, siteName, siteUrl, targetKeywords } from "@/lib/seo";
 import "./globals.css";
 
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main>{children}</main>
         <Footer />
+        <AnalyticsEvents />
         <BackToTopButton />
       </body>
     </html>
