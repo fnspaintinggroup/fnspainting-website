@@ -352,6 +352,24 @@ export const projects: Project[] = [
       "Before and after Chatswood apartment interior repaint by F&S Painting, including living room, bedroom, entry, and bathroom ceiling painting finishes.",
   },
   {
+    title: "Chatswood Exterior Gable and Trim Repaint",
+    slug: "chatswood-exterior-gable-trim-repaint",
+    location: "Chatswood, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/chatswood-blakesley-exterior-gable-before.jpg",
+    afterImage: "/images/projects/chatswood-blakesley-exterior-gable-after.jpg",
+    beforeImageAlt: "Chatswood exterior gable and trim before repainting with peeling paint and preparation work",
+    afterImageAlt: "Chatswood exterior gable and trim after repainting with refreshed green and cream finishes",
+    description:
+      "A Chatswood home exterior was prepared and repainted across the front gables, fascia, trim, roofline details, and decorative timber areas for a cleaner street presentation.",
+    materials:
+      "Exterior acrylic paint system, exterior trim coating, primers where required, sanding materials, fillers, masking protection, drop sheets, and detailed surface preparation.",
+    completionDate: "2025-07-22",
+    seoTitle: "Exterior House Painting Chatswood | F&S Painting",
+    seoDescription:
+      "Before and after exterior house painting in Chatswood by F&S Painting, showing gable, fascia, roofline, and trim repainting on a brick home.",
+  },
+  {
     title: "Lindfield Exterior Window and Trim Repaint",
     slug: "lindfield-exterior-window-trim-repaint",
     location: "Lindfield, NSW",

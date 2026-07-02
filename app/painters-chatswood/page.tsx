@@ -40,6 +40,11 @@ const featuredProjects = projects
 
 const chatswoodPhotoHighlights = [
   {
+    src: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
+    alt: "Chatswood brick home after exterior gable, fascia, and trim repainting by F&S Painting",
+    title: "Gable and Trim Painting",
+  },
+  {
     src: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
     alt: "Chatswood exterior house repaint with refreshed facade and trim painting",
     title: "Exterior House Painting",

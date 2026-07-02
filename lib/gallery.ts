@@ -236,6 +236,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 4,
   },
   {
+    title: "Chatswood Exterior Gable and Trim Repaint",
+    category: "Exterior Painting",
+    image: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
+    alt: "Chatswood brick home exterior after gable and trim repainting by F&S Painting",
+    caption:
+      "A location gallery showing Chatswood exterior gable, fascia, roofline, and trim painting completed on 22 July 2025.",
+    suburb: "Chatswood, NSW",
+    collectionSlug: "chatswood-exterior-gable-trim-repaint",
+    photoCount: 3,
+  },
+  {
     title: "Lindfield Exterior Window and Trim Repaint",
     category: "Exterior Painting",
     image: "/images/projects/lindfield-door-trim-finish.jpg",
@@ -1336,6 +1347,38 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/chatswood-apartment-bedroom-finish.jpg",
         alt: "Chatswood apartment bedroom after interior repainting",
         caption: "Bedroom walls and trims refreshed as part of the apartment repaint.",
+      },
+    ],
+  },
+  {
+    slug: "chatswood-exterior-gable-trim-repaint",
+    title: "Chatswood Exterior Gable and Trim Repaint",
+    category: "Exterior Painting",
+    suburb: "Chatswood, NSW",
+    summary:
+      "Finished Chatswood exterior painting across front gables, fascia, roofline, and decorative trim areas.",
+    coverImage: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
+    coverAlt:
+      "Chatswood brick home exterior after gable and trim repainting by F&S Painting",
+    completionDate: "2025-07-22",
+    images: [
+      {
+        title: "Front Facade Painting",
+        image: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
+        alt: "Chatswood brick home front facade after exterior gable and trim repainting",
+        caption: "Front facade, gables, fascia, and decorative trim refreshed for a cleaner street presentation.",
+      },
+      {
+        title: "Roofline Trim Painting",
+        image: "/images/projects/chatswood-blakesley-exterior-roofline-detail-1.jpg",
+        alt: "Chatswood roofline trim after exterior repainting near tiled roof",
+        caption: "Roofline timber, fascia, and gable trim finished neatly after preparation.",
+      },
+      {
+        title: "Gable Detail Painting",
+        image: "/images/projects/chatswood-blakesley-exterior-roofline-detail-2.jpg",
+        alt: "Chatswood exterior gable detail after green trim and cream panel repainting",
+        caption: "Decorative gable panels and green trim repainted for a sharper exterior detail.",
       },
     ],
   },
