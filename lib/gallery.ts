@@ -247,6 +247,17 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 3,
   },
   {
+    title: "Chatswood Interior Room and Bathroom Painting",
+    category: "Interior Painting",
+    image: "/images/projects/chatswood-kooringa-bedroom-finish-1.jpg",
+    alt: "Chatswood bedroom after interior wall and ceiling painting by F&S Painting",
+    caption:
+      "A location gallery showing Chatswood bedroom wall, ceiling, and bathroom ceiling painting completed on 25 September 2025.",
+    suburb: "Chatswood, NSW",
+    collectionSlug: "chatswood-kooringa-interior-room-bathroom-painting",
+    photoCount: 3,
+  },
+  {
     title: "Lindfield Exterior Window and Trim Repaint",
     category: "Exterior Painting",
     image: "/images/projects/lindfield-door-trim-finish.jpg",
@@ -1379,6 +1390,38 @@ export const galleryCollections: GalleryCollection[] = [
         image: "/images/projects/chatswood-blakesley-exterior-roofline-detail-2.jpg",
         alt: "Chatswood exterior gable detail after green trim and cream panel repainting",
         caption: "Decorative gable panels and green trim repainted for a sharper exterior detail.",
+      },
+    ],
+  },
+  {
+    slug: "chatswood-kooringa-interior-room-bathroom-painting",
+    title: "Chatswood Interior Room and Bathroom Painting",
+    category: "Interior Painting",
+    suburb: "Chatswood, NSW",
+    summary:
+      "Finished Chatswood interior painting across bedroom wall, ceiling, and bathroom ceiling areas.",
+    coverImage: "/images/projects/chatswood-kooringa-bedroom-finish-1.jpg",
+    coverAlt:
+      "Chatswood bedroom after interior wall and ceiling painting by F&S Painting",
+    completionDate: "2025-09-25",
+    images: [
+      {
+        title: "Bedroom Wall and Ceiling Painting",
+        image: "/images/projects/chatswood-kooringa-bedroom-finish-1.jpg",
+        alt: "Chatswood bedroom wall and ceiling after interior repainting",
+        caption: "Bedroom walls and ceiling refreshed with a clean, consistent finish.",
+      },
+      {
+        title: "Second Bedroom Wall Painting",
+        image: "/images/projects/chatswood-kooringa-bedroom-finish-2.jpg",
+        alt: "Chatswood bedroom wall near window after interior repainting",
+        caption: "Window-side wall and ceiling area repainted for a brighter room finish.",
+      },
+      {
+        title: "Bathroom Ceiling Painting",
+        image: "/images/projects/chatswood-kooringa-bathroom-ceiling-finish.jpg",
+        alt: "Chatswood bathroom ceiling after repainting by F&S Painting",
+        caption: "Bathroom ceiling repainted with a neat, clean finish around existing fixtures.",
       },
     ],
   },

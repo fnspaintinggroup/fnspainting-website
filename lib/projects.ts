@@ -370,6 +370,42 @@ export const projects: Project[] = [
       "Before and after exterior house painting in Chatswood by F&S Painting, showing gable, fascia, roofline, and trim repainting on a brick home.",
   },
   {
+    title: "Roseville Bedroom Wall Repaint",
+    slug: "roseville-bedroom-wall-repaint",
+    location: "Roseville, NSW",
+    serviceType: "Interior Painting",
+    beforeImage: "/images/projects/roseville-bedroom-blue-wall-before.jpg",
+    afterImage: "/images/projects/roseville-bedroom-neutral-wall-after.jpg",
+    beforeImageAlt: "Roseville bedroom before repainting with blue feature walls and furniture in the room",
+    afterImageAlt: "Roseville bedroom after repainting with neutral walls, white trim, and a cleaner finish",
+    description:
+      "A Roseville bedroom was prepared and repainted from a strong blue feature-wall finish to a softer neutral colour, with trim and wall details refreshed for a cleaner interior presentation.",
+    materials:
+      "Interior low-sheen wall paint, trim enamel, patching compound, sanding materials, masking tape, and drop-sheet protection.",
+    completionDate: "2023-03-04",
+    seoTitle: "Bedroom Painting Roseville | F&S Painting",
+    seoDescription:
+      "Before and after bedroom painting in Roseville by F&S Painting, showing blue feature walls refreshed with a clean neutral interior finish.",
+  },
+  {
+    title: "Roseville Ornate Ceiling Restoration",
+    slug: "roseville-ornate-ceiling-restoration",
+    location: "Roseville, NSW",
+    serviceType: "Ceiling Restoration",
+    beforeImage: "/images/projects/roseville-ornate-ceiling-before.jpg",
+    afterImage: "/images/projects/roseville-ornate-ceiling-after.jpg",
+    beforeImageAlt: "Roseville ornate ceiling before restoration with peeling paint and damaged coating",
+    afterImageAlt: "Roseville ornate ceiling after restoration and repainting with a smooth clean finish",
+    description:
+      "An ornate Roseville ceiling with peeling paint and damaged coating was prepared, repaired, sealed where required, and repainted to restore the decorative ceiling detail.",
+    materials:
+      "Ceiling paint, stain-blocking primer where required, patching compound, sanding materials, scraping tools, masking protection, and detailed ceiling preparation.",
+    completionDate: "2023-03-04",
+    seoTitle: "Ornate Ceiling Restoration Roseville | F&S Painting",
+    seoDescription:
+      "Before and after ornate ceiling restoration in Roseville by F&S Painting, showing peeling ceiling paint repaired and repainted.",
+  },
+  {
     title: "Lindfield Exterior Window and Trim Repaint",
     slug: "lindfield-exterior-window-trim-repaint",
     location: "Lindfield, NSW",
