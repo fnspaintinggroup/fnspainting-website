@@ -39,8 +39,13 @@ const googleRatingMap: Record<string, number> = {
 };
 
 const reviewCacheSeconds = Number(process.env.GOOGLE_BUSINESS_PROFILE_REVIEW_CACHE_SECONDS || 3600);
+const isNetworkRestrictedBuild = process.env.CODEX_SANDBOX_NETWORK_DISABLED === "1";
 
 function hasGoogleBusinessProfileCredentials() {
+  if (isNetworkRestrictedBuild) {
+    return false;
+  }
+
   return Boolean(
     process.env.GOOGLE_BUSINESS_PROFILE_ACCOUNT_ID &&
       process.env.GOOGLE_BUSINESS_PROFILE_LOCATION_ID &&

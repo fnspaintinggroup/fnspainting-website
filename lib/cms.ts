@@ -55,6 +55,8 @@ type WithOptionalSlug<T extends { title: string; slug: string }> = Omit<T, "slug
   slug?: string;
 };
 
+const isNetworkRestrictedBuild = process.env.CODEX_SANDBOX_NETWORK_DISABLED === "1";
+
 const blogPostFields = `{
   title,
   "slug": slug.current,
@@ -104,7 +106,7 @@ const galleryCollectionFields = `{
 }`;
 
 async function fetchSanity<T>(query: string, params: Record<string, string> = {}) {
-  if (!isSanityConfigured) {
+  if (!isSanityConfigured || isNetworkRestrictedBuild) {
     return null;
   }
 
