@@ -370,6 +370,24 @@ export const projects: Project[] = [
       "Before and after Lindfield exterior window, door, and trim repaint by F&S Painting, showing refreshed timber details and exterior finishes.",
   },
   {
+    title: "East Lindfield Exterior House Repaint",
+    slug: "east-lindfield-exterior-house-repaint",
+    location: "East Lindfield, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/east-lindfield-exterior-outbuilding-before.jpg",
+    afterImage: "/images/projects/east-lindfield-exterior-outbuilding-after.jpg",
+    beforeImageAlt: "East Lindfield exterior outbuilding before repainting with weathered cladding and trim",
+    afterImageAlt: "East Lindfield exterior outbuilding after repainting with fresh wall, roofline, and trim finishes",
+    description:
+      "An East Lindfield home exterior was prepared and repainted across the outbuilding, facade, verandah, balcony, side walls, eaves, gutters, trims, and detailed timber areas for a clean updated finish.",
+    materials:
+      "Exterior acrylic paint system, exterior trim coating, primers where required, sanding materials, fillers, masking protection, drop sheets, and detailed surface preparation.",
+    completionDate: "2025-12-05",
+    seoTitle: "Exterior House Painting East Lindfield | F&S Painting",
+    seoDescription:
+      "Before and after exterior house painting in East Lindfield by F&S Painting, showing exterior cladding, facade, verandah, eaves, gutters, and trim repainting.",
+  },
+  {
     title: "Blakehurst Interior House Painting",
     slug: "blakehurst-interior-house-painting",
     location: "Blakehurst, NSW",
