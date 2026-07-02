@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Images, MapPin, Paintbrush } from "lucide-react";
 import { getGalleryCollectionBySlug, getGalleryCollections } from "@/lib/cms";
 import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
+import { createUrlSlug } from "@/lib/url-slug";
 
 type GalleryCollectionPageProps = {
   params: Promise<{
@@ -40,6 +41,10 @@ export async function generateMetadata({
     path: `/painting-gallery/${collection.slug}`,
     image: collection.coverImage,
   });
+}
+
+function galleryImageAnchor(title: string, index: number) {
+  return `${createUrlSlug(title)}-${index + 1}`;
 }
 
 export default async function GalleryCollectionPage({ params }: GalleryCollectionPageProps) {
@@ -135,9 +140,10 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {collection.images.map((item) => (
+            {collection.images.map((item, index) => (
               <article
                 key={item.title}
+                id={galleryImageAnchor(item.title, index)}
                 className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-mist">

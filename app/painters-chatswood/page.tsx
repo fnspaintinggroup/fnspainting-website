@@ -43,46 +43,55 @@ const chatswoodPhotoHighlights = [
     src: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
     alt: "Chatswood brick home after exterior gable, fascia, and trim repainting by F&S Painting",
     title: "Exterior Gable and Trim Painting",
+    href: "/painting-gallery/chatswood-exterior-gable-trim-repaint#front-facade-painting-1",
   },
   {
     src: "/images/projects/chatswood-kooringa-bedroom-finish-1.jpg",
     alt: "Chatswood bedroom after interior wall and ceiling painting by F&S Painting",
     title: "Bedroom Wall and Ceiling Painting",
+    href: "/painting-gallery/chatswood-kooringa-interior-room-bathroom-painting#bedroom-wall-and-ceiling-painting-1",
   },
   {
     src: "/images/projects/chatswood-kooringa-bedroom-finish-2.jpg",
     alt: "Chatswood bedroom near window after interior repainting by F&S Painting",
     title: "Interior Room Painting",
+    href: "/painting-gallery/chatswood-kooringa-interior-room-bathroom-painting#second-bedroom-wall-painting-2",
   },
   {
     src: "/images/projects/chatswood-kooringa-bathroom-ceiling-finish.jpg",
     alt: "Chatswood bathroom ceiling after repainting by F&S Painting",
     title: "Bathroom Ceiling Painting",
+    href: "/painting-gallery/chatswood-kooringa-interior-room-bathroom-painting#bathroom-ceiling-painting-3",
   },
   {
     src: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
     alt: "Chatswood exterior house repaint with refreshed facade and trim painting",
     title: "Exterior House Painting",
+    href: "/painting-gallery/chatswood-exterior-house-painting#front-facade-wide-view-1",
   },
   {
     src: "/images/projects/chatswood-commercial-reception-wide.jpg",
     alt: "Chatswood commercial reception after interior repainting",
     title: "Commercial Reception Painting",
+    href: "/painting-gallery/chatswood-commercial-reception-finish#wide-reception-view-6",
   },
   {
     src: "/images/projects/chatswood-office-boardroom-finish.jpg",
     alt: "Chatswood office boardroom after clean interior painting",
     title: "Office Interior Painting",
+    href: "/painting-gallery/chatswood-office-room-refresh#boardroom-painting-3",
   },
   {
     src: "/images/projects/chatswood-apartment-living-room-finish.jpg",
     alt: "Chatswood apartment living room after interior repainting",
     title: "Apartment Interior Painting",
+    href: "/painting-gallery/chatswood-apartment-interior-repaint#living-room-painting-1",
   },
   {
     src: "/images/projects/chatswood-exterior-entry-door-finish.jpg",
     alt: "Chatswood exterior entry door and trim after painting",
     title: "Entry and Trim Painting",
+    href: "/painting-gallery/chatswood-exterior-house-painting#entry-door-painting-2",
   },
 ];
 
@@ -334,17 +343,18 @@ export default function PaintersChatswoodPage() {
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {chatswoodPhotoHighlights.map((photo) => (
-            <article
+            <Link
               key={photo.src}
-              className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
+              href={photo.href}
+              className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
-              <div className="relative aspect-[4/3] bg-mist">
+              <div className="relative aspect-[4/3] overflow-hidden bg-mist">
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   fill
                   sizes="(min-width: 1024px) 18vw, (min-width: 640px) 45vw, 90vw"
-                  className="object-cover"
+                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
               </div>
               <div className="p-4">
@@ -353,7 +363,7 @@ export default function PaintersChatswoodPage() {
                   Chatswood, NSW
                 </p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
         <Link
