@@ -42,7 +42,22 @@ const chatswoodPhotoHighlights = [
   {
     src: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
     alt: "Chatswood brick home after exterior gable, fascia, and trim repainting by F&S Painting",
-    title: "Gable and Trim Painting",
+    title: "Exterior Gable and Trim Painting",
+  },
+  {
+    src: "/images/projects/chatswood-kooringa-bedroom-finish-1.jpg",
+    alt: "Chatswood bedroom after interior wall and ceiling painting by F&S Painting",
+    title: "Bedroom Wall and Ceiling Painting",
+  },
+  {
+    src: "/images/projects/chatswood-kooringa-bedroom-finish-2.jpg",
+    alt: "Chatswood bedroom near window after interior repainting by F&S Painting",
+    title: "Interior Room Painting",
+  },
+  {
+    src: "/images/projects/chatswood-kooringa-bathroom-ceiling-finish.jpg",
+    alt: "Chatswood bathroom ceiling after repainting by F&S Painting",
+    title: "Bathroom Ceiling Painting",
   },
   {
     src: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
@@ -314,8 +329,8 @@ export default function PaintersChatswoodPage() {
 
       <Section
         eyebrow="Chatswood Photos"
-        title="Painting work completed in Chatswood"
-        intro="A closer look at Chatswood exterior, commercial, office, and apartment painting work completed by F&S Painting."
+        title="Recent Chatswood and North Shore painting photos"
+        intro="A closer look at recent Chatswood exterior, bedroom, bathroom ceiling, commercial, office, and apartment painting work completed by F&S Painting."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {chatswoodPhotoHighlights.map((photo) => (
@@ -342,10 +357,10 @@ export default function PaintersChatswoodPage() {
           ))}
         </div>
         <Link
-          href="/painting-gallery"
+          href="/painting-gallery/chatswood-kooringa-interior-room-bathroom-painting"
           className="mt-8 inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
         >
-          View more painting gallery photos
+          View the latest Chatswood gallery
           <ArrowRight aria-hidden="true" size={18} />
         </Link>
       </Section>
@@ -369,8 +384,8 @@ export default function PaintersChatswoodPage() {
           </div>
           <div className="relative min-h-72 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
             <Image
-              src="/images/projects/chatswood-commercial-reception-wide.jpg"
-              alt="Chatswood commercial reception repaint by F&S Painting"
+              src="/images/projects/chatswood-kooringa-bedroom-finish-1.jpg"
+              alt="Chatswood interior bedroom repaint by F&S Painting"
               fill
               sizes="(min-width: 1024px) 40vw, 90vw"
               className="object-cover"

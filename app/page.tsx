@@ -205,8 +205,8 @@ export default async function Home() {
           </div>
           <div className="relative min-h-72 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
             <Image
-              src="/images/projects/chatswood-exterior-front-facade-wide.jpg"
-              alt="Chatswood exterior painting finish by F&S Painting"
+              src="/images/projects/chatswood-blakesley-exterior-front-facade.jpg"
+              alt="Recent Chatswood exterior gable and trim painting finish by F&S Painting"
               fill
               sizes="(min-width: 1024px) 45vw, 90vw"
               className="object-cover"
