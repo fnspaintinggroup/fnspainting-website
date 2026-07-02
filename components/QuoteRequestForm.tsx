@@ -13,6 +13,34 @@ const services = [
   "Mould-damaged ceiling restoration",
 ];
 
+function trackQuoteFormSuccess(service: string, suburb: string) {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("event", "quote_form_success", {
+    form_id: "quote-form",
+    form_name: "free_quote_request",
+    service,
+    suburb,
+    page_path: window.location.pathname,
+  });
+}
+
+function trackQuoteEmailFallback(service: string, suburb: string) {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("event", "quote_email_fallback", {
+    form_id: "quote-form",
+    form_name: "free_quote_request",
+    service,
+    suburb,
+    page_path: window.location.pathname,
+  });
+}
+
 export function QuoteRequestForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -67,6 +95,7 @@ export function QuoteRequestForm() {
         );
       }
 
+      trackQuoteFormSuccess(service, suburb);
       setStatus("sent");
       setMessage(data.message || "Your quote request has been sent.");
       setName("");
@@ -78,6 +107,7 @@ export function QuoteRequestForm() {
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Unable to send the quote request.");
+      trackQuoteEmailFallback(service, suburb);
       window.setTimeout(() => {
         window.location.href = fallbackEmailHref;
       }, 600);
