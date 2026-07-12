@@ -164,6 +164,7 @@ export default async function ProjectsPage() {
                           <Image
                             src={project.beforeImage}
                             alt={project.beforeImageAlt}
+                            data-original-brightness="true"
                             fill
                             sizes="(min-width: 1024px) 15vw, (min-width: 640px) 23vw, 45vw"
                             className="object-cover transition duration-500 hover:scale-[1.03]"

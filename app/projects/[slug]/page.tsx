@@ -218,6 +218,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     <Image
                       src={project.beforeImage}
                       alt={project.beforeImageAlt}
+                      data-original-brightness="true"
                       fill
                       priority
                       sizes="(min-width: 768px) 50vw, 100vw"

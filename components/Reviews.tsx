@@ -93,6 +93,7 @@ export function Reviews({ reviews }: ReviewsProps) {
                 </figcaption>
                 <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white">
                   <Image
+                    data-original-brightness="true"
                     src="/images/footer/google-icon.svg"
                     alt=""
                     width={24}

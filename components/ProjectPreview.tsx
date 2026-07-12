@@ -31,6 +31,7 @@ export function ProjectPreview() {
                 <Image
                   src={project.beforeImage}
                   alt={project.beforeImageAlt}
+                  data-original-brightness="true"
                   fill
                   sizes="(min-width: 768px) 16vw, 50vw"
                   className="object-cover"

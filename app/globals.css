@@ -30,3 +30,8 @@ body {
     linear-gradient(rgba(23, 33, 29, 0.08) 1px, transparent 1px);
   background-size: 22px 22px;
 }
+
+/* Keep source files untouched while gently lifting on-site project photos. */
+.site-photo-brightness img:not([data-original-brightness="true"]) {
+  filter: brightness(1.05) saturate(1.015);
+}
