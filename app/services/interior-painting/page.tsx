@@ -7,7 +7,12 @@ import { Section } from "@/components/Section";
 import { businessDetails } from "@/lib/business";
 import { faqSchema } from "@/lib/faqs";
 import { projects } from "@/lib/projects";
-import { absoluteUrl, breadcrumbSchema, pageMetadata, siteUrl } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  pageMetadata,
+  siteUrl,
+} from "@/lib/seo";
 
 const interiorFaqs = [
   {
@@ -33,7 +38,11 @@ const interiorFaqs = [
 ];
 
 const relatedProjects = projects
-  .filter((project) => project.serviceType === "Interior Painting" || project.serviceType === "Ceiling Restoration")
+  .filter(
+    (project) =>
+      project.serviceType === "Interior Painting" ||
+      project.serviceType === "Ceiling Restoration",
+  )
   .slice(0, 3);
 
 const pageUrl = `${siteUrl}/services/interior-painting`;
@@ -68,7 +77,9 @@ export default function InteriorPaintingPage() {
         provider: { "@id": `${siteUrl}/#localbusiness` },
         areaServed: "Sydney, NSW",
         url: pageUrl,
-        image: relatedProjects.map((project) => absoluteUrl(project.afterImage)),
+        image: relatedProjects.map((project) =>
+          absoluteUrl(project.afterImage),
+        ),
       },
     ],
   };
@@ -83,12 +94,19 @@ export default function InteriorPaintingPage() {
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(interiorFaqs, "/services/interior-painting")) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqSchema(interiorFaqs, "/services/interior-painting"),
+          ),
+        }}
       />
 
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
-          src={relatedProjects[0]?.afterImage ?? "/images/fs-painting-hero-real.jpeg"}
+          src={
+            relatedProjects[0]?.afterImage ??
+            "/images/fs-painting-hero-real.jpeg"
+          }
           alt="Finished interior painting by F&S Painting in Sydney"
           fill
           priority
@@ -105,8 +123,9 @@ export default function InteriorPaintingPage() {
               Interior painting for clean, comfortable spaces
             </h1>
             <p className="mt-6 max-w-3xl text-base font-medium leading-7 text-white/88 sm:text-xl">
-              F&amp;S Painting prepares and repaints walls, ceilings, trims, doors, feature walls,
-              stairwells, apartments, homes, offices, and shops across Sydney.
+              F&amp;S Painting prepares and repaints walls, ceilings, trims,
+              doors, feature walls, stairwells, apartments, homes, offices, and
+              shops across Sydney.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -142,8 +161,15 @@ export default function InteriorPaintingPage() {
             "Homes, apartments, offices, shops, and strata interiors",
             "Clean work habits and tidy handover after completion",
           ].map((item) => (
-            <div key={item} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-              <CheckCircle2 className="text-eucalyptus" aria-hidden="true" size={24} />
+            <div
+              key={item}
+              className="rounded-md border border-ink/10 bg-white p-5 shadow-sm"
+            >
+              <CheckCircle2
+                className="text-eucalyptus"
+                aria-hidden="true"
+                size={24}
+              />
               <p className="mt-4 font-semibold leading-6 text-ink">{item}</p>
             </div>
           ))}
@@ -152,7 +178,7 @@ export default function InteriorPaintingPage() {
 
       <Section
         className="bg-mist"
-        eyebrow="Related Projects"
+        eyebrow="Related B/A"
         title="Interior painting examples"
         intro="View recent interior and ceiling repainting examples completed by F&S Painting."
       >
@@ -160,7 +186,7 @@ export default function InteriorPaintingPage() {
           {relatedProjects.map((project) => (
             <Link
               key={project.slug}
-              href={`/projects/${project.slug}`}
+              href={`/projects#${project.slug}`}
               className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">
@@ -176,8 +202,16 @@ export default function InteriorPaintingPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
                   {project.serviceType}
                 </p>
-                <h2 className="mt-2 text-lg font-semibold leading-tight text-ink">{project.title}</h2>
-                <p className="mt-3 text-sm font-semibold text-ink/60">{project.location}</p>
+                <h2 className="mt-2 text-lg font-semibold leading-tight text-ink">
+                  {project.title}
+                </h2>
+                <p className="mt-3 text-sm font-semibold text-ink/60">
+                  {project.location}
+                </p>
+                <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
+                  View matching B/A
+                  <ArrowRight aria-hidden="true" size={16} />
+                </p>
               </div>
             </Link>
           ))}

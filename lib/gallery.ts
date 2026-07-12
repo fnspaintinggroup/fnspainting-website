@@ -13,6 +13,7 @@ export type GalleryImage = {
   caption: string;
   suburb?: string;
   collectionSlug?: string;
+  projectSlug?: string;
   photoCount?: number;
 };
 
@@ -151,6 +152,7 @@ export const galleryImages: GalleryImage[] = [
     caption:
       "Ceiling sealed, prepared, and repainted for a smooth clean result.",
     suburb: "Chatswood, NSW",
+    projectSlug: "mould-damaged-ceiling-restoration-sydney",
   },
   {
     title: "Bathroom Ceiling Restoration",
@@ -160,6 +162,27 @@ export const galleryImages: GalleryImage[] = [
     caption:
       "Moisture-affected bathroom ceiling restored with a fresh coating system.",
     suburb: "Willoughby, NSW",
+    projectSlug: "bathroom-ceiling-mould-peeling-paint-restoration",
+  },
+  {
+    title: "Chatswood West Bathroom Ceiling Peeling Restoration",
+    category: "Ceiling Restoration",
+    image: "/images/projects/mould-ceiling-case-2-after.jpg",
+    alt: "Bathroom ceiling after peeling paint and moisture-damage restoration in Chatswood West",
+    caption:
+      "Peeling and moisture-affected ceiling areas prepared, sealed, and repainted for a clean finish.",
+    suburb: "Chatswood West, NSW",
+    projectSlug: "bathroom-ceiling-peeling-restoration-by-painting",
+  },
+  {
+    title: "Roseville Ornate Ceiling Restoration",
+    category: "Ceiling Restoration",
+    image: "/images/projects/roseville-ornate-ceiling-after.jpg",
+    alt: "Roseville ornate ceiling after peeling paint restoration and repainting",
+    caption:
+      "Decorative ceiling details repaired, prepared, and repainted while preserving the original character.",
+    suburb: "Roseville, NSW",
+    projectSlug: "roseville-ornate-ceiling-restoration",
   },
   {
     title: "Chatswood Commercial Reception Painting",

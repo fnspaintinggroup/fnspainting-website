@@ -12,7 +12,7 @@ import {
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "B/A" },
   { href: "/painting-gallery", label: "Gallery" },
   { href: "/painting-tips", label: "Painting Tips" },
   { href: "/reviews", label: "Reviews" },
@@ -22,7 +22,7 @@ export const navItems = [
 export const services = [
   {
     title: "Residential Painting",
-    href: "/services#residential-painting",
+    href: "/services/residential-painting",
     galleryHref:
       "/painting-gallery/chatswood-exterior-house-painting#front-facade-wide-view-1",
     icon: Home,
@@ -31,7 +31,7 @@ export const services = [
   },
   {
     title: "Interior Painting",
-    href: "/services#interior-painting",
+    href: "/services/interior-painting",
     galleryHref:
       "/painting-gallery/chatswood-kooringa-interior-room-bathroom-painting#bedroom-wall-and-ceiling-painting-1",
     icon: Paintbrush,
@@ -40,7 +40,7 @@ export const services = [
   },
   {
     title: "Exterior Painting",
-    href: "/services#exterior-painting",
+    href: "/services/exterior-painting",
     galleryHref:
       "/painting-gallery/carlingford-exterior-house-painting#front-facade-painting-1",
     icon: Brush,
@@ -49,7 +49,7 @@ export const services = [
   },
   {
     title: "Strata Painting",
-    href: "/services#strata-painting",
+    href: "/services/strata-painting",
     galleryHref:
       "/painting-gallery/dee-why-strata-common-areas#lift-lobby-repaint-1",
     icon: Layers,
@@ -58,7 +58,7 @@ export const services = [
   },
   {
     title: "Commercial Painting",
-    href: "/services#commercial-painting",
+    href: "/services/commercial-painting",
     galleryHref:
       "/painting-gallery/silverwater-commercial-painting#commercial-entry-painting-1",
     icon: Building2,
@@ -67,7 +67,7 @@ export const services = [
   },
   {
     title: "Ceiling Repainting",
-    href: "/services#ceiling-repainting",
+    href: "/services/ceiling-repainting",
     galleryHref: "/painting-gallery#mould-damaged-ceiling-restored",
     icon: Sparkles,
     summary:
@@ -75,7 +75,7 @@ export const services = [
   },
   {
     title: "Mould-Damaged Ceiling Restoration",
-    href: "/services#mould-damaged-ceiling-restoration",
+    href: "/services/ceiling-repainting#mould-damaged-ceiling-restoration",
     galleryHref: "/painting-gallery#bathroom-ceiling-restoration",
     icon: Waves,
     summary:

@@ -51,7 +51,7 @@ export default async function ServicesPage() {
             href="/painters-chatswood"
             className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
           >
-            Painters Chatswood - local quotes and project photos
+            Painters Chatswood - local quotes and B/A photos
             <ArrowRight aria-hidden="true" size={18} />
           </Link>
         </div>
@@ -135,7 +135,7 @@ export default async function ServicesPage() {
               services.find((item) => item.title === service.title) ??
               services[0];
             const Icon = localService.icon;
-            const id = localService.href.split("#")[1] ?? service.slug;
+            const id = service.slug;
             return (
               <article
                 id={id}
@@ -143,8 +143,8 @@ export default async function ServicesPage() {
                 className="group relative scroll-mt-24 rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
               >
                 <Link
-                  href={localService.galleryHref}
-                  aria-label={`View ${service.title} gallery examples`}
+                  href={localService.href}
+                  aria-label={`View ${service.title} service details`}
                   className="absolute inset-0 z-0 rounded-md"
                 />
                 <Icon
@@ -169,6 +169,12 @@ export default async function ServicesPage() {
                   >
                     Get a quote for this service
                     <ArrowRight aria-hidden="true" size={15} />
+                  </Link>
+                  <Link
+                    href={localService.href}
+                    className="text-eucalyptus hover:text-clay"
+                  >
+                    Service details
                   </Link>
                   <Link
                     href={localService.galleryHref}

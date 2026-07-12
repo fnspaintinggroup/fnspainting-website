@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getBlogPosts, getGalleryCollections, getProjectList } from "@/lib/cms";
 import { siteUrl } from "@/lib/seo";
 
-const contentLastModified = new Date("2026-06-19");
+const contentLastModified = new Date("2026-07-12");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -10,6 +10,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/services",
     "/services/interior-painting",
     "/services/exterior-painting",
+    "/services/residential-painting",
+    "/services/strata-painting",
+    "/services/commercial-painting",
+    "/services/ceiling-repainting",
     "/projects",
     "/painting-gallery",
     "/painting-tips",
@@ -19,7 +23,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: contentLastModified,
-    changeFrequency: route === "" || route === "/painters-chatswood" ? "weekly" : "monthly",
+    changeFrequency:
+      route === "" || route === "/painters-chatswood" ? "weekly" : "monthly",
     priority: route === "" ? 1 : route === "/painters-chatswood" ? 0.9 : 0.8,
   }));
 
@@ -39,7 +44,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectRoutes = projects.map((project) => ({
     url: `${siteUrl}/projects/${project.slug}`,
     lastModified: new Date(
-      Math.max(new Date(project.completionDate).getTime(), contentLastModified.getTime()),
+      Math.max(
+        new Date(project.completionDate).getTime(),
+        contentLastModified.getTime(),
+      ),
     ),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -48,11 +56,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const galleryCollectionRoutes = galleryCollections.map((collection) => ({
     url: `${siteUrl}/painting-gallery/${collection.slug}`,
     lastModified: collection.completionDate
-      ? new Date(Math.max(new Date(collection.completionDate).getTime(), contentLastModified.getTime()))
+      ? new Date(
+          Math.max(
+            new Date(collection.completionDate).getTime(),
+            contentLastModified.getTime(),
+          ),
+        )
       : contentLastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...projectRoutes, ...galleryCollectionRoutes];
+  return [
+    ...staticRoutes,
+    ...blogRoutes,
+    ...projectRoutes,
+    ...galleryCollectionRoutes,
+  ];
 }

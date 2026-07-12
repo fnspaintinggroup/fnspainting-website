@@ -18,13 +18,15 @@ export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {
-      title: "Project Not Found",
+      title: "B/A Not Found",
     };
   }
 
@@ -60,7 +62,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   const projects = await getProjectList();
-  const relatedProjects = projects.filter((item) => item.slug !== project.slug).slice(0, 2);
+  const relatedProjects = projects
+    .filter((item) => item.slug !== project.slug)
+    .slice(0, 2);
 
   const projectUrl = `${siteUrl}/projects/${project.slug}`;
   const projectImageObjects = [
@@ -91,11 +95,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      breadcrumbSchema([
-        { name: "Home", path: "/" },
-        { name: "Projects", path: "/projects" },
-        { name: project.title, path: `/projects/${project.slug}` },
-      ], `${projectUrl}#breadcrumb`),
+      breadcrumbSchema(
+        [
+          { name: "Home", path: "/" },
+          { name: "B/A", path: "/projects" },
+          { name: project.title, path: `/projects/${project.slug}` },
+        ],
+        `${projectUrl}#breadcrumb`,
+      ),
       {
         "@type": "WebPage",
         "@id": `${projectUrl}#webpage`,
@@ -181,7 +188,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-gumleaf hover:text-white"
             >
               <ArrowLeft aria-hidden="true" size={17} />
-              Projects
+              B/A
             </Link>
             <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/65">
               <span className="flex items-center gap-1.5">
@@ -196,7 +203,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-tight sm:text-5xl">
               {project.title}
             </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-white/75">{project.description}</p>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-white/75">
+              {project.description}
+            </p>
           </div>
         </section>
 
@@ -248,25 +257,35 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <section className="pb-14 sm:pb-20">
           <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:px-8">
             <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
-              <h2 className="text-2xl font-semibold text-ink">Project details</h2>
-              {"bodySource" in project && project.bodySource === "sanity" && project.fullProjectDescription ? (
+              <h2 className="text-2xl font-semibold text-ink">Work details</h2>
+              {"bodySource" in project &&
+              project.bodySource === "sanity" &&
+              project.fullProjectDescription ? (
                 <div className="mt-6">
                   <PortableBody value={project.fullProjectDescription} />
                 </div>
               ) : (
-                <p className="mt-4 leading-7 text-ink/72">{project.description}</p>
+                <p className="mt-4 leading-7 text-ink/72">
+                  {project.description}
+                </p>
               )}
               <dl className="mt-6 grid gap-5 sm:grid-cols-2">
                 <div>
-                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">Location</dt>
+                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
+                    Location
+                  </dt>
                   <dd className="mt-2 text-ink/72">{project.location}</dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">Service type</dt>
+                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
+                    Service type
+                  </dt>
                   <dd className="mt-2 text-ink/72">{project.serviceType}</dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">Completed</dt>
+                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
+                    Completed
+                  </dt>
                   <dd className="mt-2 text-ink/72">
                     {new Intl.DateTimeFormat("en-AU", {
                       year: "numeric",
@@ -279,20 +298,31 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
                     Materials or paint used
                   </dt>
-                  <dd className="mt-2 leading-7 text-ink/72">{project.materials}</dd>
+                  <dd className="mt-2 leading-7 text-ink/72">
+                    {project.materials}
+                  </dd>
                 </div>
               </dl>
               <div className="mt-8 rounded-md bg-gumleaf p-6">
-                <h2 className="text-2xl font-semibold text-ink">Planning a similar project?</h2>
+                <h2 className="text-2xl font-semibold text-ink">
+                  Planning a similar repaint?
+                </h2>
                 <p className="mt-3 leading-7 text-ink/70">
-                  Request a free quote and include the service type, suburb, photos, and timing so
-                  F&amp;S Painting can understand the scope.
+                  Request a free quote and include the service type, suburb,
+                  photos, and timing so F&amp;S Painting can understand the
+                  scope.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
-                  <Link href="/services" className="text-eucalyptus hover:text-clay">
+                  <Link
+                    href="/services"
+                    className="text-eucalyptus hover:text-clay"
+                  >
                     Painting services
                   </Link>
-                  <Link href="/painting-tips" className="text-eucalyptus hover:text-clay">
+                  <Link
+                    href="/painting-tips"
+                    className="text-eucalyptus hover:text-clay"
+                  >
                     Painting tips
                   </Link>
                 </div>
@@ -307,7 +337,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             <aside className="h-fit rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-              <h2 className="text-lg font-semibold text-ink">More projects</h2>
+              <h2 className="text-lg font-semibold text-ink">More B/A</h2>
               <div className="mt-4 grid gap-4">
                 {relatedProjects.map((related) => (
                   <Link

@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  MapPin,
+  Phone,
+  ShieldCheck,
+  Star,
+} from "lucide-react";
 import { FaqSection } from "@/components/FaqSection";
 import { Section } from "@/components/Section";
 import { businessDetails } from "@/lib/business";
 import { faqSchema } from "@/lib/faqs";
 import { projects } from "@/lib/projects";
-import { absoluteUrl, breadcrumbSchema, pageMetadata, siteUrl } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  pageMetadata,
+  siteUrl,
+} from "@/lib/seo";
 
 const chatswoodFaqs = [
   {
@@ -16,7 +28,8 @@ const chatswoodFaqs = [
       "Yes. F&S Painting provides free painting quotes for homes, apartments, strata buildings, offices, shops, and other properties in Chatswood and nearby North Shore suburbs.",
   },
   {
-    question: "Can you help with both interior and exterior painting in Chatswood?",
+    question:
+      "Can you help with both interior and exterior painting in Chatswood?",
     answer:
       "Yes. We handle interior walls, ceilings, trims, doors, exterior facades, eaves, fascia, gutters, fences, decks, strata areas, and commercial painting work.",
   },
@@ -34,7 +47,12 @@ const chatswoodFaqs = [
 
 const featuredProjects = projects
   .filter((project) =>
-    ["Chatswood, NSW", "Artarmon, NSW", "Willoughby, NSW", "North Bridge, NSW"].includes(project.location),
+    [
+      "Chatswood, NSW",
+      "Artarmon, NSW",
+      "Willoughby, NSW",
+      "North Bridge, NSW",
+    ].includes(project.location),
   )
   .slice(0, 4);
 
@@ -136,7 +154,9 @@ export default function PaintersChatswoodPage() {
         },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          contentUrl: absoluteUrl("/images/projects/chatswood-exterior-front-facade-wide.jpg"),
+          contentUrl: absoluteUrl(
+            "/images/projects/chatswood-exterior-front-facade-wide.jpg",
+          ),
         },
         mainEntity: {
           "@id": `${pageUrl}#painting-service`,
@@ -146,7 +166,8 @@ export default function PaintersChatswoodPage() {
         "@type": "Service",
         "@id": `${pageUrl}#painting-service`,
         name: "Painters Chatswood",
-        serviceType: "House painting, strata painting, commercial painting, and ceiling restoration",
+        serviceType:
+          "House painting, strata painting, commercial painting, and ceiling restoration",
         description:
           "F&S Painting provides licensed and insured painting services with Dulux paint, careful preparation, local project photos, Google reviews, and free quotes across Chatswood, Artarmon, Willoughby, North Bridge, and nearby North Shore suburbs.",
         areaServed: [
@@ -177,7 +198,11 @@ export default function PaintersChatswoodPage() {
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(chatswoodFaqs, "/painters-chatswood")) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqSchema(chatswoodFaqs, "/painters-chatswood"),
+          ),
+        }}
       />
 
       <section className="relative overflow-hidden bg-ink text-white">
@@ -200,8 +225,9 @@ export default function PaintersChatswoodPage() {
               Painters Chatswood
             </h1>
             <p className="mt-7 max-w-3xl text-base font-medium leading-7 text-white/88 sm:text-xl">
-              Licensed and insured house, strata, commercial, interior, exterior, and ceiling
-              painters for Chatswood and nearby North Shore suburbs.
+              Licensed and insured house, strata, commercial, interior,
+              exterior, and ceiling painters for Chatswood and nearby North
+              Shore suburbs.
             </p>
             <div className="mt-6 flex flex-wrap gap-2 text-sm font-semibold text-white">
               <a
@@ -209,7 +235,8 @@ export default function PaintersChatswoodPage() {
                 className="inline-flex items-center gap-2 rounded-md bg-white/14 px-3 py-2 ring-1 ring-white/20 transition hover:bg-white/22"
               >
                 <Star aria-hidden="true" size={16} />
-                Google {businessDetails.googleRating} rating, {businessDetails.googleReviewCount} reviews
+                Google {businessDetails.googleRating} rating,{" "}
+                {businessDetails.googleReviewCount} reviews
               </a>
               <span className="inline-flex items-center gap-2 rounded-md bg-white/14 px-3 py-2 ring-1 ring-white/20">
                 <ShieldCheck aria-hidden="true" size={16} />
@@ -238,10 +265,12 @@ export default function PaintersChatswoodPage() {
             </div>
             <div className="mt-8 grid gap-3 text-sm text-white/85 sm:grid-cols-2">
               <p className="flex items-center gap-2">
-                <CheckCircle2 aria-hidden="true" size={18} /> Free Chatswood painting quotes
+                <CheckCircle2 aria-hidden="true" size={18} /> Free Chatswood
+                painting quotes
               </p>
               <p className="flex items-center gap-2">
-                <CheckCircle2 aria-hidden="true" size={18} /> Residential, strata, and commercial work
+                <CheckCircle2 aria-hidden="true" size={18} /> Residential,
+                strata, and commercial work
               </p>
             </div>
           </div>
@@ -256,9 +285,18 @@ export default function PaintersChatswoodPage() {
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {trustHighlights.map((item) => (
-            <div key={item} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-              <ShieldCheck className="text-eucalyptus" aria-hidden="true" size={24} />
-              <p className="mt-3 text-lg font-semibold leading-7 text-ink">{item}</p>
+            <div
+              key={item}
+              className="rounded-md border border-ink/10 bg-white p-5 shadow-sm"
+            >
+              <ShieldCheck
+                className="text-eucalyptus"
+                aria-hidden="true"
+                size={24}
+              />
+              <p className="mt-3 text-lg font-semibold leading-7 text-ink">
+                {item}
+              </p>
             </div>
           ))}
         </div>
@@ -294,8 +332,15 @@ export default function PaintersChatswoodPage() {
             "Commercial offices, receptions, shops, and workspaces",
             "Mould-damaged ceiling preparation and restoration",
           ].map((item) => (
-            <div key={item} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-              <CheckCircle2 className="text-eucalyptus" aria-hidden="true" size={24} />
+            <div
+              key={item}
+              className="rounded-md border border-ink/10 bg-white p-5 shadow-sm"
+            >
+              <CheckCircle2
+                className="text-eucalyptus"
+                aria-hidden="true"
+                size={24}
+              />
               <p className="mt-4 font-semibold leading-6 text-ink">{item}</p>
             </div>
           ))}
@@ -305,14 +350,14 @@ export default function PaintersChatswoodPage() {
       <Section
         className="bg-mist"
         eyebrow="Nearby Work"
-        title="Recent painting projects around Chatswood and the North Shore"
-        intro="These completed projects help show the kinds of residential, commercial, exterior, and ceiling work F&S Painting handles near Chatswood."
+        title="Recent painting Before & After around Chatswood and the North Shore"
+        intro="These completed B/A examples show the kinds of residential, commercial, exterior, and ceiling work F&S Painting handles near Chatswood."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {featuredProjects.map((project) => (
             <Link
               key={project.slug}
-              href={`/projects/${project.slug}`}
+              href={`/projects#${project.slug}`}
               className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">
@@ -328,8 +373,12 @@ export default function PaintersChatswoodPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
                   {project.serviceType}
                 </p>
-                <h2 className="mt-2 text-lg font-semibold leading-tight text-ink">{project.title}</h2>
-                <p className="mt-3 text-sm font-semibold text-ink/60">{project.location}</p>
+                <h2 className="mt-2 text-lg font-semibold leading-tight text-ink">
+                  {project.title}
+                </h2>
+                <p className="mt-3 text-sm font-semibold text-ink/60">
+                  {project.location}
+                </p>
               </div>
             </Link>
           ))}
@@ -358,7 +407,9 @@ export default function PaintersChatswoodPage() {
                 />
               </div>
               <div className="p-4">
-                <p className="text-sm font-semibold leading-5 text-ink">{photo.title}</p>
+                <p className="text-sm font-semibold leading-5 text-ink">
+                  {photo.title}
+                </p>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-ink/50">
                   Chatswood, NSW
                 </p>
@@ -383,13 +434,14 @@ export default function PaintersChatswoodPage() {
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-5 text-base leading-7 text-ink/72">
             <p>
-              Chatswood properties can include family homes, apartments, strata buildings, retail
-              spaces, medical rooms, offices, and older surfaces that need proper preparation before
-              repainting.
+              Chatswood properties can include family homes, apartments, strata
+              buildings, retail spaces, medical rooms, offices, and older
+              surfaces that need proper preparation before repainting.
             </p>
             <p>
-              We can discuss the paint system, access, timing, protection, and finish so the work is
-              suitable for the property and the people using it.
+              We can discuss the paint system, access, timing, protection, and
+              finish so the work is suitable for the property and the people
+              using it.
             </p>
           </div>
           <div className="relative min-h-72 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
@@ -422,8 +474,8 @@ export default function PaintersChatswoodPage() {
               Need painters in Chatswood?
             </h2>
             <p className="mt-4 max-w-2xl text-white/80">
-              Send photos and a short description of the areas to be painted, or call F&amp;S
-              Painting directly.
+              Send photos and a short description of the areas to be painted, or
+              call F&amp;S Painting directly.
             </p>
           </div>
           <Link

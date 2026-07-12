@@ -183,9 +183,11 @@ export default async function PaintingGalleryPage() {
                   >
                     <Link
                       href={
-                        item.collectionSlug
-                          ? `/painting-gallery/${item.collectionSlug}`
-                          : "/painting-gallery"
+                        item.projectSlug
+                          ? `/projects#${item.projectSlug}`
+                          : item.collectionSlug
+                            ? `/painting-gallery/${item.collectionSlug}`
+                            : "/painting-gallery"
                       }
                       className="block h-full"
                     >
@@ -220,7 +222,12 @@ export default async function PaintingGalleryPage() {
                             {item.suburb}
                           </p>
                         ) : null}
-                        {item.collectionSlug ? (
+                        {item.projectSlug ? (
+                          <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
+                            View matching B/A
+                            <ArrowRight aria-hidden="true" size={16} />
+                          </p>
+                        ) : item.collectionSlug ? (
                           <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
                             View location gallery
                             <ArrowRight aria-hidden="true" size={16} />

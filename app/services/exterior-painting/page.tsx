@@ -174,15 +174,15 @@ export default function ExteriorPaintingPage() {
 
       <Section
         className="bg-mist"
-        eyebrow="Related Projects"
+        eyebrow="Related B/A"
         title="Exterior painting examples"
-        intro="View recent exterior and strata repainting examples completed by F&S Painting."
+        intro="View recent exterior repainting examples completed by F&S Painting."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {relatedProjects.map((project) => (
             <Link
               key={project.slug}
-              href={`/projects/${project.slug}`}
+              href={`/projects#${project.slug}`}
               className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">
@@ -203,6 +203,10 @@ export default function ExteriorPaintingPage() {
                 </h2>
                 <p className="mt-3 text-sm font-semibold text-ink/60">
                   {project.location}
+                </p>
+                <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
+                  View matching B/A
+                  <ArrowRight aria-hidden="true" size={16} />
                 </p>
               </div>
             </Link>

@@ -245,7 +245,7 @@ export default async function Home() {
       <Section
         className="bg-mist"
         eyebrow="Before & After"
-        title="Project previews"
+        title="Before & After previews"
         intro="A simple view of the kinds of transformations F&S Painting can help with, from interior walls to ceiling restoration."
       >
         <ProjectPreview />
@@ -317,7 +317,7 @@ export default async function Home() {
             className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay"
             href="/projects/mould-damaged-ceiling-restoration-sydney"
           >
-            Mould-damaged ceiling painting project
+            Mould-damaged ceiling painting B/A
           </Link>
         </div>
       </Section>
