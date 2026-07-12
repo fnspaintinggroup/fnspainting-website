@@ -122,12 +122,7 @@ export default async function Home() {
               return (
                 <Link
                   key={service.title}
-                  href={
-                    service.slug === "interior-painting" ||
-                    service.slug === "exterior-painting"
-                      ? `/services/${service.slug}`
-                      : `/services#${service.slug}`
-                  }
+                  href={localService.href}
                   className="group rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
                 >
                   <Icon

@@ -23,12 +23,16 @@ export default async function ServicesPage() {
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(cmsServices)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema(cmsServices)),
+        }}
       />
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(serviceFaqs, "/services")) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema(serviceFaqs, "/services")),
+        }}
       />
       <section className="bg-ink px-5 py-16 text-white sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-6xl">
@@ -39,8 +43,9 @@ export default async function ServicesPage() {
             Professional painting services across Sydney
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
-            F&amp;S Painting handles careful preparation, neat application, and practical guidance
-            for residential, strata, and commercial properties.
+            F&amp;S Painting handles careful preparation, neat application, and
+            practical guidance for residential, strata, and commercial
+            properties.
           </p>
           <Link
             href="/painters-chatswood"
@@ -61,32 +66,37 @@ export default async function ServicesPage() {
           <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
             <div className="space-y-5 text-base leading-8 text-ink/72">
               <p>
-                With more than 20 years of industry experience, our skilled painters are committed
-                to delivering clean, detailed, and long-lasting results that improve the look and
-                value of your property.
+                With more than 20 years of industry experience, our skilled
+                painters are committed to delivering clean, detailed, and
+                long-lasting results that improve the look and value of your
+                property.
               </p>
               <p>
-                We take pride in careful preparation, professional workmanship, and clear
-                communication from start to finish. We respect every property as if it were our
-                own.
+                We take pride in careful preparation, professional workmanship,
+                and clear communication from start to finish. We respect every
+                property as if it were our own.
               </p>
               <p>
-                Our experienced team can recommend the right painting solution for your home,
-                apartment, office, shop, or building. From interior and exterior painting to surface
-                repairs, ceilings, trims, and full repainting projects, we can help with all your
+                Our experienced team can recommend the right painting solution
+                for your home, apartment, office, shop, or building. From
+                interior and exterior painting to surface repairs, ceilings,
+                trims, and full repainting projects, we can help with all your
                 painting needs.
               </p>
               <p>
                 For local North Shore work, you can also view our{" "}
-                <Link href="/painters-chatswood" className="font-semibold text-eucalyptus hover:text-clay">
+                <Link
+                  href="/painters-chatswood"
+                  className="font-semibold text-eucalyptus hover:text-clay"
+                >
                   painters in Chatswood
                 </Link>{" "}
                 service page.
               </p>
               <p>
-                Most quality finishes begin with proper surface preparation. That is why we make
-                sure every job is prepared carefully before painting, so the final result looks
-                better and lasts longer.
+                Most quality finishes begin with proper surface preparation.
+                That is why we make sure every job is prepared carefully before
+                painting, so the final result looks better and lasts longer.
               </p>
             </div>
             <Link
@@ -103,11 +113,16 @@ export default async function ServicesPage() {
               "Residential, strata, and commercial work",
               "Full preparation for a quality finish",
             ].map((item) => (
-              <div key={item} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
+              <div
+                key={item}
+                className="rounded-md border border-ink/10 bg-white p-5 shadow-sm"
+              >
                 <p className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
                   F&amp;S Painting
                 </p>
-                <p className="mt-3 text-lg font-semibold leading-7 text-ink">{item}</p>
+                <p className="mt-3 text-lg font-semibold leading-7 text-ink">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
@@ -116,19 +131,38 @@ export default async function ServicesPage() {
       <Section title="What we paint">
         <div className="grid gap-5 md:grid-cols-2">
           {cmsServices.map((service) => {
-            const localService = services.find((item) => item.title === service.title) ?? services[0];
+            const localService =
+              services.find((item) => item.title === service.title) ??
+              services[0];
             const Icon = localService.icon;
-            const id = service.slug;
+            const id = localService.href.split("#")[1] ?? service.slug;
             return (
-              <article id={id} key={service.title} className="rounded-md border border-ink/10 bg-white p-6 shadow-sm">
-                <Icon className="text-eucalyptus" aria-hidden="true" size={30} />
-                <h2 className="mt-5 text-2xl font-semibold text-ink">{service.title}</h2>
-                <p className="mt-3 leading-7 text-ink/70">{service.summary}</p>
-                <p className="mt-4 text-sm leading-6 text-ink/60">
+              <article
+                id={id}
+                key={service.title}
+                className="group relative scroll-mt-24 rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+              >
+                <Link
+                  href={localService.galleryHref}
+                  aria-label={`View ${service.title} gallery examples`}
+                  className="absolute inset-0 z-0 rounded-md"
+                />
+                <Icon
+                  className="relative z-10 text-eucalyptus"
+                  aria-hidden="true"
+                  size={30}
+                />
+                <h2 className="relative z-10 mt-5 text-2xl font-semibold text-ink">
+                  {service.title}
+                </h2>
+                <p className="relative z-10 mt-3 leading-7 text-ink/70">
+                  {service.summary}
+                </p>
+                <p className="relative z-10 mt-4 text-sm leading-6 text-ink/60">
                   {service.description ||
                     "Every quote can include preparation advice, paint system recommendations, and expected timing based on the condition of the space."}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
+                <div className="relative z-10 mt-5 flex flex-wrap gap-3 text-sm font-semibold">
                   <Link
                     href="/contact#quote-name"
                     className="inline-flex items-center gap-1 rounded-md bg-clay px-4 py-2 text-white hover:bg-clay/90"
@@ -136,10 +170,16 @@ export default async function ServicesPage() {
                     Get a quote for this service
                     <ArrowRight aria-hidden="true" size={15} />
                   </Link>
-                  <Link href="/projects" className="text-eucalyptus hover:text-clay">
-                    Related projects
+                  <Link
+                    href={localService.galleryHref}
+                    className="text-eucalyptus hover:text-clay"
+                  >
+                    View gallery examples
                   </Link>
-                  <Link href="/painting-tips" className="text-eucalyptus hover:text-clay">
+                  <Link
+                    href="/painting-tips"
+                    className="text-eucalyptus hover:text-clay"
+                  >
                     Painting tips
                   </Link>
                 </div>

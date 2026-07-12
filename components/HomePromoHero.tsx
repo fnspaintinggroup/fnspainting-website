@@ -49,7 +49,7 @@ export function HomePromoHero() {
       <div
         className={
           isDocked
-            ? "fixed right-3 top-52 z-40 h-20 w-32 overflow-hidden rounded-md border border-white/25 bg-ink shadow-2xl transition-all duration-700 sm:right-5 sm:top-24 sm:h-28 sm:w-48"
+            ? "fixed right-3 top-52 z-40 h-10 w-16 overflow-hidden rounded-md border border-white/25 bg-ink shadow-2xl transition-all duration-700 sm:right-5 sm:top-24 sm:h-14 sm:w-24"
             : "absolute inset-x-0 top-0 z-10 h-[38svh] overflow-hidden bg-ink transition-all duration-700 sm:inset-0 sm:h-auto"
         }
       >
@@ -68,10 +68,10 @@ export function HomePromoHero() {
           <button
             type="button"
             onClick={replayVideo}
-            className="absolute inset-0 flex items-end justify-start bg-gradient-to-t from-ink/85 via-ink/15 to-transparent p-2 text-left text-xs font-bold text-white sm:p-3 sm:text-sm"
+            className="absolute inset-0 flex items-end justify-start bg-gradient-to-t from-ink/85 via-ink/15 to-transparent p-1 text-left text-[9px] font-bold text-white sm:p-1.5 sm:text-[10px]"
             aria-label="Watch F&S Painting promo video again"
           >
-            <span className="rounded bg-ink/75 px-2 py-1">▶ Watch again</span>
+            <span className="rounded bg-ink/75 px-1 py-0.5">▶ Watch again</span>
           </button>
         ) : null}
       </div>
@@ -92,8 +92,8 @@ export function HomePromoHero() {
             <span className="block">&amp; commercial painting</span>
           </h1>
           <p className="mt-5 max-w-3xl text-sm font-medium leading-6 text-white/90 sm:mt-7 sm:text-xl sm:leading-7">
-            Reliable, clean, high-quality painting service for homes, apartments, offices and shops
-            across Sydney.
+            Reliable, clean, high-quality painting service for homes,
+            apartments, offices and shops across Sydney.
           </p>
           <p className="mt-2 text-sm font-semibold text-white/90 sm:text-xl">
             Careful preparation, tidy work, and quality Dulux paint systems.
@@ -110,7 +110,9 @@ export function HomePromoHero() {
             </p>
           </div>
           <p className="mt-6 max-w-3xl text-lg font-black uppercase leading-tight text-white sm:mt-9 sm:text-2xl lg:text-3xl">
-            <span className="block">Call {businessDetails.phones.join(" or ")}</span>
+            <span className="block">
+              Call {businessDetails.phones.join(" or ")}
+            </span>
             <span className="block">for a free quote today.</span>
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
@@ -137,10 +139,12 @@ export function HomePromoHero() {
           </div>
           <div className="mt-6 grid gap-3 text-sm text-white/85 sm:mt-8 sm:grid-cols-2">
             <p className="flex items-center gap-2">
-              <CheckCircle2 aria-hidden="true" size={18} /> Residential, strata, and commercial
+              <CheckCircle2 aria-hidden="true" size={18} /> Residential, strata,
+              and commercial
             </p>
             <p className="flex items-center gap-2">
-              <ShieldCheck aria-hidden="true" size={18} /> Careful preparation and clean finishes
+              <ShieldCheck aria-hidden="true" size={18} /> Careful preparation
+              and clean finishes
             </p>
           </div>
         </div>

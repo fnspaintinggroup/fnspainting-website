@@ -5,6 +5,7 @@ import { ArrowRight, Images, MapPin, Paintbrush } from "lucide-react";
 import { getGalleryCollections, getGalleryImages } from "@/lib/cms";
 import { galleryCategories } from "@/lib/gallery";
 import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
+import { createUrlSlug } from "@/lib/url-slug";
 
 export const metadata: Metadata = pageMetadata({
   title: "Finest Finish Painting Gallery Sydney",
@@ -54,7 +55,9 @@ export default async function PaintingGalleryPage() {
       caption: item.caption,
       contentUrl: absoluteUrl(item.image),
       description: item.alt,
-      keywords: [item.category, item.suburb, "painting gallery Sydney"].filter(Boolean),
+      keywords: [item.category, item.suburb, "painting gallery Sydney"].filter(
+        Boolean,
+      ),
     })),
   };
 
@@ -76,9 +79,9 @@ export default async function PaintingGalleryPage() {
               Finest Finish Painting Gallery
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
-              Explore recent painting finishes completed by F&amp;S Painting across Sydney,
-              including interiors, exteriors, ceilings, doors, trims, strata areas, and commercial
-              spaces.
+              Explore recent painting finishes completed by F&amp;S Painting
+              across Sydney, including interiors, exteriors, ceilings, doors,
+              trims, strata areas, and commercial spaces.
             </p>
             <Link
               href="/painters-chatswood"
@@ -118,8 +121,8 @@ export default async function PaintingGalleryPage() {
               Finished work by service type
             </h2>
             <p className="mt-4 text-base leading-7 text-ink/70">
-              Browse finished photos grouped by the kind of painting work customers most often ask
-              to see before booking a quote.
+              Browse finished photos grouped by the kind of painting work
+              customers most often ask to see before booking a quote.
             </p>
           </div>
 
@@ -127,7 +130,10 @@ export default async function PaintingGalleryPage() {
             {galleryCategories.map((category) => (
               <a
                 key={category}
-                href={`#${category.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`}
+                href={`#${category
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/^-|-$/g, "")}`}
                 className="rounded-md border border-eucalyptus/20 bg-white px-3 py-2 text-sm font-semibold text-eucalyptus shadow-sm transition hover:bg-gumleaf"
               >
                 {category}
@@ -138,8 +144,13 @@ export default async function PaintingGalleryPage() {
       </section>
 
       {galleryCategories.map((category, index) => {
-        const categoryImages = galleryImages.filter((item) => item.category === category);
-        const sectionId = category.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        const categoryImages = galleryImages.filter(
+          (item) => item.category === category,
+        );
+        const sectionId = category
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "");
 
         return (
           <section
@@ -153,10 +164,13 @@ export default async function PaintingGalleryPage() {
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
                     Finest finish
                   </p>
-                  <h2 className="text-3xl font-semibold leading-tight text-ink">{category}</h2>
+                  <h2 className="text-3xl font-semibold leading-tight text-ink">
+                    {category}
+                  </h2>
                 </div>
                 <p className="text-sm font-semibold text-ink/55">
-                  {categoryImages.length} photo{categoryImages.length === 1 ? "" : "s"}
+                  {categoryImages.length} photo
+                  {categoryImages.length === 1 ? "" : "s"}
                 </p>
               </div>
 
@@ -164,7 +178,8 @@ export default async function PaintingGalleryPage() {
                 {categoryImages.map((item) => (
                   <article
                     key={item.title}
-                    className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+                    id={createUrlSlug(item.title)}
+                    className="scroll-mt-24 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
                   >
                     <Link
                       href={
@@ -196,7 +211,9 @@ export default async function PaintingGalleryPage() {
                         <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
                           {item.title}
                         </h3>
-                        <p className="mt-3 text-sm leading-6 text-ink/65">{item.caption}</p>
+                        <p className="mt-3 text-sm leading-6 text-ink/65">
+                          {item.caption}
+                        </p>
                         {item.suburb ? (
                           <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-ink/55">
                             <MapPin aria-hidden="true" size={16} />
@@ -229,8 +246,8 @@ export default async function PaintingGalleryPage() {
               Request a free Sydney painting quote
             </h2>
             <p className="mt-4 max-w-2xl text-white/80">
-              Share the rooms, exterior areas, or commercial spaces you want painted and we will
-              help plan the right finish.
+              Share the rooms, exterior areas, or commercial spaces you want
+              painted and we will help plan the right finish.
             </p>
           </div>
           <Link

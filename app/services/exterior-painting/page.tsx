@@ -7,7 +7,12 @@ import { Section } from "@/components/Section";
 import { businessDetails } from "@/lib/business";
 import { faqSchema } from "@/lib/faqs";
 import { projects } from "@/lib/projects";
-import { absoluteUrl, breadcrumbSchema, pageMetadata, siteUrl } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  pageMetadata,
+  siteUrl,
+} from "@/lib/seo";
 
 const exteriorFaqs = [
   {
@@ -33,7 +38,7 @@ const exteriorFaqs = [
 ];
 
 const relatedProjects = projects
-  .filter((project) => project.serviceType === "Exterior Painting" || project.serviceType === "Strata Painting")
+  .filter((project) => project.serviceType === "Exterior Painting")
   .slice(0, 3);
 
 const pageUrl = `${siteUrl}/services/exterior-painting`;
@@ -68,7 +73,9 @@ export default function ExteriorPaintingPage() {
         provider: { "@id": `${siteUrl}/#localbusiness` },
         areaServed: "Sydney, NSW",
         url: pageUrl,
-        image: relatedProjects.map((project) => absoluteUrl(project.afterImage)),
+        image: relatedProjects.map((project) =>
+          absoluteUrl(project.afterImage),
+        ),
       },
     ],
   };
@@ -83,12 +90,19 @@ export default function ExteriorPaintingPage() {
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(exteriorFaqs, "/services/exterior-painting")) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqSchema(exteriorFaqs, "/services/exterior-painting"),
+          ),
+        }}
       />
 
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
-          src={relatedProjects[0]?.afterImage ?? "/images/fs-painting-hero-real.jpeg"}
+          src={
+            relatedProjects[0]?.afterImage ??
+            "/images/fs-painting-hero-real.jpeg"
+          }
           alt="Finished exterior painting by F&S Painting in Sydney"
           fill
           priority
@@ -105,8 +119,9 @@ export default function ExteriorPaintingPage() {
               Exterior painting for stronger street appeal
             </h1>
             <p className="mt-6 max-w-3xl text-base font-medium leading-7 text-white/88 sm:text-xl">
-              F&amp;S Painting prepares and repaints facades, eaves, fascia, gutters, trims,
-              fences, decks, exterior doors, and strata surfaces across Sydney.
+              F&amp;S Painting prepares and repaints facades, eaves, fascia,
+              gutters, trims, fences, decks, exterior doors, and strata surfaces
+              across Sydney.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -142,8 +157,15 @@ export default function ExteriorPaintingPage() {
             "Residential, strata, commercial, and maintenance repainting",
             "Clear quoting, careful access planning, and tidy handover",
           ].map((item) => (
-            <div key={item} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-              <CheckCircle2 className="text-eucalyptus" aria-hidden="true" size={24} />
+            <div
+              key={item}
+              className="rounded-md border border-ink/10 bg-white p-5 shadow-sm"
+            >
+              <CheckCircle2
+                className="text-eucalyptus"
+                aria-hidden="true"
+                size={24}
+              />
               <p className="mt-4 font-semibold leading-6 text-ink">{item}</p>
             </div>
           ))}
@@ -176,8 +198,12 @@ export default function ExteriorPaintingPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
                   {project.serviceType}
                 </p>
-                <h2 className="mt-2 text-lg font-semibold leading-tight text-ink">{project.title}</h2>
-                <p className="mt-3 text-sm font-semibold text-ink/60">{project.location}</p>
+                <h2 className="mt-2 text-lg font-semibold leading-tight text-ink">
+                  {project.title}
+                </h2>
+                <p className="mt-3 text-sm font-semibold text-ink/60">
+                  {project.location}
+                </p>
               </div>
             </Link>
           ))}
