@@ -167,7 +167,7 @@ export const galleryImages: GalleryImage[] = [
   {
     title: "Chatswood West Bathroom Ceiling Peeling Restoration",
     category: "Ceiling Restoration",
-    image: "/images/projects/mould-ceiling-case-2-after.jpg",
+    image: "/images/projects/chatswood-west-ceiling-restoration-after-card.png",
     alt: "Bathroom ceiling after peeling paint and moisture-damage restoration in Chatswood West",
     caption:
       "Peeling and moisture-affected ceiling areas prepared, sealed, and repainted for a clean finish.",

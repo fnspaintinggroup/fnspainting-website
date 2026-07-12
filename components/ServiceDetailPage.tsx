@@ -23,6 +23,8 @@ type ServiceDetailPageProps = {
   projects: CmsProject[];
   faqs: FaqItem[];
   anchorId?: string;
+  heroImage?: string;
+  heroImageAlt?: string;
 };
 
 export function ServiceDetailPage({
@@ -39,10 +41,14 @@ export function ServiceDetailPage({
   projects,
   faqs,
   anchorId,
+  heroImage: heroImageOverride,
+  heroImageAlt,
 }: ServiceDetailPageProps) {
   const pageUrl = `${siteUrl}${path}`;
   const heroImage =
-    projects[0]?.afterImage ?? "/images/fs-painting-hero-real.jpeg";
+    heroImageOverride ??
+    projects[0]?.afterImage ??
+    "/images/fs-painting-hero-real.jpeg";
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -86,7 +92,7 @@ export function ServiceDetailPage({
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
           src={heroImage}
-          alt={`${name} completed by F&S Painting in Sydney`}
+          alt={heroImageAlt ?? `${name} completed by F&S Painting in Sydney`}
           fill
           priority
           className="object-cover object-center"

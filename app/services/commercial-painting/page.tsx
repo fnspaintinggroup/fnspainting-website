@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Commercial painters in Sydney for offices, shops, salons, medical spaces, warehouses, facades, interiors, and planned repainting. Free quotes.",
   path,
-  image: "/images/projects/silverwater-commercial-entry-finish.jpg",
+  image: "/images/projects/commercial-medical-reception-hero.png",
 });
 
 const faqs = [
@@ -50,6 +50,8 @@ export default async function CommercialPaintingPage() {
       heading="Commercial painting for professional spaces"
       intro="F&S Painting prepares and repaints offices, shops, salons, medical spaces, warehouses, interiors, facades, entries, and commercial details across Sydney."
       description="Commercial painting for Sydney offices, shops, salons, medical spaces, warehouses, interiors, facades, entries, and business properties."
+      heroImage="/images/projects/commercial-medical-reception-hero.png"
+      heroImageAlt="Parramatta Medical Centre reception and waiting area after commercial interior painting"
       quoteLabel="Get a Commercial Painting Quote"
       workTitle="Painting planned around the property and its operation"
       workIntro="Commercial quotes consider access, customers and staff, working areas, preparation, coating durability, and the required completion timing."
