@@ -148,7 +148,8 @@ export const galleryImages: GalleryImage[] = [
     category: "Ceiling Restoration",
     image: "/images/projects/mould-ceiling-case-1-after.jpg",
     alt: "Clean restored ceiling after mould-damaged ceiling repainting in a Sydney property",
-    caption: "Ceiling sealed, prepared, and repainted for a smooth clean result.",
+    caption:
+      "Ceiling sealed, prepared, and repainted for a smooth clean result.",
     suburb: "Chatswood, NSW",
   },
   {
@@ -156,7 +157,8 @@ export const galleryImages: GalleryImage[] = [
     category: "Ceiling Restoration",
     image: "/images/projects/mould-ceiling-case-2-after.jpg",
     alt: "Bathroom ceiling restored with a smooth clean repaint after mould damage",
-    caption: "Moisture-affected bathroom ceiling restored with a fresh coating system.",
+    caption:
+      "Moisture-affected bathroom ceiling restored with a fresh coating system.",
     suburb: "Willoughby, NSW",
   },
   {
@@ -164,7 +166,8 @@ export const galleryImages: GalleryImage[] = [
     category: "Commercial Painting",
     image: "/images/projects/commercial-reception-after.jpg",
     alt: "Chatswood commercial office reception area after fresh interior repainting",
-    caption: "Professional reception repaint for a cleaner first impression in a Chatswood office.",
+    caption:
+      "Professional reception repaint for a cleaner first impression in a Chatswood office.",
     suburb: "Artamon, NSW",
     collectionSlug: "chatswood-commercial-reception-finish",
     photoCount: 6,
@@ -344,7 +347,7 @@ const featuredGalleryTitles = [
   "Dee Why Monash Parade Strata Painting",
   "Narwee Strata Common Area Painting",
   "Chatswood Exterior House Painting",
-  "Exterior House Front Refresh",
+  "East Lindfield Exterior House Repaint",
 ];
 
 export const featuredGalleryImages = featuredGalleryTitles
@@ -367,13 +370,15 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Lift Lobby Repaint",
         image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
         alt: "Dee Why strata lift lobby during repainting with protected floors and fresh wall finish",
-        caption: "Lift lobby walls and common area surfaces protected, prepared, and repainted.",
+        caption:
+          "Lift lobby walls and common area surfaces protected, prepared, and repainted.",
       },
       {
         title: "Common Area Painting",
         image: "/images/projects/dee-why-strata-lift-lobby-work-2.jpg",
         alt: "Dee Why strata common area repaint near lift doors",
-        caption: "Shared corridor and lift area repainted with a clean, consistent finish.",
+        caption:
+          "Shared corridor and lift area repainted with a clean, consistent finish.",
       },
       {
         title: "Corridor Detail Painting",
@@ -386,13 +391,15 @@ export const galleryCollections: GalleryCollection[] = [
         title: "High Ceiling and Wall Painting",
         image: "/images/projects/dee-why-strata-ceiling-after.jpg",
         alt: "Dee Why strata high ceiling and wall area after repainting",
-        caption: "High wall and ceiling surfaces finished for a brighter shared-space result.",
+        caption:
+          "High wall and ceiling surfaces finished for a brighter shared-space result.",
       },
       {
         title: "Hallway Painting",
         image: "/images/projects/dee-why-strata-hallway-after.jpg",
         alt: "Dee Why strata hallway after fresh wall, ceiling, and trim repainting",
-        caption: "Hallway walls, ceilings, and trims repainted for a clean common area finish.",
+        caption:
+          "Hallway walls, ceilings, and trims repainted for a clean common area finish.",
       },
     ],
   },
@@ -404,37 +411,43 @@ export const galleryCollections: GalleryCollection[] = [
     summary:
       "Strata painting in Dee Why across exterior balcony faces, fascia areas, access points, and shared building elevations.",
     coverImage: "/images/projects/dee-why-monash-strata-rear-balcony.jpg",
-    coverAlt: "Dee Why strata rear balcony and exterior facade after painting work",
+    coverAlt:
+      "Dee Why strata rear balcony and exterior facade after painting work",
     images: [
       {
         title: "Rear Balcony Exterior",
         image: "/images/projects/dee-why-monash-strata-rear-balcony.jpg",
         alt: "Dee Why strata rear balcony exterior after painting work",
-        caption: "Rear balcony face and shared exterior areas refreshed for a cleaner strata presentation.",
+        caption:
+          "Rear balcony face and shared exterior areas refreshed for a cleaner strata presentation.",
       },
       {
         title: "Fascia Preparation",
         image: "/images/projects/dee-why-monash-strata-fascia-prep.jpg",
         alt: "Dee Why strata fascia preparation with ladder access",
-        caption: "Upper fascia area prepared and coated as part of the strata exterior painting work.",
+        caption:
+          "Upper fascia area prepared and coated as part of the strata exterior painting work.",
       },
       {
         title: "Upper Fascia Access",
         image: "/images/projects/dee-why-monash-strata-upper-fascia-prep.jpg",
         alt: "Dee Why strata upper fascia painting access from balcony",
-        caption: "Balcony-level access used for careful preparation and painting of higher exterior details.",
+        caption:
+          "Balcony-level access used for careful preparation and painting of higher exterior details.",
       },
       {
         title: "Front Access View",
         image: "/images/projects/dee-why-monash-strata-front-access.jpg",
         alt: "Dee Why strata front access with F&S Painting van during exterior work",
-        caption: "Front access area showing strata exterior work across the shared building frontage.",
+        caption:
+          "Front access area showing strata exterior work across the shared building frontage.",
       },
       {
         title: "Balcony Painting",
         image: "/images/projects/dee-why-monash-strata-balcony-finish.jpg",
         alt: "Dee Why strata balcony and soffit after exterior painting finish",
-        caption: "Balcony face, soffit, and surrounding exterior areas finished for a neater shared-space look.",
+        caption:
+          "Balcony face, soffit, and surrounding exterior areas finished for a neater shared-space look.",
       },
     ],
   },
@@ -446,139 +459,162 @@ export const galleryCollections: GalleryCollection[] = [
     summary:
       "Finished strata painting across Narwee common exterior walls, balconies, soffits, garage surrounds, entry stairs, side paths, and shared outdoor areas.",
     coverImage: "/images/projects/narwee-strata-main-front-view.jpg",
-    coverAlt: "Narwee strata building exterior after common area painting refresh",
+    coverAlt:
+      "Narwee strata building exterior after common area painting refresh",
     images: [
       {
         title: "Entry Stair Painting",
         image: "/images/projects/narwee-strata-entry-stair-finish.jpg",
         alt: "Narwee strata entry stair and balcony area after painting refresh",
-        caption: "Entry stair and balcony-facing common area finished for a tidier shared approach.",
+        caption:
+          "Entry stair and balcony-facing common area finished for a tidier shared approach.",
       },
       {
         title: "Courtyard View",
         image: "/images/projects/narwee-strata-courtyard-view.jpg",
         alt: "Narwee strata courtyard and parking-side building view after painting refresh",
-        caption: "Shared courtyard and parking-side walls refreshed for a cleaner strata presentation.",
+        caption:
+          "Shared courtyard and parking-side walls refreshed for a cleaner strata presentation.",
       },
       {
         title: "Soffit Detail",
         image: "/images/projects/narwee-strata-soffit-detail.jpg",
         alt: "Narwee strata soffit and wall detail after repainting",
-        caption: "Common soffit and adjoining wall detail finished with a neat, durable coating.",
+        caption:
+          "Common soffit and adjoining wall detail finished with a neat, durable coating.",
       },
       {
         title: "Balcony Corner",
         image: "/images/projects/narwee-strata-balcony-corner.jpg",
         alt: "Narwee strata balcony corner and wall finish after painting refresh",
-        caption: "Balcony corner and surrounding brickwork presented with a cleaner common area look.",
+        caption:
+          "Balcony corner and surrounding brickwork presented with a cleaner common area look.",
       },
       {
         title: "Rear Lawn View",
         image: "/images/projects/narwee-strata-rear-lawn-view.jpg",
         alt: "Narwee strata rear lawn side building view after painting refresh",
-        caption: "Rear lawn side and shared exterior walls refreshed to lift the overall building appearance.",
+        caption:
+          "Rear lawn side and shared exterior walls refreshed to lift the overall building appearance.",
       },
       {
         title: "Front Elevation",
         image: "/images/projects/narwee-strata-front-elevation.jpg",
         alt: "Narwee strata front elevation after common area painting refresh",
-        caption: "Front elevation finished for a brighter and better-kept strata street presence.",
+        caption:
+          "Front elevation finished for a brighter and better-kept strata street presence.",
       },
       {
         title: "Garage Doors Detail",
         image: "/images/projects/narwee-strata-garage-doors-detail.jpg",
         alt: "Narwee strata garage doors and surrounding common area after painting refresh",
-        caption: "Garage surrounds and common access zone tidied up for a more consistent finish.",
+        caption:
+          "Garage surrounds and common access zone tidied up for a more consistent finish.",
       },
       {
         title: "Undercover Garage",
         image: "/images/projects/narwee-strata-undercover-garage.jpg",
         alt: "Narwee strata undercover garage area after painting refresh",
-        caption: "Undercover garage common area presented with a cleaner, more maintained appearance.",
+        caption:
+          "Undercover garage common area presented with a cleaner, more maintained appearance.",
       },
       {
         title: "Upper Balconies",
         image: "/images/projects/narwee-strata-upper-balconies.jpg",
         alt: "Narwee strata upper balconies after exterior painting refresh",
-        caption: "Upper balconies and surrounding walls refreshed for a tidy shared exterior finish.",
+        caption:
+          "Upper balconies and surrounding walls refreshed for a tidy shared exterior finish.",
       },
       {
         title: "Wall Upward Detail",
         image: "/images/projects/narwee-strata-wall-upward-detail.jpg",
         alt: "Narwee strata exterior wall and upper facade detail after painting refresh",
-        caption: "Vertical wall detail shows the cleaner finish across higher common exterior surfaces.",
+        caption:
+          "Vertical wall detail shows the cleaner finish across higher common exterior surfaces.",
       },
       {
         title: "Street Front View",
         image: "/images/projects/narwee-strata-street-front-view.jpg",
         alt: "Narwee strata building viewed from the street after painting refresh",
-        caption: "Street-front presentation improved with a neater overall strata exterior appearance.",
+        caption:
+          "Street-front presentation improved with a neater overall strata exterior appearance.",
       },
       {
         title: "Entry Door Detail",
         image: "/images/projects/narwee-strata-entry-door-detail.jpg",
         alt: "Narwee strata lower entry door and stair area after painting refresh",
-        caption: "Shared lower entry area finished for a cleaner and more welcoming arrival point.",
+        caption:
+          "Shared lower entry area finished for a cleaner and more welcoming arrival point.",
       },
       {
         title: "Main Front View",
         image: "/images/projects/narwee-strata-main-front-view.jpg",
         alt: "Narwee strata main front exterior after common area painting refresh",
-        caption: "Main front view showing the overall refreshed look across the strata facade.",
+        caption:
+          "Main front view showing the overall refreshed look across the strata facade.",
       },
       {
         title: "Balcony Upward View",
         image: "/images/projects/narwee-strata-balcony-upward-view.jpg",
         alt: "Narwee strata balcony and soffit viewed upward after painting refresh",
-        caption: "Balcony underside and upper details finished for a more complete common area result.",
+        caption:
+          "Balcony underside and upper details finished for a more complete common area result.",
       },
       {
         title: "Side Path View",
         image: "/images/projects/narwee-strata-side-path-view.jpg",
         alt: "Narwee strata side path and exterior wall after painting refresh",
-        caption: "Side path walls and building edge refreshed to keep shared access areas looking neat.",
+        caption:
+          "Side path walls and building edge refreshed to keep shared access areas looking neat.",
       },
       {
         title: "Courtyard Wide View",
         image: "/images/projects/narwee-strata-courtyard-wide-view.jpg",
         alt: "Narwee strata courtyard wide view after painting refresh",
-        caption: "Wide courtyard view showing cleaner presentation across shared outdoor building faces.",
+        caption:
+          "Wide courtyard view showing cleaner presentation across shared outdoor building faces.",
       },
       {
         title: "Tree Side Elevation",
         image: "/images/projects/narwee-strata-tree-side-elevation.jpg",
         alt: "Narwee strata elevation beside tree line after painting refresh",
-        caption: "Tree-side elevation finished to keep the exterior looking even from every angle.",
+        caption:
+          "Tree-side elevation finished to keep the exterior looking even from every angle.",
       },
       {
         title: "Rear Building View",
         image: "/images/projects/narwee-strata-rear-building-view.jpg",
         alt: "Narwee strata rear building and courtyard side after painting refresh",
-        caption: "Rear building face and shared yard side refreshed for a cleaner strata finish.",
+        caption:
+          "Rear building face and shared yard side refreshed for a cleaner strata finish.",
       },
       {
         title: "Side Entry Door",
         image: "/images/projects/narwee-strata-side-entry-door.jpg",
         alt: "Narwee strata side entry door area after painting refresh",
-        caption: "Side entry nook cleaned up to keep smaller shared access points looking maintained.",
+        caption:
+          "Side entry nook cleaned up to keep smaller shared access points looking maintained.",
       },
       {
         title: "Balustrade Upward Detail",
         image: "/images/projects/narwee-strata-balustrade-upward-detail.jpg",
         alt: "Narwee strata balustrade and upper wall detail after painting refresh",
-        caption: "Balustrade and upper wall detail presented with a sharper, more cared-for finish.",
+        caption:
+          "Balustrade and upper wall detail presented with a sharper, more cared-for finish.",
       },
       {
         title: "Mailbox Front View",
         image: "/images/projects/narwee-strata-mailbox-front-view.jpg",
         alt: "Narwee strata front garden and mailbox area after painting refresh",
-        caption: "Front garden edge and mailbox-side view show the improved overall building presentation.",
+        caption:
+          "Front garden edge and mailbox-side view show the improved overall building presentation.",
       },
       {
         title: "Front Building Angle",
         image: "/images/projects/narwee-strata-building-after.jpg",
         alt: "Narwee strata building front angle after exterior painting refresh",
-        caption: "Front angle view highlights the freshened finish across shared exterior areas.",
+        caption:
+          "Front angle view highlights the freshened finish across shared exterior areas.",
       },
     ],
   },
@@ -597,37 +633,43 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Commercial Entry Painting",
         image: "/images/projects/silverwater-commercial-entry-finish.jpg",
         alt: "Silverwater commercial entry after exterior painting with F&S Painting van",
-        caption: "Entry, planter edges, awning, and adjacent exterior surfaces finished cleanly.",
+        caption:
+          "Entry, planter edges, awning, and adjacent exterior surfaces finished cleanly.",
       },
       {
         title: "Street Facade Painting",
         image: "/images/projects/silverwater-commercial-street-facade.jpg",
         alt: "Silverwater commercial warehouse street facade after exterior repainting",
-        caption: "Street-facing cladding and masonry refreshed with a strong commercial colour scheme.",
+        caption:
+          "Street-facing cladding and masonry refreshed with a strong commercial colour scheme.",
       },
       {
         title: "Roller Door Painting",
         image: "/images/projects/silverwater-commercial-roller-door-finish.jpg",
         alt: "Silverwater commercial roller door and facade after painting",
-        caption: "Roller door, surrounding cladding, and masonry finished in a consistent exterior coating.",
+        caption:
+          "Roller door, surrounding cladding, and masonry finished in a consistent exterior coating.",
       },
       {
         title: "Under Awning Painting",
         image: "/images/projects/silverwater-commercial-under-awning.jpg",
         alt: "Silverwater commercial under awning and brick wall after repainting",
-        caption: "Under-awning areas and brickwork repainted for a cleaner visitor-facing finish.",
+        caption:
+          "Under-awning areas and brickwork repainted for a cleaner visitor-facing finish.",
       },
       {
         title: "Side Wall Detail",
         image: "/images/projects/silverwater-commercial-side-detail.jpg",
         alt: "Silverwater commercial side wall detail after exterior painting",
-        caption: "Side wall detail showing the transition between painted cladding and brickwork.",
+        caption:
+          "Side wall detail showing the transition between painted cladding and brickwork.",
       },
       {
         title: "Rear Facade Painting",
         image: "/images/projects/silverwater-commercial-rear-facade.jpg",
         alt: "Silverwater commercial rear facade after yellow exterior painting",
-        caption: "Rear facade and roller door surrounds repainted with a clean, durable exterior finish.",
+        caption:
+          "Rear facade and roller door surrounds repainted with a clean, durable exterior finish.",
       },
     ],
   },
@@ -638,41 +680,47 @@ export const galleryCollections: GalleryCollection[] = [
     suburb: "Wetherill Park, NSW",
     summary:
       "Commercial exterior painting across Wetherill Park facade, entry, roller door, side wall, driveway, and street-facing areas, completed on 30 November 2018.",
-    coverImage: "/images/projects/wetherill-park-commercial-front-entry-finish.jpg",
+    coverImage:
+      "/images/projects/wetherill-park-commercial-front-entry-finish.jpg",
     coverAlt:
       "Wetherill Park commercial building exterior after fresh commercial repainting",
     images: [
       {
         title: "Front Entry Painting",
-        image: "/images/projects/wetherill-park-commercial-front-entry-finish.jpg",
+        image:
+          "/images/projects/wetherill-park-commercial-front-entry-finish.jpg",
         alt: "Wetherill Park commercial front entry and facade after exterior repainting",
         caption:
           "Front entry, glazing surrounds, and facade areas refreshed for a cleaner commercial presentation.",
       },
       {
         title: "Front Awning Painting",
-        image: "/images/projects/wetherill-park-commercial-front-awning-finish.jpg",
+        image:
+          "/images/projects/wetherill-park-commercial-front-awning-finish.jpg",
         alt: "Wetherill Park commercial front awning and facade after repainting",
         caption:
           "Awning, posts, upper cladding, and entry-side exterior areas completed with a consistent finish.",
       },
       {
         title: "Side Driveway Painting",
-        image: "/images/projects/wetherill-park-commercial-side-driveway-finish.jpg",
+        image:
+          "/images/projects/wetherill-park-commercial-side-driveway-finish.jpg",
         alt: "Wetherill Park commercial side driveway wall and roller doors after painting",
         caption:
           "Side driveway walls, roller doors, and access areas repainted for a neat warehouse finish.",
       },
       {
         title: "Side Wall Painting",
-        image: "/images/projects/wetherill-park-commercial-side-wall-finish.jpg",
+        image:
+          "/images/projects/wetherill-park-commercial-side-wall-finish.jpg",
         alt: "Wetherill Park commercial side wall and service door after repainting",
         caption:
           "Side wall, service door, and nearby roller door surrounds finished in a durable exterior coating.",
       },
       {
         title: "Street Facade Painting",
-        image: "/images/projects/wetherill-park-commercial-street-facade-finish.jpg",
+        image:
+          "/images/projects/wetherill-park-commercial-street-facade-finish.jpg",
         alt: "Wetherill Park commercial street-facing facade after exterior repainting",
         caption:
           "Street-facing facade and wall panels refreshed for a cleaner view from the road.",
@@ -692,14 +740,16 @@ export const galleryCollections: GalleryCollection[] = [
     images: [
       {
         title: "Front Entry Painting",
-        image: "/images/projects/north-willoughby-exterior-front-entry-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-front-entry-finish.jpg",
         alt: "North Willoughby front entry facade after exterior painting",
         caption:
           "Front entry facade, gable trim, and surrounding surfaces finished with crisp exterior lines.",
       },
       {
         title: "Upper Gable Painting",
-        image: "/images/projects/north-willoughby-exterior-upper-gable-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-upper-gable-finish.jpg",
         alt: "North Willoughby upper gable wall and trim after exterior painting",
         caption:
           "Upper gable wall, trim lines, and eaves finished cleanly with a bright exterior coating.",
@@ -713,21 +763,24 @@ export const galleryCollections: GalleryCollection[] = [
       },
       {
         title: "Street View Painting",
-        image: "/images/projects/north-willoughby-exterior-street-view-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-street-view-finish.jpg",
         alt: "North Willoughby street view after exterior house painting",
         caption:
           "Street-facing view showing the refreshed facade, trim, and front garden presentation.",
       },
       {
         title: "Window and Trim Painting",
-        image: "/images/projects/north-willoughby-exterior-window-trim-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-window-trim-finish.jpg",
         alt: "North Willoughby exterior windows and trim after repainting",
         caption:
           "Window surrounds, exterior wall surfaces, and trim finished with a tidy, even coating.",
       },
       {
         title: "Front Porch Painting",
-        image: "/images/projects/north-willoughby-exterior-front-porch-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-front-porch-finish.jpg",
         alt: "North Willoughby front porch and entry doors after exterior painting",
         caption:
           "Front porch, entry doors, masonry, and trim refreshed for a polished entry detail.",
@@ -756,67 +809,78 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Front Facade Painting",
         image: "/images/projects/carlingford-front-driveway-finish.jpg",
         alt: "Carlingford front house facade after exterior repainting",
-        caption: "Front facade, garage area, and Tudor-style trim finished in a clean exterior colour scheme.",
+        caption:
+          "Front facade, garage area, and Tudor-style trim finished in a clean exterior colour scheme.",
       },
       {
         title: "Driveway and Trim Painting",
         image: "/images/projects/carlingford-front-van-finish.jpg",
         alt: "Carlingford driveway and front facade after exterior painting with F&S Painting van",
-        caption: "Driveway-facing walls and trims refreshed with crisp black and white detailing.",
+        caption:
+          "Driveway-facing walls and trims refreshed with crisp black and white detailing.",
       },
       {
         title: "Entry Corner Painting",
         image: "/images/projects/carlingford-entry-corner-finish.jpg",
         alt: "Carlingford entry corner after repainting with black doors and white exterior walls",
-        caption: "Entry doors, gutters, trims, and surrounding masonry finished for a tidy exterior detail.",
+        caption:
+          "Entry doors, gutters, trims, and surrounding masonry finished for a tidy exterior detail.",
       },
       {
         title: "Rear Patio Painting",
         image: "/images/projects/carlingford-rear-patio-finish.jpg",
         alt: "Carlingford rear patio exterior wall after repainting",
-        caption: "Rear patio walls, eaves, and black trim repainted for a consistent outdoor finish.",
+        caption:
+          "Rear patio walls, eaves, and black trim repainted for a consistent outdoor finish.",
       },
       {
         title: "Brick Patio Painting",
         image: "/images/projects/carlingford-brick-patio-finish.jpg",
         alt: "Carlingford enclosed patio brick wall after grey exterior painting",
-        caption: "Brick patio walls coated in a durable grey finish with clean trim lines.",
+        caption:
+          "Brick patio walls coated in a durable grey finish with clean trim lines.",
       },
       {
         title: "Side Wall Painting",
         image: "/images/projects/carlingford-side-wall-finish.jpg",
         alt: "Carlingford side wall after exterior repainting beside utility area",
-        caption: "Side wall and eaves repainted for a clean, even finish around service areas.",
+        caption:
+          "Side wall and eaves repainted for a clean, even finish around service areas.",
       },
       {
         title: "Side Gate Painting",
         image: "/images/projects/carlingford-side-gate-finish.jpg",
         alt: "Carlingford side passage after exterior repainting with black gate and white downpipes",
-        caption: "Side passage details finished with sharp black trim and clean white downpipes.",
+        caption:
+          "Side passage details finished with sharp black trim and clean white downpipes.",
       },
       {
         title: "Wide Front Painting",
         image: "/images/projects/carlingford-front-wide-finish.jpg",
         alt: "Carlingford wide front facade after exterior house repainting",
-        caption: "Wide front view showing the refreshed masonry, roofline trim, and facade presentation.",
+        caption:
+          "Wide front view showing the refreshed masonry, roofline trim, and facade presentation.",
       },
       {
         title: "Side Lawn Painting",
         image: "/images/projects/carlingford-side-lawn-finish.jpg",
         alt: "Carlingford side lawn elevation after exterior repainting",
-        caption: "Side elevation finished with a fresh exterior coating and tidy trim contrast.",
+        caption:
+          "Side elevation finished with a fresh exterior coating and tidy trim contrast.",
       },
       {
         title: "Driveway Van Painting",
         image: "/images/projects/carlingford-driveway-van-finish.jpg",
         alt: "Carlingford driveway facade after repainting with F&S Painting van",
-        caption: "Finished driveway facade with bright walls, black trim, and clean entry presentation.",
+        caption:
+          "Finished driveway facade with bright walls, black trim, and clean entry presentation.",
       },
       {
         title: "Front Work Progress",
         image: "/images/projects/carlingford-work-progress-front.jpg",
         alt: "Carlingford exterior repainting in progress with painters preparing front facade",
-        caption: "Front facade work in progress during preparation and exterior repainting.",
+        caption:
+          "Front facade work in progress during preparation and exterior repainting.",
       },
     ],
   },
@@ -834,85 +898,99 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Side Wall Painting",
         image: "/images/projects/earlwood-exterior-side-wall-finish.jpg",
         alt: "Earlwood side wall after exterior painting refresh",
-        caption: "Side wall, trims, gutters, and service-area details finished with a clean exterior coating.",
+        caption:
+          "Side wall, trims, gutters, and service-area details finished with a clean exterior coating.",
       },
       {
         title: "Side Wall Detail",
         image: "/images/projects/earlwood-exterior-side-wall-detail.jpg",
         alt: "Earlwood side wall detail after exterior repainting",
-        caption: "Close side-wall view showing neat trim, sill, pipe, and wall finish work.",
+        caption:
+          "Close side-wall view showing neat trim, sill, pipe, and wall finish work.",
       },
       {
         title: "Front Angle Painting",
         image: "/images/projects/earlwood-exterior-front-angle.jpg",
         alt: "Earlwood front house angle after exterior painting",
-        caption: "Front angle showing refreshed brickwork details, gables, gutters, and painted trim.",
+        caption:
+          "Front angle showing refreshed brickwork details, gables, gutters, and painted trim.",
       },
       {
         title: "Front Site View",
         image: "/images/projects/earlwood-exterior-front-with-van.jpg",
         alt: "Earlwood exterior painting site with F&S Painting van",
-        caption: "Front site view showing the completed exterior palette and protected work area.",
+        caption:
+          "Front site view showing the completed exterior palette and protected work area.",
       },
       {
         title: "Front Facade Painting",
         image: "/images/projects/earlwood-exterior-front-facade.jpg",
         alt: "Earlwood house front facade after exterior painting refresh",
-        caption: "Front facade, porch, gables, and trim finished for a sharper street presentation.",
+        caption:
+          "Front facade, porch, gables, and trim finished for a sharper street presentation.",
       },
       {
         title: "Side Window Painting",
         image: "/images/projects/earlwood-exterior-side-window.jpg",
         alt: "Earlwood side window and exterior wall after repainting",
-        caption: "Side window surrounds, brick column detail, wall finish, and eaves repainted cleanly.",
+        caption:
+          "Side window surrounds, brick column detail, wall finish, and eaves repainted cleanly.",
       },
       {
         title: "Verandah Soffit Painting",
         image: "/images/projects/earlwood-exterior-verandah-soffit.jpg",
         alt: "Earlwood verandah soffit after exterior painting",
-        caption: "Verandah ceiling, moulding, entry surrounds, and brick details refreshed.",
+        caption:
+          "Verandah ceiling, moulding, entry surrounds, and brick details refreshed.",
       },
       {
         title: "Entry Door Painting",
         image: "/images/projects/earlwood-exterior-entry-door.jpg",
         alt: "Earlwood entry door and trim after exterior painting",
-        caption: "Entry door, frame, trim, and sheltered porch details finished with clean lines.",
+        caption:
+          "Entry door, frame, trim, and sheltered porch details finished with clean lines.",
       },
       {
         title: "F&S Painting Site View",
         image: "/images/projects/earlwood-exterior-site-van.jpg",
         alt: "F&S Painting van outside Earlwood exterior house painting project",
-        caption: "Site view with F&S Painting van and exterior work completed around the house frontage.",
+        caption:
+          "Site view with F&S Painting van and exterior work completed around the house frontage.",
       },
       {
         title: "Side Elevation Painting",
         image: "/images/projects/earlwood-exterior-side-elevation.jpg",
         alt: "Earlwood side elevation and window trims after exterior painting",
-        caption: "Side elevation, windows, downpipes, and garage-facing details refreshed.",
+        caption:
+          "Side elevation, windows, downpipes, and garage-facing details refreshed.",
       },
       {
         title: "Garage Painting",
         image: "/images/projects/earlwood-exterior-garage-finish.jpg",
         alt: "Earlwood garage doors after exterior painting refresh",
-        caption: "Garage doors, trim, and surrounding painted surfaces finished in a neat dark contrast.",
+        caption:
+          "Garage doors, trim, and surrounding painted surfaces finished in a neat dark contrast.",
       },
       {
         title: "Rear Sunroom Painting",
         image: "/images/projects/earlwood-exterior-rear-sunroom.jpg",
         alt: "Earlwood rear sunroom exterior after repainting",
-        caption: "Rear sunroom wall, window frames, fascia, and adjoining exterior surfaces refreshed.",
+        caption:
+          "Rear sunroom wall, window frames, fascia, and adjoining exterior surfaces refreshed.",
       },
       {
         title: "Outbuilding Front Painting",
         image: "/images/projects/earlwood-exterior-outbuilding-front.jpg",
         alt: "Earlwood outbuilding front after exterior painting",
-        caption: "Outbuilding front wall, roofline, gutter, and painted cladding completed.",
+        caption:
+          "Outbuilding front wall, roofline, gutter, and painted cladding completed.",
       },
       {
         title: "Outbuilding Side Painting",
         image: "/images/projects/earlwood-exterior-outbuilding-side.jpg",
         alt: "Earlwood outbuilding side after exterior painting",
-        caption: "Outbuilding side elevation finished to match the refreshed exterior colour scheme.",
+        caption:
+          "Outbuilding side elevation finished to match the refreshed exterior colour scheme.",
       },
     ],
   },
@@ -931,49 +1009,57 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Hallway and Stair Painting",
         image: "/images/projects/balgowlah-heights-hallway-stairs.jpg",
         alt: "Balgowlah Heights hallway and stair area after fresh interior painting",
-        caption: "Hallway and stair walls finished cleanly around timber floors and stair details.",
+        caption:
+          "Hallway and stair walls finished cleanly around timber floors and stair details.",
       },
       {
         title: "Living Room Painting",
         image: "/images/projects/balgowlah-heights-living-room.jpg",
         alt: "Balgowlah Heights living room after interior repainting with balcony doors",
-        caption: "Living area repainted for a bright, open finish with clean wall and ceiling lines.",
+        caption:
+          "Living area repainted for a bright, open finish with clean wall and ceiling lines.",
       },
       {
         title: "Upper Stairwell Painting",
         image: "/images/projects/balgowlah-heights-upper-stairwell.jpg",
         alt: "Upper stairwell and landing after interior painting in Balgowlah Heights",
-        caption: "Tall stairwell and upper landing areas finished with a consistent white coating.",
+        caption:
+          "Tall stairwell and upper landing areas finished with a consistent white coating.",
       },
       {
         title: "Stair Void Wall Painting",
         image: "/images/projects/balgowlah-heights-stair-void.jpg",
         alt: "Balgowlah Heights stair void wall and railing area after interior repainting",
-        caption: "Stair void walls repainted carefully around timber stairs and stainless railing.",
+        caption:
+          "Stair void walls repainted carefully around timber stairs and stainless railing.",
       },
       {
         title: "Upper Room Painting",
         image: "/images/projects/balgowlah-heights-view-room.jpg",
         alt: "Upper room in Balgowlah Heights home after interior painting with harbour view",
-        caption: "Upper-level room finished with clean walls beside large windows and built-in storage.",
+        caption:
+          "Upper-level room finished with clean walls beside large windows and built-in storage.",
       },
       {
         title: "Stair Detail Painting",
         image: "/images/projects/balgowlah-heights-stair-detail.jpg",
         alt: "Balgowlah Heights stair detail after repainting beside timber stairs",
-        caption: "Detailed stair wall finish with crisp lines beside timber steps and metal balustrade.",
+        caption:
+          "Detailed stair wall finish with crisp lines beside timber steps and metal balustrade.",
       },
       {
         title: "Interior Stairwell Painting",
         image: "/images/projects/interior-stair-after.jpg",
         alt: "Freshly repainted interior stairwell walls by F&S Painting",
-        caption: "Clean neutral stairwell repaint with sharp wall and trim presentation.",
+        caption:
+          "Clean neutral stairwell repaint with sharp wall and trim presentation.",
       },
       {
         title: "Garage Wall Repaint",
         image: "/images/projects/interior-garage-after.jpg",
         alt: "Freshly repainted garage interior walls after preparation in Sydney",
-        caption: "Prepared and repainted garage walls for a brighter, cleaner finish.",
+        caption:
+          "Prepared and repainted garage walls for a brighter, cleaner finish.",
       },
     ],
   },
@@ -992,61 +1078,71 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Corner Wall Painting",
         image: "/images/projects/north-ryde-corner-wall-finish.jpg",
         alt: "North Ryde corner wall and ceiling line after interior repainting",
-        caption: "Corner wall, ceiling line, and neutral interior finish completed with clean edges.",
+        caption:
+          "Corner wall, ceiling line, and neutral interior finish completed with clean edges.",
       },
       {
         title: "Stairwell Before Preparation",
         image: "/images/projects/north-ryde-stairwell-before.jpg",
         alt: "North Ryde stairwell before repainting with timber wall lining",
-        caption: "Stairwell area before the final repaint, showing existing timber lining and wall surfaces.",
+        caption:
+          "Stairwell area before the final repaint, showing existing timber lining and wall surfaces.",
       },
       {
         title: "Room Wall Painting",
         image: "/images/projects/north-ryde-room-wall-finish.jpg",
         alt: "North Ryde room wall after interior repainting",
-        caption: "Room wall refreshed with a clean, even neutral paint finish around timber trim.",
+        caption:
+          "Room wall refreshed with a clean, even neutral paint finish around timber trim.",
       },
       {
         title: "Feature Wall Painting",
         image: "/images/projects/north-ryde-feature-wall-finish.jpg",
         alt: "North Ryde feature wall after interior repainting",
-        caption: "Feature wall and adjacent ceiling line finished neatly beside timber door trim.",
+        caption:
+          "Feature wall and adjacent ceiling line finished neatly beside timber door trim.",
       },
       {
         title: "Hallway Wall Painting",
         image: "/images/projects/north-ryde-hallway-finish.jpg",
         alt: "North Ryde hallway wall after interior repainting",
-        caption: "Hallway wall and doorway surrounds repainted for a cleaner, brighter passage finish.",
+        caption:
+          "Hallway wall and doorway surrounds repainted for a cleaner, brighter passage finish.",
       },
       {
         title: "Stairwell Painting",
         image: "/images/projects/north-ryde-stairwell-finish.jpg",
         alt: "North Ryde stairwell wall after interior painting",
-        caption: "Stairwell wall and landing area finished carefully around timber balustrade details.",
+        caption:
+          "Stairwell wall and landing area finished carefully around timber balustrade details.",
       },
       {
         title: "Bedroom Wall Painting",
         image: "/images/projects/north-ryde-bedroom-wall-finish.jpg",
         alt: "North Ryde bedroom wall after repainting",
-        caption: "Bedroom wall repainted with a soft neutral tone and clean ceiling line.",
+        caption:
+          "Bedroom wall repainted with a soft neutral tone and clean ceiling line.",
       },
       {
         title: "Bedroom Window Painting",
         image: "/images/projects/north-ryde-bedroom-window-finish.jpg",
         alt: "North Ryde bedroom interior after wall repainting beside window",
-        caption: "Bedroom wall and window-side area refreshed with a consistent interior finish.",
+        caption:
+          "Bedroom wall and window-side area refreshed with a consistent interior finish.",
       },
       {
         title: "Ceiling Corner Painting",
         image: "/images/projects/north-ryde-ceiling-corner-finish.jpg",
         alt: "North Ryde ceiling corner and wall after repainting",
-        caption: "Ceiling corner and surrounding wall areas finished with smooth, tidy paintwork.",
+        caption:
+          "Ceiling corner and surrounding wall areas finished with smooth, tidy paintwork.",
       },
       {
         title: "Landing Wall Painting",
         image: "/images/projects/north-ryde-landing-wall-finish.jpg",
         alt: "North Ryde landing wall after interior repainting",
-        caption: "Landing wall and stair opening refreshed with a clean neutral interior coating.",
+        caption:
+          "Landing wall and stair opening refreshed with a clean neutral interior coating.",
       },
     ],
   },
@@ -1113,61 +1209,71 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Dining Feature Wall Painting",
         image: "/images/projects/north-bridge-dining-feature-wall-finish.jpg",
         alt: "North Bridge dining area after interior painting with dark feature wall and timber floors",
-        caption: "Dining and feature wall surfaces repainted for a clean, polished interior finish.",
+        caption:
+          "Dining and feature wall surfaces repainted for a clean, polished interior finish.",
       },
       {
         title: "Kitchen Painting",
         image: "/images/projects/north-bridge-kitchen-finish.jpg",
         alt: "North Bridge kitchen area after interior painting with fresh ceiling and wall finishes",
-        caption: "Kitchen walls and high ceiling areas finished around cabinetry and natural light.",
+        caption:
+          "Kitchen walls and high ceiling areas finished around cabinetry and natural light.",
       },
       {
         title: "High Ceiling Kitchen Painting",
         image: "/images/projects/north-bridge-high-ceiling-kitchen-finish.jpg",
         alt: "North Bridge high ceiling kitchen area after repainting",
-        caption: "High ceiling and upper wall surfaces repainted for a brighter kitchen and dining space.",
+        caption:
+          "High ceiling and upper wall surfaces repainted for a brighter kitchen and dining space.",
       },
       {
         title: "Laundry Painting",
         image: "/images/projects/north-bridge-laundry-finish.jpg",
         alt: "North Bridge laundry after interior repainting with clean white walls and trim",
-        caption: "Laundry walls and trims refreshed around cabinets, appliances, and wet area details.",
+        caption:
+          "Laundry walls and trims refreshed around cabinets, appliances, and wet area details.",
       },
       {
         title: "Bedroom Wardrobe Painting",
         image: "/images/projects/north-bridge-bedroom-wardrobe-finish.jpg",
         alt: "North Bridge bedroom wardrobe wall after fresh interior repainting",
-        caption: "Bedroom walls and wardrobe surrounds finished with a clean neutral coating.",
+        caption:
+          "Bedroom walls and wardrobe surrounds finished with a clean neutral coating.",
       },
       {
         title: "Bedroom Window Painting",
         image: "/images/projects/north-bridge-bedroom-window-finish.jpg",
         alt: "North Bridge bedroom window and wall after interior painting",
-        caption: "Bedroom wall, trim, and window surrounds repainted for a tidy finish.",
+        caption:
+          "Bedroom wall, trim, and window surrounds repainted for a tidy finish.",
       },
       {
         title: "Bedroom Fireplace Detail",
         image: "/images/projects/north-bridge-bedroom-fireplace-before.jpg",
         alt: "North Bridge bedroom fireplace and ceiling detail before interior repainting",
-        caption: "Bedroom fireplace, ceiling edge, and surrounding wall detail documented as part of the interior work.",
+        caption:
+          "Bedroom fireplace, ceiling edge, and surrounding wall detail documented as part of the interior work.",
       },
       {
         title: "Bathroom Painting",
         image: "/images/projects/north-bridge-bathroom-finish.jpg",
         alt: "North Bridge bathroom after interior painting with clean ceiling and trim",
-        caption: "Bathroom ceiling, door trim, and surrounding surfaces refreshed with a clean finish.",
+        caption:
+          "Bathroom ceiling, door trim, and surrounding surfaces refreshed with a clean finish.",
       },
       {
         title: "Stairwell Painting",
         image: "/images/projects/north-bridge-stairwell-finish.jpg",
         alt: "North Bridge stairwell after repainting with clean walls and timber stair details",
-        caption: "Stairwell walls and surrounding details repainted around timber rail and stairs.",
+        caption:
+          "Stairwell walls and surrounding details repainted around timber rail and stairs.",
       },
       {
         title: "Entry Door Painting",
         image: "/images/projects/north-bridge-entry-door-finish.jpg",
         alt: "North Bridge entry door and trim after painting",
-        caption: "Entry door, trim, and surrounding detail finished with a clean interior coating.",
+        caption:
+          "Entry door, trim, and surrounding detail finished with a clean interior coating.",
       },
     ],
   },
@@ -1186,19 +1292,22 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Reception Area Painting",
         image: "/images/projects/parramatta-medical-centre-reception.jpg",
         alt: "Parramatta Medical Centre reception area after professional commercial interior painting",
-        caption: "Reception walls and customer-facing areas finished for a clean first impression.",
+        caption:
+          "Reception walls and customer-facing areas finished for a clean first impression.",
       },
       {
         title: "Treatment Room Painting",
         image: "/images/projects/parramatta-medical-centre-treatment-room.jpg",
         alt: "Medical centre treatment room with freshly painted neutral walls in Parramatta",
-        caption: "Treatment room walls repainted with a practical, clean commercial finish.",
+        caption:
+          "Treatment room walls repainted with a practical, clean commercial finish.",
       },
       {
         title: "Office Wall Painting",
         image: "/images/projects/parramatta-medical-centre-office.jpg",
         alt: "Parramatta medical office room after interior wall repainting",
-        caption: "Office wall finish refreshed while keeping the workspace professional and tidy.",
+        caption:
+          "Office wall finish refreshed while keeping the workspace professional and tidy.",
       },
       {
         title: "Consultation Room Painting",
@@ -1210,7 +1319,8 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Waiting Area Painting",
         image: "/images/projects/parramatta-medical-centre-waiting-area.jpg",
         alt: "Parramatta Medical Centre waiting area after commercial interior painting",
-        caption: "Waiting area and shared patient space finished with a clean commercial look.",
+        caption:
+          "Waiting area and shared patient space finished with a clean commercial look.",
       },
     ],
   },
@@ -1229,37 +1339,43 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Reception Painting",
         image: "/images/projects/commercial-reception-after.jpg",
         alt: "Chatswood commercial office reception area after fresh interior repainting",
-        caption: "Reception area repainted for a cleaner and more professional first impression.",
+        caption:
+          "Reception area repainted for a cleaner and more professional first impression.",
       },
       {
         title: "Reception Counter Detail",
         image: "/images/projects/chatswood-commercial-reception-counter.jpg",
         alt: "Chatswood office reception counter and work surface after interior painting",
-        caption: "Reception counter, work surface, and surrounding walls finished with a clean commercial look.",
+        caption:
+          "Reception counter, work surface, and surrounding walls finished with a clean commercial look.",
       },
       {
         title: "Office Corridor Painting",
         image: "/images/projects/chatswood-commercial-office-corridor.jpg",
         alt: "Chatswood office corridor and room entries after commercial interior painting",
-        caption: "Corridor walls, door frames, and room entries repainted for a brighter office finish.",
+        caption:
+          "Corridor walls, door frames, and room entries repainted for a brighter office finish.",
       },
       {
         title: "Hallway Door Painting",
         image: "/images/projects/chatswood-commercial-hallway-doors.jpg",
         alt: "Chatswood office hallway with white doors and painted walls after repainting",
-        caption: "Hallway, column, doors, and wall surfaces refreshed with a neat neutral finish.",
+        caption:
+          "Hallway, column, doors, and wall surfaces refreshed with a neat neutral finish.",
       },
       {
         title: "Storage Room Detail",
         image: "/images/projects/chatswood-commercial-storage-room.jpg",
         alt: "Chatswood office storage room and shelving area after painting",
-        caption: "Storage room walls, shelves, and trims repainted to keep the back-of-house area tidy.",
+        caption:
+          "Storage room walls, shelves, and trims repainted to keep the back-of-house area tidy.",
       },
       {
         title: "Wide Reception View",
         image: "/images/projects/chatswood-commercial-reception-wide.jpg",
         alt: "Wide view of Chatswood office reception and glass entry after commercial painting",
-        caption: "Wide reception view showing the refreshed counter, entry glazing, and office presentation.",
+        caption:
+          "Wide reception view showing the refreshed counter, entry glazing, and office presentation.",
       },
     ],
   },
@@ -1339,25 +1455,30 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Living Room Painting",
         image: "/images/projects/chatswood-apartment-living-room-finish.jpg",
         alt: "Chatswood apartment living room after interior wall and ceiling repainting",
-        caption: "Living room walls and ceiling refreshed after preparation and repainting.",
+        caption:
+          "Living room walls and ceiling refreshed after preparation and repainting.",
       },
       {
         title: "Entry and Kitchen-Side Painting",
         image: "/images/projects/chatswood-apartment-entry-kitchen-finish.jpg",
         alt: "Chatswood apartment entry and kitchen-side walls after repainting",
-        caption: "Entry and kitchen-side walls repainted for a cleaner apartment presentation.",
+        caption:
+          "Entry and kitchen-side walls repainted for a cleaner apartment presentation.",
       },
       {
         title: "Bathroom Ceiling Painting",
-        image: "/images/projects/chatswood-apartment-bathroom-ceiling-finish.jpg",
+        image:
+          "/images/projects/chatswood-apartment-bathroom-ceiling-finish.jpg",
         alt: "Chatswood apartment bathroom ceiling after repainting",
-        caption: "Bathroom ceiling and surrounding wall areas repainted with a neat finish.",
+        caption:
+          "Bathroom ceiling and surrounding wall areas repainted with a neat finish.",
       },
       {
         title: "Bedroom Painting",
         image: "/images/projects/chatswood-apartment-bedroom-finish.jpg",
         alt: "Chatswood apartment bedroom after interior repainting",
-        caption: "Bedroom walls and trims refreshed as part of the apartment repaint.",
+        caption:
+          "Bedroom walls and trims refreshed as part of the apartment repaint.",
       },
     ],
   },
@@ -1368,7 +1489,8 @@ export const galleryCollections: GalleryCollection[] = [
     suburb: "Chatswood, NSW",
     summary:
       "Finished Chatswood exterior painting across front gables, fascia, roofline, and decorative trim areas.",
-    coverImage: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
+    coverImage:
+      "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
     coverAlt:
       "Chatswood brick home exterior after gable and trim repainting by F&S Painting",
     completionDate: "2025-07-22",
@@ -1377,19 +1499,24 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Front Facade Painting",
         image: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
         alt: "Chatswood brick home front facade after exterior gable and trim repainting",
-        caption: "Front facade, gables, fascia, and decorative trim refreshed for a cleaner street presentation.",
+        caption:
+          "Front facade, gables, fascia, and decorative trim refreshed for a cleaner street presentation.",
       },
       {
         title: "Roofline Trim Painting",
-        image: "/images/projects/chatswood-blakesley-exterior-roofline-detail-1.jpg",
+        image:
+          "/images/projects/chatswood-blakesley-exterior-roofline-detail-1.jpg",
         alt: "Chatswood roofline trim after exterior repainting near tiled roof",
-        caption: "Roofline timber, fascia, and gable trim finished neatly after preparation.",
+        caption:
+          "Roofline timber, fascia, and gable trim finished neatly after preparation.",
       },
       {
         title: "Gable Detail Painting",
-        image: "/images/projects/chatswood-blakesley-exterior-roofline-detail-2.jpg",
+        image:
+          "/images/projects/chatswood-blakesley-exterior-roofline-detail-2.jpg",
         alt: "Chatswood exterior gable detail after green trim and cream panel repainting",
-        caption: "Decorative gable panels and green trim repainted for a sharper exterior detail.",
+        caption:
+          "Decorative gable panels and green trim repainted for a sharper exterior detail.",
       },
     ],
   },
@@ -1409,19 +1536,23 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Bedroom Wall and Ceiling Painting",
         image: "/images/projects/chatswood-kooringa-bedroom-finish-1.jpg",
         alt: "Chatswood bedroom wall and ceiling after interior repainting",
-        caption: "Bedroom walls and ceiling refreshed with a clean, consistent finish.",
+        caption:
+          "Bedroom walls and ceiling refreshed with a clean, consistent finish.",
       },
       {
         title: "Second Bedroom Wall Painting",
         image: "/images/projects/chatswood-kooringa-bedroom-finish-2.jpg",
         alt: "Chatswood bedroom wall near window after interior repainting",
-        caption: "Window-side wall and ceiling area repainted for a brighter room finish.",
+        caption:
+          "Window-side wall and ceiling area repainted for a brighter room finish.",
       },
       {
         title: "Bathroom Ceiling Painting",
-        image: "/images/projects/chatswood-kooringa-bathroom-ceiling-finish.jpg",
+        image:
+          "/images/projects/chatswood-kooringa-bathroom-ceiling-finish.jpg",
         alt: "Chatswood bathroom ceiling after repainting by F&S Painting",
-        caption: "Bathroom ceiling repainted with a neat, clean finish around existing fixtures.",
+        caption:
+          "Bathroom ceiling repainted with a neat, clean finish around existing fixtures.",
       },
     ],
   },
@@ -1439,25 +1570,29 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Door Trim Painting",
         image: "/images/projects/lindfield-door-trim-finish.jpg",
         alt: "Lindfield exterior door and surrounding trim after repainting",
-        caption: "Exterior door and surrounding trim refreshed with a clean painted finish.",
+        caption:
+          "Exterior door and surrounding trim refreshed with a clean painted finish.",
       },
       {
         title: "Verandah Window Painting",
         image: "/images/projects/lindfield-verandah-window-finish.jpg",
         alt: "Lindfield verandah window and frame after exterior repainting",
-        caption: "Verandah window frames and trim repainted for a brighter exterior presentation.",
+        caption:
+          "Verandah window frames and trim repainted for a brighter exterior presentation.",
       },
       {
         title: "French Door and Window Painting",
         image: "/images/projects/lindfield-french-door-window-finish.jpg",
         alt: "Lindfield French door and side windows after exterior trim repainting",
-        caption: "French door, side windows, and surrounding trim finished neatly after preparation.",
+        caption:
+          "French door, side windows, and surrounding trim finished neatly after preparation.",
       },
       {
         title: "Rear Exterior Wall Painting",
         image: "/images/projects/lindfield-rear-exterior-wall-finish.jpg",
         alt: "Lindfield rear exterior wall and window trim after repainting",
-        caption: "Rear exterior wall, window frames, and trim repainted as part of the Lindfield refresh.",
+        caption:
+          "Rear exterior wall, window frames, and trim repainted as part of the Lindfield refresh.",
       },
     ],
   },
@@ -1468,100 +1603,127 @@ export const galleryCollections: GalleryCollection[] = [
     suburb: "East Lindfield, NSW",
     summary:
       "Finished East Lindfield exterior house painting across facade walls, verandah areas, balcony details, side elevations, gutters, eaves, trims, roofline details, and outbuilding surfaces.",
-    coverImage: "/images/projects/east-lindfield-exterior-front-facade-finish.jpg",
+    coverImage:
+      "/images/projects/east-lindfield-exterior-front-facade-finish.jpg",
     coverAlt:
       "East Lindfield front facade after exterior house painting by F&S Painting",
     completionDate: "2025-12-05",
     images: [
       {
         title: "Outbuilding Exterior Finish",
-        image: "/images/projects/east-lindfield-exterior-outbuilding-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-outbuilding-finish.jpg",
         alt: "East Lindfield outbuilding exterior after fresh wall and trim repainting",
-        caption: "Outbuilding cladding, trim, and roller door surrounds finished with a clean exterior repaint.",
+        caption:
+          "Outbuilding cladding, trim, and roller door surrounds finished with a clean exterior repaint.",
       },
       {
         title: "Rear Facade Painting",
-        image: "/images/projects/east-lindfield-exterior-rear-facade-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-rear-facade-finish.jpg",
         alt: "East Lindfield rear facade after exterior repainting near pool and deck",
-        caption: "Rear facade walls, trim, posts, and outdoor living surrounds refreshed for a cleaner finish.",
+        caption:
+          "Rear facade walls, trim, posts, and outdoor living surrounds refreshed for a cleaner finish.",
       },
       {
         title: "Deck and Door Surrounds",
         image: "/images/projects/east-lindfield-exterior-deck-finish.jpg",
         alt: "East Lindfield deck and French door surrounds after exterior painting",
-        caption: "Deck-facing walls, door surrounds, posts, gutters, and trims repainted for a sharper outdoor area.",
+        caption:
+          "Deck-facing walls, door surrounds, posts, gutters, and trims repainted for a sharper outdoor area.",
       },
       {
         title: "Side Wall and Chimney Finish",
-        image: "/images/projects/east-lindfield-exterior-side-wall-chimney-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-side-wall-chimney-finish.jpg",
         alt: "East Lindfield side wall, chimney, windows, gutters, and eaves after repainting",
-        caption: "Side wall, chimney, eaves, gutters, and window trim finished with a clean exterior coating.",
+        caption:
+          "Side wall, chimney, eaves, gutters, and window trim finished with a clean exterior coating.",
       },
       {
         title: "Verandah Ceiling Painting",
-        image: "/images/projects/east-lindfield-exterior-verandah-ceiling-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-verandah-ceiling-finish.jpg",
         alt: "East Lindfield verandah ceiling, brickwork, railing, and trim after repainting",
-        caption: "Verandah ceiling, posts, brickwork, railing, and entry details refreshed with a consistent finish.",
+        caption:
+          "Verandah ceiling, posts, brickwork, railing, and entry details refreshed with a consistent finish.",
       },
       {
         title: "Carport Ceiling and Entry Finish",
-        image: "/images/projects/east-lindfield-exterior-carport-ceiling-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-carport-ceiling-finish.jpg",
         alt: "East Lindfield carport ceiling and front entry exterior after painting",
-        caption: "Carport ceiling, entry walls, posts, and surrounding exterior details repainted neatly.",
+        caption:
+          "Carport ceiling, entry walls, posts, and surrounding exterior details repainted neatly.",
       },
       {
         title: "Side Elevation Painting",
-        image: "/images/projects/east-lindfield-exterior-side-elevation-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-side-elevation-finish.jpg",
         alt: "East Lindfield side elevation after exterior painting with white walls and dark gutters",
-        caption: "Side elevation walls, windows, gutters, and trim details completed with a tidy exterior finish.",
+        caption:
+          "Side elevation walls, windows, gutters, and trim details completed with a tidy exterior finish.",
       },
       {
         title: "Balcony Exterior Painting",
         image: "/images/projects/east-lindfield-exterior-balcony-finish.jpg",
         alt: "East Lindfield balcony and exterior door area after repainting",
-        caption: "Balcony walls, doors, railings, and overhead trim areas refreshed for a cleaner presentation.",
+        caption:
+          "Balcony walls, doors, railings, and overhead trim areas refreshed for a cleaner presentation.",
       },
       {
         title: "Side Wall Painting",
         image: "/images/projects/east-lindfield-exterior-side-wall-finish.jpg",
         alt: "East Lindfield side wall and window trim after exterior repainting",
-        caption: "Long side wall, window frames, and exterior pipe areas finished with a fresh painted surface.",
+        caption:
+          "Long side wall, window frames, and exterior pipe areas finished with a fresh painted surface.",
       },
       {
         title: "Roofline Detail Painting",
-        image: "/images/projects/east-lindfield-exterior-roofline-detail-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-roofline-detail-finish.jpg",
         alt: "East Lindfield upper roofline, gutters, and gable trim after exterior painting",
-        caption: "High roofline, gutter, gable, and trim details finished as part of the exterior repaint.",
+        caption:
+          "High roofline, gutter, gable, and trim details finished as part of the exterior repaint.",
       },
       {
         title: "Front Driveway Facade",
-        image: "/images/projects/east-lindfield-exterior-front-driveway-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-front-driveway-finish.jpg",
         alt: "East Lindfield front driveway facade after exterior painting",
-        caption: "Driveway-facing facade, balcony, carport, posts, and trim details completed for a neat street view.",
+        caption:
+          "Driveway-facing facade, balcony, carport, posts, and trim details completed for a neat street view.",
       },
       {
         title: "Front Entry Painting",
-        image: "/images/projects/east-lindfield-exterior-front-entry-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-front-entry-finish.jpg",
         alt: "East Lindfield front entry, balcony, stairs, railings, and facade after repainting",
-        caption: "Front entry facade, stairs, balcony cladding, railings, and trims refreshed with a clean finish.",
+        caption:
+          "Front entry facade, stairs, balcony cladding, railings, and trims refreshed with a clean finish.",
       },
       {
         title: "Awning and Trim Detail",
-        image: "/images/projects/east-lindfield-exterior-awning-trim-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-awning-trim-finish.jpg",
         alt: "East Lindfield awning roof, gutter, fascia, and wall trim after repainting",
-        caption: "Awning, fascia, gutter, wall trim, and detailed exterior surfaces finished after preparation.",
+        caption:
+          "Awning, fascia, gutter, wall trim, and detailed exterior surfaces finished after preparation.",
       },
       {
         title: "Front Facade Finish",
-        image: "/images/projects/east-lindfield-exterior-front-facade-finish.jpg",
+        image:
+          "/images/projects/east-lindfield-exterior-front-facade-finish.jpg",
         alt: "East Lindfield front facade after full exterior house repainting",
-        caption: "Front facade, balcony cladding, window trims, entry areas, and fence-facing details completed.",
+        caption:
+          "Front facade, balcony cladding, window trims, entry areas, and fence-facing details completed.",
       },
       {
         title: "Street View With F&S Painting Van",
         image: "/images/projects/east-lindfield-exterior-street-view-van.jpg",
         alt: "East Lindfield exterior repaint project viewed from street with F&S Painting van",
-        caption: "Street view showing the completed exterior repaint and F&S Painting service van on site.",
+        caption:
+          "Street view showing the completed exterior repaint and F&S Painting service van on site.",
       },
     ],
   },
@@ -1580,55 +1742,64 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Front Facade Final Painting",
         image: "/images/projects/newington-front-facade-after-final.jpg",
         alt: "Newington front facade after exterior house repainting",
-        caption: "Front facade, balcony surrounds, garage-facing wall, and trim areas finished with a clean exterior repaint.",
+        caption:
+          "Front facade, balcony surrounds, garage-facing wall, and trim areas finished with a clean exterior repaint.",
       },
       {
         title: "Side Facade Contrast Painting",
         image: "/images/projects/newington-front-side-facade-finish.jpg",
         alt: "Newington side facade after exterior repainting",
-        caption: "Side facade and upper exterior wall areas repainted with a consistent contrast finish.",
+        caption:
+          "Side facade and upper exterior wall areas repainted with a consistent contrast finish.",
       },
       {
         title: "Grey Side Wall Painting",
         image: "/images/projects/newington-side-wall-grey-finish.jpg",
         alt: "Newington grey side wall after exterior repainting",
-        caption: "Side wall and gutter line refreshed with a durable grey exterior coating.",
+        caption:
+          "Side wall and gutter line refreshed with a durable grey exterior coating.",
       },
       {
         title: "Upper Pergola Detail",
         image: "/images/projects/newington-upper-pergola-finish.jpg",
         alt: "Newington upper pergola and exterior wall after repainting",
-        caption: "Upper pergola beams, nearby wall areas, and high exterior details finished neatly after preparation.",
+        caption:
+          "Upper pergola beams, nearby wall areas, and high exterior details finished neatly after preparation.",
       },
       {
         title: "Patio Wall Painting",
         image: "/images/projects/newington-patio-wall-finish.jpg",
         alt: "Newington patio wall and rear door area after exterior repainting",
-        caption: "Patio wall, rear door surrounds, and covered outdoor details refreshed with a clean exterior finish.",
+        caption:
+          "Patio wall, rear door surrounds, and covered outdoor details refreshed with a clean exterior finish.",
       },
       {
         title: "Rear Facade Painting",
         image: "/images/projects/newington-rear-facade-finish.jpg",
         alt: "Newington rear facade and upper wall after exterior repainting",
-        caption: "Rear facade walls, upper cladding, gutters, and patio roofline finished with a consistent exterior coating.",
+        caption:
+          "Rear facade walls, upper cladding, gutters, and patio roofline finished with a consistent exterior coating.",
       },
       {
         title: "Courtyard Wall Painting",
         image: "/images/projects/newington-courtyard-wall-finish.jpg",
         alt: "Newington courtyard boundary walls after exterior repainting",
-        caption: "Courtyard and boundary wall areas repainted for a cleaner garden-side presentation.",
+        caption:
+          "Courtyard and boundary wall areas repainted for a cleaner garden-side presentation.",
       },
       {
         title: "Side Wall Painting",
         image: "/images/projects/newington-side-wall-finish.jpg",
         alt: "Newington side wall and service area after exterior repainting",
-        caption: "Side wall, service area, garden edge, and exterior details finished neatly after preparation.",
+        caption:
+          "Side wall, service area, garden edge, and exterior details finished neatly after preparation.",
       },
       {
         title: "Side Elevation Painting",
         image: "/images/projects/newington-side-elevation-finish.jpg",
         alt: "Newington side elevation after exterior house repainting",
-        caption: "Side elevation, upper wall, lower masonry, and trim lines repainted for a tidy exterior result.",
+        caption:
+          "Side elevation, upper wall, lower masonry, and trim lines repainted for a tidy exterior result.",
       },
     ],
   },
@@ -1688,79 +1859,92 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Front Facade Wide View",
         image: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
         alt: "Chatswood front facade and garage elevation after exterior painting",
-        caption: "Wide front view showing the refreshed brick facade, trims, gables, and garage frontage.",
+        caption:
+          "Wide front view showing the refreshed brick facade, trims, gables, and garage frontage.",
       },
       {
         title: "Entry Door Painting",
         image: "/images/projects/chatswood-exterior-entry-door-finish.jpg",
         alt: "Chatswood front entry door and stained glass surround after exterior painting",
-        caption: "Front entry door, sidelight trims, and surrounding details finished with a clean exterior presentation.",
+        caption:
+          "Front entry door, sidelight trims, and surrounding details finished with a clean exterior presentation.",
       },
       {
         title: "Front Verandah Detail",
         image: "/images/projects/chatswood-exterior-front-verandah-finish.jpg",
         alt: "Chatswood verandah posts, soffit, and brick entry porch after exterior painting",
-        caption: "Verandah posts, soffit lines, and entry porch details repainted neatly along the front elevation.",
+        caption:
+          "Verandah posts, soffit lines, and entry porch details repainted neatly along the front elevation.",
       },
       {
         title: "Site Preparation View",
         image: "/images/projects/chatswood-exterior-site-preparation.jpg",
         alt: "Chatswood house exterior during preparation with F&S Painting van on site",
-        caption: "On-site preparation view showing access setup and protection before final exterior finishing.",
+        caption:
+          "On-site preparation view showing access setup and protection before final exterior finishing.",
       },
       {
         title: "Front Yard Painting",
         image: "/images/projects/chatswood-exterior-front-yard-view.jpg",
         alt: "Chatswood front yard and brick house exterior after painting work",
-        caption: "Front yard perspective showing the completed exterior trim work across the facade and gables.",
+        caption:
+          "Front yard perspective showing the completed exterior trim work across the facade and gables.",
       },
       {
         title: "Side Elevation Painting",
         image: "/images/projects/chatswood-exterior-side-elevation.jpg",
         alt: "Chatswood side elevation with refreshed trims and brick exterior after painting",
-        caption: "Side elevation and upper trim lines finished cleanly for a consistent exterior result.",
+        caption:
+          "Side elevation and upper trim lines finished cleanly for a consistent exterior result.",
       },
       {
         title: "Street Garage View",
         image: "/images/projects/chatswood-exterior-street-garage-view.jpg",
         alt: "Chatswood street view with garage frontage and painted exterior details",
-        caption: "Street-facing view showing the garage frontage, gable detail, and completed trim presentation.",
+        caption:
+          "Street-facing view showing the garage frontage, gable detail, and completed trim presentation.",
       },
       {
         title: "Side Gate and Porch View",
         image: "/images/projects/chatswood-exterior-side-gate-finish.jpg",
         alt: "Chatswood side gate, side wall, and porch entry after exterior painting",
-        caption: "Side gate, wall surfaces, and porch connection finished with sharp trim contrast and tidy lines.",
+        caption:
+          "Side gate, wall surfaces, and porch connection finished with sharp trim contrast and tidy lines.",
       },
       {
         title: "Rear Yard View",
         image: "/images/projects/chatswood-exterior-rear-yard-view.jpg",
         alt: "Chatswood rear yard and back exterior walls after painting",
-        caption: "Rear yard view showing the painted exterior surfaces around the back of the home.",
+        caption:
+          "Rear yard view showing the painted exterior surfaces around the back of the home.",
       },
       {
         title: "Outbuilding Painting",
         image: "/images/projects/chatswood-exterior-outbuilding-finish.jpg",
         alt: "Chatswood detached outdoor structure with repainted walls and trims",
-        caption: "Detached outdoor structure refreshed with clean wall, trim, and eave finishes.",
+        caption:
+          "Detached outdoor structure refreshed with clean wall, trim, and eave finishes.",
       },
       {
         title: "Rear Facade Wide View",
         image: "/images/projects/chatswood-exterior-rear-facade-wide.jpg",
         alt: "Chatswood rear facade and garden side exterior after painting",
-        caption: "Wide rear facade view showing the completed trim work across upper and lower exterior sections.",
+        caption:
+          "Wide rear facade view showing the completed trim work across upper and lower exterior sections.",
       },
       {
         title: "Rear Entry Painting",
         image: "/images/projects/chatswood-exterior-rear-entry-finish.jpg",
         alt: "Chatswood rear entry and window surrounds after exterior painting",
-        caption: "Rear entry, window surrounds, and adjacent trim finished for a neat and durable outdoor result.",
+        caption:
+          "Rear entry, window surrounds, and adjacent trim finished for a neat and durable outdoor result.",
       },
       {
         title: "Upper Roofline Detail",
         image: "/images/projects/chatswood-exterior-upper-roofline-detail.jpg",
         alt: "Chatswood upper roofline and window trim detail after exterior painting",
-        caption: "Upper roofline, window trims, and eave details finished cleanly along the second-storey elevation.",
+        caption:
+          "Upper roofline, window trims, and eave details finished cleanly along the second-storey elevation.",
       },
     ],
   },
@@ -1779,25 +1963,29 @@ export const galleryCollections: GalleryCollection[] = [
         title: "Stairwell Chandelier View",
         image: "/images/projects/blakehurst-stairwell-chandelier.jpg",
         alt: "Blakehurst stairwell and chandelier after interior painting",
-        caption: "Tall stairwell walls and upper landing finished cleanly around chandelier and trim details.",
+        caption:
+          "Tall stairwell walls and upper landing finished cleanly around chandelier and trim details.",
       },
       {
         title: "Entry Staircase Painting",
         image: "/images/projects/blakehurst-entry-staircase.jpg",
         alt: "Blakehurst entry staircase and skylight area after interior painting",
-        caption: "Entry staircase, skylight surround, and upper-level walls refreshed with a neat neutral finish.",
+        caption:
+          "Entry staircase, skylight surround, and upper-level walls refreshed with a neat neutral finish.",
       },
       {
         title: "Dining Room Painting",
         image: "/images/projects/blakehurst-dining-room-finish.jpg",
         alt: "Blakehurst dining room after interior repainting",
-        caption: "Dining room walls and trim repainted to brighten the main living area.",
+        caption:
+          "Dining room walls and trim repainted to brighten the main living area.",
       },
       {
         title: "Living Room Painting",
         image: "/images/projects/blakehurst-living-room-finish.jpg",
         alt: "Blakehurst living room and high wall area after interior painting",
-        caption: "Living room walls and high feature surfaces repainted for a cleaner open-plan presentation.",
+        caption:
+          "Living room walls and high feature surfaces repainted for a cleaner open-plan presentation.",
       },
     ],
   },

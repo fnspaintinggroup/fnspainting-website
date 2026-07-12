@@ -38,8 +38,11 @@ const googleRatingMap: Record<string, number> = {
   FIVE: 5,
 };
 
-const reviewCacheSeconds = Number(process.env.GOOGLE_BUSINESS_PROFILE_REVIEW_CACHE_SECONDS || 3600);
-const isNetworkRestrictedBuild = process.env.CODEX_SANDBOX_NETWORK_DISABLED === "1";
+const reviewCacheSeconds = Number(
+  process.env.GOOGLE_BUSINESS_PROFILE_REVIEW_CACHE_SECONDS || 3600,
+);
+const isNetworkRestrictedBuild =
+  process.env.CODEX_SANDBOX_NETWORK_DISABLED === "1";
 
 function hasGoogleBusinessProfileCredentials() {
   if (isNetworkRestrictedBuild) {
@@ -48,10 +51,10 @@ function hasGoogleBusinessProfileCredentials() {
 
   return Boolean(
     process.env.GOOGLE_BUSINESS_PROFILE_ACCOUNT_ID &&
-      process.env.GOOGLE_BUSINESS_PROFILE_LOCATION_ID &&
-      process.env.GOOGLE_BUSINESS_PROFILE_CLIENT_ID &&
-      process.env.GOOGLE_BUSINESS_PROFILE_CLIENT_SECRET &&
-      process.env.GOOGLE_BUSINESS_PROFILE_REFRESH_TOKEN,
+    process.env.GOOGLE_BUSINESS_PROFILE_LOCATION_ID &&
+    process.env.GOOGLE_BUSINESS_PROFILE_CLIENT_ID &&
+    process.env.GOOGLE_BUSINESS_PROFILE_CLIENT_SECRET &&
+    process.env.GOOGLE_BUSINESS_PROFILE_REFRESH_TOKEN,
   );
 }
 
@@ -149,8 +152,12 @@ const getCachedGoogleBusinessProfileReviews = unstable_cache(
 
 export function getGoogleReviewLinks(): ReviewProviderLinks {
   return {
-    readMoreUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || businessDetails.googleReviewsUrl,
-    leaveReviewUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || businessDetails.googleReviewsUrl,
+    readMoreUrl:
+      process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL ||
+      businessDetails.googleReviewsUrl,
+    leaveReviewUrl:
+      process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ||
+      businessDetails.googleLeaveReviewUrl,
   };
 }
 
@@ -158,7 +165,9 @@ export function getReviewSourceLabel() {
   return "Google Review";
 }
 
-export async function getGoogleBusinessProfileReviews(): Promise<CmsReview[] | null> {
+export async function getGoogleBusinessProfileReviews(): Promise<
+  CmsReview[] | null
+> {
   try {
     return await getCachedGoogleBusinessProfileReviews();
   } catch {

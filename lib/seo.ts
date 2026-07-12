@@ -90,31 +90,60 @@ export function pageMetadata({
 }
 
 export function localBusinessSchema() {
+  const chatswoodAddress = businessDetails.addresses.find(
+    (address) => address.suburb === "Chatswood",
+  );
+
   return {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "HousePainter", "HomeAndConstructionBusiness"],
     "@id": `${siteUrl}/#localbusiness`,
     name: siteName,
+    legalName: "F&S Painting Group",
     url: siteUrl,
     image: absoluteUrl(defaultOgImage),
+    logo: absoluteUrl("/images/fs-painting-logo.png"),
     email: businessDetails.email,
     telephone: businessDetails.phones,
     description:
       "F&S Painting provides residential, interior, exterior, strata, commercial, ceiling painting, and mould-damaged ceiling restoration services in Sydney, NSW.",
-    areaServed: {
-      "@type": "City",
-      name: "Sydney",
-      addressRegion: "NSW",
-      addressCountry: "AU",
-    },
-    address: businessDetails.addresses.map((address) => ({
-      "@type": "PostalAddress",
-      streetAddress: address.street,
-      addressLocality: address.suburb,
-      addressRegion: address.region,
-      postalCode: address.postcode,
-      addressCountry: "AU",
+    areaServed: ["Chatswood", "North Shore", "Sydney"].map((name) => ({
+      "@type": "Place",
+      name,
     })),
+    address: chatswoodAddress
+      ? {
+          "@type": "PostalAddress",
+          streetAddress: chatswoodAddress.street,
+          addressLocality: chatswoodAddress.suburb,
+          addressRegion: chatswoodAddress.region,
+          postalCode: chatswoodAddress.postcode,
+          addressCountry: "AU",
+        }
+      : undefined,
+    sameAs: [businessDetails.googleReviewsUrl],
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        name: "NSW contractor licence",
+        value: "478497C",
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Australian Company Number",
+        value: "659406265",
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Workers compensation policy",
+        value: "236870501",
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Public liability policy",
+        value: "AAMI SPD012776314",
+      },
+    ],
     makesOffer: targetKeywords.map((keyword) => ({
       "@type": "Offer",
       itemOffered: {
@@ -148,7 +177,10 @@ export function serviceSchema(services: CmsService[]) {
   };
 }
 
-export function breadcrumbSchema(items: { name: string; path: string }[], id?: string) {
+export function breadcrumbSchema(
+  items: { name: string; path: string }[],
+  id?: string,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

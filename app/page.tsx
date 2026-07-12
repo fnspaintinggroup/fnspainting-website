@@ -8,39 +8,74 @@ import { FaqSection } from "@/components/FaqSection";
 import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
 import { faqSchema, homeFaqs } from "@/lib/faqs";
-import { featuredGalleryImages } from "@/lib/gallery";
+import { featuredGalleryImages, galleryCollections } from "@/lib/gallery";
 import { services } from "@/lib/site-data";
 import { getSelectedReviews, getServices } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
+import { createUrlSlug } from "@/lib/url-slug";
 
 export const metadata: Metadata = pageMetadata({
-  title: "F&S Painting | Painter Chatswood & Sydney - Interior, Exterior, Strata & Commercial",
+  title:
+    "F&S Painting | Painter Chatswood & Sydney - Interior, Exterior, Strata & Commercial",
   description:
     "Licensed and insured painters in Chatswood, North Shore and Sydney. Residential, interior, exterior, strata and commercial painting with free on-site quotes, 20 years of experience, and quality Dulux products.",
   path: "/",
 });
 
+function featuredGalleryHref(item: (typeof featuredGalleryImages)[number]) {
+  if (!item.collectionSlug) {
+    return "/painting-gallery";
+  }
+
+  const collection = galleryCollections.find(
+    (entry) => entry.slug === item.collectionSlug,
+  );
+  const imageIndex =
+    collection?.images.findIndex((entry) => entry.image === item.image) ?? -1;
+
+  if (!collection || imageIndex < 0) {
+    return `/painting-gallery/${item.collectionSlug}`;
+  }
+
+  const image = collection.images[imageIndex];
+  return `/painting-gallery/${item.collectionSlug}#${createUrlSlug(image.title)}-${imageIndex + 1}`;
+}
+
 export default async function Home() {
-  const [selectedReviews, cmsServices] = await Promise.all([getSelectedReviews(6), getServices()]);
+  const [selectedReviews, cmsServices] = await Promise.all([
+    getSelectedReviews(6),
+    getServices(),
+  ]);
   const janChurcherReview = selectedReviews.find((review) =>
     review.customerName.toLowerCase().includes("jan churcher"),
   );
   const cmsReviews = janChurcherReview
     ? [
         ...selectedReviews
-          .filter((review) => review.customerName !== janChurcherReview.customerName)
+          .filter(
+            (review) => review.customerName !== janChurcherReview.customerName,
+          )
           .slice(0, 3),
         janChurcherReview,
       ]
     : selectedReviews.slice(0, 4);
-  const homepageFaqs = [homeFaqs[1], homeFaqs[8], homeFaqs[3], homeFaqs[4], homeFaqs[9], homeFaqs[6]];
+  const homepageFaqs = [
+    homeFaqs[1],
+    homeFaqs[8],
+    homeFaqs[3],
+    homeFaqs[4],
+    homeFaqs[9],
+    homeFaqs[6],
+  ];
 
   return (
     <>
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homepageFaqs, "/")) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema(homepageFaqs, "/")),
+        }}
       />
       <HomePromoHero />
 
@@ -52,11 +87,13 @@ export default async function Home() {
                 Services
               </p>
               <h2 className="text-3xl font-semibold leading-tight text-ink sm:text-4xl">
-                Painting services built around clean preparation and lasting finishes
+                Painting services built around clean preparation and lasting
+                finishes
               </h2>
               <p className="mt-4 text-base leading-7 text-ink/70">
-                From a single ceiling refresh to a full property repaint, F&amp;S Painting offers
-                practical guidance, tidy work, and a professional finish.
+                From a single ceiling refresh to a full property repaint,
+                F&amp;S Painting offers practical guidance, tidy work, and a
+                professional finish.
               </p>
             </div>
             <div className="relative min-h-52 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm sm:min-h-64 lg:min-h-72">
@@ -69,31 +106,45 @@ export default async function Home() {
                 preload="metadata"
                 aria-label="F&S Painting exterior service van video in Sydney"
               >
-                <source src="/images/fs-painting-service-video.mp4" type="video/mp4" />
+                <source
+                  src="/images/fs-painting-service-video.mp4"
+                  type="video/mp4"
+                />
               </video>
             </div>
           </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cmsServices.slice(0, 6).map((service) => {
-            const localService = services.find((item) => item.title === service.title) ?? services[0];
-            const Icon = localService.icon;
-            return (
-              <Link
-                key={service.title}
-                href={
-                  service.slug === "interior-painting" || service.slug === "exterior-painting"
-                    ? `/services/${service.slug}`
-                    : `/services#${service.slug}`
-                }
-                className="group rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
-              >
-                <Icon className="text-eucalyptus" aria-hidden="true" size={28} />
-                <h3 className="mt-5 text-xl font-semibold text-ink">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-ink/65">{service.summary}</p>
-              </Link>
-            );
-          })}
-        </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {cmsServices.slice(0, 6).map((service) => {
+              const localService =
+                services.find((item) => item.title === service.title) ??
+                services[0];
+              const Icon = localService.icon;
+              return (
+                <Link
+                  key={service.title}
+                  href={
+                    service.slug === "interior-painting" ||
+                    service.slug === "exterior-painting"
+                      ? `/services/${service.slug}`
+                      : `/services#${service.slug}`
+                  }
+                  className="group rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+                >
+                  <Icon
+                    className="text-eucalyptus"
+                    aria-hidden="true"
+                    size={28}
+                  />
+                  <h3 className="mt-5 text-xl font-semibold text-ink">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-ink/65">
+                    {service.summary}
+                  </p>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -107,18 +158,25 @@ export default async function Home() {
               Painters Chatswood - licensed local painting team
             </h2>
             <p className="mt-5 text-base leading-7 text-ink/72">
-              With 20 years of know-how and quality Dulux products, F&amp;S Painting provides clean,
-              reliable painting services for homes, apartments, strata buildings, offices, and shops
-              across Chatswood and nearby North Shore suburbs. From interior walls and ceilings to
-              exterior facades, trims, common areas, and commercial spaces, we focus on careful
-              preparation, tidy work, and a professional finish.
+              With 20 years of know-how and quality Dulux products, F&amp;S
+              Painting provides clean, reliable painting services for homes,
+              apartments, strata buildings, offices, and shops across Chatswood
+              and nearby North Shore suburbs. From interior walls and ceilings
+              to exterior facades, trims, common areas, and commercial spaces,
+              we focus on careful preparation, tidy work, and a professional
+              finish.
             </p>
             <div className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-eucalyptus">
-              {["House painting", "Apartments", "Strata", "Commercial"].map((item) => (
-                <span key={item} className="rounded-md border border-eucalyptus/20 bg-white px-3 py-2">
-                  {item}
-                </span>
-              ))}
+              {["House painting", "Apartments", "Strata", "Commercial"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-md border border-eucalyptus/20 bg-white px-3 py-2"
+                  >
+                    {item}
+                  </span>
+                ),
+              )}
             </div>
             <Link
               href="/painters-chatswood"
@@ -151,7 +209,9 @@ export default async function Home() {
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
               Workers compensation
             </p>
-            <p className="mt-3 text-lg font-semibold text-ink">Policy No. 236870501</p>
+            <p className="mt-3 text-lg font-semibold text-ink">
+              Policy No. 236870501
+            </p>
           </div>
           <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
@@ -160,14 +220,20 @@ export default async function Home() {
             <p className="mt-3 text-lg font-semibold text-ink">
               Fully insured with AAMI
             </p>
-            <p className="mt-1 text-sm font-semibold text-ink/65">Policy No. SPD012776314</p>
+            <p className="mt-1 text-sm font-semibold text-ink/65">
+              Policy No. SPD012776314
+            </p>
           </div>
           <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">ACN</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
+              ACN
+            </p>
             <p className="mt-3 text-lg font-semibold text-ink">659406265</p>
           </div>
           <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">License</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
+              License
+            </p>
             <p className="mt-3 text-lg font-semibold text-ink">478497C</p>
           </div>
         </div>
@@ -199,7 +265,7 @@ export default async function Home() {
           {featuredGalleryImages.slice(0, 8).map((item) => (
             <Link
               key={item.title}
-              href="/painting-gallery"
+              href={featuredGalleryHref(item)}
               className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">
@@ -218,7 +284,9 @@ export default async function Home() {
                 <h3 className="mt-2 text-lg font-semibold leading-tight text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-ink/65">{item.caption}</p>
+                <p className="mt-3 text-sm leading-6 text-ink/65">
+                  {item.caption}
+                </p>
               </div>
             </Link>
           ))}
@@ -238,18 +306,26 @@ export default async function Home() {
         intro="Explore common Sydney painting questions, recent before and after projects, and service pages before requesting a quote."
       >
         <div className="grid gap-4 md:grid-cols-3">
-          <Link className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay" href="/painting-tips/house-painting-cost-sydney">
+          <Link
+            className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay"
+            href="/painting-tips/house-painting-cost-sydney"
+          >
             House painting Sydney cost guide
           </Link>
-          <Link className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay" href="/services/interior-painting">
+          <Link
+            className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay"
+            href="/services/interior-painting"
+          >
             Interior painter Sydney services
           </Link>
-          <Link className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay" href="/projects/mould-damaged-ceiling-restoration-sydney">
+          <Link
+            className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay"
+            href="/projects/mould-damaged-ceiling-restoration-sydney"
+          >
             Mould-damaged ceiling painting project
           </Link>
         </div>
       </Section>
-
 
       <FaqSection
         className="bg-mist"
@@ -262,10 +338,15 @@ export default async function Home() {
       <section className="bg-eucalyptus py-14 text-white sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 md:grid-cols-[1fr_auto] md:items-center lg:px-8">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">Ready to repaint?</p>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">Request a free Sydney painting quote</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
+              Ready to repaint?
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
+              Request a free Sydney painting quote
+            </h2>
             <p className="mt-4 max-w-2xl text-white/80">
-              Share a few details about your property, the areas to be painted, and your ideal timing.
+              Share a few details about your property, the areas to be painted,
+              and your ideal timing.
             </p>
           </div>
           <Link
