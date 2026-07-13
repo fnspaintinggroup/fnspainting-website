@@ -191,7 +191,7 @@ export const galleryImages: GalleryImage[] = [
     alt: "Chatswood commercial office reception area after fresh interior repainting",
     caption:
       "Professional reception repaint for a cleaner first impression in a Chatswood office.",
-    suburb: "Artamon, NSW",
+    suburb: "Artarmon, NSW",
     collectionSlug: "chatswood-commercial-reception-finish",
     photoCount: 6,
   },
@@ -1351,7 +1351,7 @@ export const galleryCollections: GalleryCollection[] = [
     slug: "chatswood-commercial-reception-finish",
     title: "Chatswood Commercial Reception Painting",
     category: "Commercial Painting",
-    suburb: "Artamon, NSW",
+    suburb: "Artarmon, NSW",
     summary:
       "Commercial interior painting across the reception counter, office corridor, hallway, storage room, and client-facing entry areas in a Chatswood office.",
     coverImage: "/images/projects/commercial-reception-after.jpg",

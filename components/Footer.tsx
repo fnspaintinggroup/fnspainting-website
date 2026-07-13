@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { businessDetails, formatAddress } from "@/lib/business";
+import { getGalleryAreaHref } from "@/lib/gallery-areas";
 import { navItems, serviceAreas } from "@/lib/site-data";
 
 const footerLogos = [
@@ -162,12 +163,17 @@ export function Footer() {
           <p className="mb-4 font-semibold">Service Areas - All of Sydney wide</p>
           <div className="flex flex-wrap gap-2">
             {serviceAreas.map((area, index) => {
-              const isChatswoodArea = area === "Chatswood" || area === "North Shore";
+              const galleryHref = getGalleryAreaHref(area);
               const className =
                 "rounded border border-white/15 px-2.5 py-1 text-[11px] leading-5 text-white/70";
 
-              return isChatswoodArea ? (
-                <Link key={`${area}-${index}`} href="/painters-chatswood" className={`${className} hover:text-white`}>
+              return galleryHref ? (
+                <Link
+                  key={`${area}-${index}`}
+                  href={galleryHref}
+                  aria-label={`View ${area} painting gallery`}
+                  className={`${className} transition hover:border-gumleaf hover:bg-white/5 hover:text-white`}
+                >
                   {area}
                 </Link>
               ) : (

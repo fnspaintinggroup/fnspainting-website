@@ -4,6 +4,10 @@ import Link from "next/link";
 import { ArrowRight, Images, MapPin, Paintbrush } from "lucide-react";
 import { getGalleryCollections, getGalleryImages } from "@/lib/cms";
 import { galleryCategories } from "@/lib/gallery";
+import {
+  gallerySuburbMatchesArea,
+  getGalleryArea,
+} from "@/lib/gallery-areas";
 import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
 import { createUrlSlug } from "@/lib/url-slug";
 
@@ -15,13 +19,39 @@ export const metadata: Metadata = pageMetadata({
   image: "/images/projects/exterior-house-main-after.jpg",
 });
 
-export default async function PaintingGalleryPage() {
+type PaintingGalleryPageProps = {
+  searchParams: Promise<{
+    area?: string | string[];
+  }>;
+};
+
+export default async function PaintingGalleryPage({
+  searchParams,
+}: PaintingGalleryPageProps) {
+  const resolvedSearchParams = await searchParams;
+  const requestedArea = Array.isArray(resolvedSearchParams.area)
+    ? resolvedSearchParams.area[0]
+    : resolvedSearchParams.area;
+  const selectedArea = getGalleryArea(requestedArea);
   const [galleryImages, galleryCollections] = await Promise.all([
     getGalleryImages(),
     getGalleryCollections(),
   ]);
+  const visibleGalleryImages = selectedArea
+    ? galleryImages.filter((item) =>
+        gallerySuburbMatchesArea(item.suburb, selectedArea),
+      )
+    : galleryImages;
+  const visibleCategories = galleryCategories.filter((category) =>
+    visibleGalleryImages.some((item) => item.category === category),
+  );
+  const visibleGalleryCollections = selectedArea
+    ? galleryCollections.filter((collection) =>
+        gallerySuburbMatchesArea(collection.suburb, selectedArea),
+      )
+    : galleryCollections;
   const gallerySchemaImages = [
-    ...galleryImages.map((item) => ({
+    ...visibleGalleryImages.map((item) => ({
       title: item.title,
       caption: item.caption,
       image: item.image,
@@ -29,7 +59,7 @@ export default async function PaintingGalleryPage() {
       category: item.category,
       suburb: item.suburb,
     })),
-    ...galleryCollections.flatMap((collection) =>
+    ...visibleGalleryCollections.flatMap((collection) =>
       collection.images.map((item) => ({
         title: item.title,
         caption: item.caption,
@@ -47,7 +77,9 @@ export default async function PaintingGalleryPage() {
     name: "Finest Finish Painting Gallery",
     description:
       "Finished painting examples from F&S Painting across Sydney, including interior, exterior, commercial, ceiling, strata, doors, trims, and detail work.",
-    url: `${siteUrl}/painting-gallery`,
+    url: selectedArea
+      ? `${siteUrl}/painting-gallery?area=${encodeURIComponent(selectedArea)}`
+      : `${siteUrl}/painting-gallery`,
     image: gallerySchemaImages.map((item) => absoluteUrl(item.image)),
     mainEntity: gallerySchemaImages.map((item) => ({
       "@type": "ImageObject",
@@ -111,23 +143,37 @@ export default async function PaintingGalleryPage() {
         </div>
       </section>
 
-      <section className="bg-linen py-14 sm:py-20">
+      <section id="gallery-results" className="scroll-mt-20 bg-linen py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="mb-8 max-w-3xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
-              Sydney painting examples
+              {selectedArea ? "Location gallery" : "Sydney painting examples"}
             </p>
             <h2 className="text-3xl font-semibold leading-tight text-ink sm:text-4xl">
-              Finished work by service type
+              {selectedArea
+                ? `${selectedArea} painting work`
+                : "Finished work by service type"}
             </h2>
             <p className="mt-4 text-base leading-7 text-ink/70">
-              Browse finished photos grouped by the kind of painting work
-              customers most often ask to see before booking a quote.
+              {selectedArea
+                ? `Browse ${visibleGalleryImages.length} painting ${
+                    visibleGalleryImages.length === 1 ? "example" : "examples"
+                  } completed in ${selectedArea}.`
+                : "Browse finished photos grouped by the kind of painting work customers most often ask to see before booking a quote."}
             </p>
+            {selectedArea ? (
+              <Link
+                href="/painting-gallery#gallery-results"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus hover:underline"
+              >
+                View all Sydney gallery photos
+                <ArrowRight aria-hidden="true" size={16} />
+              </Link>
+            ) : null}
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {galleryCategories.map((category) => (
+            {visibleCategories.map((category) => (
               <a
                 key={category}
                 href={`#${category
@@ -143,8 +189,8 @@ export default async function PaintingGalleryPage() {
         </div>
       </section>
 
-      {galleryCategories.map((category, index) => {
-        const categoryImages = galleryImages.filter(
+      {visibleCategories.map((category, index) => {
+        const categoryImages = visibleGalleryImages.filter(
           (item) => item.category === category,
         );
         const sectionId = category
