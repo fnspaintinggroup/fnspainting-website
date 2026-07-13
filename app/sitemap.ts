@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getBlogPosts, getGalleryCollections, getProjectList } from "@/lib/cms";
 import { siteUrl } from "@/lib/seo";
 
-const contentLastModified = new Date("2026-07-12");
+const contentLastModified = new Date("2026-07-14");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -17,8 +17,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/projects",
     "/painting-gallery",
     "/painting-tips",
+    "/about",
     "/reviews",
     "/contact",
+    "/privacy-policy",
     "/painters-chatswood",
   ].map((route) => ({
     url: `${siteUrl}${route}`,
@@ -36,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${siteUrl}/painting-tips/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updatedDate ?? post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

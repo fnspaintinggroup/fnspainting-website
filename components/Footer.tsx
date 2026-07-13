@@ -131,6 +131,12 @@ export function Footer() {
                 {item.label}
               </Link>
             ))}
+            <Link href="/about" className="hover:text-white">
+              About F&amp;S Painting
+            </Link>
+            <Link href="/privacy-policy" className="hover:text-white">
+              Privacy Policy
+            </Link>
           </div>
           <div className="mt-7">
             <p className="mb-3 font-semibold">Social</p>
@@ -186,7 +192,10 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/50">
-        &copy; {new Date().getFullYear()} {businessDetails.name}. Professional painting services in Sydney, NSW.
+        &copy; {new Date().getFullYear()} {businessDetails.name}. Professional painting services in Sydney, NSW. {" "}
+        <Link href="/privacy-policy" className="underline underline-offset-4 hover:text-white">
+          Privacy Policy
+        </Link>
       </div>
     </footer>
   );

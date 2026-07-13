@@ -30,7 +30,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: post.seoTitle,
+    title: {
+      absolute: post.seoTitle,
+    },
     description: post.seoDescription,
     keywords: targetKeywords,
     alternates: {
@@ -74,7 +76,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updatedDate ?? post.date,
     image: toAbsoluteUrl(post.featuredImage),
     mainEntityOfPage: `${siteUrl}/painting-tips/${post.slug}`,
     author: {
@@ -140,7 +142,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         <section className="py-12 sm:py-16">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:px-8">
-            <div className="max-w-3xl">
+            <div className="min-w-0 max-w-3xl">
               {"bodySource" in post && post.bodySource === "sanity" ? (
                 <PortableBody value={post.body} />
               ) : (
@@ -154,6 +156,42 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         <p key={paragraph}>{paragraph}</p>
                       ))}
                     </div>
+                    {section.bullets ? (
+                      <ul className="mt-5 list-disc space-y-2 pl-6 text-base leading-7 text-ink/72">
+                        {section.bullets.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                    {section.table ? (
+                      <div className="mt-6 max-w-full overflow-x-auto rounded-md border border-ink/10">
+                        <table className="w-full min-w-[38rem] border-collapse text-left text-sm">
+                          <caption className="border-b border-ink/10 bg-mist px-4 py-3 text-left text-xs leading-5 text-ink/60">
+                            {section.table.caption}
+                          </caption>
+                          <thead className="bg-gumleaf text-ink">
+                            <tr>
+                              {section.table.headers.map((header) => (
+                                <th key={header} scope="col" className="px-4 py-3 font-semibold">
+                                  {header}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-ink/10 bg-white text-ink/72">
+                            {section.table.rows.map((row) => (
+                              <tr key={row.join("-")}>
+                                {row.map((cell, index) => (
+                                  <td key={cell} className="px-4 py-3 align-top">
+                                    {index === 0 ? <strong className="font-semibold text-ink">{cell}</strong> : cell}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ) : null}
                     {section.link ? (
                       <Link
                         href={section.link.href}

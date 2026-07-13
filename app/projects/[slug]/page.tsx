@@ -31,7 +31,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: project.seoTitle,
+    title: {
+      absolute: project.seoTitle,
+    },
     description: project.seoDescription,
     keywords: targetKeywords,
     alternates: {
