@@ -76,7 +76,7 @@ export function ProjectPreview() {
         href="/projects"
         className="inline-flex items-center gap-2 font-semibold text-eucalyptus md:col-span-3"
       >
-        View all B/A
+        View all Before / After projects
         <ArrowRight aria-hidden="true" size={18} />
       </Link>
     </div>

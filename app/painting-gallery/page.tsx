@@ -270,7 +270,7 @@ export default async function PaintingGalleryPage({
                         ) : null}
                         {item.projectSlug ? (
                           <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
-                            View matching B/A
+                            View matching Before / After
                             <ArrowRight aria-hidden="true" size={16} />
                           </p>
                         ) : item.collectionSlug ? (

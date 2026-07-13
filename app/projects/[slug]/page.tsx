@@ -26,7 +26,7 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "B/A Not Found",
+      title: "Project Not Found",
     };
   }
 
@@ -98,7 +98,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       breadcrumbSchema(
         [
           { name: "Home", path: "/" },
-          { name: "B/A", path: "/projects" },
+          { name: "Before / After", path: "/projects" },
           { name: project.title, path: `/projects/${project.slug}` },
         ],
         `${projectUrl}#breadcrumb`,
@@ -188,7 +188,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-gumleaf hover:text-white"
             >
               <ArrowLeft aria-hidden="true" size={17} />
-              B/A
+              Before / After
             </Link>
             <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/65">
               <span className="flex items-center gap-1.5">
@@ -338,7 +338,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             <aside className="h-fit rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-              <h2 className="text-lg font-semibold text-ink">More B/A</h2>
+              <h2 className="text-lg font-semibold text-ink">More Before / After projects</h2>
               <div className="mt-4 grid gap-4">
                 {relatedProjects.map((related) => (
                   <Link

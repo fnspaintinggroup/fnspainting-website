@@ -394,7 +394,7 @@ export default function PaintersChatswoodPage() {
         className="bg-mist"
         eyebrow="Nearby Work"
         title="Recent painting Before & After around Chatswood and the North Shore"
-        intro="These completed B/A examples show the kinds of residential, commercial, exterior, and ceiling work F&S Painting handles near Chatswood."
+        intro="These completed before-and-after examples show the kinds of residential, commercial, exterior, and ceiling work F&S Painting handles near Chatswood."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {featuredProjects.map((project) => (

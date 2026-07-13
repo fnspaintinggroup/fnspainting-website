@@ -174,7 +174,7 @@ export default function ExteriorPaintingPage() {
 
       <Section
         className="bg-mist"
-        eyebrow="Related B/A"
+        eyebrow="Related Before / After"
         title="Exterior painting examples"
         intro="View recent exterior repainting examples completed by F&S Painting."
       >
@@ -205,7 +205,7 @@ export default function ExteriorPaintingPage() {
                   {project.location}
                 </p>
                 <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
-                  View matching B/A
+                  View matching Before / After
                   <ArrowRight aria-hidden="true" size={16} />
                 </p>
               </div>

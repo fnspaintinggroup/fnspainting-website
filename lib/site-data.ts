@@ -12,7 +12,7 @@ import {
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/projects", label: "B/A" },
+  { href: "/projects", label: "Before / After" },
   { href: "/painting-gallery", label: "Gallery" },
   { href: "/painting-tips", label: "Painting Tips" },
   { href: "/reviews", label: "Reviews" },

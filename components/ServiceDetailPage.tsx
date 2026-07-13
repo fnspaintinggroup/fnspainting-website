@@ -204,7 +204,7 @@ export function ServiceDetailPage({
 
       <Section
         className="bg-mist"
-        eyebrow="Related B/A"
+        eyebrow="Related Before / After"
         title={`${name} before and after examples`}
         intro="Select a completed example to jump to the matching Before & After card."
       >
@@ -235,7 +235,7 @@ export function ServiceDetailPage({
                   {project.location}
                 </p>
                 <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
-                  View matching B/A
+                  View matching Before / After
                   <ArrowRight aria-hidden="true" size={16} />
                 </p>
               </div>

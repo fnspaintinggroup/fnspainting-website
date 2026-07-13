@@ -317,7 +317,7 @@ export default async function Home() {
             className="rounded-md border border-ink/10 bg-white p-5 font-semibold text-eucalyptus shadow-sm hover:text-clay"
             href="/projects/mould-damaged-ceiling-restoration-sydney"
           >
-            Mould-damaged ceiling painting B/A
+            Mould-damaged ceiling painting: Before / After
           </Link>
         </div>
       </Section>

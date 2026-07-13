@@ -52,7 +52,7 @@ export default async function ServicesPage() {
             href="/painters-chatswood"
             className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
           >
-            Painters Chatswood - local quotes and B/A photos
+            Painters Chatswood - local quotes and before-and-after photos
             <ArrowRight aria-hidden="true" size={18} />
           </Link>
       </PageIntroHero>

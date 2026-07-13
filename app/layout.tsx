@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackToTopButton } from "@/components/BackToTopButton";
+import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { AnalyticsEvents } from "@/components/AnalyticsEvents";
 import { absoluteUrl, defaultOgImage, localBusinessSchema, siteName, siteUrl, targetKeywords } from "@/lib/seo";
 import "./globals.css";
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-AU">
-      <body className="font-sans antialiased">
+      <body className="pb-20 font-sans antialiased md:pb-0">
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-K75HEPTK9Y" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Footer />
         <AnalyticsEvents />
         <BackToTopButton />
+        <MobileStickyCta />
       </body>
     </html>
   );

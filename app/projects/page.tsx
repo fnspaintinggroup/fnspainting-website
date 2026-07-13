@@ -75,7 +75,7 @@ export default async function ProjectsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <PageIntroHero
-        eyebrow="B/A"
+        eyebrow="Before / After"
         title={<>Painting Before &amp; After</>}
         description={
           <>
@@ -203,7 +203,7 @@ export default async function ProjectsPage() {
                           {project.location}
                         </p>
                         <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
-                          View B/A details
+                          View project details
                           <ArrowRight aria-hidden="true" size={16} />
                         </p>
                       </div>
