@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Licensed strata painters in Sydney for common areas, hallways, stairwells, lobbies, facades, balconies, and planned maintenance painting.",
   path,
-  image: "/images/projects/strata-hallway-hero.png",
+  image: "/images/projects/dee-why-strata-hallway-after.jpg",
 });
 
 const faqs = [
@@ -50,8 +50,9 @@ export default async function StrataPaintingPage() {
       heading="Strata painting planned around shared spaces"
       intro="F&S Painting repaints common areas and exterior strata surfaces with careful preparation, access planning, and tidy work practices."
       description="Strata painting for Sydney common areas, lobbies, hallways, stairwells, ceilings, doors, facades, balconies, and planned maintenance work."
-      heroImage="/images/projects/strata-hallway-hero.png"
+      heroImage="/images/projects/dee-why-strata-hallway-after.jpg"
       heroImageAlt="Freshly repainted Dee Why strata hallway with white walls, detailed cornices, and dark carpet"
+      heroLayout="contained-right"
       quoteLabel="Get a Strata Painting Quote"
       workTitle="Practical repainting for occupied strata properties"
       workIntro="We plan the scope around building access, residents, shared areas, surface condition, and the agreed maintenance schedule."

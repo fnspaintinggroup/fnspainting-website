@@ -55,6 +55,8 @@ export default async function ResidentialPaintingPage() {
       heading="Residential painting for homes that feel renewed"
       intro="F&S Painting prepares and repaints Sydney houses, apartments, interiors, exteriors, ceilings, trims, and detailed residential surfaces."
       description="Residential painting for Sydney houses, apartments, units, interiors, exteriors, ceilings, trims, doors, and complete repaints."
+      heroImage="/images/projects/east-lindfield-exterior-front-facade-finish.jpg"
+      heroImageAlt="East Lindfield house exterior after residential painting by F&S Painting"
       quoteLabel="Get a Residential Painting Quote"
       workTitle="Careful painting for lived-in and move-in-ready homes"
       workIntro="Each quote considers the condition of the property, protection requirements, preparation, access, paint system, and timing."

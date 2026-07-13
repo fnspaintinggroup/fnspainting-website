@@ -57,6 +57,7 @@ export default async function CeilingRepaintingPage() {
       description="Ceiling repainting and restoration for Sydney homes and properties, including peeling paint, stains, moisture damage, mould-affected coatings, and ornate ceilings."
       heroImage="/images/projects/roseville-ornate-ceiling-after.jpg"
       heroImageAlt="Roseville ornate ceiling and bedroom after careful restoration and repainting"
+      heroImagePosition="center 35%"
       quoteLabel="Get a Ceiling Repainting Quote"
       workTitle="Preparation matched to the ceiling condition"
       workIntro="A lasting ceiling finish depends on resolving moisture causes and completing the right scraping, patching, sealing, priming, and repainting steps."
