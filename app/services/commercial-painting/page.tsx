@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 const path = "/services/commercial-painting";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Commercial Painting Sydney | F&S Painting",
+  title: "Commercial Painting Sydney",
   description:
     "Commercial painters in Sydney for offices, shops, salons, medical spaces, warehouses, facades, interiors, and planned repainting. Free quotes.",
   path,

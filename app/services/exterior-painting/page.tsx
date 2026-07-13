@@ -44,7 +44,7 @@ const relatedProjects = projects
 const pageUrl = `${siteUrl}/services/exterior-painting`;
 
 export const metadata: Metadata = pageMetadata({
-  title: "Exterior Painting Sydney | F&S Painting",
+  title: "Exterior Painting Sydney",
   description:
     "Professional exterior painting in Sydney for homes, strata buildings, facades, eaves, fascia, gutters, trims, fences, decks, and weather-exposed surfaces.",
   path: "/services/exterior-painting",

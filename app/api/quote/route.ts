@@ -9,6 +9,7 @@ type QuoteRequestPayload = {
   phone?: string;
   suburb?: string;
   service?: string;
+  leadSource?: string;
   details?: string;
 };
 
@@ -30,6 +31,7 @@ export async function POST(request: Request) {
   const phone = clean(payload.phone);
   const suburb = clean(payload.suburb);
   const service = clean(payload.service);
+  const leadSource = clean(payload.leadSource);
   const details = clean(payload.details);
 
   if (!name || !email || !details) {
@@ -74,6 +76,7 @@ export async function POST(request: Request) {
     `Phone: ${phone || "Not provided"}`,
     `Suburb: ${suburb || "Not provided"}`,
     `Service: ${service || "Not selected"}`,
+    `How they found us: ${leadSource || "Not selected"}`,
     "",
     "Project details:",
     details,

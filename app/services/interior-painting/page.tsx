@@ -48,7 +48,7 @@ const relatedProjects = projects
 const pageUrl = `${siteUrl}/services/interior-painting`;
 
 export const metadata: Metadata = pageMetadata({
-  title: "Interior Painting Sydney | F&S Painting",
+  title: "Interior Painting Sydney",
   description:
     "Professional interior painting in Sydney for homes, apartments, offices, ceilings, trims, doors, and feature walls. Licensed and insured painters using quality Dulux products.",
   path: "/services/interior-painting",

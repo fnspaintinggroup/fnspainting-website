@@ -13,7 +13,7 @@ const services = [
   "Mould-damaged ceiling restoration",
 ];
 
-function trackQuoteFormSuccess(service: string, suburb: string) {
+function trackQuoteFormSuccess(service: string, suburb: string, leadSource: string) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") {
     return;
   }
@@ -23,11 +23,12 @@ function trackQuoteFormSuccess(service: string, suburb: string) {
     form_name: "free_quote_request",
     service,
     suburb,
+    lead_source: leadSource || "not_selected",
     page_path: window.location.pathname,
   });
 }
 
-function trackQuoteEmailFallback(service: string, suburb: string) {
+function trackQuoteEmailFallback(service: string, suburb: string, leadSource: string) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") {
     return;
   }
@@ -37,6 +38,7 @@ function trackQuoteEmailFallback(service: string, suburb: string) {
     form_name: "free_quote_request",
     service,
     suburb,
+    lead_source: leadSource || "not_selected",
     page_path: window.location.pathname,
   });
 }
@@ -47,6 +49,7 @@ export function QuoteRequestForm() {
   const [phone, setPhone] = useState("");
   const [suburb, setSuburb] = useState("");
   const [service, setService] = useState("");
+  const [leadSource, setLeadSource] = useState("");
   const [details, setDetails] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -62,6 +65,7 @@ export function QuoteRequestForm() {
       `Phone: ${phone}`,
       `Suburb: ${suburb}`,
       `Service needed: ${service}`,
+      `How they found us: ${leadSource}`,
       "Project details:",
       details,
       "",
@@ -70,7 +74,7 @@ export function QuoteRequestForm() {
     return `mailto:${businessDetails.email}?subject=${encodeURIComponent(
       "Free painting quote request",
     )}&body=${encodeURIComponent(body)}`;
-  }, [details, email, name, phone, service, suburb]);
+  }, [details, email, leadSource, name, phone, service, suburb]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -83,7 +87,15 @@ export function QuoteRequestForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, phone, suburb, service, details }),
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          suburb,
+          service,
+          leadSource,
+          details,
+        }),
       });
       const data = (await response.json()) as { message?: string; setupHint?: string };
 
@@ -95,7 +107,7 @@ export function QuoteRequestForm() {
         );
       }
 
-      trackQuoteFormSuccess(service, suburb);
+      trackQuoteFormSuccess(service, suburb, leadSource);
       setStatus("sent");
       setMessage(data.message || "Your quote request has been sent.");
       setName("");
@@ -103,11 +115,12 @@ export function QuoteRequestForm() {
       setPhone("");
       setSuburb("");
       setService("");
+      setLeadSource("");
       setDetails("");
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Unable to send the quote request.");
-      trackQuoteEmailFallback(service, suburb);
+      trackQuoteEmailFallback(service, suburb, leadSource);
       window.setTimeout(() => {
         window.location.href = fallbackEmailHref;
       }, 600);
@@ -161,6 +174,21 @@ export function QuoteRequestForm() {
             placeholder="Chatswood"
             value={suburb}
           />
+        </label>
+        <label className="grid gap-2 text-sm font-semibold text-ink sm:col-span-2">
+          How did you find us?
+          <select
+            className="rounded-md border border-ink/15 px-4 py-3 font-normal outline-none focus:border-eucalyptus"
+            onChange={(event) => setLeadSource(event.target.value)}
+            value={leadSource}
+          >
+            <option value="">Select an option</option>
+            <option>Google Search</option>
+            <option>Google Maps</option>
+            <option>ChatGPT Search</option>
+            <option>Recommendation or referral</option>
+            <option>Other</option>
+          </select>
         </label>
         <label className="grid gap-2 text-sm font-semibold text-ink sm:col-span-2">
           Service

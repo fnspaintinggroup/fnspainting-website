@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 const path = "/services/ceiling-repainting";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Ceiling Repainting & Restoration Sydney | F&S Painting",
+  title: "Ceiling Repainting & Restoration Sydney",
   description:
     "Ceiling repainting and restoration in Sydney for peeling paint, stains, moisture damage, mould-affected coatings, ornate ceilings, patching, and smooth finishes.",
   path,

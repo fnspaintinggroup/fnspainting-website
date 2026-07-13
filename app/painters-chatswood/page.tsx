@@ -34,6 +34,11 @@ const chatswoodFaqs = [
       "Yes. We handle interior walls, ceilings, trims, doors, exterior facades, eaves, fascia, gutters, fences, decks, strata areas, and commercial painting work.",
   },
   {
+    question: "Can you paint a Chatswood apartment or unit?",
+    answer:
+      "Yes. We repaint Chatswood apartments and units, including ceilings, walls, doors, windows, trims, and skirting boards. We can also discuss access, lift use, furniture protection, timing, and strata requirements before work starts.",
+  },
+  {
     question: "Do you work around strata or business access requirements?",
     answer:
       "Yes. For strata and commercial properties, we can discuss access, timing, protection, staging, and clean-up so the painting work is practical for residents, tenants, staff, and visitors.",
@@ -123,9 +128,9 @@ const trustHighlights = [
 ];
 
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Chatswood | Licensed House & Commercial Painters",
+  title: "Painters Chatswood | Licensed & Insured, Free Quote",
   description:
-    "Licensed and insured painters in Chatswood for house, interior, exterior, strata and commercial painting. Dulux paint, local projects, Google reviews and free quotes.",
+    "Chatswood painters for houses, apartments, strata and commercial properties. Licensed and insured, using Dulux for interiors, ceilings, doors and trim. Free quotes.",
   path: "/painters-chatswood",
   image: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
 });
@@ -146,7 +151,7 @@ export default function PaintersChatswoodPage() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Painters Chatswood | Licensed House and Commercial Painters",
+        name: "Painters Chatswood | Licensed and Insured, Free Quote",
         description:
           "Licensed and insured painters for house, strata, commercial, interior, exterior, and ceiling painting in Chatswood and the North Shore.",
         breadcrumb: {
@@ -344,6 +349,44 @@ export default function PaintersChatswoodPage() {
               <p className="mt-4 font-semibold leading-6 text-ink">{item}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section
+        className="bg-mist"
+        eyebrow="Apartments And Units"
+        title="Chatswood apartment and unit painting"
+        intro="For Chatswood units and apartments, F&S Painting can prepare and repaint whole interiors or selected rooms with a clear scope and tidy protection plan."
+      >
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="space-y-5 text-base leading-7 text-ink/72">
+            <p>
+              Common unit repainting work includes ceilings, walls, doors,
+              windows, trims, and skirting boards. We can discuss whether the
+              property is occupied, vacant, tenanted, or preparing for sale.
+            </p>
+            <p>
+              Before painting, we check access, lift use, strata requirements,
+              furniture and floor protection, surface repairs, and the right
+              Dulux paint system for each area.
+            </p>
+            <Link
+              href="/painting-gallery/chatswood-apartment-interior-repaint"
+              className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+            >
+              View a Chatswood apartment painting example
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
+          </div>
+          <div className="relative min-h-72 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
+            <Image
+              src="/images/projects/chatswood-apartment-living-room-finish.jpg"
+              alt="Chatswood apartment living room after interior repainting by F&S Painting"
+              fill
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </Section>
 

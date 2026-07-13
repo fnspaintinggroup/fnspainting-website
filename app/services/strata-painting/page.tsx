@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 const path = "/services/strata-painting";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Strata Painting Sydney | F&S Painting",
+  title: "Strata Painting Sydney",
   description:
     "Licensed strata painters in Sydney for common areas, hallways, stairwells, lobbies, facades, balconies, and planned maintenance painting.",
   path,
