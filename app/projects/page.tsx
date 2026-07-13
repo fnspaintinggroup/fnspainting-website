@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Paintbrush } from "lucide-react";
+import { PageIntroHero } from "@/components/PageIntroHero";
 import { getProjectList, toAbsoluteUrl } from "@/lib/cms";
 import { pageMetadata, siteUrl } from "@/lib/seo";
 
@@ -73,19 +74,20 @@ export default async function ProjectsPage() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <section className="bg-ink px-5 py-16 text-white sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-            B/A
-          </p>
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
-            Painting Before &amp; After
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
+      <PageIntroHero
+        eyebrow="B/A"
+        title={<>Painting Before &amp; After</>}
+        description={
+          <>
             Real before and after examples for ceiling restoration, interior
             painting, exterior repainting, commercial painting, and strata work
             across Sydney.
-          </p>
+          </>
+        }
+        image="/images/page-heroes/before-after-hero.jpg"
+        imageAlt="Protected interior painting work site prepared by F&S Painting"
+        imagePosition="center 55%"
+      >
           <Link
             href="/painters-chatswood"
             className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
@@ -93,8 +95,7 @@ export default async function ProjectsPage() {
             View licensed painters in Chatswood
             <ArrowRight aria-hidden="true" size={18} />
           </Link>
-        </div>
-      </section>
+      </PageIntroHero>
 
       <section className="bg-linen py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { PageIntroHero } from "@/components/PageIntroHero";
 import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
 import { getSelectedReviews } from "@/lib/cms";
@@ -18,20 +19,19 @@ export default async function ReviewsPage() {
 
   return (
     <>
-      <section className="bg-ink px-5 py-16 text-white sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-            Reviews
-          </p>
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
-            Customer reviews from Sydney painting projects
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
+      <PageIntroHero
+        eyebrow="Reviews"
+        title="Customer reviews from Sydney painting projects"
+        description={
+          <>
             View F&amp;S Painting Services on Google, read more Google reviews, and see selected
             customer reviews from the website CMS or Google Business Profile API.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+        image="/images/page-heroes/reviews-hero.jpg"
+        imageAlt="Large Sydney home exterior painted by F&S Painting"
+        imagePosition="center 52%"
+      />
       <Section title="What clients can expect">
         <Reviews reviews={reviews} />
         <Link

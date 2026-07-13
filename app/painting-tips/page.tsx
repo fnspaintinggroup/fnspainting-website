@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Tag } from "lucide-react";
+import { PageIntroHero } from "@/components/PageIntroHero";
 import { getBlogPosts, toAbsoluteUrl } from "@/lib/cms";
 import { pageMetadata, siteUrl } from "@/lib/seo";
 
@@ -49,20 +50,19 @@ export default async function PaintingTipsPage() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <section className="bg-ink px-5 py-16 text-white sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-            Painting Tips
-          </p>
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
-            Painting advice for Sydney homes and properties
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
+      <PageIntroHero
+        eyebrow="Painting Tips"
+        title="Painting advice for Sydney homes and properties"
+        description={
+          <>
             Cost guidance, interior paint finish advice, and preparation tips for ceiling repainting
             and restoration work.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+        image="/images/page-heroes/painting-tips-hero.jpg"
+        imageAlt="Detailed white interior painting around a staircase and decorative railing"
+        imagePosition="center 48%"
+      />
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-6 px-5 sm:px-6 md:grid-cols-3 lg:px-8">

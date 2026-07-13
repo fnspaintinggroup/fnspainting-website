@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, MessageSquareText, Phone } from "lucide-react";
+import { PageIntroHero } from "@/components/PageIntroHero";
 import { QuoteRequestForm } from "@/components/QuoteRequestForm";
 import { businessDetails, formatAddress } from "@/lib/business";
 import { pageMetadata } from "@/lib/seo";
@@ -14,20 +15,19 @@ export const metadata: Metadata = pageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-ink px-5 py-16 text-white sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-            Contact
-          </p>
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
-            Get a free painting quote
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
+      <PageIntroHero
+        eyebrow="Contact"
+        title="Get a free painting quote"
+        description={
+          <>
             Tell F&amp;S Painting what you need painted, where the property is located, and your
             preferred timing.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+        image="/images/page-heroes/contact-hero.jpg"
+        imageAlt="Customer comparing paint colour samples for a painting consultation"
+        imagePosition="center 46%"
+      />
       <section className="py-14 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="space-y-4">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FaqSection } from "@/components/FaqSection";
+import { PageIntroHero } from "@/components/PageIntroHero";
 import { Section } from "@/components/Section";
 import { faqSchema, serviceFaqs } from "@/lib/faqs";
 import { services } from "@/lib/site-data";
@@ -34,19 +35,19 @@ export default async function ServicesPage() {
           __html: JSON.stringify(faqSchema(serviceFaqs, "/services")),
         }}
       />
-      <section className="bg-ink px-5 py-16 text-white sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-            Services
-          </p>
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
-            Professional painting services across Sydney
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
+      <PageIntroHero
+        eyebrow="Services"
+        title="Professional painting services across Sydney"
+        description={
+          <>
             F&amp;S Painting handles careful preparation, neat application, and
-            practical guidance for residential, strata, and commercial
-            properties.
-          </p>
+            practical guidance for residential, strata, and commercial properties.
+          </>
+        }
+        image="/images/page-heroes/services-hero.jpg"
+        imageAlt="Bright finished living and dining room painted by F&S Painting"
+        imagePosition="center 58%"
+      >
           <Link
             href="/painters-chatswood"
             className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
@@ -54,8 +55,7 @@ export default async function ServicesPage() {
             Painters Chatswood - local quotes and B/A photos
             <ArrowRight aria-hidden="true" size={18} />
           </Link>
-        </div>
-      </section>
+      </PageIntroHero>
       <Section
         eyebrow="About us"
         title="Experienced Sydney painters who treat your property with care"
