@@ -292,7 +292,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   <dd className="mt-2 text-ink/72">
                     {new Intl.DateTimeFormat("en-AU", {
                       year: "numeric",
-                      month: "short",
+                      month:
+                        project.slug === "mona-vale-heritage-interior-repaint"
+                          ? "short"
+                          : "long",
                       day: "numeric",
                     }).format(new Date(project.completionDate))}
                   </dd>
