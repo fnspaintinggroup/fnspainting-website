@@ -156,6 +156,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         <p key={paragraph}>{paragraph}</p>
                       ))}
                     </div>
+                    {section.image ? (
+                      <figure className="mt-6">
+                        <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-mist shadow-sm sm:aspect-[4/3]">
+                          <Image
+                            src={section.image.src}
+                            alt={section.image.alt}
+                            fill
+                            sizes="(min-width: 1024px) 768px, 100vw"
+                            className="object-cover"
+                          />
+                        </div>
+                        {section.image.caption ? (
+                          <figcaption className="mt-3 text-sm leading-6 text-ink/60">
+                            {section.image.caption}
+                          </figcaption>
+                        ) : null}
+                      </figure>
+                    ) : null}
                     {section.bullets ? (
                       <ul className="mt-5 list-disc space-y-2 pl-6 text-base leading-7 text-ink/72">
                         {section.bullets.map((item) => (

@@ -2,6 +2,11 @@ export type BlogSection = {
   heading: string;
   paragraphs: string[];
   bullets?: string[];
+  image?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
   table?: {
     caption: string;
     headers: string[];
@@ -192,37 +197,43 @@ const baseBlogPosts: BlogPost[] = [
     ],
   },
   {
-    title: "How Much Does House Painting Cost in Sydney?",
+    title: "How Much Does House Painting Cost in Sydney? (2026 Guide)",
     slug: "house-painting-cost-sydney",
     date: "2026-02-18",
+    updatedDate: "2026-07-14",
     category: "Painting Costs",
     featuredImage: "/images/projects/carlingford-front-driveway-finish.jpg",
     imageAlt: "Carlingford house exterior after professional repainting by F&S Painting",
     excerpt:
-      "House painting costs in Sydney depend on property size, surface condition, access, preparation, paint type, and whether the work is interior, exterior, or both.",
-    seoTitle: "How Much Does House Painting Cost in Sydney? | F&S Painting",
+      "Sydney house painting costs vary with preparation, surfaces, access, and scope. Compare 2026 interior price ranges, a real Willoughby example, and what a clear quote should include.",
+    seoTitle: "House Painting Cost Sydney: 2026 Price Guide",
     seoDescription:
-      "Learn what affects house painting costs in Sydney, including preparation, property size, access, paint systems, and quote details.",
+      "Sydney house painting cost guide with 2026 interior price ranges, a real Willoughby example, quote inclusions, timing, preparation and free quote advice.",
     body: [
       {
-        heading: "What affects the cost of house painting?",
+        heading: "A practical starting budget for Sydney house painting",
         paragraphs: [
-          "The biggest cost drivers are the size of the area, the condition of the surfaces, the amount of preparation required, and whether scaffolding, repairs, stain blocking, or mould treatment is needed.",
-          "Interior painting is usually more predictable than exterior work because weather, access, timber condition, and previous coating failure can all change the preparation needed outside.",
+          "If you have started collecting quotes to repaint your Sydney home, you may have noticed that prices can differ by thousands of dollars. The difference is rarely just the price of paint. Surface condition, preparation, ceilings, doors, windows, trims, access, furniture, colour changes, and the expected finish all affect the work involved.",
+          "For professional interior painting, a useful early 2026 budget is about $15-$45 per square metre. Straightforward work with sound surfaces may sit near the lower end. Repairs, several colours, high ceilings, detailed timberwork, or difficult access usually move the project higher.",
+          "A complete three-bedroom interior repaint commonly needs a broader working budget of about $4,500-$9,000, depending on exactly what is included. These are indicative Australian-dollar ranges, not fixed rates or an online quote. A final price should be based on the property and a clearly written scope.",
+        ],
+        link: {
+          href: "/services/interior-painting",
+          label: "View our interior painting service",
+        },
+      },
+      {
+        heading: "Interior and exterior costs need different assessments",
+        paragraphs: [
+          "Interior work is usually easier to budget by room or group of surfaces. Exterior work can vary more because height, weather exposure, timber condition, render, peeling coatings, access equipment, and previous coating failure can change the preparation substantially.",
+          "The detailed table and Willoughby example below focus on interior painting because that scope can be compared more clearly. Exterior areas should be inspected separately rather than added using one generic square-metre rate.",
         ],
       },
       {
-        heading: "Why preparation matters",
+        heading: "Why preparation matters to both price and finish",
         paragraphs: [
-          "A cheaper quote can become expensive if the preparation is rushed. Cleaning, sanding, patching, sealing, and choosing the right paint system all affect how long the finish lasts.",
-          "For ceilings, water stains or mould marks should be assessed before repainting. F&S Painting can include ceiling repainting or mould-damaged ceiling restoration in the quote scope when needed.",
-        ],
-      },
-      {
-        heading: "How to get a clearer quote",
-        paragraphs: [
-          "Share photos, room dimensions, access notes, and whether you need walls, trims, doors, ceilings, or exterior areas painted. The more accurate the brief, the easier it is to prepare a useful quote.",
-          "If you are planning a repaint, start with the F&S Painting services page or request a free quote with details about your Sydney property.",
+          "Preparation may include floor and furniture protection, cleaning, filling, sanding, gap filling, sealing stains, spot priming, and treating bare surfaces with the correct primer. A home with clean, sound walls is faster to repaint than one with peeling coatings, water marks, loose paint, old repairs, or years of wear.",
+          "Paint cannot fix active leaks, unstable plaster, or unresolved moisture. Those causes should be corrected before the final coating system is applied. A detailed quote should state what preparation has been allowed for so the customer can compare like with like.",
         ],
       },
     ],
@@ -619,10 +630,175 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
   ],
 };
 
+const blogPostAdditionOverrides: Record<string, BlogSection[]> = {
+  "house-painting-cost-sydney": [
+    {
+      heading: "Interior painting prices in Sydney at a glance",
+      paragraphs: [
+        "The following figures are indicative 2026 budget ranges in Australian dollars. They combine published Australian cost guidance with the type of scope F&S Painting sees in Sydney. Every property still needs to be assessed individually.",
+        "Published guides use different measurement methods. Some calculate wall area, some include ceilings, and some quote by room or property type. Always confirm what the measurement and price include before comparing two numbers.",
+      ],
+      table: {
+        caption: "All prices are indicative AUD ranges. Confirm whether GST is included in each written quote.",
+        headers: ["Interior painting scope", "Indicative budget range", "What changes the price"],
+        rows: [
+          ["Interior painting per square metre", "$15-$45 per m2", "Preparation, coats, colours, and measurement method."],
+          ["Standard bedroom, walls only", "$500-$900", "Wall condition, colour change, and furniture."],
+          ["Standard bedroom, including ceiling and trims", "$900-$1,400", "Doors, windows, skirtings, and repairs."],
+          ["Master bedroom", "$1,400-$1,900", "Room size, wardrobes, windows, and detailed timberwork."],
+          ["Living room, walls only", "$700-$1,500", "Room size, access, and preparation."],
+          ["Living room, fully painted", "$1,600-$2,500", "Ceiling, doors, windows, trims, and multiple colours."],
+          ["Open-plan living, dining, and kitchen", "$3,500-$6,500", "Ceiling area, cabinetry protection, and room height."],
+          ["Full two-bedroom apartment interior", "$3,500-$6,000", "Included surfaces, condition, strata access, and furniture."],
+          ["Full three-bedroom house interior", "$4,500-$9,000", "Preparation, ceilings, doors, windows, trims, and detail."],
+        ],
+      },
+    },
+    {
+      heading: "A real F&S Painting cost example from Willoughby",
+      paragraphs: [
+        "A recent F&S Painting project involved repainting a three-bedroom townhouse in Willoughby. The agreed scope included walls, ceilings, doors, and skirting boards throughout the property.",
+        "The home had a loft-style upper bedroom connected to an open stairwell. Changes in ceiling height, multiple corners and edges, and restricted access around the stairs required more setup, protection, and detailed cutting-in than a standard flat room.",
+        "The final invoice was $8,500, and a team of two painters completed the work in seven days. This sits toward the upper part of the general three-bedroom range because it was a complete repaint rather than walls only, and the loft and stairwell added detailed access work.",
+        "Another three-bedroom home may cost less when surfaces are sound and only the main wall areas are included. It may cost more when there are high ceilings, damaged surfaces, many windows, ornate details, strong colour changes, or difficult access.",
+      ],
+      image: {
+        src: "/images/painting-tips/willoughby-loft-interior-publish.png",
+        alt: "Loft-style upper bedroom and open stairwell painted by F&S Painting in Willoughby",
+        caption:
+          "The Willoughby townhouse included a loft-style upper level and open stairwell, which required additional access, protection, and detailed edge work.",
+      },
+      link: {
+        href: "/painters-willoughby",
+        label: "See F&S Painting services in Willoughby",
+      },
+    },
+    {
+      heading: "Why quotes for the same house can differ by thousands",
+      paragraphs: [
+        "When homeowners receive very different quotes, the cause is usually a difference in scope, preparation, labour, access, or assumptions. Floor area is not the same as paintable area, and the number of bedrooms alone does not define the work.",
+        "Standard-height rooms are generally faster than stairwells, voids, and double-height areas. Apartment lift bookings, loading rules, limited parking, strata working hours, occupied rooms, and narrow entries can also affect the time required.",
+        "Colour changes matter as well. Covering navy, red, forest green, or another strong colour with white may need a suitable primer and additional finish coats. The coating system should suit the product, colour, coverage, and existing condition.",
+      ],
+      bullets: [
+        "Preparation: protection, cleaning, filling, sanding, gap filling, sealing, and priming.",
+        "Access: ceiling height, stairwells, voids, lifts, parking, and strata restrictions.",
+        "Coverage: colour changes, stains, bare surfaces, and the coating system required.",
+        "Scope: walls only versus ceilings, doors, windows, frames, and skirtings.",
+        "Occupancy: empty properties are usually easier to access than furnished homes.",
+      ],
+    },
+    {
+      heading: "Doors, windows, trims, furniture, and products change the scope",
+      paragraphs: [
+        "Walls cover a large area efficiently. Doors, frames, skirtings, and windows need more detailed sanding, masking, brushwork, edge work, and drying time. A walls-only quote is not comparable with a full repaint that includes ceilings and timberwork.",
+        "An empty property usually gives painters clearer access. A furnished or occupied home needs more movement, protection, staged working areas, and coordination. Homeowners can often reduce disruption by clearing small items, pictures, and fragile belongings after discussing the plan with the painter.",
+        "The selected paint range, sheen, and surface system affect material cost and performance. F&S Painting commonly works with Dulux systems, matching ceiling, wall, and trim products to the room and surface. Premium paint still needs a clean, sound, dry, and correctly prepared surface.",
+      ],
+    },
+    {
+      heading: "What a proper interior painting quote should include",
+      paragraphs: [
+        "A useful written quote should make the scope understandable before work starts. A single line such as 'paint interior' is not enough to compare prices fairly.",
+        "Ask the painter to separate essential preparation from optional work. If the budget needs to be reduced, adjusting or staging the scope is usually safer than removing preparation that the finish depends on.",
+      ],
+      bullets: [
+        "The rooms and exact surfaces being painted.",
+        "Whether walls, ceilings, doors, windows, frames, and skirtings are included.",
+        "The preparation and minor repairs allowed for.",
+        "The paint brand, product range, finish, and colour assumptions.",
+        "Furniture, floor, and fixture protection.",
+        "Access equipment, parking, loading, or strata requirements.",
+        "Exclusions, optional work, estimated timing, and GST treatment.",
+      ],
+      link: {
+        href: "/contact#quote-name",
+        label: "Request a detailed free painting quote",
+      },
+    },
+    {
+      heading: "NSW contract and deposit checks for larger residential work",
+      paragraphs: [
+        "NSW Fair Trading states that residential building work worth more than $5,000, including GST, requires a written contract. It also states that the maximum deposit is 10 percent for both small and large home building contracts.",
+        "Customers should check that the contractor name and licence number match the contract and keep the written scope, price, and payment terms. Requirements can change, so confirm the current rules with NSW Fair Trading when planning the work.",
+      ],
+      link: {
+        href: "https://www.fairtrading.nsw.gov.au/trades-and-businesses/construction-and-trade-essentials/guide-to-home-building-contracts",
+        label: "Check the current NSW Fair Trading contract guide",
+      },
+    },
+    {
+      heading: "Is the cheapest painting quote always risky?",
+      paragraphs: [
+        "Not automatically. A lower quote may be reasonable if it covers fewer surfaces, simpler preparation, an empty property, or a different schedule. The important question is whether the quotes describe the same job.",
+        "A dramatically lower quote deserves closer checking when it claims to include the same preparation, surfaces, products, and coats. Compare the written scope line by line, confirm GST, and ask how unexpected repairs or additional coats will be handled.",
+        "The best comparison is not simply the highest or lowest total. Consider the written scope, communication, licence, insurance, relevant project experience, and what happens if the condition differs from the original assumptions.",
+      ],
+    },
+    {
+      heading: "Can you paint the room yourself and save money?",
+      paragraphs: [
+        "For one standard bedroom with sound walls, DIY painting can be a reasonable option. Allow time for protection, preparation, cutting in, rolling, drying, cleanup, tools, and suitable products.",
+        "DIY becomes more difficult across a whole home. Ceilings, glossy doors, windows, trims, patched walls, stairwells, and strong colour changes tend to show differences in preparation and technique.",
+        "Common problems include roller marks on ceilings, drips on doors and trims, paint on hinges or handles, rough patches, uneven cutting-in, and new coatings that do not adhere to glossy surfaces. If the home is being prepared for sale, rent, or immediate occupation, also consider the value of your time and the cost of correcting a rushed result.",
+      ],
+    },
+    {
+      heading: "How long does an interior repaint take?",
+      paragraphs: [
+        "Timing depends on the same factors that affect price. As a practical planning guide, a straightforward bedroom may take one to two days, a two-bedroom apartment may take about three to five days, and a complete three-bedroom home may take about five to eight days.",
+        "These are planning ranges, not promises. Significant repairs, high ceilings, occupied rooms, detailed timberwork, several colours, or drying requirements can add time. The Willoughby townhouse took two painters seven days for walls, ceilings, doors, and skirtings throughout.",
+      ],
+      link: {
+        href: "/projects",
+        label: "View completed F&S Painting projects",
+      },
+    },
+    {
+      heading: "House painting cost questions Sydney homeowners ask",
+      paragraphs: [
+        "Do painters normally supply the paint? Usually, paint and standard materials are included in a professional quote. Confirm the brand, product range, finish, colours, and quantity assumptions in writing.",
+        "What paint brand does F&S Painting use? F&S Painting commonly uses Dulux systems. The correct product depends on the room, surface condition, washability, moisture, existing coating, and desired appearance.",
+        "Is winter suitable for interior painting in Sydney? Interior work can be completed throughout the year. Cooler conditions may increase drying time in some rooms, so ventilation, product instructions, and the coating schedule still need to be considered.",
+        "Can I receive a price from photos? Photos and a detailed description can support an early estimate. For a complete home, older surfaces, detailed doors and windows, high ceilings, or visible damage, an on-site inspection is usually the best way to prepare a reliable written quote.",
+        "How often should interiors be repainted? There is no fixed schedule. Consider repainting when marks no longer clean off, coatings are peeling, repairs are obvious, or colours and whites have become tired or uneven.",
+      ],
+    },
+    {
+      heading: "Get an exact painting price for your Sydney home",
+      paragraphs: [
+        "Every property is different, and all figures in this guide are budget ranges. The final price depends on the surfaces, preparation, access, coating system, and agreed finish.",
+        "F&S Painting provides free, itemised painting quotes across Sydney, with a strong local focus on Chatswood, Willoughby, and the North Shore. Send photos and a short scope for an early discussion, or arrange an on-site inspection for a detailed project.",
+        "Caleb, owner of F&S Painting, has around 20 years of Sydney painting experience. F&S Painting provides licensed and insured residential, strata, and commercial painting services. NSW contractor licence: 478497C.",
+      ],
+      link: {
+        href: "/contact#quote-name",
+        label: "Get a free itemised quote",
+      },
+    },
+    {
+      heading: "Sources and price note",
+      paragraphs: [
+        "Published cost guides use national averages and different definitions of paintable area. F&S Painting's figures are practical Sydney budget ranges informed by current work, including the real Willoughby example above. They are not a substitute for a property-specific written quote.",
+        "Price ranges were reviewed against the hipages interior house painting cost guide. NSW contract and deposit information was checked against the official NSW Fair Trading home building contracts guide on 14 July 2026.",
+      ],
+      link: {
+        href: "https://hipages.com.au/article/cost_to_paint_interior_of_house",
+        label: "View the referenced interior painting cost guide",
+      },
+    },
+  ],
+};
+
 export const blogPosts: BlogPost[] = baseBlogPosts.map((post) => ({
   ...post,
   updatedDate: "2026-07-14",
-  body: [...post.body, ...(blogPostAdditions[post.slug] ?? [])],
+  body: [
+    ...post.body,
+    ...(blogPostAdditionOverrides[post.slug] ??
+      blogPostAdditions[post.slug] ??
+      []),
+  ],
 }));
 
 export function getBlogPost(slug: string) {

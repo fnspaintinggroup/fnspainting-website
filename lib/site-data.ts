@@ -146,10 +146,10 @@ export const reviews = [
 export const tips = [
   {
     slug: "house-painting-cost-sydney",
-    title: "How Much Does House Painting Cost in Sydney?",
+    title: "How Much Does House Painting Cost in Sydney? (2026 Guide)",
     excerpt:
-      "What affects house painting costs in Sydney and how to prepare for a clearer quote.",
-    readTime: "4 min read",
+      "2026 interior price ranges, a real Willoughby cost example, quote inclusions, timing, and preparation advice.",
+    readTime: "11 min read",
   },
   {
     slug: "best-paint-finish-interior-walls-sydney",
