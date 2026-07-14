@@ -42,18 +42,27 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const shouldLoadAnalytics = process.env.VERCEL_ENV === "production";
+
   return (
     <html lang="en-AU">
       <body className="pb-20 font-sans antialiased md:pb-0">
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-K75HEPTK9Y" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-K75HEPTK9Y');
-          `}
-        </Script>
+        {shouldLoadAnalytics ? (
+          <>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-K75HEPTK9Y"
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-K75HEPTK9Y');
+              `}
+            </Script>
+          </>
+        ) : null}
         <script
           type="application/ld+json"
           suppressHydrationWarning
@@ -62,7 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main className="site-photo-brightness">{children}</main>
         <Footer />
-        <AnalyticsEvents />
+        {shouldLoadAnalytics ? <AnalyticsEvents /> : null}
         <BackToTopButton />
         <MobileStickyCta />
       </body>
