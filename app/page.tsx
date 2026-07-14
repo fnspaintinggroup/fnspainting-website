@@ -173,13 +173,22 @@ export default async function Home() {
                 ),
               )}
             </div>
-            <Link
-              href="/painters-chatswood"
-              className="mt-7 inline-flex items-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
-            >
-              Painters Chatswood - Free Quote
-              <ArrowRight aria-hidden="true" size={18} />
-            </Link>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href="/painters-chatswood"
+                className="inline-flex items-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
+              >
+                Painters Chatswood - Free Quote
+                <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+              <Link
+                href="/painters-willoughby"
+                className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/25 bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-mist"
+              >
+                Painters Willoughby
+                <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+            </div>
           </div>
           <div className="relative min-h-72 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
             <Image

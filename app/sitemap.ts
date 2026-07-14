@@ -22,12 +22,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/contact",
     "/privacy-policy",
     "/painters-chatswood",
+    "/painters-willoughby",
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: contentLastModified,
     changeFrequency:
-      route === "" || route === "/painters-chatswood" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route === "/painters-chatswood" ? 0.9 : 0.8,
+      route === "" || route.startsWith("/painters-") ? "weekly" : "monthly",
+    priority: route === "" ? 1 : route.startsWith("/painters-") ? 0.9 : 0.8,
   }));
 
   const [blogPosts, projects, galleryCollections] = await Promise.all([

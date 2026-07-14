@@ -321,6 +321,16 @@ export default function PaintersChatswoodPage() {
             <Star aria-hidden="true" size={18} />
           </a>
         </div>
+        <p className="mt-7 text-base leading-7 text-ink/72">
+          Looking for a quote in the neighbouring area? See our{" "}
+          <Link
+            href="/painters-willoughby"
+            className="font-semibold text-eucalyptus hover:text-clay"
+          >
+            painters in Willoughby
+          </Link>{" "}
+          page and completed local project examples.
+        </p>
       </Section>
 
       <Section

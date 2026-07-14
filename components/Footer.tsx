@@ -169,7 +169,10 @@ export function Footer() {
           <p className="mb-4 font-semibold">Service Areas - All of Sydney wide</p>
           <div className="flex flex-wrap gap-2">
             {serviceAreas.map((area, index) => {
-              const galleryHref = getGalleryAreaHref(area);
+              const galleryHref =
+                area === "Willoughby"
+                  ? "/painters-willoughby"
+                  : getGalleryAreaHref(area);
               const className =
                 "rounded border border-white/15 px-2.5 py-1 text-[11px] leading-5 text-white/70";
 
@@ -177,7 +180,11 @@ export function Footer() {
                 <Link
                   key={`${area}-${index}`}
                   href={galleryHref}
-                  aria-label={`View ${area} painting gallery`}
+                  aria-label={
+                    area === "Willoughby"
+                      ? "View painters in Willoughby"
+                      : `View ${area} painting gallery`
+                  }
                   className={`${className} transition hover:border-gumleaf hover:bg-white/5 hover:text-white`}
                 >
                   {area}

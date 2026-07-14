@@ -94,6 +94,16 @@ export default async function ServicesPage() {
                 service page.
               </p>
               <p>
+                Customers in the next priority area can view our{" "}
+                <Link
+                  href="/painters-willoughby"
+                  className="font-semibold text-eucalyptus hover:text-clay"
+                >
+                  painters in Willoughby
+                </Link>{" "}
+                page with local interior, exterior, and ceiling project examples.
+              </p>
+              <p>
                 Most quality finishes begin with proper surface preparation.
                 That is why we make sure every job is prepared carefully before
                 painting, so the final result looks better and lasts longer.
