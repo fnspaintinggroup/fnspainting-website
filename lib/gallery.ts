@@ -54,7 +54,6 @@ export const galleryImages: GalleryImage[] = [
       "A location gallery showing careful interior painting across a Mona Vale heritage home's formal rooms, hallway, bedroom, and attic spaces.",
     suburb: "Mona Vale, NSW",
     collectionSlug: "mona-vale-heritage-interior-painting",
-    projectSlug: "mona-vale-heritage-interior-repaint",
     photoCount: 12,
   },
   {
@@ -400,7 +399,7 @@ export const galleryCollections: GalleryCollection[] = [
     coverImage: "/images/projects/mona-vale-heritage-gallery-09.png",
     coverAlt:
       "Mona Vale heritage rooms with ornate archway after professional interior painting",
-    completionDate: "2026-07-14",
+    completionDate: "2026-03-18",
     images: [
       {
         title: "Formal Living Room and Archway",

@@ -30,7 +30,7 @@ export const projects: Project[] = [
       "A heritage-style Mona Vale home was carefully prepared and repainted across the formal rooms, hallway, bedroom, and attic spaces while preserving its ornate ceilings, arches, timber floors, and detailed joinery.",
     materials:
       "Interior acrylic wall paint, ceiling paint, trim enamel, patching compound, sanding materials, masking protection, and detailed surface preparation.",
-    completionDate: "2026-07-14",
+    completionDate: "2026-03-18",
     seoTitle: "Interior Painting Mona Vale | F&S Painting",
     seoDescription:
       "Before and after interior painting in a Mona Vale heritage home by F&S Painting, including careful preparation and repainting around ornate ceilings, arches, timber floors, and trim.",
