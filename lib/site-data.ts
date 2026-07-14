@@ -203,6 +203,7 @@ export const serviceAreas = [
   "Liverpool",
   "Manly",
   "Marrickville",
+  "Mona Vale",
   "Mosman",
   "North Sydney",
   "Parramatta",

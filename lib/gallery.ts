@@ -46,6 +46,18 @@ export const galleryCategories: GalleryCategory[] = [
 
 export const galleryImages: GalleryImage[] = [
   {
+    title: "Mona Vale Heritage Interior Painting",
+    category: "Interior Painting",
+    image: "/images/projects/mona-vale-heritage-gallery-09.png",
+    alt: "Mona Vale heritage rooms after professional interior painting by F&S Painting",
+    caption:
+      "A location gallery showing careful interior painting across a Mona Vale heritage home's formal rooms, hallway, bedroom, and attic spaces.",
+    suburb: "Mona Vale, NSW",
+    collectionSlug: "mona-vale-heritage-interior-painting",
+    projectSlug: "mona-vale-heritage-interior-repaint",
+    photoCount: 12,
+  },
+  {
     title: "Parramatta Medical Centre Interior Painting",
     category: "Commercial Painting",
     image: "/images/projects/parramatta-medical-centre-reception.jpg",
@@ -378,6 +390,104 @@ export const featuredGalleryImages = featuredGalleryTitles
   .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    slug: "mona-vale-heritage-interior-painting",
+    title: "Mona Vale Heritage Interior Painting",
+    category: "Interior Painting",
+    suburb: "Mona Vale, NSW",
+    summary:
+      "Careful interior repainting across a Mona Vale heritage home's formal rooms, hallway, bedroom, and attic spaces, preserving ornate ceilings, arches, timber floors, and detailed joinery.",
+    coverImage: "/images/projects/mona-vale-heritage-gallery-09.png",
+    coverAlt:
+      "Mona Vale heritage rooms with ornate archway after professional interior painting",
+    completionDate: "2026-07-14",
+    images: [
+      {
+        title: "Formal Living Room and Archway",
+        image: "/images/projects/mona-vale-heritage-gallery-01.png",
+        alt: "Mona Vale heritage living room and archway after interior painting",
+        caption:
+          "Formal living room walls, trims, and heritage archway presented after interior painting.",
+      },
+      {
+        title: "Interior Room and Door Detail",
+        image: "/images/projects/mona-vale-heritage-gallery-02.png",
+        alt: "Mona Vale interior room after wall and trim painting",
+        caption:
+          "Interior wall, trim, and door finishes shown in the Mona Vale home.",
+      },
+      {
+        title: "Attic Room Painting",
+        image: "/images/projects/mona-vale-heritage-gallery-03.png",
+        alt: "Mona Vale attic room after interior painting",
+        caption:
+          "Attic room walls, ceilings, and trim completed with a clean, even finish.",
+      },
+      {
+        title: "Attic Landing Painting",
+        image: "/images/projects/mona-vale-heritage-gallery-04.png",
+        alt: "Mona Vale attic landing after interior painting",
+        caption:
+          "Upper landing and attic details refreshed while preserving the original layout.",
+      },
+      {
+        title: "Living Room Window Detail",
+        image: "/images/projects/mona-vale-heritage-gallery-05.png",
+        alt: "Mona Vale heritage living room after interior repainting",
+        caption:
+          "Living room walls, window joinery, and detailed ceiling features after repainting.",
+      },
+      {
+        title: "Heritage Hallway",
+        image: "/images/projects/mona-vale-heritage-gallery-06.png",
+        alt: "Mona Vale heritage hallway after interior painting",
+        caption:
+          "Hallway walls, trim, and arched opening presented after interior painting.",
+      },
+      {
+        title: "Formal Room and Bay Window",
+        image: "/images/projects/mona-vale-heritage-gallery-07.png",
+        alt: "Mona Vale formal room after interior repainting",
+        caption:
+          "Formal room walls, bay-window joinery, and decorative ceiling detail after repainting.",
+      },
+      {
+        title: "Formal Room Archway",
+        image: "/images/projects/mona-vale-heritage-gallery-08.png",
+        alt: "Mona Vale formal room after interior painting",
+        caption:
+          "Formal room walls and heritage archway with the finished interior presentation.",
+      },
+      {
+        title: "Heritage Room Overview",
+        image: "/images/projects/mona-vale-heritage-gallery-09.png",
+        alt: "Mona Vale heritage rooms and ornate archway after interior painting",
+        caption:
+          "Wide view of the connected formal rooms, ornate archway, and timber flooring.",
+      },
+      {
+        title: "Bedroom Painting",
+        image: "/images/projects/mona-vale-heritage-gallery-10.png",
+        alt: "Mona Vale bedroom after interior painting",
+        caption:
+          "Bedroom wall, ceiling, and trim surfaces finished around the original joinery.",
+      },
+      {
+        title: "Front Hallway Painting",
+        image: "/images/projects/mona-vale-heritage-gallery-11.png",
+        alt: "Mona Vale hallway after interior painting",
+        caption:
+          "Long hallway walls, trim, and feature doorway presented after repainting.",
+      },
+      {
+        title: "Ceiling Preparation and Protection",
+        image: "/images/projects/mona-vale-heritage-gallery-12.png",
+        alt: "Mona Vale heritage room during ceiling preparation and furniture protection",
+        caption:
+          "Careful ceiling preparation and furniture protection before final interior finishing.",
+      },
+    ],
+  },
   {
     slug: "dee-why-strata-common-areas",
     title: "Dee Why Strata Common Area Painting",
