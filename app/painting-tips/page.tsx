@@ -37,6 +37,7 @@ export default async function PaintingTipsPage() {
       "@type": "BlogPosting",
       headline: post.title,
       datePublished: post.date,
+      dateModified: post.updatedDate ?? post.date,
       url: `${siteUrl}/painting-tips/${post.slug}`,
       description: post.excerpt,
       image: toAbsoluteUrl(post.featuredImage),

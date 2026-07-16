@@ -60,7 +60,7 @@ const priorityAreaLinks: Record<string, string> = {
   Chatswood: "/painters-chatswood",
   Willoughby: "/painters-willoughby",
   Artarmon: "/painting-gallery/chatswood-commercial-reception-finish",
-  Lindfield: "/painting-gallery/lindfield-exterior-window-and-trim-repaint",
+  Lindfield: "/projects/east-lindfield-exterior-house-repaint",
 };
 
 export function Footer() {
@@ -203,7 +203,9 @@ export function Footer() {
                   href={galleryHref}
                   aria-label={
                     priorityAreaLinks[area]
-                      ? `View verified painting work in ${area}`
+                      ? area === "Lindfield"
+                        ? "View verified painting work in East Lindfield"
+                        : `View verified painting work in ${area}`
                       : `View ${area} painting gallery`
                   }
                   className={`${className} transition hover:border-gumleaf hover:bg-white/5 hover:text-white`}
