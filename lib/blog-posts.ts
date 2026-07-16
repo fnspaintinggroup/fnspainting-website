@@ -1031,7 +1031,7 @@ const blogPostAdditionOverrides: Record<string, BlogSection[]> = {
 
 export const blogPosts: BlogPost[] = baseBlogPosts.map((post) => ({
   ...post,
-  updatedDate: "2026-07-14",
+  updatedDate: post.updatedDate ?? "2026-07-14",
   body: [
     ...post.body,
     ...(blogPostAdditionOverrides[post.slug] ??
