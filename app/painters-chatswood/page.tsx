@@ -127,10 +127,48 @@ const trustHighlights = [
   "Quality Dulux paint systems",
 ];
 
+const chatswoodServices = [
+  {
+    name: "Interior Painting",
+    description:
+      "Walls, ceilings, doors, trims and complete apartment or house interiors.",
+    href: "/services/interior-painting",
+    image: "/images/projects/chatswood-apartment-living-room-finish.jpg",
+    imageAlt:
+      "Chatswood apartment living room after interior painting by F&S Painting",
+  },
+  {
+    name: "Exterior Painting",
+    description:
+      "Facades, eaves, fascia, doors and exterior details prepared for Sydney weather.",
+    href: "/services/exterior-painting",
+    image: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
+    imageAlt: "Chatswood house facade after exterior painting by F&S Painting",
+  },
+  {
+    name: "Commercial Painting",
+    description:
+      "Offices, receptions and workspaces painted around practical access requirements.",
+    href: "/services/commercial-painting",
+    image: "/images/projects/chatswood-office-boardroom-finish.jpg",
+    imageAlt:
+      "Chatswood office boardroom after commercial painting by F&S Painting",
+  },
+  {
+    name: "Strata Painting",
+    description:
+      "Common areas and shared surfaces with staged access and tidy preparation.",
+    href: "/services/strata-painting",
+    image: "/images/projects/dee-why-strata-hallway-after.jpg",
+    imageAlt:
+      "Nearby North Shore strata hallway after painting by F&S Painting",
+  },
+];
+
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Chatswood | Licensed & Insured, Free Quote",
+  title: "Painters Chatswood | Free On-Site Quote",
   description:
-    "Chatswood painters for houses, apartments, strata and commercial properties. Licensed and insured, using Dulux for interiors, ceilings, doors and trim. Free quotes.",
+    "Local Chatswood painters for houses, apartments, strata and offices. Licensed and insured, careful preparation, Dulux finishes and free on-site quotes.",
   path: "/painters-chatswood",
   image: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
 });
@@ -151,9 +189,9 @@ export default function PaintersChatswoodPage() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Painters Chatswood | Licensed and Insured, Free Quote",
+        name: "Painters Chatswood | Free On-Site Quote | F&S Painting",
         description:
-          "Licensed and insured painters for house, strata, commercial, interior, exterior, and ceiling painting in Chatswood and the North Shore.",
+          "Local Chatswood painters for houses, apartments, strata and offices. Licensed and insured, careful preparation, Dulux finishes and free on-site quotes.",
         breadcrumb: {
           "@id": `${pageUrl}#breadcrumb`,
         },
@@ -257,7 +295,7 @@ export default function PaintersChatswoodPage() {
                 href="/contact#quote-name"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
               >
-                Get a Free Quote
+                Free On-Site Quote
                 <ArrowRight aria-hidden="true" size={18} />
               </Link>
               <a
@@ -265,7 +303,7 @@ export default function PaintersChatswoodPage() {
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
               >
                 <Phone aria-hidden="true" size={18} />
-                Call {businessDetails.phones[0]}
+                Call Now
               </a>
             </div>
             <div className="mt-8 grid gap-3 text-sm text-white/85 sm:grid-cols-2">
@@ -331,6 +369,47 @@ export default function PaintersChatswoodPage() {
           </Link>{" "}
           page and completed local project examples.
         </p>
+      </Section>
+
+      <Section
+        className="bg-mist"
+        eyebrow="Choose A Service"
+        title="Painting services in Chatswood"
+        intro="Choose the service that matches your property, then view the scope, preparation approach, and completed work before requesting a free on-site quote."
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {chatswoodServices.map((service) => (
+            <article
+              key={service.name}
+              className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-white">
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h2 className="text-xl font-semibold text-ink">
+                  {service.name}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-ink/70">
+                  {service.description}
+                </p>
+                <Link
+                  href={service.href}
+                  className="mt-5 inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+                >
+                  View Service
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
       </Section>
 
       <Section
@@ -410,7 +489,7 @@ export default function PaintersChatswoodPage() {
           {featuredProjects.map((project) => (
             <Link
               key={project.slug}
-              href={`/projects#${project.slug}`}
+              href={`/projects/${project.slug}`}
               className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">

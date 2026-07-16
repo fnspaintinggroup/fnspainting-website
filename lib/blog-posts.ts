@@ -34,12 +34,146 @@ export type BlogPost = {
 
 const baseBlogPosts: BlogPost[] = [
   {
+    title: "How Much Does Apartment Painting Cost in Chatswood?",
+    slug: "apartment-painting-cost-chatswood",
+    date: "2026-07-16",
+    category: "Painting Costs",
+    featuredImage:
+      "/images/projects/chatswood-apartment-living-room-finish.jpg",
+    imageAlt:
+      "Chatswood apartment living room after interior repainting by F&S Painting",
+    excerpt:
+      "A practical 2026 guide to Chatswood apartment painting costs, inclusions, preparation, access, strata rules and free on-site quotes.",
+    seoTitle: "Apartment Painting Cost Chatswood | 2026 Guide",
+    seoDescription:
+      "Chatswood apartment painting cost guide for 2026, including rooms, ceilings, doors, preparation, furniture, parking, lifts and strata access.",
+    body: [
+      {
+        heading: "A practical 2026 apartment painting budget",
+        paragraphs: [
+          "A full two-bedroom apartment interior is often budgeted at about $3,500-$6,000, while professional interior painting commonly starts around $15-$45 per square metre. These are broad planning ranges, not fixed F&S Painting prices. The final cost depends on the surfaces included, their condition, preparation, access and the finish required.",
+          "Bedroom count is only a starting point. Two apartments with the same floor plan can require very different work when one needs walls only and the other includes ceilings, doors, windows, skirting boards, repairs and a major colour change.",
+        ],
+        table: {
+          caption:
+            "Indicative 2026 AUD ranges only. A site inspection is needed for a property-specific written quote.",
+          headers: [
+            "Apartment painting scope",
+            "Indicative range",
+            "Main variables",
+          ],
+          rows: [
+            [
+              "Interior painting per square metre",
+              "$15-$45 per m2",
+              "Preparation, coats, colours and measurement method.",
+            ],
+            [
+              "Standard bedroom, walls only",
+              "$500-$900",
+              "Wall condition, colour change and furniture.",
+            ],
+            [
+              "Bedroom including ceiling and trims",
+              "$900-$1,400",
+              "Doors, windows, skirtings and repairs.",
+            ],
+            [
+              "Full two-bedroom apartment interior",
+              "$3,500-$6,000",
+              "Included surfaces, condition, access and furniture.",
+            ],
+          ],
+        },
+        link: {
+          href: "/painting-tips/house-painting-cost-sydney",
+          label: "Compare the full Sydney house painting cost guide",
+        },
+      },
+      {
+        heading: "What is included in the apartment painting scope?",
+        paragraphs: [
+          "A quote should state whether it covers walls only or also ceilings, doors, window frames, trims and skirting boards. Detailed timberwork takes more sanding, masking, brushwork and drying time than broad wall areas.",
+          "Ask for each room and surface to be listed. This makes it easier to compare quotes that may otherwise appear to cover the same apartment.",
+        ],
+        bullets: [
+          "Bedrooms, living areas, hallways and kitchen-side walls.",
+          "Ceilings, including bathrooms and moisture-prone areas where suitable.",
+          "Doors, frames, windows, trims and skirting boards.",
+          "The paint range, sheen, colours and number of coats allowed for.",
+        ],
+        link: {
+          href: "/services/interior-painting",
+          label: "View the interior painting service",
+        },
+      },
+      {
+        heading: "Preparation can change the price substantially",
+        paragraphs: [
+          "Cracks, dents, peeling coatings, water marks and previous repairs need to be assessed before painting. The scope may include patching, sanding, gap filling, stain treatment or primer before finish coats are applied.",
+          "Strong colour changes can also need a suitable primer or extra coats. A lower quote that allows for minimal preparation is not directly comparable with a detailed repainting scope.",
+        ],
+      },
+      {
+        heading: "Furniture and protection affect the working time",
+        paragraphs: [
+          "An empty apartment generally provides faster access. An occupied or furnished apartment needs more planning to move and protect furniture, cover floors and fittings, and keep safe working zones available.",
+          "Before work begins, discuss which small items should be removed and which larger pieces can be shifted and protected. This keeps the quote and schedule clearer.",
+        ],
+      },
+      {
+        heading: "Chatswood parking, lifts and building access",
+        paragraphs: [
+          "Apartment access can influence labour and timing. Limited parking, loading restrictions, lift bookings, long travel from the vehicle, building working hours and restricted entries may all add setup and movement time.",
+          "Share the building manager's access instructions before the quote is finalised. Confirm parking, lift protection, loading areas, permitted hours and how waste or equipment must move through common areas.",
+        ],
+      },
+      {
+        heading: "Check strata approval and building rules early",
+        paragraphs: [
+          "Interior repainting inside a lot may still be subject to building access, noise, lift or contractor requirements. The owner or resident should confirm the current rules with the strata manager before booking dates.",
+          "F&S Painting can discuss practical staging and protection, but the building's approval process and house rules remain specific to each property.",
+        ],
+      },
+      {
+        heading: "A real Chatswood apartment repaint example",
+        paragraphs: [
+          "This completed Chatswood apartment project included preparation and repainting across living areas, a bedroom, the entry and kitchen-side walls, plus bathroom ceiling details. The photos show the type of room-by-room scope that should be identified before a price is confirmed.",
+          "For an accurate figure, request a free on-site quote so the actual surfaces, repairs, furniture, access and strata conditions can be checked together.",
+        ],
+        image: {
+          src: "/images/projects/chatswood-apartment-bedroom-finish.jpg",
+          alt: "Chatswood apartment bedroom after interior painting by F&S Painting",
+          caption:
+            "A completed Chatswood apartment bedroom repaint from the same verified local project.",
+        },
+        link: {
+          href: "/projects/chatswood-apartment-interior-repaint",
+          label: "View the completed Chatswood apartment project",
+        },
+      },
+      {
+        heading: "Apartment painting cost questions",
+        paragraphs: [
+          "Can a price be confirmed from photos? Photos can help with an early discussion, but an on-site inspection is usually more reliable when the scope includes a whole apartment, repairs, detailed timberwork, furniture or building access requirements.",
+          "Does the estimate include GST? Confirm this in every written quote, along with the rooms, surfaces, preparation, paint products, exclusions and payment terms.",
+          "Are these fixed F&S Painting prices? No. The ranges are for early budgeting only. The written quote depends on the actual apartment and agreed scope.",
+        ],
+        link: {
+          href: "/painters-chatswood",
+          label: "Request a Chatswood free on-site quote",
+        },
+      },
+    ],
+  },
+  {
     title: "Why a Free On-Site Painting Quote Matters in Sydney",
     slug: "free-quote-with-on-site-consultation",
     date: "2025-04-11",
     category: "Painting Quote",
     featuredImage: "/images/projects/painting-quote-onsite-consultation.jpg",
-    imageAlt: "Bright living room after interior painting and presentation work by F&S Painting",
+    imageAlt:
+      "Bright living room after interior painting and presentation work by F&S Painting",
     excerpt:
       "A free on-site painting quote helps Sydney homeowners get clearer pricing, better planning, and a more reliable start to their painting project.",
     seoTitle: "Free On-Site Painting Quote Sydney | F&S Painting",
@@ -123,7 +257,8 @@ const baseBlogPosts: BlogPost[] = [
     date: "2026-06-18",
     category: "Home Painting",
     featuredImage: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
-    imageAlt: "Freshly painted house exterior showing improved street appeal by F&S Painting",
+    imageAlt:
+      "Freshly painted house exterior showing improved street appeal by F&S Painting",
     excerpt:
       "A fresh, well-chosen paint job can improve first impressions, help a home feel better maintained, and support stronger buyer interest.",
     seoTitle: "Does Painting Affect Home Value? | F&S Painting",
@@ -166,7 +301,8 @@ const baseBlogPosts: BlogPost[] = [
     date: "2026-01-15",
     category: "Home Painting",
     featuredImage: "/images/projects/carlingford-exterior-after.jpg",
-    imageAlt: "Freshly painted home exterior after professional repainting by F&S Painting",
+    imageAlt:
+      "Freshly painted home exterior after professional repainting by F&S Painting",
     excerpt:
       "A well-painted home can brighten everyday living, protect surfaces, and create a polished finish without a major renovation.",
     seoTitle: "Why Painting Your Home Is Worth It | F&S Painting",
@@ -203,7 +339,8 @@ const baseBlogPosts: BlogPost[] = [
     updatedDate: "2026-07-14",
     category: "Painting Costs",
     featuredImage: "/images/projects/carlingford-front-driveway-finish.jpg",
-    imageAlt: "Carlingford house exterior after professional repainting by F&S Painting",
+    imageAlt:
+      "Carlingford house exterior after professional repainting by F&S Painting",
     excerpt:
       "Sydney house painting costs vary with preparation, surfaces, access, and scope. Compare 2026 interior price ranges, a real Willoughby example, and what a clear quote should include.",
     seoTitle: "House Painting Cost Sydney: 2026 Price Guide",
@@ -243,11 +380,14 @@ const baseBlogPosts: BlogPost[] = [
     slug: "best-paint-finish-interior-walls-sydney",
     date: "2026-03-07",
     category: "Interior Painting",
-    featuredImage: "/images/projects/north-bridge-dining-feature-wall-finish.jpg",
-    imageAlt: "North Bridge dining area after professional interior painting by F&S Painting",
+    featuredImage:
+      "/images/projects/north-bridge-dining-feature-wall-finish.jpg",
+    imageAlt:
+      "North Bridge dining area after professional interior painting by F&S Painting",
     excerpt:
       "The best interior paint finish depends on light, room use, cleaning needs, and how much surface texture you want to hide.",
-    seoTitle: "Best Paint Finish for Interior Walls in Sydney Homes | F&S Painting",
+    seoTitle:
+      "Best Paint Finish for Interior Walls in Sydney Homes | F&S Painting",
     seoDescription:
       "Compare matte, low sheen, satin, and washable interior paint finishes for Sydney homes, apartments, and renovation projects.",
     body: [
@@ -280,10 +420,12 @@ const baseBlogPosts: BlogPost[] = [
     date: "2026-04-12",
     category: "Ceiling Restoration",
     featuredImage: "/images/projects/mould-ceiling-case-2-after.jpg",
-    imageAlt: "Bathroom ceiling restored with a smooth clean repaint after moisture damage",
+    imageAlt:
+      "Bathroom ceiling restored with a smooth clean repaint after moisture damage",
     excerpt:
       "Mould-damaged ceilings should not simply be painted over. Moisture, staining, surface damage, and ventilation issues need to be addressed first.",
-    seoTitle: "How to Fix Mould-Damaged Ceilings Before Painting | F&S Painting",
+    seoTitle:
+      "How to Fix Mould-Damaged Ceilings Before Painting | F&S Painting",
     seoDescription:
       "Find out how mould-damaged ceilings should be prepared before repainting, including moisture checks, cleaning, sealing, and finish restoration.",
     body: [
@@ -328,7 +470,10 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
         "After the inspection, the quote should reflect the agreed areas and known condition of the property. Read the inclusions and exclusions rather than checking only the final total. If something is unclear, ask for it to be confirmed in writing before accepting the work.",
         "A quote is also a planning document. Keep it with colour selections, access arrangements, preferred dates, and any photos of existing damage. Clear records help the customer and painter begin with the same expectations and reduce avoidable changes once work is underway.",
       ],
-      link: { href: "/contact#quote-name", label: "Book a free on-site consultation" },
+      link: {
+        href: "/contact#quote-name",
+        label: "Book a free on-site consultation",
+      },
     },
   ],
   "does-painting-affect-home-value": [
@@ -367,12 +512,16 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
       ],
     },
     {
-      heading: "Ask for a pre-sale painting scope, not just a whole-house price",
+      heading:
+        "Ask for a pre-sale painting scope, not just a whole-house price",
       paragraphs: [
         "Tell the painter that the work is for sale preparation and discuss the expected listing date. A useful quote can separate essential work, high-impact optional work, and areas that are already presentable. This makes it easier to control the budget without leaving the most visible problems untreated.",
         "F&S Painting can inspect Sydney homes and apartments, explain the preparation required, and provide a clear scope for walls, ceilings, doors, windows, trims, and exterior areas. The final decision remains yours, and there is no need to repaint sound areas simply to make the quote larger.",
       ],
-      link: { href: "/contact#quote-name", label: "Request a pre-sale painting quote" },
+      link: {
+        href: "/contact#quote-name",
+        label: "Request a pre-sale painting quote",
+      },
     },
     {
       heading: "Frequently asked questions about painting before sale",
@@ -446,13 +595,30 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
         "There is no single Sydney painting rate that applies to every home. The table below summarises broad Australian market guides published in 2026. These figures are not fixed F&S Painting prices and should only be used for early budgeting before the property and scope are inspected.",
       ],
       table: {
-        caption: "Indicative Australian market ranges in AUD. Final Sydney quotes vary with scope, condition, access, products, and GST.",
+        caption:
+          "Indicative Australian market ranges in AUD. Final Sydney quotes vary with scope, condition, access, products, and GST.",
         headers: ["Work type", "Published guide range", "Important limits"],
         rows: [
-          ["Interior painting", "$20-$45+ per m²", "Lower ranges generally assume simple surfaces and limited preparation."],
-          ["Exterior painting", "$15-$70+ per m²", "Material, height, access, weather exposure, and repairs can change the rate."],
-          ["Basic two-bedroom interior", "$2,500-$3,500", "A broad guide only; detailed doors, windows, trims, ceilings, repairs, or multiple colours add scope."],
-          ["Two-storey exterior", "$5,500-$20,000+", "Brick, render, timber, scaffolding, and coating failure create a wide range."],
+          [
+            "Interior painting",
+            "$20-$45+ per m²",
+            "Lower ranges generally assume simple surfaces and limited preparation.",
+          ],
+          [
+            "Exterior painting",
+            "$15-$70+ per m²",
+            "Material, height, access, weather exposure, and repairs can change the rate.",
+          ],
+          [
+            "Basic two-bedroom interior",
+            "$2,500-$3,500",
+            "A broad guide only; detailed doors, windows, trims, ceilings, repairs, or multiple colours add scope.",
+          ],
+          [
+            "Two-storey exterior",
+            "$5,500-$20,000+",
+            "Brick, render, timber, scaffolding, and coating failure create a wide range.",
+          ],
         ],
       },
       link: {
@@ -501,7 +667,10 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
         "Send the suburb, property type, number of rooms or exterior elevations, surfaces required, approximate timing, current condition, access notes, and clear photos. Mention ceilings, doors, windows, frames, skirtings, wardrobes, varnished surfaces, mould, stains, cracks, or peeling paint specifically.",
         "For detailed homes, older units, strata properties, and exterior projects, an on-site visit is usually the best next step. F&S Painting provides free quote consultations across Chatswood, the North Shore, and greater Sydney, with the final price based on the agreed scope rather than a generic online calculator.",
       ],
-      link: { href: "/contact#quote-name", label: "Request a detailed painting quote" },
+      link: {
+        href: "/contact#quote-name",
+        label: "Request a detailed painting quote",
+      },
     },
     {
       heading: "Painting cost questions Sydney homeowners often ask",
@@ -519,14 +688,35 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
         "Finish names vary slightly between paint ranges, but the practical choice is usually a balance between appearance, washability, moisture resistance, and how clearly the surface shows imperfections. The table below is a useful starting point rather than a substitute for checking the selected product data.",
       ],
       table: {
-        caption: "General guide only. Product specifications should be checked for the exact room and surface.",
+        caption:
+          "General guide only. Product specifications should be checked for the exact room and surface.",
         headers: ["Area", "Common finish", "Reason"],
         rows: [
-          ["Living rooms and bedrooms", "Washable matte or low sheen", "Soft appearance with practical cleaning options."],
-          ["Hallways and family rooms", "Low sheen", "Better resistance to regular contact and wiping."],
-          ["Kitchens and laundries", "Durable low sheen or satin", "More suitable for cleaning, splashes, and higher use."],
-          ["Ceilings", "Flat ceiling finish", "Limits glare and helps hide minor surface texture."],
-          ["Doors, frames, and skirtings", "Satin or semi-gloss enamel", "Harder wearing and easier to clean at contact points."],
+          [
+            "Living rooms and bedrooms",
+            "Washable matte or low sheen",
+            "Soft appearance with practical cleaning options.",
+          ],
+          [
+            "Hallways and family rooms",
+            "Low sheen",
+            "Better resistance to regular contact and wiping.",
+          ],
+          [
+            "Kitchens and laundries",
+            "Durable low sheen or satin",
+            "More suitable for cleaning, splashes, and higher use.",
+          ],
+          [
+            "Ceilings",
+            "Flat ceiling finish",
+            "Limits glare and helps hide minor surface texture.",
+          ],
+          [
+            "Doors, frames, and skirtings",
+            "Satin or semi-gloss enamel",
+            "Harder wearing and easier to clean at contact points.",
+          ],
         ],
       },
     },
@@ -557,7 +747,10 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
         "Most homes do not need a different finish in every room. A practical schedule might use one washable wall product through bedrooms and living areas, a more durable option in high-use or moisture-prone spaces, flat ceiling paint, and one enamel system for doors and timberwork.",
         "Consistency simplifies touch-ups and creates a more deliberate look across connected spaces. During an on-site quote, F&S Painting can assess the light, existing surface condition, cleaning needs, and preferred appearance before recommending a Dulux paint system.",
       ],
-      link: { href: "/services/interior-painting", label: "View interior painting services" },
+      link: {
+        href: "/services/interior-painting",
+        label: "View interior painting services",
+      },
     },
     {
       heading: "Frequently asked questions about interior paint finishes",
@@ -613,7 +806,10 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
         "Share the room type, approximate affected area, how long the problem has been visible, whether it changes after rain or shower use, any known leak repairs, and clear photos in natural light. Mention peeling, soft plaster, odour, cracking, and previous repaint attempts.",
         "F&S Painting can assess preparation and repainting after the moisture cause has been addressed. Where the condition appears outside normal painting work, we will recommend that the appropriate repair or remediation is completed before a coating quote proceeds.",
       ],
-      link: { href: "/contact#quote-name", label: "Request a ceiling assessment and quote" },
+      link: {
+        href: "/contact#quote-name",
+        label: "Request a ceiling assessment and quote",
+      },
     },
     {
       heading: "Frequently asked questions about mould-damaged ceilings",
@@ -639,18 +835,59 @@ const blogPostAdditionOverrides: Record<string, BlogSection[]> = {
         "Published guides use different measurement methods. Some calculate wall area, some include ceilings, and some quote by room or property type. Always confirm what the measurement and price include before comparing two numbers.",
       ],
       table: {
-        caption: "All prices are indicative AUD ranges. Confirm whether GST is included in each written quote.",
-        headers: ["Interior painting scope", "Indicative budget range", "What changes the price"],
+        caption:
+          "All prices are indicative AUD ranges. Confirm whether GST is included in each written quote.",
+        headers: [
+          "Interior painting scope",
+          "Indicative budget range",
+          "What changes the price",
+        ],
         rows: [
-          ["Interior painting per square metre", "$15-$45 per m2", "Preparation, coats, colours, and measurement method."],
-          ["Standard bedroom, walls only", "$500-$900", "Wall condition, colour change, and furniture."],
-          ["Standard bedroom, including ceiling and trims", "$900-$1,400", "Doors, windows, skirtings, and repairs."],
-          ["Master bedroom", "$1,400-$1,900", "Room size, wardrobes, windows, and detailed timberwork."],
-          ["Living room, walls only", "$700-$1,500", "Room size, access, and preparation."],
-          ["Living room, fully painted", "$1,600-$2,500", "Ceiling, doors, windows, trims, and multiple colours."],
-          ["Open-plan living, dining, and kitchen", "$3,500-$6,500", "Ceiling area, cabinetry protection, and room height."],
-          ["Full two-bedroom apartment interior", "$3,500-$6,000", "Included surfaces, condition, strata access, and furniture."],
-          ["Full three-bedroom house interior", "$4,500-$9,000", "Preparation, ceilings, doors, windows, trims, and detail."],
+          [
+            "Interior painting per square metre",
+            "$15-$45 per m2",
+            "Preparation, coats, colours, and measurement method.",
+          ],
+          [
+            "Standard bedroom, walls only",
+            "$500-$900",
+            "Wall condition, colour change, and furniture.",
+          ],
+          [
+            "Standard bedroom, including ceiling and trims",
+            "$900-$1,400",
+            "Doors, windows, skirtings, and repairs.",
+          ],
+          [
+            "Master bedroom",
+            "$1,400-$1,900",
+            "Room size, wardrobes, windows, and detailed timberwork.",
+          ],
+          [
+            "Living room, walls only",
+            "$700-$1,500",
+            "Room size, access, and preparation.",
+          ],
+          [
+            "Living room, fully painted",
+            "$1,600-$2,500",
+            "Ceiling, doors, windows, trims, and multiple colours.",
+          ],
+          [
+            "Open-plan living, dining, and kitchen",
+            "$3,500-$6,500",
+            "Ceiling area, cabinetry protection, and room height.",
+          ],
+          [
+            "Full two-bedroom apartment interior",
+            "$3,500-$6,000",
+            "Included surfaces, condition, strata access, and furniture.",
+          ],
+          [
+            "Full three-bedroom house interior",
+            "$4,500-$9,000",
+            "Preparation, ceilings, doors, windows, trims, and detail.",
+          ],
         ],
       },
     },
@@ -689,7 +926,8 @@ const blogPostAdditionOverrides: Record<string, BlogSection[]> = {
       ],
     },
     {
-      heading: "Doors, windows, trims, furniture, and products change the scope",
+      heading:
+        "Doors, windows, trims, furniture, and products change the scope",
       paragraphs: [
         "Walls cover a large area efficiently. Doors, frames, skirtings, and windows need more detailed sanding, masking, brushwork, edge work, and drying time. A walls-only quote is not comparable with a full repaint that includes ceilings and timberwork.",
         "An empty property usually gives painters clearer access. A furnished or occupied home needs more movement, protection, staged working areas, and coordination. Homeowners can often reduce disruption by clearing small items, pictures, and fragile belongings after discussing the plan with the painter.",

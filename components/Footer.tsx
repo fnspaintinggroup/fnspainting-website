@@ -32,12 +32,11 @@ const footerLogos = [
   },
 ];
 
-type SocialLink =
-  {
-    label: string;
-    href: string;
-    image: string;
-  };
+type SocialLink = {
+  label: string;
+  href: string;
+  image: string;
+};
 
 const socialLinks: SocialLink[] = [
   {
@@ -57,6 +56,13 @@ const socialLinks: SocialLink[] = [
   },
 ];
 
+const priorityAreaLinks: Record<string, string> = {
+  Chatswood: "/painters-chatswood",
+  Willoughby: "/painters-willoughby",
+  Artarmon: "/painting-gallery/chatswood-commercial-reception-finish",
+  Lindfield: "/painting-gallery/lindfield-exterior-window-and-trim-repaint",
+};
+
 export function Footer() {
   return (
     <footer className="bg-ink text-white">
@@ -74,23 +80,33 @@ export function Footer() {
             </span>
             <div>
               <p className="text-lg font-bold">{businessDetails.name}</p>
-              <p className="text-sm text-white/60">Professional painters in Sydney, NSW</p>
+              <p className="text-sm text-white/60">
+                Professional painters in Sydney, NSW
+              </p>
             </div>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-6 text-white/70">
-            Clean, reliable painting services for homes, strata properties, and commercial spaces
-            across Sydney.
+            Clean, reliable painting services for homes, strata properties, and
+            commercial spaces across Sydney.
           </p>
           <div className="mt-5 space-y-2 text-sm text-white/70">
-            <a className="flex items-center gap-2 hover:text-white" href={`mailto:${businessDetails.email}`}>
+            <a
+              className="flex items-center gap-2 hover:text-white"
+              href={`mailto:${businessDetails.email}`}
+            >
               <Mail aria-hidden="true" size={16} /> {businessDetails.email}
             </a>
             <p className="flex items-center gap-2">
-              <Phone aria-hidden="true" size={16} /> {businessDetails.phones.join(" / ")}
+              <Phone aria-hidden="true" size={16} />{" "}
+              {businessDetails.phones.join(" / ")}
             </p>
             {businessDetails.addresses.map((address) => (
               <p key={address.label} className="flex items-start gap-2">
-                <MapPin aria-hidden="true" className="mt-0.5 shrink-0" size={16} />
+                <MapPin
+                  aria-hidden="true"
+                  className="mt-0.5 shrink-0"
+                  size={16}
+                />
                 <span>
                   {address.label}: {formatAddress(address)}
                 </span>
@@ -118,8 +134,9 @@ export function Footer() {
               ))}
             </div>
             <p className="mt-3 max-w-sm text-xs leading-5 text-white/50">
-              F&amp;S Painting is operated by F&amp;S Painting Group, a licensed and insured
-              painting company serving Chatswood, the North Shore, and Sydney.
+              F&amp;S Painting is operated by F&amp;S Painting Group, a licensed
+              and insured painting company serving Chatswood, the North Shore,
+              and Sydney.
             </p>
           </div>
         </div>
@@ -127,7 +144,11 @@ export function Footer() {
           <p className="mb-4 font-semibold">Pages</p>
           <div className="grid gap-2 text-sm text-white/70">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-white">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="hover:text-white"
+              >
                 {item.label}
               </Link>
             ))}
@@ -166,13 +187,13 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="mb-4 font-semibold">Service Areas - All of Sydney wide</p>
+          <p className="mb-4 font-semibold">
+            Service Areas - All of Sydney wide
+          </p>
           <div className="flex flex-wrap gap-2">
             {serviceAreas.map((area, index) => {
               const galleryHref =
-                area === "Willoughby"
-                  ? "/painters-willoughby"
-                  : getGalleryAreaHref(area);
+                priorityAreaLinks[area] ?? getGalleryAreaHref(area);
               const className =
                 "rounded border border-white/15 px-2.5 py-1 text-[11px] leading-5 text-white/70";
 
@@ -181,8 +202,8 @@ export function Footer() {
                   key={`${area}-${index}`}
                   href={galleryHref}
                   aria-label={
-                    area === "Willoughby"
-                      ? "View painters in Willoughby"
+                    priorityAreaLinks[area]
+                      ? `View verified painting work in ${area}`
                       : `View ${area} painting gallery`
                   }
                   className={`${className} transition hover:border-gumleaf hover:bg-white/5 hover:text-white`}
@@ -199,8 +220,12 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/50">
-        &copy; {new Date().getFullYear()} {businessDetails.name}. Professional painting services in Sydney, NSW. {" "}
-        <Link href="/privacy-policy" className="underline underline-offset-4 hover:text-white">
+        &copy; {new Date().getFullYear()} {businessDetails.name}. Professional
+        painting services in Sydney, NSW.{" "}
+        <Link
+          href="/privacy-policy"
+          className="underline underline-offset-4 hover:text-white"
+        >
           Privacy Policy
         </Link>
       </div>

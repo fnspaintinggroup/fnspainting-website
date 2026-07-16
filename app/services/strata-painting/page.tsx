@@ -66,6 +66,12 @@ export default async function StrataPaintingPage() {
       ]}
       projects={relatedProjects}
       faqs={faqs}
+      localAreaLink={{
+        label: "Strata painters in Chatswood",
+        description:
+          "View our Chatswood service area for strata painting enquiries, access planning, careful preparation, and free on-site quotes.",
+        href: "/painters-chatswood",
+      }}
     />
   );
 }

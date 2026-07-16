@@ -325,6 +325,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   >
                     Painting services
                   </Link>
+                  {project.location.startsWith("Chatswood") ? (
+                    <Link
+                      href="/painters-chatswood"
+                      className="text-eucalyptus hover:text-clay"
+                    >
+                      View Chatswood painting services
+                    </Link>
+                  ) : null}
                   <Link
                     href="/painting-tips"
                     className="text-eucalyptus hover:text-clay"
@@ -343,7 +351,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             <aside className="h-fit rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-              <h2 className="text-lg font-semibold text-ink">More Before / After projects</h2>
+              <h2 className="text-lg font-semibold text-ink">
+                More Before / After projects
+              </h2>
               <div className="mt-4 grid gap-4">
                 {relatedProjects.map((related) => (
                   <Link

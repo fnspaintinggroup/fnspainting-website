@@ -145,6 +145,13 @@ export const reviews = [
 
 export const tips = [
   {
+    slug: "apartment-painting-cost-chatswood",
+    title: "How Much Does Apartment Painting Cost in Chatswood?",
+    excerpt:
+      "2026 apartment painting ranges, scope, preparation, access, strata rules and a real Chatswood example.",
+    readTime: "7 min read",
+  },
+  {
     slug: "house-painting-cost-sydney",
     title: "How Much Does House Painting Cost in Sydney? (2026 Guide)",
     excerpt:

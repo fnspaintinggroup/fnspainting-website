@@ -39,6 +39,11 @@ const exteriorFaqs = [
 
 const relatedProjects = projects
   .filter((project) => project.serviceType === "Exterior Painting")
+  .sort(
+    (a, b) =>
+      Number(b.location === "Chatswood, NSW") -
+      Number(a.location === "Chatswood, NSW"),
+  )
   .slice(0, 3);
 
 const pageUrl = `${siteUrl}/services/exterior-painting`;
@@ -173,6 +178,30 @@ export default function ExteriorPaintingPage() {
       </Section>
 
       <Section
+        className="bg-gumleaf"
+        eyebrow="Chatswood Service Area"
+        title="Exterior house painters in Chatswood"
+        intro="Explore Chatswood exterior house painting, verified local project photos, and free on-site quote information."
+      >
+        <div className="flex flex-wrap gap-4">
+          <Link
+            href="/painters-chatswood"
+            className="inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
+          >
+            Exterior house painters in Chatswood
+            <ArrowRight aria-hidden="true" size={17} />
+          </Link>
+          <Link
+            href="/projects/chatswood-exterior-gable-trim-repaint"
+            className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
+          >
+            View a Chatswood exterior repaint
+            <ArrowRight aria-hidden="true" size={17} />
+          </Link>
+        </div>
+      </Section>
+
+      <Section
         className="bg-mist"
         eyebrow="Related Before / After"
         title="Exterior painting examples"
@@ -182,7 +211,7 @@ export default function ExteriorPaintingPage() {
           {relatedProjects.map((project) => (
             <Link
               key={project.slug}
-              href={`/projects#${project.slug}`}
+              href={`/projects/${project.slug}`}
               className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">

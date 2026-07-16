@@ -27,6 +27,13 @@ type ServiceDetailPageProps = {
   heroImageAlt?: string;
   heroLayout?: "cover" | "contained-right";
   heroImagePosition?: string;
+  localAreaLink?: {
+    label: string;
+    description: string;
+    href: string;
+    projectHref?: string;
+    projectLabel?: string;
+  };
 };
 
 export function ServiceDetailPage({
@@ -47,6 +54,7 @@ export function ServiceDetailPage({
   heroImageAlt,
   heroLayout = "cover",
   heroImagePosition = "center",
+  localAreaLink,
 }: ServiceDetailPageProps) {
   const pageUrl = `${siteUrl}${path}`;
   const heroImage =
@@ -99,7 +107,9 @@ export function ServiceDetailPage({
             <div className="relative h-64 sm:h-80 lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[43%]">
               <Image
                 src={heroImage}
-                alt={heroImageAlt ?? `${name} completed by F&S Painting in Sydney`}
+                alt={
+                  heroImageAlt ?? `${name} completed by F&S Painting in Sydney`
+                }
                 fill
                 priority
                 className="object-cover object-center lg:object-contain lg:object-right"
@@ -141,7 +151,9 @@ export function ServiceDetailPage({
           <>
             <Image
               src={heroImage}
-              alt={heroImageAlt ?? `${name} completed by F&S Painting in Sydney`}
+              alt={
+                heroImageAlt ?? `${name} completed by F&S Painting in Sydney`
+              }
               fill
               priority
               className="object-cover"
@@ -150,33 +162,33 @@ export function ServiceDetailPage({
             />
             <div className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/68 to-ink/25" />
             <div className="relative mx-auto grid min-h-[68vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-              {eyebrow}
-            </p>
-            <h1 className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
-              {heading}
-            </h1>
-            <p className="mt-6 max-w-3xl text-base font-medium leading-7 text-white/88 sm:text-xl">
-              {intro}
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact#quote-name"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
-              >
-                {quoteLabel}
-                <ArrowRight aria-hidden="true" size={18} />
-              </Link>
-              <a
-                href={`tel:${businessDetails.phones[0].replaceAll(" ", "")}`}
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
-              >
-                <Phone aria-hidden="true" size={18} />
-                Call {businessDetails.phones[0]}
-              </a>
-            </div>
-          </div>
+              <div className="max-w-4xl">
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
+                  {eyebrow}
+                </p>
+                <h1 className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
+                  {heading}
+                </h1>
+                <p className="mt-6 max-w-3xl text-base font-medium leading-7 text-white/88 sm:text-xl">
+                  {intro}
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <Link
+                    href="/contact#quote-name"
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
+                  >
+                    {quoteLabel}
+                    <ArrowRight aria-hidden="true" size={18} />
+                  </Link>
+                  <a
+                    href={`tel:${businessDetails.phones[0].replaceAll(" ", "")}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
+                  >
+                    <Phone aria-hidden="true" size={18} />
+                    Call {businessDetails.phones[0]}
+                  </a>
+                </div>
+              </div>
             </div>
           </>
         )}
@@ -202,6 +214,34 @@ export function ServiceDetailPage({
         </Section>
       </div>
 
+      {localAreaLink ? (
+        <Section
+          className="bg-gumleaf"
+          eyebrow="Chatswood Service Area"
+          title={localAreaLink.label}
+          intro={localAreaLink.description}
+        >
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href={localAreaLink.href}
+              className="inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
+            >
+              {localAreaLink.label}
+              <ArrowRight aria-hidden="true" size={17} />
+            </Link>
+            {localAreaLink.projectHref && localAreaLink.projectLabel ? (
+              <Link
+                href={localAreaLink.projectHref}
+                className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
+              >
+                {localAreaLink.projectLabel}
+                <ArrowRight aria-hidden="true" size={17} />
+              </Link>
+            ) : null}
+          </div>
+        </Section>
+      ) : null}
+
       <Section
         className="bg-mist"
         eyebrow="Related Before / After"
@@ -212,7 +252,7 @@ export function ServiceDetailPage({
           {projects.map((project) => (
             <Link
               key={project.slug}
-              href={`/projects#${project.slug}`}
+              href={`/projects/${project.slug}`}
               className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">

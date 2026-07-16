@@ -40,6 +40,11 @@ export default async function CommercialPaintingPage() {
   const projects = await getProjectList();
   const relatedProjects = projects
     .filter((project) => project.serviceType === "Commercial Painting")
+    .sort(
+      (a, b) =>
+        Number(b.location === "Chatswood, NSW") -
+        Number(a.location === "Chatswood, NSW"),
+    )
     .slice(0, 3);
 
   return (
@@ -65,6 +70,14 @@ export default async function CommercialPaintingPage() {
       ]}
       projects={relatedProjects}
       faqs={faqs}
+      localAreaLink={{
+        label: "Commercial painters in Chatswood",
+        description:
+          "View our Chatswood service area for office, reception and commercial painting, free on-site quotes, and verified local work.",
+        href: "/painters-chatswood",
+        projectHref: "/projects/office-room-interior-painting-refresh",
+        projectLabel: "View a Chatswood office repaint",
+      }}
     />
   );
 }
