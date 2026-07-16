@@ -69,7 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
         />
         <Header />
-        <main className="site-photo-brightness">{children}</main>
+        <main className="site-photo-brightness pb-24 md:pb-0">{children}</main>
         <Footer />
         {shouldLoadAnalytics ? <AnalyticsEvents /> : null}
         <BackToTopButton />
