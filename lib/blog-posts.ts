@@ -37,6 +37,7 @@ const baseBlogPosts: BlogPost[] = [
     title: "How Much Does Apartment Painting Cost in Chatswood?",
     slug: "apartment-painting-cost-chatswood",
     date: "2026-07-16",
+    updatedDate: "2026-07-16",
     category: "Painting Costs",
     featuredImage:
       "/images/projects/chatswood-apartment-living-room-finish.jpg",
