@@ -7,6 +7,11 @@ export type Project = {
   afterImage: string;
   beforeImageAlt: string;
   afterImageAlt: string;
+  additionalImages?: Array<{
+    image: string;
+    alt: string;
+    label: "Before" | "After";
+  }>;
   description: string;
   materials: string;
   completionDate: string;
@@ -15,6 +20,38 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "Shed Exterior Repaint in Chatswood West",
+    slug: "chatswood-west-shed-exterior-repaint",
+    location: "Chatswood West, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/chatswood-west-shed-exterior-before.jpg",
+    afterImage: "/images/projects/chatswood-west-shed-exterior-after.jpg",
+    beforeImageAlt:
+      "Grey garden shed exterior and contrasting doors before painting in Chatswood West",
+    afterImageAlt:
+      "Garden shed exterior and doors after repainting with a clean light finish in Chatswood West",
+    additionalImages: [
+      {
+        image: "/images/projects/chatswood-west-shed-front-before.jpg",
+        alt: "Front view of the garden shed and doors before exterior painting in Chatswood West",
+        label: "Before",
+      },
+      {
+        image: "/images/projects/chatswood-west-shed-front-after.jpg",
+        alt: "Completed garden shed front and doors after exterior painting in Chatswood West",
+        label: "After",
+      },
+    ],
+    description:
+      "F&S Painting completed a small exterior repaint in Chatswood West, covering the front and right sides of a garden shed and both sides of its two doors. The project refreshed the grey exterior and contrasting doors with a clean, consistent light finish.",
+    materials:
+      "Project records confirm the painted scope; specific paint product and colour details are not published.",
+    completionDate: "2023-05-27",
+    seoTitle: "Shed Exterior Repaint Chatswood West | F&S Painting",
+    seoDescription:
+      "Before and after a Chatswood West shed exterior repaint by F&S Painting, including the front, right side, and both sides of two doors.",
+  },
   {
     title: "Mona Vale Heritage Interior Repaint",
     slug: "mona-vale-heritage-interior-repaint",

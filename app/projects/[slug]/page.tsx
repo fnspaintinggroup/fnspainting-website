@@ -92,6 +92,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       contentLocation: project.location,
       representativeOfPage: true,
     },
+    ...(project.additionalImages ?? []).map((image, index) => ({
+      "@type": "ImageObject",
+      "@id": `${projectUrl}#additional-image-${index + 1}`,
+      name: `${project.title} ${image.label.toLowerCase()} view ${index + 2}`,
+      caption: image.alt,
+      description: `${image.alt} in ${project.location}.`,
+      contentUrl: toAbsoluteUrl(image.image),
+      thumbnailUrl: toAbsoluteUrl(image.image),
+      contentLocation: project.location,
+      representativeOfPage: false,
+    })),
   ];
 
   const schema = {
@@ -257,6 +268,41 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
+        {project.additionalImages && project.additionalImages.length > 0 ? (
+          <section className="pb-10 sm:pb-14">
+            <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+              <h2 className="mb-6 text-2xl font-semibold text-ink">
+                Another view of the repaint
+              </h2>
+              <div className="grid overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft md:grid-cols-2">
+                {project.additionalImages.map((image) => (
+                  <figure key={image.image}>
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src={image.image}
+                        alt={image.alt}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                      <span
+                        className={`absolute left-4 top-4 rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-white ${
+                          image.label === "Before" ? "bg-ink" : "bg-eucalyptus"
+                        }`}
+                      >
+                        {image.label}
+                      </span>
+                    </div>
+                    <figcaption className="border-t border-ink/10 p-4 text-sm text-ink/65">
+                      {image.alt}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section className="pb-14 sm:pb-20">
           <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:px-8">
             <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
@@ -319,6 +365,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   scope.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
+                  {project.location.includes("Chatswood") ? (
+                    <Link
+                      href="/painters-chatswood"
+                      className="text-eucalyptus hover:text-clay"
+                    >
+                      Painters Chatswood
+                    </Link>
+                  ) : null}
+                  {project.serviceType.includes("Exterior") ? (
+                    <Link
+                      href="/services/exterior-painting"
+                      className="text-eucalyptus hover:text-clay"
+                    >
+                      Exterior painting
+                    </Link>
+                  ) : null}
                   <Link
                     href="/services"
                     className="text-eucalyptus hover:text-clay"
