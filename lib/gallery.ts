@@ -103,8 +103,8 @@ export const galleryImages: GalleryImage[] = [
   {
     title: "North Ryde Interior House Repaint",
     category: "Interior Painting",
-    image: "/images/projects/north-ryde-interior-after.jpg",
-    alt: "North Ryde home interior after professional repainting by F&S Painting",
+    image: "/images/projects/north-ryde-corner-wall-finish.jpg",
+    alt: "North Ryde corner wall and ceiling line after professional interior repainting by F&S Painting",
     caption:
       "A location gallery showing North Ryde interior painting finishes across walls, ceiling lines, stairwell, hallway, bedrooms, and landing areas.",
     suburb: "North Ryde, NSW",
@@ -319,19 +319,19 @@ export const galleryImages: GalleryImage[] = [
   {
     title: "Newington Exterior House Repaint",
     category: "Exterior Painting",
-    image: "/images/projects/newington-front-facade-after-final.jpg",
-    alt: "Newington front facade after exterior repainting by F&S Painting",
+    image: "/images/projects/newington-front-side-facade-finish.jpg",
+    alt: "Newington side facade after exterior repainting by F&S Painting",
     caption:
       "A location gallery showing Newington exterior house painting finishes across rear walls, patio areas, side elevations, boundary walls, and trim details.",
     suburb: "Newington, NSW",
     collectionSlug: "newington-exterior-house-repaint",
-    photoCount: 9,
+    photoCount: 8,
   },
   {
     title: "Newington Interior Repaint",
     category: "Interior Painting",
-    image: "/images/projects/newington-interior-living-after.jpg",
-    alt: "Newington living area after professional interior repainting by F&S Painting",
+    image: "/images/projects/newington-interior-window-finish.jpg",
+    alt: "Newington window wall and trim after professional interior repainting by F&S Painting",
     caption:
       "A location gallery showing Newington interior painting finishes across living, dining, kitchen, window, and bedroom areas completed on 5 November 2018.",
     suburb: "Newington, NSW",
@@ -1202,9 +1202,9 @@ export const galleryCollections: GalleryCollection[] = [
     suburb: "North Ryde, NSW",
     summary:
       "Finished residential interior painting across stairwell, hallway, bedroom, landing, ceiling, and wall areas in a North Ryde home.",
-    coverImage: "/images/projects/north-ryde-interior-after.jpg",
+    coverImage: "/images/projects/north-ryde-corner-wall-finish.jpg",
     coverAlt:
-      "North Ryde home interior after repainting with a clean neutral finish",
+      "North Ryde corner wall and ceiling line after repainting with a clean neutral finish",
     images: [
       {
         title: "Corner Wall Painting",
@@ -1866,17 +1866,10 @@ export const galleryCollections: GalleryCollection[] = [
     suburb: "Newington, NSW",
     summary:
       "Finished exterior house painting across rear facade walls, patio surrounds, side elevations, boundary walls, and detailed exterior surfaces in Newington.",
-    coverImage: "/images/projects/newington-front-facade-after-final.jpg",
+    coverImage: "/images/projects/newington-front-side-facade-finish.jpg",
     coverAlt:
-      "Newington front facade after exterior repainting by F&S Painting",
+      "Newington side facade after exterior repainting by F&S Painting",
     images: [
-      {
-        title: "Front Facade Final Painting",
-        image: "/images/projects/newington-front-facade-after-final.jpg",
-        alt: "Newington front facade after exterior house repainting",
-        caption:
-          "Front facade, balcony surrounds, garage-facing wall, and trim areas finished with a clean exterior repaint.",
-      },
       {
         title: "Side Facade Contrast Painting",
         image: "/images/projects/newington-front-side-facade-finish.jpg",
@@ -1942,9 +1935,9 @@ export const galleryCollections: GalleryCollection[] = [
     suburb: "Newington, NSW",
     summary:
       "Interior painting across Newington living, dining, kitchen, window, and bedroom areas, completed on 5 November 2018.",
-    coverImage: "/images/projects/newington-interior-living-after.jpg",
+    coverImage: "/images/projects/newington-interior-window-finish.jpg",
     coverAlt:
-      "Newington living area after fresh interior repainting by F&S Painting",
+      "Newington window wall and trim after fresh interior repainting by F&S Painting",
     images: [
       {
         title: "Window Trim Painting",
