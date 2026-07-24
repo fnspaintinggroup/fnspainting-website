@@ -46,6 +46,17 @@ export const galleryCategories: GalleryCategory[] = [
 
 export const galleryImages: GalleryImage[] = [
   {
+    title: "Willoughby Ceiling Restoration and Interior Finish",
+    category: "Ceiling Restoration",
+    image: "/images/projects/willoughby-office-ceiling-finish-3.jpg",
+    alt: "Willoughby open-plan interior with restored and freshly painted ceilings",
+    caption:
+      "A location gallery showing ceiling restoration, careful interior protection, and completed ceiling finishes in a Willoughby home.",
+    suburb: "Willoughby, NSW",
+    collectionSlug: "willoughby-ceiling-restoration-interior-finish",
+    photoCount: 4,
+  },
+  {
     title: "Mona Vale Heritage Interior Painting",
     category: "Interior Painting",
     image: "/images/projects/mona-vale-heritage-gallery-09.png",
@@ -389,6 +400,48 @@ export const featuredGalleryImages = featuredGalleryTitles
   .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    slug: "willoughby-ceiling-restoration-interior-finish",
+    title: "Willoughby Ceiling Restoration and Interior Finish",
+    category: "Ceiling Restoration",
+    suburb: "Willoughby, NSW",
+    summary:
+      "Ceiling restoration and repainting across living and bedroom areas, with careful protection and clean finished surfaces.",
+    coverImage: "/images/projects/willoughby-office-ceiling-finish-3.jpg",
+    coverAlt:
+      "Willoughby open-plan interior with restored and freshly painted ceilings",
+    completionDate: "2026-07-22",
+    images: [
+      {
+        title: "Restored Ceiling Finish",
+        image: "/images/projects/willoughby-office-ceiling-finish-1.jpg",
+        alt: "Willoughby ceiling detail after restoration and repainting",
+        caption:
+          "Close view of the restored ceiling surface with a clean, consistent finish.",
+      },
+      {
+        title: "Interior Protection During Ceiling Work",
+        image: "/images/projects/willoughby-office-ceiling-finish-2.jpg",
+        alt: "Willoughby interior protected during ceiling restoration work",
+        caption:
+          "Furniture, floors, and fittings protected while ceiling preparation and repainting were completed.",
+      },
+      {
+        title: "Completed Open-Plan Ceiling",
+        image: "/images/projects/willoughby-office-ceiling-finish-3.jpg",
+        alt: "Willoughby open-plan living area after ceiling restoration and repainting",
+        caption:
+          "Open-plan living, dining, and kitchen ceilings completed with a fresh, even finish.",
+      },
+      {
+        title: "Bedroom Ceiling Finish",
+        image: "/images/projects/willoughby-office-ceiling-finish-4.jpg",
+        alt: "Willoughby bedroom ceiling after restoration and repainting",
+        caption:
+          "Bedroom ceiling and cornice finish showing clean lines around lights, vents, and wall junctions.",
+      },
+    ],
+  },
   {
     slug: "mona-vale-heritage-interior-painting",
     title: "Mona Vale Heritage Interior Painting",

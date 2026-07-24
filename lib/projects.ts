@@ -21,6 +21,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Willoughby Ceiling Restoration and Interior Repaint",
+    slug: "willoughby-ceiling-restoration-interior-repaint",
+    location: "Willoughby, NSW",
+    serviceType: "Ceiling Restoration",
+    beforeImage: "/images/projects/willoughby-office-ceiling-before.jpg",
+    afterImage: "/images/projects/willoughby-office-ceiling-after.jpg",
+    beforeImageAlt:
+      "Willoughby ceiling with damaged and uneven coating before restoration",
+    afterImageAlt:
+      "Willoughby ceiling after surface restoration and a clean repainting finish",
+    description:
+      "A damaged, mould-affected ceiling and surrounding interior areas were protected, prepared, restored, and repainted for a clean and consistent finish.",
+    materials:
+      "Ceiling paint, primer and sealer where required, patching compound, gap filler, sanding materials, masking protection, and detailed surface preparation.",
+    completionDate: "2026-07-22",
+    seoTitle: "Ceiling Restoration Willoughby | F&S Painting",
+    seoDescription:
+      "Before and after ceiling restoration in Willoughby by F&S Painting, showing damaged coating preparation and a clean finished ceiling repaint.",
+  },
+  {
     title: "Shed Exterior Repaint in Chatswood West",
     slug: "chatswood-west-shed-exterior-repaint",
     location: "Chatswood West, NSW",
