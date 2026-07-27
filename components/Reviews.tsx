@@ -39,7 +39,7 @@ export function Reviews({ reviews }: ReviewsProps) {
   return (
     <div>
       <div className="grid gap-6 lg:grid-cols-[0.75fr_1.8fr]">
-        <aside className="rounded-md border border-ink/10 bg-white p-6 shadow-sm">
+        <aside className="rounded-xl border border-ink/10 bg-white p-6 shadow-md">
           <p className="text-2xl font-semibold text-ink">{businessDetails.googleBusinessName}</p>
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <span className="text-lg text-ink/75">{businessDetails.googleRating}</span>
@@ -82,7 +82,7 @@ export function Reviews({ reviews }: ReviewsProps) {
           {reviews.map((review) => (
             <figure
               key={`${review.customerName}-${review.date ?? review.source ?? "review"}`}
-              className="flex h-full flex-col rounded-md bg-[#f3f3f3] p-5 shadow-sm"
+              className="flex h-full flex-col rounded-xl border border-ink/10 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="flex items-start justify-between gap-4">
                 <figcaption className="text-base font-semibold text-ink">

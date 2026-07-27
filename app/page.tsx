@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Building2,
+  FileCheck2,
+  ShieldCheck,
+} from "lucide-react";
 import { HomePromoHero } from "@/components/HomePromoHero";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { FaqSection } from "@/components/FaqSection";
@@ -96,7 +102,7 @@ export default async function Home() {
                 professional finish.
               </p>
             </div>
-            <div className="relative min-h-52 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm sm:min-h-64 lg:min-h-72">
+            <div className="relative min-h-52 overflow-hidden rounded-xl border border-ink/10 bg-white shadow-md sm:min-h-64 lg:min-h-72">
               <video
                 className="h-full min-h-52 w-full object-cover sm:min-h-64 lg:min-h-72"
                 autoPlay
@@ -123,13 +129,11 @@ export default async function Home() {
                 <Link
                   key={service.title}
                   href={localService.href}
-                  className="group rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+                  className="group rounded-xl border border-ink/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-md"
                 >
-                  <Icon
-                    className="text-eucalyptus"
-                    aria-hidden="true"
-                    size={28}
-                  />
+                  <span className="grid h-14 w-14 place-items-center rounded-full bg-eucalyptus/10 text-eucalyptus transition duration-300 group-hover:bg-eucalyptus group-hover:text-white">
+                    <Icon aria-hidden="true" size={28} />
+                  </span>
                   <h3 className="mt-5 text-xl font-semibold text-ink">
                     {service.title}
                   </h3>
@@ -190,7 +194,7 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative min-h-72 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
+          <div className="relative min-h-72 overflow-hidden rounded-xl border border-ink/10 bg-white shadow-md">
             <Image
               src="/images/projects/chatswood-blakesley-exterior-front-facade.jpg"
               alt="Recent Chatswood exterior gable and trim painting finish by F&S Painting"
@@ -206,39 +210,50 @@ export default async function Home() {
         className="bg-mist"
         eyebrow="Company Information"
         title="Licensed and insured Sydney painters"
-        intro="F&S Painting carries the required business, workers compensation, and public liability details for professional painting work across Sydney."
+        intro="F&S Painting is licensed and insured for professional painting work across Sydney. Current certificates are available on request."
       >
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
-              Workers compensation
-            </p>
-            <p className="mt-3 text-lg font-semibold text-ink">
-              Policy No. 236870501
-            </p>
+          <div className="flex gap-4 rounded-xl border border-ink/10 bg-white p-5 shadow-sm">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-eucalyptus/10 text-eucalyptus">
+              <ShieldCheck aria-hidden="true" size={24} />
+            </span>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
+                Workers compensation
+              </p>
+              <p className="mt-2 text-lg font-semibold text-ink">Covered</p>
+              <p className="mt-1 text-sm text-ink/60">Certificate available on request</p>
+            </div>
           </div>
-          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
-              Public liability insurance
-            </p>
-            <p className="mt-3 text-lg font-semibold text-ink">
-              Fully insured with AAMI
-            </p>
-            <p className="mt-1 text-sm font-semibold text-ink/65">
-              Policy No. SPD012776314
-            </p>
+          <div className="flex gap-4 rounded-xl border border-ink/10 bg-white p-5 shadow-sm">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-eucalyptus/10 text-eucalyptus">
+              <FileCheck2 aria-hidden="true" size={24} />
+            </span>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
+                Public liability insurance
+              </p>
+              <p className="mt-2 text-lg font-semibold text-ink">Fully insured with AAMI</p>
+              <p className="mt-1 text-sm text-ink/60">Certificate available on request</p>
+            </div>
           </div>
-          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
-              ACN
-            </p>
-            <p className="mt-3 text-lg font-semibold text-ink">659406265</p>
+          <div className="flex gap-4 rounded-xl border border-ink/10 bg-white p-5 shadow-sm">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-eucalyptus/10 text-eucalyptus">
+              <Building2 aria-hidden="true" size={24} />
+            </span>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">ACN</p>
+              <p className="mt-2 text-lg font-semibold text-ink">659406265</p>
+            </div>
           </div>
-          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
-              License
-            </p>
-            <p className="mt-3 text-lg font-semibold text-ink">478497C</p>
+          <div className="flex gap-4 rounded-xl border border-ink/10 bg-white p-5 shadow-sm">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-eucalyptus/10 text-eucalyptus">
+              <BadgeCheck aria-hidden="true" size={24} />
+            </span>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">Licensed painter</p>
+              <p className="mt-2 text-lg font-semibold text-ink">478497C</p>
+            </div>
           </div>
         </div>
       </Section>
@@ -270,7 +285,7 @@ export default async function Home() {
             <Link
               key={item.title}
               href={featuredGalleryHref(item)}
-              className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+              className="group overflow-hidden rounded-xl border border-ink/10 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">
                 <Image
@@ -282,7 +297,7 @@ export default async function Home() {
                 />
               </div>
               <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+                <p className="inline-flex rounded-full bg-clay/10 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-clay">
                   {item.category}
                 </p>
                 <h3 className="mt-2 text-lg font-semibold leading-tight text-ink">

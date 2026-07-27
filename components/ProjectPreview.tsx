@@ -23,7 +23,7 @@ export function ProjectPreview() {
       {previewProjects.map((project) => (
         <article
           key={project.title}
-          className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
+          className="group overflow-hidden rounded-xl border border-ink/10 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
         >
           <Link href={`/projects#${project.slug}`} className="block">
             <div className="grid h-56 grid-cols-2 bg-mist">
@@ -34,9 +34,9 @@ export function ProjectPreview() {
                   data-original-brightness="true"
                   fill
                   sizes="(min-width: 768px) 16vw, 50vw"
-                  className="object-cover"
+                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
-                <span className="absolute left-3 top-3 rounded-md bg-ink px-2 py-1 text-xs font-semibold text-white">
+                <span className="absolute left-3 top-3 rounded-full bg-ink/90 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur">
                   Before
                 </span>
               </div>
@@ -46,9 +46,9 @@ export function ProjectPreview() {
                   alt={project.afterImageAlt}
                   fill
                   sizes="(min-width: 768px) 16vw, 50vw"
-                  className="object-cover"
+                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
-                <span className="absolute left-3 top-3 rounded-md bg-eucalyptus px-2 py-1 text-xs font-semibold text-white">
+                <span className="absolute left-3 top-3 rounded-full bg-eucalyptus/95 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur">
                   After
                 </span>
               </div>

@@ -6,7 +6,7 @@ import { navItems } from "@/lib/site-data";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-ink/10 bg-linen/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-linen/85 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-2.5 sm:px-6 lg:px-8 lg:py-4">
         <Link href="/" className="flex min-w-0 items-center gap-2 lg:gap-3" aria-label="F&S Painting home">
           <span className="grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-md bg-ink lg:h-10 lg:w-10">
