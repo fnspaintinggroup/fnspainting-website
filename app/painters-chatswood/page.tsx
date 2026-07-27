@@ -459,13 +459,22 @@ export default function PaintersChatswoodPage() {
               furniture and floor protection, surface repairs, and the right
               Dulux paint system for each area.
             </p>
-            <Link
-              href="/painting-gallery/chatswood-apartment-interior-repaint"
-              className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
-            >
-              View a Chatswood apartment painting example
-              <ArrowRight aria-hidden="true" size={18} />
-            </Link>
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
+              <Link
+                href="/painting-gallery/chatswood-apartment-interior-repaint"
+                className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+              >
+                View a Chatswood apartment painting example
+                <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+              <Link
+                href="/painting-tips/apartment-painting-cost-chatswood"
+                className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+              >
+                Read the Chatswood apartment painting cost guide
+                <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+            </div>
           </div>
           <div className="relative min-h-72 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
             <Image
