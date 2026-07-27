@@ -30,4 +30,8 @@ Thumbs.db
 .idea/
 .vercel
 .tmp-*/
+.tmp-*
+.pnpm-store/
+*-worktree/
+*-upload/
 .env*
