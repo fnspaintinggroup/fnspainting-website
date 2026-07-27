@@ -50,6 +50,15 @@ const willoughbyFaqs = [
 
 const localProjects = [
   {
+    title: "Willoughby Ceiling Restoration and Interior Repaint",
+    description:
+      "A recent Willoughby project showing careful protection, ceiling restoration, preparation, and a clean interior repainting finish.",
+    image: "/images/projects/willoughby-office-ceiling-after.jpg",
+    alt: "Willoughby ceiling after surface restoration and a clean repainting finish",
+    href: "/projects/willoughby-ceiling-restoration-interior-repaint",
+    label: "Recent ceiling restoration",
+  },
+  {
     title: "Willoughby Interior Wall Repaint",
     description:
       "Preparation and repainting across hallway and bedroom walls in a Willoughby home.",
@@ -66,15 +75,6 @@ const localProjects = [
     alt: "North Willoughby house facade and trim after exterior painting",
     href: "/painting-gallery/north-willoughby-exterior-facade-trim",
     label: "Exterior painting",
-  },
-  {
-    title: "Bathroom Ceiling Restoration",
-    description:
-      "Peeling and moisture-affected ceiling coating prepared, sealed, and repainted in Willoughby.",
-    image: "/images/projects/mould-ceiling-case-2-after.jpg",
-    alt: "Willoughby bathroom ceiling after preparation and repainting",
-    href: "/projects/bathroom-ceiling-mould-peeling-paint-restoration",
-    label: "Ceiling restoration",
   },
 ];
 
@@ -101,7 +101,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Willoughby painters for homes, apartments, strata and commercial properties. Licensed and insured interior, exterior and ceiling painting with free quotes.",
   path: "/painters-willoughby",
-  image: "/images/projects/exterior-facade-after.jpg",
+  image: "/images/projects/willoughby-office-ceiling-after.jpg",
 });
 
 export default function PaintersWilloughbyPage() {
@@ -126,7 +126,7 @@ export default function PaintersWilloughbyPage() {
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          contentUrl: absoluteUrl("/images/projects/exterior-facade-after.jpg"),
+          contentUrl: absoluteUrl("/images/projects/willoughby-office-ceiling-after.jpg"),
         },
         mainEntity: { "@id": `${pageUrl}#painting-service` },
       },
@@ -167,8 +167,8 @@ export default function PaintersWilloughbyPage() {
 
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
-          src="/images/projects/exterior-facade-after.jpg"
-          alt="North Willoughby house exterior after facade and trim painting"
+          src="/images/projects/willoughby-office-ceiling-after.jpg"
+          alt="Willoughby ceiling after restoration and repainting by F&S Painting"
           fill
           priority
           className="object-cover object-center"
@@ -282,6 +282,22 @@ export default function PaintersWilloughbyPage() {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="mt-7 flex flex-wrap gap-4">
+          <Link
+            href="/painting-gallery/willoughby-ceiling-restoration-interior-finish"
+            className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+          >
+            View the full Willoughby ceiling restoration gallery
+            <ArrowRight aria-hidden="true" size={16} />
+          </Link>
+          <Link
+            href="/painting-gallery?area=Willoughby#gallery-results"
+            className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+          >
+            View more Willoughby painting work
+            <ArrowRight aria-hidden="true" size={16} />
+          </Link>
         </div>
       </Section>
 
