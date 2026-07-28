@@ -18,6 +18,10 @@ function sendAnalyticsEvent(eventName: string, parameters: Record<string, string
 
 export function AnalyticsEvents() {
   useEffect(() => {
+    if (window.location.pathname.startsWith("/team-entry")) {
+      return;
+    }
+
     function handleClick(event: MouseEvent) {
       const target = event.target instanceof Element ? event.target.closest("a") : null;
 
