@@ -97,9 +97,9 @@ const trustHighlights = [
 ];
 
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Willoughby | Licensed & Insured, Free Quote",
+  title: "Painters Willoughby | Free On-Site Quote | F&S Painting",
   description:
-    "Willoughby painters for homes, apartments, strata and commercial properties. Licensed and insured interior, exterior and ceiling painting with free quotes.",
+    "Local Willoughby painters for interior, exterior, strata and commercial work. Licensed and insured, with real local projects and free on-site quotes.",
   path: "/painters-willoughby",
   image: "/images/projects/willoughby-office-ceiling-after.jpg",
 });
@@ -120,7 +120,7 @@ export default function PaintersWilloughbyPage() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Painters Willoughby | Licensed and Insured, Free Quote",
+        name: "Painters Willoughby | Free On-Site Quote | F&S Painting",
         description:
           "Licensed and insured interior, exterior, strata, commercial, and ceiling painters serving Willoughby and North Willoughby.",
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
