@@ -7,6 +7,11 @@ export type BlogSection = {
     alt: string;
     caption?: string;
   };
+  images?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  }[];
   table?: {
     caption: string;
     headers: string[];
@@ -16,6 +21,10 @@ export type BlogSection = {
     href: string;
     label: string;
   };
+  links?: {
+    href: string;
+    label: string;
+  }[];
 };
 
 export type BlogPost = {
@@ -419,36 +428,22 @@ const baseBlogPosts: BlogPost[] = [
     title: "How to Fix Mould-Damaged Ceilings Before Painting",
     slug: "fix-mould-damaged-ceilings-before-painting",
     date: "2026-04-12",
+    updatedDate: "2026-07-31",
     category: "Ceiling Restoration",
     featuredImage: "/images/projects/mould-ceiling-case-2-after.jpg",
     imageAlt:
-      "Bathroom ceiling restored with a smooth clean repaint after moisture damage",
+      "Willoughby bathroom ceiling after mould and peeling paint restoration",
     excerpt:
-      "Mould-damaged ceilings should not simply be painted over. Moisture, staining, surface damage, and ventilation issues need to be addressed first.",
+      "A mould-affected ceiling should not simply be painted over. The moisture source must be corrected and the surface made sound and dry first.",
     seoTitle:
-      "How to Fix Mould-Damaged Ceilings Before Painting | F&S Painting",
+      "Mould-Damaged Ceiling Repainting Sydney | F&S Painting",
     seoDescription:
-      "Find out how mould-damaged ceilings should be prepared before repainting, including moisture checks, cleaning, sealing, and finish restoration.",
+      "Mould-damaged ceilings need the moisture cause fixed first. See how Sydney ceilings are dried, prepared, sealed and repainted, plus when to get advice.",
     body: [
       {
-        heading: "Find the moisture source first",
+        heading: "The short answer",
         paragraphs: [
-          "Before repainting, the cause of mould or staining should be understood. Common issues include roof leaks, bathroom ventilation problems, condensation, or previous water damage.",
-          "Painting over active moisture can lead to stains returning, peeling paint, and recurring mould marks.",
-        ],
-      },
-      {
-        heading: "Prepare and seal the affected area",
-        paragraphs: [
-          "Once the source is resolved, the ceiling may need cleaning, surface repairs, sanding, stain blocking, and a suitable primer before repainting.",
-          "Badly affected plaster, flaking paint, or soft ceiling areas may need repair before any finish coat is applied.",
-        ],
-      },
-      {
-        heading: "Choose the right repaint system",
-        paragraphs: [
-          "Ceiling repainting after mould damage often needs more than standard ceiling paint. The coating system should suit the room, ventilation, and surface condition.",
-          "F&S Painting offers mould-damaged ceiling restoration and ceiling repainting for Sydney homes where careful preparation is needed before the final finish.",
+          "A mould-affected ceiling should not simply be painted over. Paint does not dry a wet ceiling, repair a leak, or fix weak bathroom extraction, so marks and peeling usually return if the cause is still active. The reliable sequence is to find and correct the moisture source, allow the ceiling to dry, clean or remediate the affected area safely, remove failed coating and repair damaged plaster, apply a suitable stain-blocking primer where staining remains, and only then apply the finish coats. Where the affected area is large, the plaster is soft, or occupants have health concerns, suitable specialist assessment should come before any painting work.",
         ],
       },
     ],
@@ -767,14 +762,7 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
   ],
   "fix-mould-damaged-ceilings-before-painting": [
     {
-      heading: "Do not disturb a large or uncertain mould problem",
-      paragraphs: [
-        "Small surface marks and widespread mould are not the same job. If the affected area is extensive, the ceiling feels soft, there is a strong persistent odour, occupants have health concerns, or the source is unknown, seek suitable building, moisture, or mould-remediation advice before sanding or scraping.",
-        "Dry sanding or aggressive cleaning can spread dust and spores. The work method should suit the size of the problem, the ceiling material, and the condition of the coating. Painting is the finishing stage, not the first response to an active moisture problem.",
-      ],
-    },
-    {
-      heading: "Common causes need different repairs",
+      heading: "Find the moisture source before anything else",
       paragraphs: [
         "Bathroom condensation may point to weak extraction or insufficient airflow. A local brown stain may indicate a roof or plumbing leak. Mould around an external corner can relate to a cold surface and condensation, while repeated blistering may mean moisture is moving through the substrate.",
         "The ceiling should be dry and stable before coating. A roofer, plumber, electrician, builder, or ventilation specialist may need to correct the source first. Keeping photos and dates can help identify whether the mark is growing or returning after weather or shower use.",
@@ -788,6 +776,22 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
       ],
     },
     {
+      heading: "Mould, staining and coating failure are not the same problem",
+      paragraphs: [
+        "These conditions often appear together, but they need different work. Mould growth shows as black, green, grey or brown spots and needs the moisture source corrected and the surface cleaned or remediated before any coating.",
+        "Water staining is usually a brown or yellow mark left after moisture has passed through, and it may still show through new paint unless a suitable stain-blocking primer is used. Peeling, flaking or blistering coating points to a loss of adhesion, which means the failed layer has to come off rather than be painted over.",
+        "Soft, sagging or crumbling plaster is a substrate problem, and repair or replacement may be needed before a painter can finish the ceiling.",
+        "Identifying which of these you are looking at, or which combination, is what decides the preparation, the products and the order of work.",
+      ],
+    },
+    {
+      heading: "Do not disturb a large or uncertain mould problem",
+      paragraphs: [
+        "Small surface marks and widespread mould are not the same job. If the affected area is extensive, the ceiling feels soft, there is a strong persistent odour, occupants have health concerns, or the source is unknown, seek suitable building, moisture, or mould-remediation advice before sanding or scraping.",
+        "Dry sanding or aggressive cleaning can spread dust and spores. The work method should suit the size of the problem, the ceiling material, and the condition of the coating. Painting is the finishing stage, not the first response to an active moisture problem.",
+      ],
+    },
+    {
       heading: "The ceiling must be clean, sound, and dry",
       paragraphs: [
         "Once the moisture source is corrected, loose or failed coating may need to be removed carefully. Damaged plaster should be repaired, edges feathered, and the surface prepared so the repair does not remain visible through the final coat.",
@@ -795,10 +799,77 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
       ],
     },
     {
+      heading: "Choose the right repaint system",
+      paragraphs: [
+        "Ceiling repainting after mould damage often needs more than standard ceiling paint. The coating system should suit the room, ventilation, and surface condition.",
+        "F&S Painting provides ceiling repainting and restoration for Sydney homes and apartments where careful preparation is needed before the final finish, including bathroom, stained and mould-affected ceilings.",
+      ],
+      link: {
+        href: "/services/ceiling-repainting",
+        label: "Ceiling repainting and restoration",
+      },
+    },
+    {
       heading: "Why simply using mould-resistant paint can fail",
       paragraphs: [
         "Mould-resistant paint can support maintenance in suitable rooms, but it cannot dry a wet ceiling, fix a leak, improve a non-working exhaust fan, or stabilise soft plaster. If contamination or staining remains beneath the coating, marks and adhesion problems may return.",
         "The better sequence is source correction, safe cleaning or remediation where required, drying, repairs, sealing or priming, and then the finish coats. Ventilation and regular cleaning still matter after the repaint is complete.",
+      ],
+    },
+    {
+      heading: "Ventilation and condensation after the repaint",
+      paragraphs: [
+        "Condensation forms when humid indoor air meets a cooler surface, so bathrooms, kitchens and laundries carry the highest risk in most Sydney homes. Showering, cooking, drying clothes indoors and unflued gas heating all add water vapour to the air, and a cold or poorly insulated ceiling gives that moisture somewhere to settle.",
+        "Exhaust fans should vent to the outside rather than into the roof space, and they work best when they run during and after showering. Opening windows when the weather allows, keeping furniture clear of cold external walls, and improving insulation where surfaces run cold all reduce the risk of the marks returning.",
+        "For routine cleaning of small mould marks, NSW Health guidance and the product label should be followed, and the surface should be dried completely afterwards. Where the affected area is large, keeps returning, or the source is unclear, an assessment by a suitable building, moisture or remediation professional is the safer starting point. Mould is likely to return unless the underlying cause is treated as well.",
+      ],
+    },
+    {
+      heading: "Two real F&S ceiling restorations in Sydney",
+      paragraphs: [
+        "A bathroom ceiling in Willoughby showed peeling paint, moisture damage and mould-affected areas. The failed coating was scraped back, the surface was prepared and sealed, and the ceiling was repainted for a smooth, clean result. The work used a stain-blocking primer, patching compound, sanding and surface preparation, and a moisture-resistant ceiling paint suited to a bathroom.",
+        "A Chatswood ceiling was more heavily affected, with visible mould staining across the surface and damaged coating. It was prepared, sealed, patched and repainted to restore an even finish, using a stain-blocking primer, patching compound and a mould-resistant ceiling paint.",
+        "Both ceilings needed preparation work before any finish coat, and the coating system was matched to the room and the surface condition rather than chosen in advance.",
+      ],
+      images: [
+        {
+          src: "/images/projects/mould-ceiling-case-2-before.jpg",
+          alt: "Willoughby bathroom ceiling with mould and peeling paint before restoration",
+          caption: "Willoughby — Before: peeling paint, moisture damage and mould-affected areas.",
+        },
+        {
+          src: "/images/projects/mould-ceiling-case-2-after.jpg",
+          alt: "Willoughby bathroom ceiling after mould and peeling paint restoration",
+          caption: "Willoughby — After: prepared, sealed and repainted ceiling.",
+        },
+        {
+          src: "/images/projects/mould-ceiling-case-1-before.jpg",
+          alt: "Chatswood ceiling with mould staining and damaged coating before restoration",
+          caption: "Chatswood — Before: visible mould staining and damaged coating.",
+        },
+        {
+          src: "/images/projects/mould-ceiling-case-1-after.jpg",
+          alt: "Chatswood ceiling after mould-damaged coating restoration",
+          caption: "Chatswood — After: prepared, sealed, patched and repainted ceiling.",
+        },
+      ],
+      links: [
+        {
+          href: "/projects/bathroom-ceiling-mould-peeling-paint-restoration",
+          label: "Bathroom ceiling restoration in Willoughby",
+        },
+        {
+          href: "/painters-willoughby",
+          label: "Painters in Willoughby",
+        },
+        {
+          href: "/projects/mould-damaged-ceiling-restoration-sydney",
+          label: "Mould-damaged ceiling restoration in Chatswood",
+        },
+        {
+          href: "/painters-chatswood",
+          label: "Painters in Chatswood",
+        },
       ],
     },
     {
@@ -817,11 +888,17 @@ const blogPostAdditions: Record<string, BlogSection[]> = {
       paragraphs: [
         "Can mould simply be sealed with primer? Primer may block some stains after the source is corrected and the surface is properly cleaned and prepared, but it should not be used to hide active moisture or untreated contamination.",
         "How do I know the ceiling is dry? The cause should be repaired and the area allowed to dry fully. Where moisture is uncertain or damage is recurring, a suitable building or moisture professional may need to test it before coating work begins.",
-        "Will mould-resistant paint stop mould permanently? No coating can guarantee that. Ventilation, moisture control, cleaning, insulation, and leak prevention remain important. The paint system supports the repaired room; it does not replace those controls.",
+        "Will mould-resistant paint stop mould permanently? No. Some manufacturers offer a guarantee against mould growth on their coating under stated conditions, but that is a product warranty, not a permanent fix for the room. Ventilation, moisture control, cleaning, insulation and leak prevention still do the real work; the coating supports a repaired room rather than replacing those controls.",
         "When is plaster replacement needed? Soft, sagging, crumbling, delaminated, or extensively damaged plaster may need repair or replacement. A painter should not apply finish coats until the substrate is stable and suitable for painting.",
         "How soon can the ceiling be repainted after a leak? The repair must be complete and the ceiling must be dry; elapsed time alone is not a reliable test. Weather, insulation, ceiling material, and the amount of water all affect drying. Rushing this step can trap moisture and allow staining or coating failure to return.",
         "What should happen after repainting? Keep ventilation working, clean condensation when it appears, and watch the repaired area after heavy rain or periods of high humidity. If marks return, investigate the source again rather than repeatedly covering the same area with another coat.",
         "Can the room be used immediately? Follow the product's drying and curing guidance, keep ventilation operating, and avoid heavy steam or cleaning until the coating has hardened sufficiently. The painter can explain when normal bathroom or room use should resume for the selected system.",
+      ],
+    },
+    {
+      heading: "Guidance reviewed for this article",
+      paragraphs: [
+        "This article was checked against NSW Health's mould factsheet, the Australian Government YourHome guidance on condensation and indoor air quality, and Dulux Australia's mould treatment and surface preparation guides. It is general information for Sydney property owners, not health advice or a substitute for an on-site assessment. Always follow current official guidance and the instructions on the product label for the cleaning or coating products you use.",
       ],
     },
   ],

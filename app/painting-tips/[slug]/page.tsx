@@ -69,6 +69,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     month: "long",
     year: "numeric",
   }).format(new Date(post.date));
+  const updatedDate =
+    post.updatedDate && post.updatedDate !== post.date
+      ? new Intl.DateTimeFormat("en-AU", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        }).format(new Date(post.updatedDate))
+      : null;
 
   const schema = {
     "@context": "https://schema.org",
@@ -117,6 +125,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <CalendarDays aria-hidden="true" size={15} />
                 {publishedDate}
               </span>
+              {updatedDate ? (
+                <span className="flex items-center gap-1.5">
+                  <CalendarDays aria-hidden="true" size={15} />
+                  Updated {updatedDate}
+                </span>
+              ) : null}
               <span className="flex items-center gap-1.5">
                 <Tag aria-hidden="true" size={15} />
                 {post.category}
@@ -174,6 +188,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         ) : null}
                       </figure>
                     ) : null}
+                    {section.images ? (
+                      <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                        {section.images.map((image) => (
+                          <figure key={image.src}>
+                            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-mist shadow-sm">
+                              <Image
+                                src={image.src}
+                                alt={image.alt}
+                                fill
+                                sizes="(min-width: 1024px) 368px, (min-width: 640px) 50vw, 100vw"
+                                className="object-cover"
+                              />
+                            </div>
+                            {image.caption ? (
+                              <figcaption className="mt-3 text-sm leading-6 text-ink/60">
+                                {image.caption}
+                              </figcaption>
+                            ) : null}
+                          </figure>
+                        ))}
+                      </div>
+                    ) : null}
                     {section.bullets ? (
                       <ul className="mt-5 list-disc space-y-2 pl-6 text-base leading-7 text-ink/72">
                         {section.bullets.map((item) => (
@@ -218,6 +254,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         {section.link.label}
                         <ArrowRight aria-hidden="true" size={17} />
                       </Link>
+                    ) : null}
+                    {section.links ? (
+                      <div className="mt-5 flex flex-col items-start gap-3">
+                        {section.links.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+                          >
+                            {link.label}
+                            <ArrowRight aria-hidden="true" size={17} />
+                          </Link>
+                        ))}
+                      </div>
                     ) : null}
                   </section>
                 ))
