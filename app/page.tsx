@@ -73,6 +73,10 @@ export default async function Home() {
     homeFaqs[9],
     homeFaqs[6],
   ];
+  const homepageServices = cmsServices.filter((service) => {
+    const serviceName = `${service.title} ${service.slug}`.toLowerCase();
+    return !serviceName.includes("mould-damaged ceiling");
+  });
 
   return (
     <>
@@ -120,11 +124,24 @@ export default async function Home() {
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {cmsServices.slice(0, 6).map((service) => {
+            {homepageServices.slice(0, 6).map((service) => {
+              const isCeilingService = `${service.title} ${service.slug}`
+                .toLowerCase()
+                .includes("ceiling repainting");
               const localService =
-                services.find((item) => item.title === service.title) ??
+                services.find((item) =>
+                  isCeilingService
+                    ? item.title === "Ceiling Repainting"
+                    : item.title === service.title,
+                ) ??
                 services[0];
               const Icon = localService.icon;
+              const serviceTitle = isCeilingService
+                ? "Ceiling Repainting & Restoration"
+                : service.title;
+              const serviceSummary = isCeilingService
+                ? "Ceiling repainting and restoration for peeling paint, stains, patching, moisture damage, and mould-affected coatings after the source is resolved."
+                : service.summary;
               return (
                 <Link
                   key={service.title}
@@ -135,10 +152,10 @@ export default async function Home() {
                     <Icon aria-hidden="true" size={28} />
                   </span>
                   <h3 className="mt-5 text-xl font-semibold text-ink">
-                    {service.title}
+                    {serviceTitle}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-ink/65">
-                    {service.summary}
+                    {serviceSummary}
                   </p>
                 </Link>
               );
