@@ -97,7 +97,7 @@ const trustHighlights = [
 ];
 
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Willoughby | Free On-Site Quote | F&S Painting",
+  title: "Painters Willoughby | Free On-Site Quote",
   description:
     "Local Willoughby painters for interior, exterior, strata and commercial work. Licensed and insured, with real local projects and free on-site quotes.",
   path: "/painters-willoughby",
