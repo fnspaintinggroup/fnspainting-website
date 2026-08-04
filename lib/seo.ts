@@ -133,16 +133,6 @@ export function localBusinessSchema() {
         name: "Australian Company Number",
         value: "659406265",
       },
-      {
-        "@type": "PropertyValue",
-        name: "Workers compensation policy",
-        value: "236870501",
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Public liability policy",
-        value: "AAMI SPD012776314",
-      },
     ],
     makesOffer: targetKeywords.map((keyword) => ({
       "@type": "Offer",

@@ -15,8 +15,8 @@ export const metadata: Metadata = pageMetadata({
 
 const trustDetails = [
   { label: "NSW contractor licence", value: "478497C", icon: BadgeCheck },
-  { label: "Workers compensation", value: "236870501", icon: ShieldCheck },
-  { label: "Public liability insurance", value: "AAMI SPD012776314", icon: ShieldCheck },
+  { label: "Workers compensation", value: "Details available on request", icon: ShieldCheck },
+  { label: "Public liability insurance", value: "Certificate available on request", icon: ShieldCheck },
   { label: "Registered company", value: "F&S Painting Group, ACN 659406265", icon: Building2 },
 ];
 

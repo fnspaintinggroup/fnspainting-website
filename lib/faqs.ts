@@ -20,7 +20,7 @@ export const homeFaqs: FaqItem[] = [
   {
     question: "Are F&S Painting licensed and insured?",
     answer:
-      "Yes. F&S Painting is licensed and fully insured, including workers compensation and public liability cover. These details are shown on the website so customers can feel confident before booking painting work.",
+      "Yes. F&S Painting is licensed and insured, including workers compensation and public liability cover. Current certificate details are available on request.",
   },
   {
     question: "Do you paint both residential and commercial properties?",

@@ -89,8 +89,8 @@ const services = [
 
 const trustHighlights = [
   "NSW contractor licence 478497C",
-  "Workers Compensation 236870501",
-  "Public Liability AAMI SPD012776314",
+  "Workers compensation details available on request",
+  "Public liability certificate available on request",
   "20 years painting experience",
   "Quality Dulux paint systems",
   "Real Willoughby project photos",

@@ -120,8 +120,8 @@ const chatswoodPhotoHighlights = [
 
 const trustHighlights = [
   "License 478497C",
-  "Workers Compensation 236870501",
-  "Public Liability AAMI SPD012776314",
+  "Workers compensation details available on request",
+  "Public liability certificate available on request",
   "ACN 659406265",
   "20 years painting experience",
   "Quality Dulux paint systems",
