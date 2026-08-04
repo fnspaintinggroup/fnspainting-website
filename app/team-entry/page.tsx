@@ -40,6 +40,18 @@ export default function TeamEntryPage() {
             when Caleb is needed, or at final completion.
           </p>
 
+          <div className="mt-5 rounded-xl border border-clay/30 bg-clay/5 p-4 text-sm leading-6 text-ink/75">
+            <p className="font-semibold text-ink">Time-clock safety</p>
+            <ul className="mt-2 list-disc space-y-1 pl-5">
+              <li>After START, submit FINISH on the same day.</li>
+              <li>
+                If START was missed, submit FINISH and write
+                <strong> Actual start HH:MM — reason</strong> in Notes.
+              </li>
+              <li>An unfinished START is checked after about 9 hours.</li>
+            </ul>
+          </div>
+
           <div className="mt-7 grid gap-4">
             <a
               className="flex min-h-24 items-center gap-4 rounded-xl bg-eucalyptus px-5 py-4 text-white shadow-sm transition hover:brightness-95 focus:outline-none focus:ring-4 focus:ring-eucalyptus/25"
