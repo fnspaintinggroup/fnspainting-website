@@ -7,40 +7,9 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Up to 5-Year Painting Workmanship Warranty",
   description:
-    "Qualifying F&S interior repaint work can include a 5-year written workmanship warranty. Exterior coverage and periods are confirmed in your quote.",
+    "5 years for qualifying interior repaint work. Exterior and higher-wear surfaces are assessed individually, with exact coverage confirmed in your written quote.",
   path: "/workmanship-warranty",
 });
-
-const exclusions = [
-  "Leaks, moisture or mould sources that have not been resolved",
-  "Structural movement, substrate failure or failure of a previous coating",
-  "Rust, timber decay, impact, misuse, normal wear, fading or chalking",
-  "Hail, storm, flood, bushfire or other exceptional weather events",
-  "Third-party work, customer-supplied products or work outside the written scope",
-];
-
-const coverageSchedule = [
-  {
-    surface: "Qualifying interior walls and ceilings",
-    period: "5 years",
-    condition: "F&S completes the approved preparation and full coating system.",
-  },
-  {
-    surface: "Exterior walls, eaves and vertical cladding",
-    period: "3 or 5 years",
-    condition: "One exact period is confirmed after inspection and written in the quote.",
-  },
-  {
-    surface: "Handrails, balusters, decks and floors",
-    period: "12 months or project-specific",
-    condition: "The written quote confirms the period for these higher-wear surfaces.",
-  },
-  {
-    surface: "Partial repairs and touch-ups",
-    period: "Written project condition only",
-    condition: "No additional F&S period applies unless the quote states one.",
-  },
-];
 
 export default function WorkmanshipWarrantyPage() {
   const phoneHref = `tel:${businessDetails.phones[0].replaceAll(" ", "")}`;
@@ -49,8 +18,8 @@ export default function WorkmanshipWarrantyPage() {
     <>
       <PageIntroHero
         eyebrow="Written workmanship warranty"
-        title="Clear warranty coverage, written into your quote"
-        description="Qualifying interior repaint work can include a 5-year F&S workmanship warranty. Exterior coverage is surface-specific, with the exact period confirmed in your written quotation."
+        title="Up to 5-Year Written Workmanship Warranty"
+        description="5 years for qualifying interior repaint work. Exterior and higher-wear surfaces are assessed individually, with exact coverage confirmed in your written quote."
         image="/images/page-heroes/contact-hero.jpg"
         imageAlt="F&S Painting colour samples and written project planning"
         imagePosition="center 46%"
@@ -60,71 +29,20 @@ export default function WorkmanshipWarrantyPage() {
         <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-gumleaf/50 bg-gumleaf/25 p-6 sm:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-eucalyptus">
-              Up to 5 years on qualifying residential painting projects
+              Up to 5-Year Written Workmanship Warranty
             </p>
             <p className="mt-4 text-base leading-8 text-ink/75">
-              Qualifying interior repaint work can receive 5 years. Exterior and higher-wear
-              surfaces receive a period based on inspection, preparation and the coating system.
-              This is not a blanket warranty for every surface: the written quotation identifies
-              the exact covered surfaces, period and project-specific limits. Rights that apply
-              under law remain unchanged.
+              5 years for qualifying interior repaint work. Exterior and higher-wear surfaces are
+              assessed individually, with exact coverage confirmed in your written quote.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink/65">
+              The written quote and terms set the warranty that applies to each project. Your
+              rights under law remain unchanged.
             </p>
           </div>
-
-          <section className="mt-12">
-            <h2 className="text-2xl font-semibold text-ink">How warranty periods are set</h2>
-            <div className="mt-5 overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-soft">
-              {coverageSchedule.map((item) => (
-                <div
-                  key={item.surface}
-                  className="grid gap-2 border-b border-ink/10 p-5 last:border-b-0 sm:grid-cols-[1.1fr_0.65fr_1.5fr] sm:gap-5"
-                >
-                  <p className="font-semibold text-ink">{item.surface}</p>
-                  <p className="font-semibold text-eucalyptus">{item.period}</p>
-                  <p className="text-sm leading-6 text-ink/65">{item.condition}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <div className="mt-12 grid gap-10 lg:grid-cols-2">
-            <section>
-              <h2 className="text-2xl font-semibold text-ink">What the warranty covers</h2>
-              <p className="mt-4 text-base leading-8 text-ink/72">
-                For an eligible quoted surface, the additional warranty covers peeling, flaking
-                or blistering caused by faulty preparation or application by F&amp;S Painting.
-                Coverage starts at practical completion and runs for the period written in the
-                quotation.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-ink">When coverage applies</h2>
-              <p className="mt-4 text-base leading-8 text-ink/72">
-                F&amp;S Painting must have completed the agreed preparation and coating system
-                using supplied or approved products on a surface assessed as suitable. Any known
-                adverse condition should be recorded in writing before work begins.
-              </p>
-            </section>
-          </div>
-
-          <section className="mt-12">
-            <h2 className="text-2xl font-semibold text-ink">What is not covered</h2>
-            <p className="mt-4 text-base leading-8 text-ink/72">
-              Subject to rights that cannot legally be excluded, the additional warranty does not
-              cover defects caused by:
-            </p>
-            <ul className="mt-5 grid gap-3 text-sm leading-6 text-ink/72 sm:grid-cols-2">
-              {exclusions.map((item) => (
-                <li key={item} className="rounded-xl border border-ink/10 bg-white p-4 shadow-soft">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
 
           <section className="mt-12 rounded-2xl bg-ink p-6 text-white sm:p-8">
-            <h2 className="text-2xl font-semibold">How to make a claim</h2>
+            <h2 className="text-2xl font-semibold">Ask about coverage or make a claim</h2>
             <p className="mt-4 max-w-3xl leading-7 text-white/75">
               Contact us promptly and within the period shown in your quotation. Include the
               quote or job number, site address, practical-completion date, a description of the

@@ -78,7 +78,7 @@ export function HomePromoHero() {
             className="mt-5 flex max-w-3xl items-center justify-between gap-4 rounded-xl border border-gumleaf/45 bg-ink/55 px-4 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-gumleaf hover:bg-ink/75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:mt-6 sm:text-base"
           >
             <span className="uppercase">
-              Up to 5-year written workmanship warranty*
+              Up to 5-Year Written Workmanship Warranty
             </span>
             <span className="inline-flex shrink-0 items-center gap-1 text-gumleaf">
               Details <ArrowRight aria-hidden="true" size={16} />
@@ -96,8 +96,8 @@ export function HomePromoHero() {
             </p>
           </div>
           <p className="mt-2 max-w-3xl text-[11px] leading-5 text-white/65 sm:text-xs">
-            *5 years for qualifying interior repaint work. Exterior periods are
-            surface-specific and stated in the written quote.
+            5 years for qualifying interior repaint work. Exterior and higher-wear surfaces are
+            assessed individually, with exact coverage confirmed in your written quote.
           </p>
           <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-8 sm:flex sm:gap-3">
             <Link
