@@ -32,6 +32,15 @@ export function AnalyticsEvents() {
       const href = target.getAttribute("href") || "";
       const label = target.textContent?.replace(/\s+/g, " ").trim() || href;
       const pagePath = window.location.pathname;
+      const customEvent = target.getAttribute("data-analytics-event");
+
+      if (customEvent) {
+        sendAnalyticsEvent(customEvent, {
+          link_url: href,
+          link_text: label,
+          page_path: pagePath,
+        });
+      }
 
       if (href.startsWith("tel:")) {
         sendAnalyticsEvent("phone_click", {

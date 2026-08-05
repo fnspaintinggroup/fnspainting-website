@@ -158,6 +158,9 @@ export function Footer() {
             <Link href="/privacy-policy" className="hover:text-white">
               Privacy Policy
             </Link>
+            <Link href="/workmanship-warranty" className="hover:text-white">
+              Workmanship Warranty
+            </Link>
           </div>
           <div className="mt-7">
             <p className="mb-3 font-semibold">Social</p>
@@ -229,6 +232,13 @@ export function Footer() {
           className="underline underline-offset-4 hover:text-white"
         >
           Privacy Policy
+        </Link>
+        {" | "}
+        <Link
+          href="/workmanship-warranty"
+          className="underline underline-offset-4 hover:text-white"
+        >
+          Workmanship Warranty
         </Link>
       </div>
     </footer>
