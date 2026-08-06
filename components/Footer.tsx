@@ -56,12 +56,13 @@ const socialLinks: SocialLink[] = [
   },
 ];
 
-const priorityAreaLinks: Record<string, string> = {
-  Chatswood: "/painters-chatswood",
-  Willoughby: "/painters-willoughby",
-  Artarmon: "/painting-gallery/chatswood-commercial-reception-finish",
-  Lindfield: "/projects/east-lindfield-exterior-house-repaint",
-};
+const featuredAreaLinks = [
+  { label: "Chatswood", href: "/painters-chatswood" },
+  { label: "Willoughby", href: "/painters-willoughby" },
+  { label: "Lindfield & East Lindfield", href: "/painters-lindfield" },
+];
+
+const featuredAreaNames = new Set(["Chatswood", "Willoughby", "Lindfield"]);
 
 export function Footer() {
   return (
@@ -190,13 +191,27 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="mb-4 font-semibold">
-            Service Areas - All of Sydney wide
+          <p className="mb-4 font-semibold">Local Painting Areas</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-gumleaf">
+            Featured local pages
+          </p>
+          <div className="mb-6 flex flex-wrap gap-2">
+            {featuredAreaLinks.map((area) => (
+              <Link
+                key={area.href}
+                href={area.href}
+                className="rounded border border-gumleaf/55 bg-gumleaf/10 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-gumleaf hover:text-ink"
+              >
+                {area.label}
+              </Link>
+            ))}
+          </div>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
+            Other Sydney service areas
           </p>
           <div className="flex flex-wrap gap-2">
-            {serviceAreas.map((area, index) => {
-              const galleryHref =
-                priorityAreaLinks[area] ?? getGalleryAreaHref(area);
+            {serviceAreas.filter((area) => !featuredAreaNames.has(area)).map((area, index) => {
+              const galleryHref = getGalleryAreaHref(area);
               const className =
                 "rounded border border-white/15 px-2.5 py-1 text-[11px] leading-5 text-white/70";
 
@@ -204,13 +219,7 @@ export function Footer() {
                 <Link
                   key={`${area}-${index}`}
                   href={galleryHref}
-                  aria-label={
-                    priorityAreaLinks[area]
-                      ? area === "Lindfield"
-                        ? "View verified painting work in East Lindfield"
-                        : `View verified painting work in ${area}`
-                      : `View ${area} painting gallery`
-                  }
+                  aria-label={`View ${area} painting gallery`}
                   className={`${className} transition hover:border-gumleaf hover:bg-white/5 hover:text-white`}
                 >
                   {area}

@@ -24,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/workmanship-warranty",
     "/painters-chatswood",
     "/painters-willoughby",
+    "/painters-lindfield",
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: contentLastModified,

@@ -97,9 +97,9 @@ const trustHighlights = [
 ];
 
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Willoughby | Free On-Site Quote",
+  title: "Painters Willoughby | Real Local Projects & Free Quote",
   description:
-    "Local Willoughby painters for interior, exterior, strata and commercial work. Licensed and insured, with real local projects and free on-site quotes.",
+    "See real Willoughby interior, exterior and ceiling projects from licensed F&S painters. 20 years' experience, local photos and free on-site quotes.",
   path: "/painters-willoughby",
   image: "/images/projects/willoughby-office-ceiling-after.jpg",
 });
@@ -185,8 +185,8 @@ export default function PaintersWilloughbyPage() {
               Painters Willoughby
             </h1>
             <p className="mt-7 max-w-3xl text-base font-medium leading-7 text-white/88 sm:text-xl">
-              Licensed and insured painters for Willoughby homes, apartments,
-              strata properties, businesses, interiors, exteriors, and ceilings.
+              See completed Willoughby interior, exterior, and ceiling projects,
+              then request a clear free on-site quote for your property.
             </p>
             <div className="mt-6 flex flex-wrap gap-2 text-sm font-semibold text-white">
               <a
@@ -208,6 +208,7 @@ export default function PaintersWilloughbyPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact#quote-name"
+                data-analytics-event="willoughby_quote_click"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
               >
                 Get a Free Quote
@@ -379,6 +380,7 @@ export default function PaintersWilloughbyPage() {
           </div>
           <Link
             href="/contact#quote-name"
+            data-analytics-event="willoughby_quote_click"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
           >
             Get a Free Quote
