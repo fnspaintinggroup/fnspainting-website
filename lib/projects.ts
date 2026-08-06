@@ -415,18 +415,18 @@ export const projects: Project[] = [
     slug: "chatswood-apartment-interior-repaint",
     location: "Chatswood, NSW",
     serviceType: "Interior Painting",
-    beforeImage: "/images/projects/chatswood-apartment-interior-before.jpg",
-    afterImage: "/images/projects/chatswood-apartment-interior-after.jpg",
-    beforeImageAlt: "Chatswood apartment living room before interior repainting preparation",
-    afterImageAlt: "Chatswood apartment living room after fresh interior repainting",
+    beforeImage: "/images/projects/chatswood-apartment-before.webp",
+    afterImage: "/images/projects/chatswood-apartment-after.webp",
+    beforeImageAlt: "Chatswood apartment bathroom and hallway before interior repainting",
+    afterImageAlt: "Chatswood apartment bathroom and hallway after interior repainting",
     description:
-      "A Chatswood apartment interior was protected, prepared, patched, and repainted across living areas, bedroom, entry, kitchen-side walls, and bathroom ceiling areas for a cleaner finish.",
+      "F&S Painting completed a full interior refresh for this Chatswood apartment, covering ceilings and walls together with selected doors, windows, and frames. Careful protection, scraping, minor patching, gap filling, sanding, and priming where required created a cleaner, brighter finish while selected timber elements retained their original warmth and character.",
     materials:
-      "Interior low-sheen wall paint, ceiling paint, primer where required, patching compound, sanding materials, masking tape, and drop-sheet protection.",
-    completionDate: "2025-10-14",
+      "Dulux Professional Ceiling, Aquanamel in Lexicon Quarter, Total Prep in Antique White USA, Sikkens Cetol HLSe, primers where required, patching compound, sanding materials, masking, and protective coverings.",
+    completionDate: "2026-07-31",
     seoTitle: "Chatswood Apartment Interior Repaint | F&S Painting",
     seoDescription:
-      "Before and after Chatswood apartment interior repaint by F&S Painting, including living room, bedroom, entry, and bathroom ceiling painting finishes.",
+      "A real Chatswood apartment interior repaint by F&S Painting, showing careful preparation and completed ceilings, walls, doors, windows, frames, bedrooms, hallway, and bathroom finishes.",
   },
   {
     title: "Chatswood Exterior Gable and Trim Repaint",

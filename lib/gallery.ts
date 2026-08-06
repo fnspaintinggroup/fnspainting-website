@@ -275,13 +275,13 @@ export const galleryImages: GalleryImage[] = [
   {
     title: "Chatswood Apartment Interior Repaint",
     category: "Interior Painting",
-    image: "/images/projects/chatswood-apartment-living-room-finish.jpg",
-    alt: "Chatswood apartment living room after interior repainting by F&S Painting",
+    image: "/images/projects/chatswood-apartment-hallway-wardrobe-finish.webp",
+    alt: "Chatswood apartment hallway and wardrobe after interior repainting by F&S Painting",
     caption:
-      "A location gallery showing Chatswood apartment living room, bedroom, entry, kitchen-side, and bathroom ceiling repainting finishes.",
+      "A real Chatswood apartment repaint showing careful protection, preparation, and completed wall, ceiling, bedroom, bathroom, hallway, window, and wardrobe finishes.",
     suburb: "Chatswood, NSW",
     collectionSlug: "chatswood-apartment-interior-repaint",
-    photoCount: 4,
+    photoCount: 10,
   },
   {
     title: "Chatswood Exterior Gable and Trim Repaint",
@@ -1632,38 +1632,80 @@ export const galleryCollections: GalleryCollection[] = [
     category: "Interior Painting",
     suburb: "Chatswood, NSW",
     summary:
-      "Finished apartment interior repaint across Chatswood living areas, bedroom, entry, kitchen-side walls, and bathroom ceiling details.",
-    coverImage: "/images/projects/chatswood-apartment-living-room-finish.jpg",
-    coverAlt: "Chatswood apartment living room after fresh interior repainting",
+      "F&S Painting completed a full interior refresh for this Chatswood apartment, including careful protection, patching, sanding, priming where required, and repainting across ceilings, walls, selected doors, windows, and frames.",
+    coverImage: "/images/projects/chatswood-apartment-hallway-wardrobe-finish.webp",
+    coverAlt: "Chatswood apartment hallway and wardrobe after a clean interior repaint",
+    completionDate: "2026-07-31",
     images: [
       {
-        title: "Living Room Painting",
-        image: "/images/projects/chatswood-apartment-living-room-finish.jpg",
-        alt: "Chatswood apartment living room after interior wall and ceiling repainting",
+        title: "Wall and Ceiling Preparation",
+        image: "/images/projects/chatswood-apartment-preparation-painter.webp",
+        alt: "Painter completing detailed wall and ceiling preparation in a Chatswood apartment",
         caption:
-          "Living room walls and ceiling refreshed after preparation and repainting.",
+          "Careful preparation around the wall and ceiling edges before the finish was completed.",
       },
       {
-        title: "Entry and Kitchen-Side Painting",
-        image: "/images/projects/chatswood-apartment-entry-kitchen-finish.jpg",
-        alt: "Chatswood apartment entry and kitchen-side walls after repainting",
+        title: "Living Room Protection",
+        image: "/images/projects/chatswood-apartment-living-room-protection.webp",
+        alt: "Chatswood apartment living room furniture protected during interior repainting",
         caption:
-          "Entry and kitchen-side walls repainted for a cleaner apartment presentation.",
+          "Furniture and room contents covered before the surrounding walls and ceiling were painted.",
       },
       {
-        title: "Bathroom Ceiling Painting",
-        image:
-          "/images/projects/chatswood-apartment-bathroom-ceiling-finish.jpg",
-        alt: "Chatswood apartment bathroom ceiling after repainting",
+        title: "Bedroom Protection",
+        image: "/images/projects/chatswood-apartment-bedroom-protection.webp",
+        alt: "Chatswood apartment bedroom protected during wall and ceiling repainting",
         caption:
-          "Bathroom ceiling and surrounding wall areas repainted with a neat finish.",
+          "Bedroom furniture protected while the walls, ceiling, and surrounding details were prepared.",
       },
       {
-        title: "Bedroom Painting",
-        image: "/images/projects/chatswood-apartment-bedroom-finish.jpg",
-        alt: "Chatswood apartment bedroom after interior repainting",
+        title: "Open-Plan Area Protection",
+        image: "/images/projects/chatswood-apartment-open-plan-protection.webp",
+        alt: "Chatswood apartment open-plan living area protected during interior painting",
         caption:
-          "Bedroom walls and trims refreshed as part of the apartment repaint.",
+          "Protective coverings used across the open-plan area before the final painting stages.",
+      },
+      {
+        title: "Bedroom Wall and Ceiling Finish",
+        image: "/images/projects/chatswood-apartment-bedroom-finish-1.webp",
+        alt: "Chatswood apartment bedroom after wall and ceiling repainting",
+        caption:
+          "Light walls and ceiling completed for a cleaner and brighter bedroom finish.",
+      },
+      {
+        title: "Bathroom and Hallway Finish",
+        image: "/images/projects/chatswood-apartment-after.webp",
+        alt: "Chatswood apartment bathroom and hallway after interior repainting",
+        caption:
+          "Completed bathroom-side and hallway surfaces after preparation and repainting.",
+      },
+      {
+        title: "Bathroom Ceiling Detail",
+        image: "/images/projects/chatswood-apartment-bathroom-ceiling-finish-2.webp",
+        alt: "Chatswood apartment bathroom ceiling and upper wall detail after repainting",
+        caption:
+          "Bathroom ceiling and upper wall details finished with clean edges around the existing fittings.",
+      },
+      {
+        title: "Bedroom Repaint Finish",
+        image: "/images/projects/chatswood-apartment-bedroom-finish-2.webp",
+        alt: "Chatswood apartment bedroom walls and ceiling after repainting",
+        caption:
+          "Completed bedroom repaint showing the refreshed light wall and ceiling surfaces.",
+      },
+      {
+        title: "Bedroom Window Wall Finish",
+        image: "/images/projects/chatswood-apartment-bedroom-window-finish.webp",
+        alt: "Chatswood apartment bedroom window wall and ceiling after repainting",
+        caption:
+          "Freshly finished bedroom walls and ceiling around the existing windows and built-in storage.",
+      },
+      {
+        title: "Hallway and Wardrobe Finish",
+        image: "/images/projects/chatswood-apartment-hallway-wardrobe-finish.webp",
+        alt: "Chatswood apartment hallway and wardrobe after interior repainting",
+        caption:
+          "The finished hallway and wardrobe area combines brighter painted surfaces with retained timber character.",
       },
     ],
   },
