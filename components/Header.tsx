@@ -33,6 +33,11 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <span className="flex items-center gap-1 text-xs" aria-label="Language pages">
+            <Link href="/ko" lang="ko" className="rounded px-1.5 py-1 transition hover:bg-gumleaf hover:text-eucalyptus">한국어</Link>
+            <span aria-hidden="true" className="text-ink/25">|</span>
+            <Link href="/zh" lang="zh-Hans" className="rounded px-1.5 py-1 transition hover:bg-gumleaf hover:text-eucalyptus">中文</Link>
+          </span>
           <Link
             href="/contact#quote-name"
             className="inline-flex items-center gap-2 rounded-md bg-clay px-4 py-2 font-semibold text-white shadow-sm transition hover:bg-clay/90"
@@ -80,6 +85,10 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <div className="mt-1 flex gap-2 border-t border-ink/10 px-3 pt-2">
+                <Link href="/ko" lang="ko" className="rounded px-2 py-1.5 hover:bg-gumleaf">한국어</Link>
+                <Link href="/zh" lang="zh-Hans" className="rounded px-2 py-1.5 hover:bg-gumleaf">中文</Link>
+              </div>
             </nav>
           </details>
         </div>

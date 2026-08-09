@@ -162,6 +162,8 @@ export function Footer() {
             <Link href="/workmanship-warranty" className="hover:text-white">
               Workmanship Warranty
             </Link>
+            <Link href="/ko" lang="ko" className="hover:text-white">한국어 안내</Link>
+            <Link href="/zh" lang="zh-Hans" className="hover:text-white">中文介绍</Link>
           </div>
           <div className="mt-7">
             <p className="mb-3 font-semibold">Social</p>

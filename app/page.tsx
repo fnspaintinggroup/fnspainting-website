@@ -20,13 +20,19 @@ import { getSelectedReviews, getServices } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
 import { createUrlSlug } from "@/lib/url-slug";
 
-export const metadata: Metadata = pageMetadata({
-  title:
-    "F&S Painting | Painter Chatswood & Sydney - Interior, Exterior, Strata & Commercial",
-  description:
-    "Licensed and insured painters in Chatswood, North Shore and Sydney. Residential, interior, exterior, strata and commercial painting with free on-site quotes, 20 years of experience, and quality Dulux products.",
-  path: "/",
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title:
+      "F&S Painting | Painter Chatswood & Sydney - Interior, Exterior, Strata & Commercial",
+    description:
+      "Licensed and insured painters in Chatswood, North Shore and Sydney. Residential, interior, exterior, strata and commercial painting with free on-site quotes, 20 years of experience, and quality Dulux products.",
+    path: "/",
+  }),
+  alternates: {
+    canonical: "/",
+    languages: { "en-AU": "/", ko: "/ko", "zh-Hans": "/zh" },
+  },
+};
 
 function featuredGalleryHref(item: (typeof featuredGalleryImages)[number]) {
   if (!item.collectionSlug) {

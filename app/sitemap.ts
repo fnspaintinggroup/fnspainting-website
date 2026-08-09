@@ -4,6 +4,7 @@ import { siteUrl } from "@/lib/seo";
 
 const contentLastModified = new Date("2026-07-14");
 const locationPageLastModified = new Date("2026-08-06");
+const languagePageLastModified = new Date("2026-08-09");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -26,14 +27,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/painters-chatswood",
     "/painters-willoughby",
     "/painters-lindfield",
+    "/ko",
+    "/zh",
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: route.startsWith("/painters-")
       ? locationPageLastModified
-      : contentLastModified,
+      : route === "/ko" || route === "/zh"
+        ? languagePageLastModified
+        : contentLastModified,
     changeFrequency:
       route === "" || route.startsWith("/painters-") ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route.startsWith("/painters-") ? 0.9 : 0.8,
+    priority: route === "" ? 1 : route.startsWith("/painters-") ? 0.9 : route === "/ko" || route === "/zh" ? 0.7 : 0.8,
   }));
 
   const [blogPosts, projects, galleryCollections] = await Promise.all([
