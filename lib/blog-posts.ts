@@ -448,6 +448,146 @@ const baseBlogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    title: "How to Compare Painting Quotes in Sydney",
+    slug: "cheapest-painting-quote-sydney",
+    date: "2026-08-09",
+    updatedDate: "2026-08-09",
+    category: "Painting Quotes",
+    featuredImage: "/images/tips/prep-work-wall-filling.jpg",
+    imageAlt:
+      "Wall filling and surface preparation before repainting by F&S Painting",
+    excerpt:
+      "Two painting quotes can look similar on completion day. Learn where the price difference usually sits and what to check before you sign.",
+    seoTitle: "How to Compare Painting Quotes in Sydney | F&S Painting",
+    seoDescription:
+      "Two painting quotes can look the same on completion day. See where the price difference usually sits and what to check in a Sydney quote before signing.",
+    body: [
+      {
+        heading: "What painting actually does for a property",
+        paragraphs: [
+          "Painting helps protect the value you already have. The best quote is therefore not simply the lowest number. It is the one that clearly explains the scope, preparation and coating system in writing.",
+          "A paint system protects the building from weather, helps components such as timber frames, cladding and trims last longer, and improves appearance. The appearance is obvious on completion day. Much of the protection sits underneath the finish coat.",
+        ],
+      },
+      {
+        heading: "On completion day, every job can look good",
+        paragraphs: [
+          "The difference between painting quotes often sits in work that cannot be seen once the finish coat is on: washing and sanding, filling and flattening repairs, spot-priming bare areas, applying a suitable undercoat or sealer, and using the specified finish coats for coverage.",
+          "A reduced-preparation job may look fresh at first. Lifting, blistering or flaking can appear later when a coating was applied over an unsuitable, unstable or unsealed surface. The cause should always be checked before repainting.",
+        ],
+        image: {
+          src: "/images/tips/coating-failure-door-peeling.jpg",
+          alt: "Topcoat peeling from a door and exposing the earlier coating",
+          caption:
+            "Coating lifting from the layer below. The underlying cause needs to be identified before repainting.",
+        },
+      },
+      {
+        heading: "Preparation is the part you do not see later",
+        paragraphs: [
+          "Preparation can include protecting floors and furniture, cleaning, sanding, filling, repairing damaged areas and priming where the surface requires it. Once the finish coat is applied, this work is no longer visible, which is why it needs to be described in the quote.",
+        ],
+        image: {
+          src: "/images/tips/prep-work-wall-filling.jpg",
+          alt: "Wall filled and patched with furniture and flooring protected",
+          caption:
+            "Wall filling and patching before the finish coats, with the work area protected.",
+        },
+      },
+      {
+        heading: "A simple way to think about cost",
+        paragraphs: [
+          "Cost over the useful life of the work can be more helpful than cost on the day. A lower initial price may still cost more if the same surfaces need to be prepared and painted again sooner.",
+          "That does not mean a lower quote is automatically worse. It may cover fewer surfaces, an empty property, simpler access, or a different schedule. The useful question is whether the quotes describe the same work.",
+        ],
+      },
+      {
+        heading: "Indicative Sydney interior painting ranges",
+        paragraphs: [
+          "These are broad 2026 planning ranges in Australian dollars, not fixed F&S Painting prices. Surface condition, ceiling height, colour changes, furniture, access and the included doors and trims can all change the final price.",
+        ],
+        table: {
+          caption:
+            "Indicative ranges only. A property-specific written quote requires an agreed scope.",
+          headers: ["Interior painting scope", "Indicative range"],
+          rows: [
+            ["Interior painting per square metre", "$15-$45 per m2"],
+            ["Standard bedroom, walls only", "$500-$900"],
+            ["Bedroom including ceiling and trims", "$900-$1,400"],
+            ["Full two-bedroom apartment interior", "$3,500-$6,000"],
+            ["Full three-bedroom house interior", "$4,500-$9,000"],
+          ],
+        },
+        links: [
+          {
+            href: "/painting-tips/house-painting-cost-sydney",
+            label: "Read the Sydney house painting cost guide",
+          },
+          {
+            href: "/painting-tips/apartment-painting-cost-chatswood",
+            label: "Read the Chatswood apartment painting cost guide",
+          },
+        ],
+      },
+      {
+        heading: "Where a large price difference usually sits",
+        paragraphs: [
+          "Labour is a major part of painting work. When two quotes claim to cover the same full repaint but one is much lower, check whether preparation, primer or undercoat, finish coats, product range and repairs are described in the same way.",
+          "A single-line total makes comparison difficult. An itemised scope gives both the customer and painter a clear reference point.",
+        ],
+        bullets: [
+          "Surfaces or repairs omitted from the scope",
+          "Reduced preparation allowance",
+          "Different primer, undercoat or finish-coat assumptions",
+          "Different paint range, access or protection allowance",
+        ],
+      },
+      {
+        heading: "Five questions that make quotes comparable",
+        paragraphs: [
+          "Ask which surfaces are included; what preparation is allowed for; which products, primers and finish coats form the coating system; whether GST is included; and what written workmanship coverage applies to the quoted surfaces.",
+          "Walls only and a full repaint are different jobs. Ceilings, cornices, doors, frames, windows and skirting boards should be identified rather than assumed.",
+        ],
+        link: {
+          href: "/workmanship-warranty",
+          label: "Read about the F&S written workmanship warranty",
+        },
+      },
+      {
+        heading: "When the difference is only a few hundred dollars",
+        paragraphs: [
+          "Once quotes are close, the total alone is less useful. Compare the written scope, preparation, products, relevant experience, reviews, communication and how questions or changed conditions will be handled.",
+          "The most expensive quote is not automatically the best. Any price difference should be supported by a clear difference in scope, preparation, access, products or service.",
+        ],
+      },
+      {
+        heading: "Common questions about painting quotes",
+        paragraphs: [
+          "How many coats should you expect? It depends on the surface, existing colour and product specification. The quote should state the intended system and the coverage it is designed to achieve.",
+          "Can preparation be reduced to save money? The scope can be reduced, but preparation supports adhesion. Clearing rooms, limiting colour changes or staging the work may be safer ways to reduce cost.",
+          "What if a previous coating has failed? Loose coating generally needs to be removed and the underlying cause identified before a suitable system is applied.",
+        ],
+      },
+      {
+        heading: "Get an itemised quote you can compare",
+        paragraphs: [
+          "F&S Painting provides free on-site quotes across Sydney, with the included surfaces, preparation, coating system and price set out in writing.",
+          "Caleb is the owner of F&S Painting, a licensed and insured painting company serving Chatswood, the North Shore and Sydney. NSW contractor licence: 478497C.",
+        ],
+        links: [
+          {
+            href: "/painting-tips/free-quote-with-on-site-consultation",
+            label: "Why an on-site painting quote matters",
+          },
+          {
+            href: "/contact#quote-name",
+            label: "Request a free itemised quote",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const blogPostAdditions: Record<string, BlogSection[]> = {
