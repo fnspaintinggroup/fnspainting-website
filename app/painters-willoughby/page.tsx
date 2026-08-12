@@ -97,9 +97,9 @@ const trustHighlights = [
 ];
 
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Willoughby | Real Local Projects & Free Quote",
+  title: "House Painters Willoughby | Real Local Work & Free Quote",
   description:
-    "See real Willoughby interior, exterior and ceiling projects from licensed F&S painters. 20 years' experience, local photos and free on-site quotes.",
+    "See real Willoughby ceiling, interior and North Willoughby exterior projects. Licensed F&S painters, careful preparation and free on-site quotes.",
   path: "/painters-willoughby",
   image: "/images/projects/willoughby-office-ceiling-after.jpg",
 });

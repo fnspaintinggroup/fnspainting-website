@@ -88,9 +88,9 @@ const trustHighlights = [
 ];
 
 export const metadata: Metadata = pageMetadata({
-  title: "Painters Lindfield | Real Local Projects & Free Quote",
+  title: "House Painters Lindfield | Exterior & Timber Specialists",
   description:
-    "See real Lindfield and East Lindfield exterior projects from licensed F&S painters. 20 years' experience, local photos and free on-site quotes.",
+    "See 19 real Lindfield and East Lindfield project photos covering exterior walls, timber windows, doors and trim. Licensed painters and free on-site quotes.",
   path: "/painters-lindfield",
   image: "/images/projects/east-lindfield-exterior-front-facade-finish.jpg",
 });
@@ -111,7 +111,7 @@ export default function PaintersLindfieldPage() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Painters Lindfield | Real Local Projects & Free Quote | F&S Painting",
+        name: "House Painters Lindfield | Exterior & Timber Specialists | F&S Painting",
         description:
           "Licensed painters serving Lindfield and East Lindfield, with real local exterior projects, 20 years of experience, and free on-site quotes.",
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
