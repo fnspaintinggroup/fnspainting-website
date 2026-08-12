@@ -444,6 +444,152 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       date: "2018-09-02",
       featured: true,
     },
+    {
+      customerName: "L. W.",
+      reviewText:
+        "We're so happy to support a family business that does such an amazing job. We'll definitely keep recommending you.",
+      source: "Direct customer feedback",
+      projectContext: "North Shore residential painting",
+      date: "2026-07-27",
+      featured: true,
+    },
+    {
+      customerName: "T.",
+      reviewText: "Mum is so happy with the painting. Thank you.",
+      source: "Direct customer feedback",
+      projectContext: "Residential painting",
+      date: "2023-05-13",
+      featured: true,
+    },
+    {
+      customerName: "R.",
+      reviewText: "Thank you for your work. I am so pleased with the outcome.",
+      source: "Direct customer feedback",
+      projectContext: "Residential repaint",
+      date: "2025-12-09",
+      featured: true,
+    },
+    {
+      customerName: "S. S.",
+      reviewText:
+        "Thank you for all your hard work and looking after our place. It was a pleasure having you refresh our home.",
+      source: "Direct customer feedback",
+      projectContext: "Home refresh",
+      date: "2025-08-26",
+      featured: true,
+    },
+    {
+      customerName: "N.",
+      reviewText: "I LOVE both of the rooms! They are wonderful — thank you so much!",
+      source: "Direct customer feedback",
+      projectContext: "Two-room interior repaint",
+      date: "2025-06-27",
+      featured: true,
+    },
+    {
+      customerName: "S.",
+      reviewText: "Thank you for another wonderful job, Caleb!",
+      source: "Direct customer feedback",
+      projectContext: "Repeat customer painting",
+      date: "2025-04-03",
+      featured: true,
+    },
+    {
+      customerName: "M. G.",
+      reviewText: "Thank you very much, Caleb, for all of that painting. Much appreciated indeed!",
+      source: "Direct customer feedback",
+      projectContext: "Residential painting",
+      date: "2024-07-24",
+      featured: true,
+    },
+    {
+      customerName: "M.",
+      reviewText: "Just been to the house — it is looking amazing. Thank you!",
+      source: "Direct customer feedback",
+      projectContext: "House repaint",
+      date: "2024-05-03",
+      featured: true,
+    },
+    {
+      customerName: "G. L.",
+      reviewText: "The rooms look really beautiful. I'm really happy. Thank you.",
+      source: "Direct customer feedback",
+      projectContext: "Interior room repaint",
+      date: "2018-02-02",
+      featured: true,
+    },
+    {
+      customerName: "C. L.",
+      reviewText: "Final payment has been made. Thank you for your hard work!",
+      source: "Direct customer feedback",
+      projectContext: "Completed residential painting",
+      date: "2024-06-18",
+      featured: true,
+    },
+    {
+      customerName: "L. W.",
+      reviewText: "I have recommended you to a friend in Willoughby. We'll definitely keep recommending you whenever we can.",
+      source: "Customer referral",
+      projectContext: "Willoughby referral",
+      date: "2026-07-27",
+      featured: true,
+    },
+    {
+      customerName: "T. & E.",
+      reviewText: "I recommended you to my friend as he is looking for some painting done to his house.",
+      source: "Customer referral",
+      projectContext: "House-painting referral",
+      date: "2025-08-11",
+      featured: true,
+    },
+    {
+      customerName: "K. C.",
+      reviewText: "You have been recommended by a few friends in Newington.",
+      source: "Customer referral",
+      projectContext: "Newington word of mouth",
+      date: "2020-09-07",
+      featured: true,
+    },
+    {
+      customerName: "C. L.",
+      reviewText: "Lendy in North Willoughby has highly recommended your team.",
+      source: "Customer referral",
+      projectContext: "North Willoughby referral",
+      date: "2024-05-03",
+      featured: true,
+    },
+    {
+      customerName: "G.",
+      reviewText: "A colleague at First National highly recommends you for painting work.",
+      source: "Customer referral",
+      projectContext: "Property professional referral",
+      date: "2020-05-06",
+      featured: true,
+    },
+    {
+      customerName: "S.",
+      reviewText: "A previous customer from Collaroy Plateau recommended you for this painting work.",
+      source: "Customer referral",
+      projectContext: "Northern Beaches referral",
+      date: "2020-05-15",
+      featured: true,
+    },
+    {
+      customerName: "P.",
+      reviewText: "You came highly recommended before our painting work.",
+      source: "Customer referral",
+      projectContext: "Word-of-mouth referral",
+      date: "2023-09-26",
+      featured: true,
+    },
+    {
+      customerName: "H.",
+      reviewText: "I got your number from Tanya and Frank when I needed rooms in my house painted.",
+      source: "Customer referral",
+      projectContext: "Cromer referral",
+      date: "2025-11-19",
+      featured: true,
+    },
   ];
   const allAvailableReviews = await getReviews();
   const featuredReviews = allAvailableReviews.filter((review) => review.featured !== false);
@@ -454,7 +600,8 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
   );
 
   if (googleReviews?.length) {
-    const firstGoogleReviews = googleReviews.slice(0, Math.min(2, limit));
+    const googleReviewCount = limit <= 8 ? 2 : Math.max(2, limit - mixedSourceReviews.length);
+    const firstGoogleReviews = googleReviews.slice(0, Math.min(googleReviewCount, limit));
     const remaining = [...mixedSourceReviews, ...eligibleReviews].slice(
       0,
       Math.max(0, limit - firstGoogleReviews.length),

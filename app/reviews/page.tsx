@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function ReviewsPage() {
-  const reviews = await getSelectedReviews(10);
+  const reviews = await getSelectedReviews(30);
 
   return (
     <>
@@ -24,8 +24,8 @@ export default async function ReviewsPage() {
         title="Customer reviews from Sydney painting projects"
         description={
           <>
-            Read verified feedback from Google, Facebook and completed F&amp;S Painting projects.
-            Each review card identifies its source clearly.
+            Read verified feedback from Google, Facebook and completed F&amp;S Painting projects,
+            together with genuine word-of-mouth referrals. Each card identifies its source clearly.
           </>
         }
         image="/images/page-heroes/reviews-hero.jpg"

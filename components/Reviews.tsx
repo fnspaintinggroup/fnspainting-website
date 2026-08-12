@@ -20,6 +20,46 @@ function GoogleIcon() {
   );
 }
 
+function ReviewCard({ review }: { review: CmsReview }) {
+  const source = review.source || getReviewSourceLabel();
+
+  return (
+    <figure className="flex h-full flex-col rounded-xl border border-ink/10 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+      <div className="flex items-start justify-between gap-4">
+        <figcaption className="text-base font-semibold text-ink">
+          {review.customerName}
+          <span className="mt-1 block text-sm font-normal text-ink/55">
+            {review.projectContext ||
+              (review.date ? new Date(review.date).toLocaleDateString("en-AU") : source)}
+          </span>
+        </figcaption>
+        <span className="rounded-full border border-ink/10 bg-mist px-3 py-1 text-xs font-semibold text-ink/65" title={source}>
+          {source.toLowerCase() === "google" ? <GoogleIcon /> : source}
+        </span>
+      </div>
+      {typeof review.rating === "number" ? (
+        <div className="mt-4 flex gap-1 text-[#fbbc04]" aria-label={`${review.rating} star review`}>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <Star key={index} aria-hidden="true" size={18} fill={index < review.rating! ? "currentColor" : "none"} className={index < review.rating! ? "text-[#fbbc04]" : "text-ink/20"} />
+          ))}
+        </div>
+      ) : null}
+      <blockquote className="mt-4 flex-1 text-sm leading-6 text-ink/80">&ldquo;{review.reviewText}&rdquo;</blockquote>
+      {review.sourceUrl ? (
+        <Link href={review.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex text-sm font-semibold text-ink/50 hover:text-blue-700">
+          View original source
+        </Link>
+      ) : source.toLowerCase() === "google" ? (
+        <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ink/45"><GoogleIcon /> Verified Google review</span>
+      ) : source.toLowerCase().includes("referral") ? (
+        <span className="mt-4 text-sm font-semibold text-ink/45">Verified word-of-mouth referral</span>
+      ) : (
+        <span className="mt-4 text-sm font-semibold text-ink/45">Verified direct feedback</span>
+      )}
+    </figure>
+  );
+}
+
 export function Reviews({ reviews }: ReviewsProps) {
   const { readMoreUrl, leaveReviewUrl } = getGoogleReviewLinks();
   const googleReviewsUrl = readMoreUrl || businessDetails.googleReviewsUrl;
@@ -100,67 +140,24 @@ export function Reviews({ reviews }: ReviewsProps) {
           </div>
         </aside>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {reviews.map((review) => (
-            <figure
-              key={`${review.customerName}-${review.date ?? review.source ?? "review"}`}
-              className="flex h-full flex-col rounded-xl border border-ink/10 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <figcaption className="text-base font-semibold text-ink">
-                  {review.customerName}
-                  <span className="mt-1 block text-sm font-normal text-ink/55">
-                    {review.projectContext ||
-                      (review.date ? new Date(review.date).toLocaleDateString("en-AU") : review.source || getReviewSourceLabel())}
-                  </span>
-                </figcaption>
-                <span
-                  className="rounded-full border border-ink/10 bg-mist px-3 py-1 text-xs font-semibold text-ink/65"
-                  title={review.source || getReviewSourceLabel()}
-                >
-                  {(review.source || getReviewSourceLabel()).toLowerCase() === "google" ? (
-                    <GoogleIcon />
-                  ) : (
-                    review.source || getReviewSourceLabel()
-                  )}
-                </span>
-              </div>
-              {typeof review.rating === "number" ? (
-                <div className="mt-4 flex gap-1 text-[#fbbc04]" aria-label={`${review.rating} star review`}>
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <Star
-                      key={index}
-                      aria-hidden="true"
-                      size={18}
-                      fill={index < review.rating! ? "currentColor" : "none"}
-                      className={index < review.rating! ? "text-[#fbbc04]" : "text-ink/20"}
-                    />
-                  ))}
-                </div>
-              ) : null}
-              <blockquote className="mt-4 flex-1 text-sm leading-6 text-ink/80">
-                &ldquo;{review.reviewText}&rdquo;
-              </blockquote>
-              {review.sourceUrl ? (
-                <Link
-                  href={review.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex text-sm font-semibold text-ink/50 hover:text-blue-700"
-                >
-                  View original source
-                </Link>
-              ) : (review.source || getReviewSourceLabel()).toLowerCase() === "google" ? (
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ink/45">
-                  <GoogleIcon />
-                  Verified Google review
-                </span>
-              ) : (
-                <span className="mt-4 text-sm font-semibold text-ink/45">Verified direct feedback</span>
-              )}
-            </figure>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {reviews.slice(0, 12).map((review) => (
+            <ReviewCard key={`${review.customerName}-${review.date ?? review.source ?? "review"}`} review={review} />
           ))}
         </div>
+        {reviews.length > 12 ? (
+          <details className="group">
+            <summary className="mx-auto flex w-fit cursor-pointer list-none items-center rounded-full border border-eucalyptus px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf [&::-webkit-details-marker]:hidden">
+              <span className="group-open:hidden">Show More Reviews</span>
+              <span className="hidden group-open:inline">Show Fewer Reviews</span>
+            </summary>
+            <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {reviews.slice(12).map((review) => (
+                <ReviewCard key={`${review.customerName}-${review.date ?? review.source ?? "review"}`} review={review} />
+              ))}
+            </div>
+          </details>
+        ) : null}
       </div>
 
     </div>
