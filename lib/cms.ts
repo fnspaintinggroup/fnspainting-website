@@ -18,9 +18,11 @@ import { createUrlSlug } from "@/lib/url-slug";
 
 export type CmsReview = {
   customerName: string;
-  rating: number;
+  rating?: number;
   reviewText: string;
   source?: string;
+  sourceUrl?: string;
+  projectContext?: string;
   date?: string;
   featured?: boolean;
 };
@@ -391,15 +393,85 @@ export async function getReviews(): Promise<CmsReview[]> {
 
 export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
   const googleReviews = await getGoogleBusinessProfileReviews();
+  const mixedSourceReviews: CmsReview[] = [
+    {
+      customerName: "D. B.",
+      reviewText: "Thank you again for the great job you did painting my apartment.",
+      source: "Direct customer feedback",
+      projectContext: "Chatswood apartment repaint",
+      featured: true,
+    },
+    {
+      customerName: "Sally B.",
+      reviewText:
+        "Caleb was so professional — we are super happy with the job he did for us. He went above and beyond for us. Would recommend him to anyone and we will be using him again for sure!",
+      source: "Facebook recommendation",
+      sourceUrl: "https://www.facebook.com/fnspainting/reviews",
+      date: "2019-02-23",
+      featured: true,
+    },
+    {
+      customerName: "S. S.",
+      reviewText: "A very BIG thank you for painting our house... we love it!",
+      source: "Direct customer feedback",
+      projectContext: "Whole-house painting",
+      date: "2021-12-30",
+      featured: true,
+    },
+    {
+      customerName: "L.",
+      reviewText:
+        "We are very happy with the job you and your team have done and appreciate that you were able to meet our tight timeframe. I will happily recommend you.",
+      source: "Direct customer feedback",
+      projectContext: "Residential painting",
+      date: "2018-03-28",
+      featured: true,
+    },
+    {
+      customerName: "N. C.",
+      reviewText:
+        "Thanks Caleb for doing such a fantastic job. We will recommend you to our family and friends.",
+      source: "Direct customer feedback",
+      projectContext: "Residential painting",
+      date: "2021-11-14",
+      featured: true,
+    },
+    {
+      customerName: "G. L.",
+      reviewText: "The room looks really fantastic. Thanks for doing a great job — we all love it.",
+      source: "Direct customer feedback",
+      projectContext: "Interior room repaint",
+      date: "2018-09-02",
+      featured: true,
+    },
+  ];
+  const allAvailableReviews = await getReviews();
+  const featuredReviews = allAvailableReviews.filter((review) => review.featured !== false);
+  const eligibleReviews = (featuredReviews.length ? featuredReviews : allAvailableReviews).filter(
+    (review) =>
+      review.customerName.toLowerCase() !== "josh u." &&
+      !mixedSourceReviews.some((mixedReview) => reviewKey(mixedReview) === reviewKey(review)),
+  );
 
   if (googleReviews?.length) {
-    return googleReviews.slice(0, limit);
+    const firstGoogleReviews = googleReviews.slice(0, Math.min(2, limit));
+    const remaining = [...mixedSourceReviews, ...eligibleReviews].slice(
+      0,
+      Math.max(0, limit - firstGoogleReviews.length),
+    );
+    return [...firstGoogleReviews, ...remaining];
   }
 
-  const reviews = await getReviews();
-  const featuredReviews = reviews.filter((review) => review.featured !== false);
-
-  return (featuredReviews.length ? featuredReviews : reviews).slice(0, limit);
+  const fallbackGoogleReviews = eligibleReviews.filter(
+    (review) => (review.source || "Google").toLowerCase() === "google",
+  );
+  const firstGoogleReviews = fallbackGoogleReviews.slice(0, Math.min(2, limit));
+  const usedKeys = new Set(firstGoogleReviews.map((review) => reviewKey(review)));
+  const remaining = [...mixedSourceReviews, ...eligibleReviews.filter((review) => !usedKeys.has(reviewKey(review)))].slice(
+    0,
+    Math.max(0, limit - firstGoogleReviews.length),
+  );
+  return [...firstGoogleReviews, ...remaining];
 }
 
 export async function getServices(): Promise<CmsService[]> {

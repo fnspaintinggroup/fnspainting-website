@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ExternalLink, MapPinned, Phone, Star as StarBadge } from "lucide-react";
 import { businessDetails } from "@/lib/business";
 import type { CmsReview } from "@/lib/cms";
@@ -9,6 +8,17 @@ import { starIcon as Star } from "@/lib/site-data";
 type ReviewsProps = {
   reviews: CmsReview[];
 };
+
+function GoogleIcon() {
+  return (
+    <svg aria-label="Google" viewBox="0 0 24 24" className="h-5 w-5" role="img">
+      <path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.7 4.7 0 0 1-2 3v2.5h3.3c1.9-1.8 2.9-4.4 2.9-7.4Z" />
+      <path fill="#34A853" d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.5c-.9.6-2.1 1-3.4 1a5.9 5.9 0 0 1-5.5-4.1H3.1v2.6A10 10 0 0 0 12 22Z" />
+      <path fill="#FBBC05" d="M6.5 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9.1L6.5 14Z" />
+      <path fill="#EA4335" d="M12 6c1.5 0 2.9.5 3.9 1.5l2.9-2.8A9.7 9.7 0 0 0 12 2a10 10 0 0 0-8.9 5.5l3.4 2.6A5.9 5.9 0 0 1 12 6Z" />
+    </svg>
+  );
+}
 
 export function Reviews({ reviews }: ReviewsProps) {
   const { readMoreUrl, leaveReviewUrl } = getGoogleReviewLinks();
@@ -38,10 +48,12 @@ export function Reviews({ reviews }: ReviewsProps) {
 
   return (
     <div>
-      <div className="grid gap-6 lg:grid-cols-[0.75fr_1.8fr]">
-        <aside className="rounded-xl border border-ink/10 bg-white p-6 shadow-md">
+      <div className="grid gap-6">
+        <aside className="rounded-xl border border-ink/10 bg-white p-5 shadow-md sm:p-6">
+          <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
           <p className="text-2xl font-semibold text-ink">{businessDetails.googleBusinessName}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2">
+          <div className="mt-3 flex flex-wrap items-center gap-2">
             <span className="text-lg text-ink/75">{businessDetails.googleRating}</span>
             <span className="flex gap-0.5 text-[#fbbc04]" aria-label={`${businessDetails.googleRating} Google rating`}>
               {Array.from({ length: 5 }).map((_, index) => (
@@ -57,8 +69,18 @@ export function Reviews({ reviews }: ReviewsProps) {
               {businessDetails.googleReviewCount} Google reviews
             </Link>
           </div>
-          <p className="mt-3 text-sm leading-6 text-ink/65">Painter in Chatswood, New South Wales</p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <p className="mt-2 text-sm leading-6 text-ink/65">Painter in Chatswood, New South Wales</p>
+            </div>
+            <div className="flex flex-wrap gap-2 lg:max-w-[360px] lg:justify-end">
+              <Link href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-eucalyptus px-4 py-2 text-sm font-semibold text-eucalyptus transition hover:bg-gumleaf">
+                <GoogleIcon /> Read More Reviews
+              </Link>
+              <Link href={leaveReviewUrl || businessDetails.googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-clay px-4 py-2 text-sm font-semibold text-white transition hover:bg-clay/90">
+                <GoogleIcon /> Leave Us a Review
+              </Link>
+            </div>
+          </div>
+          <div className="mt-5 flex flex-wrap gap-2 border-t border-ink/10 pt-4">
             {googleActions.map((action) => {
               const Icon = action.icon;
 
@@ -68,7 +90,7 @@ export function Reviews({ reviews }: ReviewsProps) {
                   href={action.href}
                   target={action.href.startsWith("http") ? "_blank" : undefined}
                   rel={action.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink/75 transition hover:border-blue-500 hover:text-blue-700"
+                  className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-3.5 py-2 text-sm font-semibold text-ink/75 transition hover:border-blue-500 hover:text-blue-700"
                 >
                   <Icon aria-hidden="true" size={16} />
                   {action.label}
@@ -78,7 +100,7 @@ export function Reviews({ reviews }: ReviewsProps) {
           </div>
         </aside>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {reviews.map((review) => (
             <figure
               key={`${review.customerName}-${review.date ?? review.source ?? "review"}`}
@@ -88,66 +110,59 @@ export function Reviews({ reviews }: ReviewsProps) {
                 <figcaption className="text-base font-semibold text-ink">
                   {review.customerName}
                   <span className="mt-1 block text-sm font-normal text-ink/55">
-                    {review.date ? new Date(review.date).toLocaleDateString("en-AU") : getReviewSourceLabel()}
+                    {review.projectContext ||
+                      (review.date ? new Date(review.date).toLocaleDateString("en-AU") : review.source || getReviewSourceLabel())}
                   </span>
                 </figcaption>
-                <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white">
-                  <Image
-                    data-original-brightness="true"
-                    src="/images/footer/google-icon.svg"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="h-6 w-6 object-contain"
-                  />
+                <span
+                  className="rounded-full border border-ink/10 bg-mist px-3 py-1 text-xs font-semibold text-ink/65"
+                  title={review.source || getReviewSourceLabel()}
+                >
+                  {(review.source || getReviewSourceLabel()).toLowerCase() === "google" ? (
+                    <GoogleIcon />
+                  ) : (
+                    review.source || getReviewSourceLabel()
+                  )}
                 </span>
               </div>
-              <div className="mt-4 flex gap-1 text-[#fbbc04]" aria-label={`${review.rating} star review`}>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <Star
-                    key={index}
-                    aria-hidden="true"
-                    size={18}
-                    fill={index < review.rating ? "currentColor" : "none"}
-                    className={index < review.rating ? "text-[#fbbc04]" : "text-ink/20"}
-                  />
-                ))}
-              </div>
+              {typeof review.rating === "number" ? (
+                <div className="mt-4 flex gap-1 text-[#fbbc04]" aria-label={`${review.rating} star review`}>
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star
+                      key={index}
+                      aria-hidden="true"
+                      size={18}
+                      fill={index < review.rating! ? "currentColor" : "none"}
+                      className={index < review.rating! ? "text-[#fbbc04]" : "text-ink/20"}
+                    />
+                  ))}
+                </div>
+              ) : null}
               <blockquote className="mt-4 flex-1 text-sm leading-6 text-ink/80">
                 &ldquo;{review.reviewText}&rdquo;
               </blockquote>
-              <Link
-                href={googleReviewsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex text-sm font-semibold text-ink/50 hover:text-blue-700"
-              >
-                Read more on Google
-              </Link>
+              {review.sourceUrl ? (
+                <Link
+                  href={review.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex text-sm font-semibold text-ink/50 hover:text-blue-700"
+                >
+                  View original source
+                </Link>
+              ) : (review.source || getReviewSourceLabel()).toLowerCase() === "google" ? (
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ink/45">
+                  <GoogleIcon />
+                  Verified Google review
+                </span>
+              ) : (
+                <span className="mt-4 text-sm font-semibold text-ink/45">Verified direct feedback</span>
+              )}
             </figure>
           ))}
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <Link
-          href={googleReviewsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-md border border-eucalyptus px-5 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
-        >
-          Read More Reviews on Google
-        </Link>
-
-        <Link
-          href={leaveReviewUrl || businessDetails.googleReviewsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-md bg-clay px-5 py-3 font-semibold text-white transition hover:bg-clay/90"
-        >
-          Leave Us a Google Review
-        </Link>
-      </div>
     </div>
   );
 }

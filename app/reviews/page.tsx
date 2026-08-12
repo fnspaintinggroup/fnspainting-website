@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Painter Sydney Reviews",
   description:
-    "Read selected Google reviews for F&S Painting, a Sydney painter for house painting, interior painting, exterior painting, strata painting, commercial painting, and ceiling painting.",
+    "Read verified Google, Facebook and direct customer feedback for F&S Painting across Sydney painting projects.",
   path: "/reviews",
 });
 
@@ -24,8 +24,8 @@ export default async function ReviewsPage() {
         title="Customer reviews from Sydney painting projects"
         description={
           <>
-            View F&amp;S Painting Services on Google, read more Google reviews, and see selected
-            customer reviews from the website CMS or Google Business Profile API.
+            Read verified feedback from Google, Facebook and completed F&amp;S Painting projects.
+            Each review card identifies its source clearly.
           </>
         }
         image="/images/page-heroes/reviews-hero.jpg"

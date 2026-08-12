@@ -55,22 +55,10 @@ function featuredGalleryHref(item: (typeof featuredGalleryImages)[number]) {
 
 export default async function Home() {
   const [selectedReviews, cmsServices] = await Promise.all([
-    getSelectedReviews(6),
+    getSelectedReviews(8),
     getServices(),
   ]);
-  const janChurcherReview = selectedReviews.find((review) =>
-    review.customerName.toLowerCase().includes("jan churcher"),
-  );
-  const cmsReviews = janChurcherReview
-    ? [
-        ...selectedReviews
-          .filter(
-            (review) => review.customerName !== janChurcherReview.customerName,
-          )
-          .slice(0, 3),
-        janChurcherReview,
-      ]
-    : selectedReviews.slice(0, 4);
+  const cmsReviews = selectedReviews.slice(0, 8);
   const homepageFaqs = [
     homeFaqs[1],
     homeFaqs[8],
@@ -282,9 +270,9 @@ export default async function Home() {
       </Section>
 
       <Section
-        eyebrow="Google Reviews"
+        eyebrow="Customer Reviews"
         title="Trusted by Sydney homeowners, strata managers, and local businesses"
-        intro="Real customer reviews help new customers feel confident before booking a painting quote."
+        intro="Verified feedback from Google, Facebook and completed painting projects helps customers compare with confidence."
       >
         <Reviews reviews={cmsReviews} />
       </Section>
