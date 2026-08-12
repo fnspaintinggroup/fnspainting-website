@@ -27,18 +27,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/painters-chatswood",
     "/painters-willoughby",
     "/painters-lindfield",
-    "/ko",
     "/zh",
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: route.startsWith("/painters-")
       ? locationPageLastModified
-      : route === "/ko" || route === "/zh"
+      : route === "/zh"
         ? languagePageLastModified
         : contentLastModified,
     changeFrequency:
       route === "" || route.startsWith("/painters-") ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route.startsWith("/painters-") ? 0.9 : route === "/ko" || route === "/zh" ? 0.7 : 0.8,
+    priority: route === "" ? 1 : route.startsWith("/painters-") ? 0.9 : route === "/zh" ? 0.7 : 0.8,
   }));
 
   const [blogPosts, projects, galleryCollections] = await Promise.all([

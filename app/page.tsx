@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   }),
   alternates: {
     canonical: "/",
-    languages: { "en-AU": "/", ko: "/ko", "zh-Hans": "/zh" },
+    languages: { "en-AU": "/", "zh-Hans": "/zh" },
   },
 };
 

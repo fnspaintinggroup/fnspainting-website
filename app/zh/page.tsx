@@ -4,7 +4,7 @@ import { LanguageOverviewPage } from "@/components/LanguageOverviewPage";
 export const metadata: Metadata = {
   title: "悉尼 Chatswood 专业油漆服务 | F&S Painting 中文介绍",
   description: "为 Chatswood、North Shore 及悉尼地区的住宅、公寓、物业和商业空间提供室内外油漆服务及免费现场报价。",
-  alternates: { canonical: "/zh", languages: { "en-AU": "/", ko: "/ko", "zh-Hans": "/zh" } },
+  alternates: { canonical: "/zh", languages: { "en-AU": "/", "zh-Hans": "/zh" } },
 };
 
 export default function ChineseOverviewPage() {
