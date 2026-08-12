@@ -275,6 +275,12 @@ export default async function Home() {
         intro="Verified feedback from Google, Facebook and completed painting projects helps customers compare with confidence."
       >
         <Reviews reviews={cmsReviews} />
+        <div className="mt-6 text-center">
+          <Link href="/reviews" className="inline-flex items-center gap-2 rounded-full border border-eucalyptus px-5 py-2.5 font-semibold text-eucalyptus transition hover:bg-gumleaf">
+            View All Customer Reviews
+            <ArrowRight aria-hidden="true" size={17} />
+          </Link>
+        </div>
       </Section>
 
       <Section

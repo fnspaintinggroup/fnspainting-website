@@ -411,7 +411,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "S. S.",
+      customerName: "Sophia S.",
       reviewText: "A very BIG thank you for painting our house... we love it!",
       source: "Direct customer feedback",
       projectContext: "Whole-house painting",
@@ -419,7 +419,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "L.",
+      customerName: "Lisa — Verified Customer",
       reviewText:
         "We are very happy with the job you and your team have done and appreciate that you were able to meet our tight timeframe. I will happily recommend you.",
       source: "Direct customer feedback",
@@ -428,7 +428,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "N. C.",
+      customerName: "Natalie C.",
       reviewText:
         "Thanks Caleb for doing such a fantastic job. We will recommend you to our family and friends.",
       source: "Direct customer feedback",
@@ -445,7 +445,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "L. W.",
+      customerName: "Lendy L.",
       reviewText:
         "We're so happy to support a family business that does such an amazing job. We'll definitely keep recommending you.",
       source: "Direct customer feedback",
@@ -454,7 +454,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "T.",
+      customerName: "Tracy — Verified Customer",
       reviewText: "Mum is so happy with the painting. Thank you.",
       source: "Direct customer feedback",
       projectContext: "Residential painting",
@@ -462,7 +462,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "R.",
+      customerName: "Rosemary — Verified Customer",
       reviewText: "Thank you for your work. I am so pleased with the outcome.",
       source: "Direct customer feedback",
       projectContext: "Residential repaint",
@@ -470,7 +470,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "S. S.",
+      customerName: "Shariff S.",
       reviewText:
         "Thank you for all your hard work and looking after our place. It was a pleasure having you refresh our home.",
       source: "Direct customer feedback",
@@ -479,7 +479,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "N.",
+      customerName: "Nancy — Verified Customer",
       reviewText: "I LOVE both of the rooms! They are wonderful — thank you so much!",
       source: "Direct customer feedback",
       projectContext: "Two-room interior repaint",
@@ -487,7 +487,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "S.",
+      customerName: "Sharon — Repeat Customer",
       reviewText: "Thank you for another wonderful job, Caleb!",
       source: "Direct customer feedback",
       projectContext: "Repeat customer painting",
@@ -495,7 +495,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "M. G.",
+      customerName: "Matthew G.",
       reviewText: "Thank you very much, Caleb, for all of that painting. Much appreciated indeed!",
       source: "Direct customer feedback",
       projectContext: "Residential painting",
@@ -503,7 +503,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "M.",
+      customerName: "Min — Verified Customer",
       reviewText: "Just been to the house — it is looking amazing. Thank you!",
       source: "Direct customer feedback",
       projectContext: "House repaint",
@@ -519,7 +519,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "C. L.",
+      customerName: "Christine L.",
       reviewText: "Final payment has been made. Thank you for your hard work!",
       source: "Direct customer feedback",
       projectContext: "Completed residential painting",
@@ -527,7 +527,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "L. W.",
+      customerName: "Lendy L.",
       reviewText: "I have recommended you to a friend in Willoughby. We'll definitely keep recommending you whenever we can.",
       source: "Customer referral",
       projectContext: "Willoughby referral",
@@ -535,7 +535,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "T. & E.",
+      customerName: "Taffrey & Esabel",
       reviewText: "I recommended you to my friend as he is looking for some painting done to his house.",
       source: "Customer referral",
       projectContext: "House-painting referral",
@@ -543,7 +543,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "K. C.",
+      customerName: "Karen C.",
       reviewText: "You have been recommended by a few friends in Newington.",
       source: "Customer referral",
       projectContext: "Newington word of mouth",
@@ -551,7 +551,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "C. L.",
+      customerName: "Christine L.",
       reviewText: "Lendy in North Willoughby has highly recommended your team.",
       source: "Customer referral",
       projectContext: "North Willoughby referral",
@@ -559,7 +559,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "G.",
+      customerName: "Genevieve — Property Professional",
       reviewText: "A colleague at First National highly recommends you for painting work.",
       source: "Customer referral",
       projectContext: "Property professional referral",
@@ -567,7 +567,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "S.",
+      customerName: "Sarah — Verified Referral",
       reviewText: "A previous customer from Collaroy Plateau recommended you for this painting work.",
       source: "Customer referral",
       projectContext: "Northern Beaches referral",
@@ -575,7 +575,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "P.",
+      customerName: "Piero — Verified Customer",
       reviewText: "You came highly recommended before our painting work.",
       source: "Customer referral",
       projectContext: "Word-of-mouth referral",
@@ -583,7 +583,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "H.",
+      customerName: "Heather P.",
       reviewText: "I got your number from Tanya and Frank when I needed rooms in my house painted.",
       source: "Customer referral",
       projectContext: "Cromer referral",

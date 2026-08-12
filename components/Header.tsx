@@ -28,12 +28,12 @@ export function Header() {
             <span className="block whitespace-nowrap text-base font-bold leading-none text-ink lg:text-lg">
               {businessDetails.name}
             </span>
-            <span className="hidden text-xs font-medium uppercase tracking-[0.16em] text-ink/55 lg:block">
+            <span className="hidden text-xs font-medium uppercase tracking-[0.16em] text-ink/55 2xl:block">
               Sydney NSW
             </span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-3 whitespace-nowrap text-sm font-medium text-ink/70 xl:flex">
+        <nav className="hidden items-center gap-2 whitespace-nowrap text-xs font-medium text-ink/70 lg:flex xl:gap-3 xl:text-sm">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className="transition hover:text-eucalyptus">
               {item.label}
@@ -44,20 +44,20 @@ export function Header() {
           </span>
           <Link
             href="/contact#quote-name"
-            className="inline-flex items-center gap-2 rounded-md bg-clay px-3.5 py-2 font-semibold text-white shadow-sm transition hover:bg-clay/90"
+            className="inline-flex items-center gap-1.5 rounded-md bg-clay px-3 py-2 font-semibold text-white shadow-sm transition hover:bg-clay/90 xl:px-3.5"
           >
             Get a Free Quote
             <ArrowRight aria-hidden="true" size={16} />
           </Link>
           <a
             href={`tel:${businessDetails.phones[0].replaceAll(" ", "")}`}
-            className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/30 px-3.5 py-2 font-semibold text-eucalyptus transition hover:bg-gumleaf"
+            className="inline-flex items-center gap-1.5 rounded-md border border-eucalyptus/30 px-3 py-2 font-semibold text-eucalyptus transition hover:bg-gumleaf xl:px-3.5"
           >
             <Phone aria-hidden="true" size={16} />
             Call {businessDetails.phones[0]}
           </a>
         </nav>
-        <div className="flex shrink-0 items-center gap-1.5 xl:hidden">
+        <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
           <Link
             href="/contact#quote-name"
             className="inline-flex min-h-9 items-center rounded-md bg-clay px-3 text-xs font-semibold text-white shadow-sm transition hover:bg-clay/90"
