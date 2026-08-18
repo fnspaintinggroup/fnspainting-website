@@ -36,6 +36,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/sign-up",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
         source: "/blog",
         destination: "/painting-tips",
         permanent: true,
