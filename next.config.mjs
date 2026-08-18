@@ -26,6 +26,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/ko",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/ko/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
         source: "/blog",
         destination: "/painting-tips",
         permanent: true,
