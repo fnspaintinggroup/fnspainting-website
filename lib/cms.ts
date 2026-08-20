@@ -136,9 +136,13 @@ function applyLocalProjectCorrections<T extends CmsProject>(project: T): T {
   const correctedProject = {
     ...project,
     completionDate: localProject.completionDate,
+    featuredOnExteriorService: localProject.featuredOnExteriorService,
   };
 
-  if (project.slug === "exterior-facade-trim-repaint") {
+  if (
+    project.slug === "exterior-facade-trim-repaint" ||
+    project.slug === "north-willoughby-exterior-house-repaint"
+  ) {
     return {
       ...correctedProject,
       beforeImage: localProject.beforeImage,
@@ -256,8 +260,9 @@ function applyLocalGalleryCollectionCorrections(
     (item) => item.slug === collection.slug,
   );
 
-  return collection.slug === "north-willoughby-exterior-facade-trim" &&
-    localCollection
+  return localCollection &&
+    (collection.slug === "north-willoughby-exterior-facade-trim" ||
+      collection.slug === "north-willoughby-exterior-house-repaint-gallery")
     ? { ...collection, ...localCollection }
     : collection;
 }

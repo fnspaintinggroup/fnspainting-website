@@ -12,7 +12,9 @@ import {
 import { FaqSection } from "@/components/FaqSection";
 import { Section } from "@/components/Section";
 import { businessDetails } from "@/lib/business";
+import { getGalleryCollections } from "@/lib/cms";
 import { faqSchema } from "@/lib/faqs";
+import { gallerySuburbMatchesArea } from "@/lib/gallery-areas";
 import {
   absoluteUrl,
   breadcrumbSchema,
@@ -48,47 +50,6 @@ const willoughbyFaqs = [
   },
 ];
 
-type LocalProject = {
-  title: string;
-  description: string;
-  image: string;
-  alt: string;
-  href: string;
-  galleryHref?: string;
-  label: string;
-};
-
-const localProjects: LocalProject[] = [
-  {
-    title: "Willoughby Ceiling Restoration and Interior Repaint",
-    description:
-      "A recent Willoughby project showing careful protection, ceiling restoration, preparation, and a clean interior repainting finish.",
-    image: "/images/projects/willoughby-office-ceiling-after.jpg",
-    alt: "Willoughby ceiling after surface restoration and a clean repainting finish",
-    href: "/projects/willoughby-ceiling-restoration-interior-repaint",
-    label: "Recent ceiling restoration",
-  },
-  {
-    title: "Willoughby Interior Wall Repaint",
-    description:
-      "Preparation and repainting across hallway and bedroom walls in a Willoughby home.",
-    image: "/images/projects/willoughby-hallway-wall-finish.jpg",
-    alt: "Willoughby hallway walls after interior repainting by F&S Painting",
-    href: "/painting-gallery/willoughby-interior-wall-repaint",
-    label: "Interior painting",
-  },
-  {
-    title: "North Willoughby Exterior Painting",
-    description:
-      "Facade, gable, entry, window trim, verandah, and side wall painting with careful preparation and a full photo gallery.",
-    image: "/images/projects/north-willoughby-lendy-after.jpg",
-    alt: "North Willoughby house facade and trim after exterior painting",
-    href: "/projects/exterior-facade-trim-repaint",
-    galleryHref: "/painting-gallery/north-willoughby-exterior-facade-trim",
-    label: "Exterior painting",
-  },
-];
-
 const services = [
   "House, apartment, and unit painting",
   "Interior walls, ceilings, trims, and doors",
@@ -115,7 +76,22 @@ export const metadata: Metadata = pageMetadata({
   image: "/images/projects/willoughby-office-ceiling-after.jpg",
 });
 
-export default function PaintersWilloughbyPage() {
+export default async function PaintersWilloughbyPage() {
+  const localProjects = (await getGalleryCollections())
+    .filter((collection) => gallerySuburbMatchesArea(collection.suburb, "Willoughby"))
+    .map((collection) => ({
+      title: collection.title,
+      description: collection.summary,
+      image: collection.coverImage,
+      alt: collection.coverAlt,
+      href: collection.projectSlug
+        ? `/projects/${collection.projectSlug}`
+        : `/painting-gallery/${collection.slug}`,
+      galleryHref: collection.projectSlug
+        ? `/painting-gallery/${collection.slug}`
+        : undefined,
+      label: collection.category,
+    }));
   const pageUrl = `${siteUrl}/painters-willoughby`;
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -264,7 +240,7 @@ export default function PaintersWilloughbyPage() {
         title="Real painting projects in Willoughby"
         intro="These local projects show completed interior, exterior, and ceiling work rather than stock photography."
       >
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2">
           {localProjects.map((project) => (
             <article
               key={project.title}

@@ -17,6 +17,7 @@ export type Project = {
   completionDate: string;
   seoTitle: string;
   seoDescription: string;
+  featuredOnExteriorService?: boolean;
 };
 
 export const projects: Project[] = [
@@ -71,6 +72,7 @@ export const projects: Project[] = [
     seoTitle: "Shed Exterior Repaint Chatswood West | F&S Painting",
     seoDescription:
       "Before and after a Chatswood West shed exterior repaint by F&S Painting, including the front, right side, and both sides of two doors.",
+    featuredOnExteriorService: true,
   },
   {
     title: "Mona Vale Heritage Interior Repaint",
@@ -145,6 +147,7 @@ export const projects: Project[] = [
     seoTitle: "Exterior House Painting Carlingford | F&S Painting",
     seoDescription:
       "Before and after exterior house painting in Carlingford by F&S Painting, showing a brick home refreshed with white walls and black trim.",
+    featuredOnExteriorService: true,
   },
   {
     title: "Newington Interior Repaint",
@@ -445,6 +448,7 @@ export const projects: Project[] = [
     seoTitle: "Exterior House Painting Chatswood | F&S Painting",
     seoDescription:
       "Before and after exterior house painting in Chatswood by F&S Painting, showing gable, fascia, roofline, and trim repainting on a brick home.",
+    featuredOnExteriorService: true,
   },
   {
     title: "Roseville Bedroom Wall Repaint",
@@ -557,10 +561,10 @@ export const projects: Project[] = [
     slug: "exterior-facade-trim-repaint",
     location: "North Willoughby, NSW",
     serviceType: "Exterior Painting",
-    beforeImage: "/images/projects/north-willoughby-lendy-before.jpg",
-    afterImage: "/images/projects/north-willoughby-lendy-after.jpg",
-    beforeImageAlt: "North Willoughby house facade before exterior repainting",
-    afterImageAlt: "North Willoughby house facade after exterior repainting",
+    beforeImage: "/images/projects/exterior-facade-before.jpg",
+    afterImage: "/images/projects/exterior-facade-after.jpg",
+    beforeImageAlt: "House facade and trim before exterior repainting in North Willoughby",
+    afterImageAlt: "House facade and trim after exterior repainting in North Willoughby",
     description:
       "Exterior facade panels, trim, posts, and entry details were prepared and repainted for a cleaner, brighter finish.",
     materials: "Exterior acrylic paint, exterior primer, gap sealant, sanding materials, and detailed trim preparation.",
@@ -568,6 +572,25 @@ export const projects: Project[] = [
     seoTitle: "Exterior Facade and Trim Repaint North Willoughby | F&S Painting",
     seoDescription:
       "Before and after exterior facade and trim repaint by F&S Painting in North Willoughby, showing a refreshed front entry and exterior finish.",
+  },
+  {
+    title: "North Willoughby Exterior House Repaint",
+    slug: "north-willoughby-exterior-house-repaint",
+    location: "North Willoughby, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/north-willoughby-exterior-house-repaint-before.jpg",
+    afterImage: "/images/projects/north-willoughby-exterior-house-repaint-after.jpg",
+    beforeImageAlt: "North Willoughby house exterior before repainting",
+    afterImageAlt: "North Willoughby house exterior after repainting",
+    description:
+      "Exterior walls, facade details, trim, windows, eaves, verandah, and covered areas were carefully prepared and repainted for a consistent finished result.",
+    materials:
+      "Exterior acrylic paint, exterior primer, gap sealant, sanding materials, and detailed surface preparation.",
+    completionDate: "2024-02-23",
+    seoTitle: "Exterior House Repaint North Willoughby | F&S Painting",
+    seoDescription:
+      "Before and after exterior house repaint in North Willoughby by F&S Painting, showing finished facade, trim, window, eaves, verandah, and side-wall details.",
+    featuredOnExteriorService: true,
   },
   {
     title: "Exterior Gable and Roofline Painting",

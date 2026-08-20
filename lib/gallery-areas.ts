@@ -21,7 +21,7 @@ const galleryAreaSuburbs = {
   Parramatta: ["Parramatta"],
   Roseville: ["Roseville"],
   Silverwater: ["Silverwater"],
-  Willoughby: ["Willoughby"],
+  Willoughby: ["Willoughby", "North Willoughby"],
 } as const;
 
 export type GalleryArea = keyof typeof galleryAreaSuburbs;

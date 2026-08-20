@@ -37,11 +37,35 @@ export default async function PaintingGalleryPage({
     getGalleryImages(),
     getGalleryCollections(),
   ]);
+  const galleryCardsByCollection = new Map(
+    galleryImages
+      .filter((item) => item.collectionSlug)
+      .map((item) => [item.collectionSlug, item]),
+  );
+  const galleryCollectionCards = galleryCollections.map((collection) => {
+    const existingCard = galleryCardsByCollection.get(collection.slug);
+
+    return {
+      title: collection.galleryCardTitle ?? existingCard?.title ?? collection.title,
+      category: collection.category,
+      image: collection.coverImage,
+      alt: existingCard?.alt ?? collection.coverAlt,
+      caption: existingCard?.caption ?? collection.summary,
+      suburb: collection.suburb,
+      collectionSlug: collection.slug,
+      projectSlug: collection.projectSlug,
+      photoCount: collection.images.length,
+    };
+  });
+  const standaloneGalleryImages = galleryImages.filter(
+    (item) => !item.collectionSlug,
+  );
+  const allGalleryImages = [...galleryCollectionCards, ...standaloneGalleryImages];
   const visibleGalleryImages = selectedArea
-    ? galleryImages.filter((item) =>
+    ? allGalleryImages.filter((item) =>
         gallerySuburbMatchesArea(item.suburb, selectedArea),
       )
-    : galleryImages;
+    : allGalleryImages;
   const visibleCategories = galleryCategories.filter((category) =>
     visibleGalleryImages.some((item) => item.category === category),
   );
@@ -124,7 +148,7 @@ export default async function PaintingGalleryPage({
             </Link>
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
-            {galleryImages.slice(0, 3).map((item) => (
+            {allGalleryImages.slice(0, 3).map((item) => (
               <div
                 key={item.title}
                 className="relative min-h-56 overflow-hidden rounded-md border border-white/15 bg-white/10 sm:min-h-72"
@@ -156,8 +180,8 @@ export default async function PaintingGalleryPage({
             </h2>
             <p className="mt-4 text-base leading-7 text-ink/70">
               {selectedArea
-                ? `Browse ${visibleGalleryImages.length} painting ${
-                    visibleGalleryImages.length === 1 ? "example" : "examples"
+                ? `Browse ${visibleGalleryImages.length} verified ${
+                    visibleGalleryImages.length === 1 ? "project" : "projects"
                   } completed in ${selectedArea}.`
                 : "Browse finished photos grouped by the kind of painting work customers most often ask to see before booking a quote."}
             </p>
@@ -215,7 +239,7 @@ export default async function PaintingGalleryPage({
                   </h2>
                 </div>
                 <p className="text-sm font-semibold text-ink/55">
-                  {categoryImages.length} photo
+                  {categoryImages.length} verified project
                   {categoryImages.length === 1 ? "" : "s"}
                 </p>
               </div>
@@ -230,7 +254,7 @@ export default async function PaintingGalleryPage({
                     <Link
                       href={
                         item.projectSlug
-                          ? `/projects#${item.projectSlug}`
+                          ? `/projects/${item.projectSlug}`
                           : item.collectionSlug
                             ? `/painting-gallery/${item.collectionSlug}`
                             : "/painting-gallery"

@@ -6,7 +6,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { Section } from "@/components/Section";
 import { businessDetails } from "@/lib/business";
 import { faqSchema } from "@/lib/faqs";
-import { projects } from "@/lib/projects";
+import { getProjectList } from "@/lib/cms";
 import {
   absoluteUrl,
   breadcrumbSchema,
@@ -37,24 +37,6 @@ const exteriorFaqs = [
   },
 ];
 
-const exteriorProjects = projects.filter(
-  (project) => project.serviceType === "Exterior Painting",
-);
-const lendyProject = exteriorProjects.find(
-  (project) => project.slug === "exterior-facade-trim-repaint",
-);
-const relatedProjects = [
-  ...(lendyProject ? [lendyProject] : []),
-  ...exteriorProjects
-    .filter((project) => project.slug !== "exterior-facade-trim-repaint")
-  .sort(
-    (a, b) =>
-      Number(b.location === "Chatswood, NSW") -
-      Number(a.location === "Chatswood, NSW"),
-  )
-    .slice(0, 3),
-];
-
 const pageUrl = `${siteUrl}/services/exterior-painting`;
 
 export const metadata: Metadata = pageMetadata({
@@ -62,10 +44,19 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Professional exterior painting in Sydney for homes, strata buildings, facades, eaves, fascia, gutters, trims, fences, decks, and weather-exposed surfaces.",
   path: "/services/exterior-painting",
-  image: relatedProjects[0]?.afterImage ?? "/images/fs-painting-hero-real.jpeg",
+  image: "/images/fs-painting-hero-real.jpeg",
 });
 
-export default function ExteriorPaintingPage() {
+export default async function ExteriorPaintingPage() {
+  const exteriorProjects = (await getProjectList()).filter(
+    (project) => project.serviceType === "Exterior Painting",
+  );
+  const relatedProjects = exteriorProjects.filter(
+    (project) => project.featuredOnExteriorService,
+  );
+  const northWilloughbyProject = exteriorProjects.find(
+    (project) => project.slug === "north-willoughby-exterior-house-repaint",
+  );
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -207,17 +198,17 @@ export default function ExteriorPaintingPage() {
             View a Chatswood exterior repaint
             <ArrowRight aria-hidden="true" size={17} />
           </Link>
-          {lendyProject ? (
+          {northWilloughbyProject ? (
             <>
               <Link
-                href={`/projects/${lendyProject.slug}`}
+                href={`/projects/${northWilloughbyProject.slug}`}
                 className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
               >
                 View North Willoughby Before / After
                 <ArrowRight aria-hidden="true" size={17} />
               </Link>
               <Link
-                href="/painting-gallery/north-willoughby-exterior-facade-trim"
+                href="/painting-gallery/north-willoughby-exterior-house-repaint-gallery"
                 className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
               >
                 View North Willoughby photo gallery
@@ -225,6 +216,13 @@ export default function ExteriorPaintingPage() {
               </Link>
             </>
           ) : null}
+          <Link
+            href="/painting-gallery#exterior-painting"
+            className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
+          >
+            View all exterior photo galleries
+            <ArrowRight aria-hidden="true" size={17} />
+          </Link>
         </div>
       </Section>
 
@@ -232,7 +230,7 @@ export default function ExteriorPaintingPage() {
         className="bg-mist"
         eyebrow="Related Before / After"
         title="Exterior painting examples"
-        intro="View recent exterior repainting examples completed by F&S Painting."
+        intro="A representative set is shown here. Every completed exterior gallery remains available through the full Exterior gallery link above."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {relatedProjects.map((project) => (

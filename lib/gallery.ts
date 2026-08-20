@@ -34,6 +34,7 @@ export type GalleryCollection = {
   coverAlt: string;
   completionDate?: string;
   projectSlug?: string;
+  galleryCardTitle?: string;
   images: GalleryCollectionImage[];
 };
 
@@ -157,14 +158,25 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 14,
   },
   {
-    title: "North Willoughby Exterior Facade and Trim Repaint",
+    title: "Exterior Facade and Trim",
     category: "Exterior Painting",
-    image: "/images/projects/north-willoughby-lendy-after.jpg",
+    image: "/images/projects/exterior-facade-after.jpg",
     alt: "North Willoughby house facade and trim after exterior repainting by F&S Painting",
     caption:
       "North Willoughby exterior facade, trim, porch, windows, verandah, and side wall finishes.",
     suburb: "North Willoughby, NSW",
     collectionSlug: "north-willoughby-exterior-facade-trim",
+    photoCount: 7,
+  },
+  {
+    title: "North Willoughby Exterior House Repaint",
+    category: "Exterior Painting",
+    image: "/images/projects/north-willoughby-exterior-house-repaint-after.jpg",
+    alt: "North Willoughby house exterior after repainting by F&S Painting",
+    caption:
+      "North Willoughby exterior facade, trim, windows, eaves, verandah, and side-wall finishes.",
+    suburb: "North Willoughby, NSW",
+    collectionSlug: "north-willoughby-exterior-house-repaint-gallery",
     photoCount: 10,
   },
   {
@@ -406,6 +418,7 @@ export const galleryCollections: GalleryCollection[] = [
     title: "Willoughby Ceiling Restoration and Interior Finish",
     category: "Ceiling Restoration",
     suburb: "Willoughby, NSW",
+    projectSlug: "willoughby-ceiling-restoration-interior-repaint",
     summary:
       "Ceiling restoration and repainting across living and bedroom areas, with careful protection and clean finished surfaces.",
     coverImage: "/images/projects/willoughby-office-ceiling-finish-3.jpg",
@@ -919,69 +932,132 @@ export const galleryCollections: GalleryCollection[] = [
     category: "Exterior Painting",
     suburb: "North Willoughby, NSW",
     projectSlug: "exterior-facade-trim-repaint",
+    galleryCardTitle: "Exterior Facade and Trim",
     summary:
       "Finished exterior painting across the North Willoughby facade, upper gable, entry porch, window trims, verandah, side walls, and exterior details.",
-    coverImage: "/images/projects/north-willoughby-lendy-after.jpg",
+    coverImage: "/images/projects/exterior-facade-after.jpg",
     coverAlt:
       "North Willoughby house facade and trim after professional exterior repainting by F&S Painting",
     images: [
       {
+        title: "Front Entry Painting",
+        image: "/images/projects/north-willoughby-exterior-front-entry-finish.jpg",
+        alt: "North Willoughby front entry facade after exterior painting",
+        caption:
+          "Front entry facade, gable trim, and surrounding surfaces finished with crisp exterior lines.",
+      },
+      {
+        title: "Upper Gable Painting",
+        image: "/images/projects/north-willoughby-exterior-upper-gable-finish.jpg",
+        alt: "North Willoughby upper gable wall and trim after exterior painting",
+        caption:
+          "Upper gable wall, trim lines, and eaves finished cleanly with a bright exterior coating.",
+      },
+      {
+        title: "Side Wall Preparation",
+        image: "/images/projects/north-willoughby-exterior-side-wall-prep.jpg",
+        alt: "North Willoughby side wall protected and prepared during exterior painting",
+        caption:
+          "Side wall and covered outdoor area protected and prepared before the final exterior finish.",
+      },
+      {
+        title: "Street View Painting",
+        image: "/images/projects/north-willoughby-exterior-street-view-finish.jpg",
+        alt: "North Willoughby street view after exterior house painting",
+        caption:
+          "Street-facing view showing the refreshed facade, trim, and front garden presentation.",
+      },
+      {
+        title: "Window and Trim Painting",
+        image: "/images/projects/north-willoughby-exterior-window-trim-finish.jpg",
+        alt: "North Willoughby exterior windows and trim after repainting",
+        caption:
+          "Window surrounds, exterior wall surfaces, and trim finished with a tidy, even coating.",
+      },
+      {
+        title: "Front Porch Painting",
+        image: "/images/projects/north-willoughby-exterior-front-porch-finish.jpg",
+        alt: "North Willoughby front porch and entry doors after exterior painting",
+        caption:
+          "Front porch, entry doors, masonry, and trim refreshed for a polished entry detail.",
+      },
+      {
+        title: "Verandah Detail Painting",
+        image: "/images/projects/north-willoughby-exterior-verandah-finish.jpg",
+        alt: "North Willoughby verandah and side entry after exterior painting",
+        caption:
+          "Verandah walls, ceiling lines, and surrounding trim finished with clean detail work.",
+      },
+    ],
+  },
+  {
+    slug: "north-willoughby-exterior-house-repaint-gallery",
+    title: "North Willoughby Exterior House Repaint",
+    category: "Exterior Painting",
+    suburb: "North Willoughby, NSW",
+    projectSlug: "north-willoughby-exterior-house-repaint",
+    summary:
+      "Finished exterior painting across the North Willoughby facade, trim, windows, eaves, verandah, side walls, and covered areas.",
+    coverImage: "/images/projects/north-willoughby-exterior-house-repaint-after.jpg",
+    coverAlt: "North Willoughby house exterior after professional repainting by F&S Painting",
+    images: [
+      {
         title: "Front Facade Painting",
-        image: "/images/projects/north-willoughby-lendy-front-facade-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-front-facade-finish.jpg",
         alt: "North Willoughby front facade after exterior painting",
         caption: "Freshly finished facade, front fence, and exterior trim in natural daylight.",
       },
       {
         title: "Front Entry and Trim",
-        image: "/images/projects/north-willoughby-lendy-front-entry-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-front-entry-finish.jpg",
         alt: "North Willoughby front entry and trim after exterior painting",
         caption: "Entry presentation and trim details completed with a clean exterior finish.",
       },
       {
         title: "Window and Eaves Detail",
-        image: "/images/projects/north-willoughby-lendy-window-eaves-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-window-eaves-finish.jpg",
         alt: "North Willoughby painted window trim and eaves detail",
         caption: "Window trims and eaves shown with even, crisp paint lines.",
       },
       {
         title: "Front Window Detail",
-        image: "/images/projects/north-willoughby-lendy-front-window-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-front-window-finish.jpg",
         alt: "North Willoughby front window surrounds after exterior painting",
         caption: "Front window surrounds and adjacent exterior wall finished neatly.",
       },
       {
         title: "Side Wall Painting",
-        image: "/images/projects/north-willoughby-lendy-side-wall-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-side-wall-finish.jpg",
         alt: "North Willoughby side exterior wall after repainting",
         caption: "Side wall surfaces, trim, and boundary details completed in a durable finish.",
       },
       {
         title: "Side Eaves and Windows",
-        image: "/images/projects/north-willoughby-lendy-side-eaves-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-side-eaves-finish.jpg",
         alt: "North Willoughby side eaves and windows after exterior painting",
         caption: "Side elevation detailing finished around the eaves and window trims.",
       },
       {
         title: "Rear Patio Painting",
-        image: "/images/projects/north-willoughby-lendy-rear-patio-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-rear-patio-finish.jpg",
         alt: "North Willoughby rear patio after exterior painting",
         caption: "Rear patio walls, ceiling, and doors completed with an even exterior coating.",
       },
       {
         title: "Verandah Detail Painting",
-        image: "/images/projects/north-willoughby-lendy-verandah-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-verandah-finish.jpg",
         alt: "North Willoughby verandah ceiling and wall finishes",
         caption: "Verandah ceiling, wall, and exterior details finished cleanly.",
       },
       {
         title: "Side Wall Detail",
-        image: "/images/projects/north-willoughby-lendy-side-detail-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-side-detail-finish.jpg",
         alt: "North Willoughby side wall and trim detail after repainting",
         caption: "Side wall and trim detail showing a consistent painted finish.",
       },
       {
         title: "Covered Walkway Painting",
-        image: "/images/projects/north-willoughby-lendy-covered-walkway-finish.jpg",
+        image: "/images/projects/north-willoughby-exterior-house-repaint-covered-walkway-finish.jpg",
         alt: "North Willoughby covered side walkway after exterior painting",
         caption: "Covered walkway walls, ceiling, and trim completed with a tidy finish.",
       },
