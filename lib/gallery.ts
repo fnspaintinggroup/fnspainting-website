@@ -33,6 +33,7 @@ export type GalleryCollection = {
   coverImage: string;
   coverAlt: string;
   completionDate?: string;
+  projectSlug?: string;
   images: GalleryCollectionImage[];
 };
 
@@ -156,15 +157,15 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 14,
   },
   {
-    title: "Exterior Facade and Trim",
+    title: "North Willoughby Exterior Facade and Trim Repaint",
     category: "Exterior Painting",
-    image: "/images/projects/exterior-facade-after.jpg",
+    image: "/images/projects/north-willoughby-lendy-after.jpg",
     alt: "North Willoughby house facade and trim after exterior repainting by F&S Painting",
     caption:
       "North Willoughby exterior facade, trim, porch, windows, verandah, and side wall finishes.",
     suburb: "North Willoughby, NSW",
     collectionSlug: "north-willoughby-exterior-facade-trim",
-    photoCount: 7,
+    photoCount: 10,
   },
   {
     title: "Mould-Damaged Ceiling Restored",
@@ -917,6 +918,7 @@ export const galleryCollections: GalleryCollection[] = [
     title: "North Willoughby Exterior Facade and Trim",
     category: "Exterior Painting",
     suburb: "North Willoughby, NSW",
+    projectSlug: "exterior-facade-trim-repaint",
     summary:
       "Finished exterior painting across the North Willoughby facade, upper gable, entry porch, window trims, verandah, side walls, and exterior details.",
     coverImage: "/images/projects/north-willoughby-lendy-after.jpg",

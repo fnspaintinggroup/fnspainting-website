@@ -55,6 +55,8 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
     notFound();
   }
 
+  const isWilloughbyCollection = collection.suburb.includes("Willoughby");
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
@@ -168,6 +170,38 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
           </div>
         </div>
       </section>
+
+      {collection.projectSlug || collection.category === "Exterior Painting" || isWilloughbyCollection ? (
+        <section className="bg-mist py-12 sm:py-16">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+            <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-clay">
+                Continue exploring
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold text-ink">
+                See related painting information
+              </h2>
+              <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
+                {collection.projectSlug ? (
+                  <Link href={`/projects/${collection.projectSlug}`} className="text-eucalyptus hover:text-clay">
+                    View matching Before / After
+                  </Link>
+                ) : null}
+                {collection.category === "Exterior Painting" ? (
+                  <Link href="/services/exterior-painting" className="text-eucalyptus hover:text-clay">
+                    Exterior painting service
+                  </Link>
+                ) : null}
+                {isWilloughbyCollection ? (
+                  <Link href="/painters-willoughby" className="text-eucalyptus hover:text-clay">
+                    Painters Willoughby
+                  </Link>
+                ) : null}
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="bg-eucalyptus py-14 text-white sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 md:grid-cols-[1fr_auto] md:items-center lg:px-8">

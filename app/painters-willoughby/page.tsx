@@ -48,7 +48,17 @@ const willoughbyFaqs = [
   },
 ];
 
-const localProjects = [
+type LocalProject = {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  href: string;
+  galleryHref?: string;
+  label: string;
+};
+
+const localProjects: LocalProject[] = [
   {
     title: "Willoughby Ceiling Restoration and Interior Repaint",
     description:
@@ -70,10 +80,11 @@ const localProjects = [
   {
     title: "North Willoughby Exterior Painting",
     description:
-      "Facade, gable, entry, window trim, verandah, and side wall painting with careful preparation.",
-    image: "/images/projects/exterior-facade-after.jpg",
+      "Facade, gable, entry, window trim, verandah, and side wall painting with careful preparation and a full photo gallery.",
+    image: "/images/projects/north-willoughby-lendy-after.jpg",
     alt: "North Willoughby house facade and trim after exterior painting",
-    href: "/painting-gallery/north-willoughby-exterior-facade-trim",
+    href: "/projects/exterior-facade-trim-repaint",
+    galleryHref: "/painting-gallery/north-willoughby-exterior-facade-trim",
     label: "Exterior painting",
   },
 ];
@@ -255,33 +266,41 @@ export default function PaintersWilloughbyPage() {
       >
         <div className="grid gap-5 lg:grid-cols-3">
           {localProjects.map((project) => (
-            <Link
+            <article
               key={project.title}
-              href={project.href}
               className="group overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                <Image
-                  src={project.image}
-                  alt={project.alt}
-                  fill
-                  sizes="(min-width: 1024px) 31vw, 90vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                />
+              <Link href={project.href} className="block">
+                <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    fill
+                    sizes="(min-width: 1024px) 31vw, 90vw"
+                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-5 pb-0">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+                    {project.label}
+                  </p>
+                  <h2 className="mt-2 text-xl font-semibold leading-tight text-ink">
+                    {project.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-6 text-ink/70">{project.description}</p>
+                </div>
+              </Link>
+              <div className="flex flex-wrap gap-x-4 gap-y-2 p-5 text-sm font-semibold text-eucalyptus">
+                <Link href={project.href} className="inline-flex items-center gap-2 hover:text-clay">
+                  View Before / After <ArrowRight aria-hidden="true" size={16} />
+                </Link>
+                {project.galleryHref ? (
+                  <Link href={project.galleryHref} className="inline-flex items-center gap-2 hover:text-clay">
+                    View photo gallery <ArrowRight aria-hidden="true" size={16} />
+                  </Link>
+                ) : null}
               </div>
-              <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
-                  {project.label}
-                </p>
-                <h2 className="mt-2 text-xl font-semibold leading-tight text-ink">
-                  {project.title}
-                </h2>
-                <p className="mt-3 text-sm leading-6 text-ink/70">{project.description}</p>
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus group-hover:text-clay">
-                  View project <ArrowRight aria-hidden="true" size={16} />
-                </span>
-              </div>
-            </Link>
+            </article>
           ))}
         </div>
         <div className="mt-7 flex flex-wrap gap-4">

@@ -4,7 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, MapPin, Paintbrush } from "lucide-react";
 import { PortableBody } from "@/components/PortableBody";
-import { getProjectBySlug, getProjectList, toAbsoluteUrl } from "@/lib/cms";
+import {
+  getGalleryCollections,
+  getProjectBySlug,
+  getProjectList,
+  toAbsoluteUrl,
+} from "@/lib/cms";
 import { breadcrumbSchema, siteUrl, targetKeywords } from "@/lib/seo";
 
 type ProjectPageProps = {
@@ -63,10 +68,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  const projects = await getProjectList();
+  const [projects, galleryCollections] = await Promise.all([
+    getProjectList(),
+    getGalleryCollections(),
+  ]);
   const relatedProjects = projects
     .filter((item) => item.slug !== project.slug)
     .slice(0, 2);
+  const matchingGallery = galleryCollections.find(
+    (collection) => collection.projectSlug === project.slug,
+  );
 
   const projectUrl = `${siteUrl}/projects/${project.slug}`;
   const projectImageObjects = [
@@ -373,12 +384,28 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                       Painters Chatswood
                     </Link>
                   ) : null}
+                  {project.location.includes("Willoughby") ? (
+                    <Link
+                      href="/painters-willoughby"
+                      className="text-eucalyptus hover:text-clay"
+                    >
+                      Painters Willoughby
+                    </Link>
+                  ) : null}
                   {project.serviceType.includes("Exterior") ? (
                     <Link
                       href="/services/exterior-painting"
                       className="text-eucalyptus hover:text-clay"
                     >
                       Exterior painting
+                    </Link>
+                  ) : null}
+                  {matchingGallery ? (
+                    <Link
+                      href={`/painting-gallery/${matchingGallery.slug}`}
+                      className="text-eucalyptus hover:text-clay"
+                    >
+                      View matching photo gallery
                     </Link>
                   ) : null}
                   <Link

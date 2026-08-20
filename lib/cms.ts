@@ -133,10 +133,22 @@ function applyLocalProjectCorrections<T extends CmsProject>(project: T): T {
     return project;
   }
 
-  return {
+  const correctedProject = {
     ...project,
     completionDate: localProject.completionDate,
   };
+
+  if (project.slug === "exterior-facade-trim-repaint") {
+    return {
+      ...correctedProject,
+      beforeImage: localProject.beforeImage,
+      afterImage: localProject.afterImage,
+      beforeImageAlt: localProject.beforeImageAlt,
+      afterImageAlt: localProject.afterImageAlt,
+    } as T;
+  }
+
+  return correctedProject;
 }
 
 function sortProjectsByCompletionDate(projects: CmsProject[]) {
@@ -237,6 +249,19 @@ function normalizeSanityGalleryCollection(
   };
 }
 
+function applyLocalGalleryCollectionCorrections(
+  collection: GalleryCollection,
+): GalleryCollection {
+  const localCollection = fallbackGalleryCollections.find(
+    (item) => item.slug === collection.slug,
+  );
+
+  return collection.slug === "north-willoughby-exterior-facade-trim" &&
+    localCollection
+    ? { ...collection, ...localCollection }
+    : collection;
+}
+
 function mergeGalleryCollections(collections: GalleryCollection[]) {
   const sanitySlugs = new Set(collections.map((collection) => collection.slug));
   const localOnlyCollections = fallbackGalleryCollections.filter(
@@ -324,7 +349,7 @@ export async function getGalleryCollections(): Promise<GalleryCollection[]> {
     return fallbackGalleryCollections;
   }
 
-  return mergeGalleryCollections(collections);
+  return mergeGalleryCollections(collections.map(applyLocalGalleryCollectionCorrections));
 }
 
 export async function getGalleryCollectionBySlug(
@@ -345,9 +370,9 @@ export async function getGalleryCollectionBySlug(
     );
   }
 
-  return (
-    normalizedCollection ?? fallbackGalleryCollections.find((item) => item.slug === slug)
-  );
+  return normalizedCollection
+    ? applyLocalGalleryCollectionCorrections(normalizedCollection)
+    : fallbackGalleryCollections.find((item) => item.slug === slug);
 }
 
 export async function getGalleryImages(): Promise<GalleryImage[]> {
@@ -357,7 +382,10 @@ export async function getGalleryImages(): Promise<GalleryImage[]> {
     return fallbackGalleryImages;
   }
 
-  const mergedCollections = mergeGalleryCollections(sanityCollections);
+  const correctedSanityCollections = sanityCollections.map(
+    applyLocalGalleryCollectionCorrections,
+  );
+  const mergedCollections = mergeGalleryCollections(correctedSanityCollections);
   const cardsBySlug = new Map(
     mergedCollections.map((collection) => [collection.slug, galleryCardFromCollection(collection)]),
   );
@@ -366,7 +394,7 @@ export async function getGalleryImages(): Promise<GalleryImage[]> {
       .map((image) => image.collectionSlug)
       .filter((slug): slug is string => Boolean(slug)),
   );
-  const newSanityCards = sanityCollections
+  const newSanityCards = correctedSanityCollections
     .filter((collection) => !localCollectionSlugs.has(collection.slug))
     .map((collection) => galleryCardFromCollection(collection));
   const existingCards = fallbackGalleryImages.map((image) =>

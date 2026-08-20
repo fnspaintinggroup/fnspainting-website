@@ -37,14 +37,23 @@ const exteriorFaqs = [
   },
 ];
 
-const relatedProjects = projects
-  .filter((project) => project.serviceType === "Exterior Painting")
+const exteriorProjects = projects.filter(
+  (project) => project.serviceType === "Exterior Painting",
+);
+const lendyProject = exteriorProjects.find(
+  (project) => project.slug === "exterior-facade-trim-repaint",
+);
+const relatedProjects = [
+  ...(lendyProject ? [lendyProject] : []),
+  ...exteriorProjects
+    .filter((project) => project.slug !== "exterior-facade-trim-repaint")
   .sort(
     (a, b) =>
       Number(b.location === "Chatswood, NSW") -
       Number(a.location === "Chatswood, NSW"),
   )
-  .slice(0, 3);
+    .slice(0, 3),
+];
 
 const pageUrl = `${siteUrl}/services/exterior-painting`;
 
@@ -179,9 +188,9 @@ export default function ExteriorPaintingPage() {
 
       <Section
         className="bg-gumleaf"
-        eyebrow="Chatswood Service Area"
-        title="Exterior house painters in Chatswood"
-        intro="Explore Chatswood exterior house painting, verified local project photos, and free on-site quote information."
+        eyebrow="Exterior Project Areas"
+        title="Exterior painting examples in Chatswood and Willoughby"
+        intro="Explore verified exterior project photos and related local painting information before requesting a quote."
       >
         <div className="flex flex-wrap gap-4">
           <Link
@@ -198,6 +207,24 @@ export default function ExteriorPaintingPage() {
             View a Chatswood exterior repaint
             <ArrowRight aria-hidden="true" size={17} />
           </Link>
+          {lendyProject ? (
+            <>
+              <Link
+                href={`/projects/${lendyProject.slug}`}
+                className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
+              >
+                View North Willoughby Before / After
+                <ArrowRight aria-hidden="true" size={17} />
+              </Link>
+              <Link
+                href="/painting-gallery/north-willoughby-exterior-facade-trim"
+                className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
+              >
+                View North Willoughby photo gallery
+                <ArrowRight aria-hidden="true" size={17} />
+              </Link>
+            </>
+          ) : null}
         </div>
       </Section>
 
