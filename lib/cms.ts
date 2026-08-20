@@ -478,7 +478,7 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "Lendy L.",
+      customerName: "Verified Customer",
       reviewText:
         "We're so happy to support a family business that does such an amazing job. We'll definitely keep recommending you.",
       source: "Direct customer feedback",
@@ -560,8 +560,8 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
       featured: true,
     },
     {
-      customerName: "Lendy L.",
-      reviewText: "I have recommended you to a friend in Willoughby. We'll definitely keep recommending you whenever we can.",
+      customerName: "Verified Customer",
+      reviewText: "I have recommended your team to a friend. We'll definitely keep recommending you whenever we can.",
       source: "Customer referral",
       projectContext: "Willoughby referral",
       date: "2026-07-27",
@@ -585,9 +585,9 @@ export async function getSelectedReviews(limit = 3): Promise<CmsReview[]> {
     },
     {
       customerName: "Christine L.",
-      reviewText: "Lendy in North Willoughby has highly recommended your team.",
+      reviewText: "A local customer has highly recommended your team.",
       source: "Customer referral",
-      projectContext: "North Willoughby referral",
+      projectContext: "Local customer referral",
       date: "2024-05-03",
       featured: true,
     },

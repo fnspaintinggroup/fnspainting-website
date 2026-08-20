@@ -106,7 +106,7 @@ export const projects = [
 
 export const reviews = [
   {
-    name: "lendy Lin",
+    name: "Verified Customer",
     rating: 5,
     quote:
       "Caleb and his team did a great job for painting my whole house. His team is efficient, professional and reliable. Caleb is easy to communicate. I am very happy with his service and all the work he has done. I highly recommend F&S Painting, thank you Caleb and team.",
