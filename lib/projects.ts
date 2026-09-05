@@ -557,21 +557,21 @@ export const projects: Project[] = [
       "Before and after exterior house painting refresh in Earlwood by F&S Painting, including surface preparation and exterior repainting.",
   },
   {
-    title: "Exterior Facade and Trim Repaint",
+    title: "North Willoughby Timber Window Painting",
     slug: "exterior-facade-trim-repaint",
     location: "North Willoughby, NSW",
     serviceType: "Exterior Painting",
     beforeImage: "/images/projects/exterior-facade-before.jpg",
     afterImage: "/images/projects/exterior-facade-after.jpg",
-    beforeImageAlt: "House facade and trim before exterior repainting in North Willoughby",
-    afterImageAlt: "House facade and trim after exterior repainting in North Willoughby",
+    beforeImageAlt: "North Willoughby timber window surrounds and exterior trim before repainting",
+    afterImageAlt: "North Willoughby timber window surrounds and exterior trim after repainting",
     description:
-      "Exterior facade panels, trim, posts, and entry details were prepared and repainted for a cleaner, brighter finish.",
+      "Timber window surrounds, exterior trim, facade panels, posts, and entry details were prepared and repainted for a cleaner, brighter finish.",
     materials: "Exterior acrylic paint, exterior primer, gap sealant, sanding materials, and detailed trim preparation.",
     completionDate: "2024-06-01",
-    seoTitle: "Exterior Facade and Trim Repaint North Willoughby | F&S Painting",
+    seoTitle: "Timber Window Painting North Willoughby | F&S Painting",
     seoDescription:
-      "Before and after exterior facade and trim repaint by F&S Painting in North Willoughby, showing a refreshed front entry and exterior finish.",
+      "Before and after timber window surrounds and exterior trim repainting by F&S Painting in North Willoughby, showing a refreshed exterior finish.",
   },
   {
     title: "North Willoughby Exterior House Repaint",

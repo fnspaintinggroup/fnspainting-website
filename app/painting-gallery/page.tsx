@@ -245,68 +245,85 @@ export default async function PaintingGalleryPage({
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {categoryImages.map((item) => (
-                  <article
-                    key={item.title}
-                    id={createUrlSlug(item.title)}
-                    className="scroll-mt-24 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
-                  >
-                    <Link
-                      href={
-                        item.projectSlug
-                          ? `/projects/${item.projectSlug}`
-                          : item.collectionSlug
-                            ? `/painting-gallery/${item.collectionSlug}`
-                            : "/painting-gallery"
-                      }
-                      className="block h-full"
+                {categoryImages.map((item) => {
+                  const galleryHref = item.collectionSlug
+                    ? `/painting-gallery/${item.collectionSlug}`
+                    : undefined;
+                  const beforeAfterHref = item.projectSlug
+                    ? `/projects/${item.projectSlug}`
+                    : undefined;
+                  const primaryHref =
+                    galleryHref ?? beforeAfterHref ?? "/painting-gallery";
+                  const primaryLabel = galleryHref
+                    ? "View full photo gallery"
+                    : beforeAfterHref
+                      ? "View matching Before / After"
+                      : undefined;
+
+                  return (
+                    <article
+                      key={item.title}
+                      id={createUrlSlug(item.title)}
+                      className="scroll-mt-24 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
                     >
-                      <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                        <Image
-                          src={item.image}
-                          alt={item.alt}
-                          fill
-                          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-                          className="object-cover transition duration-500 hover:scale-[1.03]"
-                        />
-                        {item.photoCount ? (
-                          <span className="absolute right-3 top-3 rounded bg-ink/80 px-2.5 py-1 text-xs font-semibold text-white">
-                            {item.photoCount} photos
-                          </span>
-                        ) : null}
-                      </div>
-                      <div className="p-5">
-                        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-clay">
-                          <Paintbrush aria-hidden="true" size={15} />
-                          {item.category}
-                        </p>
-                        <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
-                          {item.title}
-                        </h3>
-                        <p className="mt-3 text-sm leading-6 text-ink/65">
-                          {item.caption}
-                        </p>
-                        {item.suburb ? (
-                          <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-ink/55">
-                            <MapPin aria-hidden="true" size={16} />
-                            {item.suburb}
+                      <Link
+                        href={primaryHref}
+                        aria-label={`${primaryLabel ?? "View"}: ${item.title}`}
+                        className="block"
+                      >
+                        <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                          <Image
+                            src={item.image}
+                            alt={item.alt}
+                            fill
+                            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                            className="object-cover transition duration-500 hover:scale-[1.03]"
+                          />
+                          {item.photoCount ? (
+                            <span className="absolute right-3 top-3 rounded bg-ink/80 px-2.5 py-1 text-xs font-semibold text-white">
+                              {item.photoCount} photos
+                            </span>
+                          ) : null}
+                        </div>
+                        <div className="p-5">
+                          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+                            <Paintbrush aria-hidden="true" size={15} />
+                            {item.category}
                           </p>
-                        ) : null}
-                        {item.projectSlug ? (
-                          <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
+                          <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
+                            {item.title}
+                          </h3>
+                          <p className="mt-3 text-sm leading-6 text-ink/65">
+                            {item.caption}
+                          </p>
+                          {item.suburb ? (
+                            <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-ink/55">
+                              <MapPin aria-hidden="true" size={16} />
+                              {item.suburb}
+                            </p>
+                          ) : null}
+                          {primaryLabel ? (
+                            <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
+                              {primaryLabel}
+                              <ArrowRight aria-hidden="true" size={16} />
+                            </p>
+                          ) : null}
+                        </div>
+                      </Link>
+                      {galleryHref && beforeAfterHref ? (
+                        <div className="border-t border-ink/10 px-5 py-4">
+                          <Link
+                            href={beforeAfterHref}
+                            className="inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus hover:text-clay"
+                          >
                             View matching Before / After
                             <ArrowRight aria-hidden="true" size={16} />
-                          </p>
-                        ) : item.collectionSlug ? (
-                          <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
-                            View location gallery
-                            <ArrowRight aria-hidden="true" size={16} />
-                          </p>
-                        ) : null}
-                      </div>
-                    </Link>
-                  </article>
-                ))}
+                          </Link>
+                        </div>
+                      ) : null}
+                    </article>
+                  );
+                })}
               </div>
             </div>
           </section>

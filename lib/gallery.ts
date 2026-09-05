@@ -158,12 +158,12 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 14,
   },
   {
-    title: "Exterior Facade and Trim",
+    title: "North Willoughby Timber Window Painting",
     category: "Exterior Painting",
     image: "/images/projects/exterior-facade-after.jpg",
-    alt: "North Willoughby house facade and trim after exterior repainting by F&S Painting",
+    alt: "North Willoughby timber window surrounds and exterior trim after repainting by F&S Painting",
     caption:
-      "North Willoughby exterior facade, trim, porch, windows, verandah, and side wall finishes.",
+      "North Willoughby timber window surrounds, exterior trim, porch, verandah, and side wall finishes.",
     suburb: "North Willoughby, NSW",
     collectionSlug: "north-willoughby-exterior-facade-trim",
     photoCount: 7,
@@ -928,16 +928,16 @@ export const galleryCollections: GalleryCollection[] = [
   },
   {
     slug: "north-willoughby-exterior-facade-trim",
-    title: "North Willoughby Exterior Facade and Trim",
+    title: "North Willoughby Timber Window Painting",
     category: "Exterior Painting",
     suburb: "North Willoughby, NSW",
     projectSlug: "exterior-facade-trim-repaint",
-    galleryCardTitle: "Exterior Facade and Trim",
+    galleryCardTitle: "North Willoughby Timber Window Painting",
     summary:
-      "Finished exterior painting across the North Willoughby facade, upper gable, entry porch, window trims, verandah, side walls, and exterior details.",
+      "Finished repainting across North Willoughby timber window surrounds, exterior trim, entry porch, verandah, side walls, and related exterior details.",
     coverImage: "/images/projects/exterior-facade-after.jpg",
     coverAlt:
-      "North Willoughby house facade and trim after professional exterior repainting by F&S Painting",
+      "North Willoughby timber window surrounds and exterior trim after professional repainting by F&S Painting",
     images: [
       {
         title: "Front Entry Painting",
