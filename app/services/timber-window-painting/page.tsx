@@ -107,7 +107,7 @@ export default function TimberWindowPaintingPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/94 via-ink/72 to-ink/28" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/86 to-ink/48" />
         <div className="relative mx-auto grid min-h-[68vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
