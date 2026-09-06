@@ -5,7 +5,10 @@ import { FaqSection } from "@/components/FaqSection";
 import { PageIntroHero } from "@/components/PageIntroHero";
 import { Section } from "@/components/Section";
 import { faqSchema, serviceFaqs } from "@/lib/faqs";
-import { services } from "@/lib/site-data";
+import {
+  placeTimberWindowPaintingAfterExterior,
+  services,
+} from "@/lib/site-data";
 import { getServices } from "@/lib/cms";
 import { pageMetadata, serviceSchema } from "@/lib/seo";
 
@@ -18,6 +21,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default async function ServicesPage() {
   const cmsServices = await getServices();
+  const displayServices = placeTimberWindowPaintingAfterExterior(cmsServices);
 
   return (
     <>
@@ -25,7 +29,7 @@ export default async function ServicesPage() {
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema(cmsServices)),
+          __html: JSON.stringify(serviceSchema(displayServices)),
         }}
       />
       <script
@@ -140,7 +144,7 @@ export default async function ServicesPage() {
       </Section>
       <Section title="What we paint">
         <div className="grid gap-5 md:grid-cols-2">
-          {cmsServices.map((service) => {
+          {displayServices.map((service) => {
             const localService =
               services.find((item) => item.title === service.title) ??
               services[0];

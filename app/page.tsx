@@ -15,7 +15,10 @@ import { Reviews } from "@/components/Reviews";
 import { Section } from "@/components/Section";
 import { faqSchema, homeFaqs } from "@/lib/faqs";
 import { featuredGalleryImages, galleryCollections } from "@/lib/gallery";
-import { services } from "@/lib/site-data";
+import {
+  placeTimberWindowPaintingAfterExterior,
+  services,
+} from "@/lib/site-data";
 import { getSelectedReviews, getServices } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
 import { createUrlSlug } from "@/lib/url-slug";
@@ -67,10 +70,12 @@ export default async function Home() {
     homeFaqs[9],
     homeFaqs[6],
   ];
-  const homepageServices = cmsServices.filter((service) => {
-    const serviceName = `${service.title} ${service.slug}`.toLowerCase();
-    return !serviceName.includes("mould-damaged ceiling");
-  });
+  const homepageServices = placeTimberWindowPaintingAfterExterior(
+    cmsServices.filter((service) => {
+      const serviceName = `${service.title} ${service.slug}`.toLowerCase();
+      return !serviceName.includes("mould-damaged ceiling");
+    }),
+  );
 
   return (
     <>
@@ -118,7 +123,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {homepageServices.slice(0, 6).map((service) => {
+            {homepageServices.map((service) => {
               const isCeilingService = `${service.title} ${service.slug}`
                 .toLowerCase()
                 .includes("ceiling repainting");

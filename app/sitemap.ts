@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/services",
     "/services/interior-painting",
     "/services/exterior-painting",
+    "/services/timber-window-painting",
     "/services/residential-painting",
     "/services/strata-painting",
     "/services/commercial-painting",

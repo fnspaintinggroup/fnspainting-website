@@ -48,6 +48,14 @@ export const services = [
       "Weather-conscious preparation and coating for facades, fences, eaves, and decks.",
   },
   {
+    title: "Timber Window Painting",
+    href: "/services/timber-window-painting",
+    galleryHref: "/painting-gallery/lindfield-exterior-window-trim-repaint",
+    icon: Paintbrush,
+    summary:
+      "Interior and exterior replacement window frame painting, with careful preparation for the existing coating and frame condition.",
+  },
+  {
     title: "Strata Painting",
     href: "/services/strata-painting",
     galleryHref:
@@ -82,6 +90,36 @@ export const services = [
       "Careful preparation and repainting for ceilings affected by moisture and mould damage.",
   },
 ];
+
+/** Keeps the approved specialist card directly after Exterior Painting everywhere it appears. */
+export function placeTimberWindowPaintingAfterExterior<T extends { title: string }>(
+  items: T[],
+): T[] {
+  const timberWindowServices = items.filter(
+    (item) => item.title === "Timber Window Painting",
+  );
+
+  if (timberWindowServices.length === 0) {
+    return items;
+  }
+
+  const remainingServices = items.filter(
+    (item) => item.title !== "Timber Window Painting",
+  );
+  const exteriorIndex = remainingServices.findIndex(
+    (item) => item.title === "Exterior Painting",
+  );
+
+  if (exteriorIndex < 0) {
+    return [...remainingServices, ...timberWindowServices];
+  }
+
+  return [
+    ...remainingServices.slice(0, exteriorIndex + 1),
+    ...timberWindowServices,
+    ...remainingServices.slice(exteriorIndex + 1),
+  ];
+}
 
 export const projects = [
   {
