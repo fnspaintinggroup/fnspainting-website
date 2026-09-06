@@ -53,6 +53,15 @@ const relatedEvidence = [
     alt: "North Strathfield exterior timber window after restoration and repainting",
     projectHref: "/projects/north-strathfield-exterior-window-restoration",
   },
+  {
+    title: "North Willoughby timber window frame and trim",
+    description:
+      "A verified same-window Before / After pair, photographed from different angles, within a whole exterior painting project.",
+    image: "/images/projects/north-willoughby-timber-window-after.jpg",
+    alt: "Timber window frame and trim after repainting within a North Willoughby exterior project",
+    projectHref:
+      "/projects/exterior-facade-trim-repaint#timber-window-frame-trim",
+  },
 ];
 
 export const metadata: Metadata = pageMetadata({

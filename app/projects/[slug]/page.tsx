@@ -78,13 +78,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const matchingGallery = galleryCollections.find(
     (collection) => collection.projectSlug === project.slug,
   );
-  const additionalViewTitle =
-    project.additionalImages?.find((image) => image.viewTitle)?.viewTitle ??
-    "Another view of the repaint";
-  const additionalViewCaption = project.additionalImages?.find(
-    (image) => image.viewCaption,
-  )?.viewCaption;
-
   const projectUrl = `${siteUrl}/projects/${project.slug}`;
   const projectImageObjects = [
     {
@@ -120,6 +113,30 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       contentLocation: project.location,
       representativeOfPage: false,
     })),
+    ...(project.additionalBeforeAfterViews ?? []).flatMap((view, index) => [
+      {
+        "@type": "ImageObject",
+        "@id": `${projectUrl}#additional-before-after-${index + 1}-before`,
+        name: `${project.title} ${view.title} before`,
+        caption: view.beforeImageAlt,
+        description: `${view.beforeImageAlt} in ${project.location}.`,
+        contentUrl: toAbsoluteUrl(view.beforeImage),
+        thumbnailUrl: toAbsoluteUrl(view.beforeImage),
+        contentLocation: project.location,
+        representativeOfPage: false,
+      },
+      {
+        "@type": "ImageObject",
+        "@id": `${projectUrl}#additional-before-after-${index + 1}-after`,
+        name: `${project.title} ${view.title} after`,
+        caption: view.afterImageAlt,
+        description: `${view.afterImageAlt} in ${project.location}.`,
+        contentUrl: toAbsoluteUrl(view.afterImage),
+        thumbnailUrl: toAbsoluteUrl(view.afterImage),
+        contentLocation: project.location,
+        representativeOfPage: false,
+      },
+    ]),
   ];
 
   const schema = {
@@ -285,24 +302,79 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
+        {project.additionalBeforeAfterViews?.map((view) => (
+          <section
+            id={view.id}
+            key={view.id}
+            className="scroll-mt-24 pb-10 sm:pb-14"
+          >
+            <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+              <h2 className="text-2xl font-semibold text-ink">{view.title}</h2>
+              <p className="mt-3 max-w-3xl leading-7 text-ink/72">
+                {view.caption}
+              </p>
+              {view.relatedService ? (
+                <Link
+                  href={view.relatedService.href}
+                  className="mt-4 inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+                >
+                  {view.relatedService.label}
+                  <ArrowRight aria-hidden="true" size={16} />
+                </Link>
+              ) : null}
+              <div className="mt-6 grid overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft md:grid-cols-2">
+                {[
+                  {
+                    image: view.beforeImage,
+                    alt: view.beforeImageAlt,
+                    label: "Before" as const,
+                  },
+                  {
+                    image: view.afterImage,
+                    alt: view.afterImageAlt,
+                    label: "After" as const,
+                  },
+                ].map((image) => (
+                  <figure key={image.image}>
+                    <div
+                      className="relative"
+                      style={{ aspectRatio: view.aspectRatio ?? "4 / 3" }}
+                    >
+                      <Image
+                        src={image.image}
+                        alt={image.alt}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                      <span
+                        className={`absolute left-4 top-4 rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-white ${
+                          image.label === "Before" ? "bg-ink" : "bg-eucalyptus"
+                        }`}
+                      >
+                        {image.label}
+                      </span>
+                    </div>
+                    <figcaption className="border-t border-ink/10 p-4 text-sm text-ink/65">
+                      {image.alt}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+
         {project.additionalImages && project.additionalImages.length > 0 ? (
           <section className="pb-10 sm:pb-14">
             <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
               <h2 className="text-2xl font-semibold text-ink">
-                {additionalViewTitle}
+                Another view of the repaint
               </h2>
-              {additionalViewCaption ? (
-                <p className="mt-3 max-w-3xl leading-7 text-ink/72">
-                  {additionalViewCaption}
-                </p>
-              ) : null}
-              <div className="mt-6 grid overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft md:grid-cols-2">
+              <div className="grid overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft md:grid-cols-2">
                 {project.additionalImages.map((image) => (
                   <figure key={image.image}>
-                    <div
-                      className="relative"
-                      style={{ aspectRatio: image.aspectRatio ?? "4 / 3" }}
-                    >
+                    <div className="relative aspect-[4/3]">
                       <Image
                         src={image.image}
                         alt={image.alt}

@@ -11,9 +11,20 @@ export type Project = {
     image: string;
     alt: string;
     label: "Before" | "After";
-    viewTitle?: string;
-    viewCaption?: string;
+  }>;
+  additionalBeforeAfterViews?: Array<{
+    id: string;
+    title: string;
+    caption: string;
+    beforeImage: string;
+    beforeImageAlt: string;
+    afterImage: string;
+    afterImageAlt: string;
     aspectRatio?: string;
+    relatedService?: {
+      href: string;
+      label: string;
+    };
   }>;
   description: string;
   materials: string;
@@ -568,24 +579,38 @@ export const projects: Project[] = [
     afterImage: "/images/projects/exterior-facade-after.jpg",
     beforeImageAlt: "North Willoughby exterior house before repainting",
     afterImageAlt: "North Willoughby exterior house after repainting",
-    additionalImages: [
+    additionalBeforeAfterViews: [
       {
-        image: "/images/projects/north-willoughby-porch-front-entry-before.jpg",
-        alt: "North Willoughby front porch and entry before a whole exterior repaint",
-        label: "Before",
-        viewTitle: "Front porch and entry Before / After",
-        viewCaption:
+        id: "front-porch-entry",
+        title: "Front porch and entry Before / After",
+        caption:
           "Front porch and entry before and after as part of this North Willoughby whole exterior repaint.",
+        beforeImage:
+          "/images/projects/north-willoughby-porch-front-entry-before.jpg",
+        beforeImageAlt:
+          "North Willoughby front porch and entry before a whole exterior repaint",
+        afterImage:
+          "/images/projects/north-willoughby-porch-front-entry-after.jpg",
+        afterImageAlt:
+          "The same North Willoughby front porch and entry after the whole exterior repaint",
         aspectRatio: "1600 / 824",
       },
       {
-        image: "/images/projects/north-willoughby-porch-front-entry-after.jpg",
-        alt: "The same North Willoughby front porch and entry after the whole exterior repaint",
-        label: "After",
-        viewTitle: "Front porch and entry Before / After",
-        viewCaption:
-          "Front porch and entry before and after as part of this North Willoughby whole exterior repaint.",
-        aspectRatio: "1600 / 824",
+        id: "timber-window-frame-trim",
+        title: "Timber window frame and trim Before / After",
+        caption:
+          "A timber window frame and trim before and after repainting as one part of this North Willoughby whole exterior project.",
+        beforeImage: "/images/projects/north-willoughby-timber-window-before.jpg",
+        beforeImageAlt:
+          "Weathered exterior timber window frame and trim before repainting in North Willoughby",
+        afterImage: "/images/projects/north-willoughby-timber-window-after.jpg",
+        afterImageAlt:
+          "The same timber window frame and trim after repainting as part of a whole exterior project in North Willoughby",
+        aspectRatio: "4 / 5",
+        relatedService: {
+          href: "/services/timber-window-painting",
+          label: "View Timber Window Painting",
+        },
       },
     ],
     description:
