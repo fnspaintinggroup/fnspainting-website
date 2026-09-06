@@ -54,8 +54,23 @@ export default async function ExteriorPaintingPage() {
   const relatedProjects = exteriorProjects.filter(
     (project) => project.featuredOnExteriorService,
   );
-  const northWilloughbyProject = exteriorProjects.find(
-    (project) => project.slug === "north-willoughby-exterior-house-repaint",
+  const northWilloughbyProjects = [
+    {
+      project: exteriorProjects.find(
+        (item) => item.slug === "exterior-facade-trim-repaint",
+      ),
+      galleryHref: "/painting-gallery/north-willoughby-exterior-facade-trim",
+    },
+    {
+      project: exteriorProjects.find(
+        (item) => item.slug === "north-willoughby-exterior-house-repaint",
+      ),
+      galleryHref:
+        "/painting-gallery/north-willoughby-exterior-house-repaint-gallery",
+    },
+  ].filter(
+    (item): item is { project: (typeof exteriorProjects)[number]; galleryHref: string } =>
+      Boolean(item.project),
   );
   const schema = {
     "@context": "https://schema.org",
@@ -198,24 +213,24 @@ export default async function ExteriorPaintingPage() {
             View a Chatswood exterior repaint
             <ArrowRight aria-hidden="true" size={17} />
           </Link>
-          {northWilloughbyProject ? (
-            <>
+          {northWilloughbyProjects.map(({ project, galleryHref }) => (
+            <div key={project.slug} className="contents">
               <Link
-                href={`/projects/${northWilloughbyProject.slug}`}
+                href={`/projects/${project.slug}`}
                 className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
               >
-                View North Willoughby Before / After
+                View {project.title} Before / After
                 <ArrowRight aria-hidden="true" size={17} />
               </Link>
               <Link
-                href="/painting-gallery/north-willoughby-exterior-house-repaint-gallery"
+                href={galleryHref}
                 className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
               >
-                View North Willoughby photo gallery
+                View {project.title} photo gallery
                 <ArrowRight aria-hidden="true" size={17} />
               </Link>
-            </>
-          ) : null}
+            </div>
+          ))}
           <Link
             href="/painting-gallery#exterior-painting"
             className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"

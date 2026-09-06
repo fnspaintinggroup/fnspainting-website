@@ -158,12 +158,12 @@ export const galleryImages: GalleryImage[] = [
     photoCount: 14,
   },
   {
-    title: "North Willoughby Timber Window Painting",
+    title: "North Willoughby Exterior House Painting",
     category: "Exterior Painting",
     image: "/images/projects/exterior-facade-after.jpg",
-    alt: "North Willoughby timber window surrounds and exterior trim after repainting by F&S Painting",
+    alt: "North Willoughby exterior house after repainting by F&S Painting",
     caption:
-      "North Willoughby timber window surrounds, exterior trim, porch, verandah, and side wall finishes.",
+      "North Willoughby exterior house painting across the facade, front entry, walls, eaves, trim, windows, porch, and verandah details.",
     suburb: "North Willoughby, NSW",
     collectionSlug: "north-willoughby-exterior-facade-trim",
     photoCount: 7,
@@ -928,16 +928,16 @@ export const galleryCollections: GalleryCollection[] = [
   },
   {
     slug: "north-willoughby-exterior-facade-trim",
-    title: "North Willoughby Timber Window Painting",
+    title: "North Willoughby Exterior House Painting",
     category: "Exterior Painting",
     suburb: "North Willoughby, NSW",
     projectSlug: "exterior-facade-trim-repaint",
-    galleryCardTitle: "North Willoughby Timber Window Painting",
+    galleryCardTitle: "North Willoughby Exterior House Painting",
     summary:
-      "Finished repainting across North Willoughby timber window surrounds, exterior trim, entry porch, verandah, side walls, and related exterior details.",
+      "Finished North Willoughby exterior house painting across the facade, front entry, walls, eaves, trim, windows, porch, verandah, and related exterior details.",
     coverImage: "/images/projects/exterior-facade-after.jpg",
     coverAlt:
-      "North Willoughby timber window surrounds and exterior trim after professional repainting by F&S Painting",
+      "North Willoughby exterior house after professional repainting by F&S Painting",
     images: [
       {
         title: "Front Entry Painting",
