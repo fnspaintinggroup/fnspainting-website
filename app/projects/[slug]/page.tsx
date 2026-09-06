@@ -78,6 +78,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const matchingGallery = galleryCollections.find(
     (collection) => collection.projectSlug === project.slug,
   );
+  const additionalViewTitle =
+    project.additionalImages?.find((image) => image.viewTitle)?.viewTitle ??
+    "Another view of the repaint";
+  const additionalViewCaption = project.additionalImages?.find(
+    (image) => image.viewCaption,
+  )?.viewCaption;
 
   const projectUrl = `${siteUrl}/projects/${project.slug}`;
   const projectImageObjects = [
@@ -282,13 +288,21 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {project.additionalImages && project.additionalImages.length > 0 ? (
           <section className="pb-10 sm:pb-14">
             <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-              <h2 className="mb-6 text-2xl font-semibold text-ink">
-                Another view of the repaint
+              <h2 className="text-2xl font-semibold text-ink">
+                {additionalViewTitle}
               </h2>
-              <div className="grid overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft md:grid-cols-2">
+              {additionalViewCaption ? (
+                <p className="mt-3 max-w-3xl leading-7 text-ink/72">
+                  {additionalViewCaption}
+                </p>
+              ) : null}
+              <div className="mt-6 grid overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft md:grid-cols-2">
                 {project.additionalImages.map((image) => (
                   <figure key={image.image}>
-                    <div className="relative aspect-[4/3]">
+                    <div
+                      className="relative"
+                      style={{ aspectRatio: image.aspectRatio ?? "4 / 3" }}
+                    >
                       <Image
                         src={image.image}
                         alt={image.alt}

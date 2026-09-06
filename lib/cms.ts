@@ -149,6 +149,7 @@ function applyLocalProjectCorrections<T extends CmsProject>(project: T): T {
       afterImage: localProject.afterImage,
       beforeImageAlt: localProject.beforeImageAlt,
       afterImageAlt: localProject.afterImageAlt,
+      additionalImages: localProject.additionalImages,
     } as T;
   }
 

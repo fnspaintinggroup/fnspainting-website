@@ -11,6 +11,9 @@ export type Project = {
     image: string;
     alt: string;
     label: "Before" | "After";
+    viewTitle?: string;
+    viewCaption?: string;
+    aspectRatio?: string;
   }>;
   description: string;
   materials: string;
@@ -565,6 +568,26 @@ export const projects: Project[] = [
     afterImage: "/images/projects/exterior-facade-after.jpg",
     beforeImageAlt: "North Willoughby exterior house before repainting",
     afterImageAlt: "North Willoughby exterior house after repainting",
+    additionalImages: [
+      {
+        image: "/images/projects/north-willoughby-porch-front-entry-before.jpg",
+        alt: "North Willoughby front porch and entry before a whole exterior repaint",
+        label: "Before",
+        viewTitle: "Front porch and entry Before / After",
+        viewCaption:
+          "Front porch and entry before and after as part of this North Willoughby whole exterior repaint.",
+        aspectRatio: "1600 / 824",
+      },
+      {
+        image: "/images/projects/north-willoughby-porch-front-entry-after.jpg",
+        alt: "The same North Willoughby front porch and entry after the whole exterior repaint",
+        label: "After",
+        viewTitle: "Front porch and entry Before / After",
+        viewCaption:
+          "Front porch and entry before and after as part of this North Willoughby whole exterior repaint.",
+        aspectRatio: "1600 / 824",
+      },
+    ],
     description:
       "Timber window surrounds, exterior trim, facade panels, posts, and entry details were prepared and repainted for a cleaner, brighter finish.",
     materials: "Exterior acrylic paint, exterior primer, gap sealant, sanding materials, and detailed trim preparation.",
