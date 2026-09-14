@@ -324,7 +324,7 @@ export default function PaintersChatswoodPage() {
         className="bg-gumleaf"
         eyebrow="Trusted Local Painters"
         title="Licensed, insured, and ready to quote in Chatswood"
-        intro="Directory sites show ratings and badges first. F&S Painting can show the real business details, local proof, and quote path directly."
+        intro="Discuss the surfaces you want painted, the preparation needed, and access to your property during a free on-site quote. View our licence details and real local projects below."
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {trustHighlights.map((item) => (
@@ -459,6 +459,16 @@ export default function PaintersChatswoodPage() {
               furniture and floor protection, surface repairs, and the right
               Dulux paint system for each area.
             </p>
+            <p>
+              The Chatswood apartment example shown here features a completed
+              living-room repaint. Explore the gallery to see the finish before
+              discussing the rooms and surfaces you want included in your own quote.
+            </p>
+            <p>
+              Ask us to confirm the agreed surfaces, preparation, paint finishes,
+              access arrangements, and any exclusions in your written quote.
+              Repairs or additional areas should be agreed before work starts.
+            </p>
             <div className="flex flex-wrap gap-x-6 gap-y-3">
               <Link
                 href="/painting-gallery/chatswood-apartment-interior-repaint"
@@ -472,6 +482,13 @@ export default function PaintersChatswoodPage() {
                 className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
               >
                 Read the Chatswood apartment painting cost guide
+                <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+              <Link
+                href="/services/timber-window-painting"
+                className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+              >
+                View timber window painting
                 <ArrowRight aria-hidden="true" size={18} />
               </Link>
             </div>
