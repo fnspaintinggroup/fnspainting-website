@@ -56,6 +56,19 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
   }
 
   const isWilloughbyCollection = collection.suburb.includes("Willoughby");
+  const sashWindowImages = collection.sashWindowEvidence
+    ? collection.sashWindowEvidence.imageTitles
+        .map((title) => {
+          const index = collection.images.findIndex((item) => item.title === title);
+          return index >= 0 ? { item: collection.images[index], index } : undefined;
+        })
+        .filter(
+          (
+            item,
+          ): item is { item: (typeof collection.images)[number]; index: number } =>
+            Boolean(item),
+        )
+    : [];
 
   const schema = {
     "@context": "https://schema.org",
@@ -170,6 +183,41 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
           </div>
         </div>
       </section>
+
+      {collection.sashWindowEvidence ? (
+        <section id="sash-window-painting" className="bg-mist py-12 sm:py-16">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+            <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-clay">
+                Sash window painting at this property
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold text-ink">
+                Finished sash window painting evidence
+              </h2>
+              <p className="mt-4 max-w-3xl leading-7 text-ink/70">
+                {collection.sashWindowEvidence.description}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
+                {sashWindowImages.map(({ item, index }) => (
+                  <Link
+                    key={item.title}
+                    href={`#${galleryImageAnchor(item.title, index)}`}
+                    className="text-eucalyptus hover:text-clay"
+                  >
+                    View {item.title}
+                  </Link>
+                ))}
+                <Link
+                  href="/services/timber-window-painting"
+                  className="text-eucalyptus hover:text-clay"
+                >
+                  Explore our timber and sash window painting service
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {collection.projectSlug || collection.category === "Exterior Painting" || isWilloughbyCollection ? (
         <section className="bg-mist py-12 sm:py-16">

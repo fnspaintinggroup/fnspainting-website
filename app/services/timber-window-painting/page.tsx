@@ -35,6 +35,36 @@ const approvedCasePhotos = [
   },
 ];
 
+const sashWindowProjectPhotos = [
+  {
+    title: "Mona Vale interior sash window painting",
+    description:
+      "Finished sash windows shown within a completed Mona Vale interior painting project.",
+    image: "/images/projects/mona-vale-heritage-gallery-07.png",
+    alt: "Mona Vale interior sash windows after painting within a completed F&S Painting project",
+    galleryHref:
+      "/painting-gallery/mona-vale-heritage-interior-painting#sash-window-painting",
+  },
+  {
+    title: "North Willoughby exterior sash window painting",
+    description:
+      "Finished sash window painting shown within a completed North Willoughby exterior repaint.",
+    image: "/images/projects/north-willoughby-exterior-house-repaint-front-window-finish.jpg",
+    alt: "North Willoughby exterior sash window after painting within a completed F&S Painting project",
+    galleryHref:
+      "/painting-gallery/north-willoughby-exterior-house-repaint-gallery#sash-window-painting",
+  },
+  {
+    title: "Chatswood exterior sash window painting",
+    description:
+      "Finished sash windows shown within a completed Chatswood exterior painting project.",
+    image: "/images/projects/chatswood-exterior-upper-roofline-detail.jpg",
+    alt: "Chatswood exterior sash windows after painting within a completed F&S Painting project",
+    galleryHref:
+      "/painting-gallery/chatswood-exterior-house-painting#sash-window-painting",
+  },
+];
+
 const relatedEvidence = [
   {
     title: "Lindfield Exterior Window and Trim Repaint",
@@ -65,9 +95,9 @@ const relatedEvidence = [
 ];
 
 export const metadata: Metadata = pageMetadata({
-  title: "Timber Window Painting Sydney | F&S Painting",
+  title: "Timber & Sash Window Painting Sydney | F&S Painting",
   description:
-    "Interior and exterior replacement window frame painting in Sydney, with approved completed work in East Lindfield and verified related timber window projects.",
+    "Timber sash window and replacement window frame painting in Sydney, with completed F&S Painting examples in Mona Vale, North Willoughby, Chatswood, and East Lindfield.",
   path: pagePath,
   image: approvedCasePhotos[0].src,
 });
@@ -87,10 +117,10 @@ export default function TimberWindowPaintingPage() {
       {
         "@type": "Service",
         "@id": `${pageUrl}#service`,
-        name: "Timber Window Painting Sydney",
-        serviceType: "Interior and exterior replacement window frame painting",
+        name: "Timber & Sash Window Painting Sydney",
+        serviceType: "Timber sash window and replacement window frame painting",
         description:
-          "Interior and exterior replacement window frame painting in Sydney, with careful preparation matched to the existing coating and frame condition.",
+          "Painting for timber sash windows and replacement window frames in Sydney, with careful preparation matched to the existing coating and frame condition.",
         provider: { "@id": `${siteUrl}/#localbusiness` },
         areaServed: "Sydney, NSW",
         url: pageUrl,
@@ -120,14 +150,14 @@ export default function TimberWindowPaintingPage() {
         <div className="relative mx-auto grid min-h-[68vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-              Timber Window Painting Sydney
+              Timber &amp; Sash Window Painting Sydney
             </p>
             <h1 className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
-              Interior and exterior replacement window frame painting
+              Timber &amp; sash window painting
             </h1>
             <p className="mt-6 text-base font-medium leading-7 text-white/88 sm:text-xl">
-              Careful painting for replacement window frames, with preparation
-              matched to the existing coating and frame condition.
+              Painting for timber sash windows and replacement window frames,
+              with preparation matched to the existing coating and frame condition.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -151,12 +181,12 @@ export default function TimberWindowPaintingPage() {
 
       <Section
         eyebrow="Specialist service"
-        title="A focused scope for replacement window frames"
-        intro="This service is specifically for interior and exterior replacement window frame painting. A quote confirms the frame condition and preparation needed for the requested scope."
+        title="A focused scope for sash windows and replacement window frames"
+        intro="This service covers painting for timber sash windows and interior or exterior replacement window frames. A quote confirms the frame condition and preparation needed for the requested scope."
       >
         <div className="grid gap-5 md:grid-cols-3">
           {[
-            "Interior and exterior replacement window frame painting",
+            "Timber sash window and replacement window frame painting",
             "Preparation matched to the existing coating and frame condition",
             "Clear scope and quote before work starts",
           ].map((item) => (
@@ -171,6 +201,47 @@ export default function TimberWindowPaintingPage() {
               />
               <p className="mt-4 font-semibold leading-6 text-ink">{item}</p>
             </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        className="bg-mist"
+        eyebrow="Completed sash window projects"
+        title="Sash window painting from our completed projects"
+        intro="These finished photographs show the same three approved F&S Painting projects. They are not a Before / After sequence."
+      >
+        <div className="grid gap-5 md:grid-cols-3">
+          {sashWindowProjectPhotos.map((photo) => (
+            <article
+              key={photo.title}
+              className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-paper">
+                <Image
+                  src={photo.image}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 768px) 30vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h2 className="text-lg font-semibold leading-tight text-ink">
+                  {photo.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-ink/70">
+                  {photo.description}
+                </p>
+                <Link
+                  href={photo.galleryHref}
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus hover:text-clay"
+                >
+                  <Images aria-hidden="true" size={16} />
+                  View sash window photos
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
       </Section>
@@ -310,7 +381,7 @@ export default function TimberWindowPaintingPage() {
             href="/contact#quote-name"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
           >
-            Request a Quote
+            Request a window painting quote
             <ArrowRight aria-hidden="true" size={18} />
           </Link>
         </div>

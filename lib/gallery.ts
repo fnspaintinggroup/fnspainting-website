@@ -35,6 +35,12 @@ export type GalleryCollection = {
   completionDate?: string;
   projectSlug?: string;
   galleryCardTitle?: string;
+  // Caleb confirmed these pictured windows are sash windows on 2026-09-14.
+  // This supports painting evidence only; it does not imply repair, replacement, or restoration work.
+  sashWindowEvidence?: {
+    description: string;
+    imageTitles: string[];
+  };
   images: GalleryCollectionImage[];
 };
 
@@ -467,6 +473,11 @@ export const galleryCollections: GalleryCollection[] = [
     coverAlt:
       "Mona Vale heritage rooms with ornate archway after professional interior painting",
     completionDate: "2026-03-18",
+    sashWindowEvidence: {
+      description:
+        "The finished bay-window joinery is a sash-window painting example from this completed Mona Vale interior project.",
+      imageTitles: ["Formal Room and Bay Window"],
+    },
     images: [
       {
         title: "Formal Living Room and Archway",
@@ -1000,6 +1011,11 @@ export const galleryCollections: GalleryCollection[] = [
       "Finished exterior painting across the North Willoughby facade, trim, windows, eaves, verandah, side walls, and covered areas.",
     coverImage: "/images/projects/north-willoughby-exterior-house-repaint-after.jpg",
     coverAlt: "North Willoughby house exterior after professional repainting by F&S Painting",
+    sashWindowEvidence: {
+      description:
+        "The finished front sash window is shown within this completed North Willoughby exterior repaint.",
+      imageTitles: ["Front Window Detail"],
+    },
     images: [
       {
         title: "Front Facade Painting",
@@ -2158,6 +2174,11 @@ export const galleryCollections: GalleryCollection[] = [
     coverImage: "/images/projects/chatswood-exterior-front-facade-wide.jpg",
     coverAlt:
       "Chatswood brick house exterior with refreshed trims, gables, and garage frontage after painting",
+    sashWindowEvidence: {
+      description:
+        "The finished upper sash windows are shown within this completed Chatswood exterior painting project.",
+      imageTitles: ["Upper Roofline Detail"],
+    },
     images: [
       {
         title: "Front Facade Wide View",
