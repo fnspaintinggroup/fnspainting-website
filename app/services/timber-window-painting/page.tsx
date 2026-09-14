@@ -14,7 +14,7 @@ import {
 const pagePath = "/services/timber-window-painting";
 const pageUrl = `${siteUrl}${pagePath}`;
 
-const approvedCasePhotos = [
+const replacementFramePhotos = [
   {
     src: "/images/projects/east-lindfield-replacement-window-exterior-frame.jpg",
     alt: "East Lindfield exterior replacement window frame after painting",
@@ -42,27 +42,30 @@ const heroPhoto = {
 
 const sashWindowProjectPhotos = [
   {
-    title: "Mona Vale interior sash window painting",
+    location: "Mona Vale",
+    scope: "Interior sash window painting",
     description:
-      "Finished sash windows shown within a completed Mona Vale interior painting project.",
+      "Finished sash window joinery from a Mona Vale interior painting project.",
     image: "/images/projects/mona-vale-heritage-gallery-07.png",
     alt: "Mona Vale interior sash windows after painting within a completed F&S Painting project",
     galleryHref:
       "/painting-gallery/mona-vale-heritage-interior-painting#sash-window-painting",
   },
   {
-    title: "North Willoughby exterior sash window painting",
+    location: "North Willoughby",
+    scope: "Exterior sash window painting",
     description:
-      "Finished sash window painting shown within a completed North Willoughby exterior repaint.",
+      "Finished sash window painting from a North Willoughby exterior repaint.",
     image: "/images/projects/north-willoughby-exterior-house-repaint-front-window-finish.jpg",
     alt: "North Willoughby exterior sash window after painting within a completed F&S Painting project",
     galleryHref:
       "/painting-gallery/north-willoughby-exterior-house-repaint-gallery#sash-window-painting",
   },
   {
-    title: "Chatswood exterior sash window painting",
+    location: "Chatswood",
+    scope: "Exterior sash window painting",
     description:
-      "Finished sash windows shown within a completed Chatswood exterior painting project.",
+      "Finished sash windows from a Chatswood exterior painting project.",
     image: "/images/projects/chatswood-exterior-upper-roofline-detail.jpg",
     alt: "Chatswood exterior sash windows after painting within a completed F&S Painting project",
     galleryHref:
@@ -70,28 +73,20 @@ const sashWindowProjectPhotos = [
   },
 ];
 
-const relatedEvidence = [
+const beforeAfterProjects = [
   {
-    title: "Lindfield Exterior Window and Trim Repaint",
+    title: "Lindfield window and trim repaint",
     description:
-      "A verified Lindfield exterior project with a distinct photo gallery and matching Before / After record.",
+      "See the matched Before / After record and the full Lindfield photo gallery.",
     image: "/images/projects/lindfield-door-trim-finish.jpg",
     alt: "Lindfield exterior window and trim after repainting",
     projectHref: "/projects/lindfield-exterior-window-trim-repaint",
     galleryHref: "/painting-gallery/lindfield-exterior-window-trim-repaint",
   },
   {
-    title: "North Strathfield Exterior Window Restoration",
+    title: "North Willoughby window frame and trim",
     description:
-      "A verified exterior timber window restoration with a matching Before / After record.",
-    image: "/images/projects/north-strathfield-window-after.jpg",
-    alt: "North Strathfield exterior timber window after restoration and repainting",
-    projectHref: "/projects/north-strathfield-exterior-window-restoration",
-  },
-  {
-    title: "North Willoughby timber window frame and trim",
-    description:
-      "A verified same-window Before / After pair, photographed from different angles, within a whole exterior painting project.",
+      "See a matched Before / After pair for a timber window frame and trim repaint.",
     image: "/images/projects/north-willoughby-timber-window-after.jpg",
     alt: "Timber window frame and trim after repainting within a North Willoughby exterior project",
     projectHref:
@@ -99,12 +94,49 @@ const relatedEvidence = [
   },
 ];
 
+const serviceSteps = [
+  {
+    title: "Check the window condition",
+    description: "We review the visible frame condition and the areas you want painted.",
+  },
+  {
+    title: "Confirm the quote scope",
+    description: "The quote sets out the agreed interior or exterior painting scope.",
+  },
+  {
+    title: "Prepare and paint",
+    description: "Preparation and painting are matched to the confirmed frame condition and scope.",
+  },
+  {
+    title: "Check the finished work",
+    description: "We review the completed painting work with the agreed scope in mind.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Do you paint both interior and exterior window frames?",
+    answer:
+      "We can discuss interior or exterior timber sash windows and replacement window frames as part of a clear painting quote.",
+  },
+  {
+    question: "What information helps with a window painting quote?",
+    answer:
+      "Photos of the windows, an approximate number, your suburb, and whether the work is interior or exterior help us understand the requested scope.",
+  },
+  {
+    question: "What if a window appears to need repair?",
+    answer:
+      "Include a clear photo when you ask for a quote. We will review the visible condition and confirm the practical next step before a painting scope is agreed.",
+  },
+];
+
 export const metadata: Metadata = pageMetadata({
-  title: "Timber & Sash Window Painting Sydney | F&S Painting",
+  title: "Timber & Sash Window Painting Sydney",
   description:
     "Timber sash window and replacement window frame painting in Sydney, with completed F&S Painting examples in Mona Vale, North Willoughby, Chatswood, and East Lindfield.",
   path: pagePath,
-  image: approvedCasePhotos[0].src,
+  image: heroPhoto.src,
 });
 
 export default function TimberWindowPaintingPage() {
@@ -129,7 +161,9 @@ export default function TimberWindowPaintingPage() {
         provider: { "@id": `${siteUrl}/#localbusiness` },
         areaServed: "Sydney, NSW",
         url: pageUrl,
-        image: approvedCasePhotos.map((photo) => absoluteUrl(photo.src)),
+        image: [heroPhoto.src, ...replacementFramePhotos.map((photo) => photo.src)].map(
+          absoluteUrl,
+        ),
       },
     ],
   };
@@ -152,19 +186,20 @@ export default function TimberWindowPaintingPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/86 to-ink/48" />
-        <div className="relative mx-auto grid min-h-[68vh] max-w-6xl content-center px-5 py-20 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
-              Timber &amp; Sash Window Painting Sydney
+        <div className="relative mx-auto grid min-h-[44vh] max-w-6xl content-center px-5 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gumleaf">
+              Sydney window painting
             </p>
-            <h1 className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
-              Timber &amp; sash window painting
+            <h1 className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl">
+              Timber &amp; sash windows
             </h1>
-            <p className="mt-6 text-base font-medium leading-7 text-white/88 sm:text-xl">
-              Painting for timber sash windows and replacement window frames,
-              with preparation matched to the existing coating and frame condition.
+            <p className="mt-5 text-base font-medium leading-7 text-white/88 sm:text-lg">
+              Painting for timber sash windows and replacement window frames.
+              <br />
+              Preparation is matched to the confirmed frame condition and scope.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact#quote-name"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-clay px-6 py-3 font-semibold text-white shadow-soft transition hover:bg-clay/90"
@@ -186,17 +221,24 @@ export default function TimberWindowPaintingPage() {
 
       <Section
         eyebrow="Specialist service"
-        title="A focused scope for sash windows and replacement window frames"
-        intro="This service covers painting for timber sash windows and interior or exterior replacement window frames. A quote confirms the frame condition and preparation needed for the requested scope."
+        title="Clear painting scope for different window frames"
+        intro="We separate existing timber sash window painting from replacement window frame painting, then confirm the requested scope in writing."
       >
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           {[
-            "Timber sash window and replacement window frame painting",
-            "Preparation matched to the existing coating and frame condition",
-            "Clear scope and quote before work starts",
+            {
+              title: "Timber sash windows",
+              description:
+                "Painting for existing timber sash window frames and joinery, inside or outside the property.",
+            },
+            {
+              title: "Replacement window frames",
+              description:
+                "Painting for interior or exterior replacement window frames with preparation matched to the visible frame condition.",
+            },
           ].map((item) => (
             <div
-              key={item}
+              key={item.title}
               className="rounded-md border border-ink/10 bg-white p-5 shadow-sm"
             >
               <CheckCircle2
@@ -204,7 +246,8 @@ export default function TimberWindowPaintingPage() {
                 aria-hidden="true"
                 size={24}
               />
-              <p className="mt-4 font-semibold leading-6 text-ink">{item}</p>
+              <h2 className="mt-4 text-xl font-semibold text-ink">{item.title}</h2>
+              <p className="mt-2 leading-6 text-ink/70">{item.description}</p>
             </div>
           ))}
         </div>
@@ -214,12 +257,12 @@ export default function TimberWindowPaintingPage() {
         className="bg-mist"
         eyebrow="Completed sash window projects"
         title="Sash window painting from our completed projects"
-        intro="These finished photographs show the same three approved F&S Painting projects. They are not a Before / After sequence."
+        intro="Finished work from three F&S Painting projects in Mona Vale, North Willoughby, and Chatswood."
       >
         <div className="grid gap-5 md:grid-cols-3">
           {sashWindowProjectPhotos.map((photo) => (
             <article
-              key={photo.title}
+              key={photo.location}
               className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-paper">
@@ -232,8 +275,11 @@ export default function TimberWindowPaintingPage() {
                 />
               </div>
               <div className="p-5">
-                <h2 className="text-lg font-semibold leading-tight text-ink">
-                  {photo.title}
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+                  {photo.location}
+                </p>
+                <h2 className="mt-2 text-lg font-semibold leading-tight text-ink">
+                  {photo.scope}
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-ink/70">
                   {photo.description}
@@ -253,12 +299,12 @@ export default function TimberWindowPaintingPage() {
 
       <Section
         className="bg-mist"
-        eyebrow="Completed case"
+        eyebrow="Replacement window frames"
         title="East Lindfield replacement window frame painting"
-        intro="These are approved finished photographs of one completed case. They are not a Before / After sequence."
+        intro="Finished interior and exterior replacement window frame painting in East Lindfield."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {approvedCasePhotos.map((photo) => (
+          {replacementFramePhotos.map((photo) => (
             <article
               key={photo.src}
               className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
@@ -302,12 +348,34 @@ export default function TimberWindowPaintingPage() {
       </Section>
 
       <Section
-        eyebrow="Related verified evidence"
-        title="Explore gallery photos and Before / After separately"
-        intro="Gallery photos and Before / After records are kept as different viewing paths, so each completed job is clear to review."
+        eyebrow="Our process"
+        title="A practical window painting process"
+        intro="Each quote starts with the visible condition and the painting scope you want confirmed."
+      >
+        <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {serviceSteps.map((step, index) => (
+            <li
+              key={step.title}
+              className="rounded-md border border-ink/10 bg-white p-5 shadow-sm"
+            >
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gumleaf text-sm font-bold text-eucalyptus">
+                {index + 1}
+              </span>
+              <h2 className="mt-4 text-lg font-semibold text-ink">{step.title}</h2>
+              <p className="mt-2 text-sm leading-6 text-ink/70">{step.description}</p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <Section
+        className="bg-mist"
+        eyebrow="Before / After"
+        title="See matched window painting examples"
+        intro="These links keep the before and after views together for the same project."
       >
         <div className="grid gap-5 md:grid-cols-2">
-          {relatedEvidence.map((project) => (
+          {beforeAfterProjects.map((project) => (
             <article
               key={project.title}
               className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
@@ -322,10 +390,7 @@ export default function TimberWindowPaintingPage() {
                 />
               </div>
               <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
-                  Verified project
-                </p>
-                <h2 className="mt-2 text-xl font-semibold leading-tight text-ink">
+                <h2 className="text-xl font-semibold leading-tight text-ink">
                   {project.title}
                 </h2>
                 <p className="mt-3 leading-6 text-ink/70">{project.description}</p>
@@ -353,29 +418,45 @@ export default function TimberWindowPaintingPage() {
         </div>
         <div className="mt-7 flex flex-wrap gap-4">
           <Link
-            href="/painting-gallery#exterior-painting"
-            className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
+            href="/projects/north-strathfield-exterior-window-restoration"
+            className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
           >
-            View Exterior photo galleries
-            <ArrowRight aria-hidden="true" size={17} />
+            View North Strathfield window Before / After
+            <ArrowRight aria-hidden="true" size={16} />
           </Link>
           <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
+            href="/painting-gallery#exterior-painting"
+            className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
           >
-            View all Before / After projects
-            <ArrowRight aria-hidden="true" size={17} />
+            View Exterior photo galleries
+            <ArrowRight aria-hidden="true" size={16} />
           </Link>
         </div>
       </Section>
 
-      <Section className="bg-gumleaf" eyebrow="Local service" title="Talk through the requested frame scope">
+      <Section eyebrow="Questions" title="Window painting questions">
+        <div className="grid gap-3">
+          {faqs.map((faq) => (
+            <details
+              key={faq.question}
+              className="rounded-md border border-ink/10 bg-white px-5 py-4 shadow-sm"
+            >
+              <summary className="cursor-pointer font-semibold text-ink">
+                {faq.question}
+              </summary>
+              <p className="mt-3 max-w-3xl leading-7 text-ink/70">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-gumleaf" eyebrow="Request a quote" title="Tell us about the windows to be painted">
         <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="max-w-3xl leading-7 text-ink/72">
-              Share photographs of the replacement window frames and whether the
-              requested work is interior or exterior. We can then confirm the
-              practical next step for a quote.
+              Share window photos, the approximate number of windows, your
+              suburb, and whether the requested work is interior or exterior.
+              We can then discuss the practical next step for a painting quote.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
               <MapPin aria-hidden="true" size={16} />
