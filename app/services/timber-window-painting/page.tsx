@@ -35,6 +35,11 @@ const approvedCasePhotos = [
   },
 ];
 
+const heroPhoto = {
+  src: "/images/projects/mona-vale-heritage-gallery-05.png",
+  alt: "Mona Vale painted interior sash window joinery within a completed F&S Painting project",
+};
+
 const sashWindowProjectPhotos = [
   {
     title: "Mona Vale interior sash window painting",
@@ -139,11 +144,11 @@ export default function TimberWindowPaintingPage() {
 
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
-          src={approvedCasePhotos[0].src}
-          alt={approvedCasePhotos[0].alt}
+          src={heroPhoto.src}
+          alt={heroPhoto.alt}
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[65%_center]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/86 to-ink/48" />
