@@ -53,7 +53,7 @@ export const services = [
     galleryHref: "/painting-gallery/lindfield-exterior-window-trim-repaint",
     icon: Paintbrush,
     summary:
-      "Interior and exterior replacement window frame painting, with careful preparation for the existing coating and frame condition.",
+      "Interior and exterior timber window and frame painting, with careful preparation for the existing coating and frame condition.",
   },
   {
     title: "Strata Painting",

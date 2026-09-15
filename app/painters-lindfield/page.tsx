@@ -237,7 +237,7 @@ export default function PaintersLindfieldPage() {
           href="/services/timber-window-painting"
           className="mt-7 inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
         >
-          View interior and exterior replacement window frame painting
+          View interior and exterior window frame painting
           <ArrowRight aria-hidden="true" size={16} />
         </Link>
       </Section>

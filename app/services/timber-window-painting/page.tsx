@@ -14,24 +14,24 @@ import {
 const pagePath = "/services/timber-window-painting";
 const pageUrl = `${siteUrl}${pagePath}`;
 
-const replacementFramePhotos = [
+const windowFramePhotos = [
   {
     src: "/images/projects/east-lindfield-replacement-window-exterior-frame.jpg",
-    alt: "East Lindfield exterior replacement window frame after painting",
-    title: "Exterior replacement window frame finish",
-    caption: "Completed exterior replacement window frame painting in East Lindfield.",
+    alt: "East Lindfield exterior window frame after painting",
+    title: "Exterior window frame finish",
+    caption: "Completed exterior window frame painting in East Lindfield.",
   },
   {
     src: "/images/projects/east-lindfield-replacement-window-interior-bay-frame.jpg",
-    alt: "East Lindfield interior bay replacement window frame after painting",
-    title: "Interior bay replacement window frame finish",
-    caption: "Completed interior replacement window frame painting in East Lindfield.",
+    alt: "East Lindfield interior bay window frame after painting",
+    title: "Interior bay window frame finish",
+    caption: "Completed interior window frame painting in East Lindfield.",
   },
   {
     src: "/images/projects/east-lindfield-replacement-window-interior-frame-detail.jpg",
-    alt: "East Lindfield interior replacement window frame detail after painting",
-    title: "Interior replacement window frame detail",
-    caption: "A completed interior replacement window frame painting detail in East Lindfield.",
+    alt: "East Lindfield interior window frame detail after painting",
+    title: "Interior window frame detail",
+    caption: "A completed interior window frame painting detail in East Lindfield.",
   },
 ];
 
@@ -117,7 +117,7 @@ const faqs = [
   {
     question: "Do you paint both interior and exterior window frames?",
     answer:
-      "We can discuss interior or exterior timber sash windows and replacement window frames as part of a clear painting quote.",
+      "We can discuss interior or exterior timber sash windows and window frames as part of a clear painting quote.",
   },
   {
     question: "What information helps with a window painting quote?",
@@ -134,7 +134,7 @@ const faqs = [
 export const metadata: Metadata = pageMetadata({
   title: "Timber & Sash Window Painting Sydney",
   description:
-    "Timber sash window and replacement window frame painting in Sydney, with completed F&S Painting examples in Mona Vale, North Willoughby, Chatswood, and East Lindfield.",
+    "Timber sash window and window frame painting in Sydney, with completed F&S Painting examples in Mona Vale, North Willoughby, Chatswood, and East Lindfield.",
   path: pagePath,
   image: heroPhoto.src,
 });
@@ -155,13 +155,13 @@ export default function TimberWindowPaintingPage() {
         "@type": "Service",
         "@id": `${pageUrl}#service`,
         name: "Timber & Sash Window Painting Sydney",
-        serviceType: "Timber sash window and replacement window frame painting",
+        serviceType: "Timber sash window and window frame painting",
         description:
-          "Painting for timber sash windows and replacement window frames in Sydney, with careful preparation matched to the existing coating and frame condition.",
+          "Painting for timber sash windows and window frames in Sydney, with careful preparation matched to the existing coating and frame condition.",
         provider: { "@id": `${siteUrl}/#localbusiness` },
         areaServed: "Sydney, NSW",
         url: pageUrl,
-        image: [heroPhoto.src, ...replacementFramePhotos.map((photo) => photo.src)].map(
+        image: [heroPhoto.src, ...windowFramePhotos.map((photo) => photo.src)].map(
           absoluteUrl,
         ),
       },
@@ -195,7 +195,7 @@ export default function TimberWindowPaintingPage() {
               Timber &amp; Sash Window Painting
             </h1>
             <p className="mt-5 text-base font-medium leading-7 text-white/88 sm:text-lg">
-              Interior and exterior painting for timber sash windows and replacement window frames across Sydney.
+              Interior and exterior painting for timber sash windows and window frames across Sydney.
               <br />
               Preparation is matched to the confirmed frame condition and scope.
             </p>
@@ -221,8 +221,8 @@ export default function TimberWindowPaintingPage() {
 
       <Section
         eyebrow="Specialist service"
-        title="Clear painting scope for different window frames"
-        intro="We separate existing timber sash window painting from replacement window frame painting, then confirm the requested scope in writing."
+        title="Clear painting scope for timber windows and frames"
+        intro="We paint timber sash windows and existing window frames, then confirm the requested interior or exterior scope in writing."
       >
         <div className="grid gap-5 md:grid-cols-2">
           {[
@@ -232,9 +232,9 @@ export default function TimberWindowPaintingPage() {
                 "Painting for existing timber sash window frames and joinery, inside or outside the property.",
             },
             {
-              title: "Replacement window frames",
+              title: "Existing window frames",
               description:
-                "Painting for interior or exterior replacement window frames with preparation matched to the visible frame condition.",
+                "Painting for interior or exterior window frames with preparation matched to the visible frame condition.",
             },
           ].map((item) => (
             <div
@@ -299,12 +299,12 @@ export default function TimberWindowPaintingPage() {
 
       <Section
         className="bg-mist"
-        eyebrow="Replacement window frames"
-        title="East Lindfield replacement window frame painting"
-        intro="Finished interior and exterior replacement window frame painting in East Lindfield."
+        eyebrow="Window frame painting"
+        title="East Lindfield window frame painting"
+        intro="Finished interior and exterior window frame painting in East Lindfield."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {replacementFramePhotos.map((photo) => (
+          {windowFramePhotos.map((photo) => (
             <article
               key={photo.src}
               className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"

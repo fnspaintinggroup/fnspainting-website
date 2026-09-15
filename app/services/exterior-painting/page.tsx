@@ -242,7 +242,7 @@ export default async function ExteriorPaintingPage() {
             href="/services/timber-window-painting"
             className="inline-flex items-center gap-2 rounded-md border border-eucalyptus/20 bg-white px-5 py-3 font-semibold text-eucalyptus hover:border-eucalyptus/40"
           >
-            Replacement window frame painting
+            Timber window frame painting
             <ArrowRight aria-hidden="true" size={17} />
           </Link>
         </div>
