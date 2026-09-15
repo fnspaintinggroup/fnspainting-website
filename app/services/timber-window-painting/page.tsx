@@ -192,10 +192,10 @@ export default function TimberWindowPaintingPage() {
               Sydney window painting
             </p>
             <h1 className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl">
-              Timber &amp; sash windows
+              Timber &amp; Sash Window Painting
             </h1>
             <p className="mt-5 text-base font-medium leading-7 text-white/88 sm:text-lg">
-              Painting for timber sash windows and replacement window frames.
+              Interior and exterior painting for timber sash windows and replacement window frames across Sydney.
               <br />
               Preparation is matched to the confirmed frame condition and scope.
             </p>
@@ -450,7 +450,7 @@ export default function TimberWindowPaintingPage() {
         </div>
       </Section>
 
-      <Section className="bg-gumleaf" eyebrow="Request a quote" title="Tell us about the windows to be painted">
+      <Section className="bg-gumleaf" eyebrow="Request a quote" title="Tell us about your windows">
         <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="max-w-3xl leading-7 text-ink/72">
