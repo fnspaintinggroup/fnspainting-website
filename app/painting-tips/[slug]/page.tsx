@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, Tag } from "lucide-react";
+import { TimberWindowArticle } from "@/components/TimberWindowArticle";
 import { PortableBody } from "@/components/PortableBody";
 import { getBlogPost, getBlogPosts, toAbsoluteUrl } from "@/lib/cms";
 import type { BlogSection } from "@/lib/blog-posts";
@@ -19,7 +20,9 @@ export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = await getBlogPost(slug);
 
@@ -62,8 +65,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const isTimberWindowArticle =
+    post.slug === "repaint-or-replace-timber-windows-sydney";
   const blogPosts = await getBlogPosts();
-  const relatedPosts = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2);
+  const relatedPosts = blogPosts
+    .filter((item) => item.slug !== post.slug)
+    .slice(0, 2);
   const publishedDate = new Intl.DateTimeFormat("en-AU", {
     day: "numeric",
     month: "long",
@@ -136,28 +143,35 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.category}
               </span>
             </div>
-            <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">{post.title}</h1>
-            <p className="mt-5 text-lg leading-8 text-white/75">{post.excerpt}</p>
+            <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
+              {post.title}
+            </h1>
+            <p className="mt-5 text-lg leading-8 text-white/75">
+              {post.excerpt}
+            </p>
           </div>
         </section>
 
-        <div className="mx-auto max-w-5xl px-5 pt-10 sm:px-6 lg:px-8">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-md shadow-soft">
-            <Image
-              src={post.featuredImage}
-              alt={post.imageAlt}
-              fill
-              priority
-              sizes="(min-width: 1024px) 896px, 100vw"
-              className="object-cover"
-            />
+        {!isTimberWindowArticle ? (
+          <div className="mx-auto max-w-5xl px-5 pt-10 sm:px-6 lg:px-8">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-md shadow-soft">
+              <Image
+                src={post.featuredImage}
+                alt={post.imageAlt}
+                fill
+                priority
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
-        </div>
-
+        ) : null}
         <section className="py-12 sm:py-16">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:px-8">
             <div className="min-w-0 max-w-3xl">
-              {"bodySource" in post && post.bodySource === "sanity" ? (
+              {isTimberWindowArticle ? (
+                <TimberWindowArticle />
+              ) : "bodySource" in post && post.bodySource === "sanity" ? (
                 <PortableBody value={post.body} />
               ) : (
                 (post.body as BlogSection[]).map((section) => (
@@ -226,7 +240,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                           <thead className="bg-gumleaf text-ink">
                             <tr>
                               {section.table.headers.map((header) => (
-                                <th key={header} scope="col" className="px-4 py-3 font-semibold">
+                                <th
+                                  key={header}
+                                  scope="col"
+                                  className="px-4 py-3 font-semibold"
+                                >
                                   {header}
                                 </th>
                               ))}
@@ -236,8 +254,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             {section.table.rows.map((row) => (
                               <tr key={row.join("-")}>
                                 {row.map((cell, index) => (
-                                  <td key={cell} className="px-4 py-3 align-top">
-                                    {index === 0 ? <strong className="font-semibold text-ink">{cell}</strong> : cell}
+                                  <td
+                                    key={cell}
+                                    className="px-4 py-3 align-top"
+                                  >
+                                    {index === 0 ? (
+                                      <strong className="font-semibold text-ink">
+                                        {cell}
+                                      </strong>
+                                    ) : (
+                                      cell
+                                    )}
                                   </td>
                                 ))}
                               </tr>
@@ -273,31 +300,45 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ))
               )}
 
-              <div className="mt-12 rounded-md bg-gumleaf p-6">
-                <h2 className="text-2xl font-semibold text-ink">Need painting advice for your property?</h2>
-                <p className="mt-3 leading-7 text-ink/70">
-                  F&amp;S Painting provides residential painting, interior painting, ceiling
-                  repainting, and mould-damaged ceiling restoration across Sydney.
-                </p>
-                <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
-                  <Link href="/services#interior-painting" className="text-eucalyptus hover:text-clay">
-                    Interior painting
-                  </Link>
-                  <Link href="/services#ceiling-repainting" className="text-eucalyptus hover:text-clay">
-                    Ceiling painting
-                  </Link>
-                  <Link href="/projects" className="text-eucalyptus hover:text-clay">
-                    Before &amp; after projects
+              {!isTimberWindowArticle ? (
+                <div className="mt-12 rounded-md bg-gumleaf p-6">
+                  <h2 className="text-2xl font-semibold text-ink">
+                    Need painting advice for your property?
+                  </h2>
+                  <p className="mt-3 leading-7 text-ink/70">
+                    F&amp;S Painting provides residential painting, interior
+                    painting, ceiling repainting, and mould-damaged ceiling
+                    restoration across Sydney.
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
+                    <Link
+                      href="/services#interior-painting"
+                      className="text-eucalyptus hover:text-clay"
+                    >
+                      Interior painting
+                    </Link>
+                    <Link
+                      href="/services#ceiling-repainting"
+                      className="text-eucalyptus hover:text-clay"
+                    >
+                      Ceiling painting
+                    </Link>
+                    <Link
+                      href="/projects"
+                      className="text-eucalyptus hover:text-clay"
+                    >
+                      Before &amp; after projects
+                    </Link>
+                  </div>
+                  <Link
+                    href="/contact#quote-name"
+                    className="mt-5 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
+                  >
+                    Get a Free Quote
+                    <ArrowRight aria-hidden="true" size={18} />
                   </Link>
                 </div>
-                <Link
-                  href="/contact#quote-name"
-                  className="mt-5 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
-                >
-                  Get a Free Quote
-                  <ArrowRight aria-hidden="true" size={18} />
-                </Link>
-              </div>
+              ) : null}
             </div>
 
             <aside className="h-fit rounded-md border border-ink/10 bg-white p-5 shadow-sm">

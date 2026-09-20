@@ -42,6 +42,98 @@ export type BlogPost = {
 };
 
 const baseBlogPosts: BlogPost[] = [
+{
+  "title": "Repainting Timber Windows Before You Replace Them",
+  "slug": "repaint-or-replace-timber-windows-sydney",
+  "date": "2026-09-20",
+  "updatedDate": "2026-09-20",
+  "category": "Window and trim painting",
+  "featuredImage": "/images/projects/mona-vale-heritage-gallery-07.png",
+  "imageAlt": "Painted interior timber sash windows in a Mona Vale home",
+  "excerpt": "Timber windows that stick or peel do not always need replacing. Check the timber, coating and purpose of the work before deciding.",
+  "seoTitle": "Repaint or Replace Timber Windows | Sydney Guide",
+  "seoDescription": "Before replacing timber windows, learn how to assess paint, timber condition and glazing needs, with preparation advice and published replacement cost guidance.",
+  "body": [
+    {
+      "heading": "The short answer",
+      "paragraphs": [
+        "Spring is when many people find out which windows still work. A window that will not budge, or that shows flaking paint and grey bare timber along the bottom rail, does not automatically need replacing. If the timber underneath is sound, suitable preparation and repainting can protect it and improve its appearance. Paint cannot fix timber that has rotted through, a frame that has moved or a broken sash mechanism. If better insulation or noise reduction is the aim, a glazing upgrade may be worth exploring too. Work out which problem you are looking at first, because the answer changes the work and the budget."
+      ]
+    },
+    {
+      "heading": "Why timber windows stick",
+      "paragraphs": [
+        "Paint build-up is one reason timber windows become difficult to open. Moisture movement, worn hardware, broken sash cords and frame damage can also be involved.",
+        "Every repaint adds a film of paint. When previous coats went on with the window closed, or too thickly into the rebate where sash meets frame, those surfaces can bond as the paint cures. Add a humid Sydney summer, timber that swells with moisture, and eight or nine accumulated layers, and the window can stop moving.",
+        "Forcing it can break glass or damage sash joints. Have the condition of the window assessed before attempting to release it. Where paint build-up is the cause, suitable preparation may help restore movement, subject to the condition of the window."
+      ]
+    },
+    {
+      "heading": "What a repaint costs, and what it protects",
+      "paragraphs": [
+        "This is where the decision usually gets made. Based on the published guidance we reviewed, replacing timber windows can involve a substantial investment. For context, Windows Republic's 2026 Melbourne guide lists the following reference ranges:",
+        "These are third-party reference figures for Melbourne, not Sydney quotations or F&S Painting prices. Confirm GST, installation and any additional work with the supplier. The options involve different work and specifications, so they are not a like-for-like comparison with repainting.",
+        "Where the timber is sound and the main issue is its coating, repainting may be the more economical option. The cost depends on the number and size of windows, the surfaces included, preparation, repairs and access. Upper-floor windows may need additional access equipment; detailed glazing bars take more time than a plain frame. A site-based quote is the most useful way to compare the options for your home.",
+        "The initial cost is only half the argument. Exterior timber needs a sound coating to help protect it from weather. Bare timber can grey, take up moisture, split and eventually decay. Repainting is maintenance on an existing asset, as well as an improvement to its appearance.",
+        "There is no single repainting interval for every window. Exposure, coating choice, previous preparation and condition all matter. Inspect the finish regularly and plan maintenance before widespread coating failure leaves timber exposed."
+      ]
+    },
+    {
+      "heading": "When repainting is not the right answer",
+      "paragraphs": [
+        "Paint protects sound timber. It does not rebuild timber that has gone.",
+        "Look for visible deterioration around the bottom rail and lower corners, where water can collect: open joints, missing putty, damaged timber or a sash sitting out of square. Avoid probing old painted surfaces yourself. A suitable tradesperson can assess whether repairs are practical before repainting is planned.",
+        "Small repairs and more substantial timber, glazing or mechanism work are different jobs. Confirm what is included in the quote rather than assuming all repairs come with the paint job.",
+        "If the goal is thermal or acoustic performance, paint alone will not solve it. Replacement or a glazing upgrade may be the better investment. Some sound existing frames can accept retrofit glazing, but suitability needs assessment. The useful question is not simply whether a window looks tired, but what you need it to do."
+      ]
+    },
+    {
+      "heading": "Heritage areas can affect the decision",
+      "paragraphs": [
+        "Many North Shore and inner Sydney homes sit inside heritage conservation areas. If your home is one of them, the choice may already be narrowed for you.",
+        "Some maintenance or like-for-like repairs may be exempt from development consent, but the rules and process depend on the property and council. Original colours do not automatically mean approval is unnecessary. For example, the City of Sydney's heritage exemption process can require written confirmation before work starts.",
+        "Replacing original timber with a different material or changing the appearance may need consent. Check your council's controls before committing to painting, repairs or replacement."
+      ]
+    },
+    {
+      "heading": "Why window painting is skilled work",
+      "paragraphs": [
+        "Windows involve a lot of detail in a small area. Five things make a difference.",
+        "Glass is unforgiving. A clean line where paint meets glass is a visible test of a painter. On traditional putty-glazed windows, the coating detail at the glass edge matters; other glazing systems need their own treatment.",
+        "Old frames are delicate. Putty hardens and cracks, beads split and thin old glass can be damaged. Aggressive preparation around a pane can turn a small job into a glazier's callout.",
+        "Repairs need a clear scope. Missing putty, timber deterioration and open joints should be identified before coating. Agree which repairs are included and which need another trade.",
+        "Detail work is the difference. Multi-pane sashes, glazing bars, decorative beads and shaped heads take longer than a plain frame, and they are where a rushed job shows.",
+        "The moving parts need care. Sashes, stops, beads and rebates each need appropriate treatment. Paint should not bridge moving joints or obstruct hardware.",
+        "Interior and exterior faces need suitable coating specifications too. Bare or repaired timber needs preparation and priming matched to the surface and paint system. Exterior coatings must suit weather exposure; interior work also needs attention to ventilation, drying and the finish around the glass."
+      ]
+    },
+    {
+      "heading": "Frequently asked questions about timber window painting",
+      "paragraphs": [
+        "Often, where paint build-up is the cause. A broken sash cord, distorted frame or decayed timber needs a different solution. The cause should be assessed first, and any release or repair work separately identified in the quote.",
+        "It depends on exposure, the coating system and its condition. Sunny or weather-exposed elevations may need attention sooner. Inspect for cracking, peeling and exposed timber rather than relying on a fixed number of years.",
+        "It depends on how many windows there are, their size and detail, which faces are included, preparation and access. Compare quotes for the same scope, including repairs, access equipment and GST. A site assessment is the most useful way to establish a realistic total.",
+        "No. Flaking coating has already lost adhesion, and a new coat can lift with it. Failed coatings need suitable preparation, with old paint assessed before disturbance. Bare or repaired timber needs the appropriate primer before finish coats.",
+        "It can be, if maintenance will protect sound timber while you plan the next step. Balance the condition of the windows, the proposed replacement date and the amount of preparation needed. If a glazing upgrade is the aim, ask whether the existing frames are suitable before deciding.",
+        "Steel frames need a different assessment, including corrosion and suitable metal primers. Advice about timber preparation should not be applied directly to steel. Identify the frame material when seeking a quote."
+      ]
+    },
+    {
+      "heading": "Before you decide",
+      "paragraphs": [
+        "A tired finish and a failed window are not the same thing. Start with the timber's condition, the way the window operates and what you want to improve. Then compare the preparation, repairs or upgrades needed to reach that result. Sound timber is worth looking after; a coating should not be asked to solve a structural or glazing problem."
+      ]
+    },
+    {
+      "heading": "Sources and further reading",
+      "paragraphs": [
+        "Sources reviewed 19 September 2026. Conditions and requirements vary by property; check the scope of work with the relevant tradesperson and council.",
+        "F&S Painting provides interior and exterior timber window repainting across Sydney. Window and frame replacement and glazing upgrades are outside our scope. Explore our timber window painting service.",
+        "For a quote, a few photos, the number of windows and whether you need interior or exterior painting are a helpful starting point."
+      ]
+    }
+  ]
+},
   {
     title: "How Much Does Apartment Painting Cost in Chatswood?",
     slug: "apartment-painting-cost-chatswood",
