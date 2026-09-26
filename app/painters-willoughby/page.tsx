@@ -73,7 +73,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "See real Willoughby ceiling, interior and North Willoughby exterior projects. Licensed F&S painters, careful preparation and free on-site quotes.",
   path: "/painters-willoughby",
-  image: "/images/projects/willoughby-office-ceiling-after.jpg",
+  image: "/images/projects/exterior-facade-after.jpg",
 });
 
 export default async function PaintersWilloughbyPage() {
@@ -113,7 +113,7 @@ export default async function PaintersWilloughbyPage() {
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          contentUrl: absoluteUrl("/images/projects/willoughby-office-ceiling-after.jpg"),
+          contentUrl: absoluteUrl("/images/projects/exterior-facade-after.jpg"),
         },
         mainEntity: { "@id": `${pageUrl}#painting-service` },
       },
@@ -154,8 +154,8 @@ export default async function PaintersWilloughbyPage() {
 
       <section className="relative overflow-hidden bg-ink text-white">
         <Image
-          src="/images/projects/willoughby-office-ceiling-after.jpg"
-          alt="Willoughby ceiling after restoration and repainting by F&S Painting"
+          src="/images/projects/exterior-facade-after.jpg"
+          alt="North Willoughby house exterior after painting by F&S Painting"
           fill
           priority
           className="object-cover object-center"
