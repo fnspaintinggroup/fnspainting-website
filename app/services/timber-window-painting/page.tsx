@@ -31,7 +31,8 @@ const windowFramePhotos = [
     src: "/images/projects/east-lindfield-replacement-window-interior-frame-detail.jpg",
     alt: "East Lindfield interior window frame detail after painting",
     title: "Interior window frame detail",
-    caption: "A completed interior window frame painting detail in East Lindfield.",
+    caption:
+      "A completed interior window frame painting detail in East Lindfield.",
   },
 ];
 
@@ -56,7 +57,8 @@ const sashWindowProjectPhotos = [
     scope: "Exterior sash window painting",
     description:
       "Finished sash window painting from a North Willoughby exterior repaint.",
-    image: "/images/projects/north-willoughby-exterior-house-repaint-front-window-finish.jpg",
+    image:
+      "/images/projects/north-willoughby-exterior-house-repaint-front-window-finish.jpg",
     alt: "North Willoughby exterior sash window after painting within a completed F&S Painting project",
     galleryHref:
       "/painting-gallery/north-willoughby-exterior-house-repaint-gallery#sash-window-painting",
@@ -72,6 +74,16 @@ const sashWindowProjectPhotos = [
       "/painting-gallery/chatswood-exterior-house-painting#sash-window-painting",
   },
 ];
+
+const chatswoodTimberRepairProject = {
+  location: "Chatswood",
+  scope: "Timber window repair and painting",
+  description:
+    "A 14-photo field record showing two localised timber repair sequences, putty filling, sanding, oil-based undercoating, and completed painting across varied window forms.",
+  image: "/images/projects/chatswood-timber-window-1850.jpg",
+  alt: "Completed white timber windows after repair preparation and exterior painting in Chatswood",
+  galleryHref: "/painting-gallery/chatswood-timber-window-repair-painting",
+};
 
 const beforeAfterProjects = [
   {
@@ -97,19 +109,23 @@ const beforeAfterProjects = [
 const serviceSteps = [
   {
     title: "Check the window condition",
-    description: "We review the visible frame condition and the areas you want painted.",
+    description:
+      "We review the visible frame condition and the areas you want painted.",
   },
   {
     title: "Confirm the quote scope",
-    description: "The quote sets out the agreed interior or exterior painting scope.",
+    description:
+      "The quote sets out the agreed interior or exterior painting scope.",
   },
   {
     title: "Prepare and paint",
-    description: "Preparation and painting are matched to the confirmed frame condition and scope.",
+    description:
+      "Preparation and painting are matched to the confirmed frame condition and scope.",
   },
   {
     title: "Check the finished work",
-    description: "We review the completed painting work with the agreed scope in mind.",
+    description:
+      "We review the completed painting work with the agreed scope in mind.",
   },
 ];
 
@@ -161,9 +177,10 @@ export default function TimberWindowPaintingPage() {
         provider: { "@id": `${siteUrl}/#localbusiness` },
         areaServed: "Sydney, NSW",
         url: pageUrl,
-        image: [heroPhoto.src, ...windowFramePhotos.map((photo) => photo.src)].map(
-          absoluteUrl,
-        ),
+        image: [
+          heroPhoto.src,
+          ...windowFramePhotos.map((photo) => photo.src),
+        ].map(absoluteUrl),
       },
     ],
   };
@@ -195,7 +212,8 @@ export default function TimberWindowPaintingPage() {
               Timber &amp; Sash Window Painting
             </h1>
             <p className="mt-5 text-base font-medium leading-7 text-white/88 sm:text-lg">
-              Interior and exterior painting for timber sash windows and window frames across Sydney.
+              Interior and exterior painting for timber sash windows and window
+              frames across Sydney.
               <br />
               Preparation is matched to the confirmed frame condition and scope.
             </p>
@@ -246,7 +264,9 @@ export default function TimberWindowPaintingPage() {
                 aria-hidden="true"
                 size={24}
               />
-              <h2 className="mt-4 text-xl font-semibold text-ink">{item.title}</h2>
+              <h2 className="mt-4 text-xl font-semibold text-ink">
+                {item.title}
+              </h2>
               <p className="mt-2 leading-6 text-ink/70">{item.description}</p>
             </div>
           ))}
@@ -295,6 +315,42 @@ export default function TimberWindowPaintingPage() {
             </article>
           ))}
         </div>
+      </Section>
+
+      <Section
+        eyebrow="Timber window repair and painting"
+        title="Chatswood localised timber repairs and repainting"
+        intro="A separate completed field gallery showing the repair process and finished painting across several timber window forms."
+      >
+        <article className="grid overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm md:grid-cols-[1.1fr_0.9fr]">
+          <div className="relative min-h-72 overflow-hidden bg-paper">
+            <Image
+              src={chatswoodTimberRepairProject.image}
+              alt={chatswoodTimberRepairProject.alt}
+              fill
+              sizes="(min-width: 768px) 52vw, 90vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center p-6 sm:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+              {chatswoodTimberRepairProject.location}
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold leading-tight text-ink">
+              {chatswoodTimberRepairProject.scope}
+            </h2>
+            <p className="mt-4 leading-7 text-ink/70">
+              {chatswoodTimberRepairProject.description}
+            </p>
+            <Link
+              href={chatswoodTimberRepairProject.galleryHref}
+              className="mt-6 inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+            >
+              <Images aria-hidden="true" size={18} />
+              View the 14-photo Chatswood gallery
+            </Link>
+          </div>
+        </article>
       </Section>
 
       <Section
@@ -361,8 +417,12 @@ export default function TimberWindowPaintingPage() {
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gumleaf text-sm font-bold text-eucalyptus">
                 {index + 1}
               </span>
-              <h2 className="mt-4 text-lg font-semibold text-ink">{step.title}</h2>
-              <p className="mt-2 text-sm leading-6 text-ink/70">{step.description}</p>
+              <h2 className="mt-4 text-lg font-semibold text-ink">
+                {step.title}
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-ink/70">
+                {step.description}
+              </p>
             </li>
           ))}
         </ol>
@@ -393,7 +453,9 @@ export default function TimberWindowPaintingPage() {
                 <h2 className="text-xl font-semibold leading-tight text-ink">
                   {project.title}
                 </h2>
-                <p className="mt-3 leading-6 text-ink/70">{project.description}</p>
+                <p className="mt-3 leading-6 text-ink/70">
+                  {project.description}
+                </p>
                 <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-eucalyptus">
                   <Link
                     href={project.projectHref}
@@ -444,19 +506,25 @@ export default function TimberWindowPaintingPage() {
               <summary className="cursor-pointer font-semibold text-ink">
                 {faq.question}
               </summary>
-              <p className="mt-3 max-w-3xl leading-7 text-ink/70">{faq.answer}</p>
+              <p className="mt-3 max-w-3xl leading-7 text-ink/70">
+                {faq.answer}
+              </p>
             </details>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-gumleaf" eyebrow="Request a quote" title="Tell us about your windows">
+      <Section
+        className="bg-gumleaf"
+        eyebrow="Request a quote"
+        title="Tell us about your windows"
+      >
         <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="max-w-3xl leading-7 text-ink/72">
               Share window photos, the approximate number of windows, your
-              suburb, and whether the requested work is interior or exterior.
-              We can then discuss the practical next step for a painting quote.
+              suburb, and whether the requested work is interior or exterior. We
+              can then discuss the practical next step for a painting quote.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
               <MapPin aria-hidden="true" size={16} />

@@ -63,6 +63,12 @@ const featuredProjects = projects
 
 const chatswoodPhotoHighlights = [
   {
+    src: "/images/projects/chatswood-timber-window-1850.jpg",
+    alt: "Completed white timber windows after repair preparation and exterior painting in Chatswood",
+    title: "Timber Window Repair & Painting",
+    href: "/painting-gallery/chatswood-timber-window-repair-painting#completed-timber-window-bank-6",
+  },
+  {
     src: "/images/projects/chatswood-blakesley-exterior-front-facade.jpg",
     alt: "Chatswood brick home after exterior gable, fascia, and trim repainting by F&S Painting",
     title: "Exterior Gable and Trim Painting",
@@ -462,12 +468,14 @@ export default function PaintersChatswoodPage() {
             <p>
               The Chatswood apartment example shown here features a completed
               living-room repaint. Explore the gallery to see the finish before
-              discussing the rooms and surfaces you want included in your own quote.
+              discussing the rooms and surfaces you want included in your own
+              quote.
             </p>
             <p>
-              Ask us to confirm the agreed surfaces, preparation, paint finishes,
-              access arrangements, and any exclusions in your written quote.
-              Repairs or additional areas should be agreed before work starts.
+              Ask us to confirm the agreed surfaces, preparation, paint
+              finishes, access arrangements, and any exclusions in your written
+              quote. Repairs or additional areas should be agreed before work
+              starts.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-3">
               <Link
@@ -546,7 +554,7 @@ export default function PaintersChatswoodPage() {
       <Section
         eyebrow="Chatswood Photos"
         title="Recent Chatswood and North Shore painting photos"
-        intro="A closer look at recent Chatswood exterior, bedroom, bathroom ceiling, commercial, office, and apartment painting work completed by F&S Painting."
+        intro="A closer look at recent Chatswood timber window repair and repainting, exterior, bedroom, bathroom ceiling, commercial, office, and apartment work completed by F&S Painting."
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {chatswoodPhotoHighlights.map((photo) => (
@@ -576,10 +584,10 @@ export default function PaintersChatswoodPage() {
           ))}
         </div>
         <Link
-          href="/painting-gallery/chatswood-kooringa-interior-room-bathroom-painting"
+          href="/painting-gallery/chatswood-timber-window-repair-painting"
           className="mt-8 inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
         >
-          View the latest Chatswood gallery
+          View the Chatswood timber window gallery
           <ArrowRight aria-hidden="true" size={18} />
         </Link>
       </Section>

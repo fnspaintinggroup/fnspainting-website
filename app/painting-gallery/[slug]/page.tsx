@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Images, MapPin, Paintbrush } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Images,
+  MapPin,
+  Paintbrush,
+} from "lucide-react";
 import { getGalleryCollectionBySlug, getGalleryCollections } from "@/lib/cms";
 import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
 import { createUrlSlug } from "@/lib/url-slug";
@@ -47,7 +53,9 @@ function galleryImageAnchor(title: string, index: number) {
   return `${createUrlSlug(title)}-${index + 1}`;
 }
 
-export default async function GalleryCollectionPage({ params }: GalleryCollectionPageProps) {
+export default async function GalleryCollectionPage({
+  params,
+}: GalleryCollectionPageProps) {
   const { slug } = await params;
   const collection = await getGalleryCollectionBySlug(slug);
 
@@ -59,16 +67,50 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
   const sashWindowImages = collection.sashWindowEvidence
     ? collection.sashWindowEvidence.imageTitles
         .map((title) => {
-          const index = collection.images.findIndex((item) => item.title === title);
-          return index >= 0 ? { item: collection.images[index], index } : undefined;
+          const index = collection.images.findIndex(
+            (item) => item.title === title,
+          );
+          return index >= 0
+            ? { item: collection.images[index], index }
+            : undefined;
         })
         .filter(
           (
             item,
-          ): item is { item: (typeof collection.images)[number]; index: number } =>
-            Boolean(item),
+          ): item is {
+            item: (typeof collection.images)[number];
+            index: number;
+          } => Boolean(item),
         )
     : [];
+  const gallerySections = collection.sections
+    ?.map((section) => ({
+      ...section,
+      items: section.imageTitles
+        .map((title) => {
+          const index = collection.images.findIndex(
+            (item) => item.title === title,
+          );
+          return index >= 0
+            ? { item: collection.images[index], index }
+            : undefined;
+        })
+        .filter(
+          (
+            item,
+          ): item is {
+            item: (typeof collection.images)[number];
+            index: number;
+          } => Boolean(item),
+        ),
+    }))
+    .filter((section) => section.items.length > 0) ?? [
+    {
+      eyebrow: "Finished photos",
+      title: `${collection.suburb} painting finishes`,
+      items: collection.images.map((item, index) => ({ item, index })),
+    },
+  ];
 
   const schema = {
     "@context": "https://schema.org",
@@ -83,7 +125,11 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
       caption: item.caption,
       contentUrl: absoluteUrl(item.image),
       description: item.alt,
-      keywords: [collection.category, collection.suburb, "painting gallery Sydney"],
+      keywords: [
+        collection.category,
+        collection.suburb,
+        "painting gallery Sydney",
+      ],
     })),
   };
 
@@ -140,45 +186,57 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
 
       <section className="bg-linen py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
-                Finished photos
-              </p>
-              <h2 className="text-3xl font-semibold leading-tight text-ink">
-                {collection.suburb} painting finishes
-              </h2>
-            </div>
+          <div className="mb-8 flex justify-end">
             <p className="text-sm font-semibold text-ink/55">
               {collection.images.length} photos
             </p>
           </div>
-
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {collection.images.map((item, index) => (
-              <article
-                key={item.title}
-                id={galleryImageAnchor(item.title, index)}
-                className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-                    className="object-cover transition duration-500 hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold leading-tight text-ink">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-ink/65">{item.caption}</p>
-                  <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-ink/55">
-                    <MapPin aria-hidden="true" size={16} />
-                    {collection.suburb}
+          <div className="space-y-14">
+            {gallerySections.map((section) => (
+              <div key={section.title}>
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
+                  {section.eyebrow}
+                </p>
+                <h2 className="text-3xl font-semibold leading-tight text-ink">
+                  {section.title}
+                </h2>
+                {"summary" in section && section.summary ? (
+                  <p className="mt-3 max-w-3xl leading-7 text-ink/70">
+                    {section.summary}
                   </p>
+                ) : null}
+                <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {section.items.map(({ item, index }) => (
+                    <article
+                      key={item.title}
+                      id={galleryImageAnchor(item.title, index)}
+                      className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                        <Image
+                          src={item.image}
+                          alt={item.alt}
+                          fill
+                          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                          className="object-cover transition duration-500 hover:scale-[1.03]"
+                        />
+                      </div>
+                      <div className="p-5">
+                        <h3 className="text-xl font-semibold leading-tight text-ink">
+                          {item.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-6 text-ink/65">
+                          {item.caption}
+                        </p>
+                        <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-ink/55">
+                          <MapPin aria-hidden="true" size={16} />
+                          {collection.suburb}
+                        </p>
+                      </div>
+                    </article>
+                  ))}
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>
@@ -219,7 +277,10 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
         </section>
       ) : null}
 
-      {collection.projectSlug || collection.category === "Exterior Painting" || isWilloughbyCollection ? (
+      {collection.projectSlug ||
+      collection.category === "Exterior Painting" ||
+      isWilloughbyCollection ||
+      collection.relatedLinks?.length ? (
         <section className="bg-mist py-12 sm:py-16">
           <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
             <div className="rounded-md border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
@@ -231,20 +292,38 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
               </h2>
               <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
                 {collection.projectSlug ? (
-                  <Link href={`/projects/${collection.projectSlug}`} className="text-eucalyptus hover:text-clay">
+                  <Link
+                    href={`/projects/${collection.projectSlug}`}
+                    className="text-eucalyptus hover:text-clay"
+                  >
                     View matching Before / After
                   </Link>
                 ) : null}
                 {collection.category === "Exterior Painting" ? (
-                  <Link href="/services/exterior-painting" className="text-eucalyptus hover:text-clay">
+                  <Link
+                    href="/services/exterior-painting"
+                    className="text-eucalyptus hover:text-clay"
+                  >
                     Exterior painting service
                   </Link>
                 ) : null}
                 {isWilloughbyCollection ? (
-                  <Link href="/painters-willoughby" className="text-eucalyptus hover:text-clay">
+                  <Link
+                    href="/painters-willoughby"
+                    className="text-eucalyptus hover:text-clay"
+                  >
                     Painters Willoughby
                   </Link>
                 ) : null}
+                {collection.relatedLinks?.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-eucalyptus hover:text-clay"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -261,8 +340,8 @@ export default async function GalleryCollectionPage({ params }: GalleryCollectio
               Request a free Sydney painting quote
             </h2>
             <p className="mt-4 max-w-2xl text-white/80">
-              Share your home, strata, office, retail, or commercial painting details and we will
-              help plan the right finish.
+              Share your home, strata, office, retail, or commercial painting
+              details and we will help plan the right finish.
             </p>
           </div>
           <Link

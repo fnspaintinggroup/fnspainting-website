@@ -24,6 +24,13 @@ export type GalleryCollectionImage = {
   caption: string;
 };
 
+export type GalleryCollectionSection = {
+  eyebrow: string;
+  title: string;
+  summary?: string;
+  imageTitles: string[];
+};
+
 export type GalleryCollection = {
   slug: string;
   title: string;
@@ -35,6 +42,11 @@ export type GalleryCollection = {
   completionDate?: string;
   projectSlug?: string;
   galleryCardTitle?: string;
+  sections?: GalleryCollectionSection[];
+  relatedLinks?: {
+    label: string;
+    href: string;
+  }[];
   // Caleb confirmed these pictured windows are sash windows on 2026-09-14.
   // This supports painting evidence only; it does not imply repair, replacement, or restoration work.
   sashWindowEvidence?: {
@@ -246,6 +258,17 @@ export const galleryImages: GalleryImage[] = [
     suburb: "Chatswood, NSW",
     collectionSlug: "chatswood-exterior-house-painting",
     photoCount: 13,
+  },
+  {
+    title: "Chatswood Timber Window Repair & Painting",
+    category: "Exterior Painting",
+    image: "/images/projects/chatswood-timber-window-1850.jpg",
+    alt: "Completed white timber windows after repair preparation and exterior painting in Chatswood",
+    caption:
+      "A 14-photo Chatswood record covering two localised timber repair sequences and completed window painting across varied window forms.",
+    suburb: "Chatswood, NSW",
+    collectionSlug: "chatswood-timber-window-repair-painting",
+    photoCount: 14,
   },
   {
     title: "Blakehurst Interior House Painting",
@@ -952,14 +975,16 @@ export const galleryCollections: GalleryCollection[] = [
     images: [
       {
         title: "Front Entry Painting",
-        image: "/images/projects/north-willoughby-exterior-front-entry-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-front-entry-finish.jpg",
         alt: "North Willoughby front entry facade after exterior painting",
         caption:
           "Front entry facade, gable trim, and surrounding surfaces finished with crisp exterior lines.",
       },
       {
         title: "Upper Gable Painting",
-        image: "/images/projects/north-willoughby-exterior-upper-gable-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-upper-gable-finish.jpg",
         alt: "North Willoughby upper gable wall and trim after exterior painting",
         caption:
           "Upper gable wall, trim lines, and eaves finished cleanly with a bright exterior coating.",
@@ -973,21 +998,24 @@ export const galleryCollections: GalleryCollection[] = [
       },
       {
         title: "Street View Painting",
-        image: "/images/projects/north-willoughby-exterior-street-view-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-street-view-finish.jpg",
         alt: "North Willoughby street view after exterior house painting",
         caption:
           "Street-facing view showing the refreshed facade, trim, and front garden presentation.",
       },
       {
         title: "Window and Trim Painting",
-        image: "/images/projects/north-willoughby-exterior-window-trim-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-window-trim-finish.jpg",
         alt: "North Willoughby exterior windows and trim after repainting",
         caption:
           "Window surrounds, exterior wall surfaces, and trim finished with a tidy, even coating.",
       },
       {
         title: "Front Porch Painting",
-        image: "/images/projects/north-willoughby-exterior-front-porch-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-front-porch-finish.jpg",
         alt: "North Willoughby front porch and entry doors after exterior painting",
         caption:
           "Front porch, entry doors, masonry, and trim refreshed for a polished entry detail.",
@@ -1009,8 +1037,10 @@ export const galleryCollections: GalleryCollection[] = [
     projectSlug: "north-willoughby-exterior-house-repaint",
     summary:
       "Finished exterior painting across the North Willoughby facade, trim, windows, eaves, verandah, side walls, and covered areas.",
-    coverImage: "/images/projects/north-willoughby-exterior-house-repaint-after.jpg",
-    coverAlt: "North Willoughby house exterior after professional repainting by F&S Painting",
+    coverImage:
+      "/images/projects/north-willoughby-exterior-house-repaint-after.jpg",
+    coverAlt:
+      "North Willoughby house exterior after professional repainting by F&S Painting",
     sashWindowEvidence: {
       description:
         "The finished front sash window is shown within this completed North Willoughby exterior repaint.",
@@ -1019,63 +1049,82 @@ export const galleryCollections: GalleryCollection[] = [
     images: [
       {
         title: "Front Facade Painting",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-front-facade-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-front-facade-finish.jpg",
         alt: "North Willoughby front facade after exterior painting",
-        caption: "Freshly finished facade, front fence, and exterior trim in natural daylight.",
+        caption:
+          "Freshly finished facade, front fence, and exterior trim in natural daylight.",
       },
       {
         title: "Front Entry and Trim",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-front-entry-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-front-entry-finish.jpg",
         alt: "North Willoughby front entry and trim after exterior painting",
-        caption: "Entry presentation and trim details completed with a clean exterior finish.",
+        caption:
+          "Entry presentation and trim details completed with a clean exterior finish.",
       },
       {
         title: "Window and Eaves Detail",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-window-eaves-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-window-eaves-finish.jpg",
         alt: "North Willoughby painted window trim and eaves detail",
         caption: "Window trims and eaves shown with even, crisp paint lines.",
       },
       {
         title: "Front Window Detail",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-front-window-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-front-window-finish.jpg",
         alt: "North Willoughby front window surrounds after exterior painting",
-        caption: "Front window surrounds and adjacent exterior wall finished neatly.",
+        caption:
+          "Front window surrounds and adjacent exterior wall finished neatly.",
       },
       {
         title: "Side Wall Painting",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-side-wall-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-side-wall-finish.jpg",
         alt: "North Willoughby side exterior wall after repainting",
-        caption: "Side wall surfaces, trim, and boundary details completed in a durable finish.",
+        caption:
+          "Side wall surfaces, trim, and boundary details completed in a durable finish.",
       },
       {
         title: "Side Eaves and Windows",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-side-eaves-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-side-eaves-finish.jpg",
         alt: "North Willoughby side eaves and windows after exterior painting",
-        caption: "Side elevation detailing finished around the eaves and window trims.",
+        caption:
+          "Side elevation detailing finished around the eaves and window trims.",
       },
       {
         title: "Rear Patio Painting",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-rear-patio-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-rear-patio-finish.jpg",
         alt: "North Willoughby rear patio after exterior painting",
-        caption: "Rear patio walls, ceiling, and doors completed with an even exterior coating.",
+        caption:
+          "Rear patio walls, ceiling, and doors completed with an even exterior coating.",
       },
       {
         title: "Verandah Detail Painting",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-verandah-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-verandah-finish.jpg",
         alt: "North Willoughby verandah ceiling and wall finishes",
-        caption: "Verandah ceiling, wall, and exterior details finished cleanly.",
+        caption:
+          "Verandah ceiling, wall, and exterior details finished cleanly.",
       },
       {
         title: "Side Wall Detail",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-side-detail-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-side-detail-finish.jpg",
         alt: "North Willoughby side wall and trim detail after repainting",
-        caption: "Side wall and trim detail showing a consistent painted finish.",
+        caption:
+          "Side wall and trim detail showing a consistent painted finish.",
       },
       {
         title: "Covered Walkway Painting",
-        image: "/images/projects/north-willoughby-exterior-house-repaint-covered-walkway-finish.jpg",
+        image:
+          "/images/projects/north-willoughby-exterior-house-repaint-covered-walkway-finish.jpg",
         alt: "North Willoughby covered side walkway after exterior painting",
-        caption: "Covered walkway walls, ceiling, and trim completed with a tidy finish.",
+        caption:
+          "Covered walkway walls, ceiling, and trim completed with a tidy finish.",
       },
     ],
   },
@@ -1733,8 +1782,10 @@ export const galleryCollections: GalleryCollection[] = [
     suburb: "Chatswood, NSW",
     summary:
       "F&S Painting completed a full interior refresh for this Chatswood apartment, including careful protection, patching, sanding, priming where required, and repainting across ceilings, walls, selected doors, windows, and frames.",
-    coverImage: "/images/projects/chatswood-apartment-hallway-wardrobe-finish.webp",
-    coverAlt: "Chatswood apartment hallway and wardrobe after a clean interior repaint",
+    coverImage:
+      "/images/projects/chatswood-apartment-hallway-wardrobe-finish.webp",
+    coverAlt:
+      "Chatswood apartment hallway and wardrobe after a clean interior repaint",
     completionDate: "2026-07-31",
     images: [
       {
@@ -1746,7 +1797,8 @@ export const galleryCollections: GalleryCollection[] = [
       },
       {
         title: "Living Room Protection",
-        image: "/images/projects/chatswood-apartment-living-room-protection.webp",
+        image:
+          "/images/projects/chatswood-apartment-living-room-protection.webp",
         alt: "Chatswood apartment living room furniture protected during interior repainting",
         caption:
           "Furniture and room contents covered before the surrounding walls and ceiling were painted.",
@@ -1781,7 +1833,8 @@ export const galleryCollections: GalleryCollection[] = [
       },
       {
         title: "Bathroom Ceiling Detail",
-        image: "/images/projects/chatswood-apartment-bathroom-ceiling-finish-2.webp",
+        image:
+          "/images/projects/chatswood-apartment-bathroom-ceiling-finish-2.webp",
         alt: "Chatswood apartment bathroom ceiling and upper wall detail after repainting",
         caption:
           "Bathroom ceiling and upper wall details finished with clean edges around the existing fittings.",
@@ -1795,14 +1848,16 @@ export const galleryCollections: GalleryCollection[] = [
       },
       {
         title: "Bedroom Window Wall Finish",
-        image: "/images/projects/chatswood-apartment-bedroom-window-finish.webp",
+        image:
+          "/images/projects/chatswood-apartment-bedroom-window-finish.webp",
         alt: "Chatswood apartment bedroom window wall and ceiling after repainting",
         caption:
           "Freshly finished bedroom walls and ceiling around the existing windows and built-in storage.",
       },
       {
         title: "Hallway and Wardrobe Finish",
-        image: "/images/projects/chatswood-apartment-hallway-wardrobe-finish.webp",
+        image:
+          "/images/projects/chatswood-apartment-hallway-wardrobe-finish.webp",
         alt: "Chatswood apartment hallway and wardrobe after interior repainting",
         caption:
           "The finished hallway and wardrobe area combines brighter painted surfaces with retained timber character.",
@@ -2062,8 +2117,7 @@ export const galleryCollections: GalleryCollection[] = [
     summary:
       "Finished exterior house painting across rear facade walls, patio surrounds, side elevations, boundary walls, and detailed exterior surfaces in Newington.",
     coverImage: "/images/projects/newington-front-side-facade-finish.jpg",
-    coverAlt:
-      "Newington side facade after exterior repainting by F&S Painting",
+    coverAlt: "Newington side facade after exterior repainting by F&S Painting",
     images: [
       {
         title: "Side Facade Contrast Painting",
@@ -2270,6 +2324,163 @@ export const galleryCollections: GalleryCollection[] = [
         alt: "Chatswood upper roofline and window trim detail after exterior painting",
         caption:
           "Upper roofline, window trims, and eave details finished cleanly along the second-storey elevation.",
+      },
+    ],
+  },
+  {
+    slug: "chatswood-timber-window-repair-painting",
+    title: "Chatswood Timber Window Repair & Painting",
+    category: "Exterior Painting",
+    suburb: "Chatswood, NSW",
+    summary:
+      "Timber window maintenance and repainting at a Chatswood home, including localised timber decay repairs, putty filling, sanding, oil-based undercoating, and painting.",
+    coverImage: "/images/projects/chatswood-timber-window-1850.jpg",
+    coverAlt:
+      "Completed white timber windows after repair preparation and exterior painting in Chatswood",
+    completionDate: "2026-09-15",
+    sections: [
+      {
+        eyebrow: "Repair process A",
+        title: "Localised timber repair sequence",
+        summary:
+          "The exposed repair area was cleaned, filled, and shaped before later sanding, undercoating, and painting.",
+        imageTitles: [
+          "Localised Timber Decay Exposed",
+          "Filled Timber Repair Area",
+        ],
+      },
+      {
+        eyebrow: "Repair process B",
+        title: "Decay repair, putty filling and repainting",
+        summary:
+          "This second sequence shows the damaged corner, the putty-filling stage, and the completed painted finish in order.",
+        imageTitles: [
+          "Window Corner Before Repair",
+          "Putty Filling in Progress",
+          "Repaired Corner After Painting",
+        ],
+      },
+      {
+        eyebrow: "Completed work",
+        title: "Finished timber windows and frames",
+        imageTitles: [
+          "Completed Timber Window Bank",
+          "Completed Bay Window Painting",
+          "Entry Window Frames and Door Surround",
+          "Entry Window Joinery Finish",
+          "Tall Bay Window Finish",
+          "Upper-Level Window Finish",
+          "Window Sill and Frame Detail",
+          "Gable Window Painting",
+          "Bay Window Exterior Finish",
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        label: "Timber window painting service",
+        href: "/services/timber-window-painting",
+      },
+      { label: "Painters Chatswood", href: "/painters-chatswood" },
+    ],
+    images: [
+      {
+        title: "Localised Timber Decay Exposed",
+        image: "/images/projects/chatswood-timber-window-1806.jpg",
+        alt: "Chatswood timber window corner with localised decay exposed during preparation",
+        caption:
+          "Loose and deteriorated material was removed to expose the localised repair area before filling.",
+      },
+      {
+        title: "Filled Timber Repair Area",
+        image: "/images/projects/chatswood-timber-window-1816.jpg",
+        alt: "Chatswood timber window repair area filled and shaped before sanding and undercoating",
+        caption:
+          "Repair filler was applied and shaped, ready for later sanding, oil-based undercoating, and painting.",
+      },
+      {
+        title: "Window Corner Before Repair",
+        image: "/images/projects/chatswood-timber-window-1808.jpg",
+        alt: "Chatswood timber window corner with localised deterioration before repair",
+        caption:
+          "The second repair sequence begins with the deteriorated timber corner exposed for preparation.",
+      },
+      {
+        title: "Putty Filling in Progress",
+        image: "/images/projects/chatswood-timber-window-1810.jpg",
+        alt: "Chatswood timber window corner during the putty-filling stage",
+        caption:
+          "Putty filling rebuilt the prepared corner before sanding, undercoating, and final painting.",
+      },
+      {
+        title: "Repaired Corner After Painting",
+        image: "/images/projects/chatswood-timber-window-1852.jpg",
+        alt: "Chatswood timber window corner after localised repair preparation and white painting",
+        caption:
+          "The repaired corner after preparation, oil-based undercoating, and the completed white paint finish.",
+      },
+      {
+        title: "Completed Timber Window Bank",
+        image: "/images/projects/chatswood-timber-window-1850.jpg",
+        alt: "Wide bank of white timber windows after painting in Chatswood",
+        caption:
+          "A wide completed view showing consistent white finishes across the timber frames and opening windows.",
+      },
+      {
+        title: "Completed Bay Window Painting",
+        image: "/images/projects/chatswood-timber-window-1855.jpg",
+        alt: "Chatswood bay window with freshly painted white timber frames",
+        caption:
+          "The completed bay-window area with clean, even finishes across frames, trims, and sills.",
+      },
+      {
+        title: "Entry Window Frames and Door Surround",
+        image: "/images/projects/chatswood-timber-window-1983.jpg",
+        alt: "White timber window frames and joinery surrounding a Chatswood entry",
+        caption:
+          "Finished white window frames and surrounding joinery provide a crisp contrast at the entry.",
+      },
+      {
+        title: "Entry Window Joinery Finish",
+        image: "/images/projects/chatswood-timber-window-1984.jpg",
+        alt: "Completed white timber window joinery beside a Chatswood entry",
+        caption:
+          "A second entry-side view showing the consistent finish across the timber window joinery.",
+      },
+      {
+        title: "Tall Bay Window Finish",
+        image: "/images/projects/chatswood-timber-window-1985.jpg",
+        alt: "Tall Chatswood bay window after white timber frame painting",
+        caption:
+          "Tall bay-window frames and trims completed with a neat white exterior finish.",
+      },
+      {
+        title: "Upper-Level Window Finish",
+        image: "/images/projects/chatswood-timber-window-1990.jpg",
+        alt: "Upper-level outward-opening timber windows after painting in Chatswood",
+        caption:
+          "Upper-level outward-opening windows show an even finish across frames, sashes, and surrounding trim.",
+      },
+      {
+        title: "Window Sill and Frame Detail",
+        image: "/images/projects/chatswood-timber-window-1994.jpg",
+        alt: "Close detail of a painted white timber window sill and frame in Chatswood",
+        caption:
+          "Close view of the completed sill, frame edges, and junctions after preparation and painting.",
+      },
+      {
+        title: "Gable Window Painting",
+        image: "/images/projects/chatswood-timber-window-2004.jpg",
+        alt: "Two Chatswood gable windows with completed white timber painting",
+        caption:
+          "Two gable windows completed with consistent white finishes across their timber frames and trims.",
+      },
+      {
+        title: "Bay Window Exterior Finish",
+        image: "/images/projects/chatswood-timber-window-2007.jpg",
+        alt: "Chatswood bay window exterior with completed white timber frame painting",
+        caption:
+          "Exterior view of the completed bay-window frames, sills, and adjacent trim work.",
       },
     ],
   },
