@@ -5,6 +5,7 @@ import { ArrowRight, MapPin, Paintbrush } from "lucide-react";
 import { PageIntroHero } from "@/components/PageIntroHero";
 import { getProjectList, toAbsoluteUrl } from "@/lib/cms";
 import { pageMetadata, siteUrl } from "@/lib/seo";
+import { timberWindowPairs } from "@/lib/timber-window-showcase";
 
 export const metadata: Metadata = pageMetadata({
   title: "Painting Before & After Sydney",
@@ -19,6 +20,7 @@ const beforeAfterCategories = [
   { id: "ceiling-restoration", label: "Ceiling Restoration" },
   { id: "commercial-painting", label: "Commercial Painting" },
   { id: "strata-painting", label: "Strata Painting" },
+  { id: "timber-window-painting", label: "Timber Window Painting" },
 ] as const;
 
 function getProjectCategory(serviceType: string) {
@@ -126,9 +128,11 @@ export default async function ProjectsPage() {
       </section>
 
       {beforeAfterCategories.map((category, index) => {
-        const categoryProjects = projects.filter(
-          (project) => getProjectCategory(project.serviceType) === category.id,
-        );
+        const categoryProjects = category.id === "timber-window-painting"
+          ? timberWindowPairs
+          : projects.filter(
+              (project) => getProjectCategory(project.serviceType) === category.id,
+            );
 
         return (
           <section
@@ -159,7 +163,10 @@ export default async function ProjectsPage() {
                     key={project.slug}
                     className="scroll-mt-24 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
                   >
-                    <Link href={`/projects/${project.slug}`} className="block h-full">
+                    <Link
+                      href={"detailHref" in project && typeof project.detailHref === "string" ? project.detailHref : `/projects/${project.slug}`}
+                      className="block h-full"
+                    >
                       <div className="grid aspect-[4/3] grid-cols-2 overflow-hidden bg-mist">
                         <div className="relative overflow-hidden">
                           <Image
@@ -195,6 +202,12 @@ export default async function ProjectsPage() {
                         <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
                           {project.title}
                         </h3>
+                        {category.id !== "timber-window-painting" &&
+                          ["lindfield-exterior-window-trim-repaint", "north-strathfield-exterior-window-restoration", "exterior-facade-trim-repaint"].includes(project.slug) ? (
+                            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-eucalyptus">
+                              Includes timber window painting
+                            </p>
+                          ) : null}
                         <p className="mt-3 text-sm leading-6 text-ink/65">
                           {project.description}
                         </p>

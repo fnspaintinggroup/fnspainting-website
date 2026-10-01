@@ -10,6 +10,10 @@ import {
 } from "@/lib/gallery-areas";
 import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
 import { createUrlSlug } from "@/lib/url-slug";
+import {
+  timberWindowCollections,
+  timberWindowCollectionSlugs,
+} from "@/lib/timber-window-showcase";
 
 export const metadata: Metadata = pageMetadata({
   title: "Finest Finish Painting Gallery Sydney",
@@ -74,6 +78,11 @@ export default async function PaintingGalleryPage({
         gallerySuburbMatchesArea(collection.suburb, selectedArea),
       )
     : galleryCollections;
+  const visibleTimberCollections = selectedArea
+    ? timberWindowCollections.filter((collection) =>
+        gallerySuburbMatchesArea(collection.suburb, selectedArea),
+      )
+    : timberWindowCollections;
   const gallerySchemaImages = [
     ...visibleGalleryImages.map((item) => ({
       title: item.title,
@@ -209,6 +218,14 @@ export default async function PaintingGalleryPage({
                 {category}
               </a>
             ))}
+            {visibleTimberCollections.length > 0 ? (
+              <a
+                href="#timber-window-painting"
+                className="rounded-md border border-eucalyptus/20 bg-white px-3 py-2 text-sm font-semibold text-eucalyptus shadow-sm transition hover:bg-gumleaf"
+              >
+                Timber Window Painting
+              </a>
+            ) : null}
           </div>
         </div>
       </section>
@@ -293,6 +310,11 @@ export default async function PaintingGalleryPage({
                           <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
                             {item.title}
                           </h3>
+                          {item.collectionSlug && timberWindowCollectionSlugs.has(item.collectionSlug) ? (
+                            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-eucalyptus">
+                              Includes timber window painting
+                            </p>
+                          ) : null}
                           <p className="mt-3 text-sm leading-6 text-ink/65">
                             {item.caption}
                           </p>
@@ -329,6 +351,67 @@ export default async function PaintingGalleryPage({
           </section>
         );
       })}
+
+      {visibleTimberCollections.length > 0 ? (
+        <section id="timber-window-painting" className="scroll-mt-20 bg-linen py-14 sm:py-20">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
+              Selected window photos
+            </p>
+            <h2 className="text-3xl font-semibold leading-tight text-ink">
+              Timber Window Painting
+            </h2>
+            <p className="mt-4 max-w-3xl leading-7 text-ink/70">
+              Window and frame photos selected from the original interior and exterior project galleries. Each site keeps its original gallery and service category.
+            </p>
+            <div className="mt-8 space-y-8">
+              {visibleTimberCollections.map((collection) => (
+                <article key={collection.slug} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm sm:p-7">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-clay">
+                        {collection.category} · {collection.suburb}
+                      </p>
+                      <h3 className="mt-2 text-2xl font-semibold text-ink">{collection.title}</h3>
+                    </div>
+                    <p className="text-sm font-semibold text-ink/55">
+                      {collection.images.length} selected photo{collection.images.length === 1 ? "" : "s"}
+                    </p>
+                  </div>
+                  <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {collection.images.map((photo) => {
+                      const imageIndex = galleryCollections
+                        .find((item) => item.slug === collection.slug)
+                        ?.images.findIndex((item) => item.title === photo.title) ?? -1;
+                      const photoHref = imageIndex >= 0
+                        ? `${collection.fullGalleryHref}#${createUrlSlug(photo.title)}-${imageIndex + 1}`
+                        : collection.fullGalleryHref;
+                      return (
+                        <Link key={photo.title} href={photoHref} className="group overflow-hidden rounded-md border border-ink/10 bg-paper">
+                          <div className="relative aspect-[4/3] overflow-hidden">
+                            <Image src={photo.image} alt={photo.alt} fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
+                          </div>
+                          <div className="p-4">
+                            <p className="font-semibold text-ink">{photo.title}</p>
+                            <p className="mt-1 text-sm leading-6 text-ink/65">{photo.caption}</p>
+                            <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-eucalyptus">
+                              View this photo <ArrowRight aria-hidden="true" size={15} />
+                            </span>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  <Link href={collection.galleryHref} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus hover:text-clay">
+                    View original {collection.images.length === galleryCollections.find((item) => item.slug === collection.slug)?.images.length ? "" : "full "}site gallery
+                    <ArrowRight aria-hidden="true" size={16} />
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="bg-eucalyptus py-14 text-white sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 md:grid-cols-[1fr_auto] md:items-center lg:px-8">

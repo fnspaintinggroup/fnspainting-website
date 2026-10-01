@@ -487,10 +487,17 @@ export default function TimberWindowPaintingPage() {
             <ArrowRight aria-hidden="true" size={16} />
           </Link>
           <Link
-            href="/painting-gallery#exterior-painting"
+            href="/painting-gallery#timber-window-painting"
             className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
           >
-            View Exterior photo galleries
+            View selected timber window photo galleries
+            <ArrowRight aria-hidden="true" size={16} />
+          </Link>
+          <Link
+            href="/projects#timber-window-painting"
+            className="inline-flex items-center gap-2 font-semibold text-eucalyptus hover:text-clay"
+          >
+            View timber window Before / After pairs
             <ArrowRight aria-hidden="true" size={16} />
           </Link>
         </div>

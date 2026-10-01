@@ -50,7 +50,7 @@ export const services = [
   {
     title: "Timber Window Painting",
     href: "/services/timber-window-painting",
-    galleryHref: "/painting-gallery/lindfield-exterior-window-trim-repaint",
+    galleryHref: "/painting-gallery#timber-window-painting",
     icon: Paintbrush,
     summary:
       "Interior and exterior timber window and frame painting, with careful preparation for the existing coating and frame condition.",

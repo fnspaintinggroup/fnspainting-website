@@ -159,24 +159,24 @@ export default async function ServicesPage() {
                 <Link
                   href={localService.href}
                   aria-label={`View ${service.title} service details`}
-                  className="absolute inset-0 z-0 rounded-md"
+                  className="absolute inset-0 z-10 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eucalyptus"
                 />
                 <Icon
-                  className="relative z-10 text-eucalyptus"
+                  className="pointer-events-none relative text-eucalyptus"
                   aria-hidden="true"
                   size={30}
                 />
-                <h2 className="relative z-10 mt-5 text-2xl font-semibold text-ink">
+                <h2 className="pointer-events-none relative mt-5 text-2xl font-semibold text-ink">
                   {service.title}
                 </h2>
-                <p className="relative z-10 mt-3 leading-7 text-ink/70">
+                <p className="pointer-events-none relative mt-3 leading-7 text-ink/70">
                   {service.summary}
                 </p>
-                <p className="relative z-10 mt-4 text-sm leading-6 text-ink/60">
+                <p className="pointer-events-none relative mt-4 text-sm leading-6 text-ink/60">
                   {service.description ||
                     "Every quote can include preparation advice, paint system recommendations, and expected timing based on the condition of the space."}
                 </p>
-                <div className="relative z-10 mt-5 flex flex-wrap gap-3 text-sm font-semibold">
+                <div className="relative z-20 mt-5 flex flex-wrap gap-3 text-sm font-semibold">
                   <Link
                     href="/contact#quote-name"
                     className="inline-flex items-center gap-1 rounded-md bg-clay px-4 py-2 text-white hover:bg-clay/90"
