@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { getGalleryCollectionBySlug, getGalleryCollections } from "@/lib/cms";
 import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
+import { photoSelections } from "@/lib/timber-window-showcase";
 import { createUrlSlug } from "@/lib/url-slug";
 
 type GalleryCollectionPageProps = {
@@ -64,6 +65,11 @@ export default async function GalleryCollectionPage({
   }
 
   const isWilloughbyCollection = collection.suburb.includes("Willoughby");
+  const timberSelection = photoSelections.find((item) => item.slug === collection.slug);
+  const timberWindowImages = timberSelection?.imageTitles?.flatMap((title) => {
+    const index = collection.images.findIndex((item) => item.title === title);
+    return index >= 0 ? [{ item: collection.images[index], index }] : [];
+  }) ?? [];
   const sashWindowImages = collection.sashWindowEvidence
     ? collection.sashWindowEvidence.imageTitles
         .map((title) => {
@@ -241,6 +247,44 @@ export default async function GalleryCollectionPage({
           </div>
         </div>
       </section>
+
+      {timberWindowImages.length > 0 ? (
+        <section id="timber-window-painting" className="scroll-mt-20 bg-mist py-12 sm:py-16">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-clay">
+              Selected site photos
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-ink">
+              Timber window painting: window and site views
+            </h2>
+            <p className="mt-4 max-w-3xl leading-7 text-ink/70">
+              {timberWindowImages.length} selected photos from this project. The full original gallery remains above.
+            </p>
+            <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {timberWindowImages.map(({ item, index }) => (
+                <article key={item.title} className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-linen">
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-xl font-semibold leading-tight text-ink">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-ink/65">{item.caption}</p>
+                    <Link href={`#${galleryImageAnchor(item.title, index)}`} className="mt-4 inline-block text-sm font-semibold text-eucalyptus hover:text-clay">
+                      View in full gallery
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {collection.sashWindowEvidence ? (
         <section id="sash-window-painting" className="bg-mist py-12 sm:py-16">

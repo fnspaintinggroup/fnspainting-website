@@ -356,13 +356,13 @@ export default async function PaintingGalleryPage({
         <section id="timber-window-painting" className="scroll-mt-20 bg-linen py-14 sm:py-20">
           <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-clay">
-              Selected window photos
+              Selected window and site photos
             </p>
             <h2 className="text-3xl font-semibold leading-tight text-ink">
               Timber Window Painting
             </h2>
             <p className="mt-4 max-w-3xl leading-7 text-ink/70">
-              Window and frame photos selected from the original interior and exterior project galleries. Each site keeps its original gallery and service category.
+              Window details and wider site views selected from the original project galleries. Each site keeps its original gallery and service category.
             </p>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {visibleTimberCollections.map((collection) => (
@@ -384,7 +384,7 @@ export default async function PaintingGalleryPage({
                         className="object-cover transition duration-500 hover:scale-[1.03]"
                       />
                       <span className="absolute right-3 top-3 rounded bg-ink/80 px-2.5 py-1 text-xs font-semibold text-white">
-                        {collection.images.length} window photo{collection.images.length === 1 ? "" : "s"}
+                        {collection.images.length} selected photos
                       </span>
                     </div>
                     <div className="p-5">
@@ -403,7 +403,7 @@ export default async function PaintingGalleryPage({
                         {collection.suburb}
                       </p>
                       <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
-                        View window photos in site gallery
+                        View selected photos in site gallery
                         <ArrowRight aria-hidden="true" size={16} />
                       </p>
                     </div>
