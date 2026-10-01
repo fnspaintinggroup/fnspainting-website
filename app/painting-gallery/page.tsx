@@ -364,47 +364,49 @@ export default async function PaintingGalleryPage({
             <p className="mt-4 max-w-3xl leading-7 text-ink/70">
               Window and frame photos selected from the original interior and exterior project galleries. Each site keeps its original gallery and service category.
             </p>
-            <div className="mt-8 space-y-8">
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {visibleTimberCollections.map((collection) => (
-                <article key={collection.slug} className="rounded-md border border-ink/10 bg-white p-5 shadow-sm sm:p-7">
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-clay">
-                        {collection.category} · {collection.suburb}
-                      </p>
-                      <h3 className="mt-2 text-2xl font-semibold text-ink">{collection.title}</h3>
+                <article
+                  key={collection.slug}
+                  className="scroll-mt-24 overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+                >
+                  <Link
+                    href={collection.galleryHref}
+                    aria-label={`View timber window photos: ${collection.title}`}
+                    className="block h-full"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                      <Image
+                        src={collection.cardImage}
+                        alt={collection.cardAlt}
+                        fill
+                        sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                        className="object-cover transition duration-500 hover:scale-[1.03]"
+                      />
+                      <span className="absolute right-3 top-3 rounded bg-ink/80 px-2.5 py-1 text-xs font-semibold text-white">
+                        {collection.images.length} window photo{collection.images.length === 1 ? "" : "s"}
+                      </span>
                     </div>
-                    <p className="text-sm font-semibold text-ink/55">
-                      {collection.images.length} selected photo{collection.images.length === 1 ? "" : "s"}
-                    </p>
-                  </div>
-                  <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {collection.images.map((photo) => {
-                      const imageIndex = galleryCollections
-                        .find((item) => item.slug === collection.slug)
-                        ?.images.findIndex((item) => item.title === photo.title) ?? -1;
-                      const photoHref = imageIndex >= 0
-                        ? `${collection.fullGalleryHref}#${createUrlSlug(photo.title)}-${imageIndex + 1}`
-                        : collection.fullGalleryHref;
-                      return (
-                        <Link key={photo.title} href={photoHref} className="group overflow-hidden rounded-md border border-ink/10 bg-paper">
-                          <div className="relative aspect-[4/3] overflow-hidden">
-                            <Image src={photo.image} alt={photo.alt} fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
-                          </div>
-                          <div className="p-4">
-                            <p className="font-semibold text-ink">{photo.title}</p>
-                            <p className="mt-1 text-sm leading-6 text-ink/65">{photo.caption}</p>
-                            <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-eucalyptus">
-                              View this photo <ArrowRight aria-hidden="true" size={15} />
-                            </span>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                  <Link href={collection.galleryHref} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus hover:text-clay">
-                    View original {collection.images.length === galleryCollections.find((item) => item.slug === collection.slug)?.images.length ? "" : "full "}site gallery
-                    <ArrowRight aria-hidden="true" size={16} />
+                    <div className="p-5">
+                      <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+                        <Paintbrush aria-hidden="true" size={15} />
+                        {collection.category}
+                      </p>
+                      <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
+                        {collection.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-6 text-ink/65">
+                        {collection.cardSummary}
+                      </p>
+                      <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-ink/55">
+                        <MapPin aria-hidden="true" size={16} />
+                        {collection.suburb}
+                      </p>
+                      <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-eucalyptus">
+                        View window photos in site gallery
+                        <ArrowRight aria-hidden="true" size={16} />
+                      </p>
+                    </div>
                   </Link>
                 </article>
               ))}

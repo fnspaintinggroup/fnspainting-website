@@ -1,5 +1,6 @@
 import { galleryCollections } from "@/lib/gallery";
 import { projects } from "@/lib/projects";
+import { createUrlSlug } from "@/lib/url-slug";
 
 const pairSlugs = [
   "lindfield-exterior-window-trim-repaint",
@@ -41,26 +42,31 @@ const photoSelections = [
     slug: "mona-vale-heritage-interior-painting",
     imageTitles: ["Formal Room and Bay Window"],
     anchor: "sash-window-painting",
+    summary: "Finished interior sash window joinery in the Mona Vale heritage home.",
   },
   {
     slug: "north-willoughby-exterior-house-repaint-gallery",
     imageTitles: ["Front Window Detail"],
     anchor: "sash-window-painting",
+    summary: "Finished exterior sash window and frame painting in North Willoughby.",
   },
   {
     slug: "chatswood-exterior-house-painting",
     imageTitles: ["Upper Roofline Detail"],
     anchor: "sash-window-painting",
+    summary: "Finished upper sash windows and painted frames in Chatswood.",
   },
   {
     slug: "chatswood-timber-window-repair-painting",
     imageTitles: null,
     anchor: null,
+    summary: "Fourteen photos of localised repairs, preparation, and completed timber window painting in Chatswood.",
   },
   {
     slug: "lindfield-exterior-window-trim-repaint",
     imageTitles: ["Verandah Window Painting", "French Door and Window Painting"],
-    anchor: null,
+    anchor: "Verandah Window Painting",
+    summary: "Finished verandah and side-window frames from the Lindfield exterior repaint.",
   },
 ] as const;
 
@@ -75,11 +81,31 @@ export const timberWindowCollections = photoSelections.map((selection) => {
   if (images.length !== (selection.imageTitles?.length ?? collection.images.length)) {
     throw new Error(`Missing selected timber window photos: ${selection.slug}`);
   }
+  if (selection.anchor === "sash-window-painting" && !collection.sashWindowEvidence) {
+    throw new Error(`Missing sash window detail section: ${selection.slug}`);
+  }
+  const anchorIndex = selection.anchor && selection.anchor !== "sash-window-painting"
+    ? collection.images.findIndex((image) => image.title === selection.anchor)
+    : -1;
+  if (selection.anchor && selection.anchor !== "sash-window-painting" && anchorIndex < 0) {
+    throw new Error(`Missing timber window photo anchor: ${selection.slug}`);
+  }
+  const anchor = selection.anchor === "sash-window-painting"
+    ? selection.anchor
+    : selection.anchor
+      ? `${createUrlSlug(selection.anchor)}-${anchorIndex + 1}`
+      : null;
   return {
     ...collection,
     images,
-    galleryHref: `/painting-gallery/${collection.slug}${selection.anchor ? `#${selection.anchor}` : ""}`,
-    fullGalleryHref: `/painting-gallery/${collection.slug}`,
+    cardImage: selection.slug === "chatswood-timber-window-repair-painting"
+      ? collection.coverImage
+      : images[0].image,
+    cardAlt: selection.slug === "chatswood-timber-window-repair-painting"
+      ? collection.coverAlt
+      : images[0].alt,
+    cardSummary: selection.summary,
+    galleryHref: `/painting-gallery/${collection.slug}${anchor ? `#${anchor}` : ""}`,
   };
 });
 
