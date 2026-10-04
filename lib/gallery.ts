@@ -66,6 +66,18 @@ export const galleryCategories: GalleryCategory[] = [
 
 export const galleryImages: GalleryImage[] = [
   {
+    title: "Blakehurst Front Fence and Retaining Wall Painting",
+    category: "Exterior Painting",
+    image: "/images/projects/blakehurst-front-fence-after-street-fence-2035.jpg",
+    alt: "Blakehurst front concrete fence after repainting",
+    caption:
+      "Before and after photos of the front concrete fence and selected retaining-wall section at a Blakehurst property.",
+    suburb: "Blakehurst, NSW",
+    collectionSlug: "blakehurst-front-fence-retaining-wall-painting",
+    projectSlug: "blakehurst-front-fence-retaining-wall-painting",
+    photoCount: 15,
+  },
+  {
     title: "Willoughby Ceiling Restoration and Interior Finish",
     category: "Ceiling Restoration",
     image: "/images/projects/willoughby-office-ceiling-finish-3.jpg",
@@ -442,6 +454,143 @@ export const featuredGalleryImages = featuredGalleryTitles
   .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    slug: "blakehurst-front-fence-retaining-wall-painting",
+    title: "Blakehurst Front Fence and Retaining Wall Painting",
+    category: "Exterior Painting",
+    suburb: "Blakehurst, NSW",
+    projectSlug: "blakehurst-front-fence-retaining-wall-painting",
+    summary:
+      "A front concrete fence and selected retaining-wall section in Blakehurst, shown before exterior repainting and after the finished work.",
+    coverImage: "/images/projects/blakehurst-front-fence-after-street-fence-2035.jpg",
+    coverAlt: "Blakehurst front concrete fence after exterior repainting",
+    completionDate: "2026-09-18",
+    sections: [
+      {
+        eyebrow: "Same location",
+        title: "Representative Before and After",
+        imageTitles: ["Gate Pillar Before and After"],
+      },
+      {
+        eyebrow: "Before painting",
+        title: "Fence and wall before the repaint",
+        imageTitles: [
+          "Gate Pillar Before Painting",
+          "Street-Side Fence Before Painting",
+          "Fence Base Before Painting",
+          "Mailbox Pillar Before Painting",
+          "Inner Fence Before Painting",
+          "Retaining Wall Before Painting",
+        ],
+      },
+      {
+        eyebrow: "After painting",
+        title: "Finished fence and wall views",
+        imageTitles: [
+          "Retaining Wall After Painting",
+          "Gate Base After Painting",
+          "Inner Fence Wide View After Painting",
+          "Street-Side Fence After Painting",
+          "Gate Pillar After Painting",
+          "Gate Detail After Painting",
+          "Mailbox Pillar After Painting",
+          "Inner Fence After Painting",
+        ],
+      },
+    ],
+    images: [
+      {
+        title: "Gate Pillar Before and After",
+        image: "/images/projects/blakehurst-front-fence-before-after-gate-pillar.jpg",
+        alt: "Side-by-side views of the same Blakehurst gate pillar before and after repainting",
+        caption: "The same gate pillar shown before and after surface preparation and repainting.",
+      },
+      {
+        title: "Gate Pillar Before Painting",
+        image: "/images/projects/blakehurst-front-fence-before-gate-pillar-2013.jpg",
+        alt: "Blakehurst front fence gate pillar with damaged existing coating before painting",
+        caption: "Existing coating damage on the gate pillar before the exterior repaint.",
+      },
+      {
+        title: "Street-Side Fence Before Painting",
+        image: "/images/projects/blakehurst-front-fence-before-street-fence-2015.jpg",
+        alt: "Street-side view of the Blakehurst concrete fence before painting",
+        caption: "Wider street-side view of the fence before the work.",
+      },
+      {
+        title: "Fence Base Before Painting",
+        image: "/images/projects/blakehurst-front-fence-before-wall-detail-2017.jpg",
+        alt: "Blakehurst concrete fence base with failing paint before preparation",
+        caption: "Close view of coating damage along the lower fence surface.",
+      },
+      {
+        title: "Mailbox Pillar Before Painting",
+        image: "/images/projects/blakehurst-front-fence-before-mailbox-pillar-2019.jpg",
+        alt: "Blakehurst front fence mailbox pillar with worn coating before painting",
+        caption: "The street-facing mailbox pillar and adjacent fence before preparation.",
+      },
+      {
+        title: "Inner Fence Before Painting",
+        image: "/images/projects/blakehurst-front-fence-before-inner-fence-2020.jpg",
+        alt: "Blakehurst inner side of the concrete front fence before painting",
+        caption: "A separate angle of the inner fence surface before repainting.",
+      },
+      {
+        title: "Retaining Wall Before Painting",
+        image: "/images/projects/blakehurst-front-fence-before-courtyard-wall-2021.jpg",
+        alt: "Blakehurst low retaining-wall section before repainting",
+        caption: "The selected low retaining-wall section before the repaint.",
+      },
+      {
+        title: "Retaining Wall After Painting",
+        image: "/images/projects/blakehurst-front-fence-after-courtyard-wall-2027.jpg",
+        alt: "Blakehurst low retaining-wall section after exterior painting",
+        caption: "A separate view of the low retaining-wall section after painting.",
+      },
+      {
+        title: "Gate Base After Painting",
+        image: "/images/projects/blakehurst-front-fence-after-gate-base-2032.jpg",
+        alt: "Blakehurst gate base and adjacent concrete fence after repainting",
+        caption: "Fresh finish around the gate base and adjoining wall.",
+      },
+      {
+        title: "Inner Fence Wide View After Painting",
+        image: "/images/projects/blakehurst-front-fence-after-inner-fence-wide-2033.jpg",
+        alt: "Blakehurst inner concrete fence after repainting from a wide angle",
+        caption: "A wide inner view of the freshly painted fence and pillars.",
+      },
+      {
+        title: "Street-Side Fence After Painting",
+        image: "/images/projects/blakehurst-front-fence-after-street-fence-2035.jpg",
+        alt: "Full street-side view of the Blakehurst front concrete fence after painting",
+        caption: "The completed front concrete fence seen from the street side.",
+      },
+      {
+        title: "Gate Pillar After Painting",
+        image: "/images/projects/blakehurst-front-fence-after-gate-pillar-2036.jpg",
+        alt: "Blakehurst front concrete fence gate pillar after repainting",
+        caption: "The completed gate pillar from the representative matching view.",
+      },
+      {
+        title: "Gate Detail After Painting",
+        image: "/images/projects/blakehurst-front-fence-after-gate-detail-2037.jpg",
+        alt: "Blakehurst gate pillar and adjoining concrete fence after painting",
+        caption: "A different angle showing the finished concrete around the gate.",
+      },
+      {
+        title: "Mailbox Pillar After Painting",
+        image: "/images/projects/blakehurst-front-fence-after-mailbox-pillar-2040.jpg",
+        alt: "Blakehurst street-facing mailbox pillar after exterior repainting",
+        caption: "The mailbox pillar and adjoining fence with a clean finished surface.",
+      },
+      {
+        title: "Inner Fence After Painting",
+        image: "/images/projects/blakehurst-front-fence-after-inner-fence-2041.jpg",
+        alt: "Blakehurst inner side of the front concrete fence after repainting",
+        caption: "A further inner-side angle of the completed front fence.",
+      },
+    ],
+  },
   {
     slug: "willoughby-ceiling-restoration-interior-finish",
     title: "Willoughby Ceiling Restoration and Interior Finish",

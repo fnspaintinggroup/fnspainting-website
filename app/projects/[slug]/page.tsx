@@ -302,6 +302,29 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
+        {project.comparisonImage ? (
+          <section className="pb-10 sm:pb-14">
+            <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
+              <h2 className="mb-5 text-2xl font-semibold text-ink">
+                One location, before and after
+              </h2>
+              <figure className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft">
+                <Image
+                  src={project.comparisonImage}
+                  alt={project.comparisonImageAlt ?? `${project.title} before and after`}
+                  width={1820}
+                  height={1238}
+                  sizes="(min-width: 1024px) 960px, 100vw"
+                  className="h-auto w-full"
+                />
+                <figcaption className="border-t border-ink/10 p-4 text-sm text-ink/65">
+                  The same gate pillar before and after the exterior repaint.
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+        ) : null}
+
         {project.additionalBeforeAfterViews?.map((view) => (
           <section
             id={view.id}

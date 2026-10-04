@@ -7,6 +7,8 @@ export type Project = {
   afterImage: string;
   beforeImageAlt: string;
   afterImageAlt: string;
+  comparisonImage?: string;
+  comparisonImageAlt?: string;
   additionalImages?: Array<{
     image: string;
     alt: string;
@@ -35,6 +37,27 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "Blakehurst Front Fence and Retaining Wall Painting",
+    slug: "blakehurst-front-fence-retaining-wall-painting",
+    location: "Blakehurst, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/blakehurst-front-fence-before-gate-pillar-2013.jpg",
+    afterImage: "/images/projects/blakehurst-front-fence-after-gate-pillar-2036.jpg",
+    beforeImageAlt: "Blakehurst front concrete fence gate pillar before exterior repainting",
+    afterImageAlt: "The same Blakehurst front fence gate pillar after exterior repainting",
+    comparisonImage: "/images/projects/blakehurst-front-fence-before-after-gate-pillar.jpg",
+    comparisonImageAlt: "Matching views of the Blakehurst gate pillar before and after repainting",
+    description:
+      "The front concrete fence and a selected retaining-wall section at this Blakehurst property were prepared and repainted. See a matching view of the gate pillar before and after the work, with more site photos in the linked gallery.",
+    materials:
+      "Exterior coating and surface-preparation materials for the included concrete surfaces.",
+    completionDate: "2026-09-18",
+    seoTitle: "Blakehurst Front Fence and Retaining Wall Painting | F&S Painting",
+    seoDescription:
+      "Before and after exterior painting of a front concrete fence and selected retaining wall in Blakehurst, NSW, with photos of the preparation and finished surfaces.",
+    featuredOnExteriorService: true,
+  },
   {
     title: "Willoughby Ceiling Restoration and Interior Repaint",
     slug: "willoughby-ceiling-restoration-interior-repaint",
