@@ -48,6 +48,38 @@ export const projects: Project[] = [
     afterImageAlt: "The same Blakehurst front fence gate pillar after exterior repainting",
     comparisonImage: "/images/projects/blakehurst-front-fence-before-after-gate-pillar.jpg",
     comparisonImageAlt: "Matching views of the Blakehurst gate pillar before and after repainting",
+    additionalBeforeAfterViews: [
+      {
+        id: "street-side-fence",
+        title: "Street-Side Fence Before / After",
+        caption: "The same street-side concrete fence before and after repainting.",
+        beforeImage: "/images/projects/blakehurst-front-fence-before-street-fence-2015.jpg",
+        beforeImageAlt: "Street-side concrete fence before repainting in Blakehurst",
+        afterImage: "/images/projects/blakehurst-front-fence-after-street-fence-2035.jpg",
+        afterImageAlt: "The same street-side concrete fence after repainting in Blakehurst",
+        aspectRatio: "4 / 3",
+      },
+      {
+        id: "mailbox-pillar",
+        title: "Mailbox Pillar Before / After",
+        caption: "The same mailbox pillar and adjoining fence before and after repainting.",
+        beforeImage: "/images/projects/blakehurst-front-fence-before-mailbox-pillar-2019.jpg",
+        beforeImageAlt: "Mailbox pillar and adjoining fence before repainting in Blakehurst",
+        afterImage: "/images/projects/blakehurst-front-fence-after-mailbox-pillar-2040.jpg",
+        afterImageAlt: "The same mailbox pillar and adjoining fence after repainting in Blakehurst",
+        aspectRatio: "4 / 3",
+      },
+      {
+        id: "retaining-wall",
+        title: "Retaining Wall Before / After",
+        caption: "The selected low retaining-wall section before and after repainting.",
+        beforeImage: "/images/projects/blakehurst-front-fence-before-courtyard-wall-2021.jpg",
+        beforeImageAlt: "Selected low retaining-wall section before repainting in Blakehurst",
+        afterImage: "/images/projects/blakehurst-front-fence-after-courtyard-wall-2027.jpg",
+        afterImageAlt: "The same low retaining-wall section after repainting in Blakehurst",
+        aspectRatio: "4 / 3",
+      },
+    ],
     description:
       "The front concrete fence and a selected retaining-wall section at this Blakehurst property were prepared and repainted. See a matching view of the gate pillar before and after the work, with more site photos in the linked gallery.",
     materials:
