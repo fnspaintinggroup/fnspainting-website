@@ -29,6 +29,23 @@ type PaintingGalleryPageProps = {
   }>;
 };
 
+// Keep these three hero photos fixed when gallery entries are added.
+// Change this list only when Caleb gives a separate instruction.
+const galleryHeroImages = [
+  {
+    image: "/images/projects/willoughby-office-ceiling-finish-3.jpg",
+    alt: "Willoughby open-plan interior with restored and freshly painted ceilings",
+  },
+  {
+    image: "/images/projects/mona-vale-heritage-gallery-09.png",
+    alt: "Mona Vale heritage rooms after professional interior painting by F&S Painting",
+  },
+  {
+    image: "/images/projects/dee-why-strata-lift-lobby-work-1.jpg",
+    alt: "Dee Why strata lift lobby and common area during repainting with protected floors",
+  },
+] as const;
+
 export default async function PaintingGalleryPage({
   searchParams,
 }: PaintingGalleryPageProps) {
@@ -157,9 +174,9 @@ export default async function PaintingGalleryPage({
             </Link>
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
-            {allGalleryImages.slice(0, 3).map((item) => (
+            {galleryHeroImages.map((item) => (
               <div
-                key={item.title}
+                key={item.image}
                 className="relative min-h-56 overflow-hidden rounded-md border border-white/15 bg-white/10 sm:min-h-72"
               >
                 <Image
