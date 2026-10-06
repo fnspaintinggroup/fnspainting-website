@@ -445,9 +445,9 @@ const baseBlogPosts: BlogPost[] = [
       "Carlingford house exterior after professional repainting by F&S Painting",
     excerpt:
       "Sydney house painting costs vary with preparation, surfaces, access, and scope. Compare 2026 interior price ranges, a real Willoughby example, and what a clear quote should include.",
-    seoTitle: "House Painting Cost Sydney: 2026 Price Guide",
+    seoTitle: "House Painting Cost Sydney (2026) | Prices & Real Example",
     seoDescription:
-      "Sydney house painting cost guide with 2026 interior price ranges, a real Willoughby example, quote inclusions, timing, preparation and free quote advice.",
+      "Compare indicative Sydney interior painting prices, a real Willoughby project and what a quote includes. See preparation costs and request a free on-site quote.",
     body: [
       {
         heading: "A practical starting budget for Sydney house painting",
