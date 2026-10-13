@@ -249,7 +249,8 @@ export default async function Home() {
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-clay">
                 Public liability insurance
               </p>
-              <p className="mt-2 text-lg font-semibold text-ink">Fully insured with AAMI</p>
+              <p className="mt-2 text-lg font-semibold text-ink">Fully insured with QBE</p>
+              <p className="mt-1 text-sm text-ink/60">Policy No. DSU651930BPK</p>
               <p className="mt-1 text-sm text-ink/60">Certificate available on request</p>
             </div>
           </div>
