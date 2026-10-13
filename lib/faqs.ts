@@ -35,7 +35,7 @@ export const homeFaqs: FaqItem[] = [
   {
     question: "What areas of Sydney do you service?",
     answer:
-      "F&S Painting services Sydney and surrounding suburbs, including recent project areas such as Carlingford, Silverwater, Dee Why, Parramatta, Balgowlah Heights, Mosman, and North Strathfield.",
+      "F&S Painting focuses on Chatswood and nearby North Shore suburbs such as Willoughby, Artarmon, Lane Cove, Roseville, Lindfield, Killara, and Gordon. We also take on painting projects across Sydney.",
   },
   {
     question: "How do you prepare surfaces before painting?",

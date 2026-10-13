@@ -287,7 +287,6 @@ export const serviceAreas = [
   "Kellyville",
   "Kingsford",
   "Lane Cove West",
-  "Leichhardt",
   "Lidcombe",
   "Maroubra",
   "Mascot",

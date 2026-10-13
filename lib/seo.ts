@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CmsService } from "@/lib/cms";
 import { businessDetails } from "@/lib/business";
+import { services as siteServices } from "@/lib/site-data";
 
 const defaultSiteUrl = "https://www.fnspainting.com.au";
 
@@ -121,7 +122,12 @@ export function localBusinessSchema() {
           addressCountry: "AU",
         }
       : undefined,
-    sameAs: [businessDetails.googleReviewsUrl],
+    sameAs: [
+      businessDetails.googleReviewsUrl,
+      "https://www.facebook.com/fnspainting",
+      "https://www.instagram.com/fns_painting/",
+      "https://www.youtube.com/channel/UCeTYO-B685o3lDNYYTSVywg",
+    ],
     identifier: [
       {
         "@type": "PropertyValue",
@@ -134,11 +140,11 @@ export function localBusinessSchema() {
         value: "659406265",
       },
     ],
-    makesOffer: targetKeywords.map((keyword) => ({
+    makesOffer: siteServices.map((service) => ({
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: keyword,
+        name: service.title,
         areaServed: "Sydney, NSW",
       },
     })),

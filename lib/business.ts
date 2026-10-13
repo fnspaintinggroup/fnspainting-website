@@ -2,7 +2,7 @@ export const businessDetails = {
   name: "F&S Painting",
   googleBusinessName: "F&S Painting Services",
   googleRating: "5.0",
-  googleReviewCount: 35,
+  googleReviewCount: 37,
   email: "fnspaintinggroup@gmail.com",
   phones: ["0452 209 113", "0452 609 113"],
   websiteUrl: "https://www.fnspainting.com.au",
