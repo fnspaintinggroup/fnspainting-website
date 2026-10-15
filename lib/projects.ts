@@ -66,6 +66,7 @@ export const projects: Project[] = [
     description:
       "The timber fence was primed and painted with Dulux Weathershield in Monument.",
     materials: "Primer and Dulux Weathershield in Monument.",
+    completionDate: "2026-10-08",
     seoTitle: "Fence Painting – North Willoughby, Sydney | F&S Painting",
     seoDescription:
       "Before, progress and finished photos of timber fence painting in North Willoughby, using Dulux Weathershield in Monument.",
