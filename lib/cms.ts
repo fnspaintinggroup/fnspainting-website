@@ -157,9 +157,11 @@ function applyLocalProjectCorrections<T extends CmsProject>(project: T): T {
 }
 
 function sortProjectsByCompletionDate(projects: CmsProject[]) {
-  return [...projects].sort(
-    (a, b) => new Date(b.completionDate).getTime() - new Date(a.completionDate).getTime(),
-  );
+  return [...projects].sort((a, b) => {
+    const aDate = a.completionDate ? new Date(a.completionDate).getTime() : 0;
+    const bDate = b.completionDate ? new Date(b.completionDate).getTime() : 0;
+    return bDate - aDate;
+  });
 }
 
 function mergeProjectsWithLocalCorrections(projects: Array<WithOptionalSlug<SanityProject>>) {

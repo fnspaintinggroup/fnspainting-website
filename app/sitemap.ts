@@ -56,12 +56,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const projectRoutes = projects.map((project) => ({
     url: `${siteUrl}/projects/${project.slug}`,
-    lastModified: new Date(
-      Math.max(
-        new Date(project.completionDate).getTime(),
-        contentLastModified.getTime(),
-      ),
-    ),
+    lastModified: project.completionDate
+      ? new Date(
+          Math.max(
+            new Date(project.completionDate).getTime(),
+            contentLastModified.getTime(),
+          ),
+        )
+      : contentLastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

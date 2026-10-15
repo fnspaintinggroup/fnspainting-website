@@ -49,7 +49,7 @@ export async function generateMetadata({
       description: project.seoDescription,
       type: "article",
       url: `/projects/${project.slug}`,
-      publishedTime: project.completionDate,
+      ...(project.completionDate ? { publishedTime: project.completionDate } : {}),
       images: [
         {
           url: toAbsoluteUrl(project.afterImage),
@@ -175,8 +175,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         name: project.title,
         description: project.description,
         url: projectUrl,
-        dateCreated: project.completionDate,
-        datePublished: project.completionDate,
+        ...(project.completionDate
+          ? { dateCreated: project.completionDate, datePublished: project.completionDate }
+          : {}),
         material: project.materials,
         image: projectImageObjects.map((image) => ({ "@id": image["@id"] })),
         provider: {
@@ -372,7 +373,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                       />
                       <span
                         className={`absolute left-4 top-4 rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-white ${
-                          image.label === "Before" ? "bg-ink" : "bg-eucalyptus"
+                          image.label === "Before" ? "bg-ink" : image.label === "Progress" ? "bg-clay" : "bg-eucalyptus"
                         }`}
                       >
                         {image.label}
@@ -392,7 +393,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <section className="pb-10 sm:pb-14">
             <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
               <h2 className="text-2xl font-semibold text-ink">
-                Another view of the repaint
+                Progress and additional project photos
               </h2>
               <div className="grid overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft md:grid-cols-2">
                 {project.additionalImages.map((image) => (
@@ -451,21 +452,23 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </dt>
                   <dd className="mt-2 text-ink/72">{project.serviceType}</dd>
                 </div>
-                <div>
-                  <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
-                    Completed
-                  </dt>
-                  <dd className="mt-2 text-ink/72">
-                    {new Intl.DateTimeFormat("en-AU", {
-                      year: "numeric",
-                      month:
-                        project.slug === "mona-vale-heritage-interior-repaint"
-                          ? "short"
-                          : "long",
-                      day: "numeric",
-                    }).format(new Date(project.completionDate))}
-                  </dd>
-                </div>
+                {project.completionDate ? (
+                  <div>
+                    <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
+                      Completed
+                    </dt>
+                    <dd className="mt-2 text-ink/72">
+                      {new Intl.DateTimeFormat("en-AU", {
+                        year: "numeric",
+                        month:
+                          project.slug === "mona-vale-heritage-interior-repaint"
+                            ? "short"
+                            : "long",
+                        day: "numeric",
+                      }).format(new Date(project.completionDate))}
+                    </dd>
+                  </div>
+                ) : null}
                 <div className="sm:col-span-2">
                   <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-clay">
                     Materials or paint used

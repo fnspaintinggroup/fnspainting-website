@@ -60,7 +60,7 @@ export default async function ProjectsPage() {
       name: project.title,
       url: `${siteUrl}/projects/${project.slug}`,
       description: project.description,
-      dateCreated: project.completionDate,
+      ...(project.completionDate ? { dateCreated: project.completionDate } : {}),
       locationCreated: project.location,
       image: [
         toAbsoluteUrl(project.beforeImage),

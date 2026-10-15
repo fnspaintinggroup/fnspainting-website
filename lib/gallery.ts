@@ -66,6 +66,18 @@ export const galleryCategories: GalleryCategory[] = [
 
 export const galleryImages: GalleryImage[] = [
   {
+    title: "Fence Painting – North Willoughby, Sydney",
+    category: "Exterior Painting",
+    image: "/images/projects/north-willoughby-fence-after-1.jpg",
+    alt: "Finished timber fence in Monument in North Willoughby",
+    caption:
+      "A North Willoughby timber fence shown before painting, during the work, and in three finished views.",
+    suburb: "North Willoughby, NSW",
+    collectionSlug: "north-willoughby-fence-painting",
+    projectSlug: "north-willoughby-fence-painting",
+    photoCount: 3,
+  },
+  {
     title: "Blakehurst Front Fence and Retaining Wall Painting",
     category: "Exterior Painting",
     image: "/images/projects/blakehurst-front-fence-after-street-fence-2035.jpg",
@@ -454,6 +466,37 @@ export const featuredGalleryImages = featuredGalleryTitles
   .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    slug: "north-willoughby-fence-painting",
+    title: "Fence Painting – North Willoughby, Sydney",
+    category: "Exterior Painting",
+    suburb: "North Willoughby, NSW",
+    projectSlug: "north-willoughby-fence-painting",
+    summary:
+      "Three finished views of a North Willoughby timber fence primed and painted with Dulux Weathershield in Monument.",
+    coverImage: "/images/projects/north-willoughby-fence-after-1.jpg",
+    coverAlt: "North Willoughby timber fence after painting in Monument",
+    images: [
+      {
+        title: "Fence Finish – Wide View",
+        image: "/images/projects/north-willoughby-fence-after-1.jpg",
+        alt: "Finished timber fence in North Willoughby, shown across the yard",
+        caption: "Wide view of the timber fence after priming and painting in Monument.",
+      },
+      {
+        title: "Fence Finish – Side View",
+        image: "/images/projects/north-willoughby-fence-after-2.jpg",
+        alt: "Timber fence after painting in North Willoughby, with a ladder nearby",
+        caption: "A second view of the finished fence.",
+      },
+      {
+        title: "Fence Finish – Garden View",
+        image: "/images/projects/north-willoughby-fence-after-3.jpg",
+        alt: "Finished Monument timber fence seen beside the garden in North Willoughby",
+        caption: "A third view of the finished fence.",
+      },
+    ],
+  },
   {
     slug: "blakehurst-front-fence-retaining-wall-painting",
     title: "Blakehurst Front Fence and Retaining Wall Painting",

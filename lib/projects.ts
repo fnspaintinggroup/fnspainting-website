@@ -12,7 +12,7 @@ export type Project = {
   additionalImages?: Array<{
     image: string;
     alt: string;
-    label: "Before" | "After";
+    label: "Before" | "Progress" | "After";
   }>;
   additionalBeforeAfterViews?: Array<{
     id: string;
@@ -30,13 +30,47 @@ export type Project = {
   }>;
   description: string;
   materials: string;
-  completionDate: string;
+  completionDate?: string;
   seoTitle: string;
   seoDescription: string;
   featuredOnExteriorService?: boolean;
 };
 
 export const projects: Project[] = [
+  {
+    title: "Fence Painting – North Willoughby, Sydney",
+    slug: "north-willoughby-fence-painting",
+    location: "North Willoughby, NSW",
+    serviceType: "Exterior Painting",
+    beforeImage: "/images/projects/north-willoughby-fence-before.jpg",
+    afterImage: "/images/projects/north-willoughby-fence-after-1.jpg",
+    beforeImageAlt: "Timber fence in North Willoughby before painting",
+    afterImageAlt: "Timber fence in North Willoughby after painting in Monument",
+    additionalImages: [
+      {
+        image: "/images/projects/north-willoughby-fence-progress.jpg",
+        alt: "Timber fence being painted in North Willoughby",
+        label: "Progress",
+      },
+      {
+        image: "/images/projects/north-willoughby-fence-after-2.jpg",
+        alt: "Second finished view of the timber fence in North Willoughby",
+        label: "After",
+      },
+      {
+        image: "/images/projects/north-willoughby-fence-after-3.jpg",
+        alt: "Third finished view of the timber fence in North Willoughby",
+        label: "After",
+      },
+    ],
+    description:
+      "The timber fence was primed and painted with Dulux Weathershield in Monument.",
+    materials: "Primer and Dulux Weathershield in Monument.",
+    seoTitle: "Fence Painting – North Willoughby, Sydney | F&S Painting",
+    seoDescription:
+      "Before, progress and finished photos of timber fence painting in North Willoughby, using Dulux Weathershield in Monument.",
+    featuredOnExteriorService: true,
+  },
   {
     title: "Blakehurst Front Fence and Retaining Wall Painting",
     slug: "blakehurst-front-fence-retaining-wall-painting",
