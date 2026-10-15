@@ -373,7 +373,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                       />
                       <span
                         className={`absolute left-4 top-4 rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-white ${
-                          image.label === "Before" ? "bg-ink" : image.label === "Progress" ? "bg-clay" : "bg-eucalyptus"
+                          image.label === "Before" ? "bg-ink" : "bg-eucalyptus"
                         }`}
                       >
                         {image.label}
@@ -408,7 +408,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                       />
                       <span
                         className={`absolute left-4 top-4 rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-white ${
-                          image.label === "Before" ? "bg-ink" : "bg-eucalyptus"
+                          image.label === "Before" ? "bg-ink" : image.label === "Progress" ? "bg-clay" : "bg-eucalyptus"
                         }`}
                       >
                         {image.label}
