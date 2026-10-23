@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TodayDecisionsButton from "@/components/TodayDecisionsButton";
 import {
   BadgeCheck,
   Clock3,
@@ -39,6 +40,8 @@ export default function TeamEntryPage() {
             Use the time clock every workday. Use site records only at the start,
             when Caleb is needed, or at final completion.
           </p>
+
+          <TodayDecisionsButton />
 
           <div className="mt-5 rounded-xl border border-clay/30 bg-clay/5 p-4 text-sm leading-6 text-ink/75">
             <p className="font-semibold text-ink">Time-clock safety</p>
