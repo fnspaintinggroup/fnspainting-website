@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Check, ClipboardCheck, Copy, ExternalLink } from "lucide-react";
 
 const request =
@@ -9,18 +9,18 @@ const request =
 export default function TodayDecisionsButton() {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [manualCopy, setManualCopy] = useState(false);
-  const textRef = useRef<HTMLTextAreaElement>(null);
+
+
 
   async function prepareRequest() {
     setOpen(true);
     try {
       await navigator.clipboard.writeText(request);
       setCopied(true);
-      setManualCopy(false);
+
     } catch {
       setCopied(false);
-      setManualCopy(true);
+
     }
   }
 
@@ -79,12 +79,12 @@ export default function TodayDecisionsButton() {
               다시 복사
             </button>
           </div>
-          {manualCopy && (
+          {(
             <div className="mt-3">
-              <label htmlFor="decisions-request" className="text-xs text-ink/65">복사할 요청문</label>
+              <label htmlFor="decisions-request" className="text-xs text-ink/65">붙여넣기가 안 되면 아래 요청문을 직접 복사하세요.</label>
               <textarea
                 id="decisions-request"
-                ref={textRef}
+
                 readOnly
                 value={request}
                 rows={6}
