@@ -1,3 +1,4 @@
+import { intakeEnabled } from "@/lib/private-quote-store";
 import { NextResponse } from "next/server";
 import { businessDetails } from "@/lib/business";
 import { resolveQuoteReference } from "@/lib/quote-reference";
@@ -15,6 +16,7 @@ function cleanApiKey(value: unknown) {
 }
 
 export async function POST(request: Request) {
+  if (intakeEnabled()) return NextResponse.json({message:"Please refresh this page to use private photo intake."},{status:409});
   if (Number(request.headers.get("content-length")) > MAX_QUOTE_REQUEST_BYTES) {
     return NextResponse.json({ message: "Please attach fewer photos or email the originals to us." }, { status: 413 });
   }

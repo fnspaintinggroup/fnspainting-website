@@ -23,7 +23,7 @@ const sections = [
     title: "How we use information",
     paragraphs: [
       "We use information to respond to enquiries, prepare and follow up painting quotes, arrange site visits, provide services, keep appropriate business records, improve the website, measure marketing results, and protect the website from misuse.",
-      "Photos attached to quote requests are sent by email to help us assess the work. They are not automatically added to our public website or gallery.",
+      "Quote photos are used to assess painting work. Depending on the intake method shown on the form, photos are emailed or received in private storage for transfer to our business archive. Private online photo copies are removed after verified PC storage and a seven-day waiting period. Photos are not automatically added to our public website or gallery.",
       "F&S Painting does not sell personal information. We only share information when it is reasonably needed to provide or support our services, when you ask us to, or when required by law.",
     ],
   },
