@@ -264,7 +264,8 @@ function applyLocalGalleryCollectionCorrections(
   );
 
   return localCollection &&
-    (collection.slug === "north-willoughby-exterior-facade-trim" ||
+    (collection.slug === "chatswood-commercial-reception-finish" ||
+      collection.slug === "north-willoughby-exterior-facade-trim" ||
       collection.slug === "north-willoughby-exterior-house-repaint-gallery")
     ? { ...collection, ...localCollection }
     : collection;

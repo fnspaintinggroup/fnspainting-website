@@ -1,3 +1,4 @@
+import { quoteReferenceHref } from "@/lib/quote-reference";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -542,7 +543,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </Link>
                 </div>
                 <Link
-                  href="/contact#quote-name"
+                  href={quoteReferenceHref("project", project.slug)}
                   className="mt-5 inline-flex items-center gap-2 rounded-md bg-clay px-5 py-3 font-semibold text-white hover:bg-clay/90"
                 >
                   Get a Free Quote

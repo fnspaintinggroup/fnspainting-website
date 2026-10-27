@@ -1,3 +1,4 @@
+import { quoteReferenceHref } from "@/lib/quote-reference";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -389,7 +390,7 @@ export default async function GalleryCollectionPage({
             </p>
           </div>
           <Link
-            href="/contact#quote-name"
+            href={quoteReferenceHref("gallery", collection.slug)}
             className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-eucalyptus transition hover:bg-gumleaf"
           >
             Get a Free Quote

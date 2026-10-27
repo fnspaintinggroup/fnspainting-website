@@ -1,3 +1,4 @@
+import { resolveQuoteReference } from "@/lib/quote-reference";
 import type { Metadata } from "next";
 import { Mail, MapPin, MessageSquareText, Phone } from "lucide-react";
 import { PageIntroHero } from "@/components/PageIntroHero";
@@ -12,7 +13,10 @@ export const metadata: Metadata = pageMetadata({
   path: "/contact",
 });
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const params = await searchParams;
+  const initialReference = typeof params.reference === "string" && typeof params.project === "string"
+    ? await resolveQuoteReference(params.reference, params.project) : null;
   return (
     <>
       <PageIntroHero
@@ -68,7 +72,7 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-          <QuoteRequestForm />
+          <QuoteRequestForm initialReference={initialReference} />
         </div>
       </section>
       <section className="bg-mist py-14 sm:py-20">

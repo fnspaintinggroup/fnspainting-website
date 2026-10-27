@@ -262,12 +262,12 @@ export const galleryImages: GalleryImage[] = [
     projectSlug: "roseville-ornate-ceiling-restoration",
   },
   {
-    title: "Chatswood Commercial Reception Painting",
+    title: "Artarmon Commercial Reception Painting",
     category: "Commercial Painting",
     image: "/images/projects/commercial-reception-after.jpg",
-    alt: "Chatswood commercial office reception area after fresh interior repainting",
+    alt: "Artarmon commercial office reception area after fresh interior repainting",
     caption:
-      "Professional reception repaint for a cleaner first impression in a Chatswood office.",
+      "Professional reception repaint for a cleaner first impression in an Artarmon office.",
     suburb: "Artarmon, NSW",
     collectionSlug: "chatswood-commercial-reception-finish",
     photoCount: 6,
@@ -1852,54 +1852,54 @@ export const galleryCollections: GalleryCollection[] = [
   },
   {
     slug: "chatswood-commercial-reception-finish",
-    title: "Chatswood Commercial Reception Painting",
+    title: "Artarmon Commercial Reception Painting",
     category: "Commercial Painting",
     suburb: "Artarmon, NSW",
     summary:
-      "Commercial interior painting across the reception counter, office corridor, hallway, storage room, and client-facing entry areas in a Chatswood office.",
+      "Commercial interior painting across the reception counter, office corridor, hallway, storage room, and client-facing entry areas in an Artarmon office.",
     coverImage: "/images/projects/commercial-reception-after.jpg",
     coverAlt:
-      "Chatswood commercial office reception area after fresh interior repainting by F&S Painting",
+      "Artarmon commercial office reception area after fresh interior repainting by F&S Painting",
     images: [
       {
         title: "Reception Painting",
         image: "/images/projects/commercial-reception-after.jpg",
-        alt: "Chatswood commercial office reception area after fresh interior repainting",
+        alt: "Artarmon commercial office reception area after fresh interior repainting",
         caption:
           "Reception area repainted for a cleaner and more professional first impression.",
       },
       {
         title: "Reception Counter Detail",
         image: "/images/projects/chatswood-commercial-reception-counter.jpg",
-        alt: "Chatswood office reception counter and work surface after interior painting",
+        alt: "Artarmon office reception counter and work surface after interior painting",
         caption:
           "Reception counter, work surface, and surrounding walls finished with a clean commercial look.",
       },
       {
         title: "Office Corridor Painting",
         image: "/images/projects/chatswood-commercial-office-corridor.jpg",
-        alt: "Chatswood office corridor and room entries after commercial interior painting",
+        alt: "Artarmon office corridor and room entries after commercial interior painting",
         caption:
           "Corridor walls, door frames, and room entries repainted for a brighter office finish.",
       },
       {
         title: "Hallway Door Painting",
         image: "/images/projects/chatswood-commercial-hallway-doors.jpg",
-        alt: "Chatswood office hallway with white doors and painted walls after repainting",
+        alt: "Artarmon office hallway with white doors and painted walls after repainting",
         caption:
           "Hallway, column, doors, and wall surfaces refreshed with a neat neutral finish.",
       },
       {
         title: "Storage Room Detail",
         image: "/images/projects/chatswood-commercial-storage-room.jpg",
-        alt: "Chatswood office storage room and shelving area after painting",
+        alt: "Artarmon office storage room and shelving area after painting",
         caption:
           "Storage room walls, shelves, and trims repainted to keep the back-of-house area tidy.",
       },
       {
         title: "Wide Reception View",
         image: "/images/projects/chatswood-commercial-reception-wide.jpg",
-        alt: "Wide view of Chatswood office reception and glass entry after commercial painting",
+        alt: "Wide view of Artarmon office reception and glass entry after commercial painting",
         caption:
           "Wide reception view showing the refreshed counter, entry glazing, and office presentation.",
       },
