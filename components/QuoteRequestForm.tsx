@@ -90,11 +90,14 @@ export function QuoteRequestForm({ initialReference = null }: { initialReference
   async function handlePhotos(event: ChangeEvent<HTMLInputElement>) {
     const selected = Array.from(event.target.files || []);
     event.target.value = "";
+    if (!selected.length) return;
     setPhotoError("");
     if (photos.length + selected.length > MAX_QUOTE_PHOTOS) { setPhotoError("Please select up to 5 photos in total."); return; }
     setPreparing(true);
     try {
-      const added = await Promise.all(selected.map(prepareQuotePhoto));
+      const added: PreparedQuotePhoto[] = [];
+      // Decode one photo at a time to avoid exhausting phone memory.
+      for (const file of selected) added.push(await prepareQuotePhoto(file));
       const next = [...photos, ...added];
       if (next.reduce((sum, photo) => sum + photo.bytes, 0) > MAX_QUOTE_PHOTO_BYTES) throw new Error("These photos are too large together. Please choose fewer photos, or email the originals to us.");
       setPhotos(next);
@@ -104,7 +107,7 @@ export function QuoteRequestForm({ initialReference = null }: { initialReference
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (preparing || status === "sending") return;
+    if (preparing || photoError || status === "sending") return;
     setStatus("sending");
     setMessage("");
 
@@ -254,20 +257,22 @@ export function QuoteRequestForm({ initialReference = null }: { initialReference
       </div>
       <fieldset className="min-w-0 mt-5 rounded-md border border-ink/15 p-4" disabled={preparing || status === "sending"}>
         <legend className="px-1 text-sm font-semibold">Photos (optional)</legend>
-        <p id="photo-help" className="mb-3 text-sm text-ink/65">Add up to 5 photos. JPG, PNG, WebP or HEIC. Large JPG/PNG/WebP photos are resized automatically; prepared attachments must total 3 MB or less.</p>
+        <p id="photo-help" className="mb-3 text-sm text-ink/65">Choose up to 5 photos, up to 20 MB each (100 MB total). JPG, PNG, WebP or HEIC. We automatically resize copies for email. Your original photos stay unchanged.</p>
         <input className="w-full min-w-0 max-w-full text-sm" aria-describedby="photo-help photo-error" aria-label="Add project photos" type="file" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" onChange={handlePhotos} />
         {preparing ? <p role="status">Preparing photos…</p> : null}
+        <p role="status" className="mt-3 text-sm font-semibold">{photos.length} of 5 photos ready to send</p>
         <ul className="mt-3 space-y-2">{photos.map((photo) => <li key={photo.id} className="flex flex-wrap items-center gap-3 text-sm">
           {photo.preview ? <Image unoptimized width={56} height={56} src={photo.preview} alt="Selected project photo" className="h-14 w-14 rounded object-cover" /> : null}
           <span className="break-all">{photo.filename}</span>
           <button type="button" className="underline" aria-label={`Remove ${photo.filename}`} onClick={() => setPhotos(photos.filter((item) => item.id !== photo.id))}>Remove</button>
         </li>)}</ul>
-        <p id="photo-error" role="alert" className="mt-2 text-sm text-clay">{photoError}</p>
+        <p id="photo-error" role="alert" className="mt-2 text-sm text-clay">{photoError ? `Photos were not added. ${photoError}` : ""}</p>
+        {photoError ? <button type="button" className="mt-2 text-sm underline" onClick={() => setPhotoError("")}>{photos.length ? "Continue with ready photos only" : "Continue without photos"}</button> : null}
         <p className="mt-3 text-sm text-ink/65">Photos are emailed with your enquiry for quoting and are not automatically published. Please avoid including people or sensitive documents.</p>
       </fieldset>
       <button
         className="mt-6 inline-flex rounded-md bg-clay px-6 py-3 font-semibold text-white transition hover:bg-clay/90 disabled:cursor-not-allowed disabled:bg-ink/25"
-        disabled={status === "sending" || preparing}
+        disabled={status === "sending" || preparing || Boolean(photoError)}
         type="submit"
       >
         {status === "sending" ? "Sending..." : "Send a Free Quote Request"}
