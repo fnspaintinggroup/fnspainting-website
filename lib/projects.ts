@@ -5,6 +5,7 @@ export type Project = {
   serviceType: string;
   beforeImage: string;
   afterImage: string;
+  beforeAfterAspectRatio?: string;
   beforeImageAlt: string;
   afterImageAlt: string;
   comparisonImage?: string;
@@ -37,6 +38,21 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    "title": "Chatswood Exterior Painting – Rendered Walls and Trim",
+    "slug": "chatswood-rendered-exterior-repaint",
+    "location": "Chatswood, NSW",
+    "serviceType": "Exterior Painting",
+    "beforeImage": "/images/projects/chatswood-rendered-2515.jpg",
+    "afterImage": "/images/projects/chatswood-rendered-2685.jpg",
+    "beforeImageAlt": "Side exterior wall, window trim and downpipes before repainting in Chatswood.",
+    "afterImageAlt": "The same side elevation after repainting the wall, trim and downpipes in Chatswood.",
+    "beforeAfterAspectRatio": "3 / 4",
+    "description": "A Chatswood exterior repaint shown through the same side wall before and after painting. The project photographs show rendered walls, window surrounds, downpipes and eaves, with preparation and exterior details in the matching seven-photo gallery.",
+    "materials": "Exterior wall and trim coatings. Product names, colour codes and coat counts are not listed in this project record.",
+    "seoTitle": "Exterior Painting Chatswood – Walls and Trim | F&S Painting",
+    "seoDescription": "Before and after exterior painting in Chatswood, showing a rendered side wall, window trim, eaves and downpipes, with a seven-photo project gallery."
+  },
   {
     "title": "Forestville Weatherboard Exterior Painting",
     "slug": "forestville-weatherboard-exterior-painting",

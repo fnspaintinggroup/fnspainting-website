@@ -219,7 +219,7 @@ export default async function GalleryCollectionPage({
                       id={galleryImageAnchor(item.title, index)}
                       className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm"
                     >
-                      <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                      <div className="relative overflow-hidden bg-mist" style={{ aspectRatio: item.aspectRatio ?? "4 / 3" }}>
                         <Image
                           src={item.image}
                           alt={item.alt}

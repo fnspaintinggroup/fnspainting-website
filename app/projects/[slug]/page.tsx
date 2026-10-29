@@ -263,7 +263,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft">
               <div className="grid md:grid-cols-2">
                 <figure>
-                  <div className="relative aspect-[4/3]">
+                  <div className="relative" style={{ aspectRatio: project.beforeAfterAspectRatio ?? "4 / 3" }}>
                     <Image
                       src={project.beforeImage}
                       alt={project.beforeImageAlt}
@@ -282,7 +282,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </figcaption>
                 </figure>
                 <figure>
-                  <div className="relative aspect-[4/3]">
+                  <div className="relative" style={{ aspectRatio: project.beforeAfterAspectRatio ?? "4 / 3" }}>
                     <Image
                       src={project.afterImage}
                       alt={project.afterImageAlt}

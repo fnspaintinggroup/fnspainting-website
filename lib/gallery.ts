@@ -18,6 +18,7 @@ export type GalleryImage = {
 };
 
 export type GalleryCollectionImage = {
+  aspectRatio?: string;
   title: string;
   image: string;
   alt: string;
@@ -65,6 +66,17 @@ export const galleryCategories: GalleryCategory[] = [
 ];
 
 export const galleryImages: GalleryImage[] = [
+  {
+    "title": "Chatswood Exterior Painting – Rendered Walls and Trim",
+    "category": "Exterior Painting",
+    "image": "/images/projects/chatswood-rendered-2691.jpg",
+    "alt": "Front elevation showing the gable, entry and exterior painting work.",
+    "caption": "Seven selected photographs of a Chatswood exterior repaint, including window trim preparation, eaves, rendered walls, downpipes and front and side elevation details.",
+    "suburb": "Chatswood, NSW",
+    "collectionSlug": "chatswood-rendered-exterior-repaint",
+    "projectSlug": "chatswood-rendered-exterior-repaint",
+    "photoCount": 7
+  },
   {
     "title": "Forestville Weatherboard Exterior Painting",
     "category": "Exterior Painting",
@@ -477,6 +489,83 @@ export const featuredGalleryImages = featuredGalleryTitles
   .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    "slug": "chatswood-rendered-exterior-repaint",
+    "title": "Chatswood Exterior Painting – Rendered Walls and Trim",
+    "category": "Exterior Painting",
+    "suburb": "Chatswood, NSW",
+    "projectSlug": "chatswood-rendered-exterior-repaint",
+    "summary": "Seven selected photographs of a Chatswood exterior repaint, including window trim preparation, eaves, rendered walls, downpipes and front and side elevation details.",
+    "coverImage": "/images/projects/chatswood-rendered-2691.jpg",
+    "coverAlt": "Front elevation showing the gable, entry and exterior painting work.",
+    "images": [
+      {
+        "title": "Window Trim Preparation",
+        "image": "/images/projects/chatswood-rendered-2639.jpg",
+        "alt": "Window trim preparation in progress, with masking and ladders still in place.",
+        "caption": "Window trim preparation in progress, with masking and ladders still in place.",
+        "aspectRatio": "1600/1200"
+      },
+      {
+        "title": "Eaves and Entry Detail",
+        "image": "/images/projects/chatswood-rendered-2681.jpg",
+        "alt": "A close view of the eaves and trim at the covered entry.",
+        "caption": "A close view of the eaves and trim at the covered entry.",
+        "aspectRatio": "1600/1200"
+      },
+      {
+        "title": "Side Wall and Downpipes",
+        "image": "/images/projects/chatswood-rendered-2684.jpg",
+        "alt": "Repainted side wall, downpipe and trim beside the existing access steps.",
+        "caption": "Repainted side wall, downpipe and trim beside the existing access steps.",
+        "aspectRatio": "1200/1600"
+      },
+      {
+        "title": "Side Door and Window Trim",
+        "image": "/images/projects/chatswood-rendered-2683.jpg",
+        "alt": "Exterior wall and window trim around the existing side door and outdoor equipment.",
+        "caption": "Exterior wall and window trim around the existing side door and outdoor equipment.",
+        "aspectRatio": "1200/1600"
+      },
+      {
+        "title": "Rendered Wall and Eaves",
+        "image": "/images/projects/chatswood-rendered-2689.jpg",
+        "alt": "Rendered wall, window surround and eaves along the side elevation.",
+        "caption": "Rendered wall, window surround and eaves along the side elevation.",
+        "aspectRatio": "1200/1600"
+      },
+      {
+        "title": "Front Elevation",
+        "image": "/images/projects/chatswood-rendered-2691.jpg",
+        "alt": "Front elevation showing the gable, entry and exterior painting work.",
+        "caption": "Front elevation showing the gable, entry and exterior painting work.",
+        "aspectRatio": "1600/1200"
+      },
+      {
+        "title": "Balcony and Side Elevation",
+        "image": "/images/projects/chatswood-rendered-2753.jpg",
+        "alt": "Side elevation beneath the existing balcony, with wall, window trim and pipework details.",
+        "caption": "Side elevation beneath the existing balcony, with wall, window trim and pipework details.",
+        "aspectRatio": "1200/1600"
+      }
+    ],
+    "sections": [
+      {
+        "eyebrow": "Project photos",
+        "title": "Chatswood exterior painting: work and detail",
+        "summary": "Preparation and exterior views in the selected photo order.",
+        "imageTitles": [
+          "Window Trim Preparation",
+          "Eaves and Entry Detail",
+          "Side Wall and Downpipes",
+          "Side Door and Window Trim",
+          "Rendered Wall and Eaves",
+          "Front Elevation",
+          "Balcony and Side Elevation"
+        ]
+      }
+    ]
+  },
   {
     "slug": "forestville-weatherboard-exterior-painting",
     "title": "Forestville Weatherboard Exterior Painting",
