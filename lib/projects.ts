@@ -38,6 +38,21 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    "title": "Forestville Weatherboard Exterior Painting",
+    "slug": "forestville-weatherboard-exterior-painting",
+    "location": "Forestville, NSW",
+    "serviceType": "Exterior Painting",
+    "beforeImage": "/images/projects/forestville-weatherboard-2406.jpg",
+    "afterImage": "/images/projects/forestville-weatherboard-2541.jpg",
+    "beforeImageAlt": "Weatherboard exterior before repainting in Forestville.",
+    "afterImageAlt": "The same weatherboard elevation after repainting in Forestville.",
+    "description": "An exterior weatherboard repaint in Forestville. Compare the same elevation before and after painting, including the gable, wall boards and contrasting trim. The separate gallery shows nine selected views of the work and painted exterior.",
+    "materials": "Exterior coating work to weatherboards and trim. Specific paint products, colour codes and coat counts are not published in this project record.",
+    "completionDate": "",
+    "seoTitle": "Weatherboard Exterior Painting Forestville | F&S Painting",
+    "seoDescription": "Before and after weatherboard exterior painting in Forestville by F&S Painting, with a nine-photo gallery of the painting process and exterior finish."
+  },
+  {
     title: "Fence Painting – North Willoughby, Sydney",
     slug: "north-willoughby-fence-painting",
     location: "North Willoughby, NSW",

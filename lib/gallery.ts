@@ -66,6 +66,17 @@ export const galleryCategories: GalleryCategory[] = [
 
 export const galleryImages: GalleryImage[] = [
   {
+    "title": "Forestville Weatherboard Exterior Painting",
+    "category": "Exterior Painting",
+    "image": "/images/projects/forestville-weatherboard-2546.jpg",
+    "alt": "Overview of the exterior repaint with the F&S work vehicle on site.",
+    "caption": "Nine selected photographs from a Forestville exterior repaint, showing coating work in progress, weatherboard detail, trim, the gable and covered outdoor areas.",
+    "suburb": "Forestville, NSW",
+    "collectionSlug": "forestville-weatherboard-exterior-painting",
+    "projectSlug": "forestville-weatherboard-exterior-painting",
+    "photoCount": 9
+  },
+  {
     title: "Fence Painting – North Willoughby, Sydney",
     category: "Exterior Painting",
     image: "/images/projects/north-willoughby-fence-after-1.jpg",
@@ -466,6 +477,73 @@ export const featuredGalleryImages = featuredGalleryTitles
   .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    "slug": "forestville-weatherboard-exterior-painting",
+    "title": "Forestville Weatherboard Exterior Painting",
+    "category": "Exterior Painting",
+    "suburb": "Forestville, NSW",
+    "projectSlug": "forestville-weatherboard-exterior-painting",
+    "summary": "Nine selected photographs from a Forestville exterior repaint, showing coating work in progress, weatherboard detail, trim, the gable and covered outdoor areas.",
+    "sections": [{"eyebrow":"Project photos","title":"Forestville exterior painting: work and finish","summary":"Painting in progress and exterior details, in the selected photo order.","imageTitles":["Coating Work in Progress","Weatherboard Finish Detail","Gable Painting in Progress","Carport Ceiling and Weatherboards","Side Elevation and Trim","Exterior Overview","Window and Weatherboard Detail","Side Elevation and Covered Patio","Gable and Side Detail"]}],
+    "coverImage": "/images/projects/forestville-weatherboard-2546.jpg",
+    "coverAlt": "Overview of the exterior repaint with the F&S work vehicle on site.",
+    "images": [
+      {
+        "title": "Coating Work in Progress",
+        "image": "/images/projects/forestville-weatherboard-2537.jpg",
+        "alt": "Exterior coating work in progress beneath the eaves.",
+        "caption": "Exterior coating work in progress beneath the eaves."
+      },
+      {
+        "title": "Weatherboard Finish Detail",
+        "image": "/images/projects/forestville-weatherboard-2538.jpg",
+        "alt": "Close-up of the painted weatherboards beneath the eaves.",
+        "caption": "Close-up of the painted weatherboards beneath the eaves."
+      },
+      {
+        "title": "Gable Painting in Progress",
+        "image": "/images/projects/forestville-weatherboard-3793.jpg",
+        "alt": "F&S painter applying coating to the gable weatherboards.",
+        "caption": "F&S painter applying coating to the gable weatherboards."
+      },
+      {
+        "title": "Carport Ceiling and Weatherboards",
+        "image": "/images/projects/forestville-weatherboard-2552.jpg",
+        "alt": "Painted weatherboards, window trim and carport ceiling.",
+        "caption": "Painted weatherboards, window trim and carport ceiling."
+      },
+      {
+        "title": "Side Elevation and Trim",
+        "image": "/images/projects/forestville-weatherboard-2550.jpg",
+        "alt": "Exterior weatherboard finish and trim along the side elevation.",
+        "caption": "Exterior weatherboard finish and trim along the side elevation."
+      },
+      {
+        "title": "Exterior Overview",
+        "image": "/images/projects/forestville-weatherboard-2546.jpg",
+        "alt": "Overview of the exterior repaint with the F&S work vehicle on site.",
+        "caption": "Overview of the exterior repaint with the F&S work vehicle on site."
+      },
+      {
+        "title": "Window and Weatherboard Detail",
+        "image": "/images/projects/forestville-weatherboard-2545.jpg",
+        "alt": "Repainted weatherboard wall and trim around an existing window.",
+        "caption": "Repainted weatherboard wall and trim around an existing window."
+      },
+      {
+        "title": "Side Elevation and Covered Patio",
+        "image": "/images/projects/forestville-weatherboard-2544.jpg",
+        "alt": "Side elevation and covered patio after exterior painting.",
+        "caption": "Side elevation and covered patio after exterior painting."
+      },
+      {
+        "title": "Gable and Side Detail",
+        "image": "/images/projects/forestville-weatherboard-2539.jpg",
+        "alt": "Gable and side weatherboard detail on the Forestville painting project.",
+        "caption": "Gable and side weatherboard detail on the Forestville painting project."
+      }
+    ]
+  },
   {
     slug: "north-willoughby-fence-painting",
     title: "Fence Painting – North Willoughby, Sydney",
