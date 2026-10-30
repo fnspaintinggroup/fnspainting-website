@@ -31,5 +31,10 @@
       "destination": "/projects",
       "permanent": true
     }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "codex/storage-optimize-261030": false
+    }
+  }
 }
