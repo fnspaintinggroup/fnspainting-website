@@ -67,6 +67,16 @@ export const galleryCategories: GalleryCategory[] = [
 
 export const galleryImages: GalleryImage[] = [
   {
+    "title": "Chatswood Apartment Interior Painting",
+    "category": "Interior Painting",
+    "image": "/images/projects/chatswood-apartment-interior-2292.webp",
+    "alt": "Chatswood apartment bedroom walls, ceiling and cornices after repainting",
+    "caption": "Six selected photographs of interior painting in a Chatswood apartment, showing bedroom, hallway, dining, laundry and living-area walls, ceilings and trim. Furniture and protective coverings remain in place in some views.",
+    "suburb": "Chatswood, NSW",
+    "collectionSlug": "chatswood-apartment-interior-painting-2026",
+    "photoCount": 6
+  },
+  {
     "title": "Chatswood Exterior Painting – Rendered Walls and Trim",
     "category": "Exterior Painting",
     "image": "/images/projects/chatswood-rendered-2691.jpg",
@@ -489,6 +499,74 @@ export const featuredGalleryImages = featuredGalleryTitles
   .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
+  {
+    "slug": "chatswood-apartment-interior-painting-2026",
+    "title": "Chatswood Apartment Interior Painting",
+    "category": "Interior Painting",
+    "suburb": "Chatswood, NSW",
+    "summary": "Six selected photographs of interior painting in a Chatswood apartment, showing bedroom, hallway, dining, laundry and living-area walls, ceilings and trim. Furniture and protective coverings remain in place in some views.",
+    "coverImage": "/images/projects/chatswood-apartment-interior-2292.webp",
+    "coverAlt": "Chatswood apartment bedroom walls, ceiling and cornices after repainting",
+    "sections": [
+      {
+        "eyebrow": "Interior painting",
+        "title": "Walls, ceilings and trim",
+        "summary": "Selected views taken with furniture moved and protective coverings still in place in some rooms.",
+        "imageTitles": [
+          "Bedroom Walls and Ceiling",
+          "Hallway Walls and Door Frames",
+          "Dining Area Walls and Cornices",
+          "Bedroom Wall and Ceiling Detail",
+          "Laundry Walls and Ceiling",
+          "Living Area Walls and Ceiling"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "title": "Bedroom Walls and Ceiling",
+        "image": "/images/projects/chatswood-apartment-interior-2292.webp",
+        "alt": "Chatswood apartment bedroom walls, ceiling and cornices after repainting",
+        "caption": "Bedroom walls, ceiling and cornices after repainting, with furniture moved for access.",
+        "aspectRatio": "1920/1440"
+      },
+      {
+        "title": "Hallway Walls and Door Frames",
+        "image": "/images/projects/chatswood-apartment-interior-2294.webp",
+        "alt": "Repainted hallway walls and door frames in a Chatswood apartment",
+        "caption": "Hallway walls and door frames after painting, with floor protection still in place.",
+        "aspectRatio": "1440/1920"
+      },
+      {
+        "title": "Dining Area Walls and Cornices",
+        "image": "/images/projects/chatswood-apartment-interior-2290.webp",
+        "alt": "Dining area walls and ceiling edges after interior painting in Chatswood",
+        "caption": "Dining area wall surfaces and ceiling edges, with furniture moved clear of the walls.",
+        "aspectRatio": "1920/1440"
+      },
+      {
+        "title": "Bedroom Wall and Ceiling Detail",
+        "image": "/images/projects/chatswood-apartment-interior-2297.webp",
+        "alt": "Bedroom wall, cornice and ceiling junction after repainting",
+        "caption": "A closer view of the bedroom wall, cornice and ceiling junction after painting.",
+        "aspectRatio": "1440/1920"
+      },
+      {
+        "title": "Laundry Walls and Ceiling",
+        "image": "/images/projects/chatswood-apartment-interior-2283.webp",
+        "alt": "Laundry wall and ceiling painting in a Chatswood apartment",
+        "caption": "Laundry walls and ceiling around the existing appliances and fittings.",
+        "aspectRatio": "1440/1920"
+      },
+      {
+        "title": "Living Area Walls and Ceiling",
+        "image": "/images/projects/chatswood-apartment-interior-2288.webp",
+        "alt": "Living area walls and ceiling after painting with furnishings still covered",
+        "caption": "Living area walls and ceiling after painting, with furnishings still covered.",
+        "aspectRatio": "1920/1440"
+      }
+    ]
+  },
   {
     "slug": "chatswood-rendered-exterior-repaint",
     "title": "Chatswood Exterior Painting – Rendered Walls and Trim",

@@ -34,7 +34,8 @@
   ],
   "git": {
     "deploymentEnabled": {
-      "codex/storage-optimize-261030": false
+      "codex/storage-optimize-261030": false,
+      "codex/joyce-gallery-261102": false
     }
   }
 }
