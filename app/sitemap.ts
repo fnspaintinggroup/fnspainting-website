@@ -70,7 +70,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const galleryCollectionRoutes = galleryCollections.map((collection) => ({
     url: `${siteUrl}/painting-gallery/${collection.slug}`,
-    lastModified: collection.completionDate
+    lastModified: collection.contentUpdatedDate
+      ? new Date(collection.contentUpdatedDate)
+      : collection.completionDate
       ? new Date(
           Math.max(
             new Date(collection.completionDate).getTime(),

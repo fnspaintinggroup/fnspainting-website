@@ -41,6 +41,8 @@ export type GalleryCollection = {
   coverImage: string;
   coverAlt: string;
   completionDate?: string;
+  // Date of a substantive gallery edit, separate from the job completion date.
+  contentUpdatedDate?: string;
   projectSlug?: string;
   galleryCardTitle?: string;
   sections?: GalleryCollectionSection[];
@@ -713,14 +715,25 @@ export const galleryCollections: GalleryCollection[] = [
   },
   {
     slug: "north-willoughby-fence-painting",
-    title: "Fence Painting – North Willoughby, Sydney",
+    title: "North Willoughby Timber Fence — Finished Views",
+    galleryCardTitle: "Fence Painting – North Willoughby, Sydney",
     category: "Exterior Painting",
     suburb: "North Willoughby, NSW",
     projectSlug: "north-willoughby-fence-painting",
+    contentUpdatedDate: "2026-11-18",
     summary:
-      "Three finished views of a North Willoughby timber fence primed and painted with Dulux Weathershield in Monument.",
+      "A three-photo finish gallery of a North Willoughby timber fence painted in Monument. Compare the yard, side and garden views; the linked Before / After record shows the earlier condition and work in progress.",
     coverImage: "/images/projects/north-willoughby-fence-after-1.jpg",
     coverAlt: "North Willoughby timber fence after painting in Monument",
+    sections: [
+      {
+        eyebrow: "Finished fence photos",
+        title: "The Monument finish from three viewpoints",
+        summary:
+          "These photos show the same completed timber fence from different positions around the yard. The project record documents priming and Dulux Weathershield in Monument; use the matching Before / After link below for the earlier condition and progress photo.",
+        imageTitles: ["Fence Finish – Wide View", "Fence Finish – Side View", "Fence Finish – Garden View"],
+      },
+    ],
     images: [
       {
         title: "Fence Finish – Wide View",
@@ -1399,16 +1412,33 @@ export const galleryCollections: GalleryCollection[] = [
   },
   {
     slug: "north-willoughby-exterior-facade-trim",
-    title: "North Willoughby Exterior House Painting",
+    title: "North Willoughby Facade, Entry and Trim",
     category: "Exterior Painting",
     suburb: "North Willoughby, NSW",
     projectSlug: "exterior-facade-trim-repaint",
     galleryCardTitle: "North Willoughby Exterior House Painting",
+    contentUpdatedDate: "2026-11-18",
     summary:
-      "Finished North Willoughby exterior house painting across the facade, front entry, walls, eaves, trim, windows, porch, verandah, and related exterior details.",
+      "Seven site photos of a North Willoughby exterior repaint: six finished facade, entry and trim views, plus a separate side-wall preparation photo. See the linked project record for the before-and-after comparison.",
     coverImage: "/images/projects/exterior-facade-after.jpg",
     coverAlt:
       "North Willoughby exterior house after professional repainting by F&S Painting",
+    sections: [
+      {
+        eyebrow: "Finished exterior details",
+        title: "Facade, entry, windows and verandah",
+        summary:
+          "Six finished views show the front entry, upper gable, street-facing facade, window surrounds, porch and verandah. This photo gallery focuses on those details; the matching Before / After page provides the comparison with the earlier condition.",
+        imageTitles: ["Front Entry Painting", "Upper Gable Painting", "Street View Painting", "Window and Trim Painting", "Front Porch Painting", "Verandah Detail Painting"],
+      },
+      {
+        eyebrow: "Preparation record",
+        title: "Side wall during preparation",
+        summary:
+          "This is a work-in-progress view of the protected side-wall area, rather than a completed finish photo.",
+        imageTitles: ["Side Wall Preparation"],
+      },
+    ],
     images: [
       {
         title: "Front Entry Painting",
