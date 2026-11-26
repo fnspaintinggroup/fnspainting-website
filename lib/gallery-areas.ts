@@ -1,6 +1,6 @@
 const galleryAreaSuburbs = {
   Chatswood: ["Chatswood"],
-  "Northern Beaches": ["Balgowlah Heights", "Dee Why", "Mona Vale"],
+  "Northern Beaches": ["Balgowlah Heights", "Cromer", "Dee Why", "Mona Vale"],
   "Mona Vale": ["Mona Vale"],
   "North Shore": [
     "Artamon",

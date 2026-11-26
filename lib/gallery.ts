@@ -68,6 +68,17 @@ export const galleryCategories: GalleryCategory[] = [
 ];
 
 export const galleryImages: GalleryImage[] = [
+{
+  "title": "Cromer Interior Wall Repaint",
+  "category": "Interior Painting",
+  "image": "/images/projects/cromer-interior-gallery-01.webp",
+  "alt": "Repainted living room walls beside the staircase in Cromer",
+  "caption": "Ten photographs of an interior wall repaint in Cromer, showing bedrooms, living and dining areas, the upper landing and stairwell.",
+  "suburb": "Cromer, NSW",
+  "collectionSlug": "cromer-interior-wall-repaint",
+  "projectSlug": "cromer-interior-wall-repaint",
+  "photoCount": 10
+},
   {
     "title": "Chatswood Apartment Interior Painting",
     "category": "Interior Painting",
@@ -501,6 +512,96 @@ export const featuredGalleryImages = featuredGalleryTitles
   .filter((item): item is GalleryImage => Boolean(item));
 
 export const galleryCollections: GalleryCollection[] = [
+{
+  "slug": "cromer-interior-wall-repaint",
+  "title": "Cromer Interior Wall Repaint",
+  "category": "Interior Painting",
+  "suburb": "Cromer, NSW",
+  "summary": "Ten photographs of an interior wall repaint in Cromer, showing bedrooms, living and dining areas, the upper landing and stairwell.",
+  "coverImage": "/images/projects/cromer-interior-gallery-01.webp",
+  "coverAlt": "Repainted living room walls beside the staircase in Cromer",
+  "completionDate": "2026-11-26",
+  "contentUpdatedDate": "2026-11-27",
+  "projectSlug": "cromer-interior-wall-repaint",
+  "images": [
+    {
+      "title": "Living room and staircase",
+      "image": "/images/projects/cromer-interior-gallery-01.webp",
+      "alt": "Repainted living room walls beside the staircase in Cromer",
+      "caption": "Repainted living room walls beside the staircase in Cromer.",
+      "aspectRatio": "1920 / 1440"
+    },
+    {
+      "title": "Garden-facing living room",
+      "image": "/images/projects/cromer-interior-gallery-02.webp",
+      "alt": "Completed wall painting around the garden-facing living room windows",
+      "caption": "Completed wall painting around the garden-facing living room windows.",
+      "aspectRatio": "1920 / 1440"
+    },
+    {
+      "title": "Dining room",
+      "image": "/images/projects/cromer-interior-gallery-03.webp",
+      "alt": "Freshly painted dining room walls beside the kitchen",
+      "caption": "Freshly painted dining room walls beside the kitchen.",
+      "aspectRatio": "1920 / 1440"
+    },
+    {
+      "title": "Bedroom with wide window",
+      "image": "/images/projects/cromer-interior-gallery-04.webp",
+      "alt": "Bedroom wall repaint around the wide window and air conditioner",
+      "caption": "Bedroom wall repaint around the wide window and air conditioner.",
+      "aspectRatio": "1920 / 1440"
+    },
+    {
+      "title": "Bedroom with long window",
+      "image": "/images/projects/cromer-interior-gallery-05.webp",
+      "alt": "Completed bedroom wall painting beside the long window",
+      "caption": "Completed bedroom wall painting beside the long window.",
+      "aspectRatio": "1920 / 1440"
+    },
+    {
+      "title": "Stairwell walls",
+      "image": "/images/projects/cromer-interior-gallery-06.webp",
+      "alt": "Painted stairwell walls around the upper window",
+      "caption": "Painted stairwell walls around the upper window.",
+      "aspectRatio": "1440 / 1920"
+    },
+    {
+      "title": "Bedroom and wardrobe",
+      "image": "/images/projects/cromer-interior-gallery-07.webp",
+      "alt": "Completed wall repaint in another bedroom beside the mirrored wardrobe",
+      "caption": "Completed wall repaint in another bedroom beside the mirrored wardrobe.",
+      "aspectRatio": "1920 / 1440"
+    },
+    {
+      "title": "Upper landing",
+      "image": "/images/projects/cromer-interior-gallery-08.webp",
+      "alt": "Repainted upper landing walls between the staircase and bedrooms",
+      "caption": "Repainted upper landing walls between the staircase and bedrooms.",
+      "aspectRatio": "1920 / 1440"
+    },
+    {
+      "title": "Wall beside the staircase",
+      "image": "/images/projects/cromer-interior-gallery-09.webp",
+      "alt": "A closer view of the completed living room wall beside the stairs",
+      "caption": "A closer view of the completed living room wall beside the stairs.",
+      "aspectRatio": "1920 / 1440"
+    },
+    {
+      "title": "Kitchen and dining connection",
+      "image": "/images/projects/cromer-interior-gallery-10.webp",
+      "alt": "Painted walls seen from the kitchen towards the dining area",
+      "caption": "Painted walls seen from the kitchen towards the dining area.",
+      "aspectRatio": "1920 / 1440"
+    }
+  ],
+  "relatedLinks": [
+    {
+      "label": "See the before and after photographs",
+      "href": "/projects/cromer-interior-wall-repaint"
+    }
+  ]
+},
   {
     "slug": "chatswood-apartment-interior-painting-2026",
     "title": "Chatswood Apartment Interior Painting",

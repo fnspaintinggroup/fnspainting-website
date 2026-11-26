@@ -38,6 +38,33 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+{
+  "title": "Cromer Interior Wall Repaint",
+  "slug": "cromer-interior-wall-repaint",
+  "location": "Cromer, NSW",
+  "serviceType": "Interior Painting",
+  "beforeImage": "/images/projects/cromer-living-wall-before.webp",
+  "afterImage": "/images/projects/cromer-living-wall-after.webp",
+  "beforeImageAlt": "Living room wall with visible patching before repainting in Cromer",
+  "afterImageAlt": "The same living room wall after repainting in Cromer",
+  "description": "An interior wall repaint across bedrooms, living and dining areas and the stairwell in a Cromer home. Compare the living room wall and stairwell before and after painting. Camera positions and lighting differ between photographs. Explore ten completed views in the project gallery.",
+  "materials": "Interior wall coatings and surface preparation materials.",
+  "completionDate": "2026-11-26",
+  "seoTitle": "Interior Wall Painting Cromer \u2013 Before & After | F&S Painting",
+  "seoDescription": "See before and after photographs of a Cromer interior wall repaint, with ten gallery views of bedrooms, living areas and the stairwell.",
+  "additionalBeforeAfterViews": [
+    {
+      "id": "stairwell-walls",
+      "title": "Stairwell walls before and after",
+      "caption": "The same staircase and upper window show the wall repaint from different camera positions and lighting.",
+      "beforeImage": "/images/projects/cromer-stairwell-before.webp",
+      "beforeImageAlt": "Stairwell walls before repainting in Cromer",
+      "afterImage": "/images/projects/cromer-interior-gallery-06.webp",
+      "afterImageAlt": "Stairwell walls after repainting in Cromer",
+      "aspectRatio": "3 / 4"
+    }
+  ]
+},
   {
     "title": "Chatswood Exterior Painting – Rendered Walls and Trim",
     "slug": "chatswood-rendered-exterior-repaint",
